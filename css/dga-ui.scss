@@ -1,1 +1,6 @@
-@import url(node_modules/bootstrap/scss/bootstrap.scss);
+// Custom theme colors
+$primary: #005ea5;
+$secondary: #ffdd00;
+
+// Import Bootstrap
+@import "node_modules/bootstrap/scss/bootstrap.scss";
