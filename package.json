@@ -7,7 +7,7 @@
     "bootstrap",
     "theme",
     "government",
-    "ui",
+    "dga-ui",
     "design",
     "template"
   ],
@@ -26,7 +26,9 @@
   "scripts": {
     "test": "echo \"No tests yet\" && exit 0",
     "format": "prettier --write \"**/*.{js,json,md,css,scss}\"",
-    "format:check": "prettier --check \"**/*.{js,json,md,css,scss}\""
+    "format:check": "prettier --check \"**/*.{js,json,md,css,scss}\"",
+    "build-css": "sass theme/dga-ui.scss:css/dga-ui.css",
+    "watch-css": "sass --watch theme/dga-ui.scss:css/dga-ui.css"
   },
   "dependencies": {
     "bootstrap": "^5.3.8"
