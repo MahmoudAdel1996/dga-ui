@@ -30,16 +30,18 @@
     "test": "echo \"No tests yet\" && exit 0",
     "format": "prettier --write \"**/*.{js,json,md,css,scss}\"",
     "format:check": "prettier --check \"**/*.{js,json,md,css,scss}\"",
-    "build-css": "sass theme/dga-ui.scss:css/dga-ui.css",
-    "watch-css": "sass --watch theme/dga-ui.scss:css/dga-ui.css",
-    "prepublishOnly": "npm version patch --no-git-tag-version"
+    "build-css": "sass theme/dga-ui.scss css/dga-ui.css",
+    "watch-css": "sass --watch theme/dga-ui.scss css/dga-ui.css",
+    "prepublishOnly": "npm run build-css"
   },
-  "dependencies": {
+  "peerDependencies": {
     "bootstrap": "^5.3.8"
   },
   "devDependencies": {
+    "bootstrap": "^5.3.8",
     "sass": "^1.69.5",
     "postcss": "^8.4.38",
-    "autoprefixer": "^10.4.19"
+    "autoprefixer": "^10.4.19",
+    "prettier": "^3.2.0"
   }
 }

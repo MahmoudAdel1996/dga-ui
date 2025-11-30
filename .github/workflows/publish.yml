@@ -8,6 +8,7 @@ on:
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -23,9 +24,6 @@ jobs:
 
       - name: Build CSS
         run: npm run build-css
-
-      - name: Bump version
-        run: npm version patch --no-git-tag-version
 
       - name: Publish to npm
         env:
