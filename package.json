@@ -36,5 +36,10 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.8"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5",
+    "postcss": "^8.4.38",
+    "autoprefixer": "^10.4.19"
   }
 }
