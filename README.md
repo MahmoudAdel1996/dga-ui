@@ -24,13 +24,13 @@ This package helps you apply a clean, structured, and authoritative look across 
 Install via npm:
 
 ```bash
-npm install dga-ui
+npm install sdga-ui
 ```
 
 Or with yarn:
 
 ```bash
-yarn add dga-ui
+yarn add sdga-ui
 ```
 
 ---
@@ -42,13 +42,13 @@ yarn add dga-ui
 Include the compiled CSS file in your HTML:
 
 ```html
-<link rel="stylesheet" href="node_modules/dga-ui/css/dga-ui.css">
+<link rel="stylesheet" href="node_modules/sdga-ui/css/dga-ui.css">
 ```
 
 Or import it in your JavaScript/CSS:
 
 ```css
-@import "dga-ui/css/dga-ui.css";
+@import "sdga-ui/css/dga-ui.css";
 ```
 
 ### **Using SCSS Source Files**
@@ -56,7 +56,7 @@ Or import it in your JavaScript/CSS:
 Import the theme in your SCSS file:
 
 ```scss
-@import "dga-ui/theme/dga-ui";
+@import "sdga-ui/theme/dga-ui";
 ```
 
 All Bootstrap components automatically adopt the DGA UI theme.

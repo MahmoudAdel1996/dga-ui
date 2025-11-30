@@ -2,7 +2,7 @@
 
 .card {
   transition: transform 0.3s ease;
-  width: 22.5rem;
+  width: 100%;
 
   &:focus-visible {
     border-radius: $radius-lg !important;
