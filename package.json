@@ -30,8 +30,8 @@
     "test": "echo \"No tests yet\" && exit 0",
     "format": "prettier --write \"**/*.{js,json,md,css,scss}\"",
     "format:check": "prettier --check \"**/*.{js,json,md,css,scss}\"",
-    "build-css": "sass theme/dga-ui.scss css/dga-ui.css",
-    "watch-css": "sass --watch theme/dga-ui.scss css/dga-ui.css",
+    "build-css": "sass --load-path=node_modules theme/dga-ui.scss css/dga-ui.css",
+    "watch-css": "sass --load-path=node_modules --watch theme/dga-ui.scss css/dga-ui.css",
     "prepublishOnly": "npm run build-css"
   },
   "peerDependencies": {
