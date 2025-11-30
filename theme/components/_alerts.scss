@@ -1,0 +1,12 @@
+$alert-padding-y:               $spacer;
+$alert-padding-x:               $spacer * 1.5;
+$alert-margin-bottom:           1rem;
+$alert-border-radius:           $radius-md;
+$alert-link-font-weight:        $font-weight-bold;
+$alert-border-width:            var(--#{$prefix}border-width);
+$alert-dismissible-padding-r:   $alert-padding-x * 3; // 3x covers width of x plus default padding on either side
+$alert-bg:                      var(--#{$prefix}alert-bg);
+$alert-border-color:            var(--#{$prefix}border-color);
+$alert-icon-bg:                 var(--#{$prefix}alert-icon-bg);
+$alert-icon-color:              var(--#{$prefix}alert-icon-color);
+$alert-title-color:             var(--#{$prefix}alert-title-color);

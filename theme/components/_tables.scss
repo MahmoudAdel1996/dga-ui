@@ -1,0 +1,48 @@
+$table-cell-padding-y:        .5rem;
+$table-cell-padding-x:        1rem;
+$table-cell-padding-y-sm:     .25rem;
+$table-cell-padding-x-sm:     .5rem;
+
+$table-cell-vertical-align:   top;
+
+$table-color:                 $black;
+$table-bg:                    var(--#{$prefix}body-bg);
+$table-accent-bg:             transparent;
+$table-border:                $neutral-300;
+$table-border-width:          1px;
+
+
+$table-thead-bg:              $neutral-100;
+$table-thead-border-width:    $table-border-width;
+$table-thead-border-radius:   $radius-md;
+$table-thead-border-color:    $table-border;
+
+$table-th-font-weight:        $font-weight-medium;
+$table-th-color:              $neutral-700;
+$table-th-border-width:       $table-border-width;
+$table-th-border-color:       $table-border;
+
+$table-striped-color:         $table-color;
+$table-striped-bg-factor:     1;
+$table-striped-bg:            rgba($neutral-50, $table-striped-bg-factor);
+
+$table-active-color:          $table-color;
+$table-active-bg-factor:      1;
+$table-active-bg:             rgba($neutral-50, $table-active-bg-factor);
+
+$table-hover-color:           $table-color;
+$table-hover-bg-factor:       1;
+$table-hover-bg:              rgba($neutral-50, $table-hover-bg-factor);
+
+$table-border-factor:         .2;
+$table-border-width:          var(--#{$prefix}border-width);
+$table-border-color:          $table-border;
+
+$table-striped-order:         even;
+$table-striped-columns-order: even;
+
+$table-group-separator-color: currentcolor;
+
+$table-caption-color:         var(--#{$prefix}secondary-color);
+
+$table-bg-scale:              -80%;

@@ -1,0 +1,91 @@
+// Form Switch Customizations - RTL Support
+
+// ============================================
+// FORM SWITCH SPECIFIC STYLES
+// ============================================
+
+.form-switch {
+  // Override default box-shadow for switches
+  .form-check-input {
+    box-shadow: none;
+  }
+}
+
+// ============================================
+// HOVER AND ACTIVE STATES FOR FORM SWITCH
+// ============================================
+
+.form-switch .form-check-input:not(:disabled):not([readonly]) {
+  // Unchecked hover
+  &:not(:checked):hover {
+    background-color: $form-switch-unchecked-hover-bg !important;
+    border-color: $form-switch-unchecked-hover-border !important;
+    $escaped-color: svg-encode-color($form-switch-unchecked-hover-color);
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$escaped-color}'/></svg>") !important;
+  }
+  
+  // Checked hover
+  &:checked:hover {
+    background-color: $form-switch-checked-hover-bg !important;
+    border-color: $form-switch-checked-hover-border !important;
+    $escaped-color: svg-encode-color($form-switch-checked-hover-color);
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$escaped-color}'/></svg>") !important;
+  }
+  
+  // Unchecked active/pressed
+  &:not(:checked):active {
+    background-color: $form-switch-unchecked-active-bg !important;
+    border-color: $form-switch-unchecked-active-border !important;
+    $escaped-color: svg-encode-color($form-switch-unchecked-active-color);
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$escaped-color}'/></svg>") !important;
+  }
+  
+  // Checked active/pressed
+  &:checked:active {
+    background-color: $form-switch-checked-active-bg !important;
+    border-color: $form-switch-checked-active-border !important;
+    $escaped-color: svg-encode-color($form-switch-checked-active-color);
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$escaped-color}'/></svg>") !important;
+  }
+}
+
+// ============================================
+// DISABLED STATE FOR FORM SWITCH
+// ============================================
+
+.form-switch .form-check-input:disabled {
+  background-color: $form-switch-unchecked-disabled-bg;
+  border-color: $form-switch-unchecked-disabled-border;
+  cursor: not-allowed;
+  $escaped-color: svg-encode-color($form-switch-unchecked-disabled-color);
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$escaped-color}'/></svg>");
+
+  &:checked {
+    background-color: $form-switch-checked-disabled-bg;
+    border-color: $form-switch-checked-disabled-border;
+    $escaped-color: svg-encode-color($form-switch-checked-disabled-color);
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$escaped-color}'/></svg>");
+  }
+}
+
+// ============================================
+// RTL SUPPORT FOR FORM SWITCH
+// ============================================
+
+[dir="rtl"] {
+  .form-switch {
+    padding-left: 0;
+    padding-right: $form-switch-padding-start;
+
+    .form-check-input {
+      margin-left: 0;
+      margin-right: calc(#{$form-switch-padding-start} * -1);
+      background-position: right center;
+      
+      // RTL: Flip background position for checked state
+      &:checked {
+        background-position: left center;
+      }
+    }
+  }
+}

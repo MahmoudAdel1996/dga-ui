@@ -1,0 +1,228 @@
+// Bootstrap 5.3 - Effects & Utilities
+// Elevation shadows and backdrop blur utilities using SDGA design tokens
+
+@use 'sass:map';
+
+// ============================================
+// EFFECTS CONFIGURATION
+// ============================================
+
+// Global ripple effect toggle
+$enable-ripple-effect: true !default;
+
+// Ripple effect variables
+$ripple-size: 200% !default; // Percentage-based size relative to element
+$ripple-hover-opacity: 0.08 !default;
+$ripple-active-opacity: 0.08 !default;
+$ripple-focus-opacity: 0.08 !default;
+$ripple-transition-duration: 0.2s !default;
+$ripple-transition-timing: ease-out !default;
+
+// ============================================
+// RIPPLE EFFECT MIXIN
+// ============================================
+
+@mixin ripple-effect(
+  $size: $ripple-size,
+  $hover-opacity: $ripple-hover-opacity,
+  $active-opacity: $ripple-active-opacity,
+  $focus-opacity: $ripple-focus-opacity,
+  $duration: $ripple-transition-duration,
+  $timing: $ripple-transition-timing
+) {
+  position: relative;
+  overflow: visible;
+  
+  // Ripple background element
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $size;
+    height: $size;
+    background-color: currentColor;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform $duration $timing, opacity $duration $timing;
+  }
+  
+  // Ripple on hover (subtle)
+  &:hover:not(:disabled):not([readonly])::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: $hover-opacity;
+  }
+  
+  // Ripple on active/click (prominent)
+  &:active:not(:disabled):not([readonly])::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: $active-opacity;
+    transition: transform ($duration * 0.5) $timing, opacity ($duration * 0.5) $timing;
+  }
+  
+  // Ripple on focus
+  &:focus:not(:disabled):not([readonly])::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: $focus-opacity;
+  }
+}
+
+// ============================================
+// ELEVATION SHADOWS
+// ============================================
+
+// Shadow XS - Subtle elevation
+$box-shadow-xs: 
+  0px 1px 2px 0px shadow-rgba(0.05),
+  0px 1px 3px 0px shadow-rgba(0.10);
+
+// Shadow SM - Small elevation
+$box-shadow-sm: 
+  0px 1px 2px 0px shadow-rgba(0.06),
+  0px 4px 8px -2px shadow-rgba(0.10);
+
+// Shadow MD - Medium elevation (Bootstrap default)
+$box-shadow: 
+  0px 4px 8px -2px shadow-rgba(0.10),
+  0px 2px 4px -2px shadow-rgba(0.06);
+
+// Shadow LG - Large elevation
+$box-shadow-lg: 
+  0px 4px 6px -2px shadow-rgba(0.03),
+  0px 20px 24px -4px shadow-rgba(0.08);
+
+// Shadow XL - Extra large elevation
+$box-shadow-xl: 
+  0px 8px 8px -4px shadow-rgba(0.03),
+  0px 24px 48px -12px shadow-rgba(0.08);
+
+// Shadow 2XL - Very large elevation
+$box-shadow-2xl: 
+  0px 24px 48px -12px shadow-rgba(0.18);
+
+// Shadow 3XL - Maximum elevation
+$box-shadow-3xl: 
+  0px 32px 64px -12px shadow-rgba(0.14);
+
+// Shadow Inset - For form controls
+$box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+
+// ============================================
+// BACKDROP BLUR
+// ============================================
+
+$backdrop-blur-sm: blur(8px);
+$backdrop-blur-md: blur(16px);
+$backdrop-blur-lg: blur(24px);
+$backdrop-blur-xl: blur(40px);
+
+// ============================================
+// UTILITY CLASSES GENERATION
+// ============================================
+
+// ============================================
+// UTILITY CLASSES GENERATION
+// ============================================
+
+// Elevation shadow utilities
+$utilities: (
+  "shadow-xs": (
+    property: box-shadow,
+    class: shadow-xs,
+    values: (
+      null: $box-shadow-xs
+    )
+  ),
+  "shadow-sm": (
+    property: box-shadow,
+    class: shadow-sm,
+    values: (
+      null: $box-shadow-sm
+    )
+  ),
+  "shadow-md": (
+    property: box-shadow,
+    class: shadow-md,
+    values: (
+      null: $box-shadow
+    )
+  ),
+  "shadow-lg": (
+    property: box-shadow,
+    class: shadow-lg,
+    values: (
+      null: $box-shadow-lg
+    )
+  ),
+  "shadow-xl": (
+    property: box-shadow,
+    class: shadow-xl,
+    values: (
+      null: $box-shadow-xl
+    )
+  ),
+  "shadow-2xl": (
+    property: box-shadow,
+    class: shadow-2xl,
+    values: (
+      null: $box-shadow-2xl
+    )
+  ),
+  "shadow-3xl": (
+    property: box-shadow,
+    class: shadow-3xl,
+    values: (
+      null: $box-shadow-3xl
+    )
+  ),
+  // Backdrop blur utilities
+  "backdrop-blur-sm": (
+    property: backdrop-filter,
+    class: backdrop-blur-sm,
+    values: (
+      null: $backdrop-blur-sm
+    )
+  ),
+  "backdrop-blur-md": (
+    property: backdrop-filter,
+    class: backdrop-blur-md,
+    values: (
+      null: $backdrop-blur-md
+    )
+  ),
+  "backdrop-blur-lg": (
+    property: backdrop-filter,
+    class: backdrop-blur-lg,
+    values: (
+      null: $backdrop-blur-lg
+    )
+  ),
+  "backdrop-blur-xl": (
+    property: backdrop-filter,
+    class: backdrop-blur-xl,
+    values: (
+      null: $backdrop-blur-xl
+    )
+  )
+);
+
+// Generate utility classes
+@each $key, $utility in $utilities {
+  $property: map.get($utility, property);
+  $class: map.get($utility, class);
+  $values: map.get($utility, values);
+  
+  @each $value-key, $value in $values {
+    @if $value-key == null {
+      .#{$class} {
+        #{$property}: $value !important;
+      }
+    } @else {
+      .#{$class}-#{$value-key} {
+        #{$property}: $value !important;
+      }
+    }
+  }
+}

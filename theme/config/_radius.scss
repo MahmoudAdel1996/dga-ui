@@ -1,0 +1,78 @@
+// Bootstrap 5.3 - Border Radius Variables & Utilities
+// Extended radius system with utility classes
+
+// ============================================
+// BORDER RADIUS SCALE
+// ============================================
+
+// Extended radius scale
+$radius-none: 0rem;                   // 0px
+$radius-xs: 0.125rem;                 // 2px
+$radius-sm: 0.25rem;                  // 4px
+$radius-md: 0.5rem;                   // 8px
+$radius-lg: 1rem;                     // 16px
+$radius-xl: 1.5rem;                   // 24px
+$radius-full: 9999px;                 // Full round
+
+// Radius scale map
+$radius-scale: (
+  none: $radius-none,
+  xs: $radius-xs,
+  sm: $radius-sm,
+  md: $radius-md,
+  lg: $radius-lg,
+  xl: $radius-xl,
+  full: $radius-full
+);
+
+// ============================================
+// UTILITY CLASSES GENERATION
+// ============================================
+
+// Generate border-radius utilities
+@each $name, $value in $radius-scale {
+  .radius-#{$name} {
+    border-radius: $value !important;
+  }
+  
+  // Top corners
+  .radius-t-#{$name} {
+    border-top-left-radius: $value !important;
+    border-top-right-radius: $value !important;
+  }
+  
+  // Bottom corners
+  .radius-b-#{$name} {
+    border-bottom-left-radius: $value !important;
+    border-bottom-right-radius: $value !important;
+  }
+  
+  // Left corners
+  .radius-l-#{$name} {
+    border-top-left-radius: $value !important;
+    border-bottom-left-radius: $value !important;
+  }
+  
+  // Right corners
+  .radius-r-#{$name} {
+    border-top-right-radius: $value !important;
+    border-bottom-right-radius: $value !important;
+  }
+  
+  // Individual corners
+  .radius-tl-#{$name} {
+    border-top-left-radius: $value !important;
+  }
+  
+  .radius-tr-#{$name} {
+    border-top-right-radius: $value !important;
+  }
+  
+  .radius-bl-#{$name} {
+    border-bottom-left-radius: $value !important;
+  }
+  
+  .radius-br-#{$name} {
+    border-bottom-right-radius: $value !important;
+  }
+}

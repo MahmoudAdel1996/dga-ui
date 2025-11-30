@@ -1,6 +1,28 @@
-// Custom theme colors
-$primary: #005ea5;
-$secondary: #ffdd00;
+// SDJA Bootstrap 5.3 Custom Theme
+// Import this file to get a fully customized Bootstrap theme
+// that integrates with the SDJA palette system
+@import './fonts';
+@import './functions';
 
-// Import Bootstrap
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
+// 1. Import custom Bootstrap variable overrides (uses SDJA colors)
+@import './variables';
+
+// 2. Import Bootstrap source files
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+// ============================================
+// SDJA CUSTOM ENHANCEMENTS
+// ============================================
+
+// Import all component customizations
+@import './customizations/global';
+@import './customizations/buttons';
+@import './customizations/cards';
+@import './customizations/alerts';
+@import './customizations/toasts';
+@import './customizations/badges';
+@import './customizations/forms';
+@import './customizations/forms-switch';
+@import './customizations/tables';
+@import './customizations/links';
+@import './customizations/utilities';

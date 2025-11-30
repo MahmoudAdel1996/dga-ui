@@ -1,0 +1,25 @@
+// Global Customizations - SDGA Custom Enhancements
+// ============================================
+// GLOBAL FOCUS STYLING
+// ============================================
+
+// Global button focus styling - applies to all button variants
+*:focus-visible {
+  outline-offset: 2px !important;
+  outline: 2px solid #161616 !important;
+  border-color: $border-color !important;
+}
+
+// ============================================
+// SAFARI COMPATIBILITY
+// ============================================
+
+// Fix Safari compatibility for text-align in table headers
+th {
+  text-align: match-parent;
+}
+
+// Fix text-size-adjust for modern browsers
+html {
+  text-size-adjust: 100%;
+}

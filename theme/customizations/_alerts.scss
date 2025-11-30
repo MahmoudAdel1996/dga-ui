@@ -1,0 +1,242 @@
+// Alert Customizations - SDGA Custom Enhancements
+
+// ============================================
+// ALERT VARIANTS
+// ============================================
+
+.alert {
+  background-color: $alert-bg;
+  border: $alert-border-width solid;
+  border-color: $alert-border-color;
+  border-inline-start-width: .5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+  color: $gray-700;
+
+  .alert-icon {
+    z-index: 1;
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $alert-icon-color;
+    font-size: 1.5rem;
+
+    &::after {
+      content: '';
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: $radius-full;
+      background-color: $alert-icon-bg;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      opacity: 1;
+    }
+  }
+
+  .alert-title {
+    display: block;
+    color: $alert-title-color;
+    margin-bottom: .5rem;
+    font-weight: $font-weight-semibold;
+  }
+
+  &.alert-dismissible {
+    padding-right: unset;
+    padding-inline-end: $alert-dismissible-padding-r;
+    padding-inline-start: $alert-padding-x;
+  }
+
+  &.alert-primary {
+    border-inline-start-color: rgba($primary-600, 0.7);
+    --#{$prefix}alert-bg: #{$primary-25};
+    --#{$prefix}border-color: #{$primary-200};
+    --#{$prefix}alert-icon-bg: #{$primary-50};
+    --#{$prefix}alert-icon-color: #{$primary-700};
+    --#{$prefix}alert-title-color: #{$primary-700};
+  }
+
+  &.alert-lavender {
+    border-inline-start-color: rgba($lavender-600, 0.7);
+    --#{$prefix}alert-bg: #{$lavender-25};
+    --#{$prefix}border-color: #{$lavender-200};
+    --#{$prefix}alert-icon-bg: #{$lavender-50};
+    --#{$prefix}alert-icon-color: #{$lavender-700};
+    --#{$prefix}alert-title-color: #{$lavender-700};
+  }
+
+  &.alert-neutral {
+    border-inline-start-color: rgba($neutral-300, 0.7);
+    --#{$prefix}alert-bg: #{$neutral-25};
+    --#{$prefix}border-color: #{$neutral-300};
+    --#{$prefix}alert-icon-bg: #{$neutral-50};
+    --#{$prefix}alert-icon-color: #{$black};
+    --#{$prefix}alert-title-color: #{$black};
+  }
+
+  &.alert-success {
+    border-inline-start-color: rgba($success-600, 0.7);
+    --#{$prefix}alert-bg: #{$success-25};
+    --#{$prefix}border-color: #{$success-200};
+    --#{$prefix}alert-icon-bg: #{$success-50};
+    --#{$prefix}alert-icon-color: #{$success-700};
+    --#{$prefix}alert-title-color: #{$success-700};
+  }
+
+  &.alert-danger {
+    border-inline-start-color: rgba($danger-600, 0.7);
+    --#{$prefix}alert-bg: #{$danger-25};
+    --#{$prefix}border-color: #{$danger-200};
+    --#{$prefix}alert-icon-bg: #{$danger-50};
+    --#{$prefix}alert-icon-color: #{$danger-700};
+    --#{$prefix}alert-title-color: #{$danger-700};
+  }
+
+  &.alert-warning {
+    border-inline-start-color: rgba($warning-600, 0.7);
+    --#{$prefix}alert-bg: #{$warning-25};
+    --#{$prefix}border-color: #{$warning-200};
+    --#{$prefix}alert-icon-bg: #{$warning-50};
+    --#{$prefix}alert-icon-color: #{$warning-700};
+    --#{$prefix}alert-title-color: #{$warning-700};
+  }
+
+  &.alert-info {
+    border-inline-start-color: rgba($info-600, 0.7);
+    --#{$prefix}alert-bg: #{$info-25};
+    --#{$prefix}border-color: #{$info-200};
+    --#{$prefix}alert-icon-bg: #{$info-50};
+    --#{$prefix}alert-icon-color: #{$info-700};
+    --#{$prefix}alert-title-color: #{$info-700};
+  }
+
+  &.alert-secondary {
+    border-inline-start-color: rgba($secondary-200, 0.7);
+    --#{$prefix}alert-bg: #{$secondary-25};
+    --#{$prefix}border-color: #{$secondary-200};
+    --#{$prefix}alert-icon-bg: #{$secondary-50};
+    --#{$prefix}alert-icon-color: #{$black};
+    --#{$prefix}alert-title-color: #{$black};
+  }
+
+  &.alert-side {
+    --#{$prefix}alert-bg: #{$body-bg};
+    --#{$prefix}border-color: #{$gray-200};
+    --#{$prefix}alert-title-color: #{$gray-800};
+  }
+
+  .alert-footer{
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 1rem;
+    margin-inline-start: -0.75rem;
+  }
+
+  // ============================================
+  // MOBILE RESPONSIVE
+  // ============================================
+  @media (max-width: $mobile) {
+    flex-direction: column;
+    gap: 1rem;
+    border-inline-start-width: $alert-border-width;
+    border-top-width: 0.5rem;
+
+    &.alert-primary {
+    border-inline-start-color: $alert-border-color;
+    border-top-color: $primary-600;
+
+    &.alert-side {
+      border-top-color: rgba($primary-600, 0.7);
+    }
+  }
+
+  &.alert-lavender {
+    border-inline-start-color: $alert-border-color;
+    border-top-color: rgba($lavender-600, 0.7);
+  }
+
+  &.alert-neutral {
+    border-inline-start-color: $alert-border-color;
+    border-top-color: rgba($neutral-300, 0.7);
+  }
+
+  &.alert-success {
+    border-inline-start-color: $alert-border-color;
+    border-top-color: rgba($success-600, 0.7);
+  }
+
+  &.alert-danger {
+    border-inline-start-color: $alert-border-color;
+    border-top-color: rgba($danger-600, 0.7);
+  }
+
+  &.alert-warning {
+    border-inline-start-color: $alert-border-color;
+    border-top-color: rgba($warning-600, 0.7);
+  }
+
+  &.alert-info {
+    border-inline-start-color: $alert-border-color;
+    border-top-color: rgba($info-600, 0.7);
+  }
+
+  &.alert-secondary {
+    border-inline-start-color: $alert-border-color;
+    border-top-color: rgba($secondary-200, 0.7);
+  }
+
+    div {
+      width: 100%;
+    }
+
+    .alert-footer {
+      flex-direction: column;
+      margin-inline-start: 0;
+
+      button {
+        width: 100%;
+        justify-content: center;
+        &:first-of-type {
+          --#{$prefix}btn-color: #{$btn-secondary-color};
+          --#{$prefix}btn-bg: #{$btn-secondary-bg};
+          --#{$prefix}btn-border-color: #{$btn-secondary-border-color};
+          --#{$prefix}btn-hover-color: #{$btn-secondary-hover-color};
+          --#{$prefix}btn-hover-bg: #{$btn-secondary-hover-bg};
+          --#{$prefix}btn-hover-border-color: #{$btn-secondary-hover-border-color};
+          --#{$prefix}btn-focus-shadow-rgb: #{$btn-secondary-focus-shadow-rgb};
+          --#{$prefix}btn-active-color: #{$btn-secondary-active-color};
+          --#{$prefix}btn-active-bg: #{$btn-secondary-active-bg};
+          --#{$prefix}btn-active-border-color: #{$btn-secondary-active-border-color};
+          --#{$prefix}btn-disabled-color: #{$btn-secondary-disabled-color};
+          --#{$prefix}btn-disabled-bg: #{$btn-secondary-disabled-bg};
+          --#{$prefix}btn-disabled-border-color: #{$btn-secondary-disabled-border-color};
+        }
+      }
+    }
+
+    &.alert-dismissible {
+      padding-inline-end: $alert-padding-x;
+      padding-inline-start: $alert-padding-x;
+
+      .btn-close {
+        position: absolute;
+        top: 0.5rem;
+        inset-inline-end: 0.5rem;
+      }
+    }
+  }
+}
+// ============================================
+// DISMISSIBLE ALERTS
+// ============================================
+.alert-dismissible {
+  .btn-close {
+    right: unset;
+    inset-inline-end: 0;
+  }
+}

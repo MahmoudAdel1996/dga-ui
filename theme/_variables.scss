@@ -1,0 +1,50 @@
+// Bootstrap 5.3 Custom Variables - Master Import File
+// Fully customized Bootstrap theme using SDGA Palette System
+// This file should be imported BEFORE Bootstrap's main SCSS
+//
+// Structure:
+// Config Variables (foundational settings):
+// 1. Colors (primary, secondary, theme colors, grays)
+// 2. Typography (fonts, sizes, weights, headings)
+// 3. Spacing (spacer map)
+// 4. Base (body, links, borders, shadows, focus, layout, z-index)
+// 5. Effects (elevation shadows, backdrop blur)
+// 6. Radius (border radius utilities)
+// 7. Responsive (typography overrides)
+//
+// Component Variables (UI component customizations):
+// 8. Buttons (sizes, states, variants)
+// 9. Forms (inputs, labels, checkboxes, selects, validation)
+// 10. Navigation (navbar, dropdowns, pagination, breadcrumb)
+// 11. Overlays (modals, tooltips, popovers, toasts, offcanvas)
+// 12. Content (cards, tables, lists, accordion, alerts, badges, progress, spinners, carousel)
+
+// Config Variables
+@import 'config/colors';
+@import 'config/typography';
+@import 'config/spacing';
+@import 'config/base';
+@import 'config/effects';
+@import 'config/radius';
+
+// Component Variables
+@import 'components/buttons';
+@import 'components/alerts';
+@import 'components/toasts';
+@import 'components/modals';
+@import 'components/tooltips';
+@import 'components/popovers';
+@import 'components/offcanvas';
+@import 'components/forms';
+@import 'components/navbar';
+@import 'components/dropdowns';
+@import 'components/pagination';
+@import 'components/breadcrumb';
+@import 'components/cards';
+@import 'components/tables';
+@import 'components/list-group';
+@import 'components/accordion';
+@import 'components/badges';
+@import 'components/progress';
+@import 'components/spinners';
+@import 'components/carousel';

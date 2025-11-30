@@ -1,0 +1,12 @@
+// Shared SCSS Functions
+
+// Helper function to escape color for SVG use in data URLs
+@function svg-encode-color($color) {
+  @return '%23' + str-slice(inspect($color), 2);
+}
+
+
+// Shadow helper function
+@function shadow-rgba($opacity) {
+  @return rgba($shadow-color, $opacity);
+}

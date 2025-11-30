@@ -1,0 +1,124 @@
+// Bootstrap 5.3 - Form Check Variables (Checkbox & Radio)
+
+// ============================================
+// FORM CHECK (CHECKBOX & RADIO)
+// ============================================
+
+$form-check-input-width:                  1.5em;
+$form-check-min-height:                   $font-size-base * $line-height-base;
+$form-check-padding-start:                0;
+$form-check-margin-bottom:                0;
+$form-check-label-color:                  null;
+$form-check-label-cursor:                 null;
+$form-check-transition:                   null;
+
+$form-check-input-active-filter:          none;
+
+$form-check-input-bg:                     $input-bg;
+$form-check-input-border:                 $border-width solid $border-color;
+$form-check-input-border-radius:          .125rem;
+$form-check-input-focus-border:           $border-color;
+$form-check-input-focus-box-shadow:       none;
+
+// ============================================
+// PRIMARY HOVER & ACTIVE STATES
+// ============================================
+// Unchecked state
+$form-check-input-unchecked-hover-border:     $gray-500;
+$form-check-input-unchecked-hover-bg:         $gray-100;
+$form-check-input-unchecked-active-border:    $gray-500;
+$form-check-input-unchecked-active-bg:        $gray-300;
+
+// Checked state
+$form-check-input-checked-hover-border:       $primary-700;
+$form-check-input-checked-hover-bg:           $primary-700;
+$form-check-input-checked-active-border:      $primary-800;
+$form-check-input-checked-active-bg:          $primary-800;
+
+// Indeterminate state
+$form-check-input-indeterminate-hover-border:   $primary-800;
+$form-check-input-indeterminate-hover-bg:       $primary-800;
+$form-check-input-indeterminate-active-border:  $primary-900;
+$form-check-input-indeterminate-active-bg:      $primary-900;
+
+$form-check-input-checked-color:          $component-active-color;
+$form-check-input-checked-bg-color:       $component-active-bg;
+$form-check-input-checked-border-color:   $form-check-input-checked-bg-color;
+$form-check-input-checked-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$form-check-input-checked-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/></svg>");
+$form-check-radio-checked-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='none' stroke='#{$form-check-input-checked-color}'/></svg>");
+
+$form-check-input-indeterminate-color:          $component-active-color;
+$form-check-input-indeterminate-bg-color:       $component-active-bg;
+$form-check-input-indeterminate-border-color:   $form-check-input-indeterminate-bg-color;
+$form-check-input-indeterminate-bg-image:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$form-check-input-indeterminate-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/></svg>");
+
+$form-check-input-disabled-opacity:        1;
+$form-check-label-disabled-opacity:        $form-check-input-disabled-opacity;
+$form-check-btn-check-disabled-opacity:    $btn-disabled-opacity;
+
+// ============================================
+// DISABLED STATE
+// ============================================
+$form-check-input-disabled-bg:                    $gray-200;
+$form-check-input-disabled-border-color:          $border-color;
+$form-check-input-disabled-checked-bg:            $gray-400;
+$form-check-input-disabled-checked-color:         $white;
+$form-check-input-disabled-indeterminate-bg:      $gray-400;
+$form-check-input-disabled-indeterminate-color:   $white;
+$form-check-input-disabled-box-shadow:            none;
+
+// ============================================
+// READONLY STATE
+// ============================================
+$form-check-input-readonly-bg:                    $white;
+$form-check-input-readonly-border-color:          $border-color;
+$form-check-input-readonly-checked-bg:            $white;
+$form-check-input-readonly-checked-color:         $component-active-bg;
+$form-check-input-readonly-indeterminate-bg:      $white;
+$form-check-input-readonly-indeterminate-color:   $component-active-bg;
+$form-check-input-readonly-cursor:                default;
+$form-check-input-readonly-box-shadow:            none;
+
+// Radio-specific readonly variables
+$form-check-radio-readonly-checked-bg:            $gray-400;
+$form-check-radio-readonly-checked-border:        $border-color;
+$form-check-radio-readonly-checked-color:         $white;
+
+$form-check-inline-margin-end:    1rem;
+
+// ============================================
+// VARIANTS (PRIMARY & NEUTRAL)
+// ============================================
+// Neutral variant
+$form-check-neutral-checked-bg-color:       $neutral;
+$form-check-neutral-checked-color:          $white;
+$form-check-neutral-indeterminate-bg-color: $neutral;
+$form-check-neutral-indeterminate-color:    $white;
+
+// ============================================
+// NEUTRAL HOVER & ACTIVE STATES
+// ============================================
+// Unchecked state
+$form-check-neutral-unchecked-hover-border:     $gray-500;
+$form-check-neutral-unchecked-hover-bg:         $gray-100;
+$form-check-neutral-unchecked-active-border:    $gray-500;
+$form-check-neutral-unchecked-active-bg:        $gray-300;
+
+// Checked state
+$form-check-neutral-checked-hover-border:       $neutral-600;
+$form-check-neutral-checked-hover-bg:           $neutral-600;
+$form-check-neutral-checked-active-border:      $neutral-500;
+$form-check-neutral-checked-active-bg:          $neutral-500;
+
+// Indeterminate state
+$form-check-neutral-indeterminate-hover-border:   $neutral-800;
+$form-check-neutral-indeterminate-hover-bg:       $neutral-800;
+$form-check-neutral-indeterminate-active-border:  $neutral-900;
+$form-check-neutral-indeterminate-active-bg:      $neutral-900;
+// ============================================
+// SIZE VARIABLES (MD default, SM, XS)
+// ============================================
+
+$form-check-input-width-md: $form-check-input-width; // baseline 24px at root 16px
+$form-check-input-width-sm: 1.25em; // ~20px
+$form-check-input-width-xs: 1em; // ~12px (below recommended 16px target)
