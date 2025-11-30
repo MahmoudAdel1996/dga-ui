@@ -1,0 +1,26 @@
+// Bootstrap 5.3 - List Group Component Variables
+
+$list-group-color: var(--#{$prefix}body-color);
+$list-group-bg: $white;
+$list-group-border-color: rgba($black, 0.125);
+$list-group-border-width: $border-width;
+$list-group-border-radius: $radius-sm;
+
+$list-group-item-padding-y: 0.5rem;
+$list-group-item-padding-x: 1rem;
+$list-group-item-bg-scale: -80%;
+$list-group-item-color-scale: 40%;
+
+$list-group-hover-bg: $gray-100;
+$list-group-active-color: $white;
+$list-group-active-bg: $primary;
+$list-group-active-border-color: $list-group-active-bg;
+
+$list-group-disabled-color: $gray-600;
+$list-group-disabled-bg: $list-group-bg;
+
+$list-group-action-color: $gray-700;
+$list-group-action-hover-color: $list-group-action-color;
+
+$list-group-action-active-color: var(--#{$prefix}body-color);
+$list-group-action-active-bg: $gray-200;

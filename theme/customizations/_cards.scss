@@ -1,0 +1,117 @@
+// Card Customizations - SDGA Custom Enhancements
+
+.card {
+  transition: transform 0.3s ease;
+  width: 22.5rem;
+
+  &:focus-visible {
+    border-radius: $radius-lg !important;
+  }
+
+  &.expanded {
+    .card-expanded-icon {
+      transform: rotate(180deg);
+    }
+  }
+  .card-expanded-content {
+    animation: slideDown 0.3s ease-out;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 1rem;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px) scaleY(0);
+      transform-origin: top;
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scaleY(1);
+      transform-origin: top;
+    }
+  }
+
+  .card-title {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  
+  &.disabled {
+    background-color: $gray-200;
+    cursor: not-allowed;
+
+    .card-title-icon {
+        &::after {
+            background-color: $gray-100;
+        }
+        color: $gray-400;
+    }
+    
+  }
+
+  .card-title-icon {
+    &::after {
+      content: '';
+      width: 3rem;
+      height: 3rem;
+      border-radius: $radius-full;
+      background-color: $primary-50;
+      position: absolute;
+      z-index: -1;
+    }
+    width: 3rem;
+    height: 3rem;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $success-700;
+    z-index: 1;
+  }
+
+  .card-title-checked {
+    margin-inline-start: auto;
+    margin-inline-end: 4%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+  }
+
+  .card-text {
+    margin: 0;
+  }
+
+  .card-footer {
+    margin-top: auto;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-start;
+
+    // Footer variants
+    &.card-footer-center {
+      justify-content: center;
+    }
+
+    &.card-footer-start {
+      justify-content: flex-start;
+    }
+
+    &.card-footer-between {
+      justify-content: space-between;
+    }
+
+    .card-expanded-icon {
+      margin-inline-start: auto;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

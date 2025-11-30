@@ -1,0 +1,156 @@
+// Bootstrap 5.3 - Spacing Variables
+// Customized with extended spacing scale, width utilities, and semantic tokens
+
+// ============================================
+// SPACING SCALE
+// ============================================
+
+// Base spacer unit
+$spacer: 1rem;
+
+// Bootstrap spacers map (0-10)
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,    // 4px
+  2: $spacer * 0.5,     // 8px
+  3: $spacer * 0.75,    // 12px
+  4: $spacer,           // 16px
+  5: $spacer * 1.5,     // 24px
+  6: $spacer * 2,       // 32px
+  7: $spacer * 2.5,     // 40px
+  8: $spacer * 3,       // 48px
+  9: $spacer * 4,       // 64px
+  10: $spacer * 5       // 80px
+);
+
+// Extended spacing scale for custom utilities
+$spacing-scale: (
+  0: 0rem,
+  0-5: 0.125rem,        // 2px
+  1: 0.25rem,           // 4px
+  2: 0.5rem,            // 8px
+  3: 0.75rem,           // 12px
+  4: 1rem,              // 16px
+  5: 1.25rem,           // 20px
+  6: 1.5rem,            // 24px
+  8: 2rem,              // 32px
+  10: 2.5rem,           // 40px
+  12: 3rem,             // 48px
+  16: 4rem,             // 64px
+  20: 5rem,             // 80px
+  24: 6rem,             // 96px
+  32: 8rem,             // 128px
+  40: 10rem,            // 160px
+  48: 12rem,            // 192px
+  56: 14rem,            // 224px
+  64: 16rem             // 256px
+);
+
+// ============================================
+// SEMANTIC SPACING TOKENS
+// ============================================
+
+$spacing-tokens: (
+  spacing-none: 0rem,
+  spacing-xxs: 0.125rem,
+  spacing-xs: 0.25rem,
+  spacing-sm: 0.375rem,
+  spacing-md: 0.5rem,
+  spacing-lg: 0.75rem,
+  spacing-xl: 1rem,
+  spacing-2xl: 1.25rem,
+  spacing-3xl: 1.5rem,
+  spacing-4xl: 2rem,
+  spacing-5xl: 2.5rem,
+  spacing-6xl: 3rem,
+  spacing-7xl: 4rem,
+  spacing-8xl: 5rem,
+  spacing-9xl: 6rem,
+  spacing-10xl: 8rem,
+  spacing-11xl: 10rem
+);
+
+// ============================================
+// WIDTH SCALE
+// ============================================
+
+$width-scale: (
+  width-xxs: 20rem,
+  width-xs: 24rem,
+  width-sm: 30rem,
+  width-md: 35rem,
+  width-lg: 40rem,
+  width-xl: 48rem,
+  width-2xl: 64rem,
+  width-3xl: 80rem,
+  width-4xl: 90rem,
+  width-5xl: 100rem,
+  width-6xl: 120rem
+);
+
+// ============================================
+// CONTAINER CONFIGURATION
+// ============================================
+
+$container-padding-mobile: 1rem;
+$container-padding-desktop: 2rem;
+$container-max-width-desktop: 80rem;
+
+// ============================================
+// PARAGRAPH CONFIGURATION
+// ============================================
+
+$paragraph-max-width: 45rem;
+
+// ============================================
+// UTILITY CLASSES GENERATION
+// ============================================
+
+// Generate extended spacing utilities
+@each $key, $value in $spacing-scale {
+  // Margin utilities
+  .m-#{$key} { margin: $value !important; }
+  .mt-#{$key} { margin-top: $value !important; }
+  .mb-#{$key} { margin-bottom: $value !important; }
+  .ml-#{$key} { margin-left: $value !important; }
+  .mr-#{$key} { margin-right: $value !important; }
+  .mx-#{$key} { margin-inline: $value !important; }
+  .my-#{$key} { margin-block: $value !important; }
+  
+  // Padding utilities
+  .p-#{$key} { padding: $value !important; }
+  .pt-#{$key} { padding-top: $value !important; }
+  .pb-#{$key} { padding-bottom: $value !important; }
+  .pl-#{$key} { padding-left: $value !important; }
+  .pr-#{$key} { padding-right: $value !important; }
+  .px-#{$key} { padding-inline: $value !important; }
+  .py-#{$key} { padding-block: $value !important; }
+}
+
+// Generate semantic spacing token utilities
+@each $name, $space in $spacing-tokens {
+  .#{$name} { margin: $space !important; }
+}
+
+// Generate width utilities
+@each $name, $value in $width-scale {
+  .#{$name} { max-width: $value !important; }
+}
+
+// Container utility class
+.container-platform {
+  padding-left: $container-padding-mobile;
+  padding-right: $container-padding-mobile;
+
+  @media (min-width: 992px) {
+    padding-left: $container-padding-desktop;    
+    padding-right: $container-padding-desktop;
+    max-width: $container-max-width-desktop;
+    margin: 0 auto;
+  }
+}
+
+// Paragraph max-width utility
+.paragraph-max {
+  max-width: $paragraph-max-width;
+}

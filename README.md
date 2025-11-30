@@ -37,17 +37,26 @@ yarn add dga-ui
 
 ## **🔧 Usage**
 
-Import the theme styles after Bootstrap:
+### **Using the Compiled CSS**
 
-```scss
-@import "bootstrap/scss/bootstrap";
-@import "dga-ui/styles";
+Include the compiled CSS file in your HTML:
+
+```html
+<link rel="stylesheet" href="node_modules/dga-ui/css/dga-ui.css">
 ```
 
-Or in plain CSS:
+Or import it in your JavaScript/CSS:
 
 ```css
-@import "dga-ui/dist/dga-ui.css";
+@import "dga-ui/css/dga-ui.css";
+```
+
+### **Using SCSS Source Files**
+
+Import the theme in your SCSS file:
+
+```scss
+@import "dga-ui/theme/dga-ui";
 ```
 
 All Bootstrap components automatically adopt the DGA UI theme.
@@ -59,43 +68,64 @@ All Bootstrap components automatically adopt the DGA UI theme.
 ```
 dga-ui/
 │
-├─ dist/                # Compiled CSS
-├─ scss/                # Source SCSS theme files
-├─ tokens/              # Colors, spacing, fonts (optional)
+├─ css/                 # Compiled CSS output
+│  └─ dga-ui.css
+├─ fonts/               # Font files (IBM Plex Sans Arabic)
+├─ theme/               # Source SCSS theme files
+│  ├─ dga-ui.scss       # Main theme entry point
+│  ├─ _fonts.scss
+│  ├─ _functions.scss
+│  ├─ _variables.scss
+│  ├─ config/           # Base configuration
+│  ├─ components/       # Component styles
+│  └─ customizations/   # Theme customizations
+├─ package.json
+├─ LICENSE
 └─ README.md
 ```
 
 ---
 
-## **🌙 Dark Mode (Optional)**
+## **🛠 Development**
 
-If you provide dark mode:
+### **Building the CSS**
 
-```css
-html.dark {
-  --dga-bg: #111;
-  --dga-text: #fff;
-}
+Compile the SCSS to CSS:
+
+```bash
+npm run build-css
 ```
 
-And toggle it from JS:
+### **Watch Mode**
 
-```js
-document.documentElement.classList.toggle('dark');
+Watch for changes and auto-compile:
+
+```bash
+npm run watch-css
+```
+
+### **Customization**
+
+You can override SCSS variables before importing the theme:
+
+```scss
+// Your custom variables
+$primary: #0d47a1;
+$secondary: #ffc107;
+
+// Import the DGA UI theme
+@import "dga-ui/theme/dga-ui";
 ```
 
 ---
 
-## **🛠 Customization**
+## **🎨 Theme Structure**
 
-You can override SCSS variables:
+The theme is organized into three main sections:
 
-```scss
-$dga-primary: #0d47a1;
-$dga-accent: #ffc107;
-
-@import "dga-ui";
-```
+- **config/** - Base configuration (colors, typography, spacing, etc.)
+- **components/** - Bootstrap component overrides
+- **customizations/** - Additional styling and utilities
 
 ---
 

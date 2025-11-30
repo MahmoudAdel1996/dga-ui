@@ -1,0 +1,68 @@
+// Table Customizations - SDGA Custom Enhancements
+
+// ============================================
+// TABLE HOVER ENHANCEMENTS
+// ============================================
+
+// .table-hover-primary tbody tr:hover {
+//   background-color: rgba($primary, 0.1);
+// }
+
+// .table-hover-secondary tbody tr:hover {
+//   background-color: rgba($secondary, 0.1);
+// }
+
+.table {
+  border: $table-th-border-width solid $table-th-border-color;
+  border-radius: $table-thead-border-radius;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+
+  &.side-borderless {
+    border-inline: none;
+    border-radius: 0;
+  }
+
+  thead {
+    background-color: $table-thead-bg;
+
+    th {
+      height: 3rem;
+      vertical-align: middle;
+      padding: $table-cell-padding-y $table-cell-padding-x;
+      background-color: transparent;
+      color: $table-th-color;
+      border-block-end: $table-thead-border-width solid $table-thead-border-color;
+      border-block-start: none;
+      border-inline-start: none;
+      border-inline-end: $table-thead-border-width solid $table-thead-border-color;
+
+      &:last-child {
+        border-inline-end: none;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      th, td {
+        height: 4rem;
+        vertical-align: middle;
+        border-inline: none;
+        border-block-start: none;
+        border-block-end: none;
+      }
+
+      th:first-child, td:first-child {
+        border-inline-end: $table-th-border-width solid $table-th-border-color;
+      }
+
+      &:not(:last-child) {
+        th, td {
+          border-block-end: $table-border-width solid $table-border-color;
+        }
+      }
+    }
+  }
+}

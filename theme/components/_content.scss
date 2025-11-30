@@ -1,0 +1,211 @@
+// Bootstrap 5.3 - Content Component Variables
+// Cards, Tables, Lists, Accordion, Alerts, Badges, Progress, Spinners, Carousel
+
+@use 'sass:color';
+
+// ============================================
+// CARDS
+// ============================================
+
+$card-spacer-y: $spacer;
+$card-spacer-x: $spacer;
+$card-title-spacer-y: $spacer * .5;
+$card-title-color: null;
+$card-subtitle-color: $gray-800;
+$card-border-width: 0;
+$card-border-color: none;
+$card-border-radius: $radius-lg;
+$card-box-shadow: $box-shadow;
+$card-inner-border-radius: subtract($card-border-radius, $card-border-width);
+$card-cap-padding-y: $card-spacer-y * 1.5 0;
+$card-cap-padding-x: 0;
+$card-cap-bg: none;
+$card-cap-color: null;
+$card-height: null;
+$card-color: null;
+$card-bg: var(--#{$prefix}body-bg);
+$card-img-overlay-padding: $spacer;
+$card-group-margin: $grid-gutter-width * .5;
+
+
+// ============================================
+// TABLES
+// ============================================
+
+$table-cell-padding-y: 0.5rem;
+$table-cell-padding-x: 0.5rem;
+$table-cell-padding-y-sm: 0.25rem;
+$table-cell-padding-x-sm: 0.25rem;
+
+$table-cell-vertical-align: top;
+
+$table-color: var(--#{$prefix}body-color);
+$table-bg: transparent;
+$table-accent-bg: transparent;
+
+$table-th-font-weight: null;
+
+$table-striped-color: $table-color;
+$table-striped-bg-factor: 0.05;
+$table-striped-bg: rgba($black, $table-striped-bg-factor);
+
+$table-active-color: $table-color;
+$table-active-bg-factor: 0.1;
+$table-active-bg: rgba($black, $table-active-bg-factor);
+
+$table-hover-color: $table-color;
+$table-hover-bg-factor: 0.075;
+$table-hover-bg: rgba($black, $table-hover-bg-factor);
+
+$table-border-factor: 0.1;
+$table-border-width: $border-width;
+$table-border-color: $border-color;
+
+$table-striped-order: odd;
+$table-striped-columns-order: even;
+
+$table-group-separator-color: currentcolor;
+
+// $table-caption-color: $text-muted;
+
+$table-bg-scale: -80%;
+
+// ============================================
+// LIST GROUP
+// ============================================
+
+$list-group-color: var(--#{$prefix}body-color);
+$list-group-bg: $white;
+$list-group-border-color: rgba($black, 0.125);
+$list-group-border-width: $border-width;
+$list-group-border-radius: $radius-sm;
+
+$list-group-item-padding-y: 0.5rem;
+$list-group-item-padding-x: 1rem;
+$list-group-item-bg-scale: -80%;
+$list-group-item-color-scale: 40%;
+
+$list-group-hover-bg: $gray-100;
+$list-group-active-color: $white;
+$list-group-active-bg: $primary;
+$list-group-active-border-color: $list-group-active-bg;
+
+$list-group-disabled-color: $gray-600;
+$list-group-disabled-bg: $list-group-bg;
+
+$list-group-action-color: $gray-700;
+$list-group-action-hover-color: $list-group-action-color;
+
+$list-group-action-active-color: var(--#{$prefix}body-color);
+$list-group-action-active-bg: $gray-200;
+
+// ============================================
+// ACCORDION
+// ============================================
+
+$accordion-padding-y: 1rem;
+$accordion-padding-x: 1.25rem;
+$accordion-color: var(--#{$prefix}body-color);
+$accordion-bg: $white;
+$accordion-border-width: $border-width;
+$accordion-border-color: rgba($black, 0.125);
+$accordion-border-radius: $radius-sm;
+$accordion-inner-border-radius: calc(#{$accordion-border-radius} - #{$accordion-border-width});
+
+$accordion-body-padding-y: $accordion-padding-y;
+$accordion-body-padding-x: $accordion-padding-x;
+
+$accordion-button-padding-y: $accordion-padding-y;
+$accordion-button-padding-x: $accordion-padding-x;
+$accordion-button-color: var(--#{$prefix}body-color);
+$accordion-button-bg: $accordion-bg;
+$accordion-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
+$accordion-button-active-bg: color.scale($primary, $lightness: 65%);
+$accordion-button-active-color: color.scale($primary, $lightness: -32%);
+
+$accordion-button-focus-border-color: $input-focus-border-color;
+$accordion-button-focus-box-shadow: $btn-focus-box-shadow;
+
+$accordion-icon-width: 1.25rem;
+$accordion-icon-color: $body-color;
+$accordion-icon-active-color: $accordion-button-active-color;
+$accordion-icon-transition: transform 0.2s ease-in-out;
+$accordion-icon-transform: rotate(-180deg);
+
+$accordion-button-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+$accordion-button-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-active-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+
+// ============================================
+// BADGES
+// ============================================
+
+$badge-font-size: 0.75em;
+$badge-font-weight: $font-weight-bold;
+$badge-color: $white;
+$badge-padding-y: 0.35em;
+$badge-padding-x: 0.65em;
+$badge-border-radius: $radius-sm;
+
+// ============================================
+// PROGRESS BARS
+// ============================================
+
+$progress-height: 1rem;
+$progress-font-size: $font-size-base * 0.75;
+$progress-bg: $gray-200;
+$progress-border-radius: $radius-sm;
+$progress-box-shadow: inset 0 0.1rem 0.1rem rgba($black, 0.1);
+$progress-bar-color: $white;
+$progress-bar-bg: $primary;
+$progress-bar-animation-timing: 1s linear infinite;
+$progress-bar-transition: width 0.6s ease;
+
+// ============================================
+// SPINNERS
+// ============================================
+
+$spinner-width: 2rem;
+$spinner-height: $spinner-width;
+$spinner-vertical-align: -0.125em;
+$spinner-border-width: 0.25em;
+$spinner-animation-speed: 0.75s;
+
+$spinner-width-sm: 1rem;
+$spinner-height-sm: $spinner-width-sm;
+$spinner-border-width-sm: 0.2em;
+
+// ============================================
+// CAROUSEL
+// ============================================
+
+$carousel-control-color: $white;
+$carousel-control-width: 15%;
+$carousel-control-opacity: 0.5;
+$carousel-control-hover-opacity: 0.9;
+$carousel-control-transition: opacity 0.15s ease;
+
+$carousel-indicator-width: 30px;
+$carousel-indicator-height: 3px;
+$carousel-indicator-hit-area-height: 10px;
+$carousel-indicator-spacer: 3px;
+$carousel-indicator-opacity: 0.5;
+$carousel-indicator-active-bg: $white;
+$carousel-indicator-active-opacity: 1;
+$carousel-indicator-transition: opacity 0.6s ease;
+
+$carousel-caption-width: 70%;
+$carousel-caption-color: $white;
+$carousel-caption-padding-y: 1.25rem;
+$carousel-caption-spacer: 1.25rem;
+
+$carousel-control-icon-width: 2rem;
+
+$carousel-control-prev-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>");
+$carousel-control-next-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>");
+
+$carousel-transition-duration: 0.6s;
+$carousel-transition: transform $carousel-transition-duration ease-in-out;
+
+$carousel-dark-indicator-active-bg: $black;
+$carousel-dark-caption-color: $black;
+$carousel-dark-control-icon-filter: invert(1) grayscale(100);
