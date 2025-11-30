@@ -1,6 +1,6 @@
 {
   "name": "sdga-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "DGA UI - Government-Style Bootstrap Theme",
   "keywords": [
     "dga",
@@ -28,7 +28,8 @@
     "format": "prettier --write \"**/*.{js,json,md,css,scss}\"",
     "format:check": "prettier --check \"**/*.{js,json,md,css,scss}\"",
     "build-css": "sass theme/dga-ui.scss:css/dga-ui.css",
-    "watch-css": "sass --watch theme/dga-ui.scss:css/dga-ui.css"
+    "watch-css": "sass --watch theme/dga-ui.scss:css/dga-ui.css",
+    "prepublishOnly": "npm version patch --no-git-tag-version"
   },
   "dependencies": {
     "bootstrap": "^5.3.8"
