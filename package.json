@@ -32,7 +32,11 @@
     "format:check": "prettier --check \"**/*.{js,json,md,css,scss}\"",
     "build-css": "sass --load-path=node_modules theme/dga-ui.scss css/dga-ui.css",
     "watch-css": "sass --load-path=node_modules --watch theme/dga-ui.scss css/dga-ui.css",
-    "prepublishOnly": "npm run build-css"
+    "prepublishOnly": "npm run build-css",
+
+    "preversion": "npm run build-css",
+    "version": "git add .",
+    "postversion": "git push --follow-tags"
   },
   "peerDependencies": {
     "bootstrap": "^5.3.8"
