@@ -1,0 +1,42 @@
+// Bootstrap 5.3 - Modal Component Variables
+
+$modal-inner-padding: 1rem;
+
+$modal-footer-margin-between: 0.5rem;
+
+$modal-dialog-margin: 0.5rem;
+$modal-dialog-margin-y-sm-up: 1.75rem;
+
+$modal-title-line-height: $line-height-base;
+
+$modal-content-color: null;
+$modal-content-bg: $white;
+$modal-content-border-color: rgba($black, 0.2);
+$modal-content-border-width: $border-width;
+$modal-content-border-radius: $radius-lg;
+$modal-content-inner-border-radius: calc(#{$modal-content-border-radius} - #{$modal-content-border-width});
+$modal-content-box-shadow-xs: 0 0.25rem 0.5rem rgba($black, 0.5);
+$modal-content-box-shadow-sm-up: 0 0.5rem 1rem rgba($black, 0.5);
+
+$modal-backdrop-bg: $black;
+$modal-backdrop-opacity: 0.5;
+
+$modal-header-border-color: $border-color;
+$modal-header-border-width: $modal-content-border-width;
+$modal-header-padding-y: 1rem;
+$modal-header-padding-x: 1rem;
+$modal-header-padding: $modal-header-padding-y $modal-header-padding-x;
+
+$modal-footer-bg: null;
+$modal-footer-border-color: $modal-header-border-color;
+$modal-footer-border-width: $modal-header-border-width;
+
+$modal-sm: 300px;
+$modal-md: 500px;
+$modal-lg: 800px;
+$modal-xl: 1140px;
+
+$modal-fade-transform: translate(0, -50px);
+$modal-show-transform: none;
+$modal-transition: transform 0.3s ease-out;
+$modal-scale-transform: scale(1.02);

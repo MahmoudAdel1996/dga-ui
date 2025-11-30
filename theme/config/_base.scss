@@ -1,0 +1,112 @@
+// Bootstrap 5.3 - Component Base Variables
+// Body, Links, Borders, Shadows, Focus, Layout, and Utilities
+
+@use 'sass:color';
+
+// ============================================
+// PREFIX
+// ============================================
+
+$prefix: dga-;
+
+// ============================================
+// BODY
+// ============================================
+
+$body-bg: $white;
+$body-color: $black;
+$body-text-align: start;
+
+// ============================================
+// LINKS
+// ============================================
+
+$link-color: $primary;
+$link-decoration: none;
+$link-hover-color: color.scale($primary, $lightness: -32%);
+$link-hover-decoration: underline;
+
+// ============================================
+// COMPONENTS BASE
+// ============================================
+
+$component-active-color: $white;
+$component-active-bg: $primary;
+
+// Border
+$border-width: 1px;
+$border-widths: (
+  0: 0,
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px
+);
+// Shadow base color (using SDGA neutral-900 shade)
+$shadow-color: $gray-900;
+$border-color: $gray-500;
+
+// Focus
+$focus-ring-width: 0.25rem;
+$focus-ring-opacity: 0.25;
+$focus-ring-color: rgba($shadow-color, $focus-ring-opacity);
+$focus-ring-blur: 0;
+$focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color;
+
+// ============================================
+// UTILITIES
+// ============================================
+
+$enable-shadows: true;
+$enable-negative-margins: true;
+$enable-smooth-scroll: true;
+$enable-rfs: true;
+$enable-important-utilities: true;
+$enable-ripple-effect: true !default;
+
+// ============================================
+// CONTAINER
+// ============================================
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
+$container-padding-x: 1rem;
+
+// ============================================
+// GRID
+// ============================================
+
+$grid-columns: 12;
+$grid-gutter-width: 1.5rem;
+$grid-row-columns: 6;
+
+// ============================================
+// Z-INDEX
+// ============================================
+
+$zindex-dropdown: 1000;
+$zindex-sticky: 1020;
+$zindex-fixed: 1030;
+$zindex-offcanvas-backdrop: 1040;
+$zindex-offcanvas: 1045;
+$zindex-modal-backdrop: 1050;
+$zindex-modal: 1055;
+$zindex-popover: 1070;
+$zindex-tooltip: 1080;
+$zindex-toast: 1090;
+
+
+// ============================================
+// Responsive Variables
+// ============================================
+
+$mobile: 48rem;
+$tablet: 63.9375rem;
+$desktop: 64rem;

@@ -1,0 +1,26 @@
+// Bootstrap 5.3 - Form Range Variables
+
+@use 'sass:color';
+
+// ============================================
+// FORM RANGE
+// ============================================
+
+$form-range-track-width: 100%;
+$form-range-track-height: 0.5rem;
+$form-range-track-cursor: pointer;
+$form-range-track-bg: $gray-200;
+$form-range-track-border-radius: 1rem;
+$form-range-track-box-shadow: inset 0 0.25rem 0.25rem rgba($black, 0.1);
+
+$form-range-thumb-width: 1rem;
+$form-range-thumb-height: $form-range-thumb-width;
+$form-range-thumb-bg: $primary;
+$form-range-thumb-border: 0;
+$form-range-thumb-border-radius: 1rem;
+$form-range-thumb-box-shadow: 0 0.1rem 0.25rem rgba($black, 0.1);
+$form-range-thumb-focus-box-shadow: 0 0 0 1px var(--#{$prefix}body-bg)$body-bg, $input-focus-box-shadow;
+$form-range-thumb-focus-box-shadow-width: $input-focus-width;
+$form-range-thumb-active-bg: color.scale($primary, $lightness: 51%);
+$form-range-thumb-disabled-bg: $gray-400;
+$form-range-thumb-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;

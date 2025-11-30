@@ -1,0 +1,279 @@
+// Form Check Customizations - Checkboxes & Radios
+// Excludes switches (use _forms-switch.scss for switches)
+
+// ============================================
+// BASE WRAPPER
+// ============================================
+
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+// ============================================
+// RIPPLE EFFECT APPLICATION
+// ============================================
+
+// Force enable ripple on specific elements
+.form-check-input.ripple {
+  @include ripple-effect();
+}
+
+.form-check-neutral .form-check-input.ripple {
+  &:checked,
+  &:indeterminate {
+    color: $neutral;
+  }
+}
+
+// ============================================
+// PRIMARY VARIANT (DEFAULT)
+// ============================================
+
+// Target: Checkboxes and radios (excluding switches and neutral variant)
+.form-check-input:not([type="checkbox"][role="switch"]):not(.form-check-neutral .form-check-input) {
+  
+  // Focus state
+  &:focus {
+    border-color: $form-check-input-focus-border;
+  }
+  
+  // Unchecked state interactions
+  &:not(:checked):not(:indeterminate):not(:disabled):not([readonly]) {
+    &:hover {
+      border-color: $form-check-input-unchecked-hover-border;
+      background-color: $form-check-input-unchecked-hover-bg;
+    }
+    
+    &:active {
+      border-color: $form-check-input-unchecked-active-border;
+      background-color: $form-check-input-unchecked-active-bg;
+    }
+  }
+  
+  // Checked state interactions
+  &:checked:not(:disabled):not([readonly]) {
+    &:hover {
+      border-color: $form-check-input-checked-hover-border;
+      background-color: $form-check-input-checked-hover-bg;
+    }
+    
+    &:active {
+      border-color: $form-check-input-checked-active-border;
+      background-color: $form-check-input-checked-active-bg;
+    }
+  }
+  
+  // Indeterminate state interactions
+  &:indeterminate:not(:disabled):not([readonly]) {
+    &:hover {
+      border-color: $form-check-input-indeterminate-hover-border;
+      background-color: $form-check-input-indeterminate-hover-bg;
+    }
+    
+    &:active {
+      border-color: $form-check-input-indeterminate-active-border;
+      background-color: $form-check-input-indeterminate-active-bg;
+    }
+  }
+  
+  // Disabled state
+  &:disabled {
+    background-color: $form-check-input-disabled-bg;
+    border-color: $form-check-input-disabled-border-color;
+    cursor: not-allowed;
+    
+    &:checked {
+      background-color: $form-check-input-disabled-checked-bg;
+      border-color: $form-check-input-disabled-checked-bg;
+      
+      &[type="checkbox"] {
+        $escaped-color: svg-encode-color($form-check-input-disabled-checked-color);
+        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$escaped-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/></svg>");
+      }
+      
+      &[type="radio"] {
+        $escaped-color: svg-encode-color($form-check-input-disabled-checked-color);
+        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='none' stroke='#{$escaped-color}'/></svg>");
+      }
+    }
+    
+    &:indeterminate[type="checkbox"] {
+      background-color: $form-check-input-disabled-indeterminate-bg;
+      border-color: $form-check-input-disabled-indeterminate-bg;
+      $escaped-color: svg-encode-color($form-check-input-disabled-indeterminate-color);
+      background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$escaped-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/></svg>");
+    }
+    
+    ~ .form-check-label {
+      cursor: not-allowed;
+      opacity: $form-check-label-disabled-opacity;
+    }
+  }
+  
+  // Readonly state
+  &[readonly] {
+    background-color: $form-check-input-readonly-bg;
+    border-color: $form-check-input-readonly-border-color;
+    cursor: $form-check-input-readonly-cursor;
+    pointer-events: none;
+    
+    &:checked {
+      background-color: $form-check-input-readonly-checked-bg;
+      
+      &[type="checkbox"] {
+        $escaped-color: svg-encode-color($form-check-input-readonly-checked-color);
+        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$escaped-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/></svg>");
+      }
+      
+      &[type="radio"] {
+        background-color: $form-check-radio-readonly-checked-bg;
+        border-color: $form-check-radio-readonly-checked-border;
+        $escaped-color: svg-encode-color($form-check-radio-readonly-checked-color);
+        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='none' stroke='#{$escaped-color}'/></svg>");
+      }
+    }
+    
+    &:indeterminate[type="checkbox"] {
+      background-color: $form-check-input-readonly-indeterminate-bg;
+      border-color: $form-check-input-readonly-indeterminate-bg;
+      $escaped-color: svg-encode-color($form-check-input-readonly-indeterminate-color);
+      background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$escaped-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/></svg>");
+    }
+    
+    ~ .form-check-label {
+      cursor: $form-check-input-readonly-cursor;
+      pointer-events: none;
+    }
+  }
+}
+
+// ============================================
+// NEUTRAL VARIANT
+// ============================================
+
+.form-check-neutral {
+  .form-check-input:not([type="checkbox"][role="switch"]) {
+    
+    // Base checked states
+    &:checked {
+      background-color: $form-check-neutral-checked-bg-color;
+      border-color: $form-check-neutral-checked-bg-color;
+    }
+    
+    &:indeterminate {
+      background-color: $form-check-neutral-indeterminate-bg-color;
+      border-color: $form-check-neutral-indeterminate-bg-color;
+    }
+    
+    // Focus state
+    &:focus {
+      border-color: $form-check-neutral-checked-bg-color;
+    }
+    
+    // Unchecked state interactions
+    &:not(:checked):not(:indeterminate):not(:disabled):not([readonly]) {
+      &:hover {
+        border-color: $form-check-neutral-unchecked-hover-border;
+        background-color: $form-check-neutral-unchecked-hover-bg;
+      }
+      
+      &:active {
+        border-color: $form-check-neutral-unchecked-active-border;
+        background-color: $form-check-neutral-unchecked-active-bg;
+      }
+    }
+    
+    // Checked state interactions
+    &:checked:not(:disabled):not([readonly]) {
+      &:hover {
+        border-color: $form-check-neutral-checked-hover-border;
+        background-color: $form-check-neutral-checked-hover-bg;
+      }
+      
+      &:active {
+        border-color: $form-check-neutral-checked-active-border;
+        background-color: $form-check-neutral-checked-active-bg;
+      }
+    }
+    
+    // Indeterminate state interactions
+    &:indeterminate:not(:disabled):not([readonly]) {
+      &:hover {
+        border-color: $form-check-neutral-indeterminate-hover-border;
+        background-color: $form-check-neutral-indeterminate-hover-bg;
+      }
+      
+      &:active {
+        border-color: $form-check-neutral-indeterminate-active-border;
+        background-color: $form-check-neutral-indeterminate-active-bg;
+      }
+    }
+  }
+}
+
+// ============================================
+// SIZE VARIANTS
+// ============================================
+
+// Size on wrapper (affects input and label)
+.form-check {
+  &.form-check-md {
+    .form-check-input {
+      width: $form-check-input-width-md;
+      height: $form-check-input-width-md;
+    }
+  }
+  
+  &.form-check-sm {
+    .form-check-input {
+      width: $form-check-input-width-sm;
+      height: $form-check-input-width-sm;
+    }
+    
+    .form-check-label {
+      font-size: .875rem;
+    }
+  }
+  
+  &.form-check-xs {
+    .form-check-input {
+      width: $form-check-input-width-xs;
+      height: $form-check-input-width-xs;
+    }
+    
+    .form-check-label {
+      font-size: .75rem;
+    }
+  }
+  
+  // Variant + size combinations
+  &.form-check-neutral {
+    &.form-check-sm .form-check-input {
+      width: $form-check-input-width-sm;
+      height: $form-check-input-width-sm;
+    }
+    
+    &.form-check-xs .form-check-input {
+      width: $form-check-input-width-xs;
+      height: $form-check-input-width-xs;
+    }
+  }
+}
+
+// Size directly on input (standalone usage without wrapper)
+.form-check-input-md {
+  width: $form-check-input-width-md;
+  height: $form-check-input-width-md;
+}
+
+.form-check-input-sm {
+  width: $form-check-input-width-sm;
+  height: $form-check-input-width-sm;
+}
+
+.form-check-input-xs {
+  width: $form-check-input-width-xs;
+  height: $form-check-input-width-xs;
+}

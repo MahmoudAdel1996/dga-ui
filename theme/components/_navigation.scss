@@ -1,0 +1,151 @@
+// Bootstrap 5.3 - Navigation Components Variables
+// Navbar, Breadcrumb, Pagination, Dropdowns
+
+// ============================================
+// NAVBAR
+// ============================================
+
+$navbar-padding-y: 0.5rem;
+$navbar-padding-x: 1rem;
+
+$navbar-nav-link-padding-x: 0.5rem;
+
+$navbar-brand-font-size: $font-size-lg;
+$navbar-brand-height: null;
+$navbar-brand-padding-y: 0.3125rem;
+$navbar-brand-margin-end: 1rem;
+
+$navbar-toggler-padding-y: 0.25rem;
+$navbar-toggler-padding-x: 0.75rem;
+$navbar-toggler-font-size: $font-size-lg;
+$navbar-toggler-border-radius: $btn-border-radius;
+$navbar-toggler-focus-width: $btn-focus-width;
+$navbar-toggler-transition: box-shadow 0.15s ease-in-out;
+
+// Navbar dark theme
+$navbar-dark-color: rgba($white, 0.55);
+$navbar-dark-hover-color: rgba($white, 0.75);
+$navbar-dark-active-color: $white;
+$navbar-dark-disabled-color: rgba($white, 0.25);
+$navbar-dark-icon-color: $navbar-dark-color;
+$navbar-dark-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+$navbar-dark-toggler-border-color: rgba($white, 0.1);
+$navbar-dark-brand-color: $navbar-dark-active-color;
+$navbar-dark-brand-hover-color: $navbar-dark-active-color;
+
+// Navbar light theme
+$navbar-light-color: rgba($black, 0.55);
+$navbar-light-hover-color: rgba($black, 0.7);
+$navbar-light-active-color: rgba($black, 0.9);
+$navbar-light-disabled-color: rgba($black, 0.3);
+$navbar-light-icon-color: rgba($black, 0.5);
+$navbar-light-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+$navbar-light-toggler-border-color: rgba($black, 0.1);
+$navbar-light-brand-color: $navbar-light-active-color;
+$navbar-light-brand-hover-color: $navbar-light-active-color;
+
+// ============================================
+// DROPDOWNS
+// ============================================
+
+$dropdown-min-width: 10rem;
+$dropdown-padding-x: 0;
+$dropdown-padding-y: 0.5rem;
+$dropdown-spacer: 0.125rem;
+$dropdown-font-size: $font-size-base;
+$dropdown-color: $body-color;
+$dropdown-bg: $white;
+$dropdown-border-color: $gray-200;
+$dropdown-border-radius: $radius-sm;
+$dropdown-border-width: $border-width;
+$dropdown-inner-border-radius: calc(#{$dropdown-border-radius} - #{$dropdown-border-width});
+$dropdown-divider-bg: $gray-200;
+$dropdown-divider-margin-y: 0.5rem;
+$dropdown-box-shadow: 0 0.5rem 1rem rgba($black, 0.175);
+
+$dropdown-link-color: $gray-900;
+$dropdown-link-hover-color: darken($gray-900, 5%);
+$dropdown-link-hover-bg: $gray-100;
+
+$dropdown-link-active-color: $white;
+$dropdown-link-active-bg: $primary;
+
+$dropdown-link-disabled-color: $gray-500;
+
+$dropdown-item-padding-y: 0.25rem;
+$dropdown-item-padding-x: 1rem;
+
+$dropdown-header-color: $gray-600;
+$dropdown-header-padding-x: $dropdown-item-padding-x;
+$dropdown-header-padding-y: $dropdown-padding-y;
+
+$dropdown-dark-color: $gray-300;
+$dropdown-dark-bg: $gray-800;
+$dropdown-dark-border-color: $dropdown-border-color;
+$dropdown-dark-divider-bg: $dropdown-divider-bg;
+$dropdown-dark-box-shadow: null;
+$dropdown-dark-link-color: $dropdown-dark-color;
+$dropdown-dark-link-hover-color: $white;
+$dropdown-dark-link-hover-bg: rgba($white, 0.15);
+$dropdown-dark-link-active-color: $dropdown-link-active-color;
+$dropdown-dark-link-active-bg: $dropdown-link-active-bg;
+$dropdown-dark-link-disabled-color: $gray-500;
+$dropdown-dark-header-color: $gray-500;
+
+// ============================================
+// PAGINATION
+// ============================================
+
+$pagination-padding-y: 0.375rem;
+$pagination-padding-x: 0.75rem;
+$pagination-padding-y-sm: 0.25rem;
+$pagination-padding-x-sm: 0.5rem;
+$pagination-padding-y-lg: 0.75rem;
+$pagination-padding-x-lg: 1.5rem;
+
+$pagination-font-size: $font-size-base;
+
+$pagination-color: $primary;
+$pagination-bg: $white;
+$pagination-border-radius: $radius-sm;
+$pagination-border-width: $border-width;
+$pagination-margin-start: calc(#{$pagination-border-width} * -1);
+$pagination-border-color: $gray-300;
+
+$pagination-focus-color: $link-hover-color;
+$pagination-focus-bg: $gray-200;
+$pagination-focus-box-shadow: $input-focus-box-shadow;
+$pagination-focus-outline: 0;
+
+$pagination-hover-color: $link-hover-color;
+$pagination-hover-bg: $gray-200;
+$pagination-hover-border-color: $gray-300;
+
+$pagination-active-color: $white;
+$pagination-active-bg: $primary;
+$pagination-active-border-color: $primary;
+
+$pagination-disabled-color: $gray-600;
+$pagination-disabled-bg: $white;
+$pagination-disabled-border-color: $gray-300;
+
+$pagination-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+$pagination-border-radius-sm: $radius-sm;
+$pagination-border-radius-lg: $radius-lg;
+
+// ============================================
+// BREADCRUMB
+// ============================================
+
+$breadcrumb-font-size: $font-size-base;
+$breadcrumb-padding-y: 0.75rem;
+$breadcrumb-padding-x: 1rem;
+$breadcrumb-item-padding-x: 0.5rem;
+$breadcrumb-margin-bottom: 1rem;
+$breadcrumb-bg: $gray-100;
+$breadcrumb-divider-color: $gray-500;
+$breadcrumb-active-color: $gray-700;
+$breadcrumb-divider: "/";
+$breadcrumb-divider-flipped: $breadcrumb-divider;
+$breadcrumb-border-radius: $radius-sm;

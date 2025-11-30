@@ -1,0 +1,118 @@
+// Bootstrap 5.3 - Typography Variables
+// Customized with SDGA Typography System (IBM Plex Sans Arabic)
+// Responsive typography with breakpoint-specific sizes
+
+// ============================================
+// TYPOGRAPHY - DESKTOP (Default)
+// ============================================
+
+// Font Family
+$font-family-base: 'IBM Plex Sans Arabic';
+
+// Font Sizes - Desktop (1024px+)
+$font-size-base: 1rem;                // 16px
+$font-size-sm: 0.875rem;              // 14px
+$font-size-lg: 1.125rem;              // 18px
+
+// Font Weights
+$font-weight-lighter: 300;
+$font-weight-light: 300;
+$font-weight-base: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-bolder: 700;
+
+// Line Heights
+$line-height-base: 1.5;
+$line-height-sm: 1.43;
+$line-height-lg: 1.56;
+
+// Headings - Desktop
+$headings-font-family: $font-family-base;
+$headings-font-weight: $font-weight-semibold;
+$headings-line-height: $line-height-base;
+$headings-color: null;
+
+// Heading Sizes - Desktop
+$h1-font-size: 3rem;                  // 48px
+$h2-font-size: 2.25rem;               // 36px
+$h3-font-size: 1.875rem;              // 30px
+$h4-font-size: 1.5rem;                // 24px
+$h5-font-size: 1.125rem;              // 18px
+$h6-font-size: 1rem;                  // 16px
+
+// Display Headings - Desktop
+$display-font-sizes: (
+  1: 4.5rem,                          // 72px
+  2: 3.75rem,                         // 60px
+  3: 3rem,                            // 48px
+  4: 2.25rem,                         // 36px
+  5: 1.875rem,                        // 30px
+  6: 1.5rem                           // 24px
+);
+
+$display-font-weight: 700;
+$display-line-height: 1.25;
+
+// ============================================
+// RESPONSIVE CONFIGURATION
+// ============================================
+
+// Enable responsive font sizes
+$enable-rfs: true;
+
+// Small text
+$small-font-size: 0.875rem;
+$sub-sup-font-size: 0.75rem;
+
+// Paragraph
+$paragraph-margin-bottom: 1rem;
+
+// Lead text
+$lead-font-size: 1.25rem;
+$lead-font-weight: 300;
+
+// ============================================
+// TABLET SIZES (768px - 1023px)
+// Will be applied via media queries in bootstrap.scss
+// ============================================
+$h1-font-size-tablet: 2.5rem;        // 40px
+$h2-font-size-tablet: 2rem;          // 32px
+$h3-font-size-tablet: 1.75rem;       // 28px
+$h4-font-size-tablet: 1.375rem;      // 22px
+$h5-font-size-tablet: 1.0625rem;     // 17px
+$h6-font-size-tablet: 0.9375rem;     // 15px
+
+$display-1-tablet: 3.75rem;          // 60px
+$display-2-tablet: 3rem;             // 48px
+$display-3-tablet: 2.5rem;           // 40px
+$display-4-tablet: 2rem;             // 32px
+$display-5-tablet: 1.75rem;          // 28px
+$display-6-tablet: 1.375rem;         // 22px
+
+$font-size-base-tablet: 0.9375rem;   // 15px
+$font-size-sm-tablet: 0.8125rem;     // 13px
+$font-size-lg-tablet: 1.0625rem;     // 17px
+
+// ============================================
+// MOBILE SIZES (below 768px)
+// Will be applied via media queries in bootstrap.scss
+// ============================================
+$h1-font-size-mobile: 2rem;          // 32px
+$h2-font-size-mobile: 1.75rem;       // 28px
+$h3-font-size-mobile: 1.5rem;        // 24px
+$h4-font-size-mobile: 1.25rem;       // 20px
+$h5-font-size-mobile: 1rem;          // 16px
+$h6-font-size-mobile: 0.875rem;      // 14px
+
+$display-1-mobile: 3rem;             // 48px
+$display-2-mobile: 2.5rem;           // 40px
+$display-3-mobile: 2rem;             // 32px
+$display-4-mobile: 1.75rem;          // 28px
+$display-5-mobile: 1.5rem;           // 24px
+$display-6-mobile: 1.25rem;          // 20px
+
+$font-size-base-mobile: 0.875rem;    // 14px
+$font-size-sm-mobile: 0.75rem;       // 12px
+$font-size-lg-mobile: 1rem;          // 16px

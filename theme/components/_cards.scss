@@ -1,0 +1,21 @@
+// Bootstrap 5.3 - Card Component Variables
+
+$card-spacer-y: $spacer;
+$card-spacer-x: $spacer;
+$card-title-spacer-y: $spacer * .5;
+$card-title-color: null;
+$card-subtitle-color: $gray-800;
+$card-border-width: 0;
+$card-border-color: none;
+$card-border-radius: $radius-lg;
+$card-box-shadow: $box-shadow;
+$card-inner-border-radius: subtract($card-border-radius, $card-border-width);
+$card-cap-padding-y: $card-spacer-y * 1.5 0;
+$card-cap-padding-x: 0;
+$card-cap-bg: none;
+$card-cap-color: null;
+$card-height: null;
+$card-color: null;
+$card-bg: var(--#{$prefix}body-bg);
+$card-img-overlay-padding: $spacer;
+$card-group-margin: $grid-gutter-width * .5;

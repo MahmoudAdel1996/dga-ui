@@ -1,0 +1,26 @@
+// Bootstrap 5.3 - Popover Component Variables
+
+$popover-font-size: $font-size-sm;
+$popover-bg: $white;
+$popover-max-width: 276px;
+$popover-border-width: $border-width;
+$popover-border-color: rgba($black, 0.2);
+$popover-border-radius: $radius-lg;
+$popover-inner-border-radius: calc(#{$popover-border-radius} - #{$popover-border-width});
+$popover-box-shadow: 0 0.5rem 1rem rgba($black, 0.15);
+
+$popover-header-font-size: $font-size-base;
+$popover-header-bg: $gray-100;
+$popover-header-color: $headings-color;
+$popover-header-padding-y: 0.5rem;
+$popover-header-padding-x: 0.75rem;
+
+$popover-body-color: $body-color;
+$popover-body-padding-y: 0.5rem;
+$popover-body-padding-x: 0.75rem;
+
+$popover-arrow-width: 1rem;
+$popover-arrow-height: 0.5rem;
+$popover-arrow-color: $popover-bg;
+
+$popover-arrow-outer-color: rgba($black, 0.25);
