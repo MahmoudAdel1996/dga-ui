@@ -1,0 +1,30 @@
+<div class="code-example-wrapper">
+  <div class="code-header">
+    @if (title) {
+      <span class="code-title">{{ title }}</span>
+    }
+    <button class="btn-toggle" (click)="toggleExpand()" type="button">
+      {{ (isExpanded() ? 'code.hide' : 'code.show') | translate }}
+    </button>
+  </div>
+
+  @if (isExpanded()) {
+    <div class="code-example">
+      <div class="code-tabs">
+        @for (tab of availableTabs; track tab) {
+          <button
+            class="tab-btn"
+            [class.active]="activeTab() === tab"
+            (click)="setActiveTab(tab)"
+            type="button">
+            {{ 'code.' + tab | translate }}
+          </button>
+        }
+        <button class="btn-copy" (click)="copyCode()" type="button">
+          {{ (copySuccess() ? 'code.copied' : 'code.copy') | translate }}
+        </button>
+      </div>
+      <pre><code [innerHTML]="highlightedCode"></code></pre>
+    </div>
+  }
+</div>

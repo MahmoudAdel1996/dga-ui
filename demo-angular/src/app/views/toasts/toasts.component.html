@@ -4,7 +4,10 @@
 
     <section class="demo-section mb-5">
         <h2 class="mt-5">{{ 'toasts.section_variants' | translate }}</h2>
-        <div class="d-flex flex-wrap gap-3">
+        
+        <!-- Success Toast with Icon -->
+        <h3 class="h5 mt-4 mb-3">Success Toast with Icon</h3>
+        <div class="d-flex flex-wrap gap-3 mb-3">
             <div class="toast-container">
                 <div class="toast show fade toast-success" role="alert" aria-live="polite" aria-atomic="true">
                     <div class="toast-icon">
@@ -18,35 +21,22 @@
                             {{ 'toasts.success_text' | translate }}
                         </div>
                         <div class="toast-footer">
-                            <button type="button" class="btn btn-subtle btn-sm">{{ 'toasts.action' | translate
-                                }}</button>
-                            <button type="button" class="btn btn-subtle btn-sm" data-bs-dismiss="toast"
-                                aria-label="Close">{{ 'toasts.dismiss' | translate }}</button>
+                            <button type="button" class="btn btn-subtle btn-sm">{{ 'toasts.action' | translate }}</button>
+                            <button type="button" class="btn btn-subtle btn-sm" data-bs-dismiss="toast" aria-label="Close">{{ 'toasts.dismiss' | translate }}</button>
                         </div>
                     </div>
                     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
             </div>
-            <div class="toast show fade toast-success" role="alert" aria-live="polite" aria-atomic="true">
-                <div class="toast-icon">
-                    <i class="hgi hgi-stroke hgi-checkmark-circle-02 toast-icon"></i>
-                </div>
-                <div class="toast-content">
-                    <div class="toast-header">
-                        <strong>{{ 'toasts.success' | translate }}</strong>
-                    </div>
-                    <div class="toast-body">
-                        {{ 'toasts.success_text' | translate }}
-                    </div>
-                    <div class="toast-footer">
-                        <button type="button" class="btn btn-subtle btn-sm">{{ 'toasts.action' | translate
-                            }}</button>
-                        <button type="button" class="btn btn-subtle btn-sm" data-bs-dismiss="toast"
-                            aria-label="Close">{{ 'toasts.dismiss' | translate }}</button>
-                    </div>
-                </div>
-                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
+        </div>
+        <app-code-example 
+            [htmlCode]="successToastCode"
+            title="Success Toast with Icon">
+        </app-code-example>
+
+        <!-- Danger Toast with Icon -->
+        <h3 class="h5 mt-4 mb-3">Danger Toast with Icon</h3>
+        <div class="d-flex flex-wrap gap-3 mb-3">
             <div class="toast show fade toast-danger" role="alert" aria-live="polite" aria-atomic="true">
                 <div class="toast-icon">
                     <i class="hgi hgi-stroke hgi-help-circle toast-icon"></i>
@@ -60,13 +50,20 @@
                     </div>
                     <div class="toast-footer">
                         <button type="button" class="btn btn-subtle btn-sm">{{ 'toasts.action' | translate }}</button>
-                        <button type="button" class="btn btn-subtle btn-sm" data-bs-dismiss="toast"
-                            aria-label="Close">{{ 'toasts.dismiss' | translate }}</button>
+                        <button type="button" class="btn btn-subtle btn-sm" data-bs-dismiss="toast" aria-label="Close">{{ 'toasts.dismiss' | translate }}</button>
                     </div>
                 </div>
                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
+        </div>
+        <app-code-example 
+            [htmlCode]="dangerToastCode"
+            title="Danger Toast with Icon">
+        </app-code-example>
 
+        <!-- Warning Toast with Icon -->
+        <h3 class="h5 mt-4 mb-3">Warning Toast with Icon</h3>
+        <div class="d-flex flex-wrap gap-3 mb-3">
             <div class="toast show fade toast-warning" role="alert" aria-live="polite" aria-atomic="true">
                 <div class="toast-icon">
                     <i class="hgi hgi-stroke hgi-alert-02 toast-icon"></i>
@@ -80,13 +77,20 @@
                     </div>
                     <div class="toast-footer">
                         <button type="button" class="btn btn-subtle btn-sm">{{ 'toasts.action' | translate }}</button>
-                        <button type="button" class="btn btn-subtle btn-sm" data-bs-dismiss="toast"
-                            aria-label="Close">{{ 'toasts.dismiss' | translate }}</button>
+                        <button type="button" class="btn btn-subtle btn-sm" data-bs-dismiss="toast" aria-label="Close">{{ 'toasts.dismiss' | translate }}</button>
                     </div>
                 </div>
                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
+        </div>
+        <app-code-example 
+            [htmlCode]="warningToastCode"
+            title="Warning Toast with Icon">
+        </app-code-example>
 
+        <!-- Info Toast with Icon -->
+        <h3 class="h5 mt-4 mb-3">Info Toast with Icon</h3>
+        <div class="d-flex flex-wrap gap-3 mb-3">
             <div class="toast show fade toast-info" role="alert" aria-live="polite" aria-atomic="true">
                 <div class="toast-icon">
                     <i class="hgi hgi-stroke hgi-help-circle toast-icon"></i>
@@ -100,13 +104,20 @@
                     </div>
                     <div class="toast-footer">
                         <button type="button" class="btn btn-subtle btn-sm">{{ 'toasts.action' | translate }}</button>
-                        <button type="button" class="btn btn-subtle btn-sm" data-bs-dismiss="toast"
-                            aria-label="Close">{{ 'toasts.dismiss' | translate }}</button>
+                        <button type="button" class="btn btn-subtle btn-sm" data-bs-dismiss="toast" aria-label="Close">{{ 'toasts.dismiss' | translate }}</button>
                     </div>
                 </div>
                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
+        </div>
+        <app-code-example 
+            [htmlCode]="infoToastCode"
+            title="Info Toast with Icon">
+        </app-code-example>
 
+        <!-- Neutral Toast with Icon -->
+        <h3 class="h5 mt-4 mb-3">Neutral Toast with Icon</h3>
+        <div class="d-flex flex-wrap gap-3 mb-3">
             <div class="toast show fade toast-neutral" role="alert" aria-live="polite" aria-atomic="true">
                 <div class="toast-icon">
                     <i class="hgi hgi-stroke hgi-help-circle toast-icon"></i>
@@ -120,12 +131,71 @@
                     </div>
                     <div class="toast-footer">
                         <button type="button" class="btn btn-subtle btn-sm">{{ 'toasts.action' | translate }}</button>
-                        <button type="button" class="btn btn-subtle btn-sm" data-bs-dismiss="toast"
-                            aria-label="Close">{{ 'toasts.dismiss' | translate }}</button>
+                        <button type="button" class="btn btn-subtle btn-sm" data-bs-dismiss="toast" aria-label="Close">{{ 'toasts.dismiss' | translate }}</button>
                     </div>
                 </div>
                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
         </div>
+        <app-code-example 
+            [htmlCode]="neutralToastCode"
+            title="Neutral Toast with Icon">
+        </app-code-example>
+
+        <!-- Toast with Header, Body, and Footer Actions -->
+        <h3 class="h5 mt-4 mb-3">Toast with Header, Body, and Footer Actions</h3>
+        <div class="d-flex flex-wrap gap-3 mb-3">
+            <div class="toast-container">
+                <div class="toast show fade toast-success" role="alert" aria-live="polite" aria-atomic="true">
+                    <div class="toast-icon">
+                        <i class="hgi hgi-stroke hgi-checkmark-circle-02 toast-icon"></i>
+                    </div>
+                    <div class="toast-content">
+                        <div class="toast-header">
+                            <strong>{{ 'toasts.success' | translate }}</strong>
+                        </div>
+                        <div class="toast-body">
+                            {{ 'toasts.success_text' | translate }}
+                        </div>
+                        <div class="toast-footer">
+                            <button type="button" class="btn btn-subtle btn-sm">{{ 'toasts.action' | translate }}</button>
+                            <button type="button" class="btn btn-subtle btn-sm" data-bs-dismiss="toast" aria-label="Close">{{ 'toasts.dismiss' | translate }}</button>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+        <app-code-example 
+            [htmlCode]="fullToastCode"
+            title="Toast with Header, Body, and Footer Actions">
+        </app-code-example>
+
+        <!-- Dismissible Toast -->
+        <h3 class="h5 mt-4 mb-3">Dismissible Toast</h3>
+        <div class="d-flex flex-wrap gap-3 mb-3">
+            <div class="toast show fade toast-success" role="alert" aria-live="polite" aria-atomic="true">
+                <div class="toast-icon">
+                    <i class="hgi hgi-stroke hgi-checkmark-circle-02 toast-icon"></i>
+                </div>
+                <div class="toast-content">
+                    <div class="toast-header">
+                        <strong>{{ 'toasts.success' | translate }}</strong>
+                    </div>
+                    <div class="toast-body">
+                        {{ 'toasts.success_text' | translate }}
+                    </div>
+                    <div class="toast-footer">
+                        <button type="button" class="btn btn-subtle btn-sm">{{ 'toasts.action' | translate }}</button>
+                        <button type="button" class="btn btn-subtle btn-sm" data-bs-dismiss="toast" aria-label="Close">{{ 'toasts.dismiss' | translate }}</button>
+                    </div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+        <app-code-example 
+            [htmlCode]="dismissibleToastCode"
+            title="Dismissible Toast">
+        </app-code-example>
     </section>
 </div>

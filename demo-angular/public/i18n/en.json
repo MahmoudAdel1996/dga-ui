@@ -226,5 +226,14 @@
     "subtle_link": "Subtle link style",
     "bold_link": "Bold link style",
     "decorated_link": "Animated underline link"
+  },
+  "code": {
+    "show": "Show Code",
+    "hide": "Hide Code",
+    "copy": "Copy Code",
+    "copied": "Copied!",
+    "html": "HTML",
+    "ts": "TypeScript",
+    "scss": "SCSS"
   }
 }

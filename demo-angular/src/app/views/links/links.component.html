@@ -24,6 +24,7 @@
         <a href="javascript:void(0);" class="link-info">{{ 'links.info_link' | translate }}</a>
       </div>
     </div>
+    <app-code-example [htmlCode]="basicLinksCode"></app-code-example>
   </section>
 
   <section class="demo-section mb-5">
@@ -48,6 +49,7 @@
         <a href="javascript:void(0);" class="link-underline-opacity-100">{{ 'links.underline_100' | translate }}</a>
       </div>
     </div>
+    <app-code-example [htmlCode]="underlineLinksCode"></app-code-example>
   </section>
 
   <section class="demo-section mb-5">
@@ -60,6 +62,7 @@
         <a href="javascript:void(0);" class="link-secondary link-underline-opacity-100 link-underline-opacity-0-hover">{{ 'links.hover_remove' | translate }}</a>
       </div>
     </div>
+    <app-code-example [htmlCode]="hoverLinksCode"></app-code-example>
   </section>
 
   <section class="demo-section mb-5">
@@ -75,6 +78,17 @@
         <a href="javascript:void(0);" class="link-offset-3">{{ 'links.offset_3' | translate }}</a>
       </div>
     </div>
+    <app-code-example [htmlCode]="offsetLinksCode"></app-code-example>
+    
+    <h3 class="mt-4 mb-3">Combining Offset with Hover Effects</h3>
+    <div class="d-flex flex-column gap-3">
+      <div>
+        <a href="javascript:void(0);" class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+          Link with changing offset on hover
+        </a>
+      </div>
+    </div>
+    <app-code-example [htmlCode]="offsetHoverCode"></app-code-example>
   </section>
 
   <section class="demo-section mb-5">
@@ -99,20 +113,28 @@
         </a>
       </div>
     </div>
+    <app-code-example [htmlCode]="iconLinksCode"></app-code-example>
   </section>
 
   <section class="demo-section">
     <h2>{{ 'links.section_custom' | translate }}</h2>
-    <div class="d-flex flex-column gap-3">
-      <div>
-        <a href="javascript:void(0);" class="custom-link-subtle">{{ 'links.subtle_link' | translate }}</a>
-      </div>
-      <div>
-        <a href="javascript:void(0);" class="custom-link-bold">{{ 'links.bold_link' | translate }}</a>
-      </div>
-      <div>
-        <a href="javascript:void(0);" class="custom-link-decorated">{{ 'links.decorated_link' | translate }}</a>
-      </div>
+    
+    <h3 class="h5 mb-3">Subtle Link</h3>
+    <div class="mb-3">
+      <a href="javascript:void(0);" class="custom-link-subtle">{{ 'links.subtle_link' | translate }}</a>
     </div>
+    <app-code-example [htmlCode]="subtleLinkCode" [scssCode]="subtleLinkScss"></app-code-example>
+    
+    <h3 class="h5 mb-3 mt-4">Bold Link</h3>
+    <div class="mb-3">
+      <a href="javascript:void(0);" class="custom-link-bold">{{ 'links.bold_link' | translate }}</a>
+    </div>
+    <app-code-example [htmlCode]="boldLinkCode" [scssCode]="boldLinkScss"></app-code-example>
+    
+    <h3 class="h5 mb-3 mt-4">Decorated Link</h3>
+    <div class="mb-3">
+      <a href="javascript:void(0);" class="custom-link-decorated">{{ 'links.decorated_link' | translate }}</a>
+    </div>
+    <app-code-example [htmlCode]="decoratedLinkCode" [scssCode]="decoratedLinkScss"></app-code-example>
   </section>
 </div>

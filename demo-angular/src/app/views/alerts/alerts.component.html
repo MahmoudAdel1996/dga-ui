@@ -6,6 +6,7 @@
     <h2>{{ 'alerts.section_dismissible' | translate }}</h2>
     <div class="d-flex flex-wrap gap-3">
     <section>
+    <h3 class="h5 mb-3">Standard Alerts</h3>
     <div class="alert alert-success alert-dismissible fade show" role="alert">
       <i class="hgi hgi-stroke hgi-tick-02 alert-icon"></i>
       <div>
@@ -17,6 +18,9 @@
       </div>
       <button type="button" class="btn-close" data-bs-dismiss="alert" [attr.aria-label]="'common.close' | translate"></button>
     </div>
+    
+    <app-code-example [htmlCode]="successAlertCode"></app-code-example>
+    
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
       <i class="hgi hgi-stroke hgi-help-circle alert-icon"></i>
       <div>
@@ -28,6 +32,9 @@
       </div>
       <button type="button" class="btn-close" data-bs-dismiss="alert" [attr.aria-label]="'common.close' | translate"></button>
     </div>
+    
+    <app-code-example [htmlCode]="dangerAlertCode"></app-code-example>
+    
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
       <i class="hgi hgi-stroke hgi-alert-02 alert-icon"></i>
       <div>
@@ -39,6 +46,9 @@
       </div>
       <button type="button" class="btn-close" data-bs-dismiss="alert" [attr.aria-label]="'common.close' | translate"></button>
     </div>
+    
+    <app-code-example [htmlCode]="warningAlertCode"></app-code-example>
+    
      <div class="alert alert-info alert-dismissible fade show" role="alert">
       <i class="hgi hgi-stroke hgi-help-circle alert-icon"></i>
       <div>
@@ -50,6 +60,9 @@
       </div>
       <button type="button" class="btn-close" data-bs-dismiss="alert" [attr.aria-label]="'common.close' | translate"></button>
     </div>
+    
+    <app-code-example [htmlCode]="infoAlertCode"></app-code-example>
+    
     <div class="alert alert-neutral alert-dismissible fade show" role="alert">
       <i class="hgi hgi-stroke hgi-help-circle alert-icon"></i>
       <div>
@@ -61,8 +74,12 @@
       </div>
       <button type="button" class="btn-close" data-bs-dismiss="alert" [attr.aria-label]="'common.close' | translate"></button>
     </div>
+    
+    <app-code-example [htmlCode]="neutralAlertCode"></app-code-example>
     </section>
+    
     <section>
+    <h3 class="h5 mb-3">Side-bordered Alerts</h3>
     <div class="alert alert-side alert-success alert-dismissible fade show" role="alert">
       <i class="hgi hgi-stroke hgi-tick-02 alert-icon"></i>
       <div>
@@ -74,6 +91,9 @@
       </div>
       <button type="button" class="btn-close" data-bs-dismiss="alert" [attr.aria-label]="'common.close' | translate"></button>
     </div>
+    
+    <app-code-example [htmlCode]="sideSuccessAlertCode"></app-code-example>
+    
     <div class="alert alert-side alert-danger alert-dismissible fade show" role="alert">
       <i class="hgi hgi-stroke hgi-help-circle alert-icon"></i>
       <div>
@@ -85,6 +105,9 @@
       </div>
       <button type="button" class="btn-close" data-bs-dismiss="alert" [attr.aria-label]="'common.close' | translate"></button>
     </div>
+    
+    <app-code-example [htmlCode]="sideDangerAlertCode"></app-code-example>
+    
     <div class="alert alert-side alert-warning alert-dismissible fade show" role="alert">
       <i class="hgi hgi-stroke hgi-alert-02 alert-icon"></i>
       <div>
@@ -96,6 +119,9 @@
       </div>
       <button type="button" class="btn-close" data-bs-dismiss="alert" [attr.aria-label]="'common.close' | translate"></button>
     </div>
+    
+    <app-code-example [htmlCode]="sideWarningAlertCode"></app-code-example>
+    
     <div class="alert alert-side alert-info alert-dismissible fade show" role="alert">
       <i class="hgi hgi-stroke hgi-alert-02 alert-icon"></i>
       <div>
@@ -107,6 +133,9 @@
       </div>
       <button type="button" class="btn-close" data-bs-dismiss="alert" [attr.aria-label]="'common.close' | translate"></button>
     </div>
+    
+    <app-code-example [htmlCode]="sideInfoAlertCode"></app-code-example>
+    
     <div class="alert alert-side alert-neutral alert-dismissible fade show" role="alert">
       <i class="hgi hgi-stroke hgi-help-circle alert-icon"></i>
       <div>
@@ -118,6 +147,8 @@
       </div>
       <button type="button" class="btn-close" data-bs-dismiss="alert" [attr.aria-label]="'common.close' | translate"></button>
     </div>
+    
+    <app-code-example [htmlCode]="sideNeutralAlertCode"></app-code-example>
     </section>
     </div>
   </section>

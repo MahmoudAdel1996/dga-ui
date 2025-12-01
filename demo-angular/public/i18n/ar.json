@@ -226,5 +226,14 @@
     "subtle_link": "نمط رابط خفيف",
     "bold_link": "نمط رابط عريض",
     "decorated_link": "رابط مع تسطير متحرك"
+  },
+  "code": {
+    "show": "إظهار الكود",
+    "hide": "إخفاء الكود",
+    "copy": "نسخ الكود",
+    "copied": "تم النسخ!",
+    "html": "HTML",
+    "ts": "TypeScript",
+    "scss": "SCSS"
   }
 }

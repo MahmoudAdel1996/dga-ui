@@ -4,6 +4,8 @@
 
   <section class="demo-section">
     <h2>{{ 'tables.section_default' | translate }}</h2>
+    <p class="mb-4">Default table with checkboxes and link integration. The table includes checkbox inputs in the first column for row selection and links in data cells.</p>
+    
     <div class="table-responsive">
       <table class="table">
         <thead>
@@ -19,27 +21,35 @@
           <tr>
             <th scope="row"><input type="checkbox" class="form-check-input form-check-input-sm ripple"
                 id="chkNeutralMd"></th>
-            <td><a href="javascript:void(0);">Link</a></td>
+            <td><a href="javascript:void(0);">Mark</a></td>
             <td>Otto</td>
             <td>@mdo</td>
           </tr>
           <tr>
             <th scope="row"><input type="checkbox" class="form-check-input form-check-input-sm ripple" id="chkDemoMd">
             </th>
-            <td><a href="javascript:void(0);">Link</a></td>
+            <td><a href="javascript:void(0);">Jacob</a></td>
             <td>Thornton</td>
             <td>@fat</td>
           </tr>
           <tr>
             <th scope="row"><input type="checkbox" class="form-check-input form-check-input-sm ripple" id="chkDemoMd">
             </th>
-            <td><a href="javascript:void(0);">Link</a></td>
+            <td><a href="javascript:void(0);">John</a></td>
             <td>Doe</td>
             <td>@social</td>
           </tr>
         </tbody>
       </table>
     </div>
+
+    <app-code-example [htmlCode]="defaultTableCode" title="Default Table with Checkboxes"></app-code-example>
+  </section>
+
+  <section class="demo-section">
+    <h2>Side-Borderless Table</h2>
+    <p class="mb-4">Table without left and right borders using the <code>side-borderless</code> class. This creates a cleaner look by removing the side borders while maintaining horizontal dividers.</p>
+    
     <div class="table-responsive">
       <table class="table side-borderless">
         <thead>
@@ -55,27 +65,35 @@
           <tr>
             <th scope="row"><input type="checkbox" class="form-check-input form-check-input-sm ripple" id="chkDemoMd">
             </th>
-            <td><a href="javascript:void(0);">Link</a></td>
+            <td><a href="javascript:void(0);">Mark</a></td>
             <td>Otto</td>
             <td>@mdo</td>
           </tr>
           <tr>
             <th scope="row"><input type="checkbox" class="form-check-input form-check-input-sm ripple" id="chkDemoMd">
             </th>
-            <td><a href="javascript:void(0);">Link</a></td>
+            <td><a href="javascript:void(0);">Jacob</a></td>
             <td>Thornton</td>
             <td>@fat</td>
           </tr>
           <tr>
             <th scope="row"><input type="checkbox" class="form-check-input form-check-input-sm ripple" id="chkDemoMd">
             </th>
-            <td><a href="javascript:void(0);">Link</a></td>
+            <td><a href="javascript:void(0);">John</a></td>
             <td>Doe</td>
             <td>@social</td>
           </tr>
         </tbody>
       </table>
     </div>
+
+    <app-code-example [htmlCode]="sideBorderlessTableCode" title="Side-Borderless Table"></app-code-example>
+  </section>
+
+  <section class="demo-section">
+    <h2>Striped Table</h2>
+    <p class="mb-4">Table with alternating row colors using the <code>table-striped</code> class. This improves readability by creating visual separation between rows.</p>
+    
     <div class="table-responsive">
       <table class="table table-striped">
         <thead>
@@ -91,27 +109,35 @@
           <tr>
             <th scope="row"><input type="checkbox" class="form-check-input form-check-input-sm ripple" id="chkDemoMd">
             </th>
-            <td><a href="javascript:void(0);">Link</a></td>
+            <td><a href="javascript:void(0);">Mark</a></td>
             <td>Otto</td>
             <td>@mdo</td>
           </tr>
           <tr>
             <th scope="row"><input type="checkbox" class="form-check-input form-check-input-sm ripple" id="chkDemoMd">
             </th>
-            <td><a href="javascript:void(0);">Link</a></td>
+            <td><a href="javascript:void(0);">Jacob</a></td>
             <td>Thornton</td>
             <td>@fat</td>
           </tr>
           <tr>
             <th scope="row"><input type="checkbox" class="form-check-input form-check-input-sm ripple" id="chkDemoMd">
             </th>
-            <td><a href="javascript:void(0);">Link</a></td>
+            <td><a href="javascript:void(0);">John</a></td>
             <td>Doe</td>
             <td>@social</td>
           </tr>
         </tbody>
       </table>
     </div>
+
+    <app-code-example [htmlCode]="stripedTableCode" title="Striped Table"></app-code-example>
+  </section>
+
+  <section class="demo-section">
+    <h2>Striped + Side-Borderless Table</h2>
+    <p class="mb-4">Combination of striped rows and side-borderless styling using <code>table-striped side-borderless</code> classes. This creates a modern, clean appearance with enhanced readability.</p>
+    
     <div class="table-responsive">
       <table class="table table-striped side-borderless">
         <thead>
@@ -127,26 +153,137 @@
           <tr>
             <th scope="row"><input type="checkbox" class="form-check-input form-check-input-sm ripple" id="chkDemoMd">
             </th>
-            <td><a href="javascript:void(0);">Link</a></td>
+            <td><a href="javascript:void(0);">Mark</a></td>
             <td>Otto</td>
             <td>@mdo</td>
           </tr>
           <tr>
             <th scope="row"><input type="checkbox" class="form-check-input form-check-input-sm ripple" id="chkDemoMd">
             </th>
-            <td><a href="javascript:void(0);">Link</a></td>
+            <td><a href="javascript:void(0);">Jacob</a></td>
             <td>Thornton</td>
             <td>@fat</td>
           </tr>
           <tr>
             <th scope="row"><input type="checkbox" class="form-check-input form-check-input-sm ripple" id="chkDemoMd">
             </th>
-            <td><a href="javascript:void(0);">Link</a></td>
+            <td><a href="javascript:void(0);">John</a></td>
             <td>Doe</td>
             <td>@social</td>
           </tr>
         </tbody>
       </table>
     </div>
+
+    <app-code-example [htmlCode]="stripedSideBorderlessTableCode" title="Striped + Side-Borderless Table"></app-code-example>
+  </section>
+
+  <section class="demo-section">
+    <h2>Table with Links</h2>
+    <p class="mb-4">Comprehensive example showing multiple link types within table cells. Includes links for names, email addresses (mailto:), and action links.</p>
+    
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Department</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td><a href="javascript:void(0);">John Doe</a></td>
+            <td><a href="mailto:john.doe@example.com">john.doe@example.com</a></td>
+            <td>Engineering</td>
+            <td>
+              <a href="javascript:void(0);">Edit</a> | 
+              <a href="javascript:void(0);">Delete</a>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td><a href="javascript:void(0);">Jane Smith</a></td>
+            <td><a href="mailto:jane.smith@example.com">jane.smith@example.com</a></td>
+            <td>Marketing</td>
+            <td>
+              <a href="javascript:void(0);">Edit</a> | 
+              <a href="javascript:void(0);">Delete</a>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td><a href="javascript:void(0);">Mike Johnson</a></td>
+            <td><a href="mailto:mike.johnson@example.com">mike.johnson@example.com</a></td>
+            <td>Sales</td>
+            <td>
+              <a href="javascript:void(0);">Edit</a> | 
+              <a href="javascript:void(0);">Delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <app-code-example [htmlCode]="tableWithLinksCode" title="Table with Links in Cells"></app-code-example>
+  </section>
+
+  <section class="demo-section">
+    <h2>Responsive Table</h2>
+    <p class="mb-4">Table wrapped in <code>table-responsive</code> div to enable horizontal scrolling on smaller screens. Essential for tables with many columns to maintain usability on mobile devices.</p>
+    
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Department</th>
+            <th scope="col">Position</th>
+            <th scope="col">Hire Date</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>John</td>
+            <td>Doe</td>
+            <td>john.doe@example.com</td>
+            <td>Engineering</td>
+            <td>Senior Developer</td>
+            <td>2020-01-15</td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jane</td>
+            <td>Smith</td>
+            <td>jane.smith@example.com</td>
+            <td>Marketing</td>
+            <td>Marketing Manager</td>
+            <td>2019-06-20</td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Mike</td>
+            <td>Johnson</td>
+            <td>mike.johnson@example.com</td>
+            <td>Sales</td>
+            <td>Sales Representative</td>
+            <td>2021-03-10</td>
+            <td>Active</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <app-code-example [htmlCode]="responsiveTableCode" title="Responsive Table Wrapper"></app-code-example>
   </section>
 </div>

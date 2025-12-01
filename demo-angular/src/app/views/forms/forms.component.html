@@ -96,6 +96,35 @@
         </div>
       </div>
     </div>
+
+    <!-- Code Examples for Checkboxes -->
+    <div class="mt-4">
+      <h3 class="h6 mb-3">Primary Checkboxes</h3>
+      <app-code-example [htmlCode]="checkboxPrimaryCode"></app-code-example>
+    </div>
+    
+    <div class="mt-3">
+      <h3 class="h6 mb-3">Disabled Checkboxes</h3>
+      <app-code-example [htmlCode]="checkboxDisabledCode"></app-code-example>
+    </div>
+    
+    <div class="mt-3">
+      <h3 class="h6 mb-3">Readonly Checkboxes</h3>
+      <app-code-example [htmlCode]="checkboxReadonlyCode"></app-code-example>
+    </div>
+    
+    <div class="mt-3">
+      <h3 class="h6 mb-3">Neutral Checkboxes</h3>
+      <app-code-example [htmlCode]="checkboxNeutralCode"></app-code-example>
+    </div>
+    
+    <div class="mt-3">
+      <h3 class="h6 mb-3">Indeterminate Checkbox</h3>
+      <app-code-example 
+        [htmlCode]="checkboxIndeterminateHtmlCode" 
+        [tsCode]="checkboxIndeterminateTsCode">
+      </app-code-example>
+    </div>
   </section>
 
   <!-- RADIOS -->
@@ -176,6 +205,27 @@
         </div>
       </div>
     </div>
+
+    <!-- Code Examples for Radios -->
+    <div class="mt-4">
+      <h3 class="h6 mb-3">Primary Radio Buttons</h3>
+      <app-code-example [htmlCode]="radioPrimaryCode"></app-code-example>
+    </div>
+    
+    <div class="mt-3">
+      <h3 class="h6 mb-3">Disabled Radio Buttons</h3>
+      <app-code-example [htmlCode]="radioDisabledCode"></app-code-example>
+    </div>
+    
+    <div class="mt-3">
+      <h3 class="h6 mb-3">Readonly Radio Buttons</h3>
+      <app-code-example [htmlCode]="radioReadonlyCode"></app-code-example>
+    </div>
+    
+    <div class="mt-3">
+      <h3 class="h6 mb-3">Neutral Radio Buttons</h3>
+      <app-code-example [htmlCode]="radioNeutralCode"></app-code-example>
+    </div>
   </section>
 
   <!-- SWITCHES -->
@@ -198,6 +248,12 @@
         <input class="form-check-input" checked type="checkbox" role="switch" id="switchDisabled" disabled>
         <label class="form-check-label" for="switchDisabled">{{ 'forms.switch_disabled' | translate }}</label>
       </div>
+
+      <!-- Code Example for Switches -->
+      <div class="mt-4">
+        <h3 class="h6 mb-3">Switch Examples</h3>
+        <app-code-example [htmlCode]="switchCode"></app-code-example>
+      </div>
     </section>
   </div>
   <!-- TEXT INPUTS -->
@@ -216,6 +272,22 @@
       <label for="exampleFormControlTextarea1" class="form-label">Textarea</label>
       <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
+
+    <!-- Code Examples for Text Inputs -->
+    <div class="mt-4">
+      <h3 class="h6 mb-3">Email Input</h3>
+      <app-code-example [htmlCode]="textInputEmailCode"></app-code-example>
+    </div>
+    
+    <div class="mt-3">
+      <h3 class="h6 mb-3">Password Input</h3>
+      <app-code-example [htmlCode]="textInputPasswordCode"></app-code-example>
+    </div>
+    
+    <div class="mt-3">
+      <h3 class="h6 mb-3">Textarea</h3>
+      <app-code-example [htmlCode]="textInputTextareaCode"></app-code-example>
+    </div>
   </section>
 
   <!-- SELECT -->
@@ -230,6 +302,12 @@
         <option value="3">Three</option>
       </select>
     </div>
+
+    <!-- Code Example for Select -->
+    <div class="mt-4">
+      <h3 class="h6 mb-3">Select Dropdown</h3>
+      <app-code-example [htmlCode]="selectCode"></app-code-example>
+    </div>
   </section>
 
   <!-- RANGE -->
@@ -239,6 +317,12 @@
       <label for="customRange" class="form-label">Example range</label>
       <input type="range" class="form-range" id="customRange">
     </div>
+
+    <!-- Code Example for Range -->
+    <div class="mt-4">
+      <h3 class="h6 mb-3">Range Slider</h3>
+      <app-code-example [htmlCode]="rangeCode"></app-code-example>
+    </div>
   </section>
 
   <!-- INPUT SIZES -->
@@ -247,6 +331,12 @@
     <input class="form-control form-control-lg mb-2" type="text" placeholder="Large input" aria-label="Large input">
     <input class="form-control mb-2" type="text" placeholder="Default input" aria-label="Default input">
     <input class="form-control form-control-sm" type="text" placeholder="Small input" aria-label="Small input">
+
+    <!-- Code Example for Input Sizes -->
+    <div class="mt-4">
+      <h3 class="h6 mb-3">Input Size Variations</h3>
+      <app-code-example [htmlCode]="inputSizesCode"></app-code-example>
+    </div>
   </section>
 
   <!-- FORM ACTION -->
