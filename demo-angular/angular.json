@@ -33,9 +33,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "preserveSymlinks": true,
-            "watch": true,
-            "poll": 2000
+            "preserveSymlinks": true
           },
           "configurations": {
             "production": {
