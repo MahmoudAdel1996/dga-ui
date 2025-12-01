@@ -1,0 +1,257 @@
+<div class="container py-5">
+  <h1 class="display-4 mb-4">{{ 'forms.title' | translate }}</h1>
+  <p class="lead mb-5">{{ 'forms.subtitle' | translate }}</p>
+
+  <!-- CHECKBOXES -->
+  <section class="mb-5" aria-labelledby="checkboxesHeading">
+    <h2 id="checkboxesHeading" class="h4 mb-3">{{ 'forms.checkboxes' | translate }}</h2>
+    <div class="d-flex gap-2 mb-2">
+        <input type="checkbox" class="form-check-input ripple" id="chkDemoMd" aria-label="Demo checkbox medium" checked>
+        <input type="checkbox" class="form-check-input ripple form-check-input-sm" id="chkDemoSm" aria-label="Demo checkbox small" checked>
+        <input type="checkbox" class="form-check-input ripple form-check-input-xs" id="chkDemoXs" aria-label="Demo checkbox extra small" checked>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-3">
+        <h3 class="h6 mb-2">Primary</h3>
+        <div class="form-check form-check-md mb-2">
+          <input type="checkbox" class="form-check-input ripple" id="chkPrimaryMd" checked>
+          <label class="form-check-label" for="chkPrimaryMd">Medium</label>
+        </div>
+        <div class="form-check form-check-md mb-2">
+          <input type="checkbox" class="form-check-input ripple indeterminate-check" id="chkPrimaryIndeterminateMd">
+          <label class="form-check-label" for="chkPrimaryIndeterminateMd">Medium indeterminate</label>
+        </div>
+        <div class="form-check form-check-sm mb-2">
+          <input type="checkbox" class="form-check-input ripple" id="chkPrimarySm" checked>
+          <label class="form-check-label" for="chkPrimarySm">Small</label>
+        </div>
+        <div class="form-check form-check-xs mb-2">
+          <input type="checkbox" class="form-check-input ripple" id="chkPrimaryXs" checked>
+          <label class="form-check-label" for="chkPrimaryXs">Extra small</label>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h3 class="h6 mb-2">Disabled</h3>
+        <div class="form-check form-check-md mb-2">
+          <input type="checkbox" class="form-check-input ripple" id="chkDisabledMd" disabled>
+          <label class="form-check-label" for="chkDisabledMd">Medium unchecked</label>
+        </div>
+        <div class="form-check form-check-md mb-2">
+          <input type="checkbox" class="form-check-input ripple" id="chkDisabledCheckedMd" checked disabled>
+          <label class="form-check-label" for="chkDisabledCheckedMd">Medium checked</label>
+        </div>
+        <div class="form-check form-check-md mb-2">
+          <input type="checkbox" class="form-check-input ripple indeterminate-check" id="chkDisabledIndeterminateMd" disabled>
+          <label class="form-check-label" for="chkDisabledIndeterminateMd">Medium indeterminate</label>
+        </div>
+        <div class="form-check form-check-sm mb-2">
+          <input type="checkbox" class="form-check-input ripple" id="chkDisabledSm" disabled>
+          <label class="form-check-label" for="chkDisabledSm">Small unchecked</label>
+        </div>
+        <div class="form-check form-check-xs mb-2">
+          <input type="checkbox" class="form-check-input ripple" id="chkDisabledXs" checked disabled>
+          <label class="form-check-label" for="chkDisabledXs">Extra small checked</label>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h3 class="h6 mb-2">Readonly</h3>
+        <div class="form-check form-check-md mb-2">
+          <input type="checkbox" class="form-check-input ripple" id="chkReadonlyMd" readonly>
+          <label class="form-check-label" for="chkReadonlyMd">Medium unchecked</label>
+        </div>
+        <div class="form-check form-check-md mb-2">
+          <input type="checkbox" class="form-check-input ripple" id="chkReadonlyCheckedMd" checked readonly>
+          <label class="form-check-label" for="chkReadonlyCheckedMd">Medium checked</label>
+        </div>
+        <div class="form-check form-check-md mb-2">
+          <input type="checkbox" class="form-check-input ripple indeterminate-check" id="chkReadonlyIndeterminateMd" readonly>
+          <label class="form-check-label" for="chkReadonlyIndeterminateMd">Medium indeterminate</label>
+        </div>
+        <div class="form-check form-check-sm mb-2">
+          <input type="checkbox" class="form-check-input ripple" id="chkReadonlySm" readonly>
+          <label class="form-check-label" for="chkReadonlySm">Small unchecked</label>
+        </div>
+        <div class="form-check form-check-xs mb-2">
+          <input type="checkbox" class="form-check-input ripple" id="chkReadonlyXs" checked readonly>
+          <label class="form-check-label" for="chkReadonlyXs">Extra small checked</label>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h3 class="h6 mb-2">Neutral</h3>
+        <div class="form-check form-check-neutral form-check-md mb-2">
+          <input type="checkbox" class="form-check-input ripple" id="chkNeutralMd" checked>
+          <label class="form-check-label" for="chkNeutralMd">Medium</label>
+        </div>
+        <div class="form-check form-check-neutral form-check-md mb-2">
+          <input type="checkbox" class="form-check-input ripple indeterminate-check" id="chkNeutralIndeterminateMd">
+          <label class="form-check-label" for="chkNeutralIndeterminateMd">Medium indeterminate</label>
+        </div>
+        <div class="form-check form-check-neutral form-check-sm mb-2">
+          <input type="checkbox" class="form-check-input ripple" id="chkNeutralSm" checked>
+          <label class="form-check-label" for="chkNeutralSm">Small</label>
+        </div>
+        <div class="form-check form-check-neutral form-check-xs mb-2">
+          <input type="checkbox" class="form-check-input ripple" id="chkNeutralXs" checked>
+          <label class="form-check-label" for="chkNeutralXs">Extra small</label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RADIOS -->
+  <section class="mb-5" aria-labelledby="radiosHeading">
+    <h2 id="radiosHeading" class="h4 mb-3">{{ 'forms.radios' | translate }}</h2>
+    <div class="d-flex gap-2 mb-2">
+        <input class="form-check-input ripple" type="radio" name="radioDemo" id="radDemoMd" aria-label="Demo radio medium" checked>
+        <input class="form-check-input form-check-input-sm ripple" type="radio" name="radioDemo" id="radDemoSm" aria-label="Demo radio small">
+        <input class="form-check-input form-check-input-xs ripple" type="radio" name="radioDemo" id="radDemoXs" aria-label="Demo radio extra small">
+    </div>
+    <div class="row g-3">
+      <div class="col-md-3">
+        <h3 class="h6 mb-2">Primary</h3>
+        <div class="form-check form-check-md mb-2">
+          <input class="form-check-input ripple" type="radio" name="radioPrimaryGroup" id="radPrimaryCheckedMd" checked>
+          <label class="form-check-label" for="radPrimaryCheckedMd">Medium</label>
+        </div>
+        <div class="form-check form-check-sm mb-2">
+          <input class="form-check-input ripple" type="radio" name="radioPrimaryGroup" id="radPrimaryCheckedSm">
+          <label class="form-check-label" for="radPrimaryCheckedSm">Small</label>
+        </div>
+        <div class="form-check form-check-xs mb-2">
+          <input class="form-check-input ripple" type="radio" name="radioPrimaryGroup" id="radPrimaryCheckedXs">
+          <label class="form-check-label" for="radPrimaryCheckedXs">Extra small</label>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h3 class="h6 mb-2">Disabled</h3>
+        <div class="form-check form-check-md mb-2">
+          <input class="form-check-input ripple" type="radio" name="radioDisabled" id="radDisabledMd" disabled>
+          <label class="form-check-label" for="radDisabledMd">Medium unchecked</label>
+        </div>
+        <div class="form-check form-check-md mb-2">
+          <input class="form-check-input ripple" type="radio" name="radioDisabled" id="radDisabledCheckedMd" checked disabled>
+          <label class="form-check-label" for="radDisabledCheckedMd">Medium checked</label>
+        </div>
+        <div class="form-check form-check-sm mb-2">
+          <input class="form-check-input ripple" type="radio" name="radioDisabled" id="radDisabledSm" disabled>
+          <label class="form-check-label" for="radDisabledSm">Small unchecked</label>
+        </div>
+        <div class="form-check form-check-xs mb-2">
+          <input class="form-check-input ripple" type="radio" name="radioDisabled" id="radDisabledXs" checked disabled>
+          <label class="form-check-label" for="radDisabledXs">Extra small checked</label>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h3 class="h6 mb-2">Readonly</h3>
+        <div class="form-check form-check-md mb-2">
+          <input class="form-check-input ripple" type="radio" name="radioReadonly" id="radReadonlyMd" readonly>
+          <label class="form-check-label" for="radReadonlyMd">Medium unchecked</label>
+        </div>
+        <div class="form-check form-check-md mb-2">
+          <input class="form-check-input ripple" type="radio" name="radioReadonly" id="radReadonlyCheckedMd" checked readonly>
+          <label class="form-check-label" for="radReadonlyCheckedMd">Medium checked</label>
+        </div>
+        <div class="form-check form-check-sm mb-2">
+          <input class="form-check-input ripple" type="radio" name="radioReadonly" id="radReadonlySm" readonly>
+          <label class="form-check-label" for="radReadonlySm">Small unchecked</label>
+        </div>
+        <div class="form-check form-check-xs mb-2">
+          <input class="form-check-input ripple" type="radio" name="radioReadonly" id="radReadonlyXs" checked readonly>
+          <label class="form-check-label" for="radReadonlyXs">Extra small checked</label>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h3 class="h6 mb-2">Neutral</h3>
+        <div class="form-check form-check-neutral form-check-md mb-2">
+          <input class="form-check-input ripple" type="radio" name="radioNeutral" id="radNeutralMd" checked>
+          <label class="form-check-label" for="radNeutralMd">Medium</label>
+        </div>
+        <div class="form-check form-check-neutral form-check-sm mb-2">
+          <input class="form-check-input ripple" type="radio" name="radioNeutral" id="radNeutralSm">
+          <label class="form-check-label" for="radNeutralSm">Small</label>
+        </div>
+        <div class="form-check form-check-neutral form-check-xs mb-2">
+          <input class="form-check-input ripple" type="radio" name="radioNeutral" id="radNeutralXs">
+          <label class="form-check-label" for="radNeutralXs">Extra small</label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SWITCHES -->
+  <div class="d-flex gap-2 justify-content-between">
+    <section  class="mb-5" aria-labelledby="switchesHeading">
+      <h2 id="switchesHeading" class="h4 mb-3">{{ 'forms.switches' | translate }}</h2>
+      <div class="form-check form-switch mb-2">
+        <input class="form-check-input" type="checkbox" role="switch" id="switchDefault">
+        <label class="form-check-label" for="switchDefault">{{ 'forms.switch_default' | translate }}</label>
+      </div>
+      <div class="form-check form-switch mb-2">
+        <input class="form-check-input" type="checkbox" role="switch" id="switchDisabled" disabled>
+        <label class="form-check-label" for="switchDisabled">{{ 'forms.switch_disabled' | translate }}</label>
+      </div>
+      <div class="form-check form-switch mb-2">
+        <input class="form-check-input" checked type="checkbox" role="switch" id="switchDefault">
+        <label class="form-check-label" for="switchDefault">{{ 'forms.switch_checked' | translate }}</label>
+      </div>
+      <div class="form-check form-switch mb-2">
+        <input class="form-check-input" checked type="checkbox" role="switch" id="switchDisabled" disabled>
+        <label class="form-check-label" for="switchDisabled">{{ 'forms.switch_disabled' | translate }}</label>
+      </div>
+    </section>
+  </div>
+  <!-- TEXT INPUTS -->
+  <section class="mb-5" aria-labelledby="textInputsHeading">
+    <h2 id="textInputsHeading" class="h4 mb-3">{{ 'forms.text_inputs' | translate }}</h2>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="name@example.com">
+      <div class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Textarea</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+  </section>
+
+  <!-- SELECT -->
+  <section class="mb-5" aria-labelledby="selectHeading">
+    <h2 id="selectHeading" class="h4 mb-3">{{ 'forms.select' | translate }}</h2>
+    <div class="mb-3">
+      <label for="exampleSelect" class="form-label">Example select</label>
+      <select class="form-select" id="exampleSelect">
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- RANGE -->
+  <section class="mb-5" aria-labelledby="rangeHeading">
+    <h2 id="rangeHeading" class="h4 mb-3">{{ 'forms.range' | translate }}</h2>
+    <div class="mb-3">
+      <label for="customRange" class="form-label">Example range</label>
+      <input type="range" class="form-range" id="customRange">
+    </div>
+  </section>
+
+  <!-- INPUT SIZES -->
+  <section class="mb-5" aria-labelledby="sizesHeading">
+    <h2 id="sizesHeading" class="h4 mb-3">{{ 'forms.input_sizes' | translate }}</h2>
+    <input class="form-control form-control-lg mb-2" type="text" placeholder="Large input" aria-label="Large input">
+    <input class="form-control mb-2" type="text" placeholder="Default input" aria-label="Default input">
+    <input class="form-control form-control-sm" type="text" placeholder="Small input" aria-label="Small input">
+  </section>
+
+  <!-- FORM ACTION -->
+  <section class="mb-5" aria-labelledby="actionsHeading">
+    <h2 id="actionsHeading" class="h4 mb-3">{{ 'forms.actions' | translate }}</h2>
+    <button type="button" class="btn btn-primary">Submit</button>
+  </section>
+</div>

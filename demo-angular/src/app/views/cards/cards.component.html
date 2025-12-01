@@ -1,0 +1,132 @@
+<div class="container py-5">
+  <h1 class="display-4 mb-4">{{ 'cards.title' | translate }}</h1>
+  <p class="lead mb-5">{{ 'cards.subtitle' | translate }}</p>
+
+  <section class="demo-section">
+    <h2 class="mb-4">{{ 'cards.section_examples' | translate }}</h2>
+    
+    <div class="demo-card-grid">
+      <!-- Card with icon -->
+      <div class="card" tabindex="0">
+        <div class="card-header">
+          Featured
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="hgi hgi-stroke hgi-checkmark-circle-02 card-title-icon"></i>
+          </h5>
+          <h6 class="card-subtitle mb-2">{{ 'cards.card_title' | translate }}</h6>
+          <p class="card-text">{{ 'cards.card_text' | translate }}</p>
+          <div class="card-footer">
+            <a href="javascript:void(0);" class="btn btn-outline-secondary">{{ 'cards.action_secondary' | translate }}</a>
+            <a href="javascript:void(0);" class="btn btn-primary">{{ 'cards.action' | translate }}</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card with icon and checkbox -->
+      <div class="card disabled" tabindex="0">
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="hgi hgi-stroke hgi-checkmark-circle-02 card-title-icon"></i>
+            <input class="card-title-checked  form-check-input ripple" disabled type="checkbox" value="" id="check1" aria-label="{{ 'cards.select_card' | translate }}">
+          </h5>
+          <h6 class="card-subtitle mb-2">{{ 'cards.card_title' | translate }}</h6>
+          <p class="card-text">{{ 'cards.card_text' | translate }}</p>
+          <div class="card-footer">
+            <a href="javascript:void(0);" class="btn btn-outline-secondary disabled">{{ 'cards.action_secondary' | translate }}</a>
+            <a href="javascript:void(0);" class="btn btn-primary disabled">{{ 'cards.action' | translate }}</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card with checkbox only -->
+      <div class="card" tabindex="0">
+        <div class="card-body">
+          <h5 class="card-title">
+            <input class="card-title-checked  form-check-input ripple" type="checkbox" value="" id="check2" aria-label="{{ 'cards.select_card' | translate }}">
+          </h5>
+          <h6 class="card-subtitle mb-2">{{ 'cards.card_title' | translate }}</h6>
+          <p class="card-text">{{ 'cards.card_text' | translate }}</p>
+          <div class="card-footer">
+            <a href="javascript:void(0);" class="btn btn-outline-secondary">{{ 'cards.action_secondary' | translate }}</a>
+            <a href="javascript:void(0);" class="btn btn-primary">{{ 'cards.action' | translate }}</a>
+          </div>
+        </div>
+      </div>
+
+      
+      <!-- Card without shadow only -->
+      <div class="card shadow-none" tabindex="0">
+        <div class="card-body">
+          <h5 class="card-title">
+            <input class="card-title-checked  form-check-input ripple" type="checkbox" value="" id="check2" aria-label="{{ 'cards.select_card' | translate }}">
+          </h5>
+          <h6 class="card-subtitle mb-2">{{ 'cards.card_title' | translate }}</h6>
+          <p class="card-text">{{ 'cards.card_text' | translate }}</p>
+          <div class="card-footer">
+            <a href="javascript:void(0);" class="btn btn-outline-secondary">{{ 'cards.action_secondary' | translate }}</a>
+            <a href="javascript:void(0);" class="btn btn-primary">{{ 'cards.action' | translate }}</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Expandable card with checkbox -->
+      <div class="card" tabindex="0" [class.expanded]="isExpanded(1)">
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="hgi hgi-stroke hgi-checkmark-circle-02 card-title-icon"></i>
+            <input class="card-title-checked  form-check-input ripple" type="checkbox" value="" id="check3" aria-label="{{ 'cards.select_card' | translate }}">
+          </h5>
+          <h6 class="card-subtitle mb-2">{{ 'cards.expandable_title' | translate }}</h6>
+          <p class="card-text">{{ 'cards.expandable_text' | translate }}</p>
+          
+          @if (isExpanded(1)) {
+            <div class="card-expanded-content">
+              <p class="mt-3">{{ 'cards.expanded_content' | translate }}</p>
+              <ul>
+                <li>{{ 'cards.detail_1' | translate }}</li>
+                <li>{{ 'cards.detail_2' | translate }}</li>
+                <li>{{ 'cards.detail_3' | translate }}</li>
+              </ul>
+            </div>
+          }
+          
+          <div class="card-footer">
+            <i class="hgi hgi-stroke hgi-arrow-up-01 card-expanded-icon" [class.hgi-arrow-up-01]="isExpanded(1)" [class.hgi-arrow-down-01]="!isExpanded(1)" (click)="toggleCard(1)"></i>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Expandable card -->
+      <div class="card" tabindex="0" [class.expanded]="isExpanded(2)">
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="hgi hgi-stroke hgi-checkmark-circle-02 card-title-icon"></i>
+          </h5>
+          <h6 class="card-subtitle mb-2">{{ 'cards.expandable_title' | translate }}</h6>
+          <p class="card-text">{{ 'cards.expandable_text' | translate }}</p>
+          
+          @if (isExpanded(2)) {
+            <div class="card-expanded-content">
+              <p class="mt-3">{{ 'cards.expanded_content' | translate }}</p>
+              <ul>
+                <li>{{ 'cards.detail_1' | translate }}</li>
+                <li>{{ 'cards.detail_2' | translate }}</li>
+                <li>{{ 'cards.detail_3' | translate }}</li>
+              </ul>
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <button class="btn btn-sm btn-primary">{{ 'cards.action' | translate }}</button>
+                <button class="btn btn-sm btn-outline-secondary">{{ 'cards.cancel' | translate }}</button>
+              </div>
+            </div>
+          }
+          
+          <div class="card-footer">
+            <i class="hgi hgi-stroke hgi-arrow-up-01 card-expanded-icon" [class.hgi-arrow-up-01]="isExpanded(2)" [class.hgi-arrow-down-01]="!isExpanded(2)" (click)="toggleCard(2)"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

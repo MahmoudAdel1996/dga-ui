@@ -1,0 +1,52 @@
+<div class="app-layout" [class.sidebar-collapsed]="!sidebarOpen()">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h1 class="logo">SDGA</h1>
+      <p class="tagline">{{ 'app.tagline' | translate }}</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      @for (group of menuItems; track group.groupKey) {
+        <div class="nav-group">
+          <h3 class="nav-group-title">{{ group.groupKey | translate }}</h3>
+          <ul class="nav-list">
+            @for (item of group.items; track item.id) {
+              <li 
+                class="nav-item" 
+                [class.active]="router.url === item.route"
+                (click)="navigateTo(item.route)"
+              >
+                <span class="nav-icon">{{ item.icon }}</span>
+                <span class="nav-label">{{ item.labelKey | translate }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </nav>
+
+    <div class="sidebar-footer">
+      <p class="version">{{ 'app.version' | translate }}</p>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="top-bar">
+      <button class="menu-toggle" (click)="toggleSidebar()" [attr.aria-label]="'common.toggle_menu' | translate">
+        <span class="hamburger">☰</span>
+      </button>
+      <h2 class="page-title">{{ 'app.title' | translate }}</h2>
+      <div class="top-bar-actions">
+        <button class="btn btn-sm btn-outline-primary" (click)="toggleLanguage()" [attr.aria-label]="'common.toggle_language' | translate">
+          {{ 'common.toggle_language' | translate }}
+        </button>
+      </div>
+    </header>
+
+    <div class="content-area">
+      <router-outlet />
+    </div>
+  </main>
+</div>

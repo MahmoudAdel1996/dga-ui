@@ -1,0 +1,131 @@
+<div class="container py-5">
+    <h1 class="display-4 mb-4">{{ 'toasts.title' | translate }}</h1>
+    <p class="lead mb-5">{{ 'toasts.subtitle' | translate }}</p>
+
+    <section class="demo-section mb-5">
+        <h2 class="mt-5">{{ 'toasts.section_variants' | translate }}</h2>
+        <div class="d-flex flex-wrap gap-3">
+            <div class="toast-container">
+                <div class="toast show fade toast-success" role="alert" aria-live="polite" aria-atomic="true">
+                    <div class="toast-icon">
+                        <i class="hgi hgi-stroke hgi-checkmark-circle-02 toast-icon"></i>
+                    </div>
+                    <div class="toast-content">
+                        <div class="toast-header">
+                            <strong>{{ 'toasts.success' | translate }}</strong>
+                        </div>
+                        <div class="toast-body">
+                            {{ 'toasts.success_text' | translate }}
+                        </div>
+                        <div class="toast-footer">
+                            <button type="button" class="btn btn-subtle btn-sm">{{ 'toasts.action' | translate
+                                }}</button>
+                            <button type="button" class="btn btn-subtle btn-sm" data-bs-dismiss="toast"
+                                aria-label="Close">{{ 'toasts.dismiss' | translate }}</button>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="toast show fade toast-success" role="alert" aria-live="polite" aria-atomic="true">
+                <div class="toast-icon">
+                    <i class="hgi hgi-stroke hgi-checkmark-circle-02 toast-icon"></i>
+                </div>
+                <div class="toast-content">
+                    <div class="toast-header">
+                        <strong>{{ 'toasts.success' | translate }}</strong>
+                    </div>
+                    <div class="toast-body">
+                        {{ 'toasts.success_text' | translate }}
+                    </div>
+                    <div class="toast-footer">
+                        <button type="button" class="btn btn-subtle btn-sm">{{ 'toasts.action' | translate
+                            }}</button>
+                        <button type="button" class="btn btn-subtle btn-sm" data-bs-dismiss="toast"
+                            aria-label="Close">{{ 'toasts.dismiss' | translate }}</button>
+                    </div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast show fade toast-danger" role="alert" aria-live="polite" aria-atomic="true">
+                <div class="toast-icon">
+                    <i class="hgi hgi-stroke hgi-help-circle toast-icon"></i>
+                </div>
+                <div class="toast-content">
+                    <div class="toast-header">
+                        <strong>{{ 'toasts.danger' | translate }}</strong>
+                    </div>
+                    <div class="toast-body">
+                        {{ 'toasts.danger_text' | translate }}
+                    </div>
+                    <div class="toast-footer">
+                        <button type="button" class="btn btn-subtle btn-sm">{{ 'toasts.action' | translate }}</button>
+                        <button type="button" class="btn btn-subtle btn-sm" data-bs-dismiss="toast"
+                            aria-label="Close">{{ 'toasts.dismiss' | translate }}</button>
+                    </div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+
+            <div class="toast show fade toast-warning" role="alert" aria-live="polite" aria-atomic="true">
+                <div class="toast-icon">
+                    <i class="hgi hgi-stroke hgi-alert-02 toast-icon"></i>
+                </div>
+                <div class="toast-content">
+                    <div class="toast-header">
+                        <strong>{{ 'toasts.warning' | translate }}</strong>
+                    </div>
+                    <div class="toast-body">
+                        {{ 'toasts.warning_text' | translate }}
+                    </div>
+                    <div class="toast-footer">
+                        <button type="button" class="btn btn-subtle btn-sm">{{ 'toasts.action' | translate }}</button>
+                        <button type="button" class="btn btn-subtle btn-sm" data-bs-dismiss="toast"
+                            aria-label="Close">{{ 'toasts.dismiss' | translate }}</button>
+                    </div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+
+            <div class="toast show fade toast-info" role="alert" aria-live="polite" aria-atomic="true">
+                <div class="toast-icon">
+                    <i class="hgi hgi-stroke hgi-help-circle toast-icon"></i>
+                </div>
+                <div class="toast-content">
+                    <div class="toast-header">
+                        <strong>{{ 'toasts.info' | translate }}</strong>
+                    </div>
+                    <div class="toast-body">
+                        {{ 'toasts.info_text' | translate }}
+                    </div>
+                    <div class="toast-footer">
+                        <button type="button" class="btn btn-subtle btn-sm">{{ 'toasts.action' | translate }}</button>
+                        <button type="button" class="btn btn-subtle btn-sm" data-bs-dismiss="toast"
+                            aria-label="Close">{{ 'toasts.dismiss' | translate }}</button>
+                    </div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+
+            <div class="toast show fade toast-neutral" role="alert" aria-live="polite" aria-atomic="true">
+                <div class="toast-icon">
+                    <i class="hgi hgi-stroke hgi-help-circle toast-icon"></i>
+                </div>
+                <div class="toast-content">
+                    <div class="toast-header">
+                        <strong>{{ 'toasts.neutral' | translate }}</strong>
+                    </div>
+                    <div class="toast-body">
+                        {{ 'toasts.neutral_text' | translate }}
+                    </div>
+                    <div class="toast-footer">
+                        <button type="button" class="btn btn-subtle btn-sm">{{ 'toasts.action' | translate }}</button>
+                        <button type="button" class="btn btn-subtle btn-sm" data-bs-dismiss="toast"
+                            aria-label="Close">{{ 'toasts.dismiss' | translate }}</button>
+                    </div>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </section>
+</div>

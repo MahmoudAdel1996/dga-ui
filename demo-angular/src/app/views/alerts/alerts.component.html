@@ -1,0 +1,124 @@
+<div class="container py-5">
+  <h1 class="display-4 mb-4">{{ 'alerts.title' | translate }}</h1>
+  <p class="lead mb-5">{{ 'alerts.subtitle' | translate }}</p>
+
+  <section class="demo-section">
+    <h2>{{ 'alerts.section_dismissible' | translate }}</h2>
+    <div class="d-flex flex-wrap gap-3">
+    <section>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <i class="hgi hgi-stroke hgi-tick-02 alert-icon"></i>
+      <div>
+        <strong class="alert-title">{{ 'alerts.success' | translate }}</strong> {{ 'alerts.success_text' | translate }}
+        <div class="alert-footer">
+          <button type="button" class="btn btn-subtle">{{ 'buttons.normal' | translate }}</button>
+          <button type="button" class="btn btn-subtle">{{ 'buttons.normal' | translate }}</button>
+        </div>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" [attr.aria-label]="'common.close' | translate"></button>
+    </div>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <i class="hgi hgi-stroke hgi-help-circle alert-icon"></i>
+      <div>
+        <strong class="alert-title">{{ 'alerts.danger' | translate }}</strong> {{ 'alerts.danger_text' | translate }}
+        <div class="alert-footer">
+          <button type="button" class="btn btn-subtle">{{ 'buttons.normal' | translate }}</button>
+          <button type="button" class="btn btn-subtle">{{ 'buttons.normal' | translate }}</button>
+        </div>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" [attr.aria-label]="'common.close' | translate"></button>
+    </div>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <i class="hgi hgi-stroke hgi-alert-02 alert-icon"></i>
+      <div>
+        <strong class="alert-title">{{ 'alerts.warning' | translate }}</strong> {{ 'alerts.warning_text' | translate }}
+        <div class="alert-footer">
+          <button type="button" class="btn btn-subtle">{{ 'buttons.normal' | translate }}</button>
+          <button type="button" class="btn btn-subtle">{{ 'buttons.normal' | translate }}</button>
+        </div>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" [attr.aria-label]="'common.close' | translate"></button>
+    </div>
+     <div class="alert alert-info alert-dismissible fade show" role="alert">
+      <i class="hgi hgi-stroke hgi-help-circle alert-icon"></i>
+      <div>
+        <strong class="alert-title">{{ 'alerts.info' | translate }}</strong> {{ 'alerts.info_text' | translate }}
+        <div class="alert-footer">
+          <button type="button" class="btn btn-subtle">{{ 'buttons.normal' | translate }}</button>
+          <button type="button" class="btn btn-subtle">{{ 'buttons.normal' | translate }}</button>
+        </div>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" [attr.aria-label]="'common.close' | translate"></button>
+    </div>
+    <div class="alert alert-neutral alert-dismissible fade show" role="alert">
+      <i class="hgi hgi-stroke hgi-help-circle alert-icon"></i>
+      <div>
+        <strong class="alert-title">{{ 'alerts.neutral' | translate }}</strong> {{ 'alerts.neutral_text' | translate }}
+        <div class="alert-footer">
+          <button type="button" class="btn btn-subtle">{{ 'buttons.normal' | translate }}</button>
+          <button type="button" class="btn btn-subtle">{{ 'buttons.normal' | translate }}</button>
+        </div>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" [attr.aria-label]="'common.close' | translate"></button>
+    </div>
+    </section>
+    <section>
+    <div class="alert alert-side alert-success alert-dismissible fade show" role="alert">
+      <i class="hgi hgi-stroke hgi-tick-02 alert-icon"></i>
+      <div>
+        <strong class="alert-title">{{ 'alerts.success' | translate }}</strong> {{ 'alerts.success_text' | translate }}
+        <div class="alert-footer">
+          <button type="button" class="btn btn-subtle">{{ 'buttons.normal' | translate }}</button>
+          <button type="button" class="btn btn-subtle">{{ 'buttons.normal' | translate }}</button>
+        </div>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" [attr.aria-label]="'common.close' | translate"></button>
+    </div>
+    <div class="alert alert-side alert-danger alert-dismissible fade show" role="alert">
+      <i class="hgi hgi-stroke hgi-help-circle alert-icon"></i>
+      <div>
+        <strong class="alert-title">{{ 'alerts.danger' | translate }}</strong> {{ 'alerts.danger_text' | translate }}
+        <div class="alert-footer">
+          <button type="button" class="btn btn-subtle">{{ 'buttons.normal' | translate }}</button>
+          <button type="button" class="btn btn-subtle">{{ 'buttons.normal' | translate }}</button>
+        </div>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" [attr.aria-label]="'common.close' | translate"></button>
+    </div>
+    <div class="alert alert-side alert-warning alert-dismissible fade show" role="alert">
+      <i class="hgi hgi-stroke hgi-alert-02 alert-icon"></i>
+      <div>
+        <strong class="alert-title">{{ 'alerts.warning' | translate }}</strong> {{ 'alerts.warning_text' | translate }}
+        <div class="alert-footer">
+          <button type="button" class="btn btn-subtle">{{ 'buttons.normal' | translate }}</button>
+          <button type="button" class="btn btn-subtle">{{ 'buttons.normal' | translate }}</button>
+        </div>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" [attr.aria-label]="'common.close' | translate"></button>
+    </div>
+    <div class="alert alert-side alert-info alert-dismissible fade show" role="alert">
+      <i class="hgi hgi-stroke hgi-alert-02 alert-icon"></i>
+      <div>
+        <strong class="alert-title">{{ 'alerts.info' | translate }}</strong> {{ 'alerts.info_text' | translate }}
+        <div class="alert-footer">
+          <button type="button" class="btn btn-subtle">{{ 'buttons.normal' | translate }}</button>
+          <button type="button" class="btn btn-subtle">{{ 'buttons.normal' | translate }}</button>
+        </div>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" [attr.aria-label]="'common.close' | translate"></button>
+    </div>
+    <div class="alert alert-side alert-neutral alert-dismissible fade show" role="alert">
+      <i class="hgi hgi-stroke hgi-help-circle alert-icon"></i>
+      <div>
+        <strong class="alert-title">{{ 'alerts.neutral' | translate }}</strong> {{ 'alerts.neutral_text' | translate }}
+        <div class="alert-footer">
+          <button type="button" class="btn btn-subtle">{{ 'buttons.normal' | translate }}</button>
+          <button type="button" class="btn btn-subtle">{{ 'buttons.normal' | translate }}</button>
+        </div>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" [attr.aria-label]="'common.close' | translate"></button>
+    </div>
+    </section>
+    </div>
+  </section>
+</div>

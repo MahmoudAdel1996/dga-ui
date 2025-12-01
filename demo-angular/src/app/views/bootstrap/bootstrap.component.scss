@@ -1,0 +1,91 @@
+.demo-section {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+  
+  h2 {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #1B8354;
+  }
+  
+  h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    color: #384250;
+  }
+}
+
+.component-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  align-items: flex-start;
+  
+  > * {
+    flex: 0 0 auto;
+  }
+}
+
+.demo-card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.toast-container-demo {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1090;
+}
+
+// Radius Showcase
+.radius-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.radius-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.radius-box {
+  width: 180px;
+  height: 140px;
+  background-color: #ffffff;
+  border: 1px solid #D2D6DB;
+  
+  &.circle {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+.radius-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111927;
+}
+
+.radius-value {
+  font-size: 0.875rem;
+  color: #4D5761;
+}
+
+.radius-pixels {
+  font-size: 0.75rem;
+  color: #6C737F;
+}
