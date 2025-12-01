@@ -5,8 +5,9 @@
   <section class="demo-section">
     <h2 class="mb-4">{{ 'cards.section_examples' | translate }}</h2>
     
-    <div class="demo-card-grid">
-      <!-- Card with icon -->
+    <!-- Card with icon -->
+    <h3 class="mb-3">Card with Icon</h3>
+    <div class="demo-card-grid mb-3">
       <div class="card" tabindex="0">
         <div class="card-body">
           <h5 class="card-title">
@@ -20,8 +21,31 @@
           </div>
         </div>
       </div>
+    </div>
+    <app-code-example [htmlCode]="cardWithIconCode" title="Card with Icon and Header"></app-code-example>
       
-      <!-- Card with icon and checkbox -->
+    <!-- Card with checkbox -->
+    <h3 class="mb-3 mt-5">Card with Checkbox</h3>
+    <div class="demo-card-grid mb-3">
+      <div class="card" tabindex="0">
+        <div class="card-body">
+          <h5 class="card-title">
+            <input class="card-title-checked  form-check-input ripple" type="checkbox" value="" id="check2" aria-label="{{ 'cards.select_card' | translate }}">
+          </h5>
+          <h6 class="card-subtitle mb-2">{{ 'cards.card_title' | translate }}</h6>
+          <p class="card-text">{{ 'cards.card_text' | translate }}</p>
+          <div class="card-footer">
+            <a href="javascript:void(0);" class="btn btn-outline-secondary">{{ 'cards.action_secondary' | translate }}</a>
+            <a href="javascript:void(0);" class="btn btn-primary">{{ 'cards.action' | translate }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-code-example [htmlCode]="cardWithCheckboxCode" title="Card with Checkbox"></app-code-example>
+      
+    <!-- Disabled card with icon and checkbox -->
+    <h3 class="mb-3 mt-5">Disabled Card</h3>
+    <div class="demo-card-grid mb-3">
       <div class="card disabled" tabindex="0">
         <div class="card-body">
           <h5 class="card-title">
@@ -36,24 +60,12 @@
           </div>
         </div>
       </div>
+    </div>
+    <app-code-example [htmlCode]="disabledCardCode" title="Disabled Card with Icon and Checkbox"></app-code-example>
 
-      <!-- Card with checkbox only -->
-      <div class="card" tabindex="0">
-        <div class="card-body">
-          <h5 class="card-title">
-            <input class="card-title-checked  form-check-input ripple" type="checkbox" value="" id="check2" aria-label="{{ 'cards.select_card' | translate }}">
-          </h5>
-          <h6 class="card-subtitle mb-2">{{ 'cards.card_title' | translate }}</h6>
-          <p class="card-text">{{ 'cards.card_text' | translate }}</p>
-          <div class="card-footer">
-            <a href="javascript:void(0);" class="btn btn-outline-secondary">{{ 'cards.action_secondary' | translate }}</a>
-            <a href="javascript:void(0);" class="btn btn-primary">{{ 'cards.action' | translate }}</a>
-          </div>
-        </div>
-      </div>
-
-      
-      <!-- Card without shadow only -->
+      <!-- Card without shadow -->
+      <h3 class="mb-3 mt-5">Card without Shadow</h3>
+      <div class="demo-card-grid mb-3">
       <div class="card shadow-none" tabindex="0">
         <div class="card-body">
           <h5 class="card-title">
@@ -67,8 +79,12 @@
           </div>
         </div>
       </div>
+    </div>
+    <app-code-example [htmlCode]="cardNoShadowCode" title="Card with Shadow Removed (shadow-none)"></app-code-example>
       
       <!-- Expandable card with checkbox -->
+      <h3 class="mb-3 mt-5">Expandable Card (Interactive)</h3>
+      <div class="demo-card-grid mb-3">
       <div class="card" tabindex="0" [class.expanded]="isExpanded(1)">
         <div class="card-body">
           <h5 class="card-title">
@@ -94,8 +110,15 @@
           </div>
         </div>
       </div>
+    </div>
+    <app-code-example 
+      [htmlCode]="expandableCardHtmlCode" 
+      [tsCode]="expandableCardTsCode" 
+      title="Expandable Card with Checkbox - HTML Template"></app-code-example>
       
-      <!-- Expandable card -->
+      <!-- Expandable card with actions -->
+      <h3 class="mb-3 mt-5">Expandable Card (Simple)</h3>
+      <div class="demo-card-grid mb-3">
       <div class="card" tabindex="0" [class.expanded]="isExpanded(2)">
         <div class="card-body">
           <h5 class="card-title">
@@ -125,32 +148,9 @@
         </div>
       </div>
     </div>
-
-    <!-- Code Examples -->
-    <div class="mt-5">
-      <h3 class="mb-4">Card with Icon</h3>
-      <app-code-example [htmlCode]="cardWithIconCode" title="Card with Icon and Header"></app-code-example>
-
-      <h3 class="mb-4 mt-5">Card with Checkbox</h3>
-      <app-code-example [htmlCode]="cardWithCheckboxCode" title="Card with Checkbox"></app-code-example>
-
-      <h3 class="mb-4 mt-5">Disabled Card</h3>
-      <app-code-example [htmlCode]="disabledCardCode" title="Disabled Card with Icon and Checkbox"></app-code-example>
-
-      <h3 class="mb-4 mt-5">Card without Shadow</h3>
-      <app-code-example [htmlCode]="cardNoShadowCode" title="Card with Shadow Removed (shadow-none)"></app-code-example>
-
-      <h3 class="mb-4 mt-5">Expandable Card (Interactive)</h3>
-      <app-code-example 
-        [htmlCode]="expandableCardHtmlCode" 
-        [tsCode]="expandableCardTsCode" 
-        title="Expandable Card with Checkbox - HTML Template"></app-code-example>
-
-      <h3 class="mb-4 mt-5">Expandable Card (Simple)</h3>
-      <app-code-example 
-        [htmlCode]="expandableCardSimpleHtmlCode" 
-        [tsCode]="expandableCardTsCode" 
-        title="Expandable Card with Actions - HTML Template"></app-code-example>
-    </div>
+    <app-code-example 
+      [htmlCode]="expandableCardSimpleHtmlCode" 
+      [tsCode]="expandableCardTsCode" 
+      title="Expandable Card with Actions - HTML Template"></app-code-example>
   </section>
 </div>
