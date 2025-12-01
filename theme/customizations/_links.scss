@@ -5,43 +5,91 @@
 // ============================================
 
 .link-primary {
-  --#{$prefix}link-color: #{$primary-600};
-  --#{$prefix}link-color-rgb: #{red($primary-600)}, #{green($primary-600)}, #{blue($primary-600)};
-  --#{$prefix}link-hover-color: #{$primary-400};
-  --#{$prefix}link-hover-color-rgb: #{red($primary-400)}, #{green($primary-400)}, #{blue($primary-400)};
+  color: $primary-600 !important;
+
+  &:hover,
+  &:focus {
+    color: $primary-400 !important;
+    text-decoration-color: $primary-400 !important;
+  }
+
+  &:active {
+    color: $primary-300 !important;
+    text-decoration-color: $primary-300 !important;
+  }
 }
 
 .link-secondary {
-  --#{$prefix}link-color: #{$secondary-600};
-  --#{$prefix}link-color-rgb: #{red($secondary-600)}, #{green($secondary-600)}, #{blue($secondary-600)};
-  --#{$prefix}link-hover-color: #{$secondary-400};
-  --#{$prefix}link-hover-color-rgb: #{red($secondary-400)}, #{green($secondary-400)}, #{blue($secondary-400)};
+  color: $secondary-600 !important;
+
+  &:hover,
+  &:focus {
+    color: $secondary-400 !important;
+    text-decoration-color: $secondary-400 !important;
+  }
+
+  &:active {
+    color: $secondary-300 !important;
+    text-decoration-color: $secondary-300 !important;
+  }
 }
 
 .link-success {
-  --#{$prefix}link-color: #{$success-600};
-  --#{$prefix}link-color-rgb: #{red($success-600)}, #{green($success-600)}, #{blue($success-600)};
-  --#{$prefix}link-hover-color: #{$success-400};
-  --#{$prefix}link-hover-color-rgb: #{red($success-400)}, #{green($success-400)}, #{blue($success-400)};
+  color: $success-600 !important;
+
+  &:hover,
+  &:focus {
+    color: $success-400 !important;
+    text-decoration-color: $success-400 !important;
+  }
+
+  &:active {
+    color: $success-300 !important;
+    text-decoration-color: $success-300 !important;
+  }
 }
 
 .link-danger {
-  --#{$prefix}link-color: #{$danger-600};
-  --#{$prefix}link-color-rgb: #{red($danger-600)}, #{green($danger-600)}, #{blue($danger-600)};
-  --#{$prefix}link-hover-color: #{$danger-400};
-  --#{$prefix}link-hover-color-rgb: #{red($danger-400)}, #{green($danger-400)}, #{blue($danger-400)};
+  color: $danger-600 !important;
+
+  &:hover,
+  &:focus {
+    color: $danger-400 !important;
+    text-decoration-color: $danger-400 !important;
+  }
+
+  &:active {
+    color: $danger-300 !important;
+    text-decoration-color: $danger-300 !important;
+  }
 }
 
 .link-warning {
-  --#{$prefix}link-color: #{$warning-600};
-  --#{$prefix}link-color-rgb: #{red($warning-600)}, #{green($warning-600)}, #{blue($warning-600)};
-  --#{$prefix}link-hover-color: #{$warning-400};
-  --#{$prefix}link-hover-color-rgb: #{red($warning-400)}, #{green($warning-400)}, #{blue($warning-400)};
+  color: $warning-600 !important;
+
+  &:hover,
+  &:focus {
+    color: $warning-400 !important;
+    text-decoration-color: $warning-400 !important;
+  }
+
+  &:active {
+    color: $warning-300 !important;
+    text-decoration-color: $warning-300 !important;
+  }
 }
 
 .link-info {
-  --#{$prefix}link-color: #{$info-600};
-  --#{$prefix}link-color-rgb: #{red($info-600)}, #{green($info-600)}, #{blue($info-600)};
-  --#{$prefix}link-hover-color: #{$info-400};
-  --#{$prefix}link-hover-color-rgb: #{red($info-400)}, #{green($info-400)}, #{blue($info-400)};
+  color: $info-600 !important;
+
+  &:hover,
+  &:focus {
+    color: $info-400 !important;
+    text-decoration-color: $info-400 !important;
+  }
+
+  &:active {
+    color: $info-300 !important;
+    text-decoration-color: $info-300 !important;
+  }
 }

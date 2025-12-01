@@ -23,7 +23,7 @@ $btn-font-size-lg: $font-size-lg;
 $btn-line-height-lg: $line-height-lg;
 
 // Button styling
-$btn-border-width: $border-width;
+$btn-border-width: 1px;
 $btn-font-weight: 500;
 $btn-box-shadow: none;
 $btn-focus-width: 0.25rem;
@@ -52,11 +52,11 @@ $btn-active-border-shade-amount: 25%;
 $btn-active-border-tint-amount: 10%;
 
 // Link buttons
-$btn-link-color: $link-color;
-$btn-link-hover-color: $link-hover-color;
-$btn-link-decoration: $link-decoration;
-$btn-link-hover-decoration: $link-hover-decoration;
-$btn-link-focus-shadow-rgb: rgba($primary, 0.5);
+$btn-link-color: $primary-600;
+$btn-link-hover-color: $primary-600;
+$btn-link-decoration: underline;
+$btn-link-hover-decoration: underline;
+$btn-link-focus-shadow-rgb: none;
 $btn-link-disabled-color: $gray-600;
 
 // Button close

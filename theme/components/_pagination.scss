@@ -12,7 +12,7 @@ $pagination-font-size: $font-size-base;
 $pagination-color: $primary;
 $pagination-bg: $white;
 $pagination-border-radius: $radius-sm;
-$pagination-border-width: $border-width;
+$pagination-border-width: 1px;
 $pagination-margin-start: calc(#{$pagination-border-width} * -1);
 $pagination-border-color: $gray-300;
 

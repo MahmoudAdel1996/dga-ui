@@ -8,7 +8,7 @@ $toast-border-width:                var(--#{$prefix}border-width);
 $toast-border-color:                var(--#{$prefix}border-color-translucent);
 $toast-border-radius:               $radius-md;
 $toast-box-shadow:                  $box-shadow-lg;
-$toast-spacing:                     $container-padding-x;
+$toast-spacing:                     1rem;
 $toast-icon-bg:                     var(--#{$prefix}toast-icon-bg);
 $toast-icon-color:                  var(--#{$prefix}toast-icon-color);
 $toast-title-color:                 var(--#{$prefix}toast-title-color);

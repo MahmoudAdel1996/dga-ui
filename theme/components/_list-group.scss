@@ -3,7 +3,7 @@
 $list-group-color: var(--#{$prefix}body-color);
 $list-group-bg: $white;
 $list-group-border-color: rgba($black, 0.125);
-$list-group-border-width: $border-width;
+$list-group-border-width: 1px;
 $list-group-border-radius: $radius-sm;
 
 $list-group-item-padding-y: 0.5rem;

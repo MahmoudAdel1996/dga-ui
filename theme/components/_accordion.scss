@@ -6,7 +6,7 @@ $accordion-padding-y: 1rem;
 $accordion-padding-x: 1.25rem;
 $accordion-color: var(--#{$prefix}body-color);
 $accordion-bg: $white;
-$accordion-border-width: $border-width;
+$accordion-border-width: 1px;
 $accordion-border-color: rgba($black, 0.125);
 $accordion-border-radius: $radius-sm;
 $accordion-inner-border-radius: calc(#{$accordion-border-radius} - #{$accordion-border-width});

@@ -9,7 +9,7 @@ $dropdown-color: $body-color;
 $dropdown-bg: $white;
 $dropdown-border-color: $gray-200;
 $dropdown-border-radius: $radius-sm;
-$dropdown-border-width: $border-width;
+$dropdown-border-width: 1px;
 $dropdown-inner-border-radius: calc(#{$dropdown-border-radius} - #{$dropdown-border-width});
 $dropdown-divider-bg: $gray-200;
 $dropdown-divider-margin-y: 0.5rem;

@@ -58,7 +58,7 @@ $table-hover-bg-factor: 0.075;
 $table-hover-bg: rgba($black, $table-hover-bg-factor);
 
 $table-border-factor: 0.1;
-$table-border-width: $border-width;
+$table-border-width: 1px;
 $table-border-color: $border-color;
 
 $table-striped-order: odd;
@@ -77,7 +77,7 @@ $table-bg-scale: -80%;
 $list-group-color: var(--#{$prefix}body-color);
 $list-group-bg: $white;
 $list-group-border-color: rgba($black, 0.125);
-$list-group-border-width: $border-width;
+$list-group-border-width: 1px;
 $list-group-border-radius: $radius-sm;
 
 $list-group-item-padding-y: 0.5rem;
@@ -107,7 +107,7 @@ $accordion-padding-y: 1rem;
 $accordion-padding-x: 1.25rem;
 $accordion-color: var(--#{$prefix}body-color);
 $accordion-bg: $white;
-$accordion-border-width: $border-width;
+$accordion-border-width: 1px;
 $accordion-border-color: rgba($black, 0.125);
 $accordion-border-radius: $radius-sm;
 $accordion-inner-border-radius: calc(#{$accordion-border-radius} - #{$accordion-border-width});

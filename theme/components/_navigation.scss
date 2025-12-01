@@ -57,7 +57,7 @@ $dropdown-color: $body-color;
 $dropdown-bg: $white;
 $dropdown-border-color: $gray-200;
 $dropdown-border-radius: $radius-sm;
-$dropdown-border-width: $border-width;
+$dropdown-border-width: 1px;
 $dropdown-inner-border-radius: calc(#{$dropdown-border-radius} - #{$dropdown-border-width});
 $dropdown-divider-bg: $gray-200;
 $dropdown-divider-margin-y: 0.5rem;
@@ -108,7 +108,7 @@ $pagination-font-size: $font-size-base;
 $pagination-color: $primary;
 $pagination-bg: $white;
 $pagination-border-radius: $radius-sm;
-$pagination-border-width: $border-width;
+$pagination-border-width: 1px;
 $pagination-margin-start: calc(#{$pagination-border-width} * -1);
 $pagination-border-color: $gray-300;
 
