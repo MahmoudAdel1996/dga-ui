@@ -20,6 +20,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist/demo-angular",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -38,6 +39,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/dga-ui/",
               "budgets": [
                 {
                   "type": "initial",
@@ -74,6 +76,13 @@
         },
         "test": {
           "builder": "@angular/build:unit-test"
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "/dga-ui/",
+            "cname": ""
+          }
         }
       }
     }
