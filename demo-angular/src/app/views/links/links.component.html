@@ -4,137 +4,18 @@
 
   <section class="demo-section mb-5">
     <h2>{{ 'links.section_basic' | translate }}</h2>
-    <div class="d-flex flex-column gap-3">
-      <div>
-        <a href="javascript:void(0);" class="link-primary">{{ 'links.primary_link' | translate }}</a>
+    <div class="d-flex flex-column gap-3 component-showcase">
+      <!-- Primary link -->
+      <a href="javascript:void(0);" class="link-primary link-offset-2">{{ 'links.primary_link' | translate }}</a>
+      <!-- Neutral link -->
+      <a href="javascript:void(0);" class="link-neutral link-offset-2">{{ 'links.neutral_link' | translate }}</a>
+      <!-- On-color link displayed on a primary background -->
+      <div class="p-3 bg-primary rounded-2" style="width:max-content;">
+        <a href="javascript:void(0);" class="link-oncolor link-offset-2">{{ 'links.oncolor_link' | translate }}</a>
       </div>
-      <div>
-        <a href="javascript:void(0);" class="link-secondary">{{ 'links.secondary_link' | translate }}</a>
-      </div>
-      <div>
-        <a href="javascript:void(0);" class="link-success">{{ 'links.success_link' | translate }}</a>
-      </div>
-      <div>
-        <a href="javascript:void(0);" class="link-danger">{{ 'links.danger_link' | translate }}</a>
-      </div>
-      <div>
-        <a href="javascript:void(0);" class="link-warning">{{ 'links.warning_link' | translate }}</a>
-      </div>
-      <div>
-        <a href="javascript:void(0);" class="link-info">{{ 'links.info_link' | translate }}</a>
-      </div>
+      <!-- Disabled link (non-interactive) -->
+      <a href="javascript:void(0);" class="link-primary disabled link-offset-2" aria-disabled="true" tabindex="-1">{{ 'links.disabled_link' | translate }}</a>
     </div>
     <app-code-example [htmlCode]="basicLinksCode"></app-code-example>
-  </section>
-
-  <section class="demo-section mb-5">
-    <h2>{{ 'links.section_underline' | translate }}</h2>
-    <div class="d-flex flex-column gap-3">
-      <div>
-        <a href="javascript:void(0);" class="link-underline">{{ 'links.underline_link' | translate }}</a>
-      </div>
-      <div>
-        <a href="javascript:void(0);" class="link-underline-opacity-0">{{ 'links.no_underline' | translate }}</a>
-      </div>
-      <div>
-        <a href="javascript:void(0);" class="link-underline-opacity-25">{{ 'links.underline_25' | translate }}</a>
-      </div>
-      <div>
-        <a href="javascript:void(0);" class="link-underline-opacity-50">{{ 'links.underline_50' | translate }}</a>
-      </div>
-      <div>
-        <a href="javascript:void(0);" class="link-underline-opacity-75">{{ 'links.underline_75' | translate }}</a>
-      </div>
-      <div>
-        <a href="javascript:void(0);" class="link-underline-opacity-100">{{ 'links.underline_100' | translate }}</a>
-      </div>
-    </div>
-    <app-code-example [htmlCode]="underlineLinksCode"></app-code-example>
-  </section>
-
-  <section class="demo-section mb-5">
-    <h2>{{ 'links.section_hover' | translate }}</h2>
-    <div class="d-flex flex-column gap-3">
-      <div>
-        <a href="javascript:void(0);" class="link-primary link-underline-opacity-0 link-underline-opacity-100-hover">{{ 'links.hover_underline' | translate }}</a>
-      </div>
-      <div>
-        <a href="javascript:void(0);" class="link-secondary link-underline-opacity-100 link-underline-opacity-0-hover">{{ 'links.hover_remove' | translate }}</a>
-      </div>
-    </div>
-    <app-code-example [htmlCode]="hoverLinksCode"></app-code-example>
-  </section>
-
-  <section class="demo-section mb-5">
-    <h2>{{ 'links.section_offset' | translate }}</h2>
-    <div class="d-flex flex-column gap-3">
-      <div>
-        <a href="javascript:void(0);" class="link-offset-1">{{ 'links.offset_1' | translate }}</a>
-      </div>
-      <div>
-        <a href="javascript:void(0);" class="link-offset-2">{{ 'links.offset_2' | translate }}</a>
-      </div>
-      <div>
-        <a href="javascript:void(0);" class="link-offset-3">{{ 'links.offset_3' | translate }}</a>
-      </div>
-    </div>
-    <app-code-example [htmlCode]="offsetLinksCode"></app-code-example>
-    
-    <h3 class="mt-4 mb-3">Combining Offset with Hover Effects</h3>
-    <div class="d-flex flex-column gap-3">
-      <div>
-        <a href="javascript:void(0);" class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
-          Link with changing offset on hover
-        </a>
-      </div>
-    </div>
-    <app-code-example [htmlCode]="offsetHoverCode"></app-code-example>
-  </section>
-
-  <section class="demo-section mb-5">
-    <h2>{{ 'links.section_icons' | translate }}</h2>
-    <div class="d-flex flex-column gap-3">
-      <div>
-        <a href="javascript:void(0);" class="link-primary">
-          <i class="hgi hgi-stroke hgi-link-01 me-2"></i>
-          {{ 'links.link_with_icon' | translate }}
-        </a>
-      </div>
-      <div>
-        <a href="javascript:void(0);" class="link-secondary">
-          {{ 'links.external_link' | translate }}
-          <i class="hgi hgi-stroke hgi-link-external-01 ms-2"></i>
-        </a>
-      </div>
-      <div>
-        <a href="javascript:void(0);" class="link-success">
-          <i class="hgi hgi-stroke hgi-arrow-right-01 me-2"></i>
-          {{ 'links.arrow_link' | translate }}
-        </a>
-      </div>
-    </div>
-    <app-code-example [htmlCode]="iconLinksCode"></app-code-example>
-  </section>
-
-  <section class="demo-section">
-    <h2>{{ 'links.section_custom' | translate }}</h2>
-    
-    <h3 class="h5 mb-3">Subtle Link</h3>
-    <div class="mb-3">
-      <a href="javascript:void(0);" class="custom-link-subtle">{{ 'links.subtle_link' | translate }}</a>
-    </div>
-    <app-code-example [htmlCode]="subtleLinkCode" [scssCode]="subtleLinkScss"></app-code-example>
-    
-    <h3 class="h5 mb-3 mt-4">Bold Link</h3>
-    <div class="mb-3">
-      <a href="javascript:void(0);" class="custom-link-bold">{{ 'links.bold_link' | translate }}</a>
-    </div>
-    <app-code-example [htmlCode]="boldLinkCode" [scssCode]="boldLinkScss"></app-code-example>
-    
-    <h3 class="h5 mb-3 mt-4">Decorated Link</h3>
-    <div class="mb-3">
-      <a href="javascript:void(0);" class="custom-link-decorated">{{ 'links.decorated_link' | translate }}</a>
-    </div>
-    <app-code-example [htmlCode]="decoratedLinkCode" [scssCode]="decoratedLinkScss"></app-code-example>
   </section>
 </div>

@@ -28,9 +28,23 @@ jobs:
         with:
           node-version: '20'
       
+      - name: Wait for npm publish
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "Waiting for sdga-ui@$VERSION to be available on npm..."
+          for i in {1..30}; do
+            if npm view sdga-ui@$VERSION version 2>/dev/null; then
+              echo "Package sdga-ui@$VERSION is now available!"
+              exit 0
+            fi
+            echo "Attempt $i/30: Package not yet available, waiting 10 seconds..."
+            sleep 10
+          done
+          echo "Warning: Package may not be available yet, proceeding anyway..."
+      
       - name: Install dependencies
         working-directory: ./demo-angular
-        run: npm install
+        run: npm run use:npm
       
       - name: Build Angular app
         working-directory: ./demo-angular

@@ -218,17 +218,6 @@
         }
       }
     }
-
-    &.alert-dismissible {
-      padding-inline-end: $alert-padding-x;
-      padding-inline-start: $alert-padding-x;
-
-      .btn-close {
-        position: absolute;
-        top: 0.5rem;
-        inset-inline-end: 0.5rem;
-      }
-    }
   }
 }
 // ============================================
@@ -236,7 +225,10 @@
 // ============================================
 .alert-dismissible {
   .btn-close {
+    padding: 0.5rem;
+    position: absolute;
+    top: 1rem;
     right: unset;
-    inset-inline-end: 0;
+    inset-inline-end: 1.5rem;
   }
 }

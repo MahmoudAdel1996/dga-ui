@@ -1,95 +1,83 @@
 // Links Customizations - SDGA Custom Enhancements
+// Following Bootstrap 5.3 recommended practices
 
 // ============================================
-// LINK COLOR VARIANTS
+// LINK COLOR VARIANTS - Using Sass map and @each loop
 // ============================================
 
-.link-primary {
-  color: $primary-600 !important;
+// Define link color variants with their shades
+$link-variants: (
+  "primary": (
+    base: $primary-600,
+    hover: $primary-400,
+    active: $primary-300 ),
+  "secondary": (
+    base: $secondary-600,
+    hover: $secondary-400,
+    active: $secondary-300 ),
+  "success": (
+    base: $success-600,
+    hover: $success-400,
+    active: $success-300 ),
+  "danger": (
+    base: $danger-600,
+    hover: $danger-400,
+    active: $danger-300 ),
+  "warning": (
+    base: $warning-600,
+    hover: $warning-400,
+    active: $warning-300 ),
+  "info": (
+    base: $info-600,
+    hover: $info-400,
+    active: $info-300 ),
+  "neutral": (
+    base: $neutral-700,
+    hover: $neutral-500,
+    active: $neutral-400 ),
+  "lavender": (
+    base: $lavender-600,
+    hover: $lavender-500,
+    active: $lavender-400 ),
+  "oncolor": (
+    base: $white,
+    hover: rgba($white, 0.8),
+    active: rgba($white, 0.6) )
+);
 
-  &:hover,
-  &:focus {
-    color: $primary-400 !important;
-    text-decoration-color: $primary-400 !important;
-  }
+// Generate link variant classes
+@each $name, $colors in $link-variants {
+  .link-#{$name} {
+    color: map-get($colors, base) !important;
+    text-decoration-color: map-get($colors, base) !important;
 
-  &:active {
-    color: $primary-300 !important;
-    text-decoration-color: $primary-300 !important;
-  }
-}
+    &:visited,
+    &:focus-visible {
+      color: map-get($colors, base) !important;
+      text-decoration-color: map-get($colors, base) !important;
+    }
 
-.link-secondary {
-  color: $secondary-600 !important;
+    &:hover,
+    &:focus {
+      color: map-get($colors, hover) !important;
+      text-decoration-color: map-get($colors, hover) !important;
+    }
 
-  &:hover,
-  &:focus {
-    color: $secondary-400 !important;
-    text-decoration-color: $secondary-400 !important;
-  }
-
-  &:active {
-    color: $secondary-300 !important;
-    text-decoration-color: $secondary-300 !important;
-  }
-}
-
-.link-success {
-  color: $success-600 !important;
-
-  &:hover,
-  &:focus {
-    color: $success-400 !important;
-    text-decoration-color: $success-400 !important;
-  }
-
-  &:active {
-    color: $success-300 !important;
-    text-decoration-color: $success-300 !important;
-  }
-}
-
-.link-danger {
-  color: $danger-600 !important;
-
-  &:hover,
-  &:focus {
-    color: $danger-400 !important;
-    text-decoration-color: $danger-400 !important;
-  }
-
-  &:active {
-    color: $danger-300 !important;
-    text-decoration-color: $danger-300 !important;
-  }
-}
-
-.link-warning {
-  color: $warning-600 !important;
-
-  &:hover,
-  &:focus {
-    color: $warning-400 !important;
-    text-decoration-color: $warning-400 !important;
-  }
-
-  &:active {
-    color: $warning-300 !important;
-    text-decoration-color: $warning-300 !important;
+    &:active {
+      color: map-get($colors, active) !important;
+      text-decoration-color: map-get($colors, active) !important;
+    }
   }
 }
 
-.link-info {
-  color: $info-600 !important;
+a.disabled {
+  color: $gray-400 !important;
+  text-decoration-color: $gray-400 !important;
+  pointer-events: none;
 
-  &:hover,
-  &:focus {
-    color: $info-400 !important;
-    text-decoration-color: $info-400 !important;
-  }
-
-  &:active {
-    color: $info-300 !important;
-    text-decoration-color: $info-300 !important;
+  &.link-oncolor {
+    color: rgba($white, 0.3) !important;
+    text-decoration-color: rgba($white, 0.3) !important;
   }
 }
+

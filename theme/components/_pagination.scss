@@ -16,12 +16,12 @@ $pagination-border-width: 1px;
 $pagination-margin-start: calc(#{$pagination-border-width} * -1);
 $pagination-border-color: $gray-300;
 
-$pagination-focus-color: $link-hover-color;
+$pagination-focus-color: null;
 $pagination-focus-bg: $gray-200;
 $pagination-focus-box-shadow: $input-focus-box-shadow;
 $pagination-focus-outline: 0;
 
-$pagination-hover-color: $link-hover-color;
+$pagination-hover-color: null;
 $pagination-hover-bg: $gray-200;
 $pagination-hover-border-color: $gray-300;
 

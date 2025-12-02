@@ -15,6 +15,7 @@
 // ============================================
 
 // Import all component customizations
+@import './customizations/links';
 @import './customizations/global';
 @import './customizations/buttons';
 @import './customizations/cards';
@@ -24,5 +25,3 @@
 @import './customizations/forms';
 @import './customizations/forms-switch';
 @import './customizations/tables';
-@import './customizations/links';
-@import './customizations/utilities';

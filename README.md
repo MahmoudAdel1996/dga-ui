@@ -19,10 +19,12 @@ Check out the live demo and explore all components:
 
 * Government-inspired design system
 * Full compatibility with Bootstrap
+* **Built-in RTL support** (no need to import Bootstrap RTL separately)
 * Custom color palette and typography
 * Standardized spacing & component overrides
 * Utility classes for layout and theming
 * Light / dark mode friendly (optional)
+* IBM Plex Sans Arabic font included
 * Easy to integrate into any frontend project
 
 ---
@@ -68,6 +70,16 @@ Import the theme in your SCSS file:
 ```
 
 All Bootstrap components automatically adopt the DGA UI theme.
+
+### **RTL Support**
+
+DGA UI has built-in RTL (Right-to-Left) support for Arabic and other RTL languages. Simply add the `dir="rtl"` attribute to your HTML tag:
+
+```html
+<html dir="rtl" lang="ar">
+```
+
+No need to import Bootstrap's RTL CSS separately – it's already integrated!
 
 ---
 
@@ -137,16 +149,6 @@ The theme is organized into three main sections:
 
 ---
 
-## **📚 Roadmap**
-
-* React / Angular UI components
-* Icon set
-* Forms enhancement
-* Grid templates
-* Additional themes (municipal, ministry, authority variants)
-
----
-
 ## **🤝 Contributing**
 
 Contributions are welcome!
@@ -163,13 +165,3 @@ MIT License — free for personal and commercial use.
 ## **👤 Author**
 
 Created and maintained by **Mahmoud**.
-
----
-
-If you want, I can also generate:
-
-✅ A logo
-✅ A color palette for the authority theme
-✅ Example screenshots/mockups
-✅ NPM keywords
-Just tell me!
