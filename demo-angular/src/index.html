@@ -7,6 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script>
+    // Handle redirect from 404.html on GitHub Pages for SPA routes
+    (function() {
+      var redirect = sessionStorage.getItem('ghspa-redirect');
+      if (redirect) {
+        sessionStorage.removeItem('ghspa-redirect');
+        var data = JSON.parse(redirect);
+        if (data.path) {
+          var newUrl = data.path + (data.query || '') + (data.hash || '');
+          history.replaceState(null, '', newUrl);
+        }
+      }
+    })();
+  </script>
 </head>
 <body>
   <app-root></app-root>

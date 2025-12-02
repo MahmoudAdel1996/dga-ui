@@ -26311,6 +26311,10 @@ textarea.form-control-lg {
   text-decoration-color: rgba(255, 255, 255, 0.6) !important;
 }
 
+.link-oncolor {
+  outline-color: #FFFFFF !important;
+}
+
 a.disabled {
   color: #9DA4AE !important;
   text-decoration-color: #9DA4AE !important;

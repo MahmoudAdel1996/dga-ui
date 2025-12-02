@@ -70,6 +70,10 @@ $link-variants: (
   }
 }
 
+.link-oncolor {
+    outline-color: $white !important;
+}
+
 a.disabled {
   color: $gray-400 !important;
   text-decoration-color: $gray-400 !important;

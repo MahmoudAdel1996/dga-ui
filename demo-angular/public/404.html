@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="0; url=/dga-ui/">
+    <script>
+      // GitHub Pages SPA fallback
+      // For project pages, the first path segment is the repo name.
+      (function() {
+        var segmentCount = 1; // keep '/dga-ui'
+        var l = window.location;
+        var path = l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/';
+        var rest = l.pathname.split('/').slice(1 + segmentCount).join('/');
+        var query = l.search || '';
+        var hash = l.hash || '';
+        // Persist the intended route for index.html to restore
+        var data = {
+          path: path + rest.replace(/\/?$/, ''),
+          query: query,
+          hash: hash
+        };
+        try {
+          sessionStorage.setItem('ghspa-redirect', JSON.stringify(data));
+        } catch (e) {}
+        // Navigate to the app root so the SPA can boot
+        l.replace(path);
+      })();
+    </script>
+  </head>
+  <body>
+    Redirecting...
+  </body>
+</html>
