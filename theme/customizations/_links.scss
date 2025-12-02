@@ -71,7 +71,9 @@ $link-variants: (
 }
 
 .link-oncolor {
-    outline-color: $white !important;
+  &:focus-visible {
+      outline-color: $white !important;
+    }
 }
 
 a.disabled {

@@ -26311,7 +26311,9 @@ textarea.form-control-lg {
   text-decoration-color: rgba(255, 255, 255, 0.6) !important;
 }
 
-.link-oncolor {
+.link-oncolor:focus-visible {
+  color: !important;
+  text-decoration-color: !important;
   outline-color: #FFFFFF !important;
 }
 
