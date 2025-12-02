@@ -18,6 +18,16 @@ $body-color: $black;
 $body-text-align: start;
 
 // ============================================
+// LINKS
+// ============================================
+
+$link-color: $primary;
+$link-decoration: none;
+$link-hover-color: color.scale($link-color, $lightness: -30%);
+$link-hover-decoration: underline;
+
+
+// ============================================
 // COMPONENTS BASE
 // ============================================
 

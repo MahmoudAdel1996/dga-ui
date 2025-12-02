@@ -1,0 +1,475 @@
+---
+title: Alerts
+description: Provide contextual feedback messages for typical user actions with alert components
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { SdgaPreview } from '@/components/sdga-preview';
+
+# Alerts
+
+Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+
+<Callout title="Bootstrap Based" type="info">
+  SDGA UI alerts are built on top of Bootstrap alerts with additional styling and variants.
+</Callout>
+
+## Standard Alerts
+
+Standard alerts with icon, title, content, action buttons, and dismiss functionality.
+
+### Success Alert
+
+<SdgaPreview html={`
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <svg class="alert-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+  </svg>
+  <div>
+    <strong class="alert-title">Success!</strong> Your action completed successfully.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Action</button>
+      <button type="button" class="btn btn-subtle">Cancel</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+`} />
+
+```html
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <i class="alert-icon">✓</i>
+  <div>
+    <strong class="alert-title">Success!</strong> Your action completed successfully.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Action</button>
+      <button type="button" class="btn btn-subtle">Cancel</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+```
+
+### Danger Alert
+
+<SdgaPreview html={`
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <svg class="alert-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+  <div>
+    <strong class="alert-title">Error!</strong> Something went wrong with your request.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Retry</button>
+      <button type="button" class="btn btn-subtle">Cancel</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+`} />
+
+```html
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <i class="alert-icon">⚠</i>
+  <div>
+    <strong class="alert-title">Error!</strong> Something went wrong with your request.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Retry</button>
+      <button type="button" class="btn btn-subtle">Cancel</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+```
+
+### Warning Alert
+
+<SdgaPreview html={`
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <svg class="alert-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+  </svg>
+  <div>
+    <strong class="alert-title">Warning!</strong> Please review before proceeding.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Review</button>
+      <button type="button" class="btn btn-subtle">Dismiss</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+`} />
+
+```html
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <i class="alert-icon">⚠</i>
+  <div>
+    <strong class="alert-title">Warning!</strong> Please review before proceeding.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Review</button>
+      <button type="button" class="btn btn-subtle">Dismiss</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+```
+
+### Info Alert
+
+<SdgaPreview html={`
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+  <svg class="alert-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+  <div>
+    <strong class="alert-title">Info</strong> Here's some helpful information.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Learn More</button>
+      <button type="button" class="btn btn-subtle">Dismiss</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+`} />
+
+```html
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+  <i class="alert-icon">ℹ</i>
+  <div>
+    <strong class="alert-title">Info</strong> Here's some helpful information.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Learn More</button>
+      <button type="button" class="btn btn-subtle">Dismiss</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+```
+
+### Neutral Alert
+
+<SdgaPreview html={`
+<div class="alert alert-neutral alert-dismissible fade show" role="alert">
+  <svg class="alert-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+  <div>
+    <strong class="alert-title">Neutral</strong> Standard notification message.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Action</button>
+      <button type="button" class="btn btn-subtle">Cancel</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+`} />
+
+```html
+<div class="alert alert-neutral alert-dismissible fade show" role="alert">
+  <i class="alert-icon">ℹ</i>
+  <div>
+    <strong class="alert-title">Neutral</strong> Standard notification message.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Action</button>
+      <button type="button" class="btn btn-subtle">Cancel</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+```
+
+---
+
+## Side-bordered Alerts
+
+Add the `.alert-side` class for alerts with a colored side border instead of full background.
+
+### Success Side Alert
+
+<SdgaPreview html={`
+<div class="alert alert-side alert-success alert-dismissible fade show" role="alert">
+  <svg class="alert-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+  </svg>
+  <div>
+    <strong class="alert-title">Success!</strong> Your action completed successfully.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Action</button>
+      <button type="button" class="btn btn-subtle">Cancel</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+`} />
+
+```html
+<div class="alert alert-side alert-success alert-dismissible fade show" role="alert">
+  <i class="alert-icon">✓</i>
+  <div>
+    <strong class="alert-title">Success!</strong> Your action completed successfully.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Action</button>
+      <button type="button" class="btn btn-subtle">Cancel</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+```
+
+### Danger Side Alert
+
+<SdgaPreview html={`
+<div class="alert alert-side alert-danger alert-dismissible fade show" role="alert">
+  <svg class="alert-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+  <div>
+    <strong class="alert-title">Error!</strong> Something went wrong with your request.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Retry</button>
+      <button type="button" class="btn btn-subtle">Cancel</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+`} />
+
+```html
+<div class="alert alert-side alert-danger alert-dismissible fade show" role="alert">
+  <i class="alert-icon">⚠</i>
+  <div>
+    <strong class="alert-title">Error!</strong> Something went wrong with your request.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Retry</button>
+      <button type="button" class="btn btn-subtle">Cancel</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+```
+
+### Warning Side Alert
+
+<SdgaPreview html={`
+<div class="alert alert-side alert-warning alert-dismissible fade show" role="alert">
+  <svg class="alert-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+  </svg>
+  <div>
+    <strong class="alert-title">Warning!</strong> Please review before proceeding.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Review</button>
+      <button type="button" class="btn btn-subtle">Dismiss</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+`} />
+
+```html
+<div class="alert alert-side alert-warning alert-dismissible fade show" role="alert">
+  <i class="alert-icon">⚠</i>
+  <div>
+    <strong class="alert-title">Warning!</strong> Please review before proceeding.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Review</button>
+      <button type="button" class="btn btn-subtle">Dismiss</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+```
+
+### Info Side Alert
+
+<SdgaPreview html={`
+<div class="alert alert-side alert-info alert-dismissible fade show" role="alert">
+  <svg class="alert-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+  <div>
+    <strong class="alert-title">Info</strong> Here's some helpful information.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Learn More</button>
+      <button type="button" class="btn btn-subtle">Dismiss</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+`} />
+
+```html
+<div class="alert alert-side alert-info alert-dismissible fade show" role="alert">
+  <i class="alert-icon">ℹ</i>
+  <div>
+    <strong class="alert-title">Info</strong> Here's some helpful information.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Learn More</button>
+      <button type="button" class="btn btn-subtle">Dismiss</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+```
+
+### Neutral Side Alert
+
+<SdgaPreview html={`
+<div class="alert alert-side alert-neutral alert-dismissible fade show" role="alert">
+  <svg class="alert-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+  <div>
+    <strong class="alert-title">Neutral</strong> Standard notification message.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Action</button>
+      <button type="button" class="btn btn-subtle">Cancel</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+`} />
+
+```html
+<div class="alert alert-side alert-neutral alert-dismissible fade show" role="alert">
+  <i class="alert-icon">ℹ</i>
+  <div>
+    <strong class="alert-title">Neutral</strong> Standard notification message.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Action</button>
+      <button type="button" class="btn btn-subtle">Cancel</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+```
+
+---
+
+## Alert Structure
+
+### Basic Structure
+
+```html
+<div class="alert alert-[variant]" role="alert">
+  <i class="alert-icon">[Icon]</i>
+  <div>
+    <strong class="alert-title">[Title]</strong>
+    [Message content]
+  </div>
+</div>
+```
+
+### With Actions
+
+```html
+<div class="alert alert-[variant]" role="alert">
+  <i class="alert-icon">[Icon]</i>
+  <div>
+    <strong class="alert-title">[Title]</strong>
+    [Message content]
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Primary Action</button>
+      <button type="button" class="btn btn-subtle">Secondary Action</button>
+    </div>
+  </div>
+</div>
+```
+
+### Dismissible
+
+```html
+<div class="alert alert-[variant] alert-dismissible fade show" role="alert">
+  <i class="alert-icon">[Icon]</i>
+  <div>
+    <strong class="alert-title">[Title]</strong>
+    [Message content]
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+```
+
+---
+
+## Variants
+
+SDGA UI provides five alert variants:
+
+- `.alert-success` - Success messages
+- `.alert-danger` - Error messages
+- `.alert-warning` - Warning messages
+- `.alert-info` - Informational messages
+- `.alert-neutral` - Neutral/default messages
+
+## Modifiers
+
+- `.alert-side` - Side-bordered variant with subtle background
+- `.alert-dismissible` - Adds dismiss button
+- `.fade` and `.show` - For fade-out animation on dismiss
+
+## Classes Reference
+
+| Class | Description |
+|-------|-------------|
+| `.alert` | Base alert class |
+| `.alert-success` | Success variant |
+| `.alert-danger` | Danger/error variant |
+| `.alert-warning` | Warning variant |
+| `.alert-info` | Info variant |
+| `.alert-neutral` | Neutral variant |
+| `.alert-side` | Side-bordered style |
+| `.alert-dismissible` | Adds close button |
+| `.alert-icon` | Icon element |
+| `.alert-title` | Title/heading |
+| `.alert-footer` | Footer with actions |
+| `.btn-close` | Close/dismiss button |
+
+---
+
+## Accessibility
+
+<Callout title="Important" type="warn">
+  Always include `role="alert"` on alert elements to ensure proper screen reader support.
+</Callout>
+
+- Use `role="alert"` for alert messages
+- Provide `aria-label` on close buttons
+- Use semantic color meanings (success = green, danger = red, etc.)
+- Ensure sufficient color contrast
+- Include meaningful icons that support the message
+
+---
+
+## JavaScript Behavior
+
+Alerts use Bootstrap's built-in JavaScript for dismissible functionality:
+
+```html
+<!-- Initialize via data attributes -->
+<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+```
+
+Or programmatically:
+
+```javascript
+// Close an alert
+const alertElement = document.querySelector('.alert');
+const alert = new bootstrap.Alert(alertElement);
+alert.close();
+```
+
+---
+
+## RTL Support
+
+All alerts support RTL (Right-to-Left) languages automatically when using `dir="rtl"`:
+
+```html
+<html dir="rtl" lang="ar">
+  <!-- Alerts will automatically adjust for RTL -->
+  <div class="alert alert-success" role="alert">
+    رسالة نجاح بالعربية
+  </div>
+</html>
+```

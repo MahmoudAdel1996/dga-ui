@@ -85,7 +85,7 @@ No need to import Bootstrap's RTL CSS separately – it's already integrated!
 
 ## **📁 File Structure**
 
-```
+```tree
 dga-ui/
 │
 ├─ css/                 # Compiled CSS output
@@ -143,9 +143,9 @@ $secondary: #ffc107;
 
 The theme is organized into three main sections:
 
-- **config/** - Base configuration (colors, typography, spacing, etc.)
-- **components/** - Bootstrap component overrides
-- **customizations/** - Additional styling and utilities
+* **config/** - Base configuration (colors, typography, spacing, etc.)
+* **components/** - Bootstrap component overrides
+* **customizations/** - Additional styling and utilities
 
 ---
 
