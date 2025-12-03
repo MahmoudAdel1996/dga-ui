@@ -1,4 +1,45 @@
 // Card Customizations - SDGA Custom Enhancements
+// Following Bootstrap 5.3 recommended practices
+
+// ============================================
+// CARD ICON VARIANTS - Using Sass map and @each loop
+// ============================================
+
+// Define card icon color variants
+$card-icon-variants: (
+  "success": (
+    icon-bg: $success-50,
+    icon-color: $success-700
+  ),
+  "primary": (
+    icon-bg: $primary-50,
+    icon-color: $primary-700
+  ),
+  "danger": (
+    icon-bg: $danger-50,
+    icon-color: $danger-700
+  ),
+  "warning": (
+    icon-bg: $warning-50,
+    icon-color: $warning-700
+  ),
+  "info": (
+    icon-bg: $info-50,
+    icon-color: $info-700
+  ),
+  "secondary": (
+    icon-bg: $secondary-50,
+    icon-color: $secondary-700
+  ),
+  "neutral": (
+    icon-bg: $neutral-50,
+    icon-color: $neutral-700
+  )
+);
+
+// ============================================
+// CARD BASE STYLES
+// ============================================
 
 .card {
   transition: transform 0.3s ease;
@@ -71,6 +112,17 @@
     justify-content: center;
     color: $success-700;
     z-index: 1;
+
+    // Generate card icon variant classes
+    @each $name, $colors in $card-icon-variants {
+      &.card-title-icon-#{$name} {
+        color: map-get($colors, icon-color);
+        
+        &::after {
+          background-color: map-get($colors, icon-bg);
+        }
+      }
+    }
   }
 
   .card-title-checked {

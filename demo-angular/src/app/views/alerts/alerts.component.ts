@@ -12,7 +12,7 @@ import { CodeExampleComponent } from '../../shared/code-example/code-example.com
 export class AlertsComponent {
   // Standard Dismissible Alerts
   successAlertCode = `<div class="alert alert-success alert-dismissible fade show" role="alert">
-  <i class="hgi hgi-stroke hgi-tick-02 alert-icon"></i>
+  <i class="bi bi-check alert-icon"></i>
   <div>
     <strong class="alert-title">Success!</strong> Your action completed successfully.
     <div class="alert-footer">
@@ -24,7 +24,7 @@ export class AlertsComponent {
 </div>`;
 
   dangerAlertCode = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
-  <i class="hgi hgi-stroke hgi-help-circle alert-icon"></i>
+  <i class="bi bi-exclamation-circle alert-icon"></i>
   <div>
     <strong class="alert-title">Error!</strong> Something went wrong with your request.
     <div class="alert-footer">
@@ -36,7 +36,7 @@ export class AlertsComponent {
 </div>`;
 
   warningAlertCode = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <i class="hgi hgi-stroke hgi-alert-02 alert-icon"></i>
+  <i class="bi bi-exclamation-triangle alert-icon"></i>
   <div>
     <strong class="alert-title">Warning!</strong> Please review before proceeding.
     <div class="alert-footer">
@@ -48,7 +48,7 @@ export class AlertsComponent {
 </div>`;
 
   infoAlertCode = `<div class="alert alert-info alert-dismissible fade show" role="alert">
-  <i class="hgi hgi-stroke hgi-help-circle alert-icon"></i>
+  <i class="bi bi-info-circle alert-icon"></i>
   <div>
     <strong class="alert-title">Info</strong> Here's some helpful information.
     <div class="alert-footer">
@@ -60,7 +60,7 @@ export class AlertsComponent {
 </div>`;
 
   neutralAlertCode = `<div class="alert alert-neutral alert-dismissible fade show" role="alert">
-  <i class="hgi hgi-stroke hgi-help-circle alert-icon"></i>
+  <i class="bi bi-info-circle alert-icon"></i>
   <div>
     <strong class="alert-title">Neutral</strong> Standard notification message.
     <div class="alert-footer">
@@ -73,7 +73,7 @@ export class AlertsComponent {
 
   // Side-bordered Alerts
   sideSuccessAlertCode = `<div class="alert alert-side alert-success alert-dismissible fade show" role="alert">
-  <i class="hgi hgi-stroke hgi-tick-02 alert-icon"></i>
+  <i class="bi bi-check alert-icon"></i>
   <div>
     <strong class="alert-title">Success!</strong> Your action completed successfully.
     <div class="alert-footer">
@@ -85,7 +85,7 @@ export class AlertsComponent {
 </div>`;
 
   sideDangerAlertCode = `<div class="alert alert-side alert-danger alert-dismissible fade show" role="alert">
-  <i class="hgi hgi-stroke hgi-help-circle alert-icon"></i>
+  <i class="bi bi-exclamation-circle alert-icon"></i>
   <div>
     <strong class="alert-title">Error!</strong> Something went wrong with your request.
     <div class="alert-footer">
@@ -97,7 +97,7 @@ export class AlertsComponent {
 </div>`;
 
   sideWarningAlertCode = `<div class="alert alert-side alert-warning alert-dismissible fade show" role="alert">
-  <i class="hgi hgi-stroke hgi-alert-02 alert-icon"></i>
+  <i class="bi bi-exclamation-triangle alert-icon"></i>
   <div>
     <strong class="alert-title">Warning!</strong> Please review before proceeding.
     <div class="alert-footer">
@@ -109,7 +109,7 @@ export class AlertsComponent {
 </div>`;
 
   sideInfoAlertCode = `<div class="alert alert-side alert-info alert-dismissible fade show" role="alert">
-  <i class="hgi hgi-stroke hgi-alert-02 alert-icon"></i>
+  <i class="bi bi-info-circle alert-icon"></i>
   <div>
     <strong class="alert-title">Info</strong> Here's some helpful information.
     <div class="alert-footer">
@@ -121,7 +121,7 @@ export class AlertsComponent {
 </div>`;
 
   sideNeutralAlertCode = `<div class="alert alert-side alert-neutral alert-dismissible fade show" role="alert">
-  <i class="hgi hgi-stroke hgi-help-circle alert-icon"></i>
+  <i class="bi bi-info-circle alert-icon"></i>
   <div>
     <strong class="alert-title">Neutral</strong> Standard notification message.
     <div class="alert-footer">

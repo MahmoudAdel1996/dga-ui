@@ -1,0 +1,471 @@
+// Context-Aware Theming System
+// Components automatically adapt colors based on parent background context
+// Following Bootstrap 5.3 recommended practices with CSS custom properties
+
+// ============================================
+// CONTEXT DEFINITIONS
+// ============================================
+
+// Define context background colors and their corresponding adaptive colors
+$contexts: (
+  "on-primary": (
+    bg: $primary-900,
+    text: $white,
+    text-muted: rgba($white, 0.8),
+    border: rgba($white, 0.2),
+    
+    // Button adaptations
+    btn-primary-bg: $white,
+    btn-primary-color: $primary-600,
+    btn-primary-hover-bg: $gray-100,
+    btn-primary-hover-color: $primary-700,
+    btn-primary-active-bg: $gray-200,
+    btn-primary-active-color: $primary-800,
+    
+    btn-secondary-bg: transparent,
+    btn-secondary-color: $white,
+    btn-secondary-border: rgba($white, 0.4),
+    btn-secondary-hover-bg: rgba($white, 0.1),
+    btn-secondary-active-bg: rgba($white, 0.2),
+    btn-secondary-active-color: $white,
+    
+    btn-outline-bg: transparent,
+    btn-outline-color: $white,
+    btn-outline-border: rgba($white, 0.6),
+    btn-outline-hover-bg: $white,
+    btn-outline-hover-color: $primary-600,
+    btn-outline-active-bg: $gray-100,
+    btn-outline-active-color: $primary-700,
+    
+    // Link adaptations
+    link-color: $white,
+    link-hover: rgba($white, 0.8),
+    link-active: rgba($white, 0.6),
+    
+    // Form adaptations
+    input-bg: rgba($white, 0.1),
+    input-border: rgba($white, 0.3),
+    input-color: $white,
+    input-placeholder: rgba($white, 0.6)
+  ),
+  
+  "on-dark": (
+    bg: $gray-900,
+    text: $white,
+    text-muted: $gray-400,
+    border: $gray-700,
+    
+    btn-primary-bg: $primary-600,
+    btn-primary-color: $white,
+    btn-primary-hover-bg: $primary-500,
+    btn-primary-hover-color: $white,
+    btn-primary-active-bg: $primary-700,
+    btn-primary-active-color: $white,
+    
+    btn-secondary-bg: $gray-800,
+    btn-secondary-color: $white,
+    btn-secondary-border: $gray-700,
+    btn-secondary-hover-bg: $gray-700,
+    btn-secondary-active-bg: $gray-900,
+    btn-secondary-active-color: $white,
+    
+    btn-outline-bg: transparent,
+    btn-outline-color: $white,
+    btn-outline-border: $gray-600,
+    btn-outline-hover-bg: $gray-800,
+    btn-outline-hover-color: $white,
+    btn-outline-active-bg: $gray-900,
+    btn-outline-active-color: $white,
+    
+    link-color: $primary-400,
+    link-hover: $primary-300,
+    link-active: $primary-500,
+    
+    input-bg: $gray-800,
+    input-border: $gray-700,
+    input-color: $white,
+    input-placeholder: $gray-500
+  ),
+  
+  "on-danger": (
+    bg: $danger-600,
+    text: $white,
+    text-muted: rgba($white, 0.8),
+    border: rgba($white, 0.2),
+    
+    btn-primary-bg: $white,
+    btn-primary-color: $danger-600,
+    btn-primary-hover-bg: $gray-100,
+    btn-primary-hover-color: $danger-700,
+    btn-primary-active-bg: $gray-200,
+    btn-primary-active-color: $danger-800,
+    
+    btn-secondary-bg: transparent,
+    btn-secondary-color: $white,
+    btn-secondary-border: rgba($white, 0.4),
+    btn-secondary-hover-bg: rgba($white, 0.1),
+    btn-secondary-active-bg: rgba($white, 0.2),
+    btn-secondary-active-color: $white,
+    
+    btn-outline-bg: transparent,
+    btn-outline-color: $white,
+    btn-outline-border: rgba($white, 0.6),
+    btn-outline-hover-bg: $white,
+    btn-outline-hover-color: $danger-600,
+    btn-outline-active-bg: $gray-100,
+    btn-outline-active-color: $danger-700,
+    
+    link-color: $white,
+    link-hover: rgba($white, 0.8),
+    link-active: rgba($white, 0.6),
+    
+    input-bg: rgba($white, 0.1),
+    input-border: rgba($white, 0.3),
+    input-color: $white,
+    input-placeholder: rgba($white, 0.6)
+  ),
+  
+  "on-success": (
+    bg: $success-600,
+    text: $white,
+    text-muted: rgba($white, 0.8),
+    border: rgba($white, 0.2),
+    
+    btn-primary-bg: $white,
+    btn-primary-color: $success-600,
+    btn-primary-hover-bg: $gray-100,
+    btn-primary-hover-color: $success-700,
+    btn-primary-active-bg: $gray-200,
+    btn-primary-active-color: $success-800,
+    
+    btn-secondary-bg: transparent,
+    btn-secondary-color: $white,
+    btn-secondary-border: rgba($white, 0.4),
+    btn-secondary-hover-bg: rgba($white, 0.1),
+    btn-secondary-active-bg: rgba($white, 0.2),
+    btn-secondary-active-color: $white,
+    
+    btn-outline-bg: transparent,
+    btn-outline-color: $white,
+    btn-outline-border: rgba($white, 0.6),
+    btn-outline-hover-bg: $white,
+    btn-outline-hover-color: $success-600,
+    btn-outline-active-bg: $gray-100,
+    btn-outline-active-color: $success-700,
+    
+    link-color: $white,
+    link-hover: rgba($white, 0.8),
+    link-active: rgba($white, 0.6),
+    
+    input-bg: rgba($white, 0.1),
+    input-border: rgba($white, 0.3),
+    input-color: $white,
+    input-placeholder: rgba($white, 0.6)
+  ),
+  
+  "on-warning": (
+    bg: $warning-600,
+    text: $gray-900,
+    text-muted: $gray-700,
+    border: rgba($gray-900, 0.2),
+    
+    btn-primary-bg: $gray-900,
+    btn-primary-color: $warning-600,
+    btn-primary-hover-bg: $gray-800,
+    btn-primary-hover-color: $warning-500,
+    btn-primary-active-bg: $black,
+    btn-primary-active-color: $warning-400,
+    
+    btn-secondary-bg: transparent,
+    btn-secondary-color: $gray-900,
+    btn-secondary-border: rgba($gray-900, 0.3),
+    btn-secondary-hover-bg: rgba($gray-900, 0.1),
+    btn-secondary-active-bg: rgba($gray-900, 0.2),
+    btn-secondary-active-color: $black,
+    
+    btn-outline-bg: transparent,
+    btn-outline-color: $gray-900,
+    btn-outline-border: rgba($gray-900, 0.4),
+    btn-outline-hover-bg: $gray-900,
+    btn-outline-hover-color: $warning-600,
+    btn-outline-active-bg: $black,
+    btn-outline-active-color: $warning-500,
+    
+    link-color: $gray-900,
+    link-hover: $gray-800,
+    link-active: $black,
+    
+    input-bg: rgba($white, 0.3),
+    input-border: rgba($gray-900, 0.2),
+    input-color: $gray-900,
+    input-placeholder: $gray-700
+  ),
+  
+  "on-light": (
+    bg: $gray-50,
+    text: $gray-900,
+    text-muted: $gray-600,
+    border: $gray-200,
+    
+    btn-primary-bg: $primary-600,
+    btn-primary-color: $white,
+    btn-primary-hover-bg: $primary-700,
+    btn-primary-hover-color: $white,
+    btn-primary-active-bg: $primary-800,
+    btn-primary-active-color: $white,
+    
+    btn-secondary-bg: $white,
+    btn-secondary-color: $gray-700,
+    btn-secondary-border: $gray-300,
+    btn-secondary-hover-bg: $gray-100,
+    btn-secondary-active-bg: $gray-200,
+    btn-secondary-active-color: $gray-800,
+    
+    btn-outline-bg: transparent,
+    btn-outline-color: $primary-600,
+    btn-outline-border: $primary-600,
+    btn-outline-hover-bg: $primary-600,
+    btn-outline-hover-color: $white,
+    btn-outline-active-bg: $primary-700,
+    btn-outline-active-color: $white,
+    
+    link-color: $primary-600,
+    link-hover: $primary-700,
+    link-active: $primary-800,
+    
+    input-bg: $white,
+    input-border: $gray-300,
+    input-color: $gray-900,
+    input-placeholder: $gray-500
+  ),
+  
+  "on-neutral": (
+    bg: $neutral-900,
+    text: $white,
+    text-muted: $gray-400,
+    border: $gray-700,
+    
+    btn-primary-bg: $primary-600,
+    btn-primary-color: $white,
+    btn-primary-hover-bg: $primary-500,
+    btn-primary-hover-color: $white,
+    btn-primary-active-bg: $primary-700,
+    btn-primary-active-color: $white,
+    
+    btn-secondary-bg: $gray-800,
+    btn-secondary-color: $white,
+    btn-secondary-border: $gray-700,
+    btn-secondary-hover-bg: $gray-700,
+    btn-secondary-active-bg: $gray-900,
+    btn-secondary-active-color: $white,
+    
+    btn-outline-bg: transparent,
+    btn-outline-color: $white,
+    btn-outline-border: $gray-600,
+    btn-outline-hover-bg: $gray-800,
+    btn-outline-hover-color: $white,
+    btn-outline-active-bg: $gray-900,
+    btn-outline-active-color: $white,
+    
+    link-color: $primary-400,
+    link-hover: $primary-300,
+    link-active: $primary-500,
+    
+    input-bg: $gray-800,
+    input-border: $gray-700,
+    input-color: $white,
+    input-placeholder: $gray-500
+  ),
+  
+  "on-info": (
+    bg: $info-600,
+    text: $white,
+    text-muted: rgba($white, 0.8),
+    border: rgba($white, 0.2),
+    
+    btn-primary-bg: $white,
+    btn-primary-color: $info-600,
+    btn-primary-hover-bg: $gray-100,
+    btn-primary-hover-color: $info-700,
+    btn-primary-active-bg: $gray-200,
+    btn-primary-active-color: $info-800,
+    
+    btn-secondary-bg: transparent,
+    btn-secondary-color: $white,
+    btn-secondary-border: rgba($white, 0.4),
+    btn-secondary-hover-bg: rgba($white, 0.1),
+    btn-secondary-active-bg: rgba($white, 0.2),
+    btn-secondary-active-color: $white,
+    
+    btn-outline-bg: transparent,
+    btn-outline-color: $white,
+    btn-outline-border: rgba($white, 0.6),
+    btn-outline-hover-bg: $white,
+    btn-outline-hover-color: $info-600,
+    btn-outline-active-bg: $gray-100,
+    btn-outline-active-color: $info-700,
+    
+    link-color: $white,
+    link-hover: rgba($white, 0.8),
+    link-active: rgba($white, 0.6),
+    
+    input-bg: rgba($white, 0.1),
+    input-border: rgba($white, 0.3),
+    input-color: $white,
+    input-placeholder: rgba($white, 0.6)
+  ),
+  
+  "on-lavender": (
+    bg: $lavender-600,
+    text: $white,
+    text-muted: rgba($white, 0.8),
+    border: rgba($white, 0.2),
+    
+    btn-primary-bg: $white,
+    btn-primary-color: $lavender-600,
+    btn-primary-hover-bg: $gray-100,
+    btn-primary-hover-color: $lavender-700,
+    btn-primary-active-bg: $gray-200,
+    btn-primary-active-color: $lavender-800,
+    
+    btn-secondary-bg: transparent,
+    btn-secondary-color: $white,
+    btn-secondary-border: rgba($white, 0.4),
+    btn-secondary-hover-bg: rgba($white, 0.1),
+    btn-secondary-active-bg: rgba($white, 0.2),
+    btn-secondary-active-color: $white,
+    
+    btn-outline-bg: transparent,
+    btn-outline-color: $white,
+    btn-outline-border: rgba($white, 0.6),
+    btn-outline-hover-bg: $white,
+    btn-outline-hover-color: $lavender-600,
+    btn-outline-active-bg: $gray-100,
+    btn-outline-active-color: $lavender-700,
+    
+    link-color: $white,
+    link-hover: rgba($white, 0.8),
+    link-active: rgba($white, 0.6),
+    
+    input-bg: rgba($white, 0.1),
+    input-border: rgba($white, 0.3),
+    input-color: $white,
+    input-placeholder: rgba($white, 0.6)
+  ),
+  
+  "on-secondary": (
+    bg: $secondary-200,
+    text: $gray-900,
+    text-muted: $gray-600,
+    border: $gray-300,
+    
+    btn-primary-bg: $primary-600,
+    btn-primary-color: $white,
+    btn-primary-hover-bg: $primary-700,
+    btn-primary-hover-color: $white,
+    btn-primary-active-bg: $primary-800,
+    btn-primary-active-color: $white,
+    
+    btn-secondary-bg: $white,
+    btn-secondary-color: $gray-700,
+    btn-secondary-border: $gray-300,
+    btn-secondary-hover-bg: $gray-100,
+    btn-secondary-active-bg: $gray-200,
+    btn-secondary-active-color: $gray-800,
+    
+    btn-outline-bg: transparent,
+    btn-outline-color: $gray-900,
+    btn-outline-border: $gray-400,
+    btn-outline-hover-bg: $gray-900,
+    btn-outline-hover-color: $white,
+    btn-outline-active-bg: $black,
+    btn-outline-active-color: $white,
+    
+    link-color: $primary-600,
+    link-hover: $primary-700,
+    link-active: $primary-800,
+    
+    input-bg: $white,
+    input-border: $gray-300,
+    input-color: $gray-900,
+    input-placeholder: $gray-500
+  )
+);
+
+// ============================================
+// GENERATE CONTEXT CLASSES
+// ============================================
+
+@each $context-name, $context-colors in $contexts {
+  .#{$context-name} {
+    background-color: map-get($context-colors, bg);
+    color: map-get($context-colors, text);
+    
+    // CSS Custom Properties for dynamic theming
+    --#{$prefix}body-color: #{map-get($context-colors, text)};
+    --#{$prefix}body-color-rgb: #{to-rgb(map-get($context-colors, text))};
+    --#{$prefix}secondary-color: #{map-get($context-colors, text-muted)};
+    --#{$prefix}border-color: #{map-get($context-colors, border)};
+    
+    // Button context overrides
+    .btn-primary {
+      --#{$prefix}btn-bg: #{map-get($context-colors, btn-primary-bg)};
+      --#{$prefix}btn-color: #{map-get($context-colors, btn-primary-color)};
+      --#{$prefix}btn-border-color: #{map-get($context-colors, btn-primary-bg)};
+      --#{$prefix}btn-hover-bg: #{map-get($context-colors, btn-primary-hover-bg)};
+      --#{$prefix}btn-hover-color: #{map-get($context-colors, btn-primary-hover-color)};
+      --#{$prefix}btn-hover-border-color: #{map-get($context-colors, btn-primary-hover-bg)};
+      --#{$prefix}btn-active-bg: #{map-get($context-colors, btn-primary-hover-bg)};
+      --#{$prefix}btn-active-color: #{map-get($context-colors, btn-primary-hover-color)};
+    }
+    
+    .btn-secondary {
+      --#{$prefix}btn-bg: #{map-get($context-colors, btn-secondary-bg)};
+      --#{$prefix}btn-color: #{map-get($context-colors, btn-secondary-color)};
+      --#{$prefix}btn-border-color: #{map-get($context-colors, btn-secondary-border)};
+      --#{$prefix}btn-hover-bg: #{map-get($context-colors, btn-secondary-hover-bg)};
+      --#{$prefix}btn-hover-color: #{map-get($context-colors, btn-secondary-color)};
+    }
+    
+    .btn-outline-primary,
+    .btn-outline-secondary,
+    .btn-outline-neutral {
+      --#{$prefix}btn-bg: #{map-get($context-colors, btn-outline-bg)};
+      --#{$prefix}btn-color: #{map-get($context-colors, btn-outline-color)};
+      --#{$prefix}btn-border-color: #{map-get($context-colors, btn-outline-border)};
+      --#{$prefix}btn-hover-bg: #{map-get($context-colors, btn-outline-hover-bg)};
+      --#{$prefix}btn-hover-color: #{map-get($context-colors, btn-outline-hover-color)};
+      --#{$prefix}btn-hover-border-color: #{map-get($context-colors, btn-outline-hover-bg)};
+    }
+    
+    // Link context overrides
+    a:not(.btn) {
+      color: map-get($context-colors, link-color);
+      
+      &:hover {
+        color: map-get($context-colors, link-hover);
+      }
+    }
+    
+    // Form context overrides
+    .form-control,
+    .form-select {
+      background-color: map-get($context-colors, input-bg);
+      border-color: map-get($context-colors, input-border);
+      color: map-get($context-colors, input-color);
+      
+      &::placeholder {
+        color: map-get($context-colors, input-placeholder);
+      }
+      
+      &:focus {
+        border-color: map-get($context-colors, link-color);
+      }
+    }
+    
+    // Text utilities
+    .text-muted {
+      color: map-get($context-colors, text-muted) !important;
+    }
+  }
+}

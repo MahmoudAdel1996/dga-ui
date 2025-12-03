@@ -1,4 +1,69 @@
 // Toast Customizations - SDGA Custom Enhancements
+// Following Bootstrap 5.3 recommended practices
+
+// ============================================
+// TOAST VARIANTS - Using Sass map and @each loop
+// ============================================
+
+// Define toast color variants
+$toast-variants: (
+  "primary": (
+    border-color: rgba($primary-600, 0.7),
+    border: $primary-200,
+    icon-bg: $primary-50,
+    icon-color: $primary-700,
+    title-color: $primary-700
+  ),
+  "secondary": (
+    border-color: rgba($secondary-200, 0.7),
+    border: $secondary-200,
+    icon-bg: $secondary-50,
+    icon-color: $black,
+    title-color: $black
+  ),
+  "success": (
+    border-color: rgba($success-600, 0.7),
+    border: $success-200,
+    icon-bg: $success-50,
+    icon-color: $success-700,
+    title-color: $success-700
+  ),
+  "danger": (
+    border-color: rgba($danger-600, 0.7),
+    border: $danger-200,
+    icon-bg: $danger-50,
+    icon-color: $danger-700,
+    title-color: $danger-700
+  ),
+  "warning": (
+    border-color: rgba($warning-600, 0.7),
+    border: $warning-200,
+    icon-bg: $warning-50,
+    icon-color: $warning-700,
+    title-color: $warning-700
+  ),
+  "info": (
+    border-color: rgba($info-600, 0.7),
+    border: $info-200,
+    icon-bg: $info-50,
+    icon-color: $info-700,
+    title-color: $info-700
+  ),
+  "lavender": (
+    border-color: rgba($lavender-600, 0.7),
+    border: $lavender-200,
+    icon-bg: $lavender-50,
+    icon-color: $lavender-700,
+    title-color: $lavender-700
+  ),
+  "neutral": (
+    border-color: rgba($neutral-300, 0.7),
+    border: $neutral-300,
+    icon-bg: $neutral-50,
+    icon-color: $black,
+    title-color: $black
+  )
+);
 
 // ============================================
 // TOAST BASE STYLES
@@ -83,68 +148,15 @@
     // TOAST VARIANTS
     // ============================================
 
-    &.toast-primary {
-        border-inline-start-color: rgba($primary-600, 0.7);
-        --#{$prefix}border-color: #{$primary-200};
-        --#{$prefix}toast-icon-bg: #{$primary-50};
-        --#{$prefix}toast-icon-color: #{$primary-700};
-        --#{$prefix}toast-title-color: #{$primary-700};
-    }
-
-    &.toast-secondary {
-        border-inline-start-color: rgba($secondary-200, 0.7);
-        --#{$prefix}border-color: #{$secondary-200};
-        --#{$prefix}toast-icon-bg: #{$secondary-50};
-        --#{$prefix}toast-icon-color: #{$black};
-        --#{$prefix}toast-title-color: #{$black};
-    }
-
-    &.toast-success {
-        border-inline-start-color: rgba($success-600, 0.7);
-        --#{$prefix}border-color: #{$success-200};
-        --#{$prefix}toast-icon-bg: #{$success-50};
-        --#{$prefix}toast-icon-color: #{$success-700};
-        --#{$prefix}toast-title-color: #{$success-700};
-    }
-
-    &.toast-danger {
-        border-inline-start-color: rgba($danger-600, 0.7);
-        --#{$prefix}border-color: #{$danger-200};
-        --#{$prefix}toast-icon-bg: #{$danger-50};
-        --#{$prefix}toast-icon-color: #{$danger-700};
-        --#{$prefix}toast-title-color: #{$danger-700};
-    }
-
-    &.toast-warning {
-        border-inline-start-color: rgba($warning-600, 0.7);
-        --#{$prefix}border-color: #{$warning-200};
-        --#{$prefix}toast-icon-bg: #{$warning-50};
-        --#{$prefix}toast-icon-color: #{$warning-700};
-        --#{$prefix}toast-title-color: #{$warning-700};
-    }
-
-    &.toast-info {
-        border-inline-start-color: rgba($info-600, 0.7);
-        --#{$prefix}border-color: #{$info-200};
-        --#{$prefix}toast-icon-bg: #{$info-50};
-        --#{$prefix}toast-icon-color: #{$info-700};
-        --#{$prefix}toast-title-color: #{$info-700};
-    }
-
-    &.toast-lavender {
-        border-inline-start-color: rgba($lavender-600, 0.7);
-        --#{$prefix}border-color: #{$lavender-200};
-        --#{$prefix}toast-icon-bg: #{$lavender-50};
-        --#{$prefix}toast-icon-color: #{$lavender-700};
-        --#{$prefix}toast-title-color: #{$lavender-700};
-    }
-
-    &.toast-neutral {
-        border-inline-start-color: rgba($neutral-300, 0.7);
-        --#{$prefix}border-color: #{$neutral-300};
-        --#{$prefix}toast-icon-bg: #{$neutral-50};
-        --#{$prefix}toast-icon-color: #{$black};
-        --#{$prefix}toast-title-color: #{$black};
+    // Generate toast variant classes
+    @each $name, $colors in $toast-variants {
+        &.toast-#{$name} {
+            border-inline-start-color: map-get($colors, border-color);
+            --#{$prefix}border-color: #{map-get($colors, border)};
+            --#{$prefix}toast-icon-bg: #{map-get($colors, icon-bg)};
+            --#{$prefix}toast-icon-color: #{map-get($colors, icon-color)};
+            --#{$prefix}toast-title-color: #{map-get($colors, title-color)};
+        }
     }
 
     // ============================================
@@ -158,44 +170,11 @@
         width: 100%;
         flex-direction: column;
 
-        &.toast-primary {
-            border-inline-start-color: $toast-border-color;
-            border-top-color: rgba($primary-600, 0.7);
-        }
-
-        &.toast-secondary {
-            border-inline-start-color: $toast-border-color;
-            border-top-color: rgba($secondary-200, 0.7);
-        }
-
-        &.toast-success {
-            border-inline-start-color: $toast-border-color;
-            border-top-color: rgba($success-600, 0.7);
-        }
-
-        &.toast-danger {
-            border-inline-start-color: $toast-border-color;
-            border-top-color: rgba($danger-600, 0.7);
-        }
-
-        &.toast-warning {
-            border-inline-start-color: $toast-border-color;
-            border-top-color: rgba($warning-600, 0.7);
-        }
-
-        &.toast-info {
-            border-inline-start-color: $toast-border-color;
-            border-top-color: rgba($info-600, 0.7);
-        }
-
-        &.toast-lavender {
-            border-inline-start-color: $toast-border-color;
-            border-top-color: rgba($lavender-600, 0.7);
-        }
-
-        &.toast-neutral {
-            border-inline-start-color: $toast-border-color;
-            border-top-color: rgba($neutral-300, 0.7);
+        @each $name, $colors in $toast-variants {
+            &.toast-#{$name} {
+                border-inline-start-color: $toast-border-color;
+                border-top-color: map-get($colors, border-color);
+            }
         }
 
         .toast-footer {

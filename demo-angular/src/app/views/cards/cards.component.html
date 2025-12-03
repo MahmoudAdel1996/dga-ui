@@ -11,7 +11,7 @@
       <div class="card" tabindex="0">
         <div class="card-body">
           <h5 class="card-title">
-            <i class="hgi hgi-stroke hgi-checkmark-circle-02 card-title-icon"></i>
+            <i class="bi bi-check-circle card-title-icon"></i>
           </h5>
           <h6 class="card-subtitle mb-2">{{ 'cards.card_title' | translate }}</h6>
           <p class="card-text">{{ 'cards.card_text' | translate }}</p>
@@ -49,7 +49,7 @@
       <div class="card disabled" tabindex="0">
         <div class="card-body">
           <h5 class="card-title">
-            <i class="hgi hgi-stroke hgi-checkmark-circle-02 card-title-icon"></i>
+            <i class="bi bi-check-circle card-title-icon"></i>
             <input class="card-title-checked  form-check-input ripple" disabled type="checkbox" value="" id="check1" aria-label="{{ 'cards.select_card' | translate }}">
           </h5>
           <h6 class="card-subtitle mb-2">{{ 'cards.card_title' | translate }}</h6>
@@ -88,7 +88,7 @@
       <div class="card" tabindex="0" [class.expanded]="isExpanded(1)">
         <div class="card-body">
           <h5 class="card-title">
-            <i class="hgi hgi-stroke hgi-checkmark-circle-02 card-title-icon"></i>
+            <i class="bi bi-check-circle card-title-icon"></i>
             <input class="card-title-checked  form-check-input ripple" type="checkbox" value="" id="check3" aria-label="{{ 'cards.select_card' | translate }}">
           </h5>
           <h6 class="card-subtitle mb-2">{{ 'cards.expandable_title' | translate }}</h6>
@@ -106,7 +106,7 @@
           }
           
           <div class="card-footer">
-            <i class="hgi hgi-stroke hgi-arrow-up-01 card-expanded-icon" [class.hgi-arrow-up-01]="isExpanded(1)" [class.hgi-arrow-down-01]="!isExpanded(1)" (click)="toggleCard(1)"></i>
+            <i class="bi card-expanded-icon" [class.bi-chevron-up]="isExpanded(1)" [class.bi-chevron-down]="!isExpanded(1)" (click)="toggleCard(1)"></i>
           </div>
         </div>
       </div>
@@ -122,7 +122,7 @@
       <div class="card" tabindex="0" [class.expanded]="isExpanded(2)">
         <div class="card-body">
           <h5 class="card-title">
-            <i class="hgi hgi-stroke hgi-checkmark-circle-02 card-title-icon"></i>
+            <i class="bi bi-check-circle card-title-icon"></i>
           </h5>
           <h6 class="card-subtitle mb-2">{{ 'cards.expandable_title' | translate }}</h6>
           <p class="card-text">{{ 'cards.expandable_text' | translate }}</p>
@@ -143,7 +143,7 @@
           }
           
           <div class="card-footer">
-            <i class="hgi hgi-stroke hgi-arrow-up-01 card-expanded-icon" [class.hgi-arrow-up-01]="isExpanded(2)" [class.hgi-arrow-down-01]="!isExpanded(2)" (click)="toggleCard(2)"></i>
+            <i class="bi card-expanded-icon" [class.bi-chevron-up]="isExpanded(2)" [class.bi-chevron-down]="!isExpanded(2)" (click)="toggleCard(2)"></i>
           </div>
         </div>
       </div>

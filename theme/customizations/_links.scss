@@ -8,82 +8,92 @@
 // Define link color variants with their shades
 $link-variants: (
   "primary": (
-    base: $primary-600,
-    hover: $primary-400,
-    active: $primary-300 ),
+    base: rgba($primary-600, var(--#{$prefix}link-opacity, 1)),
+    base-decoration: rgba($primary-600, var(--#{$prefix}link-decoration-opacity, 1)),
+    hover: rgba($primary-400, var(--#{$prefix}link-opacity, 1)),
+    hover-decoration: rgba($primary-400, var(--#{$prefix}link-decoration-opacity, 1)),
+    active: rgba($primary-300, var(--#{$prefix}link-opacity, 1)),
+    active-decoration: rgba($primary-300, var(--#{$prefix}link-decoration-opacity, 1)) ),
   "secondary": (
-    base: $secondary-600,
-    hover: $secondary-400,
-    active: $secondary-300 ),
+    base: rgba($secondary-600, var(--#{$prefix}link-opacity, 1)),
+    base-decoration: rgba($secondary-600, var(--#{$prefix}link-decoration-opacity, 1)),
+    hover: rgba($secondary-400, var(--#{$prefix}link-opacity, 1)),
+    hover-decoration: rgba($secondary-400, var(--#{$prefix}link-decoration-opacity, 1)),
+    active: rgba($secondary-300, var(--#{$prefix}link-opacity, 1)),
+    active-decoration: rgba($secondary-300, var(--#{$prefix}link-decoration-opacity, 1)) ),
   "success": (
-    base: $success-600,
-    hover: $success-400,
-    active: $success-300 ),
+    base: rgba($success-600, var(--#{$prefix}link-opacity, 1)),
+    base-decoration: rgba($success-600, var(--#{$prefix}link-decoration-opacity, 1)),
+    hover: rgba($success-400, var(--#{$prefix}link-opacity, 1)),
+    hover-decoration: rgba($success-400, var(--#{$prefix}link-decoration-opacity, 1)),
+    active: rgba($success-300, var(--#{$prefix}link-opacity, 1)),
+    active-decoration: rgba($success-300, var(--#{$prefix}link-decoration-opacity, 1)) ),
   "danger": (
-    base: $danger-600,
-    hover: $danger-400,
-    active: $danger-300 ),
+    base: rgba($danger-600, var(--#{$prefix}link-opacity, 1)),
+    base-decoration: rgba($danger-600, var(--#{$prefix}link-decoration-opacity, 1)),
+    hover: rgba($danger-400, var(--#{$prefix}link-opacity, 1)),
+    hover-decoration: rgba($danger-400, var(--#{$prefix}link-decoration-opacity, 1)),
+    active: rgba($danger-300, var(--#{$prefix}link-opacity, 1)),
+    active-decoration: rgba($danger-300, var(--#{$prefix}link-decoration-opacity, 1)) ),
   "warning": (
-    base: $warning-600,
-    hover: $warning-400,
-    active: $warning-300 ),
+    base: rgba($warning-600, var(--#{$prefix}link-opacity, 1)),
+    base-decoration: rgba($warning-600, var(--#{$prefix}link-decoration-opacity, 1)),
+    hover: rgba($warning-400, var(--#{$prefix}link-opacity, 1)),
+    hover-decoration: rgba($warning-400, var(--#{$prefix}link-decoration-opacity, 1)),
+    active: rgba($warning-300, var(--#{$prefix}link-opacity, 1)),
+    active-decoration: rgba($warning-300, var(--#{$prefix}link-decoration-opacity, 1)) ),
   "info": (
-    base: $info-600,
-    hover: $info-400,
-    active: $info-300 ),
+    base: rgba($info-600, var(--#{$prefix}link-opacity, 1)),
+    base-decoration: rgba($info-600, var(--#{$prefix}link-decoration-opacity, 1)),
+    hover: rgba($info-400, var(--#{$prefix}link-opacity, 1)),
+    hover-decoration: rgba($info-400, var(--#{$prefix}link-decoration-opacity, 1)),
+    active: rgba($info-300, var(--#{$prefix}link-opacity, 1)),
+    active-decoration: rgba($info-300, var(--#{$prefix}link-decoration-opacity, 1)) ),
   "neutral": (
-    base: $neutral-700,
-    hover: $neutral-500,
-    active: $neutral-400 ),
+    base: rgba($neutral-700, var(--#{$prefix}link-opacity, 1)),
+    base-decoration: rgba($neutral-700, var(--#{$prefix}link-decoration-opacity, 1)),
+    hover: rgba($neutral-500, var(--#{$prefix}link-opacity, 1)),
+    hover-decoration: rgba($neutral-500, var(--#{$prefix}link-decoration-opacity, 1)),
+    active: rgba($neutral-400, var(--#{$prefix}link-opacity, 1)),
+    active-decoration: rgba($neutral-400, var(--#{$prefix}link-decoration-opacity, 1)) ),
   "lavender": (
-    base: $lavender-600,
-    hover: $lavender-500,
-    active: $lavender-400 ),
-  "oncolor": (
-    base: $white,
-    hover: rgba($white, 0.8),
-    active: rgba($white, 0.6) )
+    base: rgba($lavender-600, var(--#{$prefix}link-opacity, 1)),
+    base-decoration: rgba($lavender-600, var(--#{$prefix}link-decoration-opacity, 1)),
+    hover: rgba($lavender-500, var(--#{$prefix}link-opacity, 1)),
+    hover-decoration: rgba($lavender-500, var(--#{$prefix}link-decoration-opacity, 1)),
+    active: rgba($lavender-400, var(--#{$prefix}link-opacity, 1)),
+    active-decoration: rgba($lavender-400, var(--#{$prefix}link-decoration-opacity, 1)) )
 );
 
 // Generate link variant classes
 @each $name, $colors in $link-variants {
   .link-#{$name} {
     color: map-get($colors, base) !important;
-    text-decoration-color: map-get($colors, base) !important;
+    text-decoration-color: map-get($colors, base-decoration) !important;
 
     &:visited,
     &:focus-visible {
       color: map-get($colors, base) !important;
-      text-decoration-color: map-get($colors, base) !important;
+      text-decoration-color: map-get($colors, base-decoration) !important;
     }
 
     &:hover,
     &:focus {
       color: map-get($colors, hover) !important;
-      text-decoration-color: map-get($colors, hover) !important;
+      text-decoration-color: map-get($colors, hover-decoration) !important;
     }
 
     &:active {
       color: map-get($colors, active) !important;
-      text-decoration-color: map-get($colors, active) !important;
+      text-decoration-color: map-get($colors, active-decoration) !important;
     }
   }
-}
-
-.link-oncolor {
-  &:focus-visible {
-      outline-color: $white !important;
-    }
 }
 
 a.disabled {
-  color: $gray-400 !important;
-  text-decoration-color: $gray-400 !important;
-  pointer-events: none;
+  color: rgba($gray-400, var(--#{$prefix}link-opacity, 1)) !important;
+  text-decoration-color: rgba($gray-400, var(--#{$prefix}link-opacity, 1)) !important;
 
-  &.link-oncolor {
-    color: rgba($white, 0.3) !important;
-    text-decoration-color: rgba($white, 0.3) !important;
-  }
+  pointer-events: none;
 }
 

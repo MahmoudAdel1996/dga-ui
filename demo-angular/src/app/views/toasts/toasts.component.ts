@@ -21,7 +21,7 @@ export class ToastsComponent {
   // Success Toast with Icon
   successToastCode = `<div class="toast show fade toast-success" role="alert" aria-live="polite" aria-atomic="true">
   <div class="toast-icon">
-    <i class="hgi hgi-stroke hgi-checkmark-circle-02 toast-icon"></i>
+    <i class="bi bi-check-circle toast-icon"></i>
   </div>
   <div class="toast-content">
     <div class="toast-header">
@@ -41,7 +41,7 @@ export class ToastsComponent {
   // Danger Toast with Icon
   dangerToastCode = `<div class="toast show fade toast-danger" role="alert" aria-live="polite" aria-atomic="true">
   <div class="toast-icon">
-    <i class="hgi hgi-stroke hgi-help-circle toast-icon"></i>
+    <i class="bi bi-exclamation-circle toast-icon"></i>
   </div>
   <div class="toast-content">
     <div class="toast-header">
@@ -61,7 +61,7 @@ export class ToastsComponent {
   // Warning Toast with Icon
   warningToastCode = `<div class="toast show fade toast-warning" role="alert" aria-live="polite" aria-atomic="true">
   <div class="toast-icon">
-    <i class="hgi hgi-stroke hgi-alert-02 toast-icon"></i>
+    <i class="bi bi-exclamation-triangle toast-icon"></i>
   </div>
   <div class="toast-content">
     <div class="toast-header">
@@ -81,7 +81,7 @@ export class ToastsComponent {
   // Info Toast with Icon
   infoToastCode = `<div class="toast show fade toast-info" role="alert" aria-live="polite" aria-atomic="true">
   <div class="toast-icon">
-    <i class="hgi hgi-stroke hgi-help-circle toast-icon"></i>
+    <i class="bi bi-info-circle toast-icon"></i>
   </div>
   <div class="toast-content">
     <div class="toast-header">
@@ -101,7 +101,7 @@ export class ToastsComponent {
   // Neutral Toast with Icon
   neutralToastCode = `<div class="toast show fade toast-neutral" role="alert" aria-live="polite" aria-atomic="true">
   <div class="toast-icon">
-    <i class="hgi hgi-stroke hgi-help-circle toast-icon"></i>
+    <i class="bi bi-info-circle toast-icon"></i>
   </div>
   <div class="toast-content">
     <div class="toast-header">
@@ -122,7 +122,7 @@ export class ToastsComponent {
   fullToastCode = `<div class="toast-container">
   <div class="toast show fade toast-success" role="alert" aria-live="polite" aria-atomic="true">
     <div class="toast-icon">
-      <i class="hgi hgi-stroke hgi-checkmark-circle-02 toast-icon"></i>
+      <i class="bi bi-check-circle toast-icon"></i>
     </div>
     <div class="toast-content">
       <div class="toast-header">
@@ -143,7 +143,7 @@ export class ToastsComponent {
   // Dismissible Toast
   dismissibleToastCode = `<div class="toast show fade toast-success" role="alert" aria-live="polite" aria-atomic="true">
   <div class="toast-icon">
-    <i class="hgi hgi-stroke hgi-checkmark-circle-02 toast-icon"></i>
+    <i class="bi bi-check-circle toast-icon"></i>
   </div>
   <div class="toast-content">
     <div class="toast-header">

@@ -26,22 +26,24 @@
 @import 'config/base';
 @import 'config/effects';
 @import 'config/radius';
+@import 'config/contexts'; // Context-aware theming system
 
 // Component Variables
 @import 'components/buttons';
 @import 'components/alerts';
 @import 'components/toasts';
+@import 'components/forms';
+@import 'components/dropdowns';
+@import 'components/cards';
+@import 'components/tables';
+
+@import 'components/navbar';
 @import 'components/modals';
 @import 'components/tooltips';
 @import 'components/popovers';
 @import 'components/offcanvas';
-@import 'components/forms';
-@import 'components/navbar';
-@import 'components/dropdowns';
 @import 'components/pagination';
 @import 'components/breadcrumb';
-@import 'components/cards';
-@import 'components/tables';
 @import 'components/list-group';
 @import 'components/accordion';
 @import 'components/badges';

@@ -15,6 +15,10 @@ export const routes: Routes = [
     loadComponent: () => import('./views/alerts/alerts.component').then(m => m.AlertsComponent)
   },
   {
+    path: 'contexts',
+    loadComponent: () => import('./views/contexts/contexts.component').then(m => m.ContextsComponent)
+  },
+  {
     path: 'buttons',
     loadComponent: () => import('./views/buttons/buttons.component').then(m => m.ButtonsComponent)
   },

@@ -8,5 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './footer.scss',
 })
 export class Footer {
+True: any;
+False: any;
 
 }

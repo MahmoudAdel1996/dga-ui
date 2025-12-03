@@ -1,0 +1,85 @@
+.dga-footer {
+    background-color: $primary-900;
+    color: $white;
+    padding: 2.5rem 2rem;
+
+    .dga-list-group-container {
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+
+        .dga-link-group {
+            min-width: 12rem;
+        }
+    }
+    .dga-social-container {
+            display: flex;
+            gap: 2rem;
+            flex-direction: column;
+            flex-wrap: wrap;
+            min-width: 12rem;
+
+            & > div {
+                flex: 1;
+            }
+        }
+
+    .dga-footer-bottom {
+        margin-top: 1rem;
+
+        
+
+        .dga-footer-bottom-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+        
+
+        .dga-footer-copyright {
+            margin-bottom: 0.5rem;
+
+            .dga-footer-copyright-links {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+
+            }
+        }
+
+        .dga-logo-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+
+    }
+}
+
+@media (max-width: $tablet) {
+    .dga-footer {
+        .dga-social-container {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .dga-footer-bottom {
+            .dga-footer-bottom-links {
+                justify-content: center;
+                padding: 2rem 0;
+            }
+            .dga-footer-copyright {
+                text-align: center;
+                padding: 2rem 0;
+
+                .dga-footer-copyright-links {
+                    justify-content: center;
+                }
+            }
+
+            .dga-logo-container {
+                justify-content: space-between;
+            }
+        }
+    }
+}

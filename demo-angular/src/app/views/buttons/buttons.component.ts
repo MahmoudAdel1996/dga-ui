@@ -30,39 +30,39 @@ export class ButtonsComponent {
 <button type="button" class="btn btn-primary" disabled>Disabled</button>`;
 
   buttonIconLeftCode = `<button type="button" class="btn btn-primary btn-icon">
-  <i class="hgi hgi-stroke hgi-download-04"></i>Download
+  <i class="bi bi-download"></i>Download
 </button>
 <button type="button" class="btn btn-neutral btn-icon">
-  <i class="hgi hgi-stroke hgi-upload-04"></i>Upload
+  <i class="bi bi-upload"></i>Upload
 </button>
 <button type="button" class="btn btn-secondary btn-icon">
-  <i class="hgi hgi-stroke hgi-pencil-edit-02"></i>Edit
+  <i class="bi bi-pencil"></i>Edit
 </button>
 <button type="button" class="btn btn-danger btn-icon">
-  <i class="hgi hgi-stroke hgi-delete-02"></i>Delete
+  <i class="bi bi-trash"></i>Delete
 </button>`;
 
   buttonIconRightCode = `<button type="button" class="btn btn-primary btn-icon">
-  Save<i class="hgi hgi-stroke hgi-tick-02"></i>
+  Save<i class="bi bi-check"></i>
 </button>
 <button type="button" class="btn btn-neutral btn-icon">
-  Search<i class="hgi hgi-stroke hgi-search-01"></i>
+  Search<i class="bi bi-search"></i>
 </button>
 <button type="button" class="btn btn-secondary btn-icon">
-  Settings<i class="hgi hgi-stroke hgi-settings-02"></i>
+  Settings<i class="bi bi-gear"></i>
 </button>`;
 
   buttonIconOnlyCode = `<button type="button" class="btn btn-primary btn-icon" aria-label="Download">
-  <i class="hgi hgi-stroke hgi-download-04"></i>
+  <i class="bi bi-download"></i>
 </button>
 <button type="button" class="btn btn-neutral btn-icon" aria-label="Upload">
-  <i class="hgi hgi-stroke hgi-upload-04"></i>
+  <i class="bi bi-upload"></i>
 </button>
 <button type="button" class="btn btn-secondary btn-icon" aria-label="Edit">
-  <i class="hgi hgi-stroke hgi-pencil-edit-02"></i>
+  <i class="bi bi-pencil"></i>
 </button>
 <button type="button" class="btn btn-danger btn-icon" aria-label="Delete">
-  <i class="hgi hgi-stroke hgi-delete-02"></i>
+  <i class="bi bi-trash"></i>
 </button>`;
 
   dropdownButtonCode = `<div class="dropdown">
@@ -122,7 +122,7 @@ export class ButtonsComponent {
 
   iconDropdownCode = `<div class="dropdown">
   <button class="btn btn-primary dropdown-toggle btn-lg" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <i class="hgi hgi-stroke hgi-settings-02"></i>
+    <i class="bi bi-gear"></i>
   </button>
   <ul class="dropdown-menu">
     <li><button class="dropdown-item" type="button">Action</button></li>
@@ -133,7 +133,7 @@ export class ButtonsComponent {
 
 <div class="dropdown">
   <button class="btn btn-neutral dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <i class="hgi hgi-stroke hgi-settings-02"></i>
+    <i class="bi bi-gear"></i>
   </button>
   <ul class="dropdown-menu">
     <li><button class="dropdown-item" type="button">Action</button></li>
@@ -144,7 +144,7 @@ export class ButtonsComponent {
 
 <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <i class="hgi hgi-stroke hgi-settings-02"></i>
+    <i class="bi bi-gear"></i>
   </button>
   <ul class="dropdown-menu">
     <li><button class="dropdown-item" type="button">Action</button></li>

@@ -1,0 +1,125 @@
+// Context System Customizations
+// Enhancements and specific component adaptations within context wrappers
+
+// ============================================
+// CONTEXT-AWARE LINK VARIANTS
+// ============================================
+
+// Apply context link colors to all link variants
+@each $context-name, $context-props in $contexts {
+  .#{$context-name} {
+    // Override all link variant classes within this context
+    a[class*="link-"],
+    .link-primary,
+    .link-secondary,
+    .link-success,
+    .link-danger,
+    .link-warning,
+    .link-info,
+    .link-neutral,
+    .link-lavender {
+      color: map-get($context-props, link-color) !important;
+      text-decoration-color: map-get($context-props, link-color) !important;
+
+      &:visited,
+      &:focus-visible {
+        color: map-get($context-props, link-color) !important;
+        text-decoration-color: map-get($context-props, link-color) !important;
+      }
+
+      &:hover,
+      &:focus {
+        color: map-get($context-props, link-hover) !important;
+        text-decoration-color: map-get($context-props, link-hover) !important;
+      }
+
+      &:active {
+        color: map-get($context-props, link-active) !important;
+        text-decoration-color: map-get($context-props, link-active) !important;
+      }
+    }
+    
+    // Button active states
+    .btn-primary:active,
+    .btn-primary.active {
+      --#{$prefix}btn-active-bg: #{map-get($context-props, btn-primary-active-bg)};
+      --#{$prefix}btn-active-color: #{map-get($context-props, btn-primary-active-color)};
+      --#{$prefix}btn-active-border-color: #{map-get($context-props, btn-primary-active-bg)};
+    }
+    
+    .btn-secondary:active,
+    .btn-secondary.active {
+      --#{$prefix}btn-active-bg: #{map-get($context-props, btn-secondary-active-bg)};
+      --#{$prefix}btn-active-color: #{map-get($context-props, btn-secondary-active-color)};
+    }
+    
+    .btn-outline-primary:active,
+    .btn-outline-primary.active,
+    .btn-outline-secondary:active,
+    .btn-outline-secondary.active,
+    .btn-outline-neutral:active,
+    .btn-outline-neutral.active {
+      --#{$prefix}btn-active-bg: #{map-get($context-props, btn-outline-active-bg)};
+      --#{$prefix}btn-active-color: #{map-get($context-props, btn-outline-active-color)};
+      --#{$prefix}btn-active-border-color: #{map-get($context-props, btn-outline-active-bg)};
+    }
+  }
+}
+
+// ============================================
+// CONTEXT-AWARE TRANSITIONS
+// ============================================
+
+[class*="on-"] {
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  // Smooth transitions for interactive elements
+  a,
+  button,
+  .btn,
+  input,
+  textarea,
+  select {
+    transition: all 0.2s ease;
+  }
+}
+
+// ============================================
+// CONTEXT-AWARE COMPONENT ENHANCEMENTS
+// ============================================
+
+// Card adaptations within contexts
+@each $context-name, $context-props in $contexts {
+  .#{$context-name} {
+    .card {
+      background-color: rgba(map-get($context-props, bg), 0.1);
+      border-color: map-get($context-props, border);
+      color: map-get($context-props, text);
+    }
+
+    .badge {
+      background-color: rgba(map-get($context-props, text), 0.2);
+      color: map-get($context-props, text);
+    }
+
+    .alert {
+      background-color: rgba(map-get($context-props, text), 0.1);
+      border-color: map-get($context-props, border);
+      color: map-get($context-props, text);
+    }
+  }
+}
+
+// ============================================
+// FOCUS STATES IN CONTEXTS
+// ============================================
+
+@each $context-name, $context-props in $contexts {
+  .#{$context-name} {
+    *:focus-visible {
+      outline-color: map-get($context-props, link-color);
+      outline-offset: 2px;
+      outline-width: 2px;
+    }
+  }
+}

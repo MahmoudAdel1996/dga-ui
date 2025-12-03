@@ -4,6 +4,21 @@
 // BADGE VARIANTS
 // ============================================
 
+.badge-success {
+  background-color: $success-600;
+  color: $white;
+}
+
+.badge-warning {
+  background-color: $warning-600;
+  color: $white;
+}
+
+.badge-info {
+  background-color: $info-600;
+  color: $white;
+}
+
 .badge-lavender {
   background-color: $lavender-600;
   color: $white;

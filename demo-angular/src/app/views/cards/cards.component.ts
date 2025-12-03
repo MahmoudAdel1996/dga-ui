@@ -32,7 +32,7 @@ export class CardsComponent {
   cardWithIconCode = `<div class="card" tabindex="0">
   <div class="card-body">
     <h5 class="card-title">
-      <i class="hgi hgi-stroke hgi-checkmark-circle-02 card-title-icon"></i>
+      <i class="bi bi-check-circle card-title-icon"></i>
     </h5>
     <h6 class="card-subtitle mb-2">Card Title</h6>
     <p class="card-text">This is a sample card text that describes the content.</p>
@@ -64,7 +64,7 @@ export class CardsComponent {
   disabledCardCode = `<div class="card disabled" tabindex="0">
   <div class="card-body">
     <h5 class="card-title">
-      <i class="hgi hgi-stroke hgi-checkmark-circle-02 card-title-icon"></i>
+      <i class="bi bi-check-circle card-title-icon"></i>
       <input class="card-title-checked form-check-input ripple" 
              disabled 
              type="checkbox" 
@@ -102,7 +102,7 @@ export class CardsComponent {
   expandableCardHtmlCode = `<div class="card" tabindex="0" [class.expanded]="isExpanded(1)">
   <div class="card-body">
     <h5 class="card-title">
-      <i class="hgi hgi-stroke hgi-checkmark-circle-02 card-title-icon"></i>
+      <i class="bi bi-check-circle card-title-icon"></i>
       <input class="card-title-checked form-check-input ripple" 
              type="checkbox" 
              value="" 
@@ -124,9 +124,9 @@ export class CardsComponent {
     }
     
     <div class="card-footer">
-      <i class="hgi hgi-stroke hgi-arrow-up-01 card-expanded-icon" 
-         [class.hgi-arrow-up-01]="isExpanded(1)" 
-         [class.hgi-arrow-down-01]="!isExpanded(1)" 
+      <i class="bi card-expanded-icon" 
+         [class.bi-chevron-up]="isExpanded(1)" 
+         [class.bi-chevron-down]="!isExpanded(1)" 
          (click)="toggleCard(1)"></i>
     </div>
   </div>
@@ -163,7 +163,7 @@ export class CardsComponent {
   expandableCardSimpleHtmlCode = `<div class="card" tabindex="0" [class.expanded]="isExpanded(2)">
   <div class="card-body">
     <h5 class="card-title">
-      <i class="hgi hgi-stroke hgi-checkmark-circle-02 card-title-icon"></i>
+      <i class="bi bi-check-circle card-title-icon"></i>
     </h5>
     <h6 class="card-subtitle mb-2">Expandable Card Title</h6>
     <p class="card-text">Click the arrow to see more details.</p>
@@ -184,9 +184,9 @@ export class CardsComponent {
     }
     
     <div class="card-footer">
-      <i class="hgi hgi-stroke hgi-arrow-up-01 card-expanded-icon" 
-         [class.hgi-arrow-up-01]="isExpanded(2)" 
-         [class.hgi-arrow-down-01]="!isExpanded(2)" 
+      <i class="bi card-expanded-icon" 
+         [class.bi-chevron-up]="isExpanded(2)" 
+         [class.bi-chevron-down]="!isExpanded(2)" 
          (click)="toggleCard(2)"></i>
     </div>
   </div>
