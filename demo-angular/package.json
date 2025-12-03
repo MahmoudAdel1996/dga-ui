@@ -1,6 +1,6 @@
 {
   "name": "demo-angular",
-  "version": "0.0.0",
+  "version": "1.0.7",
   "scripts": {
     "ng": "ng",
     "start": "npm run use:local && ng serve -o",
@@ -38,7 +38,7 @@
     "bootstrap": "^5.3.8",
     "highlight.js": "^11.11.1",
     "rxjs": "~7.8.0",
-    "sdga-ui": "^1.0.6",
+    "sdga-ui": "^1.0.7",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
