@@ -41,6 +41,13 @@ export class App {
       ]
     },
     {
+      groupKey: 'nav.layout',
+      items: [
+        { id: 'header', labelKey: 'nav.header', icon: '📋', route: '/header' },
+        { id: 'footer', labelKey: 'nav.footer', icon: '📄', route: '/footer' }
+      ]
+    },
+    {
       groupKey: 'nav.components',
       items: [
         { id: 'alerts', labelKey: 'nav.alerts', icon: '⚠️', route: '/alerts' },
@@ -50,8 +57,6 @@ export class App {
         { id: 'tables', labelKey: 'nav.tables', icon: '📊', route: '/tables' },
         { id: 'toasts', labelKey: 'nav.toasts', icon: '🔔', route: '/toasts' },
         { id: 'links', labelKey: 'nav.links', icon: '🔗', route: '/links' },
-        { id: 'utilities', labelKey: 'nav.utilities', icon: '🛠️', route: '/utilities' },
-        { id: 'bootstrap', labelKey: 'nav.all_components', icon: '🎨', route: '/bootstrap' }
       ]
     }
   ];

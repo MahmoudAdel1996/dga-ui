@@ -35,11 +35,15 @@ export const routes: Routes = [
     loadComponent: () => import('./views/toasts/toasts.component').then(m => m.ToastsComponent)
   },
   {
-    path: 'bootstrap',
-    loadComponent: () => import('./views/bootstrap/bootstrap.component').then(m => m.BootstrapComponent)
-  },
-  {
     path: 'links',
     loadComponent: () => import('./views/links/links.component').then(m => m.LinksComponent)
+  },
+  {
+    path: 'header',
+    loadComponent: () => import('./views/header/header').then(m => m.Header)
+  },
+  {
+    path: 'footer',
+    loadComponent: () => import('./views/footer/footer').then(m => m.Footer)
   }
 ];

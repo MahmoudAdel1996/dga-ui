@@ -1860,9 +1860,10 @@
   --dga-heading-color: inherit;
   --dga-link-color: #1B8354;
   --dga-link-color-rgb: 27, 131, 84;
-  --dga-link-decoration: underline;
-  --dga-link-hover-color: rgb(21.6, 104.8, 67.2);
-  --dga-link-hover-color-rgb: 22, 105, 67;
+  --dga-link-decoration: none;
+  --dga-link-hover-color: rgb(18.9, 91.7, 58.8);
+  --dga-link-hover-color-rgb: 19, 92, 59;
+  --dga-link-hover-decoration: underline;
   --dga-code-color: #d63384;
   --dga-highlight-color: #161616;
   --dga-highlight-bg: rgb(255, 242.6, 205.4);
@@ -2114,10 +2115,11 @@ sup {
 
 a {
   color: rgba(var(--dga-link-color-rgb), var(--dga-link-opacity, 1));
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:hover {
   --dga-link-color-rgb: var(--dga-link-hover-color-rgb);
+  text-decoration: underline;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -4944,7 +4946,6 @@ textarea.form-control-lg {
   line-height: var(--dga-btn-line-height);
   color: var(--dga-btn-color);
   text-align: center;
-  text-decoration: none;
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
@@ -4961,6 +4962,7 @@ textarea.form-control-lg {
 }
 .btn:hover {
   color: var(--dga-btn-hover-color);
+  text-decoration: none;
   background-color: var(--dga-btn-hover-bg);
   border-color: var(--dga-btn-hover-border-color);
 }
@@ -8619,6 +8621,9 @@ textarea.form-control-lg {
   --dga-btn-disabled-border-color: transparent;
   --dga-btn-box-shadow: 0 0 0 #000;
   --dga-btn-focus-shadow-rgb: none;
+  text-decoration: none;
+}
+.btn-link:hover, .btn-link:focus-visible {
   text-decoration: underline;
 }
 .btn-link:focus-visible {
@@ -8942,7 +8947,6 @@ textarea.form-control-lg {
   font-weight: 400;
   color: var(--dga-dropdown-link-color);
   text-align: inherit;
-  text-decoration: none;
   white-space: nowrap;
   background-color: transparent;
   border: 0;
@@ -8950,6 +8954,7 @@ textarea.form-control-lg {
 }
 .dropdown-item:hover, .dropdown-item:focus {
   color: var(--dga-dropdown-link-hover-color);
+  text-decoration: none;
   background-color: var(--dga-dropdown-link-hover-bg);
 }
 .dropdown-item.active, .dropdown-item:active {
@@ -9125,7 +9130,6 @@ textarea.form-control-lg {
   font-size: var(--dga-nav-link-font-size);
   font-weight: var(--dga-nav-link-font-weight);
   color: var(--dga-nav-link-color);
-  text-decoration: none;
   background: none;
   border: 0;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
@@ -9137,6 +9141,7 @@ textarea.form-control-lg {
 }
 .nav-link:hover, .nav-link:focus {
   color: var(--dga-nav-link-hover-color);
+  text-decoration: none;
 }
 .nav-link:focus-visible {
   outline: 0;
@@ -9286,11 +9291,11 @@ textarea.form-control-lg {
   margin-right: var(--dga-navbar-brand-margin-end);
   font-size: var(--dga-navbar-brand-font-size);
   color: var(--dga-navbar-brand-color);
-  text-decoration: none;
   white-space: nowrap;
 }
 .navbar-brand:hover, .navbar-brand:focus {
   color: var(--dga-navbar-brand-hover-color);
+  text-decoration: none;
 }
 
 .navbar-nav {
@@ -9750,6 +9755,9 @@ textarea.form-control-lg {
   margin-bottom: 0;
 }
 
+.card-link:hover {
+  text-decoration: none;
+}
 .card-link + .card-link {
   margin-left: var(--dga-card-spacer-x);
 }
@@ -10063,7 +10071,6 @@ textarea.form-control-lg {
   padding: var(--dga-pagination-padding-y) var(--dga-pagination-padding-x);
   font-size: var(--dga-pagination-font-size);
   color: var(--dga-pagination-color);
-  text-decoration: none;
   background-color: var(--dga-pagination-bg);
   border: var(--dga-pagination-border-width) solid var(--dga-pagination-border-color);
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -10076,6 +10083,7 @@ textarea.form-control-lg {
 .page-link:hover {
   z-index: 2;
   color: var(--dga-pagination-hover-color);
+  text-decoration: none;
   background-color: var(--dga-pagination-hover-bg);
   border-color: var(--dga-pagination-hover-border-color);
 }
@@ -11030,7 +11038,6 @@ textarea.form-control-lg {
   display: block;
   padding: var(--dga-list-group-item-padding-y) var(--dga-list-group-item-padding-x);
   color: var(--dga-list-group-color);
-  text-decoration: none;
   background-color: var(--dga-list-group-bg);
   border: var(--dga-list-group-border-width) solid var(--dga-list-group-border-color);
 }
@@ -26312,8 +26319,6 @@ textarea.form-control-lg {
 }
 
 .link-oncolor:focus-visible {
-  color: !important;
-  text-decoration-color: !important;
   outline-color: #FFFFFF !important;
 }
 
