@@ -7,6 +7,7 @@
   "nav": {
     "getting_started": "البدء",
     "components": "المكونات",
+    "layout": "التخطيط",
     "home": "الرئيسية",
     "alerts": "التنبيهات",
     "buttons": "الأزرار",
@@ -15,6 +16,9 @@
     "tables": "الجداول",
     "toasts": "الإشعارات",
     "links": "الروابط",
+    "header": "الرأس",
+    "footer": "التذييل",
+    "contexts": "السياقات",
     "utilities": "الأدوات",
     "all_components": "جميع المكونات"
   },
@@ -229,6 +233,49 @@
     "subtle_link": "نمط رابط خفيف",
     "bold_link": "نمط رابط عريض",
     "decorated_link": "رابط مع تسطير متحرك"
+  },
+  "header": {
+    "title": "الرأس",
+    "subtitle": "مكون رأس متجاوب مع التنقل والعلامة التجارية",
+    "section_default": "الرأس الافتراضي",
+    "section_variants": "أنواع الرأس"
+  },
+  "footer": {
+    "title": "التذييل",
+    "subtitle": "مكون تذييل متجاوب مع الروابط ووسائل التواصل الاجتماعي",
+    "section_primary": "التذييل الرئيسي (خلفية on-primary)",
+    "section_secondary": "التذييل الثانوي (خلفية on-secondary)",
+    "group_label": "عنوان المجموعة",
+    "footer_link": "رابط التذييل",
+    "social_media": "وسائل التواصل الاجتماعي",
+    "accessibility_tools": "أدوات إمكانية الوصول",
+    "all_rights_reserved": "جميع الحقوق محفوظة للهيئة الرقمية للحكومة © 2024",
+    "terms_conditions": "الشروط والأحكام",
+    "privacy_policy": "سياسة الخصوصية"
+  },
+  "contexts": {
+    "title": "السياقات",
+    "subtitle": "نظام تخصيص حسب السياق لألوان المكونات التكيفية",
+    "section_intro": "مقدمة",
+    "intro_text": "يقوم نظام السياق بتكييف ألوان المكونات تلقائيًا بناءً على خلفية العنصر الأب. قم بلف المكونات في فئات السياق لضمان التباين المناسب وسهولة الوصول.",
+    "section_primary": "السياق الرئيسي (on-primary)",
+    "section_dark": "السياق الداكن (on-dark)",
+    "section_danger": "سياق الخطر (on-danger)",
+    "section_success": "سياق النجاح (on-success)",
+    "section_warning": "سياق التحذير (on-warning)",
+    "section_light": "السياق الفاتح (on-light)",
+    "section_neutral": "السياق المحايد (on-neutral)",
+    "section_info": "سياق المعلومات (on-info)",
+    "section_lavender": "سياق اللافندر (on-lavender)",
+    "section_secondary": "السياق الثانوي (on-secondary)",
+    "demo_heading": "عرض توضيحي للسياق",
+    "demo_text": "يتكيف هذا المحتوى تلقائيًا مع ألوانه بناءً على غلاف السياق.",
+    "button_primary": "زر رئيسي",
+    "button_secondary": "زر ثانوي",
+    "button_outline": "زر محدد",
+    "link_text": "هذا رابط",
+    "link_primary": "رابط رئيسي",
+    "link_neutral": "رابط محايد"
   },
   "code": {
     "show": "إظهار الكود",

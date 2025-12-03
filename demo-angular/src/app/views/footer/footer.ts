@@ -1,14 +1,142 @@
 import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { CodeExampleComponent } from '../../shared/code-example/code-example.component';
 
 @Component({
   selector: 'app-footer',
-  imports: [TranslateModule],
+  imports: [TranslateModule, CodeExampleComponent],
   templateUrl: './footer.html',
   styleUrl: './footer.scss',
 })
 export class Footer {
-True: any;
-False: any;
+  primaryFooterCode = `<footer class="dga-footer on-primary">
+  <div class="container-fluid">
+    <!-- Main Footer Content -->
+    <div class="row dga-list-group-container">
+      <!-- Footer Link Groups (5 columns) -->
+      <div class="col-6 col-md-4 col-lg dga-link-group">
+        <h6 class="border-bottom border-white border-opacity-25 pb-2 mb-3">Group Label</h6>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="#" class="link-neutral small">Footer Link</a></li>
+          <li class="mb-2"><a href="#" class="link-neutral small">Footer Link</a></li>
+          <li class="mb-2"><a href="#" class="link-neutral small">Footer Link</a></li>
+        </ul>
+      </div>
 
+      <div class="col-6 col-md-4 col-lg dga-link-group">
+        <h6 class="border-bottom border-white border-opacity-25 pb-2 mb-3">Group Label</h6>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="#" class="link-neutral small">Footer Link</a></li>
+          <li class="mb-2"><a href="#" class="link-neutral small">Footer Link</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media & Accessibility -->
+      <div class="col-12 col-lg-auto">
+        <div class="dga-social-container">
+          <!-- Social Media -->
+          <div>
+            <h6 class="border-bottom border-white border-opacity-25 pb-2 mb-3">Social Media</h6>
+            <div class="d-flex gap-2 flex-wrap">
+              <button type="button" class="btn btn-outline-secondary btn-icon" aria-label="Twitter">
+                <i class="bi bi-twitter"></i>
+              </button>
+              <button type="button" class="btn btn-outline-secondary btn-icon" aria-label="Facebook">
+                <i class="bi bi-facebook"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Accessibility Tools -->
+          <div>
+            <h6 class="border-bottom border-white border-opacity-25 pb-2 mb-3">Accessibility Tools</h6>
+            <div class="d-flex gap-2 flex-wrap">
+              <button class="btn btn-outline-secondary btn-icon" aria-label="Vision">
+                <i class="bi bi-eye"></i>
+              </button>
+              <button class="btn btn-outline-secondary btn-icon" aria-label="Audio">
+                <i class="bi bi-volume-up"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="dga-footer-bottom">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-8">
+          <!-- Footer Links Row -->
+          <div class="dga-footer-bottom-links">
+            <a href="#" class="link-neutral text-decoration-underline small">Footer Link</a>
+            <a href="#" class="link-neutral text-decoration-underline small">Footer Link</a>
+            <a href="#" class="link-neutral text-decoration-underline small">Footer Link</a>
+          </div>
+
+          <!-- Copyright -->
+          <div class="dga-footer-copyright">
+            <p class="fw-semibold small mb-2">All Rights Reserved © 2024</p>
+            <div class="dga-footer-copyright-links">
+              <a href="#" class="link-neutral small">Terms and Conditions</a>
+              <a href="#" class="link-neutral small">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Logos -->
+        <div class="col-lg-4">
+          <div class="dga-logo-container">
+            <img src="https://placehold.co/125x42" alt="logo">
+            <img src="https://placehold.co/125x42" alt="logo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>`;
+
+  secondaryFooterCode = `<footer class="dga-footer on-secondary">
+  <div class="container-fluid">
+    <!-- Main Footer Content -->
+    <div class="row dga-list-group-container">
+      <!-- Footer Link Groups -->
+      <div class="col-6 col-md-4 col-lg dga-link-group">
+        <h6 class="border-bottom pb-2 mb-3">Group Label</h6>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="#" class="link-neutral small">Footer Link</a></li>
+          <li class="mb-2"><a href="#" class="link-neutral small">Footer Link</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media & Accessibility -->
+      <div class="col-12 col-lg-auto">
+        <div class="dga-social-container">
+          <div>
+            <h6 class="border-bottom pb-2 mb-3">Social Media</h6>
+            <div class="d-flex gap-2 flex-wrap">
+              <button type="button" class="btn btn-outline-secondary btn-icon">
+                <i class="bi bi-twitter"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="dga-footer-bottom">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-8">
+          <div class="dga-footer-bottom-links">
+            <a href="#" class="link-neutral text-decoration-underline small">Footer Link</a>
+          </div>
+          <div class="dga-footer-copyright">
+            <p class="fw-semibold small mb-2">All Rights Reserved © 2024</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>`;
 }

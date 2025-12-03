@@ -7,6 +7,7 @@
   "nav": {
     "getting_started": "Getting Started",
     "components": "Components",
+    "layout": "Layout",
     "home": "Home",
     "alerts": "Alerts",
     "buttons": "Buttons",
@@ -15,6 +16,9 @@
     "tables": "Tables",
     "toasts": "Toasts",
     "links": "Links",
+    "header": "Header",
+    "footer": "Footer",
+    "contexts": "Contexts",
     "utilities": "Utilities",
     "all_components": "All Components"
   },
@@ -229,6 +233,49 @@
     "subtle_link": "Subtle link style",
     "bold_link": "Bold link style",
     "decorated_link": "Animated underline link"
+  },
+  "header": {
+    "title": "Header",
+    "subtitle": "Responsive header component with navigation and branding",
+    "section_default": "Default Header",
+    "section_variants": "Header Variants"
+  },
+  "footer": {
+    "title": "Footer",
+    "subtitle": "Responsive footer component with links and social media",
+    "section_primary": "Primary Footer (on-primary background)",
+    "section_secondary": "Secondary Footer (on-secondary background)",
+    "group_label": "Group Label",
+    "footer_link": "Footer Link",
+    "social_media": "Social Media",
+    "accessibility_tools": "Accessibility Tools",
+    "all_rights_reserved": "All Rights Reserved For Digital Government Authority © 2024",
+    "terms_conditions": "Terms and Conditions",
+    "privacy_policy": "Privacy Policy"
+  },
+  "contexts": {
+    "title": "Contexts",
+    "subtitle": "Context-aware theming system for adaptive component colors",
+    "section_intro": "Introduction",
+    "intro_text": "The context system automatically adapts component colors based on their parent background. Wrap components in context classes to ensure proper contrast and accessibility.",
+    "section_primary": "Primary Context (on-primary)",
+    "section_dark": "Dark Context (on-dark)",
+    "section_danger": "Danger Context (on-danger)",
+    "section_success": "Success Context (on-success)",
+    "section_warning": "Warning Context (on-warning)",
+    "section_light": "Light Context (on-light)",
+    "section_neutral": "Neutral Context (on-neutral)",
+    "section_info": "Info Context (on-info)",
+    "section_lavender": "Lavender Context (on-lavender)",
+    "section_secondary": "Secondary Context (on-secondary)",
+    "demo_heading": "Context Demo",
+    "demo_text": "This content automatically adapts its colors based on the context wrapper.",
+    "button_primary": "Primary Button",
+    "button_secondary": "Secondary Button",
+    "button_outline": "Outline Button",
+    "link_text": "This is a link",
+    "link_primary": "Primary Link",
+    "link_neutral": "Neutral Link"
   },
   "code": {
     "show": "Show Code",
