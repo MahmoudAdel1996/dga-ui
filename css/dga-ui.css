@@ -26524,11 +26524,11 @@ a.disabled {
   --dga-btn-bg: transparent;
   --dga-btn-border-color: transparent;
   --dga-btn-hover-color: #FFFFFF;
-  --dga-btn-hover-bg: rgba(255, 255, 255, 0.2);
+  --dga-btn-hover-bg: transparent;
   --dga-btn-hover-border-color: transparent;
   --dga-btn-focus-shadow-rgb: ;
-  --dga-btn-active-color: #FFFFFF;
-  --dga-btn-active-bg: rgba(255, 255, 255, 0.4);
+  --dga-btn-active-color: #88D8AD;
+  --dga-btn-active-bg: transparent;
   --dga-btn-active-border-color: transparent;
   --dga-btn-disabled-color: rgba(255, 255, 255, 0.4);
   --dga-btn-disabled-bg: transparent;

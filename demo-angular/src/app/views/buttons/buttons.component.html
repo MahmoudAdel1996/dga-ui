@@ -22,6 +22,24 @@
     </div>
     <app-code-example [htmlCode]="destructiveButtonsCode"></app-code-example>
     
+    <h3 class="mt-5">On Primary Context</h3>
+    <div class="on-primary p-4 rounded-2">
+    <div class="component-showcase mb-3">
+      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-neutral">Neutral</button>
+      <button type="button" class="btn btn-secondary">Secondary</button>
+      <button type="button" class="btn btn-outline-secondary">Outline Secondary</button>
+      <button type="button" class="btn btn-subtle">Subtle</button>
+      <button type="button" class="btn btn-transparent">Transparent</button>
+      <button type="button" class="btn btn-destructive-primary">Destructive Primary</button>
+      <button type="button" class="btn btn-destructive-secondary">Destructive Secondary</button>
+      <button type="button" class="btn btn-destructive-outline-secondary">Destructive Outline</button>
+      <button type="button" class="btn btn-destructive-subtle">Destructive Subtle</button>
+      <button type="button" class="btn btn-destructive-transparent">Destructive Transparent</button>
+    </div>
+    </div>
+    <app-code-example [htmlCode]="onPrimaryButtonsCode" [onColor]="'primary'"></app-code-example>
+    
     <h3 class="mt-5">{{ 'buttons.section_outline' | translate }}</h3>
     <div class="component-showcase">
       <button type="button" class="btn btn-outline-secondary">{{ 'buttons.secondary' | translate }}</button>

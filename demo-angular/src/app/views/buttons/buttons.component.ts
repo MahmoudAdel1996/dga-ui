@@ -21,6 +21,19 @@ export class ButtonsComponent {
 <button type="button" class="btn btn-destructive-subtle">Destructive Subtle</button>
 <button type="button" class="btn btn-destructive-transparent">Destructive Transparent</button>`;
 
+  onPrimaryButtonsCode = `<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-neutral">Neutral</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-outline-secondary">Outline Secondary</button>
+<button type="button" class="btn btn-subtle">Subtle</button>
+<button type="button" class="btn btn-transparent">Transparent</button>
+
+<button type="button" class="btn btn-destructive-primary">Destructive Primary</button>
+<button type="button" class="btn btn-destructive-secondary">Destructive Secondary</button>
+<button type="button" class="btn btn-destructive-outline-secondary">Destructive Outline</button>
+<button type="button" class="btn btn-destructive-subtle">Destructive Subtle</button>
+<button type="button" class="btn btn-destructive-transparent">Destructive Transparent</button>`;
+
   outlineButtonsCode = `<button type="button" class="btn btn-outline-secondary">Secondary</button>
 <button type="button" class="btn btn-destructive-outline-secondary">Destructive</button>`;
 

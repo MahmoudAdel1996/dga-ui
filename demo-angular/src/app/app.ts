@@ -2,6 +2,9 @@ import { Component, signal, inject, effect } from '@angular/core';
 import { RouterOutlet, Router } from '@angular/router';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 
+// Import package.json to get version
+import packageJson from '../../package.json';
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, TranslateModule],
@@ -16,6 +19,7 @@ export class App {
   protected readonly currentTheme = signal<string | null>(null);
   protected readonly currentLang = signal<'en' | 'ar'>('en');
   protected readonly isRTL = signal(false);
+  protected readonly version = packageJson.version;
 
   constructor() {
     // Initialize translations
@@ -43,7 +47,7 @@ export class App {
     {
       groupKey: 'nav.layout',
       items: [
-        { id: 'header', labelKey: 'nav.header', icon: '📋', route: '/header' },
+        // { id: 'header', labelKey: 'nav.header', icon: '📋', route: '/header' },
         { id: 'footer', labelKey: 'nav.footer', icon: '📄', route: '/footer' }
       ]
     },
@@ -51,7 +55,6 @@ export class App {
       groupKey: 'nav.components',
       items: [
         { id: 'alerts', labelKey: 'nav.alerts', icon: '⚠️', route: '/alerts' },
-        { id: 'contexts', labelKey: 'nav.contexts', icon: '🧩', route: '/contexts' },
         { id: 'buttons', labelKey: 'nav.buttons', icon: '🔘', route: '/buttons' },
         { id: 'cards', labelKey: 'nav.cards', icon: '🃏', route: '/cards' },
         { id: 'forms', labelKey: 'nav.forms', icon: '📝', route: '/forms' },

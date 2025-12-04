@@ -15,6 +15,7 @@ export class CodeExampleComponent {
   @Input() scssCode?: string;
   @Input() title?: string;
   @Input() expanded = false;
+  @Input() onColor?: string;
 
   isExpanded = signal(false);
   activeTab = signal<'html' | 'ts' | 'scss'>('html');
@@ -38,10 +39,20 @@ export class CodeExampleComponent {
 
   get currentCode(): string {
     const tab = this.activeTab();
-    if (tab === 'html' && this.htmlCode) return this.htmlCode;
+    if (tab === 'html' && this.htmlCode) return this.wrappedHtmlCode;
     if (tab === 'ts' && this.tsCode) return this.tsCode;
     if (tab === 'scss' && this.scssCode) return this.scssCode;
     return '';
+  }
+
+  get wrappedHtmlCode(): string {
+    if (!this.htmlCode) return '';
+    if (this.onColor) {
+      return `<div class="on-${this.onColor}">
+  ${this.htmlCode.split('\n').join('\n  ')}
+</div>`;
+    }
+    return this.htmlCode;
   }
 
   get highlightedCode(): string {
