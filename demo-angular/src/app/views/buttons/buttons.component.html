@@ -5,19 +5,27 @@
   <section class="demo-section">
     <h2>{{ 'buttons.section_solid' | translate }}</h2>
     <div class="component-showcase">
-      <button type="button" class="btn btn-primary">{{ 'buttons.primary' | translate }}</button>
-      <button type="button" class="btn btn-neutral">{{ 'buttons.neutral' | translate }}</button>
-      <button type="button" class="btn btn-secondary">{{ 'buttons.secondary' | translate }}</button>
-      <button type="button" class="btn btn-danger">{{ 'buttons.danger' | translate }}</button>
+      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-neutral">Neutral</button>
+      <button type="button" class="btn btn-secondary">Secondary</button>
+      <button type="button" class="btn btn-subtle">Subtle</button>
+      <button type="button" class="btn btn-transparent">Transparent</button>
     </div>
     <app-code-example [htmlCode]="solidButtonsCode"></app-code-example>
     
+    <h3 class="mt-5">Destructive Variants</h3>
+    <div class="component-showcase">
+      <button type="button" class="btn btn-destructive-primary">Destructive Primary</button>
+      <button type="button" class="btn btn-destructive-secondary">Destructive Secondary</button>
+      <button type="button" class="btn btn-destructive-subtle">Destructive Subtle</button>
+      <button type="button" class="btn btn-destructive-transparent">Destructive Transparent</button>
+    </div>
+    <app-code-example [htmlCode]="destructiveButtonsCode"></app-code-example>
+    
     <h3 class="mt-5">{{ 'buttons.section_outline' | translate }}</h3>
     <div class="component-showcase">
-      <button type="button" class="btn btn-outline-primary">{{ 'buttons.primary' | translate }}</button>
       <button type="button" class="btn btn-outline-secondary">{{ 'buttons.secondary' | translate }}</button>
-      <button type="button" class="btn btn-outline-neutral">{{ 'buttons.neutral' | translate }}</button>
-      <button type="button" class="btn btn-outline-danger">{{ 'buttons.danger' | translate }}</button>
+      <button type="button" class="btn btn-destructive-outline-secondary">{{ 'buttons.danger' | translate }}</button>
     </div>
     <app-code-example [htmlCode]="outlineButtonsCode"></app-code-example>
     
@@ -46,10 +54,35 @@
       <button type="button" class="btn btn-secondary active">{{ 'buttons.active' | translate }}</button>
       <button type="button" class="btn btn-secondary" disabled>{{ 'buttons.disabled' | translate }}</button>
     </div>
+    <div class="component-showcase mb-3">
+      <button type="button" class="btn btn-subtle">{{ 'buttons.normal' | translate }}</button>
+      <button type="button" class="btn btn-subtle active">{{ 'buttons.active' | translate }}</button>
+      <button type="button" class="btn btn-subtle" disabled>{{ 'buttons.disabled' | translate }}</button>
+    </div>
+    <div class="component-showcase mb-3">
+      <button type="button" class="btn btn-transparent">{{ 'buttons.normal' | translate }}</button>
+      <button type="button" class="btn btn-transparent active">{{ 'buttons.active' | translate }}</button>
+      <button type="button" class="btn btn-transparent" disabled>{{ 'buttons.disabled' | translate }}</button>
+    </div>
+    <div class="component-showcase mb-3">
+      <button type="button" class="btn btn-destructive-primary">{{ 'buttons.normal' | translate }}</button>
+      <button type="button" class="btn btn-destructive-primary active">{{ 'buttons.active' | translate }}</button>
+      <button type="button" class="btn btn-destructive-primary" disabled>{{ 'buttons.disabled' | translate }}</button>
+    </div>
+    <div class="component-showcase mb-3">
+      <button type="button" class="btn btn-destructive-secondary">{{ 'buttons.normal' | translate }}</button>
+      <button type="button" class="btn btn-destructive-secondary active">{{ 'buttons.active' | translate }}</button>
+      <button type="button" class="btn btn-destructive-secondary" disabled>{{ 'buttons.disabled' | translate }}</button>
+    </div>
+    <div class="component-showcase mb-3">
+      <button type="button" class="btn btn-destructive-subtle">{{ 'buttons.normal' | translate }}</button>
+      <button type="button" class="btn btn-destructive-subtle active">{{ 'buttons.active' | translate }}</button>
+      <button type="button" class="btn btn-destructive-subtle" disabled>{{ 'buttons.disabled' | translate }}</button>
+    </div>
     <div class="component-showcase">
-      <button type="button" class="btn btn-danger">{{ 'buttons.normal' | translate }}</button>
-      <button type="button" class="btn btn-danger active">{{ 'buttons.active' | translate }}</button>
-      <button type="button" class="btn btn-danger" disabled>{{ 'buttons.disabled' | translate }}</button>
+      <button type="button" class="btn btn-destructive-transparent">{{ 'buttons.normal' | translate }}</button>
+      <button type="button" class="btn btn-destructive-transparent active">{{ 'buttons.active' | translate }}</button>
+      <button type="button" class="btn btn-destructive-transparent" disabled>{{ 'buttons.disabled' | translate }}</button>
     </div>
     <app-code-example [htmlCode]="buttonStatesCode"></app-code-example>
     
@@ -64,8 +97,17 @@
       <button type="button" class="btn btn-secondary btn-icon">
         <i class="bi bi-pencil"></i>{{ 'buttons.edit' | translate }}
       </button>
-      <button type="button" class="btn btn-danger btn-icon">
+      <button type="button" class="btn btn-subtle btn-icon">
+        <i class="bi bi-eye"></i>View
+      </button>
+      <button type="button" class="btn btn-transparent btn-icon">
+        <i class="bi bi-link"></i>Link
+      </button>
+      <button type="button" class="btn btn-destructive-primary btn-icon">
         <i class="bi bi-trash"></i>{{ 'buttons.delete' | translate }}
+      </button>
+      <button type="button" class="btn btn-destructive-secondary btn-icon">
+        <i class="bi bi-x-circle"></i>Cancel
       </button>
     </div>
     <app-code-example [htmlCode]="buttonIconLeftCode"></app-code-example>
@@ -85,7 +127,7 @@
       <button type="button" class="btn btn-primary btn-icon btn-sm">
         <i class="bi bi-plus-circle"></i>{{ 'buttons.add' | translate }}
       </button>
-      <button type="button" class="btn btn-outline-primary btn-icon">
+      <button type="button" class="btn btn-outline-secondary btn-icon">
         <i class="bi bi-arrow-right"></i>{{ 'buttons.next' | translate }}
       </button>
       <button type="button" class="btn btn-outline-secondary btn-icon">
@@ -104,18 +146,18 @@
       <button type="button" class="btn btn-secondary btn-icon" aria-label="{{ 'buttons.edit' | translate }}">
         <i class="bi bi-pencil"></i>
       </button>
-      <button type="button" class="btn btn-danger btn-icon" aria-label="{{ 'buttons.delete' | translate }}">
+      <button type="button" class="btn btn-destructive-primary btn-icon" aria-label="{{ 'buttons.delete' | translate }}">
         <i class="bi bi-trash"></i>
       </button>
     </div>
     <div class="component-showcase mb-3">
-      <button type="button" class="btn btn-outline-primary btn-icon" aria-label="{{ 'buttons.search' | translate }}">
+      <button type="button" class="btn btn-outline-secondary btn-icon" aria-label="{{ 'buttons.search' | translate }}">
         <i class="bi bi-search"></i>
       </button>
       <button type="button" class="btn btn-outline-secondary btn-icon" aria-label="{{ 'buttons.settings' | translate }}">
         <i class="bi bi-gear"></i>
       </button>
-      <button type="button" class="btn btn-outline-neutral btn-icon" aria-label="{{ 'buttons.add' | translate }}">
+      <button type="button" class="btn btn-outline-secondary btn-icon" aria-label="{{ 'buttons.add' | translate }}">
         <i class="bi bi-plus-circle"></i>
       </button>
     </div>
@@ -168,7 +210,29 @@
       </div>
       
       <div class="dropdown">
-        <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-subtle dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Subtle
+        </button>
+        <ul class="dropdown-menu">
+          <li><button class="dropdown-item" type="button">{{ 'buttons.dropdown_action' | translate }}</button></li>
+          <li><button class="dropdown-item" type="button">{{ 'buttons.dropdown_another' | translate }}</button></li>
+          <li><button class="dropdown-item" type="button">{{ 'buttons.dropdown_something' | translate }}</button></li>
+        </ul>
+      </div>
+      
+      <div class="dropdown">
+        <button class="btn btn-transparent dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Transparent
+        </button>
+        <ul class="dropdown-menu">
+          <li><button class="dropdown-item" type="button">{{ 'buttons.dropdown_action' | translate }}</button></li>
+          <li><button class="dropdown-item" type="button">{{ 'buttons.dropdown_another' | translate }}</button></li>
+          <li><button class="dropdown-item" type="button">{{ 'buttons.dropdown_something' | translate }}</button></li>
+        </ul>
+      </div>
+      
+      <div class="dropdown">
+        <button class="btn btn-destructive-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           {{ 'buttons.dropdown_danger' | translate }}
         </button>
         <ul class="dropdown-menu">
@@ -182,17 +246,6 @@
     
     <div class="component-showcase mb-3">
       <div class="dropdown">
-        <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          {{ 'buttons.dropdown_outline' | translate }}
-        </button>
-        <ul class="dropdown-menu">
-          <li><button class="dropdown-item" type="button">{{ 'buttons.dropdown_action' | translate }}</button></li>
-          <li><button class="dropdown-item" type="button">{{ 'buttons.dropdown_another' | translate }}</button></li>
-          <li><button class="dropdown-item" type="button">{{ 'buttons.dropdown_something' | translate }}</button></li>
-        </ul>
-      </div>
-      
-      <div class="dropdown">
         <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           {{ 'buttons.dropdown_outline' | translate }}
         </button>
@@ -204,7 +257,7 @@
       </div>
       
       <div class="dropdown">
-        <button class="btn btn-outline-neutral dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-destructive-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           {{ 'buttons.dropdown_outline' | translate }}
         </button>
         <ul class="dropdown-menu">
