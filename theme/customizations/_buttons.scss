@@ -9,256 +9,315 @@
 
 // Define button variants with their CSS custom properties
 $button-variants: (
+  "neutral": (
+    color: $white,
+    bg: $neutral-950,
+    border-color: $neutral-950,
+    hover-color: $white,
+    hover-bg: $neutral-800,
+    hover-border-color: $neutral-800,
+    active-color: $white,
+    active-bg: $neutral-600,
+    active-border-color: $neutral-600,
+    disabled-color: $neutral-400,
+    disabled-bg: $neutral-200,
+    disabled-border-color: $neutral-200
+  ),
   "primary": (
-    color: $btn-primary-color,
-    bg: $btn-primary-bg,
-    border-color: $btn-primary-border-color,
-    hover-color: $btn-primary-hover-color,
-    hover-bg: $btn-primary-hover-bg,
-    hover-border-color: $btn-primary-hover-border-color,
-    focus-shadow-rgb: $btn-primary-focus-shadow-rgb,
-    active-color: $btn-primary-active-color,
-    active-bg: $btn-primary-active-bg,
-    active-border-color: $btn-primary-active-border-color,
-    disabled-color: $btn-primary-disabled-color,
-    disabled-bg: $btn-primary-disabled-bg,
-    disabled-border-color: $btn-primary-disabled-border-color
+    color: $white,
+    bg: $primary-600,
+    border-color: $primary-600,
+    hover-color: $white,
+    hover-bg: $primary-700,
+    hover-border-color: $primary-700,
+    active-color: $white,
+    active-bg: $primary-800,
+    active-border-color: $primary-800,
+    disabled-color: $white,
+    disabled-bg: $primary-200,
+    disabled-border-color: $primary-200
   ),
   "secondary": (
-    color: $btn-secondary-color,
-    bg: $btn-secondary-bg,
-    border-color: $btn-secondary-border-color,
-    hover-color: $btn-secondary-hover-color,
-    hover-bg: $btn-secondary-hover-bg,
-    hover-border-color: $btn-secondary-hover-border-color,
-    focus-shadow-rgb: $btn-secondary-focus-shadow-rgb,
-    active-color: $btn-secondary-active-color,
-    active-bg: $btn-secondary-active-bg,
-    active-border-color: $btn-secondary-active-border-color,
-    disabled-color: $btn-secondary-disabled-color,
-    disabled-bg: $btn-secondary-disabled-bg,
-    disabled-border-color: $btn-secondary-disabled-border-color
+    color: $black,
+    bg: $secondary-100,
+    border-color: $secondary-100,
+    hover-color: $black,
+    hover-bg: $secondary-200,
+    hover-border-color: $secondary-200,
+    active-color: $black,
+    active-bg: $secondary-200,
+    active-border-color: $secondary-200,
+    disabled-color: $secondary-400,
+    disabled-bg: $secondary-200,
+    disabled-border-color: $secondary-200
   ),
-  "danger": (
-    color: $btn-danger-color,
-    bg: $btn-danger-bg,
-    border-color: $btn-danger-border-color,
-    hover-color: $btn-danger-hover-color,
-    hover-bg: $btn-danger-hover-bg,
-    hover-border-color: $btn-danger-hover-border-color,
-    focus-shadow-rgb: $btn-danger-focus-shadow-rgb,
-    active-color: $btn-danger-active-color,
-    active-bg: $btn-danger-active-bg,
-    active-border-color: $btn-danger-active-border-color,
-    disabled-color: $btn-danger-disabled-color,
-    disabled-bg: $btn-danger-disabled-bg,
-    disabled-border-color: $btn-danger-disabled-border-color
-  ),
-  "success": (
-    color: $btn-success-color,
-    bg: $btn-success-bg,
-    border-color: $btn-success-border-color,
-    hover-color: $btn-success-hover-color,
-    hover-bg: $btn-success-hover-bg,
-    hover-border-color: $btn-success-hover-border-color,
-    focus-shadow-rgb: $btn-success-focus-shadow-rgb,
-    active-color: $btn-success-active-color,
-    active-bg: $btn-success-active-bg,
-    active-border-color: $btn-success-active-border-color,
-    disabled-color: $btn-success-disabled-color,
-    disabled-bg: $btn-success-disabled-bg,
-    disabled-border-color: $btn-success-disabled-border-color
-  ),
-  "warning": (
-    color: $btn-warning-color,
-    bg: $btn-warning-bg,
-    border-color: $btn-warning-border-color,
-    hover-color: $btn-warning-hover-color,
-    hover-bg: $btn-warning-hover-bg,
-    hover-border-color: $btn-warning-hover-border-color,
-    focus-shadow-rgb: $btn-warning-focus-shadow-rgb,
-    active-color: $btn-warning-active-color,
-    active-bg: $btn-warning-active-bg,
-    active-border-color: $btn-warning-active-border-color,
-    disabled-color: $btn-warning-disabled-color,
-    disabled-bg: $btn-warning-disabled-bg,
-    disabled-border-color: $btn-warning-disabled-border-color
-  ),
-  "info": (
-    color: $btn-info-color,
-    bg: $btn-info-bg,
-    border-color: $btn-info-border-color,
-    hover-color: $btn-info-hover-color,
-    hover-bg: $btn-info-hover-bg,
-    hover-border-color: $btn-info-hover-border-color,
-    focus-shadow-rgb: $btn-info-focus-shadow-rgb,
-    active-color: $btn-info-active-color,
-    active-bg: $btn-info-active-bg,
-    active-border-color: $btn-info-active-border-color,
-    disabled-color: $btn-info-disabled-color,
-    disabled-bg: $btn-info-disabled-bg,
-    disabled-border-color: $btn-info-disabled-border-color
-  ),
-  "lavender": (
-    color: $btn-lavender-color,
-    bg: $btn-lavender-bg,
-    border-color: $btn-lavender-border-color,
-    hover-color: $btn-lavender-hover-color,
-    hover-bg: $btn-lavender-hover-bg,
-    hover-border-color: $btn-lavender-hover-border-color,
-    focus-shadow-rgb: $btn-lavender-focus-shadow-rgb,
-    active-color: $btn-lavender-active-color,
-    active-bg: $btn-lavender-active-bg,
-    active-border-color: $btn-lavender-active-border-color,
-    disabled-color: $btn-lavender-disabled-color,
-    disabled-bg: $btn-lavender-disabled-bg,
-    disabled-border-color: $btn-lavender-disabled-border-color
-  ),
-  "neutral": (
-    color: $btn-neutral-color,
-    bg: $btn-neutral-bg,
-    border-color: $btn-neutral-border-color,
-    hover-color: $btn-neutral-hover-color,
-    hover-bg: $btn-neutral-hover-bg,
-    hover-border-color: $btn-neutral-hover-border-color,
-    focus-shadow-rgb: $btn-neutral-focus-shadow-rgb,
-    active-color: $btn-neutral-active-color,
-    active-bg: $btn-neutral-active-bg,
-    active-border-color: $btn-neutral-active-border-color,
-    disabled-color: $btn-neutral-disabled-color,
-    disabled-bg: $btn-neutral-disabled-bg,
-    disabled-border-color: $btn-neutral-disabled-border-color
+  "outline-secondary": (
+    color: $black,
+    border-color: $secondary-300,
+    hover-color: $black,
+    hover-bg: $secondary-100,
+    hover-border-color: $secondary-200,
+    active-color: $black,
+    active-bg: $secondary-200,
+    active-border-color: $secondary-300,
+    disabled-color: $secondary-400,
+    disabled-bg: transparent,
+    disabled-border-color: $secondary-400
   ),
   "subtle": (
-    color: $btn-subtle-color,
+    color: $black,
     bg: transparent,
-    border-color: $btn-subtle-border-color,
-    hover-color: $btn-subtle-hover-color,
-    hover-bg: $btn-subtle-hover-bg,
-    hover-border-color: $btn-subtle-hover-border-color,
-    focus-shadow-rgb: $btn-subtle-focus-shadow-rgb,
-    active-color: $btn-subtle-active-color,
-    active-bg: $btn-subtle-active-bg,
-    active-border-color: $btn-subtle-active-border-color,
-    disabled-color: $btn-subtle-disabled-color,
-    disabled-bg: $btn-subtle-disabled-bg,
-    disabled-border-color: $btn-subtle-disabled-border-color
+    border-color: transparent,
+    hover-color: $black,
+    hover-bg: transparent,
+    hover-border-color: transparent,
+    active-color: $black,
+    active-bg: transparent,
+    active-border-color: transparent,
+    disabled-color: $neutral-400,
+    disabled-bg: transparent,
+    disabled-border-color: transparent
+  ),
+  "transparent": (
+    color: $black,
+    bg: transparent,
+    border-color: transparent,
+    hover-color: $primary-700,
+    hover-bg: transparent,
+    hover-border-color: transparent,
+    active-color: $primary-900,
+    active-bg: transparent,
+    active-border-color: transparent,
+    disabled-color: $neutral-400,
+    disabled-bg: transparent,
+    disabled-border-color: transparent
+  ),
+  "destructive-primary": (
+    color: $white,
+    bg: $error-600,
+    border-color: transparent,
+    hover-color: $white,
+    hover-bg: $error-700,
+    hover-border-color: transparent,
+    active-color: $white,
+    active-bg: $error-900,
+    active-border-color: transparent,
+    disabled-color: $neutral-400,
+    disabled-bg: transparent,
+    disabled-border-color: transparent
+  ),
+  "destructive-secondary": (
+    color: $error-700,
+    bg: $error-50,
+    border-color: transparent,
+    hover-color: $error-700,
+    hover-bg: $error-100,
+    hover-border-color: transparent,
+    active-color: $error-700,
+    active-bg: $error-200,
+    active-border-color: transparent,
+    disabled-color: $neutral-400,
+    disabled-bg: transparent,
+    disabled-border-color: transparent
+  ),
+  "destructive-outline-secondary": (
+    color: $error-700,
+    bg: transparent,
+    border-color: $error-200,
+    hover-color: $error-700,
+    hover-bg: $error-100,
+    hover-border-color: $error-100,
+    active-color: $error-700,
+    active-bg: $error-200,
+    active-border-color: transparent,
+    disabled-color: $neutral-400,
+    disabled-bg: transparent,
+    disabled-border-color: transparent
+  ),
+  "destructive-subtle": (
+    color: $error-700,
+    bg: transparent,
+    border-color: transparent,
+    hover-color: $error-700,
+    hover-bg: $error-100,
+    hover-border-color: transparent,
+    active-color: $error-700,
+    active-bg: $error-200,
+    active-border-color: transparent,
+    disabled-color: $neutral-400,
+    disabled-bg: transparent,
+    disabled-border-color: transparent
+  ),
+  "destructive-transparent": (
+    color: $error-600,
+    bg: transparent,
+    border-color: transparent,
+    hover-color: $error-700,
+    hover-bg: transparent,
+    hover-border-color: transparent,
+    active-color: $error-900,
+    active-bg: transparent,
+    active-border-color: transparent,
+    disabled-color: $neutral-400,
+    disabled-bg: transparent,
+    disabled-border-color: transparent
   )
 );
 
-// Define outline button variants
-$button-outline-variants: (
+$on-primary-button-variants: (
+  "neutral": (
+    color: $black,
+    bg: $white,
+    border-color: transparent,
+    hover-color: $black,
+    hover-bg: rgba($white, 0.8),
+    hover-border-color: transparent,
+    active-color: $black,
+    active-bg: rgba($white, 0.6),
+    active-border-color: transparent,
+    disabled-color: rgba($white, 0.4),
+    disabled-bg: rgba($white, 0.2),
+    disabled-border-color: transparent
+  ),
   "primary": (
-    color: $btn-outline-primary-color,
-    border-color: $btn-outline-primary-border-color,
-    hover-color: $btn-outline-primary-hover-color,
-    hover-bg: $btn-outline-primary-hover-bg,
-    hover-border-color: $btn-outline-primary-hover-border-color,
-    focus-shadow-rgb: $btn-outline-primary-focus-shadow-rgb,
-    active-color: $btn-outline-primary-active-color,
-    active-bg: $btn-outline-primary-active-bg,
-    active-border-color: $btn-outline-primary-active-border-color,
-    disabled-color: $btn-outline-primary-disabled-color,
-    disabled-bg: $btn-outline-primary-disabled-bg,
-    disabled-border-color: $btn-outline-primary-disabled-border-color
+    color: $black,
+    bg: $white,
+    border-color: transparent,
+    hover-color: $black,
+    hover-bg: rgba($white, 0.8),
+    hover-border-color: transparent,
+    active-color: $black,
+    active-bg: rgba($white, 0.6),
+    active-border-color: transparent,
+    disabled-color: rgba($white, 0.4),
+    disabled-bg: rgba($white, 0.2),
+    disabled-border-color: transparent
   ),
   "secondary": (
-    color: $btn-outline-secondary-color,
-    border-color: $btn-outline-secondary-border-color,
-    hover-color: $btn-outline-secondary-hover-color,
-    hover-bg: $btn-outline-secondary-hover-bg,
-    hover-border-color: $btn-outline-secondary-hover-border-color,
-    focus-shadow-rgb: $btn-outline-secondary-focus-shadow-rgb,
-    active-color: $btn-outline-secondary-active-color,
-    active-bg: $btn-outline-secondary-active-bg,
-    active-border-color: $btn-outline-secondary-active-border-color,
-    disabled-color: $btn-outline-secondary-disabled-color,
-    disabled-bg: $btn-outline-secondary-disabled-bg,
-    disabled-border-color: $btn-outline-secondary-disabled-border-color
+    color: $white,
+    bg: rgba($white, 0.2),
+    border-color: transparent,
+    hover-color: $white,
+    hover-bg: rgba($white, 0.2),
+    hover-border-color: transparent,
+    active-color: $white,
+    active-bg: rgba($white, 0.4),
+    active-border-color: transparent,
+    disabled-color: rgba($white, 0.4),
+    disabled-bg: rgba($white, 0.2),
+    disabled-border-color: transparent
   ),
-  "danger": (
-    color: $btn-outline-danger-color,
-    border-color: $btn-outline-danger-border-color,
-    hover-color: $btn-outline-danger-hover-color,
-    hover-bg: $btn-outline-danger-hover-bg,
-    hover-border-color: $btn-outline-danger-hover-border-color,
-    focus-shadow-rgb: $btn-outline-danger-focus-shadow-rgb,
-    active-color: $btn-outline-danger-active-color,
-    active-bg: $btn-outline-danger-active-bg,
-    active-border-color: $btn-outline-danger-active-border-color,
-    disabled-color: $btn-outline-danger-disabled-color,
-    disabled-bg: $btn-outline-danger-disabled-bg,
-    disabled-border-color: $btn-outline-danger-disabled-border-color
+  "outline-secondary": (
+    color: $white,
+    bg: transparent,
+    border-color: rgba($white, 0.4),
+    hover-color: $white,
+    hover-bg: rgba($white, 0.2),
+    hover-border-color: rgba($white, 0.4),
+    active-color: $white,
+    active-bg: rgba($white, 0.4),
+    active-border-color: rgba($white, 0.4),
+    disabled-color: rgba($white, 0.4),
+    disabled-bg: transparent,
+    disabled-border-color: rgba($white, 0.4)
   ),
-  "success": (
-    color: $btn-outline-success-color,
-    border-color: $btn-outline-success-border-color,
-    hover-color: $btn-outline-success-hover-color,
-    hover-bg: $btn-outline-success-hover-bg,
-    hover-border-color: $btn-outline-success-hover-border-color,
-    focus-shadow-rgb: $btn-outline-success-focus-shadow-rgb,
-    active-color: $btn-outline-success-active-color,
-    active-bg: $btn-outline-success-active-bg,
-    active-border-color: $btn-outline-success-active-border-color,
-    disabled-color: $btn-outline-success-disabled-color,
-    disabled-bg: $btn-outline-success-disabled-bg,
-    disabled-border-color: $btn-outline-success-disabled-border-color
+  "subtle": (
+    color: $white,
+    bg: transparent,
+    border-color: transparent,
+    hover-color: $white,
+    hover-bg: rgba($white, 0.2),
+    hover-border-color: transparent,
+    active-color: $white,
+    active-bg: rgba($white, 0.4),
+    active-border-color: transparent,
+    disabled-color: rgba($white, 0.4),
+    disabled-bg: transparent,
+    disabled-border-color: transparent
   ),
-  "warning": (
-    color: $btn-outline-warning-color,
-    border-color: $btn-outline-warning-border-color,
-    hover-color: $btn-outline-warning-hover-color,
-    hover-bg: $btn-outline-warning-hover-bg,
-    hover-border-color: $btn-outline-warning-hover-border-color,
-    focus-shadow-rgb: $btn-outline-warning-focus-shadow-rgb,
-    active-color: $btn-outline-warning-active-color,
-    active-bg: $btn-outline-warning-active-bg,
-    active-border-color: $btn-outline-warning-active-border-color,
-    disabled-color: $btn-outline-warning-disabled-color,
-    disabled-bg: $btn-outline-warning-disabled-bg,
-    disabled-border-color: $btn-outline-warning-disabled-border-color
+  "transparent": (
+    color: $white,
+    bg: transparent,
+    border-color: transparent,
+    hover-color: $white,
+    hover-bg: rgba($white, 0.2),
+    hover-border-color: transparent,
+    active-color: $white,
+    active-bg: rgba($white, 0.4),
+    active-border-color: transparent,
+    disabled-color: rgba($white, 0.4),
+    disabled-bg: transparent,
+    disabled-border-color: transparent
   ),
-  "info": (
-    color: $btn-outline-info-color,
-    border-color: $btn-outline-info-border-color,
-    hover-color: $btn-outline-info-hover-color,
-    hover-bg: $btn-outline-info-hover-bg,
-    hover-border-color: $btn-outline-info-hover-border-color,
-    focus-shadow-rgb: $btn-outline-info-focus-shadow-rgb,
-    active-color: $btn-outline-info-active-color,
-    active-bg: $btn-outline-info-active-bg,
-    active-border-color: $btn-outline-info-active-border-color,
-    disabled-color: $btn-outline-info-disabled-color,
-    disabled-bg: $btn-outline-info-disabled-bg,
-    disabled-border-color: $btn-outline-info-disabled-border-color
+  "destructive-primary": (
+    color: $white,
+    bg: $error-600,
+    border-color: transparent,
+    hover-color: $white,
+    hover-bg: $error-700,
+    hover-border-color: transparent,
+    active-color: $white,
+    active-bg: $error-900,
+    active-border-color: transparent,
+    disabled-color: rgba($white, 0.4),
+    disabled-bg: rgba($error-600, 0.2),
+    disabled-border-color: transparent
   ),
-  "lavender": (
-    color: $btn-outline-lavender-color,
-    border-color: $btn-outline-lavender-border-color,
-    hover-color: $btn-outline-lavender-hover-color,
-    hover-bg: $btn-outline-lavender-hover-bg,
-    hover-border-color: $btn-outline-lavender-hover-border-color,
-    focus-shadow-rgb: $btn-outline-lavender-focus-shadow-rgb,
-    active-color: $btn-outline-lavender-active-color,
-    active-bg: $btn-outline-lavender-active-bg,
-    active-border-color: $btn-outline-lavender-active-border-color,
-    disabled-color: $btn-outline-lavender-disabled-color,
-    disabled-bg: $btn-outline-lavender-disabled-bg,
-    disabled-border-color: $btn-outline-lavender-disabled-border-color
+  "destructive-secondary": (
+    color: $error-700,
+    bg: $error-50,
+    border-color: transparent,
+    hover-color: $error-700,
+    hover-bg: $error-100,
+    hover-border-color: transparent,
+    active-color: $error-700,
+    active-bg: $error-200,
+    active-border-color: transparent,
+    disabled-color: rgba($error-700, 0.4),
+    disabled-bg: rgba($error-50, 0.2),
+    disabled-border-color: transparent
   ),
-  "neutral": (
-    color: $btn-outline-neutral-color,
-    border-color: $btn-outline-neutral-border-color,
-    hover-color: $btn-outline-neutral-hover-color,
-    hover-bg: $btn-outline-neutral-hover-bg,
-    hover-border-color: $btn-outline-neutral-hover-border-color,
-    focus-shadow-rgb: $btn-outline-neutral-focus-shadow-rgb,
-    active-color: $btn-outline-neutral-active-color,
-    active-bg: $btn-outline-neutral-active-bg,
-    active-border-color: $btn-outline-neutral-active-border-color,
-    disabled-color: $btn-outline-neutral-disabled-color,
-    disabled-bg: $btn-outline-neutral-disabled-bg,
-    disabled-border-color: $btn-outline-neutral-disabled-border-color
+  "destructive-outline-secondary": (
+    color: $error-200,
+    bg: transparent,
+    border-color: $error-200,
+    hover-color: $error-700,
+    hover-bg: $error-100,
+    hover-border-color: $error-200,
+    active-color: $error-700,
+    active-bg: $error-200,
+    active-border-color: $error-200,
+    disabled-color: rgba($error-700, 0.4),
+    disabled-bg: transparent,
+    disabled-border-color: rgba($error-200, 0.4)
+  ),
+  "destructive-subtle": (
+    color: $error-200,
+    bg: transparent,
+    border-color: transparent,
+    hover-color: $error-700,
+    hover-bg: $error-100,
+    hover-border-color: transparent,
+    active-color: $error-700,
+    active-bg: $error-200,
+    active-border-color: transparent,
+    disabled-color: rgba($error-200, 0.4),
+    disabled-bg: transparent,
+    disabled-border-color: transparent
+  ),
+  "destructive-transparent": (
+    color: $error-200,
+    bg: transparent,
+    border-color: transparent,
+    hover-color: $error-300,
+    hover-bg: transparent,
+    hover-border-color: transparent,
+    active-color: $error-400,
+    active-bg: transparent,
+    active-border-color: transparent,
+    disabled-color: rgba($error-200, 0.4),
+    disabled-bg: transparent,
+    disabled-border-color: transparent
   )
 );
 
@@ -278,25 +337,27 @@ $button-outline-variants: (
     --#{$prefix}btn-disabled-color: #{map-get($props, disabled-color)};
     --#{$prefix}btn-disabled-bg: #{map-get($props, disabled-bg)};
     --#{$prefix}btn-disabled-border-color: #{map-get($props, disabled-border-color)};
-  }
+  };
 }
 
-// Generate outline button variant classes
-@each $name, $props in $button-outline-variants {
-  .btn-outline-#{$name} {
-    --#{$prefix}btn-color: #{map-get($props, color)};
-    --#{$prefix}btn-border-color: #{map-get($props, border-color)};
-    --#{$prefix}btn-hover-color: #{map-get($props, hover-color)};
-    --#{$prefix}btn-hover-bg: #{map-get($props, hover-bg)};
-    --#{$prefix}btn-hover-border-color: #{map-get($props, hover-border-color)};
-    --#{$prefix}btn-focus-shadow-rgb: #{map-get($props, focus-shadow-rgb)};
-    --#{$prefix}btn-active-color: #{map-get($props, active-color)};
-    --#{$prefix}btn-active-bg: #{map-get($props, active-bg)};
-    --#{$prefix}btn-active-border-color: #{map-get($props, active-border-color)};
-    --#{$prefix}btn-disabled-color: #{map-get($props, disabled-color)};
-    --#{$prefix}btn-disabled-bg: #{map-get($props, disabled-bg)};
-    --#{$prefix}btn-disabled-border-color: #{map-get($props, disabled-border-color)};
-  }
+.on-primary {
+  @each $name, $props in $on-primary-button-variants  {
+    .btn-#{$name} {
+      --#{$prefix}btn-color: #{map-get($props, color)};
+      --#{$prefix}btn-bg: #{map-get($props, bg)};
+      --#{$prefix}btn-border-color: #{map-get($props, border-color)};
+      --#{$prefix}btn-hover-color: #{map-get($props, hover-color)};
+      --#{$prefix}btn-hover-bg: #{map-get($props, hover-bg)};
+      --#{$prefix}btn-hover-border-color: #{map-get($props, hover-border-color)};
+      --#{$prefix}btn-focus-shadow-rgb: #{map-get($props, focus-shadow-rgb)};
+      --#{$prefix}btn-active-color: #{map-get($props, active-color)};
+      --#{$prefix}btn-active-bg: #{map-get($props, active-bg)};
+      --#{$prefix}btn-active-border-color: #{map-get($props, active-border-color)};
+      --#{$prefix}btn-disabled-color: #{map-get($props, disabled-color)};
+      --#{$prefix}btn-disabled-bg: #{map-get($props, disabled-bg)};
+      --#{$prefix}btn-disabled-border-color: #{map-get($props, disabled-border-color)};
+    }
+  };
 }
 
 // ============================================

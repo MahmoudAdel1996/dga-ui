@@ -6,8 +6,26 @@
 // Global button focus styling - applies to all button variants
 *:focus-visible {
   outline-offset: 2px !important;
-  outline: 2px solid #161616 !important;
-  border-color: $border-color !important;
+  outline: 2px solid $black !important;
+}
+
+.on-primary {
+  background-color: $primary-900;
+  color: $white;
+
+  --#{$prefix}body-bg: #{$primary-900};
+  --#{$prefix}body-color: #{$white};
+  --#{$prefix}text-muted: #{rgba($white, 0.8)};
+  --#{$prefix}border-color: #{rgba($white, 0.3)};
+
+  *:focus-visible {
+    outline-color: $white !important;
+  }
+}
+
+.list-unstyled {
+    padding-left: unset;
+    padding-right: unset;
 }
 
 // ============================================

@@ -86,7 +86,6 @@ $toast-variants: (
     gap: .75rem;
 
     .btn-close {
-        padding: 0.5rem;
         position: absolute;
         top: 1rem;
         right: unset;
@@ -183,19 +182,19 @@ $toast-variants: (
             margin-inline-start: 0;
 
             button {
-                --#{$prefix}btn-color: #{$btn-secondary-color};
-                --#{$prefix}btn-bg: #{$btn-secondary-bg};
-                --#{$prefix}btn-border-color: #{$btn-secondary-border-color};
-                --#{$prefix}btn-hover-color: #{$btn-secondary-hover-color};
-                --#{$prefix}btn-hover-bg: #{$btn-secondary-hover-bg};
-                --#{$prefix}btn-hover-border-color: #{$btn-secondary-hover-border-color};
-                --#{$prefix}btn-focus-shadow-rgb: #{$btn-secondary-focus-shadow-rgb};
-                --#{$prefix}btn-active-color: #{$btn-secondary-active-color};
-                --#{$prefix}btn-active-bg: #{$btn-secondary-active-bg};
-                --#{$prefix}btn-active-border-color: #{$btn-secondary-active-border-color};
-                --#{$prefix}btn-disabled-color: #{$btn-secondary-disabled-color};
-                --#{$prefix}btn-disabled-bg: #{$btn-secondary-disabled-bg};
-                --#{$prefix}btn-disabled-border-color: #{$btn-secondary-disabled-border-color};
+                --#{$prefix}btn-color: #{$black};
+                --#{$prefix}btn-bg: #{$secondary-100};
+                --#{$prefix}btn-border-color: #{$secondary-100};
+                --#{$prefix}btn-hover-color: #{$black};
+                --#{$prefix}btn-hover-bg: #{$secondary-200};
+                --#{$prefix}btn-hover-border-color: #{$secondary-200};
+                --#{$prefix}btn-focus-shadow-rgb: null;
+                --#{$prefix}btn-active-color: #{$black};
+                --#{$prefix}btn-active-bg: #{$secondary-200};
+                --#{$prefix}btn-active-border-color: #{$secondary-200};
+                --#{$prefix}btn-disabled-color: #{$secondary-400};
+                --#{$prefix}btn-disabled-bg: #{$secondary-200};
+                --#{$prefix}btn-disabled-border-color: #{$secondary-200};
             }
         }
     }
