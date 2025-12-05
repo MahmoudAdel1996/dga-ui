@@ -1,7 +1,0 @@
-/* Isolate SDGA UI styles to .sdga-preview container */
-@import 'sdga-ui/css/dga-ui.css';
-
-/* Ensure proper isolation */
-.sdga-preview {
-  isolation: isolate;
-}

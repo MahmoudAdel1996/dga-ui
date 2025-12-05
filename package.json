@@ -26,6 +26,13 @@
   "author": "Mahmoud Adel",
   "type": "module",
   "main": "index.js",
+  "files": [
+    "css",
+    "fonts",
+    "theme",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "test": "echo \"No tests yet\" && exit 0",
     "format": "prettier --write \"**/*.{js,json,md,css,scss}\"",
