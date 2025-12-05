@@ -1,198 +1,287 @@
 ---
 title: Getting Started
-description: Get started with SDGA UI - A modern, government-inspired UI component library
+description: Get started with SDGA UI - A modern Bootstrap-based theme for Saudi government applications
 ---
 
 import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
 import { Callout } from 'fumadocs-ui/components/callout';
-import { Step, Steps } from 'fumadocs-ui/components/steps';
 
 # Getting Started with SDGA UI
 
-**SDGA UI** (Saudi Digital Government Authority UI) is a customizable UI theme inspired by modern government and authority design systems. Built on top of **Bootstrap**, it provides consistent colors, typography, spacing, and reusable UI patterns suitable for official portals, administrative dashboards, and public-sector applications.
+**SDGA UI** is a professional Bootstrap theme designed specifically for Saudi Digital Government Authority (SDGA) applications. It provides a complete design system with government-inspired styling, full RTL support, and Arabic typography optimization.
 
-<Callout title="Live Demo" type="info">
-  Check out the live demo: [https://mahmoudadel1996.github.io/dga-ui/](https://mahmoudadel1996.github.io/dga-ui/)
+<Callout type="info">
+  **Live Demo:** See all components in action at [mahmoudadel1996.github.io/dga-ui](https://mahmoudadel1996.github.io/dga-ui/)
 </Callout>
 
-## ✨ Features
+## What is SDGA UI?
 
-- 🏛️ Government-inspired design system
-- 🔄 Full compatibility with Bootstrap
-- 🌍 **Built-in RTL support** (no need to import Bootstrap RTL separately)
-- 🎨 Custom color palette and typography
-- 📏 Standardized spacing & component overrides
-- 🛠️ Utility classes for layout and theming
-- 🌓 Light / dark mode friendly
-- 🔤 IBM Plex Sans Arabic font included
-- ⚡ Easy to integrate into any frontend project
+SDGA UI is built on top of **Bootstrap 5.3.8** and provides:
 
----
+- 🏛️ **Government-inspired design** - Professional styling suitable for official portals and administrative dashboards
+- 🌍 **Built-in RTL support** - No separate RTL file needed, works seamlessly with Arabic content
+- 🎨 **Custom theme** - Carefully crafted colors, typography, and spacing for government applications
+- 🔤 **IBM Plex Sans Arabic font** - Optimized Arabic typography included
+- ⚡ **Zero configuration** - Install and use immediately with your existing Bootstrap knowledge
+- 📦 **Lightweight** - Only ~130KB compiled CSS with all Bootstrap components
 
-## 📦 Installation
+## Quick Start
 
-<Steps>
+### Installation
 
-### Install the Package
-
-Install SDGA UI via npm or yarn:
+Install SDGA UI via npm:
 
 <Tabs items={['npm', 'yarn', 'pnpm']}>
   <Tab value="npm">
-    ```bash
-    npm install sdga-ui
-    ```
+```bash
+npm install sdga-ui bootstrap
+```
   </Tab>
   <Tab value="yarn">
-    ```bash
-    yarn add sdga-ui
-    ```
+```bash
+yarn add sdga-ui bootstrap
+```
   </Tab>
   <Tab value="pnpm">
-    ```bash
-    pnpm add sdga-ui
-    ```
+```bash
+pnpm add sdga-ui bootstrap
+```
   </Tab>
 </Tabs>
 
-### Choose Your Integration Method
-
-You can use SDGA UI in two ways:
-
-#### Using the Compiled CSS
-
-Include the compiled CSS file in your HTML:
-
-```html
-<link rel="stylesheet" href="node_modules/sdga-ui/css/dga-ui.css">
-```
-
-Or import it in your JavaScript/CSS:
-
-```css
-@import "sdga-ui/css/dga-ui.css";
-```
-
-#### Using SCSS Source Files
-
-Import the theme in your SCSS file for full customization:
-
-```scss
-@import "sdga-ui/theme/dga-ui";
-```
-
-All Bootstrap components automatically adopt the SDGA UI theme.
-
-### Add RTL Support (Optional)
-
-SDGA UI has built-in RTL (Right-to-Left) support for Arabic and other RTL languages. Simply add the `dir="rtl"` attribute to your HTML tag:
-
-```html
-<html dir="rtl" lang="ar">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="path/to/sdga-ui.css">
-  </head>
-  <body>
-    <!-- Your content here -->
-  </body>
-</html>
-```
-
-<Callout title="No Separate RTL File Needed" type="success">
-  Unlike Bootstrap, you don't need to import a separate RTL CSS file – it's already integrated!
+<Callout type="warn">
+  **Note:** Bootstrap is required as a peer dependency but you only need to install it - SDGA UI includes all necessary Bootstrap styles.
 </Callout>
 
-</Steps>
+### Basic Usage
 
----
+There are two ways to use SDGA UI in your project:
 
-## 🚀 Quick Start Example
+#### Option 1: Using Compiled CSS (Recommended)
 
-Here's a simple example to get you started:
+The simplest way - just import the compiled CSS file:
 
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SDGA UI Example</title>
+  <title>My SDGA Application</title>
+  
+  <!-- SDGA UI CSS (includes all Bootstrap styles) -->
   <link rel="stylesheet" href="node_modules/sdga-ui/css/dga-ui.css">
 </head>
 <body>
   <div class="container mt-5">
-    <h1>Welcome to SDGA UI</h1>
-    
-    <!-- Button Examples -->
-    <button class="btn btn-primary">Primary Button</button>
-    <button class="btn btn-secondary">Secondary Button</button>
-    
-    <!-- Alert Example -->
-    <div class="alert alert-success mt-3" role="alert">
-      Success! Your changes have been saved.
-    </div>
-    
-    <!-- Card Example -->
-    <div class="card mt-3">
-      <div class="card-body">
-        <h5 class="card-title">Card Title</h5>
-        <p class="card-text">This is a sample card using SDGA UI styling.</p>
-        <a href="#" class="btn btn-primary">Learn More</a>
-      </div>
-    </div>
+    <h1>مرحباً بك</h1>
+    <button class="btn btn-primary">ابدأ الآن</button>
   </div>
 </body>
 </html>
 ```
 
----
+Or in your JavaScript/CSS bundler:
 
-## 🎨 Customization
+```css
+/* In your main CSS file */
+@import "sdga-ui/css/dga-ui.css";
+```
 
-You can override SCSS variables before importing the theme:
+```javascript
+// In your main JavaScript file
+import 'sdga-ui/css/dga-ui.css';
+```
+
+#### Option 2: Using SCSS Source Files
+
+For advanced customization, import the SCSS source:
 
 ```scss
-// Your custom variables
-$primary: #0d47a1;
-$secondary: #ffc107;
-$font-family-base: 'Your Custom Font', sans-serif;
+// custom.scss
 
-// Import the SDGA UI theme
+// Optional: Override variables before importing
+$primary: #0d6efd;
+$font-family-base: 'IBM Plex Sans Arabic', sans-serif;
+
+// Import SDGA UI theme
+@import "sdga-ui/theme/dga-ui";
+
+// Your custom styles here
+```
+
+## RTL Support
+
+SDGA UI has **built-in RTL support** - no additional configuration needed!
+
+### Enable RTL Mode
+
+Simply add the `dir="rtl"` attribute to your HTML element:
+
+```html
+<html dir="rtl" lang="ar">
+```
+
+<Callout type="success">
+  **That's it!** Unlike Bootstrap, you don't need to import a separate RTL CSS file. SDGA UI automatically handles all RTL styling.
+</Callout>
+
+### LTR Mode
+
+For left-to-right languages (English, etc.), use:
+
+```html
+<html dir="ltr" lang="en">
+```
+
+## Your First Component
+
+Let's create a simple card component:
+
+```html
+<div class="container my-5">
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-title mb-0">بطاقة معلومات</h5>
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        هذا مثال على بطاقة معلومات باستخدام نظام SDGA UI
+      </p>
+      <button class="btn btn-primary">اقرأ المزيد</button>
+      <button class="btn btn-outline-secondary ms-2">إلغاء</button>
+    </div>
+  </div>
+</div>
+```
+
+## Available Components
+
+SDGA UI includes styled versions of all Bootstrap components:
+
+### Layout & Navigation
+- **Navbar** - Responsive navigation bars
+- **Breadcrumb** - Navigation breadcrumbs
+- **Pagination** - Page navigation
+- **Offcanvas** - Sliding side panels
+
+### Content
+- **Cards** - Content containers
+- **Accordion** - Collapsible content
+- **List Groups** - Flexible list displays
+- **Tables** - Data tables with sorting
+
+### Forms
+- **Form Controls** - Text inputs, selects, textareas
+- **Form Validation** - Input validation styling
+- **Floating Labels** - Modern input labels
+- **Checkboxes & Radios** - Custom form controls
+- **Switches** - Toggle switches
+- **Range Inputs** - Slider controls
+
+### Components
+- **Alerts** - Contextual feedback messages
+- **Badges** - Small count and labeling
+- **Buttons** - All button variants and sizes
+- **Dropdowns** - Contextual overlay menus
+- **Modals** - Dialog windows
+- **Toasts** - Push notifications
+- **Tooltips** - Hover text hints
+- **Popovers** - Click-triggered content
+- **Progress** - Progress indicators
+- **Spinners** - Loading indicators
+- **Carousel** - Image/content sliders
+
+## File Structure
+
+When you install SDGA UI, you get:
+
+```
+node_modules/sdga-ui/
+├── css/
+│   └── dga-ui.css          # Compiled CSS (ready to use)
+├── fonts/
+│   └── IBM_Plex_Sans_Arabic/  # Arabic font files
+├── theme/
+│   ├── dga-ui.scss         # Main SCSS entry point
+│   ├── _variables.scss     # Theme variables
+│   ├── _fonts.scss         # Font declarations
+│   ├── _functions.scss     # SCSS functions
+│   ├── config/             # Base configuration
+│   │   ├── _base.scss
+│   │   ├── _colors.scss
+│   │   ├── _typography.scss
+│   │   ├── _spacing.scss
+│   │   ├── _radius.scss
+│   │   └── _effects.scss
+│   ├── components/         # Component styles
+│   │   ├── _alerts.scss
+│   │   ├── _buttons.scss
+│   │   ├── _cards.scss
+│   │   ├── _forms.scss
+│   │   ├── _tables.scss
+│   │   └── ... (30+ components)
+│   └── customizations/     # SDGA customizations
+│       ├── _global.scss
+│       ├── _links.scss
+│       └── ...
+├── package.json
+├── README.md
+└── LICENSE
+```
+
+## Customization
+
+### Override Variables
+
+Customize the theme by overriding SCSS variables:
+
+```scss
+// Before importing SDGA UI
+$primary: #1a73e8;
+$secondary: #34a853;
+$success: #0f9d58;
+$danger: #d93025;
+$warning: #f9ab00;
+
+$font-family-base: 'Your Font', 'IBM Plex Sans Arabic', sans-serif;
+$font-size-base: 1rem;
+$line-height-base: 1.6;
+
+$border-radius: 8px;
+$border-radius-sm: 4px;
+$border-radius-lg: 12px;
+
+// Import SDGA UI
 @import "sdga-ui/theme/dga-ui";
 ```
 
----
+### Custom Utilities
 
-## 📁 File Structure
+Add your own utility classes:
 
-```
-sdga-ui/
-│
-├─ css/                 # Compiled CSS output
-│  └─ dga-ui.css
-├─ fonts/               # Font files (IBM Plex Sans Arabic)
-├─ theme/               # Source SCSS theme files
-│  ├─ dga-ui.scss       # Main theme entry point
-│  ├─ _fonts.scss
-│  ├─ _functions.scss
-│  ├─ _variables.scss
-│  ├─ config/           # Base configuration
-│  ├─ components/       # Component styles
-│  └─ customizations/   # Theme customizations
-├─ package.json
-├─ LICENSE
-└─ README.md
+```scss
+@import "sdga-ui/theme/dga-ui";
+
+// Your custom utilities
+.shadow-custom {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 ```
 
----
+## Development Workflow
 
-## 🛠 Development
+If you want to modify SDGA UI itself:
 
-### Building the CSS
+### Build CSS
 
-Compile the SCSS to CSS:
+Compile SCSS to CSS:
 
 ```bash
 npm run build-css
@@ -200,40 +289,49 @@ npm run build-css
 
 ### Watch Mode
 
-Watch for changes and auto-compile:
+Auto-compile on file changes:
 
 ```bash
 npm run watch-css
 ```
 
----
+### Project Structure
 
-## 📚 Next Steps
+The source code is organized as:
 
-<Cards>
-  <Card 
-    title="Components" 
-    href="/docs/components"
-    description="Explore all available components"
-  />
-  <Card 
-    title="Customization" 
-    href="/docs/customization"
-    description="Learn how to customize the theme"
-  />
-  <Card 
-    title="Examples" 
-    href="https://mahmoudadel1996.github.io/dga-ui/"
-    description="View live examples and demos"
-  />
-</Cards>
+- **config/** - Base theme configuration (colors, typography, spacing)
+- **components/** - Bootstrap component overrides
+- **customizations/** - SDGA-specific styling
 
----
+## Browser Support
 
-## 🤝 Contributing
+SDGA UI supports all modern browsers:
 
-Contributions are welcome! Feel free to open issues, submit pull requests, or suggest improvements on [GitHub](https://github.com/MahmoudAdel1996/dga-ui).
+- Chrome (last 2 versions)
+- Firefox (last 2 versions)
+- Safari (last 2 versions)
+- Edge (last 2 versions)
+- iOS Safari (last 2 versions)
+- Chrome for Android (last 2 versions)
 
-## 📄 License
+## Next Steps
 
-MIT License — free for personal and commercial use.
+Now that you have SDGA UI installed, explore the components:
+
+- **[Alerts](/docs/components/alerts)** - Learn about alert components and variants
+- **[Buttons](/docs/components/buttons)** - Explore button styles and sizes
+- **[Cards](/docs/components/cards)** - Create content cards
+- **[Forms](/docs/components/forms)** - Build form interfaces
+- **[Tables](/docs/components/tables)** - Display data tables
+
+## Need Help?
+
+- 📖 **Documentation:** You're reading it!
+- 🐛 **Report Issues:** [GitHub Issues](https://github.com/MahmoudAdel1996/dga-ui/issues)
+- 💬 **Discussions:** [GitHub Discussions](https://github.com/MahmoudAdel1996/dga-ui/discussions)
+- ⭐ **Star on GitHub:** [MahmoudAdel1996/dga-ui](https://github.com/MahmoudAdel1996/dga-ui)
+
+<Callout type="success">
+  **Ready to build?** Start exploring the component documentation to see all the available features and examples!
+</Callout>
+

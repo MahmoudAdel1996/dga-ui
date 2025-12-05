@@ -1,0 +1,199 @@
+---
+title: Alerts
+description: Contextual and dismissible alerts tailored for SDGA UI
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Preview } from '@/src/components/Preview';
+
+export function SuccessAlert() {
+  return (
+    <div className="alert alert-success alert-dismissible fade show" role="alert">
+      <i className="bi bi-check alert-icon"></i>
+      <div>
+        <strong className="alert-title">Success</strong> Your action was completed successfully.
+        <div className="alert-footer">
+          <button type="button" className="btn btn-subtle">Learn More</button>
+          <button type="button" className="btn btn-subtle">Dismiss</button>
+        </div>
+      </div>
+      <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  );
+}
+
+export function DangerAlert() {
+  return (
+    <div className="alert alert-danger alert-dismissible fade show" role="alert">
+      <i className="bi bi-exclamation-circle alert-icon"></i>
+      <div>
+        <strong className="alert-title">Error</strong> Something went wrong. Please try again.
+        <div className="alert-footer">
+          <button type="button" className="btn btn-subtle">Retry</button>
+          <button type="button" className="btn btn-subtle">Cancel</button>
+        </div>
+      </div>
+      <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  );
+}
+
+export function WarningAlert() {
+  return (
+    <div className="alert alert-warning alert-dismissible fade show" role="alert">
+      <i className="bi bi-exclamation-triangle alert-icon"></i>
+      <div>
+        <strong className="alert-title">Warning</strong> Please verify your information before proceeding.
+        <div className="alert-footer">
+          <button type="button" className="btn btn-subtle">Continue</button>
+          <button type="button" className="btn btn-subtle">Review</button>
+        </div>
+      </div>
+      <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  );
+}
+
+export function InfoAlert() {
+  return (
+    <div className="alert alert-info alert-dismissible fade show" role="alert">
+      <i className="bi bi-info-circle alert-icon"></i>
+      <div>
+        <strong className="alert-title">Information</strong> New updates are available. Check them out now.
+        <div className="alert-footer">
+          <button type="button" className="btn btn-subtle">View Updates</button>
+          <button type="button" className="btn btn-subtle">Later</button>
+        </div>
+      </div>
+      <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  );
+}
+
+export function SideAlert() {
+  return (
+    <div className="alert alert-side alert-success alert-dismissible fade show" role="alert">
+      <i className="bi bi-check alert-icon"></i>
+      <div>
+        <strong className="alert-title">Success</strong> Profile updated successfully!
+        <div className="alert-footer">
+          <button type="button" className="btn btn-subtle">View Profile</button>
+        </div>
+      </div>
+      <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  );
+}
+
+# Alerts
+
+Provide contextual feedback with SDGA UI alerts. Our alert system includes multiple styles, icons, and interactive footer actions for user guidance.
+
+## Standard Alerts
+
+Our alerts support contextual variants with icons and action footers to guide user interactions.
+
+### Success Alert
+
+<Preview>
+  <SuccessAlert />
+</Preview>
+
+```html
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <i class="bi bi-check alert-icon"></i>
+  <div>
+    <strong class="alert-title">Success</strong> Your action was completed successfully.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Learn More</button>
+      <button type="button" class="btn btn-subtle">Dismiss</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+```
+
+### Danger Alert
+
+<Preview>
+  <DangerAlert />
+</Preview>
+
+```html
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <i class="bi bi-exclamation-circle alert-icon"></i>
+  <div>
+    <strong class="alert-title">Error</strong> Something went wrong. Please try again.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Retry</button>
+      <button type="button" class="btn btn-subtle">Cancel</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+```
+
+### Warning Alert
+
+<Preview>
+  <WarningAlert />
+</Preview>
+
+```html
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <i class="bi bi-exclamation-triangle alert-icon"></i>
+  <div>
+    <strong class="alert-title">Warning</strong> Please verify your information before proceeding.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">Continue</button>
+      <button type="button" class="btn btn-subtle">Review</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+```
+
+### Info Alert
+
+<Preview>
+  <InfoAlert />
+</Preview>
+
+```html
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+  <i class="bi bi-info-circle alert-icon"></i>
+  <div>
+    <strong class="alert-title">Information</strong> New updates are available. Check them out now.
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">View Updates</button>
+      <button type="button" class="btn btn-subtle">Later</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+```
+
+## Side-Bordered Alerts
+
+Add a bold left border with the `alert-side` class for stronger visual prominence.
+
+<Preview>
+  <SideAlert />
+</Preview>
+
+```html
+<div class="alert alert-side alert-success alert-dismissible fade show" role="alert">
+  <i class="bi bi-check alert-icon"></i>
+  <div>
+    <strong class="alert-title">Success</strong> Profile updated successfully!
+    <div class="alert-footer">
+      <button type="button" class="btn btn-subtle">View Profile</button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+```
+
+<Callout type="tip">
+  Combine with Bootstrap icons (`bi-*` classes) and action buttons in the footer for complete user feedback workflows.
+</Callout>

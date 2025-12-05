@@ -1,0 +1,139 @@
+---
+title: Buttons
+description: Button variants, sizes, and icon buttons for SDGA UI
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Preview } from '@/src/components/Preview';
+
+export function SolidButtons() {
+  return (
+    <div className="d-flex flex-wrap gap-2 align-items-center">
+      <button type="button" className="btn btn-primary">Primary</button>
+      <button type="button" className="btn btn-neutral">Neutral</button>
+      <button type="button" className="btn btn-secondary">Secondary</button>
+      <button type="button" className="btn btn-subtle">Subtle</button>
+      <button type="button" className="btn btn-transparent">Transparent</button>
+    </div>
+  );
+}
+
+export function DestructiveButtons() {
+  return (
+    <div className="d-flex flex-wrap gap-2 align-items-center">
+      <button type="button" className="btn btn-destructive-primary">Destructive Primary</button>
+      <button type="button" className="btn btn-destructive-secondary">Destructive Secondary</button>
+      <button type="button" className="btn btn-destructive-subtle">Destructive Subtle</button>
+    </div>
+  );
+}
+
+export function ButtonSizes() {
+  return (
+    <div className="d-flex flex-wrap gap-2 align-items-center">
+      <button type="button" className="btn btn-primary btn-lg">Large</button>
+      <button type="button" className="btn btn-primary">Default</button>
+      <button type="button" className="btn btn-primary btn-sm">Small</button>
+      <button type="button" className="btn btn-primary btn-xs">Extra Small</button>
+    </div>
+  );
+}
+
+export function ButtonStates() {
+  return (
+    <div className="d-flex flex-wrap gap-2 align-items-center">
+      <button type="button" className="btn btn-primary">Normal</button>
+      <button type="button" className="btn btn-primary active">Active</button>
+      <button type="button" className="btn btn-primary" disabled>Disabled</button>
+    </div>
+  );
+}
+
+export function OutlineButtons() {
+  return (
+    <div className="d-flex flex-wrap gap-2 align-items-center">
+      <button type="button" className="btn btn-outline-secondary">Secondary Outline</button>
+      <button type="button" className="btn btn-destructive-outline-secondary">Danger Outline</button>
+    </div>
+  );
+}
+
+# Buttons
+
+SDGA UI provides a comprehensive button system with multiple variants, sizes, and states for every scenario.
+
+## Solid Buttons
+
+Standard solid buttons with different semantic meanings and emphasis levels.
+
+<Preview>
+  <SolidButtons />
+</Preview>
+
+```html
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-neutral">Neutral</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-subtle">Subtle</button>
+<button type="button" class="btn btn-transparent">Transparent</button>
+```
+
+## Destructive Buttons
+
+Use destructive button variants for actions that cannot be undone, like delete operations.
+
+<Preview>
+  <DestructiveButtons />
+</Preview>
+
+```html
+<button type="button" class="btn btn-destructive-primary">Destructive Primary</button>
+<button type="button" class="btn btn-destructive-secondary">Destructive Secondary</button>
+<button type="button" class="btn btn-destructive-subtle">Destructive Subtle</button>
+```
+
+## Button Sizes
+
+Choose from four size options to match your layout needs.
+
+<Preview>
+  <ButtonSizes />
+</Preview>
+
+```html
+<button type="button" class="btn btn-primary btn-lg">Large</button>
+<button type="button" class="btn btn-primary">Default</button>
+<button type="button" class="btn btn-primary btn-sm">Small</button>
+<button type="button" class="btn btn-primary btn-xs">Extra Small</button>
+```
+
+## Button States
+
+Buttons support normal, active, and disabled states.
+
+<Preview>
+  <ButtonStates />
+</Preview>
+
+```html
+<button type="button" class="btn btn-primary">Normal</button>
+<button type="button" class="btn btn-primary active">Active</button>
+<button type="button" class="btn btn-primary" disabled>Disabled</button>
+```
+
+## Outline Buttons
+
+Outline buttons with secondary styling for less emphasis.
+
+<Preview>
+  <OutlineButtons />
+</Preview>
+
+```html
+<button type="button" class="btn btn-outline-secondary">Secondary Outline</button>
+<button type="button" class="btn btn-destructive-outline-secondary">Danger Outline</button>
+```
+
+<Callout type="tip">
+  Combine button size classes (`btn-lg`, `btn-sm`, `btn-xs`) with any variant for precise control over button appearance.
+</Callout>

@@ -1,0 +1,224 @@
+---
+title: Cards
+description: Card layouts with headers, footers, media, and grids
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Preview } from '@/src/components/Preview';
+
+export function CardWithIcon() {
+  return (
+    <div style={{ maxWidth: '300px' }}>
+      <div className="card" tabIndex="0">
+        <div className="card-body">
+          <h5 className="card-title">
+            <i className="bi bi-check-circle card-title-icon"></i>
+          </h5>
+          <h6 className="card-subtitle mb-2">Card Title</h6>
+          <p className="card-text">This is a description of the card content and key information.</p>
+          <div className="card-footer">
+            <a href="#" className="btn btn-outline-secondary">Secondary Action</a>
+            <a href="#" className="btn btn-primary">Primary Action</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function CardWithCheckbox() {
+  return (
+    <div style={{ maxWidth: '300px' }}>
+      <div className="card" tabIndex="0">
+        <div className="card-body">
+          <h5 className="card-title">
+            <input className="card-title-checked form-check-input ripple" type="checkbox" value="" id="check1" aria-label="Select card" />
+          </h5>
+          <h6 className="card-subtitle mb-2">Selectable Card</h6>
+          <p className="card-text">Cards can include checkboxes for selection in lists.</p>
+          <div className="card-footer">
+            <a href="#" className="btn btn-outline-secondary">Secondary</a>
+            <a href="#" className="btn btn-primary">Primary</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function DisabledCard() {
+  return (
+    <div style={{ maxWidth: '300px' }}>
+      <div className="card disabled" tabIndex="0">
+        <div className="card-body">
+          <h5 className="card-title">
+            <i className="bi bi-check-circle card-title-icon"></i>
+          </h5>
+          <h6 className="card-subtitle mb-2">Disabled Card</h6>
+          <p className="card-text">This card is in a disabled state and cannot be interacted with.</p>
+          <div className="card-footer">
+            <a href="#" className="btn btn-outline-secondary disabled">Secondary</a>
+            <a href="#" className="btn btn-primary disabled">Primary</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function CardGrid() {
+  return (
+    <div className="row row-cols-1 row-cols-md-3 g-3">
+      <div className="col">
+        <div className="card h-100" tabIndex="0">
+          <div className="card-body">
+            <h5 className="card-title">
+              <i className="bi bi-check-circle card-title-icon"></i>
+            </h5>
+            <h6 className="card-subtitle mb-2">Service 1</h6>
+            <p className="card-text">First service option description.</p>
+            <div className="card-footer">
+              <a href="#" className="btn btn-primary">Action</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="col">
+        <div className="card h-100" tabIndex="0">
+          <div className="card-body">
+            <h5 className="card-title">
+              <i className="bi bi-check-circle card-title-icon"></i>
+            </h5>
+            <h6 className="card-subtitle mb-2">Service 2</h6>
+            <p className="card-text">Second service option description.</p>
+            <div className="card-footer">
+              <a href="#" className="btn btn-primary">Action</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="col">
+        <div className="card h-100" tabIndex="0">
+          <div className="card-body">
+            <h5 className="card-title">
+              <i className="bi bi-check-circle card-title-icon"></i>
+            </h5>
+            <h6 className="card-subtitle mb-2">Service 3</h6>
+            <p className="card-text">Third service option description.</p>
+            <div className="card-footer">
+              <a href="#" className="btn btn-primary">Action</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+# Cards
+
+Cards are flexible containers for grouping related content. SDGA UI cards support icons, checkboxes, footers, and responsive grids.
+
+## Card with Icon
+
+Cards can display an icon in the title area for visual identification.
+
+<Preview>
+  <CardWithIcon />
+</Preview>
+
+```html
+<div class="card" tabindex="0">
+  <div class="card-body">
+    <h5 class="card-title">
+      <i class="bi bi-check-circle card-title-icon"></i>
+    </h5>
+    <h6 class="card-subtitle mb-2">Card Title</h6>
+    <p class="card-text">This is a description of the card content.</p>
+    <div class="card-footer">
+      <a href="#" class="btn btn-outline-secondary">Secondary</a>
+      <a href="#" class="btn btn-primary">Primary</a>
+    </div>
+  </div>
+</div>
+```
+
+## Card with Checkbox
+
+Include a checkbox for selection in card lists and grids.
+
+<Preview>
+  <CardWithCheckbox />
+</Preview>
+
+```html
+<div class="card" tabindex="0">
+  <div class="card-body">
+    <h5 class="card-title">
+      <input class="card-title-checked form-check-input ripple" type="checkbox" value="" id="check1" />
+    </h5>
+    <h6 class="card-subtitle mb-2">Selectable Card</h6>
+    <p class="card-text">Cards can include checkboxes for selection.</p>
+    <div class="card-footer">
+      <a href="#" class="btn btn-outline-secondary">Secondary</a>
+      <a href="#" class="btn btn-primary">Primary</a>
+    </div>
+  </div>
+</div>
+```
+
+## Disabled Card
+
+Cards can be disabled to prevent interaction.
+
+<Preview>
+  <DisabledCard />
+</Preview>
+
+```html
+<div class="card disabled" tabindex="0">
+  <div class="card-body">
+    <h5 class="card-title">
+      <i class="bi bi-check-circle card-title-icon"></i>
+    </h5>
+    <h6 class="card-subtitle mb-2">Disabled Card</h6>
+    <p class="card-text">This card is in a disabled state.</p>
+    <div class="card-footer">
+      <a href="#" class="btn btn-outline-secondary disabled">Secondary</a>
+      <a href="#" class="btn btn-primary disabled">Primary</a>
+    </div>
+  </div>
+</div>
+```
+
+## Card Grid
+
+Combine cards in responsive grids using Bootstrap's grid system.
+
+<Preview>
+  <CardGrid />
+</Preview>
+
+```html
+<div class="row row-cols-1 row-cols-md-3 g-3">
+  <div class="col">
+    <div class="card h-100" tabindex="0">
+      <div class="card-body">
+        <h5 class="card-title">
+          <i class="bi bi-check-circle card-title-icon"></i>
+        </h5>
+        <h6 class="card-subtitle mb-2">Service 1</h6>
+        <p class="card-text">First service description.</p>
+        <div class="card-footer">
+          <a href="#" class="btn btn-primary">Action</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Repeat for additional cards -->
+</div>
+```
+
+<Callout type="tip">
+  Use Bootstrap icons (`bi-*` classes) in card titles and combine with `h-100` class on cards for equal heights in grids.
+</Callout>

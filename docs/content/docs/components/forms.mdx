@@ -1,0 +1,287 @@
+---
+title: Forms
+description: Form controls, checkboxes, radios, and various states
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Preview } from '@/src/components/Preview';
+
+export function PrimaryCheckboxes() {
+  return (
+    <div className="row g-3">
+      <div className="col-md-6">
+        <div className="form-check form-check-md mb-2">
+          <input type="checkbox" className="form-check-input ripple" id="chkPrimaryMd" defaultChecked />
+          <label className="form-check-label" htmlFor="chkPrimaryMd">Medium</label>
+        </div>
+        <div className="form-check form-check-md mb-2">
+          <input type="checkbox" className="form-check-input ripple indeterminate-check" id="chkPrimaryIndeterminateMd" />
+          <label className="form-check-label" htmlFor="chkPrimaryIndeterminateMd">Medium indeterminate</label>
+        </div>
+        <div className="form-check form-check-sm mb-2">
+          <input type="checkbox" className="form-check-input ripple" id="chkPrimarySm" defaultChecked />
+          <label className="form-check-label" htmlFor="chkPrimarySm">Small</label>
+        </div>
+        <div className="form-check form-check-xs mb-2">
+          <input type="checkbox" className="form-check-input ripple" id="chkPrimaryXs" defaultChecked />
+          <label className="form-check-label" htmlFor="chkPrimaryXs">Extra small</label>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function DisabledCheckboxes() {
+  return (
+    <div className="row g-3">
+      <div className="col-md-6">
+        <div className="form-check form-check-md mb-2">
+          <input type="checkbox" className="form-check-input ripple" id="chkDisabledMd" disabled />
+          <label className="form-check-label" htmlFor="chkDisabledMd">Medium unchecked</label>
+        </div>
+        <div className="form-check form-check-md mb-2">
+          <input type="checkbox" className="form-check-input ripple" id="chkDisabledCheckedMd" defaultChecked disabled />
+          <label className="form-check-label" htmlFor="chkDisabledCheckedMd">Medium checked</label>
+        </div>
+        <div className="form-check form-check-md mb-2">
+          <input type="checkbox" className="form-check-input ripple indeterminate-check" id="chkDisabledIndeterminateMd" disabled />
+          <label className="form-check-label" htmlFor="chkDisabledIndeterminateMd">Medium indeterminate</label>
+        </div>
+        <div className="form-check form-check-sm mb-2">
+          <input type="checkbox" className="form-check-input ripple" id="chkDisabledSm" disabled />
+          <label className="form-check-label" htmlFor="chkDisabledSm">Small unchecked</label>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function ReadonlyCheckboxes() {
+  return (
+    <div className="row g-3">
+      <div className="col-md-6">
+        <div className="form-check form-check-md mb-2">
+          <input type="checkbox" className="form-check-input ripple" id="chkReadonlyMd" readOnly />
+          <label className="form-check-label" htmlFor="chkReadonlyMd">Medium unchecked</label>
+        </div>
+        <div className="form-check form-check-md mb-2">
+          <input type="checkbox" className="form-check-input ripple" id="chkReadonlyCheckedMd" defaultChecked readOnly />
+          <label className="form-check-label" htmlFor="chkReadonlyCheckedMd">Medium checked</label>
+        </div>
+        <div className="form-check form-check-md mb-2">
+          <input type="checkbox" className="form-check-input ripple indeterminate-check" id="chkReadonlyIndeterminateMd" readOnly />
+          <label className="form-check-label" htmlFor="chkReadonlyIndeterminateMd">Medium indeterminate</label>
+        </div>
+        <div className="form-check form-check-sm mb-2">
+          <input type="checkbox" className="form-check-input ripple" id="chkReadonlySm" readOnly />
+          <label className="form-check-label" htmlFor="chkReadonlySm">Small unchecked</label>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function NeutralCheckboxes() {
+  return (
+    <div className="row g-3">
+      <div className="col-md-6">
+        <div className="form-check form-check-neutral form-check-md mb-2">
+          <input type="checkbox" className="form-check-input ripple" id="chkNeutralMd" defaultChecked />
+          <label className="form-check-label" htmlFor="chkNeutralMd">Medium</label>
+        </div>
+        <div className="form-check form-check-neutral form-check-md mb-2">
+          <input type="checkbox" className="form-check-input ripple indeterminate-check" id="chkNeutralIndeterminateMd" />
+          <label className="form-check-label" htmlFor="chkNeutralIndeterminateMd">Medium indeterminate</label>
+        </div>
+        <div className="form-check form-check-neutral form-check-sm mb-2">
+          <input type="checkbox" className="form-check-input ripple" id="chkNeutralSm" defaultChecked />
+          <label className="form-check-label" htmlFor="chkNeutralSm">Small</label>
+        </div>
+        <div className="form-check form-check-neutral form-check-xs mb-2">
+          <input type="checkbox" className="form-check-input ripple" id="chkNeutralXs" defaultChecked />
+          <label className="form-check-label" htmlFor="chkNeutralXs">Extra small</label>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function PrimaryRadios() {
+  return (
+    <div className="row g-3">
+      <div className="col-md-6">
+        <div className="form-check form-check-md mb-2">
+          <input className="form-check-input ripple" type="radio" name="radioPrimaryGroup" id="radPrimaryCheckedMd" defaultChecked />
+          <label className="form-check-label" htmlFor="radPrimaryCheckedMd">Medium</label>
+        </div>
+        <div className="form-check form-check-sm mb-2">
+          <input className="form-check-input ripple" type="radio" name="radioPrimaryGroup" id="radPrimaryCheckedSm" />
+          <label className="form-check-label" htmlFor="radPrimaryCheckedSm">Small</label>
+        </div>
+        <div className="form-check form-check-xs mb-2">
+          <input className="form-check-input ripple" type="radio" name="radioPrimaryGroup" id="radPrimaryCheckedXs" />
+          <label className="form-check-label" htmlFor="radPrimaryCheckedXs">Extra small</label>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function DisabledRadios() {
+  return (
+    <div className="row g-3">
+      <div className="col-md-6">
+        <div className="form-check form-check-md mb-2">
+          <input className="form-check-input ripple" type="radio" name="radioDisabled" id="radDisabledMd" disabled />
+          <label className="form-check-label" htmlFor="radDisabledMd">Medium unchecked</label>
+        </div>
+        <div className="form-check form-check-md mb-2">
+          <input className="form-check-input ripple" type="radio" name="radioDisabled" id="radDisabledCheckedMd" defaultChecked disabled />
+          <label className="form-check-label" htmlFor="radDisabledCheckedMd">Medium checked</label>
+        </div>
+        <div className="form-check form-check-sm mb-2">
+          <input className="form-check-input ripple" type="radio" name="radioDisabled" id="radDisabledSm" disabled />
+          <label className="form-check-label" htmlFor="radDisabledSm">Small unchecked</label>
+        </div>
+        <div className="form-check form-check-xs mb-2">
+          <input className="form-check-input ripple" type="radio" name="radioDisabled" id="radDisabledXs" defaultChecked disabled />
+          <label className="form-check-label" htmlFor="radDisabledXs">Extra small checked</label>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+# Forms
+
+SDGA UI provides styled form controls with multiple states and sizes, including checkboxes, radios, and various visual states.
+
+## Checkboxes
+
+### Primary Checkboxes
+
+Primary checkboxes with ripple effect in multiple sizes.
+
+<Preview>
+  <PrimaryCheckboxes />
+</Preview>
+
+```html
+<div className="form-check form-check-md mb-2">
+  <input type="checkbox" className="form-check-input ripple" id="chkPrimaryMd" checked />
+  <label className="form-check-label" htmlFor="chkPrimaryMd">Medium</label>
+</div>
+<div className="form-check form-check-sm mb-2">
+  <input type="checkbox" className="form-check-input ripple" id="chkPrimarySm" checked />
+  <label className="form-check-label" htmlFor="chkPrimarySm">Small</label>
+</div>
+<div className="form-check form-check-xs mb-2">
+  <input type="checkbox" className="form-check-input ripple" id="chkPrimaryXs" checked />
+  <label className="form-check-label" htmlFor="chkPrimaryXs">Extra small</label>
+</div>
+```
+
+### Disabled Checkboxes
+
+Checkboxes in disabled state, both checked and unchecked.
+
+<Preview>
+  <DisabledCheckboxes />
+</Preview>
+
+```html
+<div className="form-check form-check-md mb-2">
+  <input type="checkbox" className="form-check-input ripple" id="chkDisabledMd" disabled />
+  <label className="form-check-label" htmlFor="chkDisabledMd">Medium unchecked</label>
+</div>
+<div className="form-check form-check-md mb-2">
+  <input type="checkbox" className="form-check-input ripple" id="chkDisabledCheckedMd" checked disabled />
+  <label className="form-check-label" htmlFor="chkDisabledCheckedMd">Medium checked</label>
+</div>
+```
+
+### Readonly Checkboxes
+
+Checkboxes in readonly state with ripple effect.
+
+<Preview>
+  <ReadonlyCheckboxes />
+</Preview>
+
+```html
+<div className="form-check form-check-md mb-2">
+  <input type="checkbox" className="form-check-input ripple" id="chkReadonlyMd" readonly />
+  <label className="form-check-label" htmlFor="chkReadonlyMd">Medium unchecked</label>
+</div>
+<div className="form-check form-check-md mb-2">
+  <input type="checkbox" className="form-check-input ripple" id="chkReadonlyCheckedMd" checked readonly />
+  <label className="form-check-label" htmlFor="chkReadonlyCheckedMd">Medium checked</label>
+</div>
+```
+
+### Neutral Checkboxes
+
+Neutral variant checkboxes using the `form-check-neutral` class.
+
+<Preview>
+  <NeutralCheckboxes />
+</Preview>
+
+```html
+<div className="form-check form-check-neutral form-check-md mb-2">
+  <input type="checkbox" className="form-check-input ripple" id="chkNeutralMd" checked />
+  <label className="form-check-label" htmlFor="chkNeutralMd">Medium</label>
+</div>
+<div className="form-check form-check-neutral form-check-sm mb-2">
+  <input type="checkbox" className="form-check-input ripple" id="chkNeutralSm" checked />
+  <label className="form-check-label" htmlFor="chkNeutralSm">Small</label>
+</div>
+```
+
+## Radios
+
+### Primary Radios
+
+Radio buttons in primary color with multiple sizes.
+
+<Preview>
+  <PrimaryRadios />
+</Preview>
+
+```html
+<div className="form-check form-check-md mb-2">
+  <input className="form-check-input ripple" type="radio" name="radioPrimaryGroup" id="radPrimaryCheckedMd" checked />
+  <label className="form-check-label" htmlFor="radPrimaryCheckedMd">Medium</label>
+</div>
+<div className="form-check form-check-sm mb-2">
+  <input className="form-check-input ripple" type="radio" name="radioPrimaryGroup" id="radPrimaryCheckedSm" />
+  <label className="form-check-label" htmlFor="radPrimaryCheckedSm">Small</label>
+</div>
+<div className="form-check form-check-xs mb-2">
+  <input className="form-check-input ripple" type="radio" name="radioPrimaryGroup" id="radPrimaryCheckedXs" />
+  <label className="form-check-label" htmlFor="radPrimaryCheckedXs">Extra small</label>
+</div>
+```
+
+### Disabled Radios
+
+Radio buttons in disabled state with various sizes.
+
+<Preview>
+  <DisabledRadios />
+</Preview>
+
+```html
+<div className="form-check form-check-md mb-2">
+  <input className="form-check-input ripple" type="radio" name="radioDisabled" id="radDisabledMd" disabled />
+  <label className="form-check-label" htmlFor="radDisabledMd">Medium unchecked</label>
+</div>
+<div className="form-check form-check-md mb-2">
+  <input className="form-check-input ripple" type="radio" name="radioDisabled" id="radDisabledCheckedMd" checked disabled />
+  <label className="form-check-label" htmlFor="radDisabledCheckedMd">Medium checked</label>
+</div>
+```
+
+<Callout type="info">
+  Add the `ripple` class to checkbox and radio inputs for a ripple effect on interaction. Use `form-check-md`, `form-check-sm`, or `form-check-xs` to control sizes.
+</Callout>

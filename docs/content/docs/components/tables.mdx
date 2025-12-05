@@ -1,0 +1,257 @@
+---
+title: Tables
+description: Default, side-borderless, and striped tables with checkboxes
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Preview } from '@/src/components/Preview';
+
+export function DefaultTable() {
+  return (
+    <div className="table-responsive">
+      <table className="table">
+        <thead>
+          <tr>
+            <th scope="col" style={{ width: '3.25rem' }}>
+              <input type="checkbox" className="form-check-input form-check-input-sm ripple" id="chkDemoMdDefault" />
+            </th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">
+              <input type="checkbox" className="form-check-input form-check-input-sm ripple" id="chkDefaultRow1" />
+            </th>
+            <td><a href="javascript:void(0);">Mark</a></td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">
+              <input type="checkbox" className="form-check-input form-check-input-sm ripple" id="chkDefaultRow2" />
+            </th>
+            <td><a href="javascript:void(0);">Jacob</a></td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">
+              <input type="checkbox" className="form-check-input form-check-input-sm ripple" id="chkDefaultRow3" />
+            </th>
+            <td><a href="javascript:void(0);">John</a></td>
+            <td>Doe</td>
+            <td>@social</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export function SideBorderlessTable() {
+  return (
+    <div className="table-responsive">
+      <table className="table side-borderless">
+        <thead>
+          <tr>
+            <th scope="col" style={{ width: '3.25rem' }}>
+              <input type="checkbox" className="form-check-input form-check-input-sm ripple" id="chkSideMd" />
+            </th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">
+              <input type="checkbox" className="form-check-input form-check-input-sm ripple" id="chkSideRow1" />
+            </th>
+            <td><a href="javascript:void(0);">Mark</a></td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">
+              <input type="checkbox" className="form-check-input form-check-input-sm ripple" id="chkSideRow2" />
+            </th>
+            <td><a href="javascript:void(0);">Jacob</a></td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">
+              <input type="checkbox" className="form-check-input form-check-input-sm ripple" id="chkSideRow3" />
+            </th>
+            <td><a href="javascript:void(0);">John</a></td>
+            <td>Doe</td>
+            <td>@social</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export function StripedTable() {
+  return (
+    <div className="table-responsive">
+      <table className="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col" style={{ width: '3.25rem' }}>
+              <input type="checkbox" className="form-check-input form-check-input-sm ripple" id="chkStripedMd" />
+            </th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">
+              <input type="checkbox" className="form-check-input form-check-input-sm ripple" id="chkStripedRow1" />
+            </th>
+            <td><a href="javascript:void(0);">Mark</a></td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">
+              <input type="checkbox" className="form-check-input form-check-input-sm ripple" id="chkStripedRow2" />
+            </th>
+            <td><a href="javascript:void(0);">Jacob</a></td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">
+              <input type="checkbox" className="form-check-input form-check-input-sm ripple" id="chkStripedRow3" />
+            </th>
+            <td><a href="javascript:void(0);">John</a></td>
+            <td>Doe</td>
+            <td>@social</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+# Tables
+
+Display structured data with flexible table layouts including default, side-borderless, and striped variants. All tables include checkbox selection in the first column.
+
+## Default Table
+
+Standard table with checkboxes for row selection and linked data cells.
+
+<Preview>
+  <DefaultTable />
+</Preview>
+
+```html
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" style="width: 3.25rem;">
+        <input type="checkbox" class="form-check-input form-check-input-sm ripple" id="chkDemo" />
+      </th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">
+        <input type="checkbox" class="form-check-input form-check-input-sm ripple" id="chkRow1" />
+      </th>
+      <td><a href="javascript:void(0);">Mark</a></td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">
+        <input type="checkbox" class="form-check-input form-check-input-sm ripple" id="chkRow2" />
+      </th>
+      <td><a href="javascript:void(0);">Jacob</a></td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+## Side-Borderless Table
+
+Table without left and right borders using the `side-borderless` class. Creates a cleaner look while maintaining horizontal dividers.
+
+<Preview>
+  <SideBorderlessTable />
+</Preview>
+
+```html
+<table class="table side-borderless">
+  <thead>
+    <tr>
+      <th scope="col" style="width: 3.25rem;">
+        <input type="checkbox" class="form-check-input form-check-input-sm ripple" id="chkDemo" />
+      </th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">
+        <input type="checkbox" class="form-check-input form-check-input-sm ripple" id="chkRow1" />
+      </th>
+      <td><a href="javascript:void(0);">Mark</a></td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+## Striped Table
+
+Table with alternating row colors using the `table-striped` class. Improves readability by creating visual separation between rows.
+
+<Preview>
+  <StripedTable />
+</Preview>
+
+```html
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col" style="width: 3.25rem;">
+        <input type="checkbox" class="form-check-input form-check-input-sm ripple" id="chkDemo" />
+      </th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">
+        <input type="checkbox" class="form-check-input form-check-input-sm ripple" id="chkRow1" />
+      </th>
+      <td><a href="javascript:void(0);">Mark</a></td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+<Callout type="info">
+  Use `table-responsive` wrapper for mobile-friendly tables. Combine `table-striped` with `side-borderless` for a modern, clean appearance. Add `form-check-input-sm` to checkboxes for compact sizing.
+</Callout>

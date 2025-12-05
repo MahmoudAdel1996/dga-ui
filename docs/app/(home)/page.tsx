@@ -1,6 +1,6 @@
-import { Link } from 'waku';
+import Link from 'next/link';
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
@@ -27,7 +27,7 @@ export default function Home() {
           </div>
           
           <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-linear-to-r from-[#FF0099] via-[#8E2DE2] to-cyan-500 bg-clip-text text-transparent">
-            Modern Arabic Design System
+            Saudi Digital Government Authority UI
           </h1>
           
           <p className="text-xl text-fd-muted-foreground mb-8 leading-relaxed">
@@ -36,7 +36,7 @@ export default function Home() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 items-center">
             <Link
-              to="/docs"
+              href="/docs"
               className="px-8 py-3 rounded-lg bg-fd-primary text-fd-primary-foreground font-semibold hover:opacity-90 transition-opacity"
             >
               View Components
@@ -197,7 +197,7 @@ export default function Home() {
             ].map((component) => (
               <Link
                 key={component}
-                to={`/docs/components/${component.toLowerCase()}`}
+                href={`/docs/components/${component.toLowerCase()}`}
                 className="p-4 rounded-lg border border-fd-border bg-fd-background hover:bg-fd-secondary/50 transition-colors text-center"
               >
                 <span className="font-medium text-fd-foreground">{component}</span>
@@ -215,7 +215,7 @@ export default function Home() {
             Explore our complete component library and documentation
           </p>
           <Link
-            to="/docs"
+            href="/docs"
             className="inline-block px-8 py-3 rounded-lg bg-fd-primary text-fd-primary-foreground font-semibold hover:opacity-90 transition-opacity"
           >
             View Documentation
@@ -226,6 +226,7 @@ export default function Home() {
   );
 }
 
+
 function FeatureCard({ icon, title, description }: { icon: string; title: string; description: string }) {
   return (
     <div className="p-6 rounded-lg border border-fd-border bg-fd-background hover:bg-fd-secondary/50 transition-colors">
@@ -235,9 +236,3 @@ function FeatureCard({ icon, title, description }: { icon: string; title: string
     </div>
   );
 }
-
-export const getConfig = async () => {
-  return {
-    render: 'static',
-  };
-};
