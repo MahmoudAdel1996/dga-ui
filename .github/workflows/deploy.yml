@@ -52,6 +52,9 @@ jobs:
         env:
           NODE_ENV: production
 
+      - name: Add .nojekyll file
+        run: touch ./docs/out/.nojekyll
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
