@@ -26,6 +26,13 @@
   "author": "Mahmoud Adel",
   "type": "module",
   "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./css/dga-ui.css": "./css/dga-ui.css",
+    "./css/*": "./css/*",
+    "./fonts/*": "./fonts/*",
+    "./theme/*": "./theme/*"
+  },
   "files": [
     "css",
     "fonts",
