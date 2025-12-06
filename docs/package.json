@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "start": "npm run use:local && next dev",
+    "start": "npm run use:local && node server.mjs",
+    "dev": "npm run use:local && next dev",
     "types:check": "fumadocs-mdx && tsc --noEmit",
     "postinstall": "fumadocs-mdx",
     "build:prod": "npm run use:npm && ng build --configuration production",
@@ -16,6 +17,7 @@
   },
   "dependencies": {
     "@codesandbox/sdk": "^2.4.2",
+    "@webcontainer/api": "^1.6.1",
     "fumadocs-core": "16.2.2",
     "fumadocs-mdx": "14.0.4",
     "fumadocs-ui": "16.2.2",
