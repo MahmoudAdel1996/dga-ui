@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { WebContainer, auth } from '@webcontainer/api';
+import { WebContainer } from '@webcontainer/api';
 import { renderToStaticMarkup } from 'react-dom/server';
 
 interface PreviewProps {
@@ -10,9 +10,6 @@ interface PreviewProps {
   code?: string;
 }
 
-// Track if auth has been initialized
-let authInitialized = false;
-
 export function Preview({ children, interactive = false, code }: PreviewProps) {
   const [activeTab, setActiveTab] = useState<'preview' | 'code'>('preview');
   const [webcontainerInstance, setWebcontainerInstance] = useState<WebContainer | null>(null);
@@ -20,22 +17,18 @@ export function Preview({ children, interactive = false, code }: PreviewProps) {
   const [url, setUrl] = useState<string>('');
   const [direction, setDirection] = useState<'rtl' | 'ltr'>('rtl');
   const [isMounted, setIsMounted] = useState(false);
+  const [viewport, setViewport] = useState<'desktop' | 'tablet' | 'mobile'>('desktop');
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
-  // Initialize auth once when first component mounts
+  // Listen for height changes from iframe
   useEffect(() => {
-    if (!authInitialized && typeof window !== 'undefined') {
-      try {
-        auth.init({
-          clientId: 'wc_api_mahmoud_adel1996_cc91f834ad9971b0bd46ac164a30b7a2',
-          scope: '',
-        });
-        authInitialized = true;
-        console.log('WebContainer auth initialized');
-      } catch (error) {
-        console.error('Failed to initialize WebContainer auth:', error);
+    const handleMessage = (event: MessageEvent) => {
+      if (event.data && event.data.type === 'resize' && iframeRef.current) {
+        iframeRef.current.style.height = event.data.height + 'px';
       }
-    }
+    };
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
   }, []);
 
   // Ensure component is mounted before rendering (avoid hydration mismatch)
@@ -157,11 +150,53 @@ export function Preview({ children, interactive = false, code }: PreviewProps) {
           document.documentElement.setAttribute('lang', event.data.direction === 'rtl' ? 'ar' : 'en');
         }
       });
+      
+      // Auto-resize iframe to content height
+      function notifyHeightChange() {
+        var height = document.documentElement.scrollHeight;
+        window.parent.postMessage({ type: 'resize', height: height }, '*');
+      }
+      
+      // Prevent default behavior for placeholder links
+      function preventPlaceholderLinks(e) {
+        var target = e.target;
+        while (target && target !== document) {
+          if (target.tagName === 'A' && (target.getAttribute('href') === '#' || target.getAttribute('href') === 'javascript:void(0)')) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+          target = target.parentElement;
+        }
+      }
+      
+      window.addEventListener('load', function() {
+        notifyHeightChange();
+        document.addEventListener('click', preventPlaceholderLinks, true);
+        
+        // Observe DOM changes for height adjustments
+        new MutationObserver(notifyHeightChange).observe(document.body, {
+          childList: true,
+          subtree: true,
+          attributes: true
+        });
+      });
     </script>
     <style>
+      * {
+        box-sizing: border-box;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+      }
       body {
         padding: 1rem;
         background: #F3F4F6;
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        min-height: fit-content;
       }
     </style>
   </head>
@@ -182,6 +217,19 @@ export function Preview({ children, interactive = false, code }: PreviewProps) {
       iframeRef.current.contentWindow?.postMessage({ type: 'changeDirection', direction }, '*');
     }
   }, [direction, isMounted]);
+
+  // Get viewport width based on device type
+  const getViewportWidth = () => {
+    switch (viewport) {
+      case 'mobile':
+        return '375px';
+      case 'tablet':
+        return '768px';
+      case 'desktop':
+      default:
+        return '100%';
+    }
+  };
 
   // Prevent hydration mismatch by not rendering until mounted
   if (!isMounted) {
@@ -261,26 +309,114 @@ export function Preview({ children, interactive = false, code }: PreviewProps) {
             الكود
           </button>
 
+          {/* Viewport Toggle */}
+          <div style={{ display: 'flex', gap: '0.25rem', marginLeft: 'auto' }}>
+            <button
+              onClick={() => setViewport('mobile')}
+              style={{
+                padding: '0.5rem',
+                border: viewport === 'mobile' ? '1px solid #3b82f6' : '1px solid #e5e7eb',
+                background: viewport === 'mobile' ? '#eff6ff' : 'white',
+                borderRadius: '0.375rem',
+                cursor: 'pointer',
+                transition: 'all 0.15s ease',
+                display: 'flex',
+                alignItems: 'center',
+                color: viewport === 'mobile' ? '#3b82f6' : '#6b7280',
+              }}
+              title="Mobile (375px)"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                <line x1="12" y1="18" x2="12" y2="18" />
+              </svg>
+            </button>
+            <button
+              onClick={() => setViewport('tablet')}
+              style={{
+                padding: '0.5rem',
+                border: viewport === 'tablet' ? '1px solid #3b82f6' : '1px solid #e5e7eb',
+                background: viewport === 'tablet' ? '#eff6ff' : 'white',
+                borderRadius: '0.375rem',
+                cursor: 'pointer',
+                transition: 'all 0.15s ease',
+                display: 'flex',
+                alignItems: 'center',
+                color: viewport === 'tablet' ? '#3b82f6' : '#6b7280',
+              }}
+              title="Tablet (768px)"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
+                <line x1="12" y1="18" x2="12" y2="18" />
+              </svg>
+            </button>
+            <button
+              onClick={() => setViewport('desktop')}
+              style={{
+                padding: '0.5rem',
+                border: viewport === 'desktop' ? '1px solid #3b82f6' : '1px solid #e5e7eb',
+                background: viewport === 'desktop' ? '#eff6ff' : 'white',
+                borderRadius: '0.375rem',
+                cursor: 'pointer',
+                transition: 'all 0.15s ease',
+                display: 'flex',
+                alignItems: 'center',
+                color: viewport === 'desktop' ? '#3b82f6' : '#6b7280',
+              }}
+              title="Desktop (100%)"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
+            </button>
+          </div>
+
           {/* Direction Toggle */}
           <button
             onClick={() => setDirection(prev => (prev === 'rtl' ? 'ltr' : 'rtl'))}
             style={{
               padding: '0.5rem 1rem',
-              border: '1px solid #dee2e6',
+              border: '1px solid #e5e7eb',
               background: 'white',
-              borderRadius: '0.25rem',
+              borderRadius: '0.375rem',
               cursor: 'pointer',
               fontWeight: '500',
-              transition: 'all 0.2s',
-              marginLeft: 'auto',
+              fontSize: '13px',
+              transition: 'all 0.15s ease',
               display: 'flex',
               alignItems: 'center',
               gap: '0.5rem',
             }}
             title={direction === 'rtl' ? 'Switch to LTR' : 'Switch to RTL'}
           >
-            <span style={{ fontSize: '16px' }}>{direction === 'rtl' ? '→' : '←'}</span>
-            <span>{direction === 'rtl' ? 'RTL' : 'LTR'}</span>
+            <span style={{ fontSize: '14px' }}>⇄</span>
+            <span style={{ fontFamily: 'monospace', fontSize: '12px' }}>
+              {direction.toUpperCase()}
+            </span>
           </button>
 
           {interactive && (
@@ -319,7 +455,17 @@ export function Preview({ children, interactive = false, code }: PreviewProps) {
 
         {/* Content */}
         {activeTab === 'preview' && (
-          <div style={{ position: 'relative', minHeight: '200px' }}>
+          <div
+            style={{
+              position: 'relative',
+              minHeight: '200px',
+              display: 'flex',
+              justifyContent: 'center',
+              background: viewport !== 'desktop' ? '#f3f4f6' : 'transparent',
+              padding: viewport !== 'desktop' ? '1rem' : '0',
+              overflowX: viewport === 'desktop' ? 'auto' : 'visible',
+            }}
+          >
             {isLoading && (
               <div
                 style={{
@@ -343,26 +489,18 @@ export function Preview({ children, interactive = false, code }: PreviewProps) {
                 ref={iframeRef}
                 src={url}
                 style={{
-                  width: '100%',
+                  width: getViewportWidth(),
+                  maxWidth: '100%',
                   border: 'none',
+                  borderRadius: '0',
                   display: 'block',
                   background: 'white',
-                  overflowX: 'auto',
+                  overflowX: viewport === 'desktop' ? 'visible' : 'auto',
                   overflowY: 'hidden',
+                  boxShadow: 'none',
                 }}
                 title="WebContainer Preview"
                 sandbox="allow-scripts allow-forms allow-popups allow-modals"
-                onLoad={e => {
-                  const iframe = e.currentTarget;
-                  try {
-                    const body = iframe.contentDocument?.body;
-                    if (body) {
-                      iframe.style.height = body.scrollHeight + 'px';
-                    }
-                  } catch (err) {
-                    iframe.style.height = '300px';
-                  }
-                }}
               />
             ) : (
               !isLoading && (
@@ -370,30 +508,22 @@ export function Preview({ children, interactive = false, code }: PreviewProps) {
                   ref={iframeRef}
                   srcDoc={srcdoc}
                   style={{
-                    width: '100%',
+                    width: getViewportWidth(),
+                    maxWidth: '100%',
                     border: 'none',
+                    borderRadius: '0',
                     display: 'block',
                     background: 'white',
-                    overflowX: 'auto',
+                    overflowX: viewport === 'desktop' ? 'visible' : 'auto',
                     overflowY: 'hidden',
+                    boxShadow: 'none',
                   }}
                   title="Static Preview"
                   sandbox="allow-scripts"
                   onLoad={e => {
                     const iframe = e.currentTarget;
-                    try {
-                      const body = iframe.contentDocument?.body;
-                      if (body) {
-                        iframe.style.height = body.scrollHeight + 'px';
-                      }
-                      // Set initial direction
-                      iframe.contentWindow?.postMessage(
-                        { type: 'changeDirection', direction },
-                        '*'
-                      );
-                    } catch (err) {
-                      iframe.style.height = '300px';
-                    }
+                    // Set initial direction
+                    iframe.contentWindow?.postMessage({ type: 'changeDirection', direction }, '*');
                   }}
                 />
               )
@@ -441,9 +571,97 @@ export function Preview({ children, interactive = false, code }: PreviewProps) {
           background: 'linear-gradient(to bottom, #ffffff, #f9fafb)',
           display: 'flex',
           padding: '0.75rem',
-          justifyContent: 'flex-end',
+          justifyContent: 'space-between',
+          alignItems: 'center',
         }}
       >
+        {/* Viewport Toggle */}
+        <div style={{ display: 'flex', gap: '0.25rem' }}>
+          <button
+            onClick={() => setViewport('mobile')}
+            style={{
+              padding: '0.5rem',
+              border: viewport === 'mobile' ? '1px solid #3b82f6' : '1px solid #e5e7eb',
+              background: viewport === 'mobile' ? '#eff6ff' : 'white',
+              borderRadius: '0.375rem',
+              cursor: 'pointer',
+              transition: 'all 0.15s ease',
+              display: 'flex',
+              alignItems: 'center',
+              color: viewport === 'mobile' ? '#3b82f6' : '#6b7280',
+            }}
+            title="Mobile (375px)"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+              <line x1="12" y1="18" x2="12" y2="18" />
+            </svg>
+          </button>
+          <button
+            onClick={() => setViewport('tablet')}
+            style={{
+              padding: '0.5rem',
+              border: viewport === 'tablet' ? '1px solid #3b82f6' : '1px solid #e5e7eb',
+              background: viewport === 'tablet' ? '#eff6ff' : 'white',
+              borderRadius: '0.375rem',
+              cursor: 'pointer',
+              transition: 'all 0.15s ease',
+              display: 'flex',
+              alignItems: 'center',
+              color: viewport === 'tablet' ? '#3b82f6' : '#6b7280',
+            }}
+            title="Tablet (768px)"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
+              <line x1="12" y1="18" x2="12" y2="18" />
+            </svg>
+          </button>
+          <button
+            onClick={() => setViewport('desktop')}
+            style={{
+              padding: '0.5rem',
+              border: viewport === 'desktop' ? '1px solid #3b82f6' : '1px solid #e5e7eb',
+              background: viewport === 'desktop' ? '#eff6ff' : 'white',
+              borderRadius: '0.375rem',
+              cursor: 'pointer',
+              transition: 'all 0.15s ease',
+              display: 'flex',
+              alignItems: 'center',
+              color: viewport === 'desktop' ? '#3b82f6' : '#6b7280',
+            }}
+            title="Desktop (100%)"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Direction Toggle */}
         <button
           onClick={() => setDirection(prev => (prev === 'rtl' ? 'ltr' : 'rtl'))}
           style={{
@@ -478,33 +696,37 @@ export function Preview({ children, interactive = false, code }: PreviewProps) {
         </button>
       </div>
 
-      <iframe
-        ref={iframeRef}
-        srcDoc={srcdoc}
+      <div
         style={{
-          width: '100%',
-          border: 'none',
-          display: 'block',
-          background: 'white',
-          overflowX: 'auto',
-          overflowY: 'hidden',
+          display: 'flex',
+          justifyContent: 'center',
+          background: viewport !== 'desktop' ? '#f3f4f6' : 'transparent',
+          padding: viewport !== 'desktop' ? '1rem' : '0',
         }}
-        title="Preview"
-        sandbox="allow-scripts"
-        onLoad={e => {
-          const iframe = e.currentTarget;
-          try {
-            const body = iframe.contentDocument?.body;
-            if (body) {
-              iframe.style.height = body.scrollHeight + 'px';
-            }
+      >
+        <iframe
+          ref={iframeRef}
+          srcDoc={srcdoc}
+          style={{
+            width: getViewportWidth(),
+            maxWidth: '100%',
+            border: 'none',
+            borderRadius: '0',
+            display: 'block',
+            background: 'white',
+            overflowX: 'auto',
+            overflowY: 'hidden',
+            boxShadow: 'none',
+          }}
+          title="Preview"
+          sandbox="allow-scripts"
+          onLoad={e => {
+            const iframe = e.currentTarget;
             // Set initial direction
             iframe.contentWindow?.postMessage({ type: 'changeDirection', direction }, '*');
-          } catch (err) {
-            iframe.style.height = '200px';
-          }
-        }}
-      />
+          }}
+        />
+      </div>
     </div>
   );
 }

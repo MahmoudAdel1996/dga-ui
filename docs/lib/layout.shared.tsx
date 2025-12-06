@@ -5,5 +5,6 @@ export function baseOptions(): BaseLayoutProps {
     nav: {
       title: 'SDGA UI',
     },
+    containerWidth: 'full',
   };
 }
