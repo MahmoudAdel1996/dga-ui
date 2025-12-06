@@ -1,0 +1,59 @@
+---
+title: Links
+description: Styled hyperlinks for navigation and actions
+---
+
+import { Preview } from '@/components/Preview';
+
+## Basic Links
+
+<Preview>
+  <div className="d-flex flex-column gap-3">
+    {/* Primary link */}
+    <a href="#" className="link-primary link-offset-2">
+      Primary Link
+    </a>
+    {/* Neutral link */}
+    <a href="#" className="link-neutral link-offset-2">
+      Neutral Link
+    </a>
+  </div>
+</Preview>
+
+```html
+<!-- Primary link -->
+<a href="#" class="link-primary link-offset-2">Primary Link</a>
+
+<!-- Neutral link -->
+<a href="#" class="link-neutral link-offset-2">Neutral Link</a>
+```
+
+## Link on Colored Background
+
+<Preview>
+  <div className="p-3 on-primary rounded-2" style={{ width: 'max-content' }}>
+    <a href="#" className="link-neutral link-offset-2">
+      Link on Primary Background
+    </a>
+  </div>
+</Preview>
+
+```html
+<div class="p-3 on-primary rounded-2">
+  <a href="#" class="link-neutral link-offset-2">Link on Primary Background</a>
+</div>
+```
+
+## Disabled Link
+
+<Preview>
+  <a href="#" className="link-primary disabled link-offset-2" aria-disabled="true" tabIndex="-1">
+    Disabled Link
+  </a>
+</Preview>
+
+```html
+<a href="#" class="link-primary disabled link-offset-2" aria-disabled="true" tabIndex="-1">
+  Disabled Link
+</a>
+```

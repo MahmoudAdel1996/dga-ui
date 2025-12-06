@@ -125,24 +125,8 @@ export function Preview({ children, interactive = false, code }: PreviewProps) {
     <title>SDGA UI Preview</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sdga-ui@latest/css/dga-ui.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script>
-      // Lazy load Bootstrap only when needed
-      (function() {
-        var loadBootstrap = function() {
-          if (window.bootstrap) return;
-          var script = document.createElement('script');
-          script.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js';
-          script.defer = true;
-          script.crossOrigin = 'anonymous';
-          document.head.appendChild(script);
-        };
-        
-        // Check if Bootstrap components are used
-        if (document.querySelector('[data-bs-toggle], .modal, .dropdown, .toast, .collapse')) {
-          loadBootstrap();
-        }
-      })();
-      
       // Listen for direction changes from parent
       window.addEventListener('message', function(event) {
         if (event.data && event.data.type === 'changeDirection') {

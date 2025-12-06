@@ -1,0 +1,286 @@
+---
+title: Toasts
+description: Push notifications to your visitors with toast components
+---
+
+import { Preview } from '@/components/Preview';
+
+## Success Toast
+
+<Preview>
+  <div className="toast show fade toast-success" role="alert" aria-live="polite" aria-atomic="true">
+    <div className="toast-icon">
+      <i className="bi bi-check-circle toast-icon"></i>
+    </div>
+    <div className="toast-content">
+      <div className="toast-header">
+        <strong>Success</strong>
+      </div>
+      <div className="toast-body">Your action has been completed successfully.</div>
+      <div className="toast-footer">
+        <button type="button" className="btn btn-subtle btn-sm">
+          Action
+        </button>
+        <button
+          type="button"
+          className="btn btn-subtle btn-sm"
+          data-bs-dismiss="toast"
+          aria-label="Close"
+        >
+          Dismiss
+        </button>
+      </div>
+    </div>
+    <button type="button" className="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+</Preview>
+
+```html
+<div class="toast show fade toast-success" role="alert" aria-live="polite" aria-atomic="true">
+  <div class="toast-icon">
+    <i class="bi bi-check-circle toast-icon"></i>
+  </div>
+  <div class="toast-content">
+    <div class="toast-header">
+      <strong>Success</strong>
+    </div>
+    <div class="toast-body">Your action has been completed successfully.</div>
+    <div class="toast-footer">
+      <button type="button" class="btn btn-subtle btn-sm">Action</button>
+      <button
+        type="button"
+        class="btn btn-subtle btn-sm"
+        data-bs-dismiss="toast"
+        aria-label="Close"
+      >
+        Dismiss
+      </button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+</div>
+```
+
+## Danger Toast
+
+<Preview>
+  <div className="toast show fade toast-danger" role="alert" aria-live="polite" aria-atomic="true">
+    <div className="toast-icon">
+      <i className="bi bi-exclamation-circle toast-icon"></i>
+    </div>
+    <div className="toast-content">
+      <div className="toast-header">
+        <strong>Error</strong>
+      </div>
+      <div className="toast-body">Something went wrong. Please try again.</div>
+      <div className="toast-footer">
+        <button type="button" className="btn btn-subtle btn-sm">
+          Action
+        </button>
+        <button
+          type="button"
+          className="btn btn-subtle btn-sm"
+          data-bs-dismiss="toast"
+          aria-label="Close"
+        >
+          Dismiss
+        </button>
+      </div>
+    </div>
+    <button type="button" className="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+</Preview>
+
+```html
+<div class="toast show fade toast-danger" role="alert" aria-live="polite" aria-atomic="true">
+  <div class="toast-icon">
+    <i class="bi bi-exclamation-circle toast-icon"></i>
+  </div>
+  <div class="toast-content">
+    <div class="toast-header">
+      <strong>Error</strong>
+    </div>
+    <div class="toast-body">Something went wrong. Please try again.</div>
+    <div class="toast-footer">
+      <button type="button" class="btn btn-subtle btn-sm">Action</button>
+      <button
+        type="button"
+        class="btn btn-subtle btn-sm"
+        data-bs-dismiss="toast"
+        aria-label="Close"
+      >
+        Dismiss
+      </button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+</div>
+```
+
+## Warning Toast
+
+<Preview>
+  <div className="toast show fade toast-warning" role="alert" aria-live="polite" aria-atomic="true">
+    <div className="toast-icon">
+      <i className="bi bi-exclamation-triangle toast-icon"></i>
+    </div>
+    <div className="toast-content">
+      <div className="toast-header">
+        <strong>Warning</strong>
+      </div>
+      <div className="toast-body">Please review your information before proceeding.</div>
+      <div className="toast-footer">
+        <button type="button" className="btn btn-subtle btn-sm">
+          Action
+        </button>
+        <button
+          type="button"
+          className="btn btn-subtle btn-sm"
+          data-bs-dismiss="toast"
+          aria-label="Close"
+        >
+          Dismiss
+        </button>
+      </div>
+    </div>
+    <button type="button" className="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+</Preview>
+
+```html
+<div class="toast show fade toast-warning" role="alert" aria-live="polite" aria-atomic="true">
+  <div class="toast-icon">
+    <i class="bi bi-exclamation-triangle toast-icon"></i>
+  </div>
+  <div class="toast-content">
+    <div class="toast-header">
+      <strong>Warning</strong>
+    </div>
+    <div class="toast-body">Please review your information before proceeding.</div>
+    <div class="toast-footer">
+      <button type="button" class="btn btn-subtle btn-sm">Action</button>
+      <button
+        type="button"
+        class="btn btn-subtle btn-sm"
+        data-bs-dismiss="toast"
+        aria-label="Close"
+      >
+        Dismiss
+      </button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+</div>
+```
+
+## Info Toast
+
+<Preview>
+  <div className="toast show fade toast-info" role="alert" aria-live="polite" aria-atomic="true">
+    <div className="toast-icon">
+      <i className="bi bi-info-circle toast-icon"></i>
+    </div>
+    <div className="toast-content">
+      <div className="toast-header">
+        <strong>Information</strong>
+      </div>
+      <div className="toast-body">Here's some helpful information for you.</div>
+      <div className="toast-footer">
+        <button type="button" className="btn btn-subtle btn-sm">
+          Action
+        </button>
+        <button
+          type="button"
+          className="btn btn-subtle btn-sm"
+          data-bs-dismiss="toast"
+          aria-label="Close"
+        >
+          Dismiss
+        </button>
+      </div>
+    </div>
+    <button type="button" className="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+</Preview>
+
+```html
+<div class="toast show fade toast-info" role="alert" aria-live="polite" aria-atomic="true">
+  <div class="toast-icon">
+    <i class="bi bi-info-circle toast-icon"></i>
+  </div>
+  <div class="toast-content">
+    <div class="toast-header">
+      <strong>Information</strong>
+    </div>
+    <div class="toast-body">Here's some helpful information for you.</div>
+    <div class="toast-footer">
+      <button type="button" class="btn btn-subtle btn-sm">Action</button>
+      <button
+        type="button"
+        class="btn btn-subtle btn-sm"
+        data-bs-dismiss="toast"
+        aria-label="Close"
+      >
+        Dismiss
+      </button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+</div>
+```
+
+## Neutral Toast
+
+<Preview>
+  <div className="toast show fade toast-neutral" role="alert" aria-live="polite" aria-atomic="true">
+    <div className="toast-icon">
+      <i className="bi bi-info-circle toast-icon"></i>
+    </div>
+    <div className="toast-content">
+      <div className="toast-header">
+        <strong>Notification</strong>
+      </div>
+      <div className="toast-body">You have a new notification.</div>
+      <div className="toast-footer">
+        <button type="button" className="btn btn-subtle btn-sm">
+          Action
+        </button>
+        <button
+          type="button"
+          className="btn btn-subtle btn-sm"
+          data-bs-dismiss="toast"
+          aria-label="Close"
+        >
+          Dismiss
+        </button>
+      </div>
+    </div>
+    <button type="button" className="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+</Preview>
+
+```html
+<div class="toast show fade toast-neutral" role="alert" aria-live="polite" aria-atomic="true">
+  <div class="toast-icon">
+    <i class="bi bi-info-circle toast-icon"></i>
+  </div>
+  <div class="toast-content">
+    <div class="toast-header">
+      <strong>Notification</strong>
+    </div>
+    <div class="toast-body">You have a new notification.</div>
+    <div class="toast-footer">
+      <button type="button" class="btn btn-subtle btn-sm">Action</button>
+      <button
+        type="button"
+        class="btn btn-subtle btn-sm"
+        data-bs-dismiss="toast"
+        aria-label="Close"
+      >
+        Dismiss
+      </button>
+    </div>
+  </div>
+  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+</div>
+```
