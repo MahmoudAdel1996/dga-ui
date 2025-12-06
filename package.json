@@ -46,10 +46,10 @@
     "format:check": "prettier --check \"**/*.{js,json,md,css,scss}\"",
     "build-css": "sass --load-path=node_modules theme/dga-ui.scss css/dga-ui.css",
     "watch-css": "sass --load-path=node_modules --watch theme/dga-ui.scss css/dga-ui.css",
-    "update-demo-version": "node -e \"const fs=require('fs');const pkg=JSON.parse(fs.readFileSync('package.json'));const demoPkg=JSON.parse(fs.readFileSync('demo-angular/package.json'));demoPkg.version=pkg.version;demoPkg.dependencies['sdga-ui']='^'+pkg.version;fs.writeFileSync('demo-angular/package.json',JSON.stringify(demoPkg,null,2)+'\\n');console.log('Synced demo-angular version to',pkg.version);\"",
+    "update-docs-version": "node -e \"const fs=require('fs');const pkg=JSON.parse(fs.readFileSync('package.json'));const docsPkg=JSON.parse(fs.readFileSync('docs/package.json'));docsPkg.version=pkg.version;fs.writeFileSync('docs/package.json',JSON.stringify(docsPkg,null,2)+'\\n');console.log('Synced docs version to',pkg.version);\"",
     "prepublishOnly": "npm run build-css",
     "preversion": "npm run build-css",
-    "version": "npm run update-demo-version && git add .",
+    "version": "npm run update-docs-version && git add .",
     "postversion": "git push --follow-tags"
   },
   "peerDependencies": {

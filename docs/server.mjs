@@ -1,6 +1,5 @@
 import { createServer as createHttpsServer } from 'https';
 import { createServer as createHttpServer } from 'http';
-import { parse } from 'url';
 import next from 'next';
 import { readFileSync } from 'fs';
 import { join, dirname } from 'path';
@@ -26,13 +25,17 @@ app.prepare().then(() => {
 
   const httpsServer = createHttpsServer(httpsOptions, async (req, res) => {
     try {
-      const parsedUrl = parse(req.url, true);
-      await handle(req, res, parsedUrl);
+      await handle(req, res);
     } catch (err) {
       console.error('Error occurred handling', req.url, err);
       res.statusCode = 500;
       res.end('internal server error');
     }
+  });
+
+  // Handle WebSocket upgrades for HMR
+  httpsServer.on('upgrade', (req, socket, head) => {
+    app.getUpgradeHandler()(req, socket, head);
   });
 
   // Start HTTPS server
