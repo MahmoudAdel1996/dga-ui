@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     default: 'SDGA UI Documentation',
     template: '%s | SDGA UI',
   },
-  description: 'Professional Bootstrap theme for Saudi Digital Government Authority applications with built-in RTL support',
+  description:
+    'Professional Bootstrap theme for Saudi Digital Government Authority applications with built-in RTL support',
 };
 
 export default function Layout({ children }: LayoutProps<'/'>) {

@@ -7,37 +7,33 @@
 
 // Define link color variants with their shades
 $link-variants: (
-  "primary": (
-    base: rgba($primary-600, var(--#{$prefix}link-opacity, 1)),
+  "primary": (base: rgba($primary-600, var(--#{$prefix}link-opacity, 1)),
     base-decoration: rgba($primary-600, var(--#{$prefix}link-decoration-opacity, 1)),
     hover: rgba($primary-400, var(--#{$prefix}link-opacity, 1)),
     hover-decoration: rgba($primary-400, var(--#{$prefix}link-decoration-opacity, 1)),
     active: rgba($primary-300, var(--#{$prefix}link-opacity, 1)),
-    active-decoration: rgba($primary-300, var(--#{$prefix}link-decoration-opacity, 1)) ),
-  "neutral": (
-    base: rgba($neutral-700, var(--#{$prefix}link-opacity, 1)),
+    active-decoration: rgba($primary-300, var(--#{$prefix}link-decoration-opacity, 1))),
+  "neutral": (base: rgba($neutral-700, var(--#{$prefix}link-opacity, 1)),
     base-decoration: rgba($neutral-700, var(--#{$prefix}link-decoration-opacity, 1)),
     hover: rgba($neutral-500, var(--#{$prefix}link-opacity, 1)),
     hover-decoration: rgba($neutral-500, var(--#{$prefix}link-decoration-opacity, 1)),
     active: rgba($neutral-400, var(--#{$prefix}link-opacity, 1)),
-    active-decoration: rgba($neutral-400, var(--#{$prefix}link-decoration-opacity, 1)) )
+    active-decoration: rgba($neutral-400, var(--#{$prefix}link-decoration-opacity, 1)))
 );
 
 $on-primary-link-variants: (
-  "primary": (
-    base: rgba($white, var(--#{$prefix}link-opacity, 1)),
+  "primary": (base: rgba($white, var(--#{$prefix}link-opacity, 1)),
     base-decoration: rgba($white, var(--#{$prefix}link-decoration-opacity, 1)),
     hover: rgba($white, var(--#{$prefix}link-opacity, 0.8)),
     hover-decoration: rgba($white, var(--#{$prefix}link-decoration-opacity, 0.8)),
     active: rgba($white, var(--#{$prefix}link-opacity, 0.6)),
-    active-decoration: rgba($white, var(--#{$prefix}link-decoration-opacity, 0.6)) ),
-  "neutral": (
-    base: rgba($white, var(--#{$prefix}link-opacity, 1)),
+    active-decoration: rgba($white, var(--#{$prefix}link-decoration-opacity, 0.6))),
+  "neutral": (base: rgba($white, var(--#{$prefix}link-opacity, 1)),
     base-decoration: rgba($white, var(--#{$prefix}link-decoration-opacity, 1)),
     hover: rgba($white, var(--#{$prefix}link-opacity, 0.8)),
     hover-decoration: rgba($white, var(--#{$prefix}link-decoration-opacity, 0.8)),
     active: rgba($white, var(--#{$prefix}link-opacity, 0.6)),
-    active-decoration: rgba($white, var(--#{$prefix}link-decoration-opacity, 0.6)) )
+    active-decoration: rgba($white, var(--#{$prefix}link-decoration-opacity, 0.6)))
 );
 
 // Generate link variant classes
@@ -63,10 +59,16 @@ $on-primary-link-variants: (
       color: map-get($colors, active) !important;
       text-decoration-color: map-get($colors, active-decoration) !important;
     }
+
+    &.disabled {
+      color: rgba($gray-400, var(--#{$prefix}link-opacity, 1)) !important;
+      text-decoration-color: rgba($gray-400, var(--#{$prefix}link-opacity, 1)) !important;
+      pointer-events: none;
+    }
   }
 }
 
-.on-primary  {
+.on-primary {
   @each $name, $colors in $on-primary-link-variants {
     .link-#{$name} {
       color: map-get($colors, base) !important;
@@ -88,13 +90,12 @@ $on-primary-link-variants: (
         color: map-get($colors, active) !important;
         text-decoration-color: map-get($colors, active-decoration) !important;
       }
+
+      &.disabled {
+        color: rgba($gray-400, var(--#{$prefix}link-opacity, 1)) !important;
+        text-decoration-color: rgba($gray-400, var(--#{$prefix}link-opacity, 1)) !important;
+        pointer-events: none;
+      }
     }
   }
 }
-
-a.disabled {
-  color: rgba($gray-400, var(--#{$prefix}link-opacity, 1)) !important;
-  text-decoration-color: rgba($gray-400, var(--#{$prefix}link-opacity, 1)) !important;
-  pointer-events: none;
-}
-

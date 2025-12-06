@@ -8,17 +8,23 @@ import { Preview } from '@/components/Preview';
 
 export function CardWithIcon() {
   return (
-    <div style={{ maxWidth: '300px' }}>
+    <div>
       <div className="card" tabIndex="0">
         <div className="card-body">
           <h5 className="card-title">
             <i className="bi bi-check-circle card-title-icon"></i>
           </h5>
           <h6 className="card-subtitle mb-2">Card Title</h6>
-          <p className="card-text">This is a description of the card content and key information.</p>
+          <p className="card-text">
+            This is a description of the card content and key information.
+          </p>
           <div className="card-footer">
-            <a href="#" className="btn btn-outline-secondary">Secondary Action</a>
-            <a href="#" className="btn btn-primary">Primary Action</a>
+            <a href="#" className="btn btn-outline-secondary">
+              Secondary Action
+            </a>
+            <a href="#" className="btn btn-primary">
+              Primary Action
+            </a>
           </div>
         </div>
       </div>
@@ -28,17 +34,27 @@ export function CardWithIcon() {
 
 export function CardWithCheckbox() {
   return (
-    <div style={{ maxWidth: '300px' }}>
+    <div>
       <div className="card" tabIndex="0">
         <div className="card-body">
           <h5 className="card-title">
-            <input className="card-title-checked form-check-input ripple" type="checkbox" value="" id="check1" aria-label="Select card" />
+            <input
+              className="card-title-checked form-check-input ripple"
+              type="checkbox"
+              value=""
+              id="check1"
+              aria-label="Select card"
+            />
           </h5>
           <h6 className="card-subtitle mb-2">Selectable Card</h6>
           <p className="card-text">Cards can include checkboxes for selection in lists.</p>
           <div className="card-footer">
-            <a href="#" className="btn btn-outline-secondary">Secondary</a>
-            <a href="#" className="btn btn-primary">Primary</a>
+            <a href="#" className="btn btn-outline-secondary">
+              Secondary
+            </a>
+            <a href="#" className="btn btn-primary">
+              Primary
+            </a>
           </div>
         </div>
       </div>
@@ -48,17 +64,23 @@ export function CardWithCheckbox() {
 
 export function DisabledCard() {
   return (
-    <div style={{ maxWidth: '300px' }}>
+    <div>
       <div className="card disabled" tabIndex="0">
         <div className="card-body">
           <h5 className="card-title">
             <i className="bi bi-check-circle card-title-icon"></i>
           </h5>
           <h6 className="card-subtitle mb-2">Disabled Card</h6>
-          <p className="card-text">This card is in a disabled state and cannot be interacted with.</p>
+          <p className="card-text">
+            This card is in a disabled state and cannot be interacted with.
+          </p>
           <div className="card-footer">
-            <a href="#" className="btn btn-outline-secondary disabled">Secondary</a>
-            <a href="#" className="btn btn-primary disabled">Primary</a>
+            <a href="#" className="btn btn-outline-secondary disabled">
+              Secondary
+            </a>
+            <a href="#" className="btn btn-primary disabled">
+              Primary
+            </a>
           </div>
         </div>
       </div>
@@ -78,7 +100,9 @@ export function CardGrid() {
             <h6 className="card-subtitle mb-2">Service 1</h6>
             <p className="card-text">First service option description.</p>
             <div className="card-footer">
-              <a href="#" className="btn btn-primary">Action</a>
+              <a href="#" className="btn btn-primary">
+                Action
+              </a>
             </div>
           </div>
         </div>
@@ -92,7 +116,9 @@ export function CardGrid() {
             <h6 className="card-subtitle mb-2">Service 2</h6>
             <p className="card-text">Second service option description.</p>
             <div className="card-footer">
-              <a href="#" className="btn btn-primary">Action</a>
+              <a href="#" className="btn btn-primary">
+                Action
+              </a>
             </div>
           </div>
         </div>
@@ -106,7 +132,9 @@ export function CardGrid() {
             <h6 className="card-subtitle mb-2">Service 3</h6>
             <p className="card-text">Third service option description.</p>
             <div className="card-footer">
-              <a href="#" className="btn btn-primary">Action</a>
+              <a href="#" className="btn btn-primary">
+                Action
+              </a>
             </div>
           </div>
         </div>
@@ -155,7 +183,12 @@ Include a checkbox for selection in card lists and grids.
 <div class="card" tabindex="0">
   <div class="card-body">
     <h5 class="card-title">
-      <input class="card-title-checked form-check-input ripple" type="checkbox" value="" id="check1" />
+      <input
+        class="card-title-checked form-check-input ripple"
+        type="checkbox"
+        value=""
+        id="check1"
+      />
     </h5>
     <h6 class="card-subtitle mb-2">Selectable Card</h6>
     <p class="card-text">Cards can include checkboxes for selection.</p>
@@ -220,5 +253,6 @@ Combine cards in responsive grids using Bootstrap's grid system.
 ```
 
 <Callout type="tip">
-  Use Bootstrap icons (`bi-*` classes) in card titles and combine with `h-100` class on cards for equal heights in grids.
+  Use Bootstrap icons (`bi-*` classes) in card titles and combine with `h-100` class on cards for
+  equal heights in grids.
 </Callout>
