@@ -26211,6 +26211,11 @@ html {
   color: rgba(136, 216, 173, var(--dga-link-opacity, 1)) !important;
   text-decoration-color: rgba(136, 216, 173, var(--dga-link-decoration-opacity, 1)) !important;
 }
+.link-primary.disabled {
+  color: rgba(157, 164, 174, var(--dga-link-opacity, 1)) !important;
+  text-decoration-color: rgba(157, 164, 174, var(--dga-link-opacity, 1)) !important;
+  pointer-events: none;
+}
 
 .link-neutral {
   color: rgba(56, 66, 80, var(--dga-link-opacity, 1)) !important;
@@ -26227,6 +26232,11 @@ html {
 .link-neutral:active {
   color: rgba(157, 164, 174, var(--dga-link-opacity, 1)) !important;
   text-decoration-color: rgba(157, 164, 174, var(--dga-link-decoration-opacity, 1)) !important;
+}
+.link-neutral.disabled {
+  color: rgba(157, 164, 174, var(--dga-link-opacity, 1)) !important;
+  text-decoration-color: rgba(157, 164, 174, var(--dga-link-opacity, 1)) !important;
+  pointer-events: none;
 }
 
 .on-primary .link-primary {
@@ -26245,6 +26255,11 @@ html {
   color: rgba(255, 255, 255, var(--dga-link-opacity, 0.6)) !important;
   text-decoration-color: rgba(255, 255, 255, var(--dga-link-decoration-opacity, 0.6)) !important;
 }
+.on-primary .link-primary.disabled {
+  color: rgba(157, 164, 174, var(--dga-link-opacity, 1)) !important;
+  text-decoration-color: rgba(157, 164, 174, var(--dga-link-opacity, 1)) !important;
+  pointer-events: none;
+}
 .on-primary .link-neutral {
   color: rgba(255, 255, 255, var(--dga-link-opacity, 1)) !important;
   text-decoration-color: rgba(255, 255, 255, var(--dga-link-decoration-opacity, 1)) !important;
@@ -26261,8 +26276,7 @@ html {
   color: rgba(255, 255, 255, var(--dga-link-opacity, 0.6)) !important;
   text-decoration-color: rgba(255, 255, 255, var(--dga-link-decoration-opacity, 0.6)) !important;
 }
-
-a.disabled {
+.on-primary .link-neutral.disabled {
   color: rgba(157, 164, 174, var(--dga-link-opacity, 1)) !important;
   text-decoration-color: rgba(157, 164, 174, var(--dga-link-opacity, 1)) !important;
   pointer-events: none;
