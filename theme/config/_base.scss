@@ -44,7 +44,7 @@ $focus-ring-width: 0.25rem;
 $focus-ring-opacity: 0.25;
 $focus-ring-color: shadow-rgba($focus-ring-opacity);
 $focus-ring-blur: 0;
-$focus-ring-box-shadow: 0 0 $focus-ring-blur $focus-ring-width $focus-ring-color;
+$focus-ring-box-shadow: none;
 
 // ============================================
 // UTILITIES

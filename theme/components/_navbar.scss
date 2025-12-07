@@ -1,9 +1,10 @@
 // Bootstrap 5.3 - Navbar Component Variables
 
-$navbar-padding-y: 0.5rem;
-$navbar-padding-x: 1rem;
+$navbar-padding-y: 0;
+$navbar-padding-x: 2rem;
 
-$navbar-nav-link-padding-x: 0.5rem;
+$navbar-nav-link-padding-x: 1rem;
+$navbar-nav-link-padding-y: 0.5rem;
 
 $navbar-brand-font-size: $font-size-lg;
 $navbar-brand-height: null;
@@ -29,12 +30,12 @@ $navbar-dark-brand-color: $navbar-dark-active-color;
 $navbar-dark-brand-hover-color: $navbar-dark-active-color;
 
 // Navbar light theme
-$navbar-light-color: rgba($black, 0.55);
-$navbar-light-hover-color: rgba($black, 0.7);
-$navbar-light-active-color: rgba($black, 0.9);
+$navbar-light-color: $black;
+$navbar-light-hover-color: $black;
+$navbar-light-active-color: $black;
 $navbar-light-disabled-color: rgba($black, 0.3);
-$navbar-light-icon-color: rgba($black, 0.5);
+$navbar-light-icon-color: $black;
 $navbar-light-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
-$navbar-light-toggler-border-color: rgba($black, 0.1);
+$navbar-light-toggler-border-color: transparent;
 $navbar-light-brand-color: $navbar-light-active-color;
 $navbar-light-brand-hover-color: $navbar-light-active-color;

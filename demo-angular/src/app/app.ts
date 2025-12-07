@@ -47,7 +47,7 @@ export class App {
     {
       groupKey: 'nav.layout',
       items: [
-        // { id: 'header', labelKey: 'nav.header', icon: '📋', route: '/header' },
+        { id: 'header', labelKey: 'nav.header', icon: '📋', route: '/header' },
         { id: 'footer', labelKey: 'nav.footer', icon: '📄', route: '/footer' }
       ]
     },
