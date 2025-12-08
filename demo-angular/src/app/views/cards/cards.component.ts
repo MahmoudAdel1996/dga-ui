@@ -32,7 +32,9 @@ export class CardsComponent {
   cardWithIconCode = `<div class="card" tabindex="0">
   <div class="card-body">
     <h5 class="card-title">
-      <i class="bi bi-check-circle card-title-icon"></i>
+      <div class="dga-featured-icon dga-featured-icon-circle">
+       <i class="bi bi-check-circle"></i>
+      </div>
     </h5>
     <h6 class="card-subtitle mb-2">Card Title</h6>
     <p class="card-text">This is a sample card text that describes the content.</p>
@@ -64,7 +66,9 @@ export class CardsComponent {
   disabledCardCode = `<div class="card disabled" tabindex="0">
   <div class="card-body">
     <h5 class="card-title">
-      <i class="bi bi-check-circle card-title-icon"></i>
+      <div class="dga-featured-icon dga-featured-icon-circle disabled">
+       <i class="bi bi-check-circle"></i>
+      </div>
       <input class="card-title-checked form-check-input ripple" 
              disabled 
              type="checkbox" 
@@ -102,7 +106,9 @@ export class CardsComponent {
   expandableCardHtmlCode = `<div class="card" tabindex="0" [class.expanded]="isExpanded(1)">
   <div class="card-body">
     <h5 class="card-title">
-      <i class="bi bi-check-circle card-title-icon"></i>
+      <div class="dga-featured-icon dga-featured-icon-circle">
+       <i class="bi bi-check-circle"></i>
+      </div>
       <input class="card-title-checked form-check-input ripple" 
              type="checkbox" 
              value="" 
@@ -163,7 +169,9 @@ export class CardsComponent {
   expandableCardSimpleHtmlCode = `<div class="card" tabindex="0" [class.expanded]="isExpanded(2)">
   <div class="card-body">
     <h5 class="card-title">
-      <i class="bi bi-check-circle card-title-icon"></i>
+      <div class="dga-featured-icon dga-featured-icon-circle">
+       <i class="bi bi-check-circle"></i>
+      </div>
     </h5>
     <h6 class="card-subtitle mb-2">Expandable Card Title</h6>
     <p class="card-text">Click the arrow to see more details.</p>

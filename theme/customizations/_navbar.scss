@@ -1,4 +1,6 @@
 .navbar {
+    position: relative;
+
     .nav-link {
         display: flex;
         height: 4.5rem;
@@ -10,6 +12,7 @@
         border-radius: $radius-sm;
         gap: 0.25rem;
         position: relative;
+
 
         &.icon-top {
             flex-direction: column;
@@ -43,6 +46,18 @@
             }
         }
 
+        &:disabled,
+        &.disabled {
+            pointer-events: none;
+            cursor: default;
+            background-color: transparent;
+            color: $neutral-400;
+
+            &::before {
+                background-color: transparent;
+            }
+        }
+
         &.active {
             background-color: $primary-600;
             color: $white;
@@ -66,6 +81,87 @@
                     background-color: $primary-400;
                 }
             }
+
+            &:disabled,
+            &.disabled {
+                pointer-events: none;
+                cursor: default;
+                color: $neutral-400;
+                background-color: transparent;
+
+                &::before {
+                    background-color: $neutral-200;
+                }
+            }
         }
+    }
+
+    .dropdown {
+        position: unset;
+    }
+
+    .dropdown-menu {
+        height: max-content;
+        transition: transform 1s ease-in-out;
+        inset: auto 0 auto auto !important;
+        padding: 2rem 5rem;
+        width: 100%;
+        border: none;
+        margin: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+
+        .dropdown-header {
+            color: $primary;
+            font-size: $font-size-lg;
+            font-weight: $font-weight-bold;
+
+        }
+
+        .dropdown-item-group {
+            display: flex;
+            flex-direction: column;
+            gap: .25rem;
+        }
+
+        &.show {
+            display: flex;
+            align-items: flex-start;
+            align-content: flex-start;
+            gap: 1.5rem var(--spacing-3xl, 1.5rem);
+            align-self: stretch;
+            flex-wrap: wrap;
+        }
+
+    }
+}
+
+
+.on-primary {
+    .dropdown-menu,
+    &.dropdown-menu {
+
+        .dropdown-item,
+        .dropdown-header {
+            color: $white;
+        }
+
+        .dropdown-item:hover {
+            background-color: rgb($white, 0.2);
+            color: $white;
+        }
+
+        .dropdown-item:active {
+            background-color: rgb($white, 0.4);
+            color: $white;
+        }
+
+        .dropdown-item.disabled,
+        .dropdown-item.disabled:hover,
+        .dropdown-item.disabled:active {
+            background-color: transparent;
+            color: $neutral-400;
+        }
+
     }
 }

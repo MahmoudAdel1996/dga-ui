@@ -1,0 +1,122 @@
+// Define card icon color variants
+$card-icon-variants: (
+    "success": (icon-bg: $success-50,
+        icon-color: $success-700 ),
+    "primary": (icon-bg: $primary-50,
+        icon-color: $primary-700 ),
+    "danger": (icon-bg: $danger-50,
+        icon-color: $danger-700 ),
+    "warning": (icon-bg: $warning-50,
+        icon-color: $warning-700 ),
+    "info": (icon-bg: $info-50,
+        icon-color: $info-700 ),
+    "secondary": (icon-bg: $secondary-50,
+        icon-color: $secondary-700 ),
+    "neutral": (icon-bg: $neutral-50,
+        icon-color: $neutral-700 )
+);
+
+.dga-featured-icon {
+    display: flex;
+    width: 3rem;
+    height: 3rem;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    background: $primary-50;
+    font-size: 1.3rem;
+
+    &.dga-featured-icon-sm {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 0.875rem;
+    }
+
+    &.dga-featured-icon-md {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.3rem;
+    }
+
+    &.dga-featured-icon-lg {
+        width: 4rem;
+        height: 4rem;
+        font-size: 1.875rem;
+    }
+
+    &.dga-featured-icon-circle {
+        border-radius: $radius-full;
+    }
+
+    &.dga-featured-icon-rounded-lg {
+        border-radius: $radius-lg;
+    }
+
+    &.dga-featured-icon-rounded-sm {
+        border-radius: $radius-sm;
+    }
+
+    &.dga-featured-icon-rounded-md,
+    &.dga-featured-icon-rounded {
+        border-radius: $radius-md;
+    }
+
+    @each $name, $colors in $card-icon-variants {
+        &.dga-featured-icon-#{$name} {
+            background-color: map-get($colors, icon-bg);
+
+            svg,
+            i {
+                fill: map-get($colors, icon-color);
+                color: map-get($colors, icon-color);
+                stroke: map-get($colors, icon-color);
+            }
+
+            &.disabled {
+                background-color: $gray-100;
+
+                svg,
+                i {
+                    fill: $gray-400;
+                    color: $gray-400;
+                    stroke: $gray-400;
+                }
+            }
+        }
+    }
+
+    &.disabled {
+        background-color: $gray-100;
+
+        svg,
+        i {
+            fill: $gray-400;
+            color: $gray-400;
+            stroke: $gray-400;
+        }
+    }
+
+    svg,
+    i {
+        fill: $primary-600;
+        color: $primary-600;
+        font-size: 1em;
+        display: grid;
+        place-items: center;
+    }
+}
+
+
+.on-primary {
+    .dga-featured-icon,
+    &.dga-featured-icon {
+        background: rgba($white, 0.1);
+
+        svg,
+        i {
+            stroke: $white;
+            fill: $white;
+            color: $white;
+        }
+    }
+}

@@ -5,37 +5,7 @@
 // CARD ICON VARIANTS - Using Sass map and @each loop
 // ============================================
 
-// Define card icon color variants
-$card-icon-variants: (
-  "success": (
-    icon-bg: $success-50,
-    icon-color: $success-700
-  ),
-  "primary": (
-    icon-bg: $primary-50,
-    icon-color: $primary-700
-  ),
-  "danger": (
-    icon-bg: $danger-50,
-    icon-color: $danger-700
-  ),
-  "warning": (
-    icon-bg: $warning-50,
-    icon-color: $warning-700
-  ),
-  "info": (
-    icon-bg: $info-50,
-    icon-color: $info-700
-  ),
-  "secondary": (
-    icon-bg: $secondary-50,
-    icon-color: $secondary-700
-  ),
-  "neutral": (
-    icon-bg: $neutral-50,
-    icon-color: $neutral-700
-  )
-);
+
 
 // ============================================
 // CARD BASE STYLES
@@ -84,45 +54,6 @@ $card-icon-variants: (
   &.disabled {
     background-color: $gray-200;
     cursor: not-allowed;
-
-    .card-title-icon {
-        &::after {
-            background-color: $gray-100;
-        }
-        color: $gray-400;
-    }
-    
-  }
-
-  .card-title-icon {
-    &::after {
-      content: '';
-      width: 3rem;
-      height: 3rem;
-      border-radius: $radius-full;
-      background-color: $primary-50;
-      position: absolute;
-      z-index: -1;
-    }
-    width: 3rem;
-    height: 3rem;
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: $success-700;
-    z-index: 1;
-
-    // Generate card icon variant classes
-    @each $name, $colors in $card-icon-variants {
-      &.card-title-icon-#{$name} {
-        color: map-get($colors, icon-color);
-        
-        &::after {
-          background-color: map-get($colors, icon-bg);
-        }
-      }
-    }
   }
 
   .card-title-checked {

@@ -1,0 +1,413 @@
+---
+title: Header
+description: SDGA navbar header with navigation links, dropdowns, and mega menus
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Preview } from '@/components/Preview';
+
+export function BasicHeader() {
+  return (
+    <nav className="navbar navbar-expand-lg bg-white">
+      <div className="container-fluid">
+        <a className="navbar-brand" href="javascript:void(0);">
+          <img src="https://placehold.co/152x58" width="152" height="58" alt="logo" />
+        </a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <a className="nav-link active" aria-current="page" href="javascript:void(0);">
+                Home
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="javascript:void(0);">
+                <i className="bi bi-arrow-left-square"></i> Link
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link disabled" aria-disabled="true">
+                Disabled
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+export function HeaderWithDropdown() {
+  return (
+    <nav className="navbar navbar-expand-lg bg-white">
+      <div className="container-fluid">
+        <a className="navbar-brand" href="javascript:void(0);">
+          <img src="https://placehold.co/152x58" width="152" height="58" alt="logo" />
+        </a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarWithDropdown"
+          aria-controls="navbarWithDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarWithDropdown">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <a className="nav-link active" aria-current="page" href="javascript:void(0);">
+                Home
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="javascript:void(0);">
+                <i className="bi bi-arrow-left-square"></i> Link
+              </a>
+            </li>
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="javascript:void(0);"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i className="bi bi-arrow-left-square"></i> Dropdown
+              </a>
+              <ul className="dropdown-menu">
+                {/* Mega Menu - Footer Link Groups (5 columns) */}
+                <li className="dropdown-item-group">
+                  <h6 className="dropdown-header">Group Label</h6>
+                  <ul className="list-unstyled">
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li className="dropdown-item-group">
+                  <h6 className="dropdown-header">Group Label</h6>
+                  <ul className="list-unstyled">
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li className="dropdown-item-group">
+                  <h6 className="dropdown-header">Group Label</h6>
+                  <ul className="list-unstyled">
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li className="dropdown-item-group">
+                  <h6 className="dropdown-header">Group Label</h6>
+                  <ul className="list-unstyled">
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li className="dropdown-item-group">
+                  <h6 className="dropdown-header">Group Label</h6>
+                  <ul className="list-unstyled">
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                    <li className="dropdown-item">
+                      <a href="#" className="link-neutral small">
+                        Footer Link
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link disabled" aria-disabled="true">
+                Disabled
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+# Header
+
+The SDGA header component provides navigation with support for links, icons, dropdowns, and mega menus. It uses Bootstrap's navbar component with custom SDGA styling.
+
+## Basic Header
+
+A simple header with navigation links and a brand logo.
+
+<Preview>
+  <BasicHeader />
+</Preview>
+
+```html
+<nav class="navbar navbar-expand-lg bg-white">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="javascript:void(0);">
+      <img src="https://placehold.co/152x58" width="152" height="58" alt="logo" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="javascript:void(0);">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0);">
+            <i class="bi bi-arrow-left-square"></i> Link
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+```
+
+## Header with Mega Menu Dropdown
+
+The header supports dropdown mega menus with multiple columns for organizing large navigation structures.
+
+<Preview>
+  <HeaderWithDropdown />
+</Preview>
+
+```html
+<nav class="navbar navbar-expand-lg bg-white">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="javascript:void(0);">
+      <img src="https://placehold.co/152x58" width="152" height="58" alt="logo" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="javascript:void(0);">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0);">
+            <i class="bi bi-arrow-left-square"></i> Link
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="javascript:void(0);"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="bi bi-arrow-left-square"></i> Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <!-- Mega Menu Groups -->
+            <li class="dropdown-item-group">
+              <h6 class="dropdown-header">Group Label</h6>
+              <ul class="list-unstyled">
+                <li class="dropdown-item">
+                  <a href="#" class="link-neutral small">Footer Link</a>
+                </li>
+                <li class="dropdown-item">
+                  <a href="#" class="link-neutral small">Footer Link</a>
+                </li>
+                <!-- More links... -->
+              </ul>
+            </li>
+            <!-- Repeat for additional columns -->
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+```
+
+## Features
+
+- **Responsive Design**: Collapses to hamburger menu on mobile devices
+- **Icon Support**: Add Bootstrap Icons to navigation links using `margin-inline-end` for RTL support
+- **Active States**: Use `.active` class on links to indicate current page
+- **Disabled Links**: Use `.disabled` class for non-interactive links
+- **Mega Menu Dropdowns**: Full-width dropdown menus with multiple columns
+- **Dropdown Groups**: Use `.dropdown-item-group` to create organized sections
+
+## Link States
+
+Navigation links support multiple states:
+
+- **Default**: Standard link appearance
+- **Hover**: `background-color: $neutral-100` with indicator
+- **Active**: `background-color: $primary-600` with white text
+- **Disabled**: Grayed out with `pointer-events: none`
+
+<Callout type="tip">
+  Use `margin-inline-end` for icon spacing in navigation links to ensure proper RTL (right-to-left) language support.
+</Callout>
+
+## Mega Menu Structure
+
+The dropdown mega menu uses a flex layout with multiple columns:
+
+- Each column is a `.dropdown-item-group`
+- Headers use `.dropdown-header` with primary color
+- Links use `.link-neutral` class with small size
+- Full-width layout with custom padding (`padding: 2rem 5rem`)
+
+<Callout type="info">
+  The navbar dropdown requires Bootstrap JavaScript for toggle functionality. Ensure Bootstrap JS is included in your project.
+</Callout>

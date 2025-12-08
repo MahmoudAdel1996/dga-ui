@@ -7,7 +7,6 @@
 *:focus-visible {
   outline-offset: 2px !important;
   outline: 2px solid $black !important;
-  transform: scale(0.98);
 }
 
 .on-primary {
@@ -19,15 +18,18 @@
   --#{$prefix}text-muted: #{rgba($white, 0.8)};
   --#{$prefix}border-color: #{rgba($white, 0.3)};
 
-  *:focus-visible {
+  *:focus-visible,
+  *:focus {
     outline-color: $white !important;
   }
 }
 
 .list-unstyled {
-    padding-left: unset;
-    padding-right: unset;
+  padding-left: unset;
+  padding-inline-start: 0;
 }
+
+
 
 // ============================================
 // SAFARI COMPATIBILITY
