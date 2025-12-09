@@ -169,21 +169,9 @@ ngAfterViewInit(): void {
 </div>`;
 
   // Text input examples
-  textInputEmailCode = `<div class="mb-3">
-  <label for="exampleInputEmail1" class="form-label">Email address</label>
-  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="name@example.com">
-  <div class="form-text">We'll never share your email with anyone else.</div>
-</div>`;
-
-  textInputPasswordCode = `<div class="mb-3">
-  <label for="exampleInputPassword1" class="form-label">Password</label>
-  <input type="password" class="form-control" id="exampleInputPassword1">
-</div>`;
-
-  textInputTextareaCode = `<div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">Textarea</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-</div>`;
+  textInputCode = `<input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" aria-label=".form-control-lg example">
+    <input class="form-control" type="text" placeholder="Default input" aria-label="default input example">
+    <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example">`;
 
   // Select dropdown example
   selectCode = `<div class="mb-3">

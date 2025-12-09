@@ -1,0 +1,92 @@
+// Form Input Customizations - Text Controls
+.form-control {
+  min-height: calc(1.5em + 0.5rem);
+  position: relative;
+
+  // Create an animated underline effect starting from center
+  background-image: linear-gradient(to right, $neutral-950 0%, $neutral-950 100%);
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  transition: background-size 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+  &.filled {
+    background-color: var(--#{$prefix}body-bg);
+  }
+  &.filled-darker {
+    border-color: transparent;
+    background-color: $neutral-100; 
+  }
+  &.filled-lighter {
+    border-color: transparent;
+    background-color: $neutral-25;
+  }
+
+  &:hover {
+    border-color: $black;
+    color: $black;
+  }
+
+  &:active {
+    border-color: $neutral-400;
+    background-color: $neutral-100;
+    color: $black;
+    background-size: 100% 2px;
+  }
+
+  &:read-only,
+  &[readonly] {
+    border-color: $neutral-300;
+    color: $black;
+    pointer-events: none;
+  }
+
+  &:focus-visible,
+  &:focus {
+    border-color: $neutral-700;
+    outline: none !important;
+    background-size: 100% 2px;
+    box-shadow: $box-shadow;
+  }
+
+  &:disabled,
+  &[disabled] {
+    border-color: $neutral-300;
+    background-color: var(--#{ $prefix}body-bg);
+    color: $neutral-400;
+    pointer-events: none;
+  }
+
+  &:invalid {
+    border-color: $error-700;
+    background-image: linear-gradient(to right, $error-700 0%, $error-700 100%);
+ 
+    &:hover {
+      border-color: $error-700; 
+    }
+
+    &:active {
+      border-color: $neutral-400 !important;
+      background-size: 100% 2px;
+    }
+
+    &:read-only,
+    &[readonly] {
+      border-color: $neutral-300;
+    }
+
+    &:focus-visible,
+    &:focus {
+      border-color: $error-700;
+    }
+
+    &:disabled,
+    &[disabled] {
+      border-color: $neutral-300;
+    }
+  }
+}
+
+.form-control-lg {
+  min-height: calc(1.5em + 1rem);
+}
