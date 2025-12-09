@@ -1,15 +1,21 @@
 <div class="container py-5">
-  <h1 class="display-4 mb-4">{{ 'forms.title' | translate }}</h1>
-  <p class="lead mb-5">{{ 'forms.subtitle' | translate }}</p>
+    <h1 class="display-4 mb-4">{{ 'forms.title' | translate }}</h1>
+    <p class="lead mb-5">{{ 'forms.subtitle' | translate }}</p>
 
   <!-- CHECKBOXES -->
   <section class="mb-5" aria-labelledby="checkboxesHeading">
     <h2 id="checkboxesHeading" class="h4 mb-3">{{ 'forms.checkboxes' | translate }}</h2>
-    <div class="d-flex gap-2 mb-2">
-        <input type="checkbox" class="form-check-input ripple" id="chkDemoMd" aria-label="Demo checkbox medium" checked>
-        <input type="checkbox" class="form-check-input ripple form-check-input-sm" id="chkDemoSm" aria-label="Demo checkbox small" checked>
-        <input type="checkbox" class="form-check-input ripple form-check-input-xs" id="chkDemoXs" aria-label="Demo checkbox extra small" checked>
+    <h3 class="h6 mb-2">Checkbox Sizes</h3>
+    <div class="d-flex gap-2 mb-3">
+      <input type="checkbox" class="form-check-input ripple" id="chkDemoMd" aria-label="Demo checkbox medium" checked>
+      <input type="checkbox" class="form-check-input ripple form-check-input-sm" id="chkDemoSm" aria-label="Demo checkbox small" checked>
+      <input type="checkbox" class="form-check-input ripple form-check-input-xs" id="chkDemoXs" aria-label="Demo checkbox extra small" checked>
     </div>
+    <div class="mb-4">
+      <app-code-example [htmlCode]="checkboxSizesCode"></app-code-example>
+    </div>
+
+    <h3 class="h6 mb-2">Checkbox Variants</h3>
     <div class="row g-3">
       <div class="col-md-3">
         <h3 class="h6 mb-2">Primary</h3>
@@ -17,20 +23,22 @@
           <input type="checkbox" class="form-check-input ripple" id="chkPrimaryMd" checked>
           <label class="form-check-label" for="chkPrimaryMd">Medium</label>
         </div>
-        <div class="form-check form-check-md mb-2">
-          <input type="checkbox" class="form-check-input ripple indeterminate-check" id="chkPrimaryIndeterminateMd">
-          <label class="form-check-label" for="chkPrimaryIndeterminateMd">Medium indeterminate</label>
-        </div>
-        <div class="form-check form-check-sm mb-2">
-          <input type="checkbox" class="form-check-input ripple" id="chkPrimarySm" checked>
-          <label class="form-check-label" for="chkPrimarySm">Small</label>
-        </div>
-        <div class="form-check form-check-xs mb-2">
-          <input type="checkbox" class="form-check-input ripple" id="chkPrimaryXs" checked>
-          <label class="form-check-label" for="chkPrimaryXs">Extra small</label>
-        </div>
       </div>
       <div class="col-md-3">
+        <h3 class="h6 mb-2">Neutral</h3>
+        <div class="form-check form-check-neutral form-check-md mb-2">
+          <input type="checkbox" class="form-check-input ripple" id="chkNeutralMd" checked>
+          <label class="form-check-label" for="chkNeutralMd">Medium</label>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3">
+      <app-code-example [htmlCode]="checkboxVariantsCode"></app-code-example>
+    </div>
+
+    <h3 class="h6 mb-2">Checkbox States</h3>
+    <div class="row g-3">
+      <div class="col-md-4">
         <h3 class="h6 mb-2">Disabled</h3>
         <div class="form-check form-check-md mb-2">
           <input type="checkbox" class="form-check-input ripple" id="chkDisabledMd" disabled>
@@ -44,16 +52,8 @@
           <input type="checkbox" class="form-check-input ripple indeterminate-check" id="chkDisabledIndeterminateMd" disabled>
           <label class="form-check-label" for="chkDisabledIndeterminateMd">Medium indeterminate</label>
         </div>
-        <div class="form-check form-check-sm mb-2">
-          <input type="checkbox" class="form-check-input ripple" id="chkDisabledSm" disabled>
-          <label class="form-check-label" for="chkDisabledSm">Small unchecked</label>
-        </div>
-        <div class="form-check form-check-xs mb-2">
-          <input type="checkbox" class="form-check-input ripple" id="chkDisabledXs" checked disabled>
-          <label class="form-check-label" for="chkDisabledXs">Extra small checked</label>
-        </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <h3 class="h6 mb-2">Readonly</h3>
         <div class="form-check form-check-md mb-2">
           <input type="checkbox" class="form-check-input ripple" id="chkReadonlyMd" readonly>
@@ -67,74 +67,34 @@
           <input type="checkbox" class="form-check-input ripple indeterminate-check" id="chkReadonlyIndeterminateMd" readonly>
           <label class="form-check-label" for="chkReadonlyIndeterminateMd">Medium indeterminate</label>
         </div>
-        <div class="form-check form-check-sm mb-2">
-          <input type="checkbox" class="form-check-input ripple" id="chkReadonlySm" readonly>
-          <label class="form-check-label" for="chkReadonlySm">Small unchecked</label>
-        </div>
-        <div class="form-check form-check-xs mb-2">
-          <input type="checkbox" class="form-check-input ripple" id="chkReadonlyXs" checked readonly>
-          <label class="form-check-label" for="chkReadonlyXs">Extra small checked</label>
-        </div>
       </div>
-      <div class="col-md-3">
-        <h3 class="h6 mb-2">Neutral</h3>
-        <div class="form-check form-check-neutral form-check-md mb-2">
-          <input type="checkbox" class="form-check-input ripple" id="chkNeutralMd" checked>
-          <label class="form-check-label" for="chkNeutralMd">Medium</label>
-        </div>
-        <div class="form-check form-check-neutral form-check-md mb-2">
-          <input type="checkbox" class="form-check-input ripple indeterminate-check" id="chkNeutralIndeterminateMd">
-          <label class="form-check-label" for="chkNeutralIndeterminateMd">Medium indeterminate</label>
-        </div>
-        <div class="form-check form-check-neutral form-check-sm mb-2">
-          <input type="checkbox" class="form-check-input ripple" id="chkNeutralSm" checked>
-          <label class="form-check-label" for="chkNeutralSm">Small</label>
-        </div>
-        <div class="form-check form-check-neutral form-check-xs mb-2">
-          <input type="checkbox" class="form-check-input ripple" id="chkNeutralXs" checked>
-          <label class="form-check-label" for="chkNeutralXs">Extra small</label>
+      <div class="col-md-4">
+        <h3 class="h6 mb-2">Indeterminate</h3>
+        <div class="form-check form-check-md mb-2">
+          <input type="checkbox" class="form-check-input ripple indeterminate-check" id="chkIndeterminateMd" aria-checked="mixed">
+          <label class="form-check-label" for="chkIndeterminateMd">Medium indeterminate</label>
         </div>
       </div>
     </div>
-
-    <!-- Code Examples for Checkboxes -->
-    <div class="mt-4">
-      <h3 class="h6 mb-3">Primary Checkboxes</h3>
-      <app-code-example [htmlCode]="checkboxPrimaryCode"></app-code-example>
-    </div>
-    
     <div class="mt-3">
-      <h3 class="h6 mb-3">Disabled Checkboxes</h3>
-      <app-code-example [htmlCode]="checkboxDisabledCode"></app-code-example>
-    </div>
-    
-    <div class="mt-3">
-      <h3 class="h6 mb-3">Readonly Checkboxes</h3>
-      <app-code-example [htmlCode]="checkboxReadonlyCode"></app-code-example>
-    </div>
-    
-    <div class="mt-3">
-      <h3 class="h6 mb-3">Neutral Checkboxes</h3>
-      <app-code-example [htmlCode]="checkboxNeutralCode"></app-code-example>
-    </div>
-    
-    <div class="mt-3">
-      <h3 class="h6 mb-3">Indeterminate Checkbox</h3>
-      <app-code-example 
-        [htmlCode]="checkboxIndeterminateHtmlCode" 
-        [tsCode]="checkboxIndeterminateTsCode">
-      </app-code-example>
+      <app-code-example [htmlCode]="checkboxStatesCode"></app-code-example>
     </div>
   </section>
 
   <!-- RADIOS -->
   <section class="mb-5" aria-labelledby="radiosHeading">
     <h2 id="radiosHeading" class="h4 mb-3">{{ 'forms.radios' | translate }}</h2>
-    <div class="d-flex gap-2 mb-2">
-        <input class="form-check-input ripple" type="radio" name="radioDemo" id="radDemoMd" aria-label="Demo radio medium" checked>
-        <input class="form-check-input form-check-input-sm ripple" type="radio" name="radioDemo" id="radDemoSm" aria-label="Demo radio small">
-        <input class="form-check-input form-check-input-xs ripple" type="radio" name="radioDemo" id="radDemoXs" aria-label="Demo radio extra small">
+    <h3 class="h6 mb-2">Radio Sizes</h3>
+    <div class="d-flex gap-2 mb-3">
+      <input class="form-check-input ripple" type="radio" name="radioDemo" id="radDemoMd" aria-label="Demo radio medium" checked>
+      <input class="form-check-input form-check-input-sm ripple" type="radio" name="radioDemo" id="radDemoSm" aria-label="Demo radio small">
+      <input class="form-check-input form-check-input-xs ripple" type="radio" name="radioDemo" id="radDemoXs" aria-label="Demo radio extra small">
     </div>
+    <div class="mb-4">
+      <app-code-example [htmlCode]="radioSizesCode"></app-code-example>
+    </div>
+
+    <h3 class="h6 mb-2">Radio Variants</h3>
     <div class="row g-3">
       <div class="col-md-3">
         <h3 class="h6 mb-2">Primary</h3>
@@ -142,16 +102,22 @@
           <input class="form-check-input ripple" type="radio" name="radioPrimaryGroup" id="radPrimaryCheckedMd" checked>
           <label class="form-check-label" for="radPrimaryCheckedMd">Medium</label>
         </div>
-        <div class="form-check form-check-sm mb-2">
-          <input class="form-check-input ripple" type="radio" name="radioPrimaryGroup" id="radPrimaryCheckedSm">
-          <label class="form-check-label" for="radPrimaryCheckedSm">Small</label>
-        </div>
-        <div class="form-check form-check-xs mb-2">
-          <input class="form-check-input ripple" type="radio" name="radioPrimaryGroup" id="radPrimaryCheckedXs">
-          <label class="form-check-label" for="radPrimaryCheckedXs">Extra small</label>
-        </div>
       </div>
       <div class="col-md-3">
+        <h3 class="h6 mb-2">Neutral</h3>
+        <div class="form-check form-check-neutral form-check-md mb-2">
+          <input class="form-check-input ripple" type="radio" name="radioNeutral" id="radNeutralMd" checked>
+          <label class="form-check-label" for="radNeutralMd">Medium</label>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3">
+      <app-code-example [htmlCode]="radioVariantsCode"></app-code-example>
+    </div>
+
+    <h3 class="h6 mb-2">Radio States</h3>
+    <div class="row g-3">
+      <div class="col-md-4">
         <h3 class="h6 mb-2">Disabled</h3>
         <div class="form-check form-check-md mb-2">
           <input class="form-check-input ripple" type="radio" name="radioDisabled" id="radDisabledMd" disabled>
@@ -161,16 +127,8 @@
           <input class="form-check-input ripple" type="radio" name="radioDisabled" id="radDisabledCheckedMd" checked disabled>
           <label class="form-check-label" for="radDisabledCheckedMd">Medium checked</label>
         </div>
-        <div class="form-check form-check-sm mb-2">
-          <input class="form-check-input ripple" type="radio" name="radioDisabled" id="radDisabledSm" disabled>
-          <label class="form-check-label" for="radDisabledSm">Small unchecked</label>
-        </div>
-        <div class="form-check form-check-xs mb-2">
-          <input class="form-check-input ripple" type="radio" name="radioDisabled" id="radDisabledXs" checked disabled>
-          <label class="form-check-label" for="radDisabledXs">Extra small checked</label>
-        </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <h3 class="h6 mb-2">Readonly</h3>
         <div class="form-check form-check-md mb-2">
           <input class="form-check-input ripple" type="radio" name="radioReadonly" id="radReadonlyMd" readonly>
@@ -180,93 +138,106 @@
           <input class="form-check-input ripple" type="radio" name="radioReadonly" id="radReadonlyCheckedMd" checked readonly>
           <label class="form-check-label" for="radReadonlyCheckedMd">Medium checked</label>
         </div>
-        <div class="form-check form-check-sm mb-2">
-          <input class="form-check-input ripple" type="radio" name="radioReadonly" id="radReadonlySm" readonly>
-          <label class="form-check-label" for="radReadonlySm">Small unchecked</label>
-        </div>
-        <div class="form-check form-check-xs mb-2">
-          <input class="form-check-input ripple" type="radio" name="radioReadonly" id="radReadonlyXs" checked readonly>
-          <label class="form-check-label" for="radReadonlyXs">Extra small checked</label>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <h3 class="h6 mb-2">Neutral</h3>
-        <div class="form-check form-check-neutral form-check-md mb-2">
-          <input class="form-check-input ripple" type="radio" name="radioNeutral" id="radNeutralMd" checked>
-          <label class="form-check-label" for="radNeutralMd">Medium</label>
-        </div>
-        <div class="form-check form-check-neutral form-check-sm mb-2">
-          <input class="form-check-input ripple" type="radio" name="radioNeutral" id="radNeutralSm">
-          <label class="form-check-label" for="radNeutralSm">Small</label>
-        </div>
-        <div class="form-check form-check-neutral form-check-xs mb-2">
-          <input class="form-check-input ripple" type="radio" name="radioNeutral" id="radNeutralXs">
-          <label class="form-check-label" for="radNeutralXs">Extra small</label>
-        </div>
       </div>
     </div>
-
-    <!-- Code Examples for Radios -->
-    <div class="mt-4">
-      <h3 class="h6 mb-3">Primary Radio Buttons</h3>
-      <app-code-example [htmlCode]="radioPrimaryCode"></app-code-example>
-    </div>
-    
     <div class="mt-3">
-      <h3 class="h6 mb-3">Disabled Radio Buttons</h3>
-      <app-code-example [htmlCode]="radioDisabledCode"></app-code-example>
-    </div>
-    
-    <div class="mt-3">
-      <h3 class="h6 mb-3">Readonly Radio Buttons</h3>
-      <app-code-example [htmlCode]="radioReadonlyCode"></app-code-example>
-    </div>
-    
-    <div class="mt-3">
-      <h3 class="h6 mb-3">Neutral Radio Buttons</h3>
-      <app-code-example [htmlCode]="radioNeutralCode"></app-code-example>
+      <app-code-example [htmlCode]="radioStatesCode"></app-code-example>
     </div>
   </section>
 
   <!-- SWITCHES -->
-  <div class="d-flex gap-2 justify-content-between">
-    <section  class="mb-5" aria-labelledby="switchesHeading">
-      <h2 id="switchesHeading" class="h4 mb-3">{{ 'forms.switches' | translate }}</h2>
-      <div class="form-check form-switch mb-2">
-        <input class="form-check-input" type="checkbox" role="switch" id="switchDefault">
-        <label class="form-check-label" for="switchDefault">{{ 'forms.switch_default' | translate }}</label>
-      </div>
-      <div class="form-check form-switch mb-2">
-        <input class="form-check-input" type="checkbox" role="switch" id="switchDisabled" disabled>
-        <label class="form-check-label" for="switchDisabled">{{ 'forms.switch_disabled' | translate }}</label>
-      </div>
-      <div class="form-check form-switch mb-2">
-        <input class="form-check-input" checked type="checkbox" role="switch" id="switchDefault">
-        <label class="form-check-label" for="switchDefault">{{ 'forms.switch_checked' | translate }}</label>
-      </div>
-      <div class="form-check form-switch mb-2">
-        <input class="form-check-input" checked type="checkbox" role="switch" id="switchDisabled" disabled>
-        <label class="form-check-label" for="switchDisabled">{{ 'forms.switch_disabled' | translate }}</label>
-      </div>
+  <section class="mb-5" aria-labelledby="switchesHeading">
+    <h2 id="switchesHeading" class="h4 mb-3">{{ 'forms.switches' | translate }}</h2>
+    <div class="form-check form-switch mb-2">
+      <input class="form-check-input" type="checkbox" role="switch" id="switchDefault">
+      <label class="form-check-label" for="switchDefault">{{ 'forms.switch_default' | translate }}</label>
+    </div>
+    <div class="form-check form-switch mb-2">
+      <input class="form-check-input" type="checkbox" role="switch" id="switchDisabled" disabled>
+      <label class="form-check-label" for="switchDisabled">{{ 'forms.switch_disabled' | translate }}</label>
+    </div>
+    <div class="form-check form-switch mb-2">
+      <input class="form-check-input" checked type="checkbox" role="switch" id="switchChecked">
+      <label class="form-check-label" for="switchChecked">{{ 'forms.switch_checked' | translate }}</label>
+    </div>
+    <div class="form-check form-switch mb-2">
+      <input class="form-check-input" checked type="checkbox" role="switch" id="switchDisabledChecked" disabled>
+      <label class="form-check-label" for="switchDisabledChecked">{{ 'forms.switch_disabled' | translate }}</label>
+    </div>
 
-      <!-- Code Example for Switches -->
-      <div class="mt-4">
-        <h3 class="h6 mb-3">Switch Examples</h3>
-        <app-code-example [htmlCode]="switchCode"></app-code-example>
-      </div>
-    </section>
-  </div>
+    <!-- Code Example for Switches -->
+    <div class="mt-4">
+      <h3 class="h6 mb-3">Switch Examples</h3>
+      <app-code-example [htmlCode]="switchCode"></app-code-example>
+    </div>
+  </section>
+
   <!-- TEXT INPUTS -->
   <section class="mb-5" aria-labelledby="textInputsHeading">
     <h2 id="textInputsHeading" class="h4 mb-3">{{ 'forms.text_inputs' | translate }}</h2>
-    <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" aria-label=".form-control-lg example">
-    <input class="form-control" type="text" placeholder="Default input" aria-label="default input example">
-    <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example">
+    
+    <!-- Input Sizes -->
+    <h3 class="h6 mb-3">Input Sizes</h3>
+    <div class="row g-3 mb-4">
+      <div class="col-md-6">
+        <label for="textInputLg" class="form-label">Large input</label>
+        <input class="form-control form-control-lg" type="text" id="textInputLg" placeholder="Large input">
+      </div>
+      <div class="col-md-6">
+        <label for="textInputDefault" class="form-label">Default input</label>
+        <input class="form-control" type="text" id="textInputDefault" placeholder="Default input">
+      </div>
+    </div>
 
-    <!-- Code Examples for Text Inputs -->
-    <div class="mt-4">
-      <h3 class="h6 mb-3">Test Input</h3>
-      <app-code-example [htmlCode]="textInputCode"></app-code-example>
+    <div class="mt-3">
+      <app-code-example [htmlCode]="inputSizesCode"></app-code-example>
+    </div>
+
+    <!-- Input Variants -->
+    <h3 class="h6 mb-3">Input Variants</h3>
+    <div class="row g-3 mb-4">
+      <div class="col-md-4">
+        <label for="inputNormal" class="form-label">Normal</label>
+        <input class="form-control" type="text" id="inputNormal" placeholder="Normal input">
+      </div>
+      <div class="col-md-4">
+        <label for="inputFilledDarker" class="form-label">Filled darker</label>
+        <input class="form-control filled-darker" type="text" id="inputFilledDarker" placeholder="Filled darker input">
+      </div>
+      <div class="col-md-4">
+        <label for="inputFilledLighter" class="form-label">Filled lighter</label>
+        <input class="form-control filled-lighter" type="text" id="inputFilledLighter" placeholder="Filled lighter input">
+      </div>
+    </div>
+
+    <div class="mt-3">
+      <app-code-example [htmlCode]="inputVariantsCode"></app-code-example>
+    </div>
+
+    <!-- Input States -->
+    <h3 class="h6 mb-3">Input States</h3>
+    <div class="row g-3 mb-4">
+      <div class="col-md-4">
+        <label for="inputRequired" class="form-label required">Required</label>
+        <input class="form-control" required type="text" id="inputRequired" placeholder="Required input">
+      </div>
+      <div class="col-md-4">
+        <label for="inputReadonly" class="form-label">Readonly</label>
+        <input class="form-control" readonly type="text" id="inputReadonly" value="Readonly value">
+      </div>
+      <div class="col-md-4">
+        <label for="inputDisabled" class="form-label disabled">Disabled</label>
+        <input class="form-control" disabled type="text" id="inputDisabled" value="Disabled value">
+      </div>
+      <div class="col-md-4">
+        <label for="inputInvalid" class="form-label">Invalid</label>
+        <input class="form-control" type="text" id="inputInvalid" pattern="^[0-9]+$">
+        <div class="invalid-feedback">This field contains invalid data</div>
+      </div>
+    </div>
+
+    <div class="mt-3">
+      <app-code-example [htmlCode]="inputStatesCode"></app-code-example>
     </div>
   </section>
 
@@ -303,41 +274,5 @@
       <h3 class="h6 mb-3">Range Slider</h3>
       <app-code-example [htmlCode]="rangeCode"></app-code-example>
     </div>
-  </section>
-
-  <!-- INPUT SIZES -->
-  <section class="mb-5" aria-labelledby="sizesHeading">
-    <h2 id="sizesHeading" class="h4 mb-3">{{ 'forms.input_sizes' | translate }}</h2>
-    <input class="form-control form-control-lg mb-2" type="text" placeholder="Large input" aria-label="Large input">
-    <input class="form-control mb-2" type="text" placeholder="Default input" aria-label="Default input">
-    <input class="form-control form-control-sm" type="text" placeholder="Small input" aria-label="Small input">
-
-    <!-- Code Example for Input Sizes -->
-    <div class="mt-4">
-      <h3 class="h6 mb-3">Input Size Variations</h3>
-      <app-code-example [htmlCode]="inputSizesCode"></app-code-example>
-    </div>
-  </section>
-
-  <!-- INPUT variants -->
-  <section class="mb-5" aria-labelledby="sizesHeading">
-    <h2 id="sizesHeading" class="h4 mb-3">{{ 'forms.input_sizes' | translate }}</h2>
-    <input class="form-control filled mb-2" type="text" placeholder="Default input" aria-label="Default input">
-    <input class="form-control filled-darker mb-2" required type="text" placeholder="Default input" aria-label="Default input">
-    <input class="form-control filled-lighter mb-2" type="text" placeholder="Default input" aria-label="Default input">
-    <input class="form-control mb-2" required type="text" value="" placeholder="readonly input" aria-label="Default input">
-    <input class="form-control mb-2" readonly type="text" value="readonly" placeholder="readonly input" aria-label="Default input">
-    <input class="form-control mb-2" disabled type="text" value="disabled" placeholder="disabled input" aria-label="Default input">
-    <!-- Code Example for Input Sizes -->
-    <div class="mt-4">
-      <h3 class="h6 mb-3">Input Variations</h3>
-      <app-code-example [htmlCode]="inputSizesCode"></app-code-example>
-    </div>
-  </section>
-
-  <!-- FORM ACTION -->
-  <section class="mb-5" aria-labelledby="actionsHeading">
-    <h2 id="actionsHeading" class="h4 mb-3">{{ 'forms.actions' | translate }}</h2>
-    <button type="button" class="btn btn-primary">Submit</button>
   </section>
 </div>

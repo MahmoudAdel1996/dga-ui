@@ -1,5 +1,4 @@
-import { Component, ChangeDetectionStrategy, AfterViewInit, inject, PLATFORM_ID, viewChild, ElementRef } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { Component, ChangeDetectionStrategy, AfterViewInit, inject, PLATFORM_ID } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { CodeExampleComponent } from '../../shared/code-example/code-example.component';
 
@@ -10,144 +9,129 @@ import { CodeExampleComponent } from '../../shared/code-example/code-example.com
   styleUrl: './forms.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FormsComponent implements AfterViewInit {
+export class FormsComponent {
   private readonly platformId = inject(PLATFORM_ID);
 
-  // Checkbox examples
-  checkboxPrimaryCode = `<div class="form-check form-check-md mb-2">
-  <input type="checkbox" class="form-check-input ripple" id="chkPrimaryMd" checked>
-  <label class="form-check-label" for="chkPrimaryMd">Medium</label>
-</div>
-<div class="form-check form-check-sm mb-2">
-  <input type="checkbox" class="form-check-input ripple" id="chkPrimarySm" checked>
-  <label class="form-check-label" for="chkPrimarySm">Small</label>
-</div>
-<div class="form-check form-check-xs mb-2">
-  <input type="checkbox" class="form-check-input ripple" id="chkPrimaryXs" checked>
-  <label class="form-check-label" for="chkPrimaryXs">Extra small</label>
+  // Checkbox sizes
+  checkboxSizesCode = `<div class="d-flex gap-2">
+  <input type="checkbox" class="form-check-input ripple" aria-label="Demo checkbox medium" checked>
+  <input type="checkbox" class="form-check-input ripple form-check-input-sm" aria-label="Demo checkbox small" checked>
+  <input type="checkbox" class="form-check-input ripple form-check-input-xs" aria-label="Demo checkbox extra small" checked>
 </div>`;
 
-  checkboxDisabledCode = `<div class="form-check form-check-md mb-2">
-  <input type="checkbox" class="form-check-input ripple" id="chkDisabledMd" disabled>
-  <label class="form-check-label" for="chkDisabledMd">Medium unchecked</label>
-</div>
-<div class="form-check form-check-md mb-2">
-  <input type="checkbox" class="form-check-input ripple" id="chkDisabledCheckedMd" checked disabled>
-  <label class="form-check-label" for="chkDisabledCheckedMd">Medium checked</label>
-</div>
-<div class="form-check form-check-sm mb-2">
-  <input type="checkbox" class="form-check-input ripple" id="chkDisabledSm" disabled>
-  <label class="form-check-label" for="chkDisabledSm">Small unchecked</label>
+  // Checkbox variants (themes)
+  checkboxVariantsCode = `<div class="row g-3">
+  <div class="col-md-3">
+    <h3 class="h6 mb-2">Primary</h3>
+    <div class="form-check form-check-md mb-2">
+      <input type="checkbox" class="form-check-input ripple" id="chkPrimaryMd" checked>
+      <label class="form-check-label" for="chkPrimaryMd">Medium</label>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <h3 class="h6 mb-2">Neutral</h3>
+    <div class="form-check form-check-neutral form-check-md mb-2">
+      <input type="checkbox" class="form-check-input ripple" id="chkNeutralMd" checked>
+      <label class="form-check-label" for="chkNeutralMd">Medium</label>
+    </div>
+  </div>
 </div>`;
 
-  checkboxReadonlyCode = `<div class="form-check form-check-md mb-2">
-  <input type="checkbox" class="form-check-input ripple" id="chkReadonlyMd" readonly>
-  <label class="form-check-label" for="chkReadonlyMd">Medium unchecked</label>
-</div>
-<div class="form-check form-check-md mb-2">
-  <input type="checkbox" class="form-check-input ripple" id="chkReadonlyCheckedMd" checked readonly>
-  <label class="form-check-label" for="chkReadonlyCheckedMd">Medium checked</label>
-</div>
-<div class="form-check form-check-sm mb-2">
-  <input type="checkbox" class="form-check-input ripple" id="chkReadonlySm" readonly>
-  <label class="form-check-label" for="chkReadonlySm">Small unchecked</label>
+  // Checkbox states
+  checkboxStatesCode = `<div class="row g-3">
+  <div class="col-md-4">
+    <h3 class="h6 mb-2">Disabled</h3>
+    <div class="form-check form-check-md mb-2">
+      <input type="checkbox" class="form-check-input ripple" id="chkDisabledMd" disabled>
+      <label class="form-check-label" for="chkDisabledMd">Medium unchecked</label>
+    </div>
+    <div class="form-check form-check-md mb-2">
+      <input type="checkbox" class="form-check-input ripple" id="chkDisabledCheckedMd" checked disabled>
+      <label class="form-check-label" for="chkDisabledCheckedMd">Medium checked</label>
+    </div>
+    <div class="form-check form-check-md mb-2">
+      <input type="checkbox" class="form-check-input ripple indeterminate-check" id="chkDisabledIndeterminateMd" disabled>
+      <label class="form-check-label" for="chkDisabledIndeterminateMd">Medium indeterminate</label>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <h3 class="h6 mb-2">Readonly</h3>
+    <div class="form-check form-check-md mb-2">
+      <input type="checkbox" class="form-check-input ripple" id="chkReadonlyMd" readonly>
+      <label class="form-check-label" for="chkReadonlyMd">Medium unchecked</label>
+    </div>
+    <div class="form-check form-check-md mb-2">
+      <input type="checkbox" class="form-check-input ripple" id="chkReadonlyCheckedMd" checked readonly>
+      <label class="form-check-label" for="chkReadonlyCheckedMd">Medium checked</label>
+    </div>
+    <div class="form-check form-check-md mb-2">
+      <input type="checkbox" class="form-check-input ripple indeterminate-check" id="chkReadonlyIndeterminateMd" readonly>
+      <label class="form-check-label" for="chkReadonlyIndeterminateMd">Medium indeterminate</label>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <h3 class="h6 mb-2">Indeterminate</h3>
+    <div class="form-check form-check-md mb-2">
+      <input type="checkbox" class="form-check-input ripple indeterminate-check" id="chkIndeterminateMd" aria-checked="mixed">
+      <label class="form-check-label" for="chkIndeterminateMd">Medium indeterminate</label>
+    </div>
+  </div>
 </div>`;
 
-  checkboxNeutralCode = `<div class="form-check form-check-neutral form-check-md mb-2">
-  <input type="checkbox" class="form-check-input ripple" id="chkNeutralMd" checked>
-  <label class="form-check-label" for="chkNeutralMd">Medium</label>
-</div>
-<div class="form-check form-check-neutral form-check-sm mb-2">
-  <input type="checkbox" class="form-check-input ripple" id="chkNeutralSm" checked>
-  <label class="form-check-label" for="chkNeutralSm">Small</label>
-</div>
-<div class="form-check form-check-neutral form-check-xs mb-2">
-  <input type="checkbox" class="form-check-input ripple" id="chkNeutralXs" checked>
-  <label class="form-check-label" for="chkNeutralXs">Extra small</label>
+  // Radio sizes
+  radioSizesCode = `<div class="d-flex gap-2">
+  <input class="form-check-input ripple" type="radio" aria-label="Demo radio medium" checked>
+  <input class="form-check-input form-check-input-sm ripple" type="radio" aria-label="Demo radio small">
+  <input class="form-check-input form-check-input-xs ripple" type="radio" aria-label="Demo radio extra small">
 </div>`;
 
-  // Indeterminate checkbox example
-  checkboxIndeterminateHtmlCode = `<div class="form-check form-check-md mb-2">
-  <input type="checkbox" class="form-check-input ripple" id="chkIndeterminate" #indeterminateCheckbox>
-  <label class="form-check-label" for="chkIndeterminate">Indeterminate checkbox</label>
+  // Radio variants (themes)
+  radioVariantsCode = `<div class="row g-3">
+  <div class="col-md-3">
+    <h3 class="h6 mb-2">Primary</h3>
+    <div class="form-check form-check-md mb-2">
+      <input class="form-check-input ripple" type="radio" name="radioPrimaryGroup" id="radPrimaryCheckedMd" checked>
+      <label class="form-check-label" for="radPrimaryCheckedMd">Medium</label>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <h3 class="h6 mb-2">Neutral</h3>
+    <div class="form-check form-check-neutral form-check-md mb-2">
+      <input class="form-check-input ripple" type="radio" name="radioNeutral" id="radNeutralMd" checked>
+      <label class="form-check-label" for="radNeutralMd">Medium</label>
+    </div>
+  </div>
 </div>`;
 
-  checkboxIndeterminateTsCode = `import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+  // Radio states
+  radioStatesCode = `<div class="row g-3">
+  <div class="col-md-4">
+    <h3 class="h6 mb-2">Disabled</h3>
+    <div class="form-check form-check-md mb-2">
+      <input class="form-check-input ripple" type="radio" name="radioDisabled" id="radDisabledMd" disabled>
+      <label class="form-check-label" for="radDisabledMd">Medium unchecked</label>
+    </div>
+    <div class="form-check form-check-md mb-2">
+      <input class="form-check-input ripple" type="radio" name="radioDisabled" id="radDisabledCheckedMd" checked disabled>
+      <label class="form-check-label" for="radDisabledCheckedMd">Medium checked</label>
+    </div>
+  </div>
 
-@Component({
-  selector: 'app-example',
-  templateUrl: './example.component.html'
-})
-export class ExampleComponent implements AfterViewInit {
-  @ViewChild('indeterminateCheckbox') indeterminateCheckbox!: ElementRef<HTMLInputElement>;
-
-  ngAfterViewInit(): void {
-    // Set checkbox to indeterminate state
-    if (this.indeterminateCheckbox) {
-      this.indeterminateCheckbox.nativeElement.indeterminate = true;
-    }
-  }
-}
-
-// Alternative approach using direct DOM query
-ngAfterViewInit(): void {
-  const checkbox = document.getElementById('chkIndeterminate') as HTMLInputElement;
-  if (checkbox) {
-    checkbox.indeterminate = true;
-  }
-}`;
-
-  // Radio button examples
-  radioPrimaryCode = `<div class="form-check form-check-md mb-2">
-  <input class="form-check-input ripple" type="radio" name="radioPrimaryGroup" id="radPrimaryCheckedMd" checked>
-  <label class="form-check-label" for="radPrimaryCheckedMd">Medium</label>
-</div>
-<div class="form-check form-check-sm mb-2">
-  <input class="form-check-input ripple" type="radio" name="radioPrimaryGroup" id="radPrimaryCheckedSm">
-  <label class="form-check-label" for="radPrimaryCheckedSm">Small</label>
-</div>
-<div class="form-check form-check-xs mb-2">
-  <input class="form-check-input ripple" type="radio" name="radioPrimaryGroup" id="radPrimaryCheckedXs">
-  <label class="form-check-label" for="radPrimaryCheckedXs">Extra small</label>
-</div>`;
-
-  radioDisabledCode = `<div class="form-check form-check-md mb-2">
-  <input class="form-check-input ripple" type="radio" name="radioDisabled" id="radDisabledMd" disabled>
-  <label class="form-check-label" for="radDisabledMd">Medium unchecked</label>
-</div>
-<div class="form-check form-check-md mb-2">
-  <input class="form-check-input ripple" type="radio" name="radioDisabled" id="radDisabledCheckedMd" checked disabled>
-  <label class="form-check-label" for="radDisabledCheckedMd">Medium checked</label>
-</div>
-<div class="form-check form-check-sm mb-2">
-  <input class="form-check-input ripple" type="radio" name="radioDisabled" id="radDisabledSm" disabled>
-  <label class="form-check-label" for="radDisabledSm">Small unchecked</label>
-</div>`;
-
-  radioReadonlyCode = `<div class="form-check form-check-md mb-2">
-  <input class="form-check-input ripple" type="radio" name="radioReadonly" id="radReadonlyMd" readonly>
-  <label class="form-check-label" for="radReadonlyMd">Medium unchecked</label>
-</div>
-<div class="form-check form-check-md mb-2">
-  <input class="form-check-input ripple" type="radio" name="radioReadonly" id="radReadonlyCheckedMd" checked readonly>
-  <label class="form-check-label" for="radReadonlyCheckedMd">Medium checked</label>
-</div>
-<div class="form-check form-check-sm mb-2">
-  <input class="form-check-input ripple" type="radio" name="radioReadonly" id="radReadonlySm" readonly>
-  <label class="form-check-label" for="radReadonlySm">Small unchecked</label>
-</div>`;
-
-  radioNeutralCode = `<div class="form-check form-check-neutral form-check-md mb-2">
-  <input class="form-check-input ripple" type="radio" name="radioNeutral" id="radNeutralMd" checked>
-  <label class="form-check-label" for="radNeutralMd">Medium</label>
-</div>
-<div class="form-check form-check-neutral form-check-sm mb-2">
-  <input class="form-check-input ripple" type="radio" name="radioNeutral" id="radNeutralSm">
-  <label class="form-check-label" for="radNeutralSm">Small</label>
-</div>
-<div class="form-check form-check-neutral form-check-xs mb-2">
-  <input class="form-check-input ripple" type="radio" name="radioNeutral" id="radNeutralXs">
-  <label class="form-check-label" for="radNeutralXs">Extra small</label>
+  <div class="col-md-4">
+    <h3 class="h6 mb-2">Readonly</h3>
+    <div class="form-check form-check-md mb-2">
+      <input class="form-check-input ripple" type="radio" name="radioReadonly" id="radReadonlyMd" readonly>
+      <label class="form-check-label" for="radReadonlyMd">Medium unchecked</label>
+    </div>
+    <div class="form-check form-check-md mb-2">
+      <input class="form-check-input ripple" type="radio" name="radioReadonly" id="radReadonlyCheckedMd" checked readonly>
+      <label class="form-check-label" for="radReadonlyCheckedMd">Medium checked</label>
+    </div>
+  </div>
 </div>`;
 
   // Switch examples
@@ -168,10 +152,54 @@ ngAfterViewInit(): void {
   <label class="form-check-label" for="switchDisabledChecked">Disabled checked switch</label>
 </div>`;
 
-  // Text input examples
-  textInputCode = `<input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" aria-label=".form-control-lg example">
-    <input class="form-control" type="text" placeholder="Default input" aria-label="default input example">
-    <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example">`;
+  // Input size variations
+  inputSizesCode = `<div class="row g-3">
+  <div class="col-md-6">
+    <label for="textInputLg" class="form-label">Large input</label>
+    <input class="form-control form-control-lg" type="text" id="textInputLg" placeholder="Large input">
+  </div>
+  <div class="col-md-6">
+    <label for="textInputDefault" class="form-label">Default input</label>
+    <input class="form-control" type="text" id="textInputDefault" placeholder="Default input">
+  </div>
+</div>`;
+
+  // Input variants
+  inputVariantsCode = `<div class="row g-3">
+  <div class="col-md-4">
+    <label for="inputNormal" class="form-label">Normal</label>
+    <input class="form-control" type="text" id="inputNormal" placeholder="Normal input">
+  </div>
+  <div class="col-md-4">
+    <label for="inputFilledDarker" class="form-label">Filled darker</label>
+    <input class="form-control filled-darker" type="text" id="inputFilledDarker" placeholder="Filled darker input">
+  </div>
+  <div class="col-md-4">
+    <label for="inputFilledLighter" class="form-label">Filled lighter</label>
+    <input class="form-control filled-lighter" type="text" id="inputFilledLighter" placeholder="Filled lighter input">
+  </div>
+</div>`;
+
+  // Input states
+  inputStatesCode = `<div class="row g-3">
+  <div class="col-md-4">
+    <label for="inputRequired" class="form-label">Required <span class="text-danger">*</span></label>
+    <input class="form-control" required type="text" id="inputRequired" placeholder="Required input">
+  </div>
+  <div class="col-md-4">
+    <label for="inputReadonly" class="form-label">Readonly</label>
+    <input class="form-control" readonly type="text" id="inputReadonly" value="Readonly value">
+  </div>
+  <div class="col-md-4">
+    <label for="inputDisabled" class="form-label">Disabled</label>
+    <input class="form-control" disabled type="text" id="inputDisabled" value="Disabled value">
+  </div>
+  <div class="col-md-4">
+    <label for="inputInvalid" class="form-label">Invalid</label>
+    <input class="form-control" type="text" id="inputInvalid" value="123" required pattern="^[0-9]+$">
+    <div class="form-text text-danger">This field contains invalid data</div>
+  </div>
+</div>`;
 
   // Select dropdown example
   selectCode = `<div class="mb-3">
@@ -189,22 +217,4 @@ ngAfterViewInit(): void {
   <label for="customRange" class="form-label">Example range</label>
   <input type="range" class="form-range" id="customRange">
 </div>`;
-
-  // Input size variations
-  inputSizesCode = `<input class="form-control form-control-lg mb-2" type="text" placeholder="Large input" aria-label="Large input">
-<input class="form-control mb-2" type="text" placeholder="Default input" aria-label="Default input">
-<input class="form-control form-control-sm" type="text" placeholder="Small input" aria-label="Small input">`;
-
-  ngAfterViewInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      queueMicrotask(() => {
-        document.querySelectorAll('[type="checkbox"]').forEach((checkbox: any) => {
-            if (checkbox.id.includes('Indeterminate')) {
-              checkbox.indeterminate = true
-              console.log(checkbox)
-            }
-          })
-      });
-    }
-  }
 }

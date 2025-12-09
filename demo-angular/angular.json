@@ -90,6 +90,7 @@
             "branch": "gh-pages",
             "repo": "https://github.com/MahmoudAdel1996/dga-ui.git",
             "message": "Deploy Angular demo to GitHub Pages",
+            "dir": "dist/demo-angular/browser",
             "cname": ""
           }
         }
