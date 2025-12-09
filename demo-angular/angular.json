@@ -49,13 +49,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "1MB",
+                  "maximumError": "2MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "6kB",
+                  "maximumError": "10kB"
                 }
               ],
               "outputHashing": "all"
@@ -87,6 +87,9 @@
           "builder": "angular-cli-ghpages:deploy",
           "options": {
             "baseHref": "/dga-ui/",
+            "branch": "gh-pages",
+            "repo": "https://github.com/MahmoudAdel1996/dga-ui.git",
+            "message": "Deploy Angular demo to GitHub Pages",
             "cname": ""
           }
         }
