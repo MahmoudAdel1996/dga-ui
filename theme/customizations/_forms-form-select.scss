@@ -1,0 +1,114 @@
+
+// ============================================
+// FORM SELECT STYLES
+// ============================================
+
+.form-select {
+  min-height: 2rem;
+  position: relative;
+  border-color: $neutral-400 !important;
+  margin-bottom: 0;
+
+  // Create an animated underline effect using pseudo-element
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, $neutral-950 0%, $neutral-950 100%);
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &.filled {
+    background-color: var(--#{$prefix}body-bg) !important;
+  }
+
+  &.filled-darker {
+    border-color: transparent !important;
+    background-color: $neutral-100 !important;
+  }
+
+  &.filled-lighter {
+    border-color: transparent !important;
+    background-color: $neutral-25 !important;
+  }
+
+  &:hover {
+    border-color: $black !important;
+    color: $black !important;
+  }
+
+  &:active {
+    border-color: $neutral-400 !important;
+    background-color: $neutral-100 !important;
+    color: $black !important;
+    &::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+  }
+
+  &:read-only,
+  &[readonly] {
+    border-color: $neutral-300 !important;
+    color: $black !important;
+    pointer-events: none;
+  }
+
+  &:focus-visible,
+  &:focus {
+    border-color: $neutral-700 !important;
+    outline: none !important;
+    &::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+    box-shadow: $box-shadow;
+  }
+
+  &:disabled,
+  &[disabled] {
+    border-color: $neutral-300 !important;
+    background-color: var(--#{ $prefix}body-bg) !important;
+    color: $neutral-400 !important;
+    pointer-events: none;
+  }
+
+  &:user-invalid {
+    border-color: $error-700 !important;
+    &::after {
+      background: linear-gradient(to right, $error-700 0%, $error-700 100%);
+    }
+
+    &:hover {
+      border-color: $error-700 !important;
+    }
+
+    &:active {
+      border-color: $neutral-400 !important;
+      &::after {
+        transform: translateX(-50%) scaleX(1);
+      }
+    }
+
+    &:read-only,
+    &[readonly] {
+      border-color: $neutral-300 !important;
+    }
+
+    &:focus-visible,
+    &:focus {
+      border-color: $error-700 !important;
+      &::after {
+        transform: translateX(-50%) scaleX(1);
+      }
+    }
+
+    &:disabled,
+    &[disabled] {
+      border-color: $neutral-300 !important;
+    }
+  }
+}

@@ -2,21 +2,33 @@
   min-height: 2rem;
   position: relative;
   border-color: $neutral-400 !important;
+  margin-bottom: 0;
+
+  &.form-control-lg {
+    min-height: 2.5rem;
+  }
+
+  &.form-control-sm {
+    min-height: 1.5rem;
+  }
 
   // Create an animated underline effect starting from center
   background-image: linear-gradient(to right, $neutral-950 0%, $neutral-950 100%) !important;
   background-size: 0% 2px;
   background-repeat: no-repeat;
   background-position: center bottom;
-  transition: background-size 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  transition: background-size 0.3s ease-in-out,
+  border-color 0.3s ease-in-out;
 
-  &.filled { 
+  &.filled {
     background-color: var(--#{$prefix}body-bg) !important;
   }
+
   &.filled-darker {
     border-color: transparent !important;
-    background-color: $neutral-100 !important; 
+    background-color: $neutral-100 !important;
   }
+
   &.filled-lighter {
     border-color: transparent !important;
     background-color: $neutral-25 !important;
@@ -60,9 +72,9 @@
   &:user-invalid {
     border-color: $error-700 !important;
     background-image: linear-gradient(to right, $error-700 0%, $error-700 100%) !important;
- 
+
     &:hover {
-      border-color: $error-700 !important; 
+      border-color: $error-700 !important;
     }
 
     &:active {
@@ -87,15 +99,8 @@
   }
 }
 
-.form-control-lg {
-  min-height: 2.5rem;
-}
-
 .form-label {
-  &.disabled {
-    color: $neutral-400 !important;
-    pointer-events: none;
-  }
+  font-size: $font-size-sm;
 
   &.required {
     &::before {
@@ -104,4 +109,143 @@
       margin-inline-end: 0.25rem;
     }
   }
+
+  &.disabled {
+    color: $neutral-400 !important;
+    pointer-events: none;
+
+    &::before {
+      color: $neutral-400 !important;
+    }
+  }
 }
+
+.form-label-lg {
+  font-size: $font-size-base !important;
+}
+
+.input-group {
+  border: $input-border-width solid $input-border-color;
+  border-radius: $radius-sm;
+  transition: background-size 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+  // Create an animated underline effect using pseudo-element
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, $neutral-950 0%, $neutral-950 100%);
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .input-group-text {
+    border: none;
+    background: $neutral-100;
+    color: $neutral-500;
+
+    &.subtle {
+      background-color: var(--#{ $prefix}body-bg);
+    }
+  }
+
+  .btn {
+    border: none;
+    box-shadow: none;
+  }
+
+
+  .form-control {
+    border: none !important;
+    box-shadow: none !important;
+    background-color: var(--#{$prefix}body-bg) !important;
+    background-image: linear-gradient(to right, transparent 0%, transparent 100%) !important;
+  }
+
+  &:hover {
+    border-color: $black !important;
+    color: $black !important;
+  }
+
+  &:active {
+    border-color: $neutral-400 !important;
+    background-color: $neutral-100 !important;
+    color: $black !important;
+
+    &::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+  }
+
+  &:has(.form-control:read-only),
+  &:has(.form-control[readonly]) {
+    border-color: $neutral-300 !important;
+    color: $black !important;
+    pointer-events: none;
+  }
+
+  &:focus-within {
+    border-color: $neutral-700 !important;
+    outline: none !important;
+
+    &::after {
+      z-index: 5;
+      transform: translateX(-50%) scaleX(1);
+    }
+
+    box-shadow: $box-shadow;
+  }
+
+  &:has(.form-control:disabled),
+  &:has(.form-control[disabled]) {
+    border-color: $neutral-300 !important;
+    background-color: var(--#{ $prefix}body-bg) !important;
+    color: $neutral-400 !important;
+    pointer-events: none;
+  }
+
+  &:has(.form-control:user-invalid) {
+    border-color: $error-700 !important;
+
+    &::after {
+      background: linear-gradient(to right, $error-700 0%, $error-700 100%);
+    }
+
+    &:hover {
+      border-color: $error-700 !important;
+    }
+
+    &:active {
+      border-color: $neutral-400 !important;
+
+      &::after {
+        transform: translateX(-50%) scaleX(1);
+      }
+    }
+
+    &:has(.form-control:read-only),
+    &:has(.form-control[readonly]) {
+      border-color: $neutral-300 !important;
+    }
+
+    &:focus-within {
+      border-color: $error-700 !important;
+
+      &::after {
+        transform: translateX(-50%) scaleX(1);
+      }
+    }
+
+    &:has(.form-control:disabled),
+    &:has(.form-control[disabled]) {
+      border-color: $neutral-300 !important;
+    }
+  }
+}
+

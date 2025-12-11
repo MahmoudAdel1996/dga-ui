@@ -1,7 +1,5 @@
 // Bootstrap 5.3 - Form Input Variables
 
-@use 'sass:color';
-
 // ============================================
 // FORM INPUTS
 // ============================================
@@ -10,7 +8,7 @@
 $input-padding-y:                       $input-btn-padding-y;
 $input-padding-x:                       $input-btn-padding-x;
 $input-font-family:                     $input-btn-font-family;
-$input-font-size:                       $input-btn-font-size;
+$input-font-size:                       $font-size-sm;
 $input-font-weight:                     $font-weight-base;
 $input-line-height:                     $input-btn-line-height;
 
@@ -20,12 +18,12 @@ $input-font-size-sm:                    $input-btn-font-size-sm;
 
 $input-padding-y-lg:                    $input-btn-padding-y-lg;
 $input-padding-x-lg:                    $input-btn-padding-x-lg;
-$input-font-size-lg:                    $input-btn-font-size-lg;
+$input-font-size-lg:                    $font-size-base;
 
 $input-bg:                              var(--#{$prefix}body-bg);
-$input-disabled-color:                  null;
+$input-disabled-color:                  $neutral-400;
 $input-disabled-bg:                     var(--#{$prefix}secondary-bg);
-$input-disabled-border-color:           null;
+$input-disabled-border-color:           $neutral-400;
 
 $input-color:                           $neutral-700;
 $input-border-color:                    $neutral-400;
@@ -51,9 +49,9 @@ $input-height-inner:                    add($input-line-height * 1em, $input-pad
 $input-height-inner-half:               add($input-line-height * .5em, $input-padding-y);
 $input-height-inner-quarter:            add($input-line-height * .25em, $input-padding-y * .5);
 
-$input-height:                          add($input-line-height * 1em, add($input-padding-y * 2, $input-height-border, false));
-$input-height-sm:                       add($input-line-height * 1em, add($input-padding-y-sm * 2, $input-height-border, false));
-$input-height-lg:                       add($input-line-height * 1em, add($input-padding-y-lg * 2, $input-height-border, false));
+$input-height:                          2rem;
+$input-height-sm:                       1.5rem;
+$input-height-lg:                       2.5rem;
 
 $input-transition:                      border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
@@ -78,3 +76,10 @@ $form-file-button-color:                $input-color;
 $form-file-button-bg:                   var(--#{$prefix}tertiary-bg);
 $form-file-button-hover-bg:             var(--#{$prefix}secondary-bg);
 
+// Input Group Addons
+$input-group-addon-padding-y:           .125rem;
+$input-group-addon-padding-x:           1rem;
+$input-group-addon-font-weight:         $input-font-weight;
+$input-group-addon-color:               $black;
+$input-group-addon-bg:                  var(--#{$prefix}tertiary-bg);
+$input-group-addon-border-color:        $input-border-color;

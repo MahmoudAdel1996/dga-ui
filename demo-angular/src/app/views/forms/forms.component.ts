@@ -165,20 +165,35 @@ export class FormsComponent {
 </div>`;
 
   // Input variants
-  inputVariantsCode = `<div class="row g-3">
-  <div class="col-md-4">
-    <label for="inputNormal" class="form-label">Normal</label>
-    <input class="form-control" type="text" id="inputNormal" placeholder="Normal input">
-  </div>
-  <div class="col-md-4">
-    <label for="inputFilledDarker" class="form-label">Filled darker</label>
-    <input class="form-control filled-darker" type="text" id="inputFilledDarker" placeholder="Filled darker input">
-  </div>
-  <div class="col-md-4">
-    <label for="inputFilledLighter" class="form-label">Filled lighter</label>
-    <input class="form-control filled-lighter" type="text" id="inputFilledLighter" placeholder="Filled lighter input">
-  </div>
-</div>`;
+  inputVariantsCode = `<div class="row g-3 mb-4">
+      <div class="col-md-4">
+        <label for="inputNormal" class="form-label">Normal</label>
+        <input class="form-control" type="text" id="inputNormal" placeholder="Normal input">
+      </div>
+      <div class="col-md-4">
+        <label for="inputFilledDarker" class="form-label">Filled darker</label>
+        <input class="form-control filled-darker" type="text" id="inputFilledDarker" placeholder="Filled darker input">
+      </div>
+      <div class="col-md-4">
+        <label for="inputFilledLighter" class="form-label">Filled lighter</label>
+        <input class="form-control filled-lighter" type="text" id="inputFilledLighter"
+          placeholder="Filled lighter input">
+      </div>
+      <div class="col-md-4">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1">@</span>
+          <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+            aria-describedby="basic-addon1">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="input-group">
+          <span class="input-group-text subtle" id="basic-addon2">@example.com</span>
+          <input required type="text" class="form-control form-control" placeholder="Recipient’s username" aria-label="Recipient’s username"
+            aria-describedby="basic-addon2">
+          <span class="input-group-text" id="basic-addon2">@example.com</span>
+        </div>
+      </div>`;
 
   // Input states
   inputStatesCode = `<div class="row g-3">
