@@ -6,8 +6,39 @@
 .form-select {
   min-height: 2rem;
   position: relative;
-  border-color: $neutral-400 !important;
+  border-color: $neutral-400;
   margin-bottom: 0;
+
+  // Style the dropdown options
+  option {
+    background-color: $white;
+    color: $black;
+    padding: .5rem;
+    position: relative;
+
+    &:checked {
+      background-color: $neutral-100 !important;
+      color: $black !important;
+      position: relative;
+      // Add a checkmark for selected option
+      &::after {
+        content: '✔' !important;
+        position: absolute !important;
+        right: 1rem !important;
+        color: $black !important;
+      }
+    }
+  }
+
+  &:has(option:disabled:checked) {
+    color: $neutral-500;
+    &:hover {
+      color: $neutral-500;
+    }
+    option:disabled:checked {
+      color: $neutral-500;
+    }
+  }
 
   // Create an animated underline effect using pseudo-element
   &::after {
@@ -24,43 +55,42 @@
   }
 
   &.filled {
-    background-color: var(--#{$prefix}body-bg) !important;
+    background-color: var(--#{$prefix}body-bg);
   }
 
   &.filled-darker {
-    border-color: transparent !important;
-    background-color: $neutral-100 !important;
+    border-color: transparent;
+    background-color: $neutral-100;
   }
 
   &.filled-lighter {
-    border-color: transparent !important;
-    background-color: $neutral-25 !important;
+    border-color: transparent;
+    background-color: $neutral-25;
   }
 
   &:hover {
-    border-color: $black !important;
-    color: $black !important;
+    border-color: $neutral-500;
+    color: $black;
   }
 
   &:active {
-    border-color: $neutral-400 !important;
-    background-color: $neutral-100 !important;
-    color: $black !important;
+    border-color: $neutral-950;
+    background-color: $neutral-100;
+    color: $black;
     &::after {
       transform: translateX(-50%) scaleX(1);
     }
   }
 
-  &:read-only,
   &[readonly] {
-    border-color: $neutral-300 !important;
-    color: $black !important;
+    border-color: $neutral-300;
+    color: $black;
     pointer-events: none;
   }
 
   &:focus-visible,
   &:focus {
-    border-color: $neutral-700 !important;
+    border-color: $neutral-700;
     outline: none !important;
     &::after {
       transform: translateX(-50%) scaleX(1);
@@ -70,37 +100,36 @@
 
   &:disabled,
   &[disabled] {
-    border-color: $neutral-300 !important;
-    background-color: var(--#{ $prefix}body-bg) !important;
-    color: $neutral-400 !important;
+    border-color: $neutral-300;
+    background-color: var(--#{ $prefix}body-bg);
+    color: $neutral-400;
     pointer-events: none;
   }
 
   &:user-invalid {
-    border-color: $error-700 !important;
+    border-color: $error-700;
     &::after {
       background: linear-gradient(to right, $error-700 0%, $error-700 100%);
     }
 
     &:hover {
-      border-color: $error-700 !important;
+      border-color: $error-700;
     }
 
     &:active {
-      border-color: $neutral-400 !important;
+      border-color: $neutral-400;
       &::after {
         transform: translateX(-50%) scaleX(1);
       }
     }
 
-    &:read-only,
     &[readonly] {
-      border-color: $neutral-300 !important;
+      border-color: $neutral-300;
     }
 
     &:focus-visible,
     &:focus {
-      border-color: $error-700 !important;
+      border-color: $error-700;
       &::after {
         transform: translateX(-50%) scaleX(1);
       }
@@ -108,7 +137,7 @@
 
     &:disabled,
     &[disabled] {
-      border-color: $neutral-300 !important;
+      border-color: $neutral-300;
     }
   }
 }

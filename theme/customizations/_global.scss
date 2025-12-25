@@ -9,6 +9,11 @@
   outline: 2px solid $black !important;
 }
 
+::selection {
+  background: $primary;
+  color: $white;
+}
+
 .on-primary {
   background-color: $primary-900;
   color: $white;
@@ -21,6 +26,11 @@
   *:focus-visible,
   *:focus {
     outline-color: $white !important;
+  }
+
+  ::selection {
+    background: $primary;
+    color: $white;
   }
 }
 

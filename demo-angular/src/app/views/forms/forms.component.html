@@ -229,7 +229,7 @@
       <div class="col-md-4">
         <div class="input-group">
           <span class="input-group-text subtle" id="basic-addon2">@example.com</span>
-          <input required type="text" class="form-control form-control" placeholder="Recipient’s username"
+          <input required type="text" class="form-control" placeholder="Recipient’s username"
             aria-label="Recipient’s username" aria-describedby="basic-addon2">
           <span class="input-group-text" id="basic-addon2">@example.com</span>
         </div>
@@ -285,12 +285,28 @@
     <div class="mb-3">
       <label for="exampleSelect" class="form-label">Example select</label>
       <select id="exampleSelect" class="form-select" aria-label="Default select example">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
+        <option value="" disabled>Select an option</option>
+        <option value="1" selected>One</option>
         <option value="2">Two</option>
         <option value="3">Three</option>
       </select>
     </div>
+
+    <div class="dropdown">
+  <button class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">
+    Select option
+  </button>
+  <ul class="dropdown-menu">
+    <li>
+      <a class="dropdown-item active" href="#">
+        <span class="me-2">✔</span> Option 1
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item" href="#">Option 2</a>
+    </li>
+  </ul>
+</div>
 
     <!-- Code Example for Select -->
     <div class="mt-4">

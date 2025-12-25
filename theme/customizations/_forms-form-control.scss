@@ -1,7 +1,7 @@
 .form-control {
   min-height: 2rem;
   position: relative;
-  border-color: $neutral-400 !important;
+  border-color: $neutral-400;
   margin-bottom: 0;
 
   &.form-control-lg {
@@ -13,7 +13,7 @@
   }
 
   // Create an animated underline effect starting from center
-  background-image: linear-gradient(to right, $neutral-950 0%, $neutral-950 100%) !important;
+  background-image: linear-gradient(to right, $neutral-950 0%, $neutral-950 100%);
   background-size: 0% 2px;
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -21,41 +21,45 @@
   border-color 0.3s ease-in-out;
 
   &.filled {
-    background-color: var(--#{$prefix}body-bg) !important;
+    background-color: var(--#{$prefix}body-bg);
   }
 
   &.filled-darker {
-    border-color: transparent !important;
-    background-color: $neutral-100 !important;
+    border-color: transparent;
+    background-color: $neutral-100;
   }
 
   &.filled-lighter {
-    border-color: transparent !important;
-    background-color: $neutral-25 !important;
+    border-color: transparent;
+    background-color: $neutral-25;
   }
 
   &:hover {
-    border-color: $black !important;
-    color: $black !important;
+    border-color: $black;
+    color: $black;
   }
 
   &:active {
-    border-color: $neutral-400 !important;
-    background-color: $neutral-100 !important;
-    color: $black !important;
+    border-color: $neutral-400;
+    background-color: $neutral-100;
+    color: $black;
     background-size: 100% 2px;
   }
 
   &:read-only,
   &[readonly] {
-    border-color: $neutral-300 !important;
-    color: $black !important;
+    border-color: $neutral-300;
+    color: $black;
     pointer-events: none;
+
+    &::placeholder {
+      color: $neutral-500;
+    }
   }
 
   &:focus-visible,
   &:focus {
-    border-color: $neutral-700 !important;
+    border-color: $neutral-700;
     outline: none !important;
     background-size: 100% 2px;
     box-shadow: $box-shadow;
@@ -63,38 +67,43 @@
 
   &:disabled,
   &[disabled] {
-    border-color: $neutral-300 !important;
-    background-color: var(--#{ $prefix}body-bg) !important;
-    color: $neutral-400 !important;
+    border-color: $neutral-300;
+    background-color: var(--#{ $prefix}body-bg);
+    color: $neutral-400;
     pointer-events: none;
+
+    &::placeholder {
+      color: $neutral-400;
+    }
+
   }
 
   &:user-invalid {
-    border-color: $error-700 !important;
-    background-image: linear-gradient(to right, $error-700 0%, $error-700 100%) !important;
+    border-color: $error-700;
+    background-image: linear-gradient(to right, $error-700 0%, $error-700 100%);
 
     &:hover {
-      border-color: $error-700 !important;
+      border-color: $error-700;
     }
 
     &:active {
-      border-color: $neutral-400 !important;
+      border-color: $neutral-400;
       background-size: 100% 2px;
     }
 
     &:read-only,
     &[readonly] {
-      border-color: $neutral-300 !important;
+      border-color: $neutral-300;
     }
 
     &:focus-visible,
     &:focus {
-      border-color: $error-700 !important;
+      border-color: $error-700;
     }
 
     &:disabled,
     &[disabled] {
-      border-color: $neutral-300 !important;
+      border-color: $neutral-300;
     }
   }
 }
@@ -103,25 +112,25 @@
   font-size: $font-size-sm;
 
   &.required {
-    &::before {
-      content: "*";
-      color: $error-700 !important;
-      margin-inline-end: 0.25rem;
-    }
+      &::before {
+        content: "*";
+        color: $error-700;
+        margin-inline-end: 0.25rem;
+      }
   }
 
   &.disabled {
-    color: $neutral-400 !important;
+    color: $neutral-400;
     pointer-events: none;
 
     &::before {
-      color: $neutral-400 !important;
+      color: $neutral-400;
     }
   }
 }
 
 .form-label-lg {
-  font-size: $font-size-base !important;
+  font-size: $font-size-base;
 }
 
 .input-group {
@@ -145,6 +154,7 @@
     transition: transform 0.3s ease-in-out;
   }
 
+
   .input-group-text {
     border: none;
     background: $neutral-100;
@@ -153,6 +163,7 @@
     &.subtle {
       background-color: var(--#{ $prefix}body-bg);
     }
+
   }
 
   .btn {
@@ -162,37 +173,30 @@
 
 
   .form-control {
-    border: none !important;
-    box-shadow: none !important;
-    background-color: var(--#{$prefix}body-bg) !important;
-    background-image: linear-gradient(to right, transparent 0%, transparent 100%) !important;
+    border: none;
+    box-shadow: none;
+    background-color: var(--#{$prefix}body-bg);
+    background-image: linear-gradient(to right, transparent 0%, transparent 100%);
   }
 
   &:hover {
-    border-color: $black !important;
-    color: $black !important;
+    border-color: $black;
+    color: $black;
   }
 
   &:active {
-    border-color: $neutral-400 !important;
-    background-color: $neutral-100 !important;
-    color: $black !important;
+    border-color: $neutral-400;
+    background-color: $neutral-100;
+    color: $black;
 
     &::after {
       transform: translateX(-50%) scaleX(1);
     }
   }
-
-  &:has(.form-control:read-only),
-  &:has(.form-control[readonly]) {
-    border-color: $neutral-300 !important;
-    color: $black !important;
-    pointer-events: none;
-  }
-
+  
   &:focus-within {
-    border-color: $neutral-700 !important;
-    outline: none !important;
+    border-color: $neutral-700;
+    outline: none;
 
     &::after {
       z-index: 5;
@@ -202,27 +206,56 @@
     box-shadow: $box-shadow;
   }
 
-  &:has(.form-control:disabled),
-  &:has(.form-control[disabled]) {
-    border-color: $neutral-300 !important;
-    background-color: var(--#{ $prefix}body-bg) !important;
-    color: $neutral-400 !important;
+  &:has(.form-control:read-only),
+  &:has(.form-control[readonly]) {
+    border-color: $neutral-300;
+    color: $black;
     pointer-events: none;
   }
 
+
+  &:has(.form-control:disabled),
+  &:has(.form-control[disabled]) {
+    border-color: $neutral-300;
+    background-color: var(--#{ $prefix}body-bg);
+    color: $neutral-400;
+    pointer-events: none;
+
+    &::after {
+      transform: translateX(-50%) scaleX(0);
+    }
+
+    .form-control {
+      border-color: $neutral-300;
+      background-color: var(--#{ $prefix}body-bg);
+      color: $neutral-400;
+      pointer-events: none;
+    }
+
+    .input-group-text {
+      background-color: $neutral-200;
+      color: $neutral-400;
+      pointer-events: none;
+
+      &.subtle {
+        background-color: var(--#{ $prefix}body-bg);
+      }
+    }
+  }
+
   &:has(.form-control:user-invalid) {
-    border-color: $error-700 !important;
+    border-color: $error-700;
 
     &::after {
       background: linear-gradient(to right, $error-700 0%, $error-700 100%);
     }
 
     &:hover {
-      border-color: $error-700 !important;
+      border-color: $error-700;
     }
 
     &:active {
-      border-color: $neutral-400 !important;
+      border-color: $neutral-400;
 
       &::after {
         transform: translateX(-50%) scaleX(1);
@@ -231,11 +264,11 @@
 
     &:has(.form-control:read-only),
     &:has(.form-control[readonly]) {
-      border-color: $neutral-300 !important;
+      border-color: $neutral-300;
     }
 
     &:focus-within {
-      border-color: $error-700 !important;
+      border-color: $error-700;
 
       &::after {
         transform: translateX(-50%) scaleX(1);
@@ -244,8 +277,7 @@
 
     &:has(.form-control:disabled),
     &:has(.form-control[disabled]) {
-      border-color: $neutral-300 !important;
+      border-color: $neutral-300;
     }
   }
 }
-
