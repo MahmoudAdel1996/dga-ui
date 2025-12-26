@@ -1,0 +1,36 @@
+<div class="container py-5">
+    <h1 class="display-4 mb-4">{{ 'tooltips.title' | translate }}</h1>
+    <p class="lead mb-5">{{ 'tooltips.subtitle' | translate }}</p>
+
+    <section class="demo-section" #tooltipContainer>
+        <h2>{{ 'tooltips.section_basic' | translate }}</h2>
+        <div class="component-showcase d-flex gap-2">
+            <button type="button" class="btn btn-icon" data-bs-toggle="tooltip" data-bs-placement="top"
+                title="Tooltip on top">
+                <i class="bi bi-info-circle"></i>
+            </button>
+            <button type="button" class="btn btn-icon" data-bs-toggle="tooltip" data-bs-placement="right"
+                title="Tooltip on right">
+                <i class="bi bi-info-circle"></i>
+            </button>
+            <button type="button" class="btn btn-icon" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                title="Tooltip on bottom">
+                <i class="bi bi-info-circle"></i>
+            </button>
+            <button type="button" class="btn btn-icon" data-bs-toggle="tooltip" data-bs-placement="left"
+                title="Tooltip on left">
+                <i class="bi bi-info-circle"></i>
+            </button>
+        </div>
+        <app-code-example [htmlCode]="basicTooltipCode"></app-code-example>
+
+        <h3 class="mt-5">{{ 'tooltips.section_html' | translate }}</h3>
+        <div class="component-showcase d-flex gap-2">
+            <button type="button" class="btn btn-icon" data-bs-toggle="tooltip" data-bs-html="true"
+                title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+                <i class="bi bi-info-circle"></i>
+            </button>
+        </div>
+        <app-code-example [htmlCode]="htmlTooltipCode"></app-code-example>
+    </section>
+</div>

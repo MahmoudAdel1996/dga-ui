@@ -15,6 +15,7 @@
     "forms": "Forms",
     "tables": "Tables",
     "toasts": "Toasts",
+    "tooltips": "Tooltips",
     "links": "Links",
     "header": "Header",
     "footer": "Footer",
@@ -188,6 +189,12 @@
     "neutral_text": "This is a neutral notification message.",
     "action": "Action",
     "dismiss": "Dismiss"
+  },
+  "tooltips": {
+    "title": "Tooltips",
+    "subtitle": "Documentation and examples for adding custom Bootstrap tooltips",
+    "section_basic": "Basic Examples",
+    "section_html": "With HTML"
   },
   "utilities": {
     "title": "Utilities",
