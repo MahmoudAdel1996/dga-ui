@@ -28436,4 +28436,16 @@ html {
   position: relative;
 }
 
+.dga-breadcrumb .dga-breadcrumb-item {
+  list-style: none;
+}
+
+ol {
+  margin-bottom: 0;
+}
+
+[dir=rtl] .mirror-rtl {
+  transform: scaleX(-1);
+}
+
 /*# sourceMappingURL=dga-ui.css.map */
