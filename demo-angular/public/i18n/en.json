@@ -13,6 +13,7 @@
     "buttons": "Buttons",
     "cards": "Cards",
     "forms": "Forms",
+    "progress_indicator": "Progress Indicator",
     "tables": "Tables",
     "toasts": "Toasts",
     "tooltips": "Tooltips",
@@ -163,6 +164,16 @@
     "header_email": "Email",
     "header_role": "Role",
     "header_status": "Status"
+  },
+  "progress_indicator": {
+    "title": "Progress Indicator",
+    "subtitle": "Show users where they are in a multi-step flow with vertical or horizontal steps.",
+    "section_vertical": "Vertical layout",
+    "section_vertical_desc": "Use when steps need more detail and should stack on smaller widths.",
+    "section_horizontal": "Horizontal layout",
+    "section_horizontal_desc": "Use for wizard-style flows with limited copy per step.",
+    "code_vertical": "Vertical example",
+    "code_horizontal": "Horizontal example"
   },
   "toasts": {
     "title": "Toasts",

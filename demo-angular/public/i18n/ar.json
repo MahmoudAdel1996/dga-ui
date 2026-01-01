@@ -13,6 +13,7 @@
     "buttons": "الأزرار",
     "cards": "البطاقات",
     "forms": "النماذج",
+    "progress_indicator": "مؤشر التقدم",
     "tables": "الجداول",
     "toasts": "الإشعارات",
     "links": "الروابط",
@@ -162,6 +163,16 @@
     "header_email": "البريد الإلكتروني",
     "header_role": "الدور",
     "header_status": "الحالة"
+  },
+  "progress_indicator": {
+    "title": "مؤشر التقدم",
+    "subtitle": "عرض موقع المستخدم داخل تدفق متعدد الخطوات بتخطيطات رأسية أو أفقية.",
+    "section_vertical": "تخطيط رأسي",
+    "section_vertical_desc": "استخدمه عندما تحتاج الخطوات إلى تفاصيل أكثر وتُعرض في مساحات أضيق.",
+    "section_horizontal": "تخطيط أفقي",
+    "section_horizontal_desc": "مناسب لتدفقات المعالجات القصيرة مع نصوص مختصرة لكل خطوة.",
+    "code_vertical": "مثال رأسي",
+    "code_horizontal": "مثال أفقي"
   },
   "toasts": {
     "title": "الإشعارات",

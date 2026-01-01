@@ -46,16 +46,16 @@
 
     // Base Circle Styles
     .step-circle {
-      width: 36px;
-      height: 36px;
+      width: 2.25rem;
+      height: 2.25rem;
       border-radius: 50%;
       border: 2px solid $gray-300;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: white;
+      background-color: $white;
       color: $gray-300;
-      font-weight: 600;
+      font-weight: $font-weight-semibold;
       position: relative;
       z-index: 2;
       transition: all 0.3s ease;
@@ -67,14 +67,14 @@
       border: 2px solid transparent; // Reserve space for border to avoid jump
       padding-block: 4px 8px;
       padding-inline-end: 4px;
-      border-radius: 4px;
+      border-radius: $radius-sm;
     }
 
     // State: Upcoming
     &.upcoming {
       .step-circle {
         border-color: $gray-300;
-        background-color: white;
+        background-color: $white;
         color: $gray-300;
       }
 
@@ -91,13 +91,13 @@
     &.active {
       .step-circle {
         border-color: $primary;
-        background-color: white;
+        background-color: $white;
         color: $primary;
       }
 
       .step-title {
         color: $primary;
-        font-weight: 700;
+        font-weight: $font-weight-bold;
       }
 
       .step-description {
@@ -110,7 +110,7 @@
       .step-circle {
         background-color: $primary;
         border-color: $primary;
-        color: white;
+        color: $white;
       }
 
       .step-title {
@@ -136,7 +136,7 @@
       .step-circle {
         // Create a ring effect: white gap then dark ring
         // This overrides any state-specific shadows due to cascade order
-        box-shadow: 0 0 0 2px white, 0 0 0 5px $dark;
+        box-shadow: 0 0 0 2px $white, 0 0 0 5px $dark;
       }
 
       .step-content {
@@ -175,22 +175,22 @@
       text-align: start;
       position: relative;
       flex: 1;
-      max-width: 200px;
-      max-height: 200px;
+      max-width: 12.5rem;
+      max-height: 12.5rem;
     }
 
     .step-circle {
-      margin: 0 0 12px 0;
+      margin: 0 0 .75rem 0;
     }
 
 
     .step:not(:last-child)::after {
       content: '';
       position: absolute;
-      top: 18px;
-      inset-inline-start: 36px;
+      top: 1.125rem;
+      inset-inline-start: 2.25rem;
       inset-inline-end: 0;
-      height: 2px;
+      height: .125rem;
       // background-color: $gray-300; // Moved to base .step::after
       // z-index: 1; // Moved to base .step::after
     }
@@ -201,18 +201,18 @@
     .progress-steps {
       display: flex;
       flex-direction: column;
-      max-width: 300px;
+      max-width: 18.75rem;
     }
 
     .step {
       display: flex;
       align-items: flex-start;
       position: relative;
-      padding: 0 0 20px 0;
+      padding: 0 0 1.25rem 0;
     }
 
     .step-circle {
-      margin: 0 16px 0 0;
+      margin: 0 1rem 0 0;
       flex-shrink: 0;
     }
 
@@ -223,10 +223,10 @@
     .step:not(:last-child)::after {
       content: '';
       position: absolute;
-      top: 36px;
-      left: calc(18px - 1px);
+      top: 1.125rem;
+      left: calc(1.125rem - 1px);
       bottom: 0px;
-      width: 2px;
+      width: .125rem;
       // background-color: $gray-300; // Moved to base .step::after
       z-index: 0; // Vertical needs different z-index? No, usually fine, but verify.
       // Vertical line z-index was 0 in original code

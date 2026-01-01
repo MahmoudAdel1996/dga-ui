@@ -61,6 +61,7 @@ export class App {
         { id: 'buttons', labelKey: 'nav.buttons', icon: '🔘', route: '/buttons' },
         { id: 'cards', labelKey: 'nav.cards', icon: '🃏', route: '/cards' },
         { id: 'forms', labelKey: 'nav.forms', icon: '📝', route: '/forms' },
+        { id: 'progress-indicator', labelKey: 'nav.progress_indicator', icon: '⏳', route: '/progress-indicator' },
         { id: 'tables', labelKey: 'nav.tables', icon: '📊', route: '/tables' },
         { id: 'toasts', labelKey: 'nav.toasts', icon: '🔔', route: '/toasts' },
         { id: 'tooltips', labelKey: 'nav.tooltips', icon: '💬', route: '/tooltips' },
