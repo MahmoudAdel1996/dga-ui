@@ -2084,7 +2084,7 @@ blockquote {
 
 b,
 strong {
-  font-weight: 700;
+  font-weight: 800;
 }
 
 small, .small {
@@ -13042,10 +13042,10 @@ textarea.form-control-lg {
   --dga-tooltip-padding-y: 0.25rem;
   --dga-tooltip-margin: ;
   --dga-tooltip-font-size: 0.875rem;
-  --dga-tooltip-color: #161616;
-  --dga-tooltip-bg: #FFFFFF;
+  --dga-tooltip-color: var(--dga-body-color);
+  --dga-tooltip-bg: var(--dga-body-bg);
   --dga-tooltip-border-radius: 0.25rem;
-  --dga-tooltip-opacity: 0.98;
+  --dga-tooltip-opacity: 1;
   --dga-tooltip-arrow-width: 0.8rem;
   --dga-tooltip-arrow-height: 0.4rem;
   z-index: var(--dga-tooltip-zindex);
@@ -18582,7 +18582,7 @@ textarea.form-control-lg {
 }
 
 .fw-bolder {
-  font-weight: 700 !important;
+  font-weight: 800 !important;
 }
 
 .lh-1 {
@@ -28266,6 +28266,173 @@ html {
 .on-primary.dropdown-menu .dropdown-item.disabled:active {
   background-color: transparent;
   color: #9DA4AE;
+}
+
+.progress-indicator {
+  position: relative;
+}
+.progress-indicator .step {
+  flex: 1;
+  text-align: start;
+  position: relative;
+}
+.progress-indicator .step::after {
+  background-color: #D2D6DB;
+  z-index: 1;
+}
+.progress-indicator .step.hover {
+  cursor: pointer;
+}
+.progress-indicator .step.hover.completed:hover .step-circle {
+  background-color: #166A45;
+  border-color: #166A45;
+  color: white;
+}
+.progress-indicator .step.hover.completed:hover::after {
+  background-color: #166A45;
+}
+.progress-indicator .step.hover.upcoming:hover .step-circle {
+  border-color: #9DA4AE;
+  color: #9DA4AE;
+}
+.progress-indicator .step.hover.upcoming:hover::after {
+  background-color: #9DA4AE;
+}
+.progress-indicator .step {
+  outline: none;
+}
+.progress-indicator .step .step-circle {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  border: 2px solid #D2D6DB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  color: #D2D6DB;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+.progress-indicator .step .step-content {
+  transition: all 0.2s ease;
+  display: inline-block;
+  border: 2px solid transparent;
+  padding-block: 4px 8px;
+  padding-inline-end: 4px;
+  border-radius: 0.25rem;
+}
+.progress-indicator .step.upcoming .step-circle {
+  border-color: #D2D6DB;
+  background-color: #FFFFFF;
+  color: #D2D6DB;
+}
+.progress-indicator .step.upcoming .step-title {
+  color: #D2D6DB;
+}
+.progress-indicator .step.upcoming .step-description {
+  color: #6C737F;
+}
+.progress-indicator .step.active .step-circle {
+  border-color: #1B8354;
+  background-color: #FFFFFF;
+  color: #1B8354;
+}
+.progress-indicator .step.active .step-title {
+  color: #1B8354;
+  font-weight: 700;
+}
+.progress-indicator .step.active .step-description {
+  color: #384250;
+}
+.progress-indicator .step.completed .step-circle {
+  background-color: #1B8354;
+  border-color: #1B8354;
+  color: #FFFFFF;
+}
+.progress-indicator .step.completed .step-title {
+  color: #1B8354;
+  font-weight: 600;
+}
+.progress-indicator .step.completed .step-description {
+  color: #D2D6DB;
+}
+.progress-indicator .step.completed::after {
+  background-color: #1B8354;
+}
+.progress-indicator .step:focus-visible, .progress-indicator .step.focused, .progress-indicator .step:focus {
+  outline: none !important;
+}
+.progress-indicator .step:focus-visible .step-circle, .progress-indicator .step.focused .step-circle, .progress-indicator .step:focus .step-circle {
+  box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 5px #1F2A37;
+}
+.progress-indicator .step:focus-visible .step-content, .progress-indicator .step.focused .step-content, .progress-indicator .step:focus .step-content {
+  border: 2px solid #1F2A37;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.progress-indicator.horizontal .progress-steps {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  flex-wrap: wrap;
+}
+.progress-indicator.horizontal .step {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: start;
+  position: relative;
+  flex: 1;
+  max-width: 12.5rem;
+  max-height: 12.5rem;
+}
+.progress-indicator.horizontal .step-circle {
+  margin: 0 0 0.75rem 0;
+}
+.progress-indicator.horizontal .step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 1.125rem;
+  inset-inline-start: 2.25rem;
+  inset-inline-end: 0;
+  height: 0.125rem;
+}
+.progress-indicator.vertical .progress-steps {
+  display: flex;
+  flex-direction: column;
+  max-width: 18.75rem;
+}
+.progress-indicator.vertical .step {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  padding: 0 0 1.25rem 0;
+}
+.progress-indicator.vertical .step-circle {
+  margin: 0 1rem 0 0;
+  flex-shrink: 0;
+}
+.progress-indicator.vertical .step-content {
+  flex: 1;
+}
+.progress-indicator.vertical .step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 1.125rem;
+  left: calc(1.125rem - 1px);
+  bottom: 0px;
+  width: 0.125rem;
+  z-index: 0;
+  z-index: 0 !important;
+}
+.progress-indicator.vertical .step:last-child {
+  padding-bottom: 0;
+}
+
+.progress-steps {
+  position: relative;
 }
 
 /*# sourceMappingURL=dga-ui.css.map */
