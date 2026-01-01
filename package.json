@@ -50,7 +50,8 @@
     "prepublishOnly": "npm run build-css",
     "preversion": "npm run build-css",
     "version": "npm run update-docs-version && git add .",
-    "postversion": "git push --follow-tags"
+    "postversion": "git push --follow-tags",
+    "version:patch": "npm version patch"
   },
   "peerDependencies": {
     "bootstrap": "^5.3.8",

@@ -10,6 +10,7 @@
     "layout": "Layout",
     "home": "Home",
     "alerts": "Alerts",
+    "breadcrumb": "Breadcrumbs",
     "buttons": "Buttons",
     "cards": "Cards",
     "forms": "Forms",
@@ -103,6 +104,24 @@
     "dropdown_action": "Action",
     "dropdown_another": "Another action",
     "dropdown_something": "Something else here"
+  },
+  "breadcrumb": {
+    "title": "Breadcrumbs",
+    "subtitle": "Show users where they are and let them jump between levels of a hierarchy.",
+    "section_default": "Default breadcrumb",
+    "section_default_desc": "Use breadcrumbs to communicate hierarchy. The last item represents the current page and should not be clickable.",
+    "section_icons": "Breadcrumb with icons",
+    "section_icons_desc": "Pair icons with labels to help users scan different node types at a glance.",
+    "section_context": "On primary background",
+    "section_context_desc": "Wrap breadcrumbs in context helpers like on-primary when they sit on colored headers or hero blocks.",
+    "aria_label": "Breadcrumb",
+    "home": "Home",
+    "library": "Library",
+    "data": "Data",
+    "details": "Details",
+    "projects": "Projects",
+    "design": "Design System",
+    "components": "Components"
   },
   "cards": {
     "title": "Cards",
