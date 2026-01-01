@@ -198,19 +198,23 @@ export class ProgressIndicator {
     }
 
     .step-circle {
-      margin: 0 1rem 0 0;
       flex-shrink: 0;
     }
 
     .step-content {
       flex: 1;
+      margin-inline-start: 0.75rem;
+      padding-top: 0;
     }
 
     .step:not(:last-child)::after {
+      content: '';
+      position: absolute;
       top: 1.125rem;
-      left: calc(1.125rem - 1px);
-      bottom: 0;
+      inset-inline-start: calc(1.125rem - 1px);
+      bottom: 0px;
       width: .125rem;
+      z-index: 0;
       z-index: 0 !important;
     }
 
