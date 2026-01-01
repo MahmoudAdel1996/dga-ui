@@ -1,0 +1,245 @@
+// Bootstrap Progress Indicator Component
+.progress-indicator {
+  position: relative;
+
+  .step {
+    flex: 1;
+    text-align: start;
+    position: relative;
+
+    // Default line style (color and z-index)
+    // Content and position are handled by layout classes (.horizontal/.vertical)
+    &::after {
+      background-color: $gray-300;
+      z-index: 1;
+    }
+
+    &.hover {
+      cursor: pointer; // Make entire step clickable/hoverable
+
+      &.completed:hover {
+        .step-circle {
+          background-color: $primary-700;
+          border-color: $primary-700;
+          color: white;
+        }
+
+        &::after {
+          background-color: $primary-700;
+        }
+
+      }
+
+      &.upcoming:hover {
+        .step-circle {
+          border-color: $gray-400;
+          color: $gray-400;
+        }
+
+        &::after {
+          background-color: $gray-400;
+        }
+      }
+    }
+
+    outline: none; // Remove default browser outline
+
+    // Base Circle Styles
+    .step-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid $gray-300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      color: $gray-300;
+      font-weight: 600;
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+
+    .step-content {
+      transition: all 0.2s ease;
+      display: inline-block; // Allow border to hug content
+      border: 2px solid transparent; // Reserve space for border to avoid jump
+      padding-block: 4px 8px;
+      padding-inline-end: 4px;
+      border-radius: 4px;
+    }
+
+    // State: Upcoming
+    &.upcoming {
+      .step-circle {
+        border-color: $gray-300;
+        background-color: white;
+        color: $gray-300;
+      }
+
+      .step-title {
+        color: $gray-300;
+      }
+
+      .step-description {
+        color: $gray-500;
+      }
+    }
+
+    // State: Active
+    &.active {
+      .step-circle {
+        border-color: $primary;
+        background-color: white;
+        color: $primary;
+      }
+
+      .step-title {
+        color: $primary;
+        font-weight: 700;
+      }
+
+      .step-description {
+        color: $gray-700;
+      }
+    }
+
+    // State: Completed
+    &.completed {
+      .step-circle {
+        background-color: $primary;
+        border-color: $primary;
+        color: white;
+      }
+
+      .step-title {
+        color: $primary;
+        font-weight: $font-weight-semibold;
+      }
+
+      .step-description {
+        color: $gray-300;
+      }
+
+      &::after {
+        background-color: $primary;
+      }
+    }
+
+    // Focus States - Placed last to override other states
+    &:focus-visible,
+    &.focused,
+    &:focus {
+      outline: none !important;
+
+      .step-circle {
+        // Create a ring effect: white gap then dark ring
+        // This overrides any state-specific shadows due to cascade order
+        box-shadow: 0 0 0 2px white, 0 0 0 5px $dark;
+      }
+
+      .step-content {
+        border: 2px solid $dark;
+        background-color: rgba($white, 0.5);
+      }
+    }
+  }
+
+  // // Pulse animation for active state
+  // @keyframes pulse {
+  //   0% {
+  //     box-shadow: 0 0 0 0 rgba($primary, 0.4);
+  //   }
+  //   70% {
+  //     box-shadow: 0 0 0 8px rgba($primary, 0);
+  //   }
+  //   100% {
+  //     box-shadow: 0 0 0 0 rgba($primary, 0);
+  //   }
+  // }
+
+  // Horizontal layout (default)
+  &.horizontal {
+    .progress-steps {
+      display: flex;
+      flex-direction: row;
+      align-items: start;
+      flex-wrap: wrap;
+    }
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      text-align: start;
+      position: relative;
+      flex: 1;
+      max-width: 200px;
+      max-height: 200px;
+    }
+
+    .step-circle {
+      margin: 0 0 12px 0;
+    }
+
+
+    .step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 18px;
+      inset-inline-start: 36px;
+      inset-inline-end: 0;
+      height: 2px;
+      // background-color: $gray-300; // Moved to base .step::after
+      // z-index: 1; // Moved to base .step::after
+    }
+  }
+
+  // Vertical layout
+  &.vertical {
+    .progress-steps {
+      display: flex;
+      flex-direction: column;
+      max-width: 300px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      position: relative;
+      padding: 0 0 20px 0;
+    }
+
+    .step-circle {
+      margin: 0 16px 0 0;
+      flex-shrink: 0;
+    }
+
+    .step-content {
+      flex: 1;
+    }
+
+    .step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: calc(18px - 1px);
+      bottom: 0px;
+      width: 2px;
+      // background-color: $gray-300; // Moved to base .step::after
+      z-index: 0; // Vertical needs different z-index? No, usually fine, but verify.
+      // Vertical line z-index was 0 in original code
+      z-index: 0 !important; // Force 0 if needed or just set 0 here to override base 1
+    }
+
+    .step:last-child {
+      padding-bottom: 0;
+    }
+  }
+}
+
+// Legacy class support
+.progress-steps {
+  position: relative;
+}

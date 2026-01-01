@@ -52,4 +52,8 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./views/tooltips/tooltips.component').then((m) => m.TooltipsComponent),
   },
+  {
+    path: 'progress-indicator',
+    loadComponent: () => import('./views/progress-indicator/progress-indicator').then(m => m.ProgressIndicator)
+  }
 ];
