@@ -112,10 +112,10 @@
   font-size: $font-size-sm;
 
   &.required {
-      &::before {
+      &::after {
         content: "*";
         color: $error-700;
-        margin-inline-end: 0.25rem;
+        margin-inline-start: 0.25rem;
       }
   }
 
@@ -193,7 +193,7 @@
       transform: translateX(-50%) scaleX(1);
     }
   }
-  
+
   &:focus-within {
     border-color: $neutral-700;
     outline: none;
