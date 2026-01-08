@@ -13,7 +13,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "use:local": "npm install --no-save file:.. && echo Using local sdga-ui",
-    "use:npm": "node -e \"const fs=require('fs');const pkg=JSON.parse(fs.readFileSync('package.json'));const version=pkg.dependencies['sdga-ui'];console.log('Installing sdga-ui@'+version);\" && npm install && echo Using npm sdga-ui"
+    "use:npm": "node -e \"const fs=require('fs');const pkg=JSON.parse(fs.readFileSync('package.json'));const version=pkg.dependencies['sdga-ui'];console.log('Installing sdga-ui@'+version);\" && npm install && echo Using npm sdga-ui",
+    "patch-version": "npm version patch"
   },
   "dependencies": {
     "@webcontainer/api": "^1.6.1",
