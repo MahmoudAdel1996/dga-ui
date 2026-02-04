@@ -15,6 +15,7 @@
     "cards": "البطاقات",
     "forms": "النماذج",
     "progress_indicator": "مؤشر التقدم",
+    "tabs": "التبويبات",
     "tables": "الجداول",
     "toasts": "الإشعارات",
     "links": "الروابط",
@@ -182,6 +183,15 @@
     "header_email": "البريد الإلكتروني",
     "header_role": "الدور",
     "header_status": "الحالة"
+  },
+  "tabs": {
+    "title": "التبويبات",
+    "subtitle": "مكونات التبويبات والتنقل من Bootstrap بتصميم SDGA",
+    "section_basic": "التبويبات الأساسية",
+    "section_pills": "الأزرار (Pills)",
+    "section_vertical": "تبويبات رأسية",
+    "section_justified": "تبويبات متساوية (Justified)",
+    "section_icons": "تبويبات مع أيقونات"
   },
   "progress_indicator": {
     "title": "مؤشر التقدم",

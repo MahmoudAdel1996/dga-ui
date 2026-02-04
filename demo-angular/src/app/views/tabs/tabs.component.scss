@@ -1,0 +1,30 @@
+:host {
+  display: block;
+}
+
+.component-showcase {
+  padding: 1.5rem;
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tab-content {
+  padding: 1.5rem;
+  background-color: #fff;
+  border: 1px solid var(--dga-border-color);
+  border-top: 0;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.flex-column + .tab-content {
+  border-top: 1px solid var(--dga-border-color);
+  border-radius: 0 0.5rem 0.5rem 0.5rem;
+  flex: 1;
+
+  [dir="rtl"] & {
+    border-radius: 0.5rem 0 0.5rem 0.5rem;
+  }
+}

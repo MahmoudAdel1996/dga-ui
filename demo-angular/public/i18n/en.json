@@ -15,6 +15,7 @@
     "cards": "Cards",
     "forms": "Forms",
     "progress_indicator": "Progress Indicator",
+    "tabs": "Tabs",
     "tables": "Tables",
     "toasts": "Toasts",
     "tooltips": "Tooltips",
@@ -183,6 +184,15 @@
     "header_email": "Email",
     "header_role": "Role",
     "header_status": "Status"
+  },
+  "tabs": {
+    "title": "Tabs",
+    "subtitle": "Bootstrap nav and tab components styled with SDGA theme",
+    "section_basic": "Basic Tabs",
+    "section_pills": "Pills",
+    "section_vertical": "Vertical Tabs",
+    "section_justified": "Justified",
+    "section_icons": "Tabs with Icons"
   },
   "progress_indicator": {
     "title": "Progress Indicator",

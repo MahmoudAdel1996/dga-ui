@@ -1,0 +1,344 @@
+// Tabs Customizations (Strict Separation from Navs)
+
+// Using SDGA Variables directly
+// #161616 -> $black
+// #384250 -> $gray-700
+// #9DA4AE -> $gray-400
+// #F3F4F6 -> $gray-100
+// #E5E7EB -> $gray-200
+// #D2D6DB -> $gray-300
+// #1B8354 -> $sa-600 (Selection indicator color from samples)
+// Radius: 4px -> $radius-sm
+
+$nav-tabs-border-color: $gray-300;
+$nav-link-color: $gray-700;
+$nav-link-hover-bg: $gray-100;
+$nav-link-active-color: $black;
+$nav-link-disabled-color: $gray-400;
+$nav-link-pressed-bg: $gray-200;
+$nav-link-selection-indicator: $sa-600; // Green from samples
+$nav-link-selection-indicator-default: $black; // Green from samples
+
+// Spacing Variables mapped from HTML static values
+// 52px = 3.25rem (Custom) or close to spacer 8 (48px) - keeping calculation
+$tab-height-lg: 3.25rem;
+$tab-height-md: 2.75rem; // 44px
+$tab-height-sm: 2.25rem; // 36px
+
+$tab-v-height-lg: map-get($spacers, 7); // 40px
+$tab-v-height-md: map-get($spacers, 6); // 32px
+$tab-v-height-sm: map-get($spacers, 5); // 24px
+
+// Sizes Mixin
+@mixin nav-size($height, $padding-y, $padding-x, $font-size) {
+  .nav-link {
+    height: $height !important;
+    padding: $padding-y $padding-x !important;
+    font-size: $font-size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: map-get($spacers, 1); // 4px
+  }
+}
+
+.nav-tabs {
+  --#{$prefix}nav-tabs-border-width: 0;
+  --#{$prefix}nav-tabs-border-radius: 0;
+  --#{$prefix}nav-tabs-link-active-bg: transparent;
+
+  position: relative; // Establish positioning context
+  border-bottom: 3px solid transparent; // Maintain space but make transparent
+  gap: map-get($spacers, 2); // 8px
+
+  // Rounded bottom border line
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px; // Align with the transparent border
+    width: 100%;
+    height: 3px;
+    background-color: $nav-tabs-border-color;
+    border-radius: $radius-full; // Rounded ends
+    pointer-events: none; // Prevent interference with clicks/hover
+  }
+
+  .nav-link {
+    font-family: $font-family-base;
+    font-weight: $font-weight-base; // 400
+    color: $nav-link-color;
+    border: none;
+    border-radius: $radius-sm;
+    position: relative;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: map-get($spacers, 1); // 4px gap between icon and text (from sample)
+
+    // Hover State & Pseudo-Hover (exclude active tabs)
+    &:hover:not(.disabled):not(.active),
+    &.pseudo-hover:not(.active) {
+      background-color: $nav-link-hover-bg;
+      color: $nav-link-color;
+    }
+
+    // Pressed State & Pseudo-Active (exclude active tabs)
+    &:active:not(.disabled):not(.active),
+    &.pseudo-active:not(.active) {
+      background-color: $nav-link-pressed-bg;
+    }
+
+    // Active State
+    &.active {
+      color: $nav-link-active-color;
+      font-weight: $font-weight-bold; // 700
+      background-color: transparent;
+    }
+
+    // Disabled State
+    &.disabled {
+      color: $nav-link-disabled-color;
+      background-color: transparent;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// ============================================
+// HORIZONTAL TABS - ACTIVE INDICATOR
+// ============================================
+// Bottom underline indicator for horizontal tabs only
+// Bumped specificity to override _nav.scss
+.nav-tabs.nav-tabs:not(.flex-column) .nav-link {
+
+  // Active indicator as ::before pseudo-element (bottom underline)
+  // Changed from ::after to avoid conflict with dropdown caret
+  &::before {
+    content: '';
+    position: absolute;
+    left: map-get($spacers, 4); // 16px from left
+    right: map-get($spacers, 4); // 16px from right
+    bottom: 0;
+    height: 3px;
+    background-color: transparent; 
+    border-radius: $radius-full; // Rounded ends
+    z-index: 1; // Ensure it sits on top of the border
+    transition: background-color 0.2s ease; // Smooth transition
+    margin-bottom: -2.75px;
+  }
+
+  // Flush variant (no left/right gap for indicator)
+  @at-root .nav-tabs.nav-tabs.flush .nav-link::before {
+    left: 0;
+    right: 0;
+  }
+
+  &.active::before {
+    background-color: $nav-link-selection-indicator; // #1B8354 green
+  }
+
+  // Hover & Pressed state for non-active, non-disabled tabs
+  &:hover:not(.active):not(.disabled)::before,
+  &.pseudo-hover:not(.active):not(.disabled)::before,
+  &:active:not(.active):not(.disabled)::before,
+  &.pseudo-active:not(.active):not(.disabled)::before {
+    background-color: $nav-link-selection-indicator-default;
+  }
+
+  // If disabled AND active, show gray indicator
+  &.disabled.active::before {
+    background-color: $nav-link-disabled-color; // Gray indicator for disabled selected tabs
+  }
+}
+
+// ============================================
+// HORIZONTAL TABS - SIZES
+// ============================================
+// Bumped specificity to override _nav.scss
+.nav-tabs.nav-tabs:not(.flex-column) {
+
+  // Sizes
+  &.nav-lg {
+    @include nav-size($tab-height-lg, map-get($spacers, 4), map-get($spacers, 4), $font-size-sm); // 16px padding, 14px font
+  }
+
+  &.nav-md {
+    @include nav-size($tab-height-md, map-get($spacers, 3), map-get($spacers, 4), $font-size-sm); // 12px padding, 14px font
+  }
+
+  &.nav-sm {
+    @include nav-size($tab-height-sm, map-get($spacers, 2), map-get($spacers, 3), $font-size-sm); // 8px padding, 12px padding, 14px font
+  }
+}
+
+// Vertical Tabs Customization
+// Based on samples in: c:\Users\amro_\source\repos\dga-ui\samples\vertical tabs
+// Applies ONLY to vertical tabs (.nav.flex-column.nav-tabs), not horizontal tabs
+.nav.flex-column.nav-tabs {
+  border-bottom: 0;
+  &::before {
+    display: none; // Hide the rounded horizontal border
+  }
+  border-right: 0;
+  gap: 0;
+
+  .nav-link {
+    width: 100%;
+    justify-content: flex-start;
+    border: none; // Remove all default button/link borders
+    border-bottom: none;
+    border-radius: $radius-sm;
+    margin-bottom: map-get($spacers, 1); // 4px
+    font-weight: $font-weight-base; // 400 (default from samples)
+    color: $nav-link-color; // #384250 default
+    position: relative; // For ::before positioning
+    display: flex;
+    align-items: center; // Vertically center content
+    gap: map-get($spacers, 2); // 8px gap between icon and text
+
+    // Enable indicator rendering but keep transparent by default
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: map-get($spacers, 2); // 8px from top
+      bottom: map-get($spacers, 2); // 8px from bottom
+      width: 3px;
+      background-color: transparent; 
+      border-radius: $radius-full; // rounded ends like in samples
+      transition: background-color 0.2s ease;
+    }
+
+    // Ensure icon is vertically centered
+    i,
+    img,
+    svg {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    // Remove default button outline for buttons used as nav-links
+    &:focus,
+    &:focus-visible {
+      outline: none; // Remove browser default outline
+      border: none;
+    }
+
+    // Hover State for non-active
+    &:hover:not(.disabled):not(.active),
+    &.pseudo-hover:not(.active) {
+      background-color: $nav-link-hover-bg; // #f3f4f6
+      color: $nav-link-color; // No color change on hover
+
+      &::before {
+        background-color: $nav-link-selection-indicator-default;
+      }
+    }
+
+    // Pressed State
+    &:active:not(.disabled):not(.active),
+    &.pseudo-active:not(.active) {
+      background-color: $nav-link-pressed-bg; // #e5e7eb 
+      color: $black;
+
+      &::before {
+        background-color: $nav-link-selection-indicator-default;
+      }
+    }
+
+    // Selected/Active State
+    &.active {
+      background-color: transparent;
+      color: $nav-link-active-color; // #161616
+      font-weight: $font-weight-semibold; // 600
+      position: relative;
+
+      &::before {
+        background-color: $nav-link-selection-indicator; // #1B8354 green
+      }
+
+      // When selected tab is hovered
+      &:hover:not(.disabled),
+      &.pseudo-hover {
+        background-color: transparent; // No background change on hover for selected
+      }
+
+      // When selected tab is pressed
+      &:active:not(.disabled),
+      &.pseudo-active {
+        background-color: transparent; // No background change on press for selected
+      }
+    }
+
+    // Disabled State
+    &.disabled,
+    &:disabled {
+      color: $nav-link-disabled-color; // #9da4ae
+      background-color: transparent !important; // Override any hover/pressed backgrounds
+      pointer-events: none;
+      cursor: not-allowed;
+
+      // If disabled AND active/selected, show gray indicator instead of green
+      &.active::before {
+        background-color: $nav-link-disabled-color; // Gray indicator for disabled selected tabs
+      }
+
+      // If disabled but NOT selected, hide indicator (transparent)
+      &:not(.active)::before {
+        background-color: transparent;
+      }
+    }
+  }
+
+  // Size Variants - matches samples for large/medium/small
+  &.nav-lg {
+    .nav-link {
+      min-height: $tab-v-height-lg; // 40px
+      padding: map-get($spacers, 2) map-get($spacers, 2); // 8px vertical, 8px horizontal (reduced gap from indicator)
+      font-size: $font-size-base; // 16px
+
+      &.active {
+        font-weight: $font-weight-semibold; // 600
+      }
+    }
+  }
+
+  &.nav-md {
+    .nav-link {
+      min-height: $tab-v-height-md; // 32px
+      padding: map-get($spacing-tokens, 'spacing-sm') map-get($spacers, 2); // 6px vertical, 8px horizontal (reduced gap from indicator)
+      font-size: $font-size-sm; // 14px
+
+      &.active {
+        font-weight: $font-weight-semibold; // 600 for selected medium tabs
+      }
+    }
+  }
+
+  &.nav-sm {
+    .nav-link {
+      min-height: $tab-v-height-sm; // 24px
+      padding: map-get($spacing-tokens, 'spacing-xxs') map-get($spacing-tokens, 'spacing-sm'); // 2px vertical, 6px horizontal
+      font-size: $font-size-sm; // 14px
+
+      &.active {
+        font-weight: $font-weight-medium; // 500 for small tabs (from sample analysis)
+      }
+    }
+  }
+
+  // RTL Support
+  [dir="rtl"] & {
+    .nav-link {
+      &.active {
+        &::before {
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+  }
+}

@@ -60,5 +60,9 @@ export const routes: Routes = [
   {
     path: 'breadcrumb',
     loadComponent: () => import('./views/breadcrumb/breadcrumb').then(m => m.Breadcrumb)
+  },
+  {
+    path: 'tabs',
+    loadComponent: () => import('./views/tabs/tabs.component').then(m => m.TabsComponent)
   }
 ];

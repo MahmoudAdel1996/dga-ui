@@ -1,0 +1,86 @@
+// Navs & Tabs Customizations
+
+.navbar {
+  .nav-tabs {
+    --#{$prefix}nav-tabs-link-active-color: #{$primary-700};
+    --#{$prefix}nav-tabs-link-active-bg: #{$white};
+    --#{$prefix}nav-tabs-link-active-border-color: #{$gray-200} #{$gray-200} #{$white};
+    border-bottom: 1px solid #{$gray-200};
+
+    .nav-link {
+      font-weight: 500;
+      color: #{$gray-600};
+      border: 1px solid transparent;
+      border-top-left-radius: $radius-sm;
+      border-top-right-radius: $radius-sm;
+      margin-bottom: -1px;
+      padding: 0.75rem 1rem;
+
+      &:hover {
+        color: #{$primary-600};
+        background-color: #{$gray-50};
+        border-color: #{$gray-200} #{$gray-200} #{$gray-200};
+      }
+
+      &.active {
+        color: #{$primary-700};
+        background-color: #{$white};
+        border-color: #{$gray-200} #{$gray-200} transparent;
+      }
+
+      &.disabled {
+        color: #{$gray-400};
+      }
+    }
+  }
+
+  .nav-pills {
+    .nav-link {
+      font-weight: 500;
+      color: #{$gray-600};
+      border-radius: $radius-md;
+      padding: 0.5rem 1rem;
+
+      &.active {
+        background-color: #{$primary-600};
+        color: #{$white};
+      }
+
+      &:hover:not(.active) {
+        background-color: #{$gray-100};
+        color: #{$gray-900};
+      }
+    }
+  }
+
+  // Vertical tabs customization
+  .flex-column.nav-tabs {
+    border-bottom: 0;
+    border-inline-end: 1px solid #{$gray-200};
+
+    .nav-link {
+      border-radius: $radius-sm 0 0 $radius-sm;
+      margin-bottom: 0;
+      margin-inline-end: -1px;
+
+      &.active {
+        border-color: #{$gray-200} transparent #{$gray-200} #{$gray-200};
+      }
+    }
+
+    [dir="rtl"] & {
+      border-inline-end: 0;
+      border-inline-start: 1px solid #{$gray-200};
+
+      .nav-link {
+        border-radius: 0 $radius-sm $radius-sm 0;
+        margin-inline-end: 0;
+        margin-inline-start: -1px;
+
+        &.active {
+          border-color: #{$gray-200} #{$gray-200} #{$gray-200} transparent;
+        }
+      }
+    }
+  }
+}

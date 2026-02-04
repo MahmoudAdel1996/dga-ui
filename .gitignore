@@ -123,7 +123,7 @@ dist
 .tern-port
 
 # Stores VSCode versions used for testing VSCode extensions
-.vscode-test
+.vscode-test/
 
 # yarn v3
 .pnp.*

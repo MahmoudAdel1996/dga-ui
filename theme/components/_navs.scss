@@ -1,0 +1,35 @@
+// Bootstrap 5.3 - Navs & Tabs Variables
+
+// ============================================
+// NAVS
+// ============================================
+
+$nav-link-padding-y:                .5rem;
+$nav-link-padding-x:                1rem;
+$nav-link-font-size:                null;
+$nav-link-font-weight:              null;
+$nav-link-color:                    var(--#{$prefix}primary);
+$nav-link-hover-color:              var(--#{$prefix}primary-emphasis);
+$nav-link-transition:               color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+$nav-link-disabled-color:           var(--#{$prefix}secondary-color);
+$nav-link-focus-box-shadow:         $focus-ring-box-shadow;
+
+// ============================================
+// TABS
+// ============================================
+
+$nav-tabs-border-width:             1px;
+$nav-tabs-border-color:             var(--#{$prefix}border-color);
+$nav-tabs-border-radius:            $radius-sm;
+$nav-tabs-link-hover-border-color:  var(--#{$prefix}secondary-bg) var(--#{$prefix}secondary-bg) $nav-tabs-border-color;
+$nav-tabs-link-active-color:        var(--#{$prefix}emphasis-color);
+$nav-tabs-link-active-bg:           var(--#{$prefix}body-bg);
+$nav-tabs-link-active-border-color: var(--#{$prefix}border-color) var(--#{$prefix}border-color) $nav-tabs-link-active-bg;
+
+// ============================================
+// PILLS
+// ============================================
+
+$nav-pills-border-radius:           $radius-sm;
+$nav-pills-link-active-color:       $component-active-color;
+$nav-pills-link-active-bg:          $component-active-bg;
