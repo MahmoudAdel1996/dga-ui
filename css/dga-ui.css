@@ -28268,13 +28268,13 @@ html {
   color: #9DA4AE;
 }
 
-.nav-tabs {
+.navbar .nav-tabs {
   --dga-nav-tabs-link-active-color: #166A45;
   --dga-nav-tabs-link-active-bg: #FFFFFF;
   --dga-nav-tabs-link-active-border-color: #E5E7EB #E5E7EB #FFFFFF;
   border-bottom: 1px solid #E5E7EB;
 }
-.nav-tabs .nav-link {
+.navbar .nav-tabs .nav-link {
   font-weight: 500;
   color: #4D5761;
   border: 1px solid transparent;
@@ -28283,58 +28283,278 @@ html {
   margin-bottom: -1px;
   padding: 0.75rem 1rem;
 }
-.nav-tabs .nav-link:hover {
+.navbar .nav-tabs .nav-link:hover {
   color: #1B8354;
   background-color: #F9FAFB;
   border-color: #E5E7EB #E5E7EB #E5E7EB;
 }
-.nav-tabs .nav-link.active {
+.navbar .nav-tabs .nav-link.active {
   color: #166A45;
   background-color: #FFFFFF;
   border-color: #E5E7EB #E5E7EB transparent;
 }
-.nav-tabs .nav-link.disabled {
+.navbar .nav-tabs .nav-link.disabled {
   color: #9DA4AE;
 }
-
-.nav-pills .nav-link {
+.navbar .nav-pills .nav-link {
   font-weight: 500;
   color: #4D5761;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
 }
-.nav-pills .nav-link.active {
+.navbar .nav-pills .nav-link.active {
   background-color: #1B8354;
   color: #FFFFFF;
 }
-.nav-pills .nav-link:hover:not(.active) {
+.navbar .nav-pills .nav-link:hover:not(.active) {
   background-color: #F3F4F6;
   color: #111927;
 }
-
-.flex-column.nav-tabs {
+.navbar .flex-column.nav-tabs {
   border-bottom: 0;
   border-inline-end: 1px solid #E5E7EB;
 }
-.flex-column.nav-tabs .nav-link {
+.navbar .flex-column.nav-tabs .nav-link {
   border-radius: 0.25rem 0 0 0.25rem;
   margin-bottom: 0;
   margin-inline-end: -1px;
 }
-.flex-column.nav-tabs .nav-link.active {
+.navbar .flex-column.nav-tabs .nav-link.active {
   border-color: #E5E7EB transparent #E5E7EB #E5E7EB;
 }
-[dir=rtl] .flex-column.nav-tabs {
+[dir=rtl] .navbar .flex-column.nav-tabs {
   border-inline-end: 0;
   border-inline-start: 1px solid #E5E7EB;
 }
-[dir=rtl] .flex-column.nav-tabs .nav-link {
+[dir=rtl] .navbar .flex-column.nav-tabs .nav-link {
   border-radius: 0 0.25rem 0.25rem 0;
   margin-inline-end: 0;
   margin-inline-start: -1px;
 }
-[dir=rtl] .flex-column.nav-tabs .nav-link.active {
+[dir=rtl] .navbar .flex-column.nav-tabs .nav-link.active {
   border-color: #E5E7EB #E5E7EB #E5E7EB transparent;
+}
+
+.nav-tabs {
+  --dga-nav-tabs-border-width: 0;
+  --dga-nav-tabs-border-radius: 0;
+  --dga-nav-tabs-link-active-bg: transparent;
+  position: relative;
+  border-bottom: 3px solid transparent;
+  gap: 0.5rem;
+}
+.nav-tabs::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 3px;
+  background-color: #D2D6DB;
+  border-radius: 9999px;
+  pointer-events: none;
+}
+.nav-tabs .nav-link {
+  font-family: "IBM Plex Sans Arabic";
+  font-weight: 400;
+  color: #384250;
+  border: none;
+  border-radius: 0.25rem;
+  position: relative;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.nav-tabs .nav-link:hover:not(.disabled):not(.active), .nav-tabs .nav-link.pseudo-hover:not(.active) {
+  background-color: #F3F4F6;
+  color: #384250;
+}
+.nav-tabs .nav-link:active:not(.disabled):not(.active), .nav-tabs .nav-link.pseudo-active:not(.active) {
+  background-color: #E5E7EB;
+}
+.nav-tabs .nav-link.active {
+  color: #161616;
+  font-weight: 700;
+  background-color: transparent;
+}
+.nav-tabs .nav-link.disabled {
+  color: #9DA4AE;
+  background-color: transparent;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.nav-tabs.nav-tabs:not(.flex-column) .nav-link::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0;
+  height: 3px;
+  background-color: transparent;
+  border-radius: 9999px;
+  z-index: 1;
+  transition: background-color 0.2s ease;
+  margin-bottom: -2.75px;
+}
+.nav-tabs.nav-tabs.flush .nav-link::before {
+  left: 0;
+  right: 0;
+}
+
+.nav-tabs.nav-tabs:not(.flex-column) .nav-link.active::before {
+  background-color: #1B8354;
+}
+.nav-tabs.nav-tabs:not(.flex-column) .nav-link:hover:not(.active):not(.disabled)::before, .nav-tabs.nav-tabs:not(.flex-column) .nav-link.pseudo-hover:not(.active):not(.disabled)::before, .nav-tabs.nav-tabs:not(.flex-column) .nav-link:active:not(.active):not(.disabled)::before, .nav-tabs.nav-tabs:not(.flex-column) .nav-link.pseudo-active:not(.active):not(.disabled)::before {
+  background-color: #161616;
+}
+.nav-tabs.nav-tabs:not(.flex-column) .nav-link.disabled.active::before {
+  background-color: #9DA4AE;
+}
+
+.nav-tabs.nav-tabs:not(.flex-column).nav-lg .nav-link {
+  height: 3.25rem !important;
+  padding: 1rem 1rem !important;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+.nav-tabs.nav-tabs:not(.flex-column).nav-md .nav-link {
+  height: 2.75rem !important;
+  padding: 0.75rem 1rem !important;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+.nav-tabs.nav-tabs:not(.flex-column).nav-sm .nav-link {
+  height: 2.25rem !important;
+  padding: 0.5rem 0.75rem !important;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.nav.flex-column.nav-tabs {
+  border-bottom: 0;
+}
+.nav.flex-column.nav-tabs::before {
+  display: none;
+}
+.nav.flex-column.nav-tabs {
+  border-right: 0;
+  gap: 0;
+}
+.nav.flex-column.nav-tabs .nav-link {
+  width: 100%;
+  justify-content: flex-start;
+  border: none;
+  border-bottom: none;
+  border-radius: 0.25rem;
+  margin-bottom: 0.25rem;
+  font-weight: 400;
+  color: #384250;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.nav.flex-column.nav-tabs .nav-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 3px;
+  background-color: transparent;
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+.nav.flex-column.nav-tabs .nav-link i,
+.nav.flex-column.nav-tabs .nav-link img,
+.nav.flex-column.nav-tabs .nav-link svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav.flex-column.nav-tabs .nav-link:focus, .nav.flex-column.nav-tabs .nav-link:focus-visible {
+  outline: none;
+  border: none;
+}
+.nav.flex-column.nav-tabs .nav-link:hover:not(.disabled):not(.active), .nav.flex-column.nav-tabs .nav-link.pseudo-hover:not(.active) {
+  background-color: #F3F4F6;
+  color: #384250;
+}
+.nav.flex-column.nav-tabs .nav-link:hover:not(.disabled):not(.active)::before, .nav.flex-column.nav-tabs .nav-link.pseudo-hover:not(.active)::before {
+  background-color: #161616;
+}
+.nav.flex-column.nav-tabs .nav-link:active:not(.disabled):not(.active), .nav.flex-column.nav-tabs .nav-link.pseudo-active:not(.active) {
+  background-color: #E5E7EB;
+  color: #161616;
+}
+.nav.flex-column.nav-tabs .nav-link:active:not(.disabled):not(.active)::before, .nav.flex-column.nav-tabs .nav-link.pseudo-active:not(.active)::before {
+  background-color: #161616;
+}
+.nav.flex-column.nav-tabs .nav-link.active {
+  background-color: transparent;
+  color: #161616;
+  font-weight: 600;
+  position: relative;
+}
+.nav.flex-column.nav-tabs .nav-link.active::before {
+  background-color: #1B8354;
+}
+.nav.flex-column.nav-tabs .nav-link.active:hover:not(.disabled), .nav.flex-column.nav-tabs .nav-link.active.pseudo-hover {
+  background-color: transparent;
+}
+.nav.flex-column.nav-tabs .nav-link.active:active:not(.disabled), .nav.flex-column.nav-tabs .nav-link.active.pseudo-active {
+  background-color: transparent;
+}
+.nav.flex-column.nav-tabs .nav-link.disabled, .nav.flex-column.nav-tabs .nav-link:disabled {
+  color: #9DA4AE;
+  background-color: transparent !important;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.nav.flex-column.nav-tabs .nav-link.disabled.active::before, .nav.flex-column.nav-tabs .nav-link:disabled.active::before {
+  background-color: #9DA4AE;
+}
+.nav.flex-column.nav-tabs .nav-link.disabled:not(.active)::before, .nav.flex-column.nav-tabs .nav-link:disabled:not(.active)::before {
+  background-color: transparent;
+}
+.nav.flex-column.nav-tabs.nav-lg .nav-link {
+  min-height: 2.5rem;
+  padding: 0.5rem 0.5rem;
+  font-size: 1rem;
+}
+.nav.flex-column.nav-tabs.nav-lg .nav-link.active {
+  font-weight: 600;
+}
+.nav.flex-column.nav-tabs.nav-md .nav-link {
+  min-height: 2rem;
+  padding: 0.375rem 0.5rem;
+  font-size: 0.875rem;
+}
+.nav.flex-column.nav-tabs.nav-md .nav-link.active {
+  font-weight: 600;
+}
+.nav.flex-column.nav-tabs.nav-sm .nav-link {
+  min-height: 1.5rem;
+  padding: 0.125rem 0.375rem;
+  font-size: 0.875rem;
+}
+.nav.flex-column.nav-tabs.nav-sm .nav-link.active {
+  font-weight: 500;
+}
+[dir=rtl] .nav.flex-column.nav-tabs .nav-link.active::before {
+  left: auto;
+  right: 0;
 }
 
 .progress-indicator {
