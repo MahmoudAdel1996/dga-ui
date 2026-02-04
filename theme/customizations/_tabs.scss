@@ -29,6 +29,9 @@ $tab-v-height-lg: map-get($spacers, 7); // 40px
 $tab-v-height-md: map-get($spacers, 6); // 32px
 $tab-v-height-sm: map-get($spacers, 5); // 24px
 
+.nav {
+  padding: 0;
+}
 // Sizes Mixin
 @mixin nav-size($height, $padding-y, $padding-x, $font-size) {
   .nav-link {
@@ -118,8 +121,8 @@ $tab-v-height-sm: map-get($spacers, 5); // 24px
   &::before {
     content: '';
     position: absolute;
-    left: map-get($spacers, 4); // 16px from left
-    right: map-get($spacers, 4); // 16px from right
+    inset-inline-start: map-get($spacers, 4); // 16px from start
+    inset-inline-end: map-get($spacers, 4); // 16px from end
     bottom: 0;
     height: 3px;
     background-color: transparent; 
@@ -131,8 +134,8 @@ $tab-v-height-sm: map-get($spacers, 5); // 24px
 
   // Flush variant (no left/right gap for indicator)
   @at-root .nav-tabs.nav-tabs.flush .nav-link::before {
-    left: 0;
-    right: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
   }
 
   &.active::before {
@@ -202,9 +205,9 @@ $tab-v-height-sm: map-get($spacers, 5); // 24px
     &::before {
       content: '';
       position: absolute;
-      left: 0;
-      top: map-get($spacers, 2); // 8px from top
-      bottom: map-get($spacers, 2); // 8px from bottom
+      inset-inline-start: 0; // Logical property for LTR left / RTL right
+      top: map-get($spacers, 1); // 4px from top
+      bottom: map-get($spacers, 1); // 4px from bottom
       width: 3px;
       background-color: transparent; 
       border-radius: $radius-full; // rounded ends like in samples
@@ -326,18 +329,6 @@ $tab-v-height-sm: map-get($spacers, 5); // 24px
 
       &.active {
         font-weight: $font-weight-medium; // 500 for small tabs (from sample analysis)
-      }
-    }
-  }
-
-  // RTL Support
-  [dir="rtl"] & {
-    .nav-link {
-      &.active {
-        &::before {
-          left: auto;
-          right: 0;
-        }
       }
     }
   }
