@@ -28335,6 +28335,10 @@ html {
   border-color: #E5E7EB #E5E7EB #E5E7EB transparent;
 }
 
+.nav {
+  padding: 0;
+}
+
 .nav-tabs {
   --dga-nav-tabs-border-width: 0;
   --dga-nav-tabs-border-radius: 0;
@@ -28388,8 +28392,8 @@ html {
 .nav-tabs.nav-tabs:not(.flex-column) .nav-link::before {
   content: "";
   position: absolute;
-  left: 1rem;
-  right: 1rem;
+  inset-inline-start: 1rem;
+  inset-inline-end: 1rem;
   bottom: 0;
   height: 3px;
   background-color: transparent;
@@ -28399,8 +28403,8 @@ html {
   margin-bottom: -2.75px;
 }
 .nav-tabs.nav-tabs.flush .nav-link::before {
-  left: 0;
-  right: 0;
+  inset-inline-start: 0;
+  inset-inline-end: 0;
 }
 
 .nav-tabs.nav-tabs:not(.flex-column) .nav-link.active::before {
@@ -28468,9 +28472,9 @@ html {
 .nav.flex-column.nav-tabs .nav-link::before {
   content: "";
   position: absolute;
-  left: 0;
-  top: 0.5rem;
-  bottom: 0.5rem;
+  inset-inline-start: 0;
+  top: 0.25rem;
+  bottom: 0.25rem;
   width: 3px;
   background-color: transparent;
   border-radius: 9999px;
@@ -28551,10 +28555,6 @@ html {
 }
 .nav.flex-column.nav-tabs.nav-sm .nav-link.active {
   font-weight: 500;
-}
-[dir=rtl] .nav.flex-column.nav-tabs .nav-link.active::before {
-  left: auto;
-  right: 0;
 }
 
 .progress-indicator {
