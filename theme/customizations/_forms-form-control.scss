@@ -138,6 +138,8 @@
   border-radius: $radius-sm;
   transition: background-size 0.3s ease-in-out, border-color 0.3s ease-in-out;
 
+  overflow: hidden; // Ensures children don't bleed out of rounded corners in RTL/LTR mixed contexts
+
   // Create an animated underline effect using pseudo-element
   position: relative;
 
@@ -159,6 +161,7 @@
     border: none;
     background: $neutral-100;
     color: $neutral-500;
+    border-radius: 0; // Fix for RTL/LTR border radius issues
 
     &.subtle {
       background-color: var(--#{ $prefix}body-bg);
@@ -169,12 +172,15 @@
   .btn {
     border: none;
     box-shadow: none;
+    border-radius: 0; // Fix for RTL/LTR border radius issues
   }
 
 
-  .form-control {
+  .form-control,
+  .form-select {
     border: none;
     box-shadow: none;
+    border-radius: 0; // Fix for RTL/LTR border radius issues
     background-color: var(--#{$prefix}body-bg);
     background-image: linear-gradient(to right, transparent 0%, transparent 100%);
   }
