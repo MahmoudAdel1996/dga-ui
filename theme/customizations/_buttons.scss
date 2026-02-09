@@ -397,10 +397,37 @@ $on-primary-button-variants: (
 // Dropdown
 // ============================================
 
-.dropdown-toggle{
+.dropdown-toggle {
   display: inline-flex;
   align-items: center;
-  gap: .25rem;
+  justify-content: space-between; 
+  gap: .5rem; 
+  width: 100%; 
+  
+  // Reverted input-like color/border styles to fix variants (Primary, etc.)
+  // min-height: 2rem;
+  // padding: .375rem .75rem;
+
+  // Keep arrow sizing/positioning
+  &::after {
+    border: none;
+    content: "";
+    width: 1.5em; 
+    height: 1.5em;
+    margin-left: auto; 
+    // User provided SVG
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='%23000' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'><path d='M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9' /></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: transform 0.2s ease-in-out;
+    transform: rotate(0deg); 
+  }
+
+  &:has(+ .dropdown-menu.show)::after,
+  .show > &::after {
+    transform: rotate(180deg);
+  }
 }
 
 .dropdown-menu{
@@ -408,5 +435,74 @@ $on-primary-button-variants: (
 
   [dir="rtl"] & {
     inset: 0 0 auto auto !important;
+    text-align: right;
   }
+
+  // Active state with Checkmark
+  // Active state with Checkmark
+  .dropdown-item {
+    position: relative;
+    padding-right: 2.5rem; // Space for checkmark (LTR)
+    transition: background-color 0.2s ease;
+    border-radius: 4px; // Slight rounding for better focus ring appearance
+
+    &:hover {
+      background-color: $neutral-50; // Lightest gray for hover (matches img 1)
+      color: $black;
+    }
+
+    &:focus {
+      background-color: $neutral-50;
+      color: $black;
+      outline: 2px solid $black; // Black rectangle for focus
+      outline-offset: -2px;
+      z-index: 1; // Ensure outline is visible above other elements
+    }
+    
+    // SELECTED STATE (The option that is currently chosen)
+    &.active {
+      color: $black;
+      background-color: transparent; // No bg color
+      font-weight: 600;
+
+      &::after {
+        content: "✔"; // Use text character as requested
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
+        width: auto;
+        height: auto;
+        background: none;
+        font-size: 1.2em;
+        line-height: 1;
+      }
+    }
+
+    // PRESSED STATE (Mouse down / Clicking) - OVERRIDES Selected state
+    &:active {
+      background-color: $neutral-200 !important; // Darker gray
+      color: $black;
+      outline: 0 !important; // Hide focus rectangle
+      border: none !important; // Ensure no border interference
+      font-weight: normal; 
+      
+      &::after {
+        display: none !important; // Hide checkmark
+      }
+    }
+    
+    // RTL Support for Checkmark
+    [dir="rtl"] & {
+      padding-right: 1rem; // Reset LTR padding
+      padding-left: 2.5rem; // Space for checkmark (RTL)
+      text-align: right;
+
+      &.active::after {
+        right: auto;
+        left: 1rem;
+      }
+    }
+  }
+
 }

@@ -26861,7 +26861,25 @@ html {
 .dropdown-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+}
+.dropdown-toggle::after {
+  border: none;
+  content: "";
+  width: 1.5em;
+  height: 1.5em;
+  margin-left: auto;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='%23000' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'><path d='M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9' /></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: transform 0.2s ease-in-out;
+  transform: rotate(0deg);
+}
+.dropdown-toggle:has(+ .dropdown-menu.show)::after, .show > .dropdown-toggle::after {
+  transform: rotate(180deg);
 }
 
 .dropdown-menu {
@@ -26869,6 +26887,60 @@ html {
 }
 [dir=rtl] .dropdown-menu {
   inset: 0 0 auto auto !important;
+  text-align: right;
+}
+.dropdown-menu .dropdown-item {
+  position: relative;
+  padding-right: 2.5rem;
+  transition: background-color 0.2s ease;
+  border-radius: 4px;
+}
+.dropdown-menu .dropdown-item:hover {
+  background-color: #F9FAFB;
+  color: #161616;
+}
+.dropdown-menu .dropdown-item:focus {
+  background-color: #F9FAFB;
+  color: #161616;
+  outline: 2px solid #161616;
+  outline-offset: -2px;
+  z-index: 1;
+}
+.dropdown-menu .dropdown-item.active {
+  color: #161616;
+  background-color: transparent;
+  font-weight: 600;
+}
+.dropdown-menu .dropdown-item.active::after {
+  content: "✔";
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  width: auto;
+  height: auto;
+  background: none;
+  font-size: 1.2em;
+  line-height: 1;
+}
+.dropdown-menu .dropdown-item:active {
+  background-color: #E5E7EB !important;
+  color: #161616;
+  outline: 0 !important;
+  border: none !important;
+  font-weight: normal;
+}
+.dropdown-menu .dropdown-item:active::after {
+  display: none !important;
+}
+[dir=rtl] .dropdown-menu .dropdown-item {
+  padding-right: 1rem;
+  padding-left: 2.5rem;
+  text-align: right;
+}
+[dir=rtl] .dropdown-menu .dropdown-item.active::after {
+  right: auto;
+  left: 1rem;
 }
 
 .card {
@@ -27598,6 +27670,18 @@ html {
 
 .form-select {
   min-height: 2rem;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='%23343a40' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'><path d='M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9' /></svg>");
+  background-size: 24px 24px;
+}
+[dir=rtl] .form-select {
+  background-position: left 0.5rem center;
+  padding-left: 1.75rem;
+  padding-right: 0.75rem;
+}
+.form-select:focus {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='%23343a40' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round' transform='rotate(180)'><path d='M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9' /></svg>");
+}
+.form-select {
   position: relative;
   border-color: #9DA4AE;
   margin-bottom: 0;
@@ -27606,18 +27690,6 @@ html {
   background-color: #FFFFFF;
   color: #161616;
   padding: 0.5rem;
-  position: relative;
-}
-.form-select option:checked {
-  background-color: #F3F4F6 !important;
-  color: #161616 !important;
-  position: relative;
-}
-.form-select option:checked::after {
-  content: "✔" !important;
-  position: absolute !important;
-  right: 1rem !important;
-  color: #161616 !important;
 }
 .form-select:has(option:disabled:checked) {
   color: #6C737F;
@@ -27710,6 +27782,77 @@ html {
 }
 .form-select:user-invalid:disabled, .form-select:user-invalid[disabled] {
   border-color: #D2D6DB;
+}
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+.select-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  transform: translateY(-50%) rotate(0deg);
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='%23343a40' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'><path d='M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9' /></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px 24px;
+  transition: transform 0.2s ease-in-out;
+  pointer-events: none;
+}
+.select-wrapper:focus-within::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+[dir=rtl] .select-wrapper::after {
+  right: auto;
+  left: 0.75rem;
+}
+.select-wrapper .form-select {
+  background-image: none !important;
+}
+
+.form-select-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 2rem;
+  padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #161616 !important;
+  background-color: var(--dga-body-bg) !important;
+  border: 1px solid #9DA4AE !important;
+  border-radius: 0.25rem;
+  background-image: linear-gradient(to right, #0D121C 0%, #0D121C 100%) !important;
+  background-size: 0% 2px !important;
+  background-repeat: no-repeat !important;
+  background-position: center bottom !important;
+  transition: background-size 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-select-toggle:hover {
+  border-color: #161616 !important;
+  color: #161616 !important;
+  background-color: var(--dga-body-bg) !important;
+}
+.form-select-toggle:active, .form-select-toggle:focus, .form-select-toggle.show {
+  border-color: #9DA4AE !important;
+  background-color: #F3F4F6 !important;
+  color: #161616 !important;
+  background-size: 100% 2px !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+.form-select-toggle:focus-visible {
+  border-color: #384250 !important;
+  outline: none !important;
+  box-shadow: 0px 4px 8px -2px rgba(17, 25, 39, 0.1), 0px 2px 4px -2px rgba(17, 25, 39, 0.06) !important;
 }
 
 .form-check {
