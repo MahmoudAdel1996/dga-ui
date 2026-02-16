@@ -211,8 +211,20 @@ export class FormsComponent {
   </div>
   <div class="col-md-4">
     <label for="inputInvalid" class="form-label">Invalid</label>
-    <input class="form-control" type="text" id="inputInvalid" value="123" required pattern="^[0-9]+$">
-    <div class="form-text text-danger">This field contains invalid data</div>
+    <input class="form-control is-invalid" type="text" id="inputInvalid" value="Invalid data">
+    <div class="invalid-feedback">This field contains invalid data</div>
+  </div>
+  <div class="col-md-4">
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <div class="input-group">
+        <span class="input-group-text">@</span>
+        <input type="text" class="form-control is-invalid" id="username" placeholder="Username" required>
+      </div>
+      <div class="invalid-feedback d-block">
+        Please choose a valid username.
+      </div>
+    </div>
   </div>
 </div>`;
 

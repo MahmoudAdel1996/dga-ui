@@ -78,7 +78,8 @@
 
   }
 
-  &:user-invalid {
+  &:user-invalid,
+  &.is-invalid {
     border-color: $error-700;
     background-image: linear-gradient(to right, $error-700 0%, $error-700 100%);
 
@@ -104,6 +105,16 @@
     &:disabled,
     &[disabled] {
       border-color: $neutral-300;
+    }
+  }
+
+  &:user-valid,
+  &.is-valid {
+    border-color: $success-700;
+    background-image: linear-gradient(to right, $success-700 0%, $success-700 100%);
+
+    &:hover {
+      border-color: $success-700;
     }
   }
 }
@@ -249,7 +260,9 @@
     }
   }
 
-  &:has(.form-control:user-invalid) {
+  &:has(.form-control:user-invalid),
+  &:has(.form-control.is-invalid),
+  &.is-invalid {
     border-color: $error-700;
 
     &::after {
@@ -284,6 +297,16 @@
     &:has(.form-control:disabled),
     &:has(.form-control[disabled]) {
       border-color: $neutral-300;
+    }
+  }
+
+  &:has(.form-control:user-valid),
+  &:has(.form-control.is-valid),
+  &.is-valid {
+    border-color: $success-700;
+
+    &::after {
+      background: linear-gradient(to right, $success-700 0%, $success-700 100%);
     }
   }
 }
