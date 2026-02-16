@@ -27507,25 +27507,32 @@ html {
 .form-control:disabled::placeholder, .form-control[disabled]::placeholder {
   color: #9DA4AE;
 }
-.form-control:user-invalid {
+.form-control:user-invalid, .form-control.is-invalid {
   border-color: #B42318;
   background-image: linear-gradient(to right, #B42318 0%, #B42318 100%);
 }
-.form-control:user-invalid:hover {
+.form-control:user-invalid:hover, .form-control.is-invalid:hover {
   border-color: #B42318;
 }
-.form-control:user-invalid:active {
+.form-control:user-invalid:active, .form-control.is-invalid:active {
   border-color: #9DA4AE;
   background-size: 100% 2px;
 }
-.form-control:user-invalid:read-only, .form-control:user-invalid[readonly] {
+.form-control:user-invalid:read-only, .form-control:user-invalid[readonly], .form-control.is-invalid:read-only, .form-control.is-invalid[readonly] {
   border-color: #D2D6DB;
 }
-.form-control:user-invalid:focus-visible, .form-control:user-invalid:focus {
+.form-control:user-invalid:focus-visible, .form-control:user-invalid:focus, .form-control.is-invalid:focus-visible, .form-control.is-invalid:focus {
   border-color: #B42318;
 }
-.form-control:user-invalid:disabled, .form-control:user-invalid[disabled] {
+.form-control:user-invalid:disabled, .form-control:user-invalid[disabled], .form-control.is-invalid:disabled, .form-control.is-invalid[disabled] {
   border-color: #D2D6DB;
+}
+.form-control:user-valid, .form-control.is-valid {
+  border-color: #067647;
+  background-image: linear-gradient(to right, #067647 0%, #067647 100%);
+}
+.form-control:user-valid:hover, .form-control.is-valid:hover {
+  border-color: #067647;
 }
 
 .form-label {
@@ -27640,32 +27647,38 @@ html {
 .input-group:has(.form-control:disabled) .input-group-text.subtle, .input-group:has(.form-control[disabled]) .input-group-text.subtle {
   background-color: var(--dga-body-bg);
 }
-.input-group:has(.form-control:user-invalid) {
+.input-group:has(.form-control:user-invalid), .input-group:has(.form-control.is-invalid), .input-group.is-invalid {
   border-color: #B42318;
 }
-.input-group:has(.form-control:user-invalid)::after {
+.input-group:has(.form-control:user-invalid)::after, .input-group:has(.form-control.is-invalid)::after, .input-group.is-invalid::after {
   background: linear-gradient(to right, #B42318 0%, #B42318 100%);
 }
-.input-group:has(.form-control:user-invalid):hover {
+.input-group:has(.form-control:user-invalid):hover, .input-group:has(.form-control.is-invalid):hover, .input-group.is-invalid:hover {
   border-color: #B42318;
 }
-.input-group:has(.form-control:user-invalid):active {
+.input-group:has(.form-control:user-invalid):active, .input-group:has(.form-control.is-invalid):active, .input-group.is-invalid:active {
   border-color: #9DA4AE;
 }
-.input-group:has(.form-control:user-invalid):active::after {
+.input-group:has(.form-control:user-invalid):active::after, .input-group:has(.form-control.is-invalid):active::after, .input-group.is-invalid:active::after {
   transform: translateX(-50%) scaleX(1);
 }
-.input-group:has(.form-control:user-invalid):has(.form-control:read-only), .input-group:has(.form-control:user-invalid):has(.form-control[readonly]) {
+.input-group:has(.form-control:user-invalid):has(.form-control:read-only), .input-group:has(.form-control:user-invalid):has(.form-control[readonly]), .input-group:has(.form-control.is-invalid):has(.form-control:read-only), .input-group:has(.form-control.is-invalid):has(.form-control[readonly]), .input-group.is-invalid:has(.form-control:read-only), .input-group.is-invalid:has(.form-control[readonly]) {
   border-color: #D2D6DB;
 }
-.input-group:has(.form-control:user-invalid):focus-within {
+.input-group:has(.form-control:user-invalid):focus-within, .input-group:has(.form-control.is-invalid):focus-within, .input-group.is-invalid:focus-within {
   border-color: #B42318;
 }
-.input-group:has(.form-control:user-invalid):focus-within::after {
+.input-group:has(.form-control:user-invalid):focus-within::after, .input-group:has(.form-control.is-invalid):focus-within::after, .input-group.is-invalid:focus-within::after {
   transform: translateX(-50%) scaleX(1);
 }
-.input-group:has(.form-control:user-invalid):has(.form-control:disabled), .input-group:has(.form-control:user-invalid):has(.form-control[disabled]) {
+.input-group:has(.form-control:user-invalid):has(.form-control:disabled), .input-group:has(.form-control:user-invalid):has(.form-control[disabled]), .input-group:has(.form-control.is-invalid):has(.form-control:disabled), .input-group:has(.form-control.is-invalid):has(.form-control[disabled]), .input-group.is-invalid:has(.form-control:disabled), .input-group.is-invalid:has(.form-control[disabled]) {
   border-color: #D2D6DB;
+}
+.input-group:has(.form-control:user-valid), .input-group:has(.form-control.is-valid), .input-group.is-valid {
+  border-color: #067647;
+}
+.input-group:has(.form-control:user-valid)::after, .input-group:has(.form-control.is-valid)::after, .input-group.is-valid::after {
+  background: linear-gradient(to right, #067647 0%, #067647 100%);
 }
 
 .form-select {
