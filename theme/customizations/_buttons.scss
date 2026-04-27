@@ -434,7 +434,8 @@ $on-primary-button-variants: (
   text-align: $body-text-align;
 
   [dir="rtl"] & {
-    inset: 0 0 auto auto !important;
+    inset-inline-start: 0 !important;
+    inset-inline-end: auto !important;
     text-align: right;
   }
 
