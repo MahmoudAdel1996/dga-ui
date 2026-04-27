@@ -33,6 +33,18 @@ export class Header {
                         <i class="bi bi-arrow-left-square"></i> Dropdown
                     </a>
                     <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown full-width">
+                    <a class="nav-link dropdown-toggle" href="javascript:void(0);" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-arrow-left-square"></i> Full-Width Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
                         <!-- Footer Link Groups (5 columns) -->
                         <li class="dropdown-item-group">
                             <h6 class="dropdown-header">Group Label</h6>
