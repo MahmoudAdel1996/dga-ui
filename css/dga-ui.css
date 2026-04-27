@@ -28374,10 +28374,10 @@ html {
 .navbar .nav-link.active:disabled::before, .navbar .nav-link.active.disabled::before {
   background-color: #E5E7EB;
 }
-.navbar .dropdown {
+.navbar .dropdown.full-width {
   position: unset;
 }
-.navbar .dropdown-menu {
+.navbar .dropdown.full-width .dropdown-menu {
   height: max-content;
   transition: transform 1s ease-in-out;
   inset: auto 0 auto auto !important;
@@ -28388,17 +28388,17 @@ html {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-.navbar .dropdown-menu .dropdown-header {
+.navbar .dropdown.full-width .dropdown-menu .dropdown-header {
   color: #1B8354;
   font-size: 1.125rem;
   font-weight: 700;
 }
-.navbar .dropdown-menu .dropdown-item-group {
+.navbar .dropdown.full-width .dropdown-menu .dropdown-item-group {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }
-.navbar .dropdown-menu.show {
+.navbar .dropdown.full-width .dropdown-menu.show {
   display: flex;
   align-items: flex-start;
   align-content: flex-start;
