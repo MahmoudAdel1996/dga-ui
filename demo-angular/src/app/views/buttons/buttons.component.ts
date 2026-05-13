@@ -16,6 +16,35 @@ export class ButtonsComponent {
 <button type="button" class="btn btn-subtle">Subtle</button>
 <button type="button" class="btn btn-transparent">Transparent</button>`;
 
+  bootstrapSemanticButtonsCode = `<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>`;
+
+  bootstrapSemanticStatesCode = `<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-primary active">Primary Active</button>
+<button type="button" class="btn btn-primary" disabled>Primary Disabled</button>
+
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-success active">Success Active</button>
+<button type="button" class="btn btn-success" disabled>Success Disabled</button>
+
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-warning active">Warning Active</button>
+<button type="button" class="btn btn-warning" disabled>Warning Disabled</button>
+
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-light active">Light Active</button>
+<button type="button" class="btn btn-light" disabled>Light Disabled</button>
+
+<button type="button" class="btn btn-dark">Dark</button>
+<button type="button" class="btn btn-dark active">Dark Active</button>
+<button type="button" class="btn btn-dark" disabled>Dark Disabled</button>`;
+
   destructiveButtonsCode = `<button type="button" class="btn btn-destructive-primary">Destructive Primary</button>
 <button type="button" class="btn btn-destructive-secondary">Destructive Secondary</button>
 <button type="button" class="btn btn-destructive-subtle">Destructive Subtle</button>

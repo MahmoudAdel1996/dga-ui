@@ -26529,17 +26529,113 @@ html {
 .btn-secondary {
   --dga-btn-color: #161616;
   --dga-btn-bg: #F3F4F6;
-  --dga-btn-border-color: #F3F4F6;
+  --dga-btn-border-color: #D2D6DB;
   --dga-btn-hover-color: #161616;
   --dga-btn-hover-bg: #E5E7EB;
-  --dga-btn-hover-border-color: #E5E7EB;
+  --dga-btn-hover-border-color: #D2D6DB;
   --dga-btn-focus-shadow-rgb: ;
   --dga-btn-active-color: #161616;
   --dga-btn-active-bg: #E5E7EB;
-  --dga-btn-active-border-color: #E5E7EB;
+  --dga-btn-active-border-color: #9DA4AE;
   --dga-btn-disabled-color: #9DA4AE;
   --dga-btn-disabled-bg: #E5E7EB;
+  --dga-btn-disabled-border-color: #D2D6DB;
+}
+
+.btn-success {
+  --dga-btn-color: #FFFFFF;
+  --dga-btn-bg: #079455;
+  --dga-btn-border-color: #079455;
+  --dga-btn-hover-color: #FFFFFF;
+  --dga-btn-hover-bg: #067647;
+  --dga-btn-hover-border-color: #067647;
+  --dga-btn-focus-shadow-rgb: ;
+  --dga-btn-active-color: #FFFFFF;
+  --dga-btn-active-bg: #085D3A;
+  --dga-btn-active-border-color: #085D3A;
+  --dga-btn-disabled-color: #6C737F;
+  --dga-btn-disabled-bg: #DCFAE6;
+  --dga-btn-disabled-border-color: #DCFAE6;
+}
+
+.btn-danger {
+  --dga-btn-color: #FFFFFF;
+  --dga-btn-bg: #D92D20;
+  --dga-btn-border-color: #D92D20;
+  --dga-btn-hover-color: #FFFFFF;
+  --dga-btn-hover-bg: #B42318;
+  --dga-btn-hover-border-color: #B42318;
+  --dga-btn-focus-shadow-rgb: ;
+  --dga-btn-active-color: #FFFFFF;
+  --dga-btn-active-bg: #912018;
+  --dga-btn-active-border-color: #912018;
+  --dga-btn-disabled-color: #6C737F;
+  --dga-btn-disabled-bg: #FEE4E2;
+  --dga-btn-disabled-border-color: #FEE4E2;
+}
+
+.btn-warning {
+  --dga-btn-color: #0D121C;
+  --dga-btn-bg: #FDB022;
+  --dga-btn-border-color: #FDB022;
+  --dga-btn-hover-color: #0D121C;
+  --dga-btn-hover-bg: #F79009;
+  --dga-btn-hover-border-color: #F79009;
+  --dga-btn-focus-shadow-rgb: ;
+  --dga-btn-active-color: #0D121C;
+  --dga-btn-active-bg: #DC6803;
+  --dga-btn-active-border-color: #DC6803;
+  --dga-btn-disabled-color: #6C737F;
+  --dga-btn-disabled-bg: #FEF0C7;
+  --dga-btn-disabled-border-color: #FEF0C7;
+}
+
+.btn-info {
+  --dga-btn-color: #FFFFFF;
+  --dga-btn-bg: #1570EF;
+  --dga-btn-border-color: #1570EF;
+  --dga-btn-hover-color: #FFFFFF;
+  --dga-btn-hover-bg: #175CD3;
+  --dga-btn-hover-border-color: #175CD3;
+  --dga-btn-focus-shadow-rgb: ;
+  --dga-btn-active-color: #FFFFFF;
+  --dga-btn-active-bg: #1849A9;
+  --dga-btn-active-border-color: #1849A9;
+  --dga-btn-disabled-color: #6C737F;
+  --dga-btn-disabled-bg: #D1E9FF;
+  --dga-btn-disabled-border-color: #D1E9FF;
+}
+
+.btn-light {
+  --dga-btn-color: #0D121C;
+  --dga-btn-bg: #F3F4F6;
+  --dga-btn-border-color: #E5E7EB;
+  --dga-btn-hover-color: #0D121C;
+  --dga-btn-hover-bg: #E5E7EB;
+  --dga-btn-hover-border-color: #D2D6DB;
+  --dga-btn-focus-shadow-rgb: ;
+  --dga-btn-active-color: #0D121C;
+  --dga-btn-active-bg: #D2D6DB;
+  --dga-btn-active-border-color: #9DA4AE;
+  --dga-btn-disabled-color: #6C737F;
+  --dga-btn-disabled-bg: #F9FAFB;
   --dga-btn-disabled-border-color: #E5E7EB;
+}
+
+.btn-dark {
+  --dga-btn-color: #FFFFFF;
+  --dga-btn-bg: #1F2A37;
+  --dga-btn-border-color: #1F2A37;
+  --dga-btn-hover-color: #FFFFFF;
+  --dga-btn-hover-bg: #111927;
+  --dga-btn-hover-border-color: #111927;
+  --dga-btn-focus-shadow-rgb: ;
+  --dga-btn-active-color: #FFFFFF;
+  --dga-btn-active-bg: #0D121C;
+  --dga-btn-active-border-color: #0D121C;
+  --dga-btn-disabled-color: #6C737F;
+  --dga-btn-disabled-bg: #D2D6DB;
+  --dga-btn-disabled-border-color: #D2D6DB;
 }
 
 .btn-outline-secondary {
@@ -26593,33 +26689,33 @@ html {
 .btn-destructive-primary {
   --dga-btn-color: #FFFFFF;
   --dga-btn-bg: #D92D20;
-  --dga-btn-border-color: transparent;
+  --dga-btn-border-color: #D92D20;
   --dga-btn-hover-color: #FFFFFF;
   --dga-btn-hover-bg: #B42318;
-  --dga-btn-hover-border-color: transparent;
+  --dga-btn-hover-border-color: #B42318;
   --dga-btn-focus-shadow-rgb: ;
   --dga-btn-active-color: #FFFFFF;
   --dga-btn-active-bg: #7A271A;
-  --dga-btn-active-border-color: transparent;
-  --dga-btn-disabled-color: #9DA4AE;
-  --dga-btn-disabled-bg: transparent;
-  --dga-btn-disabled-border-color: transparent;
+  --dga-btn-active-border-color: #7A271A;
+  --dga-btn-disabled-color: #6C737F;
+  --dga-btn-disabled-bg: #FEE4E2;
+  --dga-btn-disabled-border-color: #FEE4E2;
 }
 
 .btn-destructive-secondary {
   --dga-btn-color: #B42318;
   --dga-btn-bg: #FEF3F2;
-  --dga-btn-border-color: transparent;
+  --dga-btn-border-color: #FEE4E2;
   --dga-btn-hover-color: #B42318;
   --dga-btn-hover-bg: #FEE4E2;
-  --dga-btn-hover-border-color: transparent;
+  --dga-btn-hover-border-color: #FECDCA;
   --dga-btn-focus-shadow-rgb: ;
   --dga-btn-active-color: #B42318;
   --dga-btn-active-bg: #FECDCA;
-  --dga-btn-active-border-color: transparent;
-  --dga-btn-disabled-color: #9DA4AE;
-  --dga-btn-disabled-bg: transparent;
-  --dga-btn-disabled-border-color: transparent;
+  --dga-btn-active-border-color: #FDA29B;
+  --dga-btn-disabled-color: #6C737F;
+  --dga-btn-disabled-bg: #FFFBFA;
+  --dga-btn-disabled-border-color: #FEE4E2;
 }
 
 .btn-destructive-outline-secondary {

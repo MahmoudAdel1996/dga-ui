@@ -18,6 +18,43 @@ export function SolidButtons() {
   );
 }
 
+export function BootstrapSemanticButtons() {
+  return (
+    <div className="d-flex flex-wrap gap-2 align-items-center">
+      <button type="button" className="btn btn-primary">Primary</button>
+      <button type="button" className="btn btn-secondary">Secondary</button>
+      <button type="button" className="btn btn-success">Success</button>
+      <button type="button" className="btn btn-danger">Danger</button>
+      <button type="button" className="btn btn-warning">Warning</button>
+      <button type="button" className="btn btn-info">Info</button>
+      <button type="button" className="btn btn-light">Light</button>
+      <button type="button" className="btn btn-dark">Dark</button>
+    </div>
+  );
+}
+
+export function SemanticStateButtons() {
+  return (
+    <div className="d-flex flex-wrap gap-2 align-items-center">
+      <button type="button" className="btn btn-primary">Primary</button>
+      <button type="button" className="btn btn-primary active">Primary Active</button>
+      <button type="button" className="btn btn-primary" disabled>Primary Disabled</button>
+      <button type="button" className="btn btn-success">Success</button>
+      <button type="button" className="btn btn-success active">Success Active</button>
+      <button type="button" className="btn btn-success" disabled>Success Disabled</button>
+      <button type="button" className="btn btn-warning">Warning</button>
+      <button type="button" className="btn btn-warning active">Warning Active</button>
+      <button type="button" className="btn btn-warning" disabled>Warning Disabled</button>
+      <button type="button" className="btn btn-light">Light</button>
+      <button type="button" className="btn btn-light active">Light Active</button>
+      <button type="button" className="btn btn-light" disabled>Light Disabled</button>
+      <button type="button" className="btn btn-dark">Dark</button>
+      <button type="button" className="btn btn-dark active">Dark Active</button>
+      <button type="button" className="btn btn-dark" disabled>Dark Disabled</button>
+    </div>
+  );
+}
+
 export function DestructiveButtons() {
   return (
     <div className="d-flex flex-wrap gap-2 align-items-center">
@@ -77,6 +114,33 @@ Standard solid buttons with different semantic meanings and emphasis levels.
 <button type="button" class="btn btn-subtle">Subtle</button>
 <button type="button" class="btn btn-transparent">Transparent</button>
 ```
+
+## Bootstrap Semantic Colors
+
+Includes all standard Bootstrap color classes mapped to DGA UI variables.
+
+<Preview>
+  <BootstrapSemanticButtons />
+</Preview>
+
+```html
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+```
+
+## State Contrast
+
+Each variant keeps readable foreground contrast across normal, active (clicked), and disabled states.
+
+<Preview>
+  <SemanticStateButtons />
+</Preview>
 
 ## Destructive Buttons
 
