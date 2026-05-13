@@ -1,0 +1,30 @@
+<div class="container py-5">
+  <h1 class="display-4 mb-4">{{ 'badges.title' | translate }}</h1>
+  <p class="lead mb-5">{{ 'badges.subtitle' | translate }}</p>
+
+  <section class="demo-section">
+    <h2>{{ 'badges.section_variants' | translate }}</h2>
+    <div class="component-showcase flex-wrap">
+      <span class="badge badge-primary">Primary</span>
+      <span class="badge badge-secondary">Secondary</span>
+      <span class="badge badge-success">Success</span>
+      <span class="badge badge-danger">Danger</span>
+      <span class="badge badge-warning">Warning</span>
+      <span class="badge badge-info">Info</span>
+      <span class="badge badge-light">Light</span>
+      <span class="badge badge-dark">Dark</span>
+    </div>
+    <app-code-example [htmlCode]="badgeVariantsCode"></app-code-example>
+
+    <h3 class="mt-5">{{ 'badges.section_counter' | translate }}</h3>
+    <div class="component-showcase">
+      <button type="button" class="btn btn-primary">
+        {{ 'badges.inbox' | translate }} <span class="badge badge-light ms-2">12</span>
+      </button>
+      <button type="button" class="btn btn-secondary">
+        {{ 'badges.notifications' | translate }} <span class="badge badge-dark ms-2">5</span>
+      </button>
+    </div>
+    <app-code-example [htmlCode]="badgeCounterCode"></app-code-example>
+  </section>
+</div>

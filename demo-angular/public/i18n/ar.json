@@ -10,6 +10,7 @@
     "layout": "التخطيط",
     "home": "الرئيسية",
     "alerts": "التنبيهات",
+    "badges": "الشارات",
     "breadcrumb": "مسار التنقل",
     "buttons": "الأزرار",
     "cards": "البطاقات",
@@ -34,6 +35,7 @@
     "title": "نظام تصميم SDGA",
     "subtitle": "مكونات Bootstrap 5.3 الكاملة بتصميم SDGA",
     "alerts_desc": "رسائل التنبيه بحالات متعددة",
+    "badges_desc": "شارات التصنيف والعدادات",
     "buttons_desc": "مكونات الأزرار التفاعلية",
     "cards_desc": "بطاقات المحتوى مع الرموز والإجراءات",
     "forms_desc": "حقول الإدخال وعناصر التحكم في النماذج",
@@ -64,6 +66,14 @@
     "neutral_text": "هذه رسالة معلومات محايدة.",
     "dismissible_title": "يا إلهي!",
     "dismissible_text": "يجب عليك التحقق من بعض هذه الحقول أدناه."
+  },
+  "badges": {
+    "title": "الشارات",
+    "subtitle": "مكونات الشارات من Bootstrap بتصميم SDGA",
+    "section_variants": "أنواع الشارات",
+    "section_counter": "شارات مع عدادات",
+    "inbox": "البريد الوارد",
+    "notifications": "الإشعارات"
   },
   "buttons": {
     "title": "الأزرار",

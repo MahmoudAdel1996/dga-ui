@@ -15,6 +15,10 @@ export const routes: Routes = [
     loadComponent: () => import('./views/alerts/alerts.component').then((m) => m.AlertsComponent),
   },
   {
+    path: 'badges',
+    loadComponent: () => import('./views/badges/badges.component').then((m) => m.BadgesComponent),
+  },
+  {
     path: 'buttons',
     loadComponent: () =>
       import('./views/buttons/buttons.component').then((m) => m.ButtonsComponent),

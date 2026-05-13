@@ -10,6 +10,7 @@
     "layout": "Layout",
     "home": "Home",
     "alerts": "Alerts",
+    "badges": "Badges",
     "breadcrumb": "Breadcrumbs",
     "buttons": "Buttons",
     "cards": "Cards",
@@ -35,6 +36,7 @@
     "title": "SDGA Design System",
     "subtitle": "Complete Bootstrap 5.3 components styled with SDGA theme",
     "alerts_desc": "Alert messages with various states",
+    "badges_desc": "Badge labels and counters",
     "buttons_desc": "Interactive button components",
     "cards_desc": "Content cards with icons and actions",
     "forms_desc": "Input fields and form controls",
@@ -65,6 +67,14 @@
     "neutral_text": "This is a neutral informational message.",
     "dismissible_title": "Holy guacamole!",
     "dismissible_text": "You should check in on some of those fields below."
+  },
+  "badges": {
+    "title": "Badges",
+    "subtitle": "Bootstrap badge components styled with SDGA theme",
+    "section_variants": "Badge Variants",
+    "section_counter": "Badges with Counters",
+    "inbox": "Inbox",
+    "notifications": "Notifications"
   },
   "buttons": {
     "title": "Buttons",

@@ -58,6 +58,7 @@ export class App {
       groupKey: 'nav.components',
       items: [
         { id: 'alerts', labelKey: 'nav.alerts', icon: '⚠️', route: '/alerts' },
+        { id: 'badges', labelKey: 'nav.badges', icon: '🏷️', route: '/badges' },
         { id: 'breadcrumb', labelKey: 'nav.breadcrumb', icon: '🧭', route: '/breadcrumb' },
         { id: 'buttons', labelKey: 'nav.buttons', icon: '🔘', route: '/buttons' },
         { id: 'cards', labelKey: 'nav.cards', icon: '🃏', route: '/cards' },

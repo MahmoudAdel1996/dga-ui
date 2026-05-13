@@ -27420,8 +27420,23 @@ html {
   }
 }
 
+.badge-primary {
+  background-color: #1B8354;
+  color: #FFFFFF;
+}
+
+.badge-secondary {
+  background-color: #4D5761;
+  color: #FFFFFF;
+}
+
 .badge-success {
   background-color: #079455;
+  color: #FFFFFF;
+}
+
+.badge-danger {
+  background-color: #D92D20;
   color: #FFFFFF;
 }
 
@@ -27432,6 +27447,16 @@ html {
 
 .badge-info {
   background-color: #1570EF;
+  color: #FFFFFF;
+}
+
+.badge-light {
+  background-color: #F3F4F6;
+  color: #111927;
+}
+
+.badge-dark {
+  background-color: #1F2A37;
   color: #FFFFFF;
 }
 

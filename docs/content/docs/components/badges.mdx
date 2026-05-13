@@ -1,0 +1,44 @@
+---
+title: Badges
+description: Bootstrap badge variants styled with DGA UI color variables
+---
+
+import { Preview } from '@/components/Preview';
+
+export function ColorBadges() {
+  return (
+    <div className="d-flex flex-wrap gap-2 align-items-center">
+      <span className="badge badge-primary">Primary</span>
+      <span className="badge badge-secondary">Secondary</span>
+      <span className="badge badge-success">Success</span>
+      <span className="badge badge-danger">Danger</span>
+      <span className="badge badge-warning">Warning</span>
+      <span className="badge badge-info">Info</span>
+      <span className="badge badge-light">Light</span>
+      <span className="badge badge-dark">Dark</span>
+    </div>
+  );
+}
+
+# Badges
+
+Use badges for status labels, counters, and compact metadata.
+
+## Bootstrap Color Variants
+
+All standard Bootstrap badge color classes are supported and mapped to DGA UI theme variables.
+
+<Preview>
+  <ColorBadges />
+</Preview>
+
+```html
+<span class="badge badge-primary">Primary</span>
+<span class="badge badge-secondary">Secondary</span>
+<span class="badge badge-success">Success</span>
+<span class="badge badge-danger">Danger</span>
+<span class="badge badge-warning">Warning</span>
+<span class="badge badge-info">Info</span>
+<span class="badge badge-light">Light</span>
+<span class="badge badge-dark">Dark</span>
+```
