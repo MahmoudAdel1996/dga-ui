@@ -11,6 +11,7 @@
     "home": "الرئيسية",
     "alerts": "التنبيهات",
     "badges": "الشارات",
+    "spinners": "مؤشرات التحميل",
     "breadcrumb": "مسار التنقل",
     "buttons": "الأزرار",
     "cards": "البطاقات",
@@ -20,6 +21,7 @@
     "tables": "الجداول",
     "toasts": "الإشعارات",
     "links": "الروابط",
+    "pagination": "ترقيم الصفحات",
     "header": "الرأس",
     "footer": "التذييل",
     "contexts": "السياقات",
@@ -36,6 +38,7 @@
     "subtitle": "مكونات Bootstrap 5.3 الكاملة بتصميم SDGA",
     "alerts_desc": "رسائل التنبيه بحالات متعددة",
     "badges_desc": "شارات التصنيف والعدادات",
+    "spinners_desc": "مؤشرات التحميل للعمليات غير المتزامنة",
     "buttons_desc": "مكونات الأزرار التفاعلية",
     "cards_desc": "بطاقات المحتوى مع الرموز والإجراءات",
     "forms_desc": "حقول الإدخال وعناصر التحكم في النماذج",
@@ -74,6 +77,16 @@
     "section_counter": "شارات مع عدادات",
     "inbox": "البريد الوارد",
     "notifications": "الإشعارات"
+  },
+  "spinners": {
+    "title": "المؤشرات",
+    "subtitle": "مكونات المؤشرات من Bootstrap بتصميم SDGA",
+    "section_border": "مؤشرات حدودية",
+    "section_grow": "مؤشرات متنامية",
+    "section_sizes": "أحجام المؤشرات",
+    "section_buttons": "مؤشرات داخل الأزرار",
+    "loading": "جاري التحميل...",
+    "processing": "جاري المعالجة..."
   },
   "buttons": {
     "title": "الأزرار",
@@ -283,6 +296,25 @@
     "subtle_link": "نمط رابط خفيف",
     "bold_link": "نمط رابط عريض",
     "decorated_link": "رابط مع تسطير متحرك"
+  },
+  "pagination": {
+    "title": "ترقيم الصفحات",
+    "subtitle": "مكونات ترقيم الصفحات من Bootstrap بتصميم SDGA",
+    "section_basic": "ترقيم صفحات أساسي",
+    "section_basic_desc": "ترقيم صفحات افتراضي مع مؤشرات الصفحة السابقة والحالية والتالية.",
+    "section_disabled": "الحالات المعطلة",
+    "section_disabled_desc": "استخدم حالة معطلة على أزرار السابق/التالي عند الحاجة.",
+    "section_sizes": "أحجام ترقيم الصفحات",
+    "section_sizes_desc": "مكونات ترقيم الصفحات متاحة بأحجام متعددة.",
+    "size_large": "ترقيم صفحات كبير",
+    "size_small": "ترقيم صفحات صغير",
+    "section_alignment": "المحاذاة",
+    "section_alignment_desc": "غيّر محاذاة مكونات ترقيم الصفحات باستخدام أدوات flexbox.",
+    "align_left": "محاذاة لليسار",
+    "align_center": "محاذاة للمنتصف",
+    "align_right": "محاذاة لليمين",
+    "previous": "السابق",
+    "next": "التالي"
   },
   "header": {
     "title": "الرأس",

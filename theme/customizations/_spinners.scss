@@ -1,0 +1,39 @@
+// Spinner customizations
+// Apply a full-track ring spinner with a 25% colored arc.
+
+$spinner-track-color: $neutral-200;
+$spinner-arc-angle: 90deg;
+
+.spinner-border {
+  border: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from -90deg,
+    currentColor 0deg $spinner-arc-angle,
+    $spinner-track-color $spinner-arc-angle 360deg
+  );
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - #{$spinner-border-width}),
+    $black calc(100% - #{$spinner-border-width})
+  );
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - #{$spinner-border-width}),
+    $black calc(100% - #{$spinner-border-width})
+  );
+  animation: $spinner-animation-speed linear infinite spinner-border;
+}
+
+.spinner-border-sm {
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - #{$spinner-border-width-sm}),
+    $black calc(100% - #{$spinner-border-width-sm})
+  );
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - #{$spinner-border-width-sm}),
+    $black calc(100% - #{$spinner-border-width-sm})
+  );
+}

@@ -11,6 +11,7 @@
     "home": "Home",
     "alerts": "Alerts",
     "badges": "Badges",
+    "spinners": "Spinners",
     "breadcrumb": "Breadcrumbs",
     "buttons": "Buttons",
     "cards": "Cards",
@@ -21,6 +22,7 @@
     "toasts": "Toasts",
     "tooltips": "Tooltips",
     "links": "Links",
+    "pagination": "Pagination",
     "header": "Header",
     "footer": "Footer",
     "contexts": "Contexts",
@@ -37,6 +39,7 @@
     "subtitle": "Complete Bootstrap 5.3 components styled with SDGA theme",
     "alerts_desc": "Alert messages with various states",
     "badges_desc": "Badge labels and counters",
+    "spinners_desc": "Loading indicators for async actions",
     "buttons_desc": "Interactive button components",
     "cards_desc": "Content cards with icons and actions",
     "forms_desc": "Input fields and form controls",
@@ -75,6 +78,16 @@
     "section_counter": "Badges with Counters",
     "inbox": "Inbox",
     "notifications": "Notifications"
+  },
+  "spinners": {
+    "title": "Spinners",
+    "subtitle": "Bootstrap spinner components styled with SDGA theme",
+    "section_border": "Border Spinners",
+    "section_grow": "Growing Spinners",
+    "section_sizes": "Spinner Sizes",
+    "section_buttons": "Spinners in Buttons",
+    "loading": "Loading...",
+    "processing": "Processing..."
   },
   "buttons": {
     "title": "Buttons",
@@ -290,6 +303,25 @@
     "subtle_link": "Subtle link style",
     "bold_link": "Bold link style",
     "decorated_link": "Animated underline link"
+  },
+  "pagination": {
+    "title": "Pagination",
+    "subtitle": "Bootstrap pagination components styled with SDGA theme",
+    "section_basic": "Basic Pagination",
+    "section_basic_desc": "Default pagination with previous, current, and next page indicators.",
+    "section_disabled": "Disabled States",
+    "section_disabled_desc": "Use disabled state on the previous/next buttons when appropriate.",
+    "section_sizes": "Pagination Sizes",
+    "section_sizes_desc": "Pagination components are available in multiple sizes.",
+    "size_large": "Large Pagination",
+    "size_small": "Small Pagination",
+    "section_alignment": "Alignment",
+    "section_alignment_desc": "Change the alignment of pagination components with flexbox utilities.",
+    "align_left": "Left Aligned",
+    "align_center": "Center Aligned",
+    "align_right": "Right Aligned",
+    "previous": "Previous",
+    "next": "Next"
   },
   "header": {
     "title": "Header",

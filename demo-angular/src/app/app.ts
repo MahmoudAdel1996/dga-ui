@@ -59,6 +59,7 @@ export class App {
       items: [
         { id: 'alerts', labelKey: 'nav.alerts', icon: '⚠️', route: '/alerts' },
         { id: 'badges', labelKey: 'nav.badges', icon: '🏷️', route: '/badges' },
+        { id: 'spinners', labelKey: 'nav.spinners', icon: '🌀', route: '/spinners' },
         { id: 'breadcrumb', labelKey: 'nav.breadcrumb', icon: '🧭', route: '/breadcrumb' },
         { id: 'buttons', labelKey: 'nav.buttons', icon: '🔘', route: '/buttons' },
         { id: 'cards', labelKey: 'nav.cards', icon: '🃏', route: '/cards' },
@@ -69,6 +70,7 @@ export class App {
         { id: 'toasts', labelKey: 'nav.toasts', icon: '🔔', route: '/toasts' },
         { id: 'tooltips', labelKey: 'nav.tooltips', icon: '💬', route: '/tooltips' },
         { id: 'links', labelKey: 'nav.links', icon: '🔗', route: '/links' },
+        { id: 'pagination', labelKey: 'nav.pagination', icon: '📍', route: '/pagination' },
       ],
     },
   ];

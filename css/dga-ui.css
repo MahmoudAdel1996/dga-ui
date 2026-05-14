@@ -13518,17 +13518,19 @@ textarea.form-control-lg {
   --dga-spinner-width: 2rem;
   --dga-spinner-height: 2rem;
   --dga-spinner-vertical-align: -0.125em;
-  --dga-spinner-border-width: 0.25em;
+  --dga-spinner-border-width: 0.15em;
   --dga-spinner-animation-speed: 0.75s;
   --dga-spinner-animation-name: spinner-border;
-  border: var(--dga-spinner-border-width) solid currentcolor;
-  border-right-color: transparent;
+  border: 0;
+  background: conic-gradient(from -90deg, currentColor 0deg 90deg, var(--dga-neutral-200) 90deg 360deg);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - var(--dga-spinner-border-width, 0.15rem)), var(--dga-black) calc(100% - var(--dga-spinner-border-width, 0.15rem)));
+  mask: radial-gradient(farthest-side, transparent calc(100% - var(--dga-spinner-border-width, 0.15rem)), var(--dga-black) calc(100% - var(--dga-spinner-border-width, 0.15rem)));
 }
 
 .spinner-border-sm {
   --dga-spinner-width: 1rem;
   --dga-spinner-height: 1rem;
-  --dga-spinner-border-width: 0.2em;
+  --dga-spinner-border-width: 0.1em;
 }
 
 @keyframes spinner-grow {

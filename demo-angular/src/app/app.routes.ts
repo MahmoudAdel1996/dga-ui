@@ -19,6 +19,11 @@ export const routes: Routes = [
     loadComponent: () => import('./views/badges/badges.component').then((m) => m.BadgesComponent),
   },
   {
+    path: 'spinners',
+    loadComponent: () =>
+      import('./views/spinners/spinners.component').then((m) => m.SpinnersComponent),
+  },
+  {
     path: 'buttons',
     loadComponent: () =>
       import('./views/buttons/buttons.component').then((m) => m.ButtonsComponent),
@@ -42,6 +47,10 @@ export const routes: Routes = [
   {
     path: 'links',
     loadComponent: () => import('./views/links/links.component').then((m) => m.LinksComponent),
+  },
+  {
+    path: 'pagination',
+    loadComponent: () => import('./views/pagination/pagination.component').then((m) => m.PaginationComponent),
   },
   {
     path: 'header',
