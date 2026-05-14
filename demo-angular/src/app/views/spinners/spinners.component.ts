@@ -60,17 +60,89 @@ export class SpinnersComponent {
   <span class="visually-hidden">Loading...</span>
 </div>`;
 
-  spinnerSizesCode = `<div class="spinner-border spinner-border-sm text-primary" role="status">
-  <span class="visually-hidden">Loading...</span>
+  spinnerSizesCode = `<div class="d-flex flex-column align-items-center gap-1">
+  <div class="spinner-border spinner-border-xxs text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <small class="text-muted">xxs</small>
 </div>
-<div class="spinner-border text-primary" role="status">
-  <span class="visually-hidden">Loading...</span>
+<div class="d-flex flex-column align-items-center gap-1">
+  <div class="spinner-border spinner-border-xs text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <small class="text-muted">xs</small>
 </div>
-<div class="spinner-grow spinner-grow-sm text-secondary" role="status">
-  <span class="visually-hidden">Loading...</span>
+<div class="d-flex flex-column align-items-center gap-1">
+  <div class="spinner-border spinner-border-s text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <small class="text-muted">s</small>
 </div>
-<div class="spinner-grow text-secondary" role="status">
-  <span class="visually-hidden">Loading...</span>
+<div class="d-flex flex-column align-items-center gap-1">
+  <div class="spinner-border spinner-border-m text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <small class="text-muted">m</small>
+</div>
+<div class="d-flex flex-column align-items-center gap-1">
+  <div class="spinner-border spinner-border-l text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <small class="text-muted">l</small>
+</div>
+<div class="d-flex flex-column align-items-center gap-1">
+  <div class="spinner-border spinner-border-xl text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <small class="text-muted">xl</small>
+</div>
+<div class="d-flex flex-column align-items-center gap-1">
+  <div class="spinner-border spinner-border-xxl text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <small class="text-muted">xxl</small>
+</div>
+<div class="d-flex flex-column align-items-center gap-1">
+  <div class="spinner-grow spinner-grow-xxs text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <small class="text-muted">xxs</small>
+</div>
+<div class="d-flex flex-column align-items-center gap-1">
+  <div class="spinner-grow spinner-grow-xs text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <small class="text-muted">xs</small>
+</div>
+<div class="d-flex flex-column align-items-center gap-1">
+  <div class="spinner-grow spinner-grow-s text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <small class="text-muted">s</small>
+</div>
+<div class="d-flex flex-column align-items-center gap-1">
+  <div class="spinner-grow spinner-grow-m text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <small class="text-muted">m</small>
+</div>
+<div class="d-flex flex-column align-items-center gap-1">
+  <div class="spinner-grow spinner-grow-l text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <small class="text-muted">l</small>
+</div>
+<div class="d-flex flex-column align-items-center gap-1">
+  <div class="spinner-grow spinner-grow-xl text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <small class="text-muted">xl</small>
+</div>
+<div class="d-flex flex-column align-items-center gap-1">
+  <div class="spinner-grow spinner-grow-xxl text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <small class="text-muted">xxl</small>
 </div>`;
 
   spinnerButtonsCode = `<button class="btn btn-primary" type="button" disabled>

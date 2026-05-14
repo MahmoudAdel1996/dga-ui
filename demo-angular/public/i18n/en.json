@@ -309,6 +309,8 @@
     "subtitle": "Bootstrap pagination components styled with SDGA theme",
     "section_basic": "Basic Pagination",
     "section_basic_desc": "Default pagination with previous, current, and next page indicators.",
+    "section_long": "Long Page List",
+    "section_long_desc": "Use arrow navigation and ellipsis to keep pagination compact on long page ranges.",
     "section_disabled": "Disabled States",
     "section_disabled_desc": "Use disabled state on the previous/next buttons when appropriate.",
     "section_sizes": "Pagination Sizes",

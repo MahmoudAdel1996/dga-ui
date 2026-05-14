@@ -1,0 +1,121 @@
+// Pagination Customizations - SDGA Custom Enhancements
+
+// Keep page number controls visually square by enforcing fixed heights
+// and matching minimum widths across all pagination sizes.
+.pagination {
+  gap: 0.5rem;
+
+  .page-item:not(:first-child) .page-link {
+    margin-left: 0;
+  }
+
+  .page-link {
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    border-radius: $radius-md;
+    color: $black;
+    display: inline-flex;
+    font-size: 0.875rem;
+    height: 32px;
+    justify-content: center;
+    line-height: 1;
+    min-width: 32px;
+    padding-inline: 0.5rem;
+    position: relative;
+    transition: background-color 0.2s ease, color 0.2s ease, outline-color 0.2s ease;
+
+    &:hover {
+      background-color: $neutral-100;
+      color: $black;
+      z-index: 0;
+    }
+
+    &:focus,
+    &:focus-visible {
+      background-color: transparent;
+      box-shadow: none;
+      color: $black;
+      outline: 2px solid $black;
+      outline-offset: -2px;
+      z-index: 1;
+    }
+
+    // Pressed style aligns with button/dropdown pressed behavior.
+    &:active {
+      background-color: $neutral-200 !important;
+      box-shadow: none !important;
+      color: $black;
+      outline: 0 !important;
+    }
+  }
+
+  .page-item.active .page-link,
+  .page-link[aria-current='page'] {
+    background-color: transparent;
+    border: 0;
+    color: $black;
+    font-weight: 500;
+
+    &::after {
+      background-color: $primary-600;
+      border-radius: 999px;
+      bottom: -2px;
+      content: '';
+      height: 4px;
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+      width: 65%;
+    }
+
+    &:hover {
+      background-color: transparent;
+      color: $black;
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline: 2px solid $black;
+      outline-offset: -2px;
+    }
+
+    &:active {
+      background-color: $primary-50 !important;
+      color: $primary-700;
+      outline: 0 !important;
+
+      &::after {
+        background-color: $primary-700;
+      }
+    }
+  }
+
+  .page-item.disabled .page-link,
+  .page-link.disabled {
+    background-color: transparent;
+    color: $neutral-400;
+    opacity: 1;
+  }
+
+  .page-link > .bi {
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  &.pagination-sm {
+    .page-link {
+      height: 24px;
+      min-width: 24px;
+      padding-inline: 0.375rem;
+    }
+  }
+
+  &.pagination-lg {
+    .page-link {
+      height: 40px;
+      min-width: 40px;
+      padding-inline: 0.75rem;
+    }
+  }
+}

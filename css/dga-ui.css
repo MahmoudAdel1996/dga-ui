@@ -13557,6 +13557,62 @@ textarea.form-control-lg {
   --dga-spinner-height: 1rem;
 }
 
+.spinner-border.spinner-border-xxs,
+.spinner-grow.spinner-grow-xxs {
+  --dga-spinner-width: 1.25rem;
+  --dga-spinner-height: 1.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.spinner-border.spinner-border-xs,
+.spinner-grow.spinner-grow-xs {
+  --dga-spinner-width: 1.5rem;
+  --dga-spinner-height: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.spinner-border.spinner-border-s,
+.spinner-grow.spinner-grow-s {
+  --dga-spinner-width: 1.75rem;
+  --dga-spinner-height: 1.75rem;
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.spinner-border.spinner-border-m,
+.spinner-grow.spinner-grow-m {
+  --dga-spinner-width: 2rem;
+  --dga-spinner-height: 2rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.spinner-border.spinner-border-l,
+.spinner-grow.spinner-grow-l {
+  --dga-spinner-width: 2.25rem;
+  --dga-spinner-height: 2.25rem;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.spinner-border.spinner-border-xl,
+.spinner-grow.spinner-grow-xl {
+  --dga-spinner-width: 2.5rem;
+  --dga-spinner-height: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.spinner-border.spinner-border-xxl,
+.spinner-grow.spinner-grow-xxl {
+  --dga-spinner-width: 2.75rem;
+  --dga-spinner-height: 2.75rem;
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .spinner-border,
   .spinner-grow {

@@ -1,5 +1,17 @@
 // Bootstrap 5.3 - Spinner Component Variables
 
+// Spinner diameter scale (rem)
+// xxs: 20px, xs: 24px, s: 28px, m: 32px, l: 36px, xl: 40px, xxl: 44px
+$spinner-diameters: (
+	"xxs": 1.25rem,
+	"xs": 1.5rem,
+	"s": 1.75rem,
+	"m": 2rem,
+	"l": 2.25rem,
+	"xl": 2.5rem,
+	"xxl": 2.75rem
+);
+
 $spinner-width: 2rem;
 $spinner-height: $spinner-width;
 $spinner-vertical-align: -0.125em;
@@ -9,3 +21,14 @@ $spinner-animation-speed: 0.75s;
 $spinner-width-sm: 1rem;
 $spinner-height-sm: $spinner-width-sm;
 $spinner-border-width-sm: 0.1em;
+
+// Spinner size utilities
+@each $name, $diameter in $spinner-diameters {
+	.spinner-border.spinner-border-#{$name},
+	.spinner-grow.spinner-grow-#{$name} {
+		--dga-spinner-width: #{$diameter};
+		--dga-spinner-height: #{$diameter};
+		width: #{$diameter};
+		height: #{$diameter};
+	}
+}
