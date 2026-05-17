@@ -63,6 +63,18 @@ export class ButtonsComponent {
 <button type="button" class="btn btn-destructive-subtle">Destructive Subtle</button>
 <button type="button" class="btn btn-destructive-transparent">Destructive Transparent</button>`;
 
+  buttonGroupCode = `<div class="btn-group" role="group" aria-label="Primary button group">
+  <button type="button" class="btn btn-primary">Start</button>
+  <button type="button" class="btn btn-primary">Middle</button>
+  <button type="button" class="btn btn-primary">End</button>
+</div>
+
+<div class="btn-group" role="group" aria-label="Mixed button group">
+  <button type="button" class="btn btn-outline-secondary">Previous</button>
+  <button type="button" class="btn btn-secondary">Current</button>
+  <button type="button" class="btn btn-outline-secondary">Next</button>
+</div>`;
+
   outlineButtonsCode = `<button type="button" class="btn btn-outline-secondary">Secondary</button>
 <button type="button" class="btn btn-destructive-outline-secondary">Destructive</button>`;
 

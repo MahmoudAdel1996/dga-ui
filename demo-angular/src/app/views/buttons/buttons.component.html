@@ -80,6 +80,22 @@
     </div>
     </div>
     <app-code-example [htmlCode]="onPrimaryButtonsCode" [onColor]="'primary'"></app-code-example>
+
+    <h3 class="mt-5">Button Groups</h3>
+    <div class="component-showcase">
+      <div class="btn-group" role="group" aria-label="Primary button group">
+        <button type="button" class="btn btn-primary">Start</button>
+        <button type="button" class="btn btn-primary">Middle</button>
+        <button type="button" class="btn btn-primary">End</button>
+      </div>
+
+      <div class="btn-group" role="group" aria-label="Mixed button group">
+        <button type="button" class="btn btn-outline-secondary">Previous</button>
+        <button type="button" class="btn btn-secondary">Current</button>
+        <button type="button" class="btn btn-outline-secondary">Next</button>
+      </div>
+    </div>
+    <app-code-example [htmlCode]="buttonGroupCode"></app-code-example>
     
     <h3 class="mt-5">{{ 'buttons.section_outline' | translate }}</h3>
     <div class="component-showcase">

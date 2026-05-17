@@ -477,6 +477,32 @@ $on-primary-button-variants: (
   }
 }
 
+// RTL support for horizontal button groups:
+// keep natural RTL ordering and align edge radii/separators correctly.
+[dir="rtl"] .btn-group {
+  direction: rtl;
+
+  > :not(.btn-check) + .btn,
+  > .btn-group:not(:first-child) {
+    margin-right: calc(-1 * var(--#{$prefix}border-width));
+    margin-left: 0;
+  }
+
+  > .btn:first-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: var(--#{$prefix}border-radius);
+    border-bottom-right-radius: var(--#{$prefix}border-radius);
+  }
+
+  > .btn:last-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: var(--#{$prefix}border-radius);
+    border-bottom-left-radius: var(--#{$prefix}border-radius);
+  }
+}
+
 // ============================================
 // Dropdown
 // ============================================
