@@ -1,6 +1,6 @@
 {
   "name": "demo-angular",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "scripts": {
     "ng": "ng",
     "start": "npm run use:local && ng serve -o",
