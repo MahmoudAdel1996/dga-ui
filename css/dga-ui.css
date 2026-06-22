@@ -27225,11 +27225,6 @@ html {
 .card-expandable:hover:not(.disabled), .card-expandable.card-expandable-hover {
   background-color: #F9FAFB;
 }
-.card-expandable:focus-visible, .card-expandable.card-expandable-focused {
-  outline: none;
-  border-color: #111927 !important;
-  box-shadow: 0 0 0 2px #111927 !important;
-}
 .card-expandable .form-check-input:focus {
   box-shadow: none;
   border-color: #D2D6DB;
@@ -27270,11 +27265,6 @@ html {
 }
 .card-select:hover:not(.disabled), .card-select.card-select-hover {
   background-color: #F9FAFB;
-}
-.card-select:focus-visible, .card-select.card-select-focused {
-  outline: none;
-  border-color: #111927 !important;
-  box-shadow: 0 0 0 2px #111927 !important;
 }
 .card-select.disabled {
   background-color: #F3F4F6;
@@ -27328,7 +27318,7 @@ html {
 .card-selectable:focus-visible, .card-selectable.card-selectable-focused {
   outline: none;
   border-color: #111927 !important;
-  box-shadow: 0 0 0 2px #111927 !important;
+  box-shadow: 0 0 0 1px #111927 !important;
 }
 .card-selectable.disabled {
   background-color: #F3F4F6;
