@@ -62,6 +62,50 @@
       <button type="button" class="btn btn-destructive-transparent">Destructive Transparent</button>
     </div>
     <app-code-example [htmlCode]="destructiveButtonsCode"></app-code-example>
+
+    <h3 class="mt-5">Danger Variants</h3>
+    <div class="component-showcase">
+      <button type="button" class="btn btn-danger-primary">Danger Primary</button>
+      <button type="button" class="btn btn-danger-secondary">Danger Secondary</button>
+      <button type="button" class="btn btn-danger-subtle">Danger Subtle</button>
+      <button type="button" class="btn btn-danger-transparent">Danger Transparent</button>
+      <button type="button" class="btn btn-outline-danger">Outline Danger</button>
+      <button type="button" class="btn btn-outline-danger-secondary">Outline Danger Secondary</button>
+    </div>
+    <app-code-example [htmlCode]="dangerVariantsCode"></app-code-example>
+
+    <h3 class="mt-5">Danger Variants States (Normal / Pressed / Disabled)</h3>
+    <div class="component-showcase mb-3">
+      <button type="button" class="btn btn-danger-primary">Danger Primary</button>
+      <button type="button" class="btn btn-danger-primary active">Pressed</button>
+      <button type="button" class="btn btn-danger-primary" disabled>Disabled</button>
+    </div>
+    <div class="component-showcase mb-3">
+      <button type="button" class="btn btn-danger-secondary">Danger Secondary</button>
+      <button type="button" class="btn btn-danger-secondary active">Pressed</button>
+      <button type="button" class="btn btn-danger-secondary" disabled>Disabled</button>
+    </div>
+    <div class="component-showcase mb-3">
+      <button type="button" class="btn btn-danger-subtle">Danger Subtle</button>
+      <button type="button" class="btn btn-danger-subtle active">Pressed</button>
+      <button type="button" class="btn btn-danger-subtle" disabled>Disabled</button>
+    </div>
+    <div class="component-showcase mb-3">
+      <button type="button" class="btn btn-danger-transparent">Danger Transparent</button>
+      <button type="button" class="btn btn-danger-transparent active">Pressed</button>
+      <button type="button" class="btn btn-danger-transparent" disabled>Disabled</button>
+    </div>
+    <div class="component-showcase mb-3">
+      <button type="button" class="btn btn-outline-danger">Outline Danger</button>
+      <button type="button" class="btn btn-outline-danger active">Pressed</button>
+      <button type="button" class="btn btn-outline-danger" disabled>Disabled</button>
+    </div>
+    <div class="component-showcase mb-3">
+      <button type="button" class="btn btn-outline-danger-secondary">Outline Danger Secondary</button>
+      <button type="button" class="btn btn-outline-danger-secondary active">Pressed</button>
+      <button type="button" class="btn btn-outline-danger-secondary" disabled>Disabled</button>
+    </div>
+    <app-code-example [htmlCode]="dangerVariantStatesCode"></app-code-example>
     
     <h3 class="mt-5">On Primary Context</h3>
     <div class="on-primary p-4 rounded-2">
@@ -99,10 +143,25 @@
     
     <h3 class="mt-5">{{ 'buttons.section_outline' | translate }}</h3>
     <div class="component-showcase">
-      <button type="button" class="btn btn-outline-secondary">{{ 'buttons.secondary' | translate }}</button>
-      <button type="button" class="btn btn-destructive-outline-secondary">{{ 'buttons.danger' | translate }}</button>
+      <button type="button" class="btn btn-outline-secondary">Outline Secondary</button>
+      <button type="button" class="btn btn-destructive-outline-secondary">Destructive Outline</button>
+      <button type="button" class="btn btn-outline-danger">Outline Danger</button>
+      <button type="button" class="btn btn-outline-danger-secondary">Outline Danger Secondary</button>
     </div>
     <app-code-example [htmlCode]="outlineButtonsCode"></app-code-example>
+
+    <h3 class="mt-5">Outline Danger States (Normal / Hover / Pressed / Disabled)</h3>
+    <div class="component-showcase mb-3">
+      <button type="button" class="btn btn-outline-danger">Normal</button>
+      <button type="button" class="btn btn-outline-danger active">Pressed</button>
+      <button type="button" class="btn btn-outline-danger" disabled>Disabled</button>
+    </div>
+    <div class="component-showcase mb-3">
+      <button type="button" class="btn btn-outline-danger-secondary">Normal</button>
+      <button type="button" class="btn btn-outline-danger-secondary active">Pressed</button>
+      <button type="button" class="btn btn-outline-danger-secondary" disabled>Disabled</button>
+    </div>
+    <app-code-example [htmlCode]="outlineDangerStatesCode"></app-code-example>
     
     <h3 class="mt-5">{{ 'buttons.section_sizes' | translate }}</h3>
     <div class="component-showcase">

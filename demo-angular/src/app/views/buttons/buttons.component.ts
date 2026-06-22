@@ -75,8 +75,57 @@ export class ButtonsComponent {
   <button type="button" class="btn btn-outline-secondary">Next</button>
 </div>`;
 
-  outlineButtonsCode = `<button type="button" class="btn btn-outline-secondary">Secondary</button>
-<button type="button" class="btn btn-destructive-outline-secondary">Destructive</button>`;
+  dangerVariantsCode = `<button type="button" class="btn btn-danger-primary">Danger Primary</button>
+<button type="button" class="btn btn-danger-secondary">Danger Secondary</button>
+<button type="button" class="btn btn-danger-subtle">Danger Subtle</button>
+<button type="button" class="btn btn-danger-transparent">Danger Transparent</button>
+<button type="button" class="btn btn-outline-danger">Outline Danger</button>
+<button type="button" class="btn btn-outline-danger-secondary">Outline Danger Secondary</button>`;
+
+  dangerVariantStatesCode = `<!-- Danger Primary -->
+<button type="button" class="btn btn-danger-primary">Normal</button>
+<button type="button" class="btn btn-danger-primary active">Pressed</button>
+<button type="button" class="btn btn-danger-primary" disabled>Disabled</button>
+
+<!-- Danger Secondary -->
+<button type="button" class="btn btn-danger-secondary">Normal</button>
+<button type="button" class="btn btn-danger-secondary active">Pressed</button>
+<button type="button" class="btn btn-danger-secondary" disabled>Disabled</button>
+
+<!-- Danger Subtle -->
+<button type="button" class="btn btn-danger-subtle">Normal</button>
+<button type="button" class="btn btn-danger-subtle active">Pressed</button>
+<button type="button" class="btn btn-danger-subtle" disabled>Disabled</button>
+
+<!-- Danger Transparent -->
+<button type="button" class="btn btn-danger-transparent">Normal</button>
+<button type="button" class="btn btn-danger-transparent active">Pressed</button>
+<button type="button" class="btn btn-danger-transparent" disabled>Disabled</button>
+
+<!-- Outline Danger -->
+<button type="button" class="btn btn-outline-danger">Normal</button>
+<button type="button" class="btn btn-outline-danger active">Pressed</button>
+<button type="button" class="btn btn-outline-danger" disabled>Disabled</button>
+
+<!-- Outline Danger Secondary -->
+<button type="button" class="btn btn-outline-danger-secondary">Normal</button>
+<button type="button" class="btn btn-outline-danger-secondary active">Pressed</button>
+<button type="button" class="btn btn-outline-danger-secondary" disabled>Disabled</button>`;
+
+  outlineButtonsCode = `<button type="button" class="btn btn-outline-secondary">Outline Secondary</button>
+<button type="button" class="btn btn-destructive-outline-secondary">Destructive Outline</button>
+<button type="button" class="btn btn-outline-danger">Outline Danger</button>
+<button type="button" class="btn btn-outline-danger-secondary">Outline Danger Secondary</button>`;
+
+  outlineDangerStatesCode = `<!-- Outline Danger -->
+<button type="button" class="btn btn-outline-danger">Normal</button>
+<button type="button" class="btn btn-outline-danger active">Pressed</button>
+<button type="button" class="btn btn-outline-danger" disabled>Disabled</button>
+
+<!-- Outline Danger Secondary -->
+<button type="button" class="btn btn-outline-danger-secondary">Normal</button>
+<button type="button" class="btn btn-outline-danger-secondary active">Pressed</button>
+<button type="button" class="btn btn-outline-danger-secondary" disabled>Disabled</button>`;
 
   buttonSizesCode = `<button type="button" class="btn btn-primary btn-lg">Large</button>
 <button type="button" class="btn btn-primary">Default</button>
