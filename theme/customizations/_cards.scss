@@ -21,13 +21,6 @@
     background-color: $gray-50;
   }
 
-  &:focus-visible,
-  &.card-expandable-focused {
-    outline: none;
-    border-color: $gray-900 !important;
-    box-shadow: 0 0 0 2px $gray-900 !important;
-  }
-
   .form-check-input:focus {
     box-shadow: none;
     border-color: $gray-300;
@@ -81,13 +74,6 @@
   &:hover:not(.disabled),
   &.card-select-hover {
     background-color: $gray-50;
-  }
-
-  &:focus-visible,
-  &.card-select-focused {
-    outline: none;
-    border-color: $gray-900 !important;
-    box-shadow: 0 0 0 2px $gray-900 !important;
   }
 
   &.disabled {
@@ -157,7 +143,7 @@
   &.card-selectable-focused {
     outline: none;
     border-color: $gray-900 !important;
-    box-shadow: 0 0 0 2px $gray-900 !important;
+    box-shadow: 0 0 0 1px $gray-900 !important;
   }
 
   &.disabled {
