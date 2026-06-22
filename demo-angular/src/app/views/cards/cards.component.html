@@ -2,13 +2,13 @@
   <h1 class="display-4 mb-4">{{ 'cards.title' | translate }}</h1>
   <p class="lead mb-5">{{ 'cards.subtitle' | translate }}</p>
 
+  <!-- Basic Cards -->
   <section class="demo-section">
     <h2 class="mb-4">{{ 'cards.section_examples' | translate }}</h2>
-    
-    <!-- Card with icon -->
+
     <h3 class="mb-3">Card with Icon</h3>
     <div class="demo-card-grid mb-3">
-      <div class="card" tabindex="0">
+      <div class="card">
         <div class="card-body">
           <h5 class="card-title">
             <div class="dga-featured-icon dga-featured-icon-circle">
@@ -24,15 +24,59 @@
         </div>
       </div>
     </div>
-    <app-code-example [htmlCode]="cardWithIconCode" title="Card with Icon and Header"></app-code-example>
-      
-    <!-- Card with checkbox -->
-    <h3 class="mb-3 mt-5">Card with Checkbox</h3>
+    <app-code-example [htmlCode]="cardWithIconCode" title="Card with Icon"></app-code-example>
+
+    <h3 class="mb-3 mt-5">Card without Shadow</h3>
     <div class="demo-card-grid mb-3">
-      <div class="card" tabindex="0">
+      <div class="card shadow-none">
         <div class="card-body">
           <h5 class="card-title">
-            <input class="card-title-checked  form-check-input ripple" type="checkbox" value="" id="check2" aria-label="{{ 'cards.select_card' | translate }}">
+            <div class="dga-featured-icon dga-featured-icon-circle">
+              <i class="bi bi-check-circle"></i>
+            </div>
+          </h5>
+          <h6 class="card-subtitle mb-2">{{ 'cards.card_title' | translate }}</h6>
+          <p class="card-text">{{ 'cards.card_text' | translate }}</p>
+          <div class="card-footer">
+            <a href="javascript:void(0);" class="btn btn-outline-secondary">{{ 'cards.action_secondary' | translate }}</a>
+            <a href="javascript:void(0);" class="btn btn-primary">{{ 'cards.action' | translate }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-code-example [htmlCode]="cardNoShadowCode" title="Card without Shadow (shadow-none)"></app-code-example>
+
+    <h3 class="mb-3 mt-5">Disabled Card</h3>
+    <div class="demo-card-grid mb-3">
+      <div class="card disabled" aria-disabled="true">
+        <div class="card-body">
+          <h5 class="card-title">
+            <div class="dga-featured-icon dga-featured-icon-circle disabled">
+              <i class="bi bi-check-circle"></i>
+            </div>
+          </h5>
+          <h6 class="card-subtitle mb-2">{{ 'cards.card_title' | translate }}</h6>
+          <p class="card-text">{{ 'cards.card_text' | translate }}</p>
+          <div class="card-footer">
+            <a href="javascript:void(0);" class="btn btn-outline-secondary disabled" tabindex="-1" aria-disabled="true">{{ 'cards.action_secondary' | translate }}</a>
+            <a href="javascript:void(0);" class="btn btn-primary disabled" tabindex="-1" aria-disabled="true">{{ 'cards.action' | translate }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-code-example [htmlCode]="disabledCardCode" title="Disabled Card"></app-code-example>
+  </section>
+
+  <!-- Card with Checkbox -->
+  <section class="demo-section">
+    <h2 class="mb-4">Card with Checkbox</h2>
+
+    <h3 class="mb-3">Default</h3>
+    <div class="demo-card-grid mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            <input class="card-title-checked form-check-input ripple" type="checkbox" value="" id="check2" aria-label="{{ 'cards.select_card' | translate }}">
           </h5>
           <h6 class="card-subtitle mb-2">{{ 'cards.card_title' | translate }}</h6>
           <p class="card-text">{{ 'cards.card_text' | translate }}</p>
@@ -44,62 +88,44 @@
       </div>
     </div>
     <app-code-example [htmlCode]="cardWithCheckboxCode" title="Card with Checkbox"></app-code-example>
-      
-    <!-- Disabled card with icon and checkbox -->
-    <h3 class="mb-3 mt-5">Disabled Card</h3>
+
+    <h3 class="mb-3 mt-5">Disabled</h3>
     <div class="demo-card-grid mb-3">
-      <div class="card disabled" tabindex="0">
+      <div class="card disabled" aria-disabled="true">
         <div class="card-body">
           <h5 class="card-title">
             <div class="dga-featured-icon dga-featured-icon-circle disabled">
               <i class="bi bi-check-circle"></i>
             </div>
-            <input class="card-title-checked  form-check-input ripple" disabled type="checkbox" value="" id="check1" aria-label="{{ 'cards.select_card' | translate }}">
+            <input class="card-title-checked form-check-input ripple" tabindex="-1" disabled type="checkbox" value="" id="check1" aria-label="{{ 'cards.select_card' | translate }}">
           </h5>
           <h6 class="card-subtitle mb-2">{{ 'cards.card_title' | translate }}</h6>
           <p class="card-text">{{ 'cards.card_text' | translate }}</p>
           <div class="card-footer">
-            <a href="javascript:void(0);" class="btn btn-outline-secondary disabled">{{ 'cards.action_secondary' | translate }}</a>
-            <a href="javascript:void(0);" class="btn btn-primary disabled">{{ 'cards.action' | translate }}</a>
+            <a href="javascript:void(0);" class="btn btn-outline-secondary disabled" tabindex="-1" aria-disabled="true">{{ 'cards.action_secondary' | translate }}</a>
+            <a href="javascript:void(0);" class="btn btn-primary disabled" tabindex="-1" aria-disabled="true">{{ 'cards.action' | translate }}</a>
           </div>
         </div>
       </div>
     </div>
-    <app-code-example [htmlCode]="disabledCardCode" title="Disabled Card with Icon and Checkbox"></app-code-example>
+    <app-code-example [htmlCode]="disabledCardCode" title="Disabled Card with Checkbox"></app-code-example>
+  </section>
 
-      <!-- Card without shadow -->
-      <h3 class="mb-3 mt-5">Card without Shadow</h3>
-      <div class="demo-card-grid mb-3">
-      <div class="card shadow-none" tabindex="0">
-        <div class="card-body">
-          <h5 class="card-title">
-            <input class="card-title-checked  form-check-input ripple" type="checkbox" value="" id="check2" aria-label="{{ 'cards.select_card' | translate }}">
-          </h5>
-          <h6 class="card-subtitle mb-2">{{ 'cards.card_title' | translate }}</h6>
-          <p class="card-text">{{ 'cards.card_text' | translate }}</p>
-          <div class="card-footer">
-            <a href="javascript:void(0);" class="btn btn-outline-secondary">{{ 'cards.action_secondary' | translate }}</a>
-            <a href="javascript:void(0);" class="btn btn-primary">{{ 'cards.action' | translate }}</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <app-code-example [htmlCode]="cardNoShadowCode" title="Card with Shadow Removed (shadow-none)"></app-code-example>
-      
-      <!-- Expandable card with checkbox -->
-      <h3 class="mb-3 mt-5">Expandable Card (Interactive)</h3>
-      <div class="demo-card-grid mb-3">
-      <div class="card" tabindex="0" [class.expanded]="isExpanded(1)">
+  <!-- Expandable Card with Checkbox -->
+  <section class="demo-section">
+    <h2 class="mb-4">Expandable Card with Checkbox</h2>
+    <div class="demo-card-grid mb-3">
+      <div class="card card-expandable" tabindex="0" [class.expanded]="isExpanded(1)">
         <div class="card-body">
           <h5 class="card-title">
             <div class="dga-featured-icon dga-featured-icon-circle">
               <i class="bi bi-check-circle"></i>
             </div>
-            <input class="card-title-checked  form-check-input ripple" type="checkbox" value="" id="check3" aria-label="{{ 'cards.select_card' | translate }}">
+            <input class="card-title-checked form-check-input ripple" tabindex="-1" type="checkbox" value="" id="check3" aria-label="{{ 'cards.select_card' | translate }}">
           </h5>
           <h6 class="card-subtitle mb-2">{{ 'cards.expandable_title' | translate }}</h6>
           <p class="card-text">{{ 'cards.expandable_text' | translate }}</p>
-          
+
           @if (isExpanded(1)) {
             <div class="card-expanded-content">
               <p class="mt-3">{{ 'cards.expanded_content' | translate }}</p>
@@ -110,22 +136,24 @@
               </ul>
             </div>
           }
-          
+
           <div class="card-footer">
             <i class="bi card-expanded-icon" [class.bi-chevron-up]="isExpanded(1)" [class.bi-chevron-down]="!isExpanded(1)" (click)="toggleCard(1)"></i>
           </div>
         </div>
       </div>
     </div>
-    <app-code-example 
-      [htmlCode]="expandableCardHtmlCode" 
-      [tsCode]="expandableCardTsCode" 
-      title="Expandable Card with Checkbox - HTML Template"></app-code-example>
-      
-      <!-- Expandable card with actions -->
-      <h3 class="mb-3 mt-5">Expandable Card (Simple)</h3>
-      <div class="demo-card-grid mb-3">
-      <div class="card" tabindex="0" [class.expanded]="isExpanded(2)">
+    <app-code-example
+      [htmlCode]="expandableCardHtmlCode"
+      [tsCode]="expandableCardTsCode"
+      title="Expandable Card with Checkbox"></app-code-example>
+  </section>
+
+  <!-- Expandable Card with Actions -->
+  <section class="demo-section">
+    <h2 class="mb-4">Expandable Card with Actions</h2>
+    <div class="demo-card-grid mb-3">
+      <div class="card card-expandable" tabindex="0" [class.expanded]="isExpanded(2)">
         <div class="card-body">
           <h5 class="card-title">
             <div class="dga-featured-icon dga-featured-icon-circle">
@@ -134,7 +162,7 @@
           </h5>
           <h6 class="card-subtitle mb-2">{{ 'cards.expandable_title' | translate }}</h6>
           <p class="card-text">{{ 'cards.expandable_text' | translate }}</p>
-          
+
           @if (isExpanded(2)) {
             <div class="card-expanded-content">
               <p class="mt-3">{{ 'cards.expanded_content' | translate }}</p>
@@ -149,16 +177,160 @@
               </div>
             </div>
           }
-          
+
           <div class="card-footer">
             <i class="bi card-expanded-icon" [class.bi-chevron-up]="isExpanded(2)" [class.bi-chevron-down]="!isExpanded(2)" (click)="toggleCard(2)"></i>
           </div>
         </div>
       </div>
     </div>
-    <app-code-example 
-      [htmlCode]="expandableCardSimpleHtmlCode" 
-      [tsCode]="expandableCardTsCode" 
-      title="Expandable Card with Actions - HTML Template"></app-code-example>
+    <app-code-example
+      [htmlCode]="expandableCardSimpleHtmlCode"
+      [tsCode]="expandableCardTsCode"
+      title="Expandable Card with Actions"></app-code-example>
+  </section>
+
+  <!-- Expandable Card States (expand only) -->
+  <section class="demo-section">
+    <h2 class="mb-4">Expandable Card States</h2>
+    <div class="row g-3 mb-3">
+      <div class="col-6 col-md-3">
+        <p class="text-muted small fw-medium mb-2">Default</p>
+        <div class="card card-expandable" tabindex="0">
+          <div class="card-body">
+            <h5 class="card-title">
+              <div class="dga-featured-icon dga-featured-icon-circle">
+                <i class="bi bi-check-circle"></i>
+              </div>
+            </h5>
+            <h6 class="card-subtitle mb-2">{{ 'cards.expandable_title' | translate }}</h6>
+            <p class="card-text">{{ 'cards.expandable_text' | translate }}</p>
+            <div class="card-footer">
+              <i class="bi bi-chevron-down card-expanded-icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <p class="text-muted small fw-medium mb-2">Hover</p>
+        <div class="card card-expandable card-expandable-hover">
+          <div class="card-body">
+            <h5 class="card-title">
+              <div class="dga-featured-icon dga-featured-icon-circle">
+                <i class="bi bi-check-circle"></i>
+              </div>
+            </h5>
+            <h6 class="card-subtitle mb-2">{{ 'cards.expandable_title' | translate }}</h6>
+            <p class="card-text">{{ 'cards.expandable_text' | translate }}</p>
+            <div class="card-footer">
+              <i class="bi bi-chevron-down card-expanded-icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <p class="text-muted small fw-medium mb-2">Focused</p>
+        <div class="card card-expandable card-expandable-focused">
+          <div class="card-body">
+            <h5 class="card-title">
+              <div class="dga-featured-icon dga-featured-icon-circle">
+                <i class="bi bi-check-circle"></i>
+              </div>
+            </h5>
+            <h6 class="card-subtitle mb-2">{{ 'cards.expandable_title' | translate }}</h6>
+            <p class="card-text">{{ 'cards.expandable_text' | translate }}</p>
+            <div class="card-footer">
+              <i class="bi bi-chevron-down card-expanded-icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <p class="text-muted small fw-medium mb-2">Disabled</p>
+        <div class="card card-expandable disabled" aria-disabled="true">
+          <div class="card-body">
+            <h5 class="card-title">
+              <div class="dga-featured-icon dga-featured-icon-circle">
+                <i class="bi bi-check-circle"></i>
+              </div>
+            </h5>
+            <h6 class="card-subtitle mb-2">{{ 'cards.expandable_title' | translate }}</h6>
+            <p class="card-text">{{ 'cards.expandable_text' | translate }}</p>
+            <div class="card-footer">
+              <i class="bi bi-chevron-down card-expanded-icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-code-example [htmlCode]="expandableCardStatesCode" title="Expandable Card States"></app-code-example>
+  </section>
+
+  <!-- Card with Checkbox States -->
+  <section class="demo-section">
+    <h2 class="mb-4">Card with Checkbox States</h2>
+    <div class="row g-3 mb-3">
+      <div class="col-6 col-md-3">
+        <p class="text-muted small fw-medium mb-2">Default</p>
+        <div class="card card-select" tabindex="0">
+          <div class="card-body">
+            <h5 class="card-title">
+              <div class="dga-featured-icon dga-featured-icon-circle">
+                <i class="bi bi-check-circle"></i>
+              </div>
+              <input class="card-title-checked form-check-input ripple" tabindex="-1" type="checkbox" aria-label="{{ 'cards.select_card' | translate }}">
+            </h5>
+            <h6 class="card-subtitle mb-2">{{ 'cards.card_title' | translate }}</h6>
+            <p class="card-text">{{ 'cards.card_text' | translate }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <p class="text-muted small fw-medium mb-2">Hover</p>
+        <div class="card card-select card-select-hover">
+          <div class="card-body">
+            <h5 class="card-title">
+              <div class="dga-featured-icon dga-featured-icon-circle">
+                <i class="bi bi-check-circle"></i>
+              </div>
+              <input class="card-title-checked form-check-input ripple" tabindex="-1" type="checkbox" aria-label="{{ 'cards.select_card' | translate }}">
+            </h5>
+            <h6 class="card-subtitle mb-2">{{ 'cards.card_title' | translate }}</h6>
+            <p class="card-text">{{ 'cards.card_text' | translate }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <p class="text-muted small fw-medium mb-2">Focused</p>
+        <div class="card card-select card-select-focused">
+          <div class="card-body">
+            <h5 class="card-title">
+              <div class="dga-featured-icon dga-featured-icon-circle">
+                <i class="bi bi-check-circle"></i>
+              </div>
+              <input class="card-title-checked form-check-input ripple" tabindex="-1" type="checkbox" aria-label="{{ 'cards.select_card' | translate }}">
+            </h5>
+            <h6 class="card-subtitle mb-2">{{ 'cards.card_title' | translate }}</h6>
+            <p class="card-text">{{ 'cards.card_text' | translate }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <p class="text-muted small fw-medium mb-2">Disabled</p>
+        <div class="card card-select disabled" aria-disabled="true">
+          <div class="card-body">
+            <h5 class="card-title">
+              <div class="dga-featured-icon dga-featured-icon-circle">
+                <i class="bi bi-check-circle"></i>
+              </div>
+              <input class="card-title-checked form-check-input ripple" tabindex="-1" disabled type="checkbox" aria-label="{{ 'cards.select_card' | translate }}">
+            </h5>
+            <h6 class="card-subtitle mb-2">{{ 'cards.card_title' | translate }}</h6>
+            <p class="card-text">{{ 'cards.card_text' | translate }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-code-example [htmlCode]="cardWithCheckboxStatesCode" title="Card with Checkbox States"></app-code-example>
   </section>
 </div>

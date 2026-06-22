@@ -166,6 +166,68 @@ export class CardsComponent {
   }
 }`;
 
+  cardWithCheckboxStatesCode = `<!-- Default -->
+<div class="card card-select" tabindex="0">
+  <div class="card-body">
+    <h5 class="card-title">
+      <div class="dga-featured-icon dga-featured-icon-circle">
+        <i class="bi bi-check-circle"></i>
+      </div>
+      <input class="card-title-checked form-check-input ripple" tabindex="-1" type="checkbox" aria-label="Select card">
+    </h5>
+    <h6 class="card-subtitle mb-2">Card Title</h6>
+    <p class="card-text">This is a sample card text that describes the content.</p>
+  </div>
+</div>
+
+<!-- Disabled -->
+<div class="card card-select disabled" aria-disabled="true">
+  <div class="card-body">
+    <h5 class="card-title">
+      <div class="dga-featured-icon dga-featured-icon-circle">
+        <i class="bi bi-check-circle"></i>
+      </div>
+      <input class="card-title-checked form-check-input ripple" tabindex="-1" disabled type="checkbox" aria-label="Select card">
+    </h5>
+    <h6 class="card-subtitle mb-2">Card Title</h6>
+    <p class="card-text">This is a sample card text that describes the content.</p>
+  </div>
+</div>`;
+
+  expandableCardStatesCode = `<!-- Default -->
+<div class="card card-expandable" tabindex="0">
+  <div class="card-body">
+    <h5 class="card-title">
+      <div class="dga-featured-icon dga-featured-icon-circle">
+        <i class="bi bi-check-circle"></i>
+      </div>
+      <input class="card-title-checked form-check-input ripple" type="checkbox" aria-label="Select card">
+    </h5>
+    <h6 class="card-subtitle mb-2">Card Title</h6>
+    <p class="card-text">Click the arrow to see more details.</p>
+    <div class="card-footer">
+      <i class="bi bi-chevron-down card-expanded-icon"></i>
+    </div>
+  </div>
+</div>
+
+<!-- Disabled -->
+<div class="card card-expandable disabled" aria-disabled="true">
+  <div class="card-body">
+    <h5 class="card-title">
+      <div class="dga-featured-icon dga-featured-icon-circle">
+        <i class="bi bi-check-circle"></i>
+      </div>
+      <input class="card-title-checked form-check-input ripple" disabled type="checkbox" aria-label="Select card">
+    </h5>
+    <h6 class="card-subtitle mb-2">Card Title</h6>
+    <p class="card-text">Click the arrow to see more details.</p>
+    <div class="card-footer">
+      <i class="bi bi-chevron-down card-expanded-icon"></i>
+    </div>
+  </div>
+</div>`;
+
   expandableCardSimpleHtmlCode = `<div class="card" tabindex="0" [class.expanded]="isExpanded(2)">
   <div class="card-body">
     <h5 class="card-title">
