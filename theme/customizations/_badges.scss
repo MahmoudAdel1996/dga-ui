@@ -24,7 +24,9 @@
   color: $white;
 }
 
-.badge-warning {
+.badge-warning,
+.badge.bg-warning,
+.text-bg-warning {
   background-color: $warning-600;
   color: $white;
 }
