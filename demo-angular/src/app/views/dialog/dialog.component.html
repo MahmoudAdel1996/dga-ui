@@ -1,0 +1,188 @@
+<div class="container py-5">
+  <h1 class="display-4 mb-4">{{ 'dialog.title' | translate }}</h1>
+  <p class="lead mb-5">{{ 'dialog.subtitle' | translate }}</p>
+
+  <!-- Dialog Variants inline -->
+  <section class="demo-section">
+    <h2>Dialog Variants</h2>
+    <div class="row g-4">
+      <!-- Success -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex flex-column p-4">
+            <div class="mb-3">
+              <div class="d-flex align-items-center justify-content-center rounded-circle bg-success-subtle text-success" style="width: 56px; height: 56px;">
+                <i class="bi bi-check-circle-fill fs-3"></i>
+              </div>
+            </div>
+            <h5 class="mb-2">Action Completed</h5>
+            <p class="text-muted small mb-4">Your application has been submitted successfully. You will receive a confirmation email shortly.</p>
+            <div class="d-flex gap-2 mt-auto">
+              <button type="button" class="btn btn-primary btn-sm">View Details</button>
+              <button type="button" class="btn btn-secondary btn-sm">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Warning -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex flex-column p-4">
+            <div class="mb-3">
+              <div class="d-flex align-items-center justify-content-center rounded-circle bg-warning-subtle text-warning" style="width: 56px; height: 56px;">
+                <i class="bi bi-exclamation-triangle-fill fs-3"></i>
+              </div>
+            </div>
+            <h5 class="mb-2">Confirm Action</h5>
+            <p class="text-muted small mb-4">Are you sure you want to submit this application? This action cannot be undone.</p>
+            <div class="d-flex gap-2 mt-auto">
+              <button type="button" class="btn btn-primary btn-sm">Yes, Submit</button>
+              <button type="button" class="btn btn-secondary btn-sm">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Danger -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex flex-column p-4">
+            <div class="mb-3">
+              <div class="d-flex align-items-center justify-content-center rounded-circle bg-danger-subtle text-danger" style="width: 56px; height: 56px;">
+                <i class="bi bi-x-circle-fill fs-3"></i>
+              </div>
+            </div>
+            <h5 class="mb-2">Delete Record</h5>
+            <p class="text-muted small mb-4">This record will be permanently deleted. All associated data will be removed and cannot be recovered.</p>
+            <div class="d-flex gap-2 mt-auto">
+              <button type="button" class="btn btn-destructive-primary btn-sm">Delete</button>
+              <button type="button" class="btn btn-secondary btn-sm">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Info -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body d-flex flex-column p-4">
+            <div class="mb-3">
+              <div class="d-flex align-items-center justify-content-center rounded-circle bg-info-subtle text-info" style="width: 56px; height: 56px;">
+                <i class="bi bi-info-circle-fill fs-3"></i>
+              </div>
+            </div>
+            <h5 class="mb-2">Important Notice</h5>
+            <p class="text-muted small mb-4">Please ensure all documents are uploaded before proceeding. Missing documents may delay your application.</p>
+            <div class="d-flex gap-2 mt-auto">
+              <button type="button" class="btn btn-primary btn-sm">Understood</button>
+              <button type="button" class="btn btn-secondary btn-sm">Later</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-code-example [htmlCode]="successDialogCode"></app-code-example>
+  </section>
+
+  <!-- As Modal Dialogs -->
+  <section class="demo-section">
+    <h2>In Modal</h2>
+    <div class="component-showcase gap-2 flex-wrap">
+      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#successDialog">Success Dialog</button>
+      <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#warningDialog">Warning Dialog</button>
+      <button type="button" class="btn btn-destructive-primary" data-bs-toggle="modal" data-bs-target="#dangerDialog">Danger Dialog</button>
+      <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#infoDialog">Info Dialog</button>
+    </div>
+    <app-code-example [htmlCode]="infoDialogCode"></app-code-example>
+  </section>
+</div>
+
+<!-- Success Modal -->
+<div class="modal fade" id="successDialog" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" style="max-width: 420px;">
+    <div class="modal-content border-0 shadow">
+      <div class="modal-body p-0">
+        <div class="d-flex flex-column p-4">
+          <div class="mb-3">
+            <div class="d-flex align-items-center justify-content-center rounded-circle bg-success-subtle text-success" style="width: 56px; height: 56px;">
+              <i class="bi bi-check-circle-fill fs-3"></i>
+            </div>
+          </div>
+          <h4 class="mb-2">Action Completed</h4>
+          <p class="text-muted small mb-4">Your application has been submitted successfully. You will receive a confirmation email shortly.</p>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">View Details</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Warning Modal -->
+<div class="modal fade" id="warningDialog" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" style="max-width: 420px;">
+    <div class="modal-content border-0 shadow">
+      <div class="modal-body p-0">
+        <div class="d-flex flex-column p-4">
+          <div class="mb-3">
+            <div class="d-flex align-items-center justify-content-center rounded-circle bg-warning-subtle text-warning" style="width: 56px; height: 56px;">
+              <i class="bi bi-exclamation-triangle-fill fs-3"></i>
+            </div>
+          </div>
+          <h4 class="mb-2">Confirm Action</h4>
+          <p class="text-muted small mb-4">Are you sure you want to submit this application? This action cannot be undone.</p>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Yes, Submit</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Danger Modal -->
+<div class="modal fade" id="dangerDialog" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" style="max-width: 420px;">
+    <div class="modal-content border-0 shadow">
+      <div class="modal-body p-0">
+        <div class="d-flex flex-column p-4">
+          <div class="mb-3">
+            <div class="d-flex align-items-center justify-content-center rounded-circle bg-danger-subtle text-danger" style="width: 56px; height: 56px;">
+              <i class="bi bi-x-circle-fill fs-3"></i>
+            </div>
+          </div>
+          <h4 class="mb-2">Delete Record</h4>
+          <p class="text-muted small mb-4">This record will be permanently deleted. All associated data will be removed and cannot be recovered.</p>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-destructive-primary" data-bs-dismiss="modal">Delete</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Info Modal -->
+<div class="modal fade" id="infoDialog" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" style="max-width: 420px;">
+    <div class="modal-content border-0 shadow">
+      <div class="modal-body p-0">
+        <div class="d-flex flex-column p-4">
+          <div class="mb-3">
+            <div class="d-flex align-items-center justify-content-center rounded-circle bg-info-subtle text-info" style="width: 56px; height: 56px;">
+              <i class="bi bi-info-circle-fill fs-3"></i>
+            </div>
+          </div>
+          <h4 class="mb-2">Important Notice</h4>
+          <p class="text-muted small mb-4">Please ensure all documents are uploaded before proceeding. Missing documents may delay your application.</p>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Understood</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Later</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

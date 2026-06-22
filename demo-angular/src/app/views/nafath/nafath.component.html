@@ -1,0 +1,146 @@
+<div class="container py-5">
+  <h1 class="display-4 mb-4">{{ 'nafath.title' | translate }}</h1>
+  <p class="lead mb-5">{{ 'nafath.subtitle' | translate }}</p>
+
+  <!-- All States Side by Side -->
+  <section class="demo-section">
+    <h2>All States</h2>
+    <div class="row g-4">
+
+      <!-- Idle State -->
+      <div class="col-sm-6 col-lg-3">
+        <p class="fw-semibold text-muted small mb-2">Idle</p>
+        <div class="card border shadow-none">
+          <div class="card-body">
+            <div class="d-flex flex-column align-items-center gap-1 mb-3">
+              <div class="d-flex align-items-center justify-content-center rounded-circle bg-primary-subtle text-primary" style="width: 64px; height: 64px;">
+                <i class="bi bi-shield-lock fs-3"></i>
+              </div>
+              <h6 class="mt-2 mb-1">Nafath Verification</h6>
+            </div>
+            <div class="d-flex flex-column gap-3">
+              <div>
+                <label for="nationalId1" class="form-label">National ID <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="nationalId1" placeholder="Enter 10-digit National ID" maxlength="10" />
+              </div>
+              <div class="d-grid">
+                <button type="button" class="btn btn-dark">Authenticate</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Waiting / Authenticating State -->
+      <div class="col-sm-6 col-lg-3">
+        <p class="fw-semibold text-muted small mb-2">Waiting for confirmation</p>
+        <div class="card border shadow-none">
+          <div class="card-body">
+            <div class="d-flex flex-column align-items-center gap-1 mb-3">
+              <div class="d-flex align-items-center justify-content-center rounded-circle bg-primary-subtle" style="width: 64px; height: 64px;">
+                <div class="spinner-border text-primary" role="status" style="width: 2rem; height: 2rem;">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+              <h6 class="mt-2 mb-1">Nafath Verification</h6>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">National ID</label>
+              <input type="text" class="form-control is-valid" value="1029384756" readonly />
+            </div>
+            <div class="d-flex flex-column align-items-center justify-content-center gap-2 my-3">
+              <div class="badge bg-primary d-flex justify-content-center align-items-center fw-bold rounded-circle" style="width: 72px; height: 72px; font-size: 2rem;">42</div>
+              <div class="text-muted small fw-bold"><i class="bi bi-clock me-1"></i> 01:30</div>
+              <p class="text-center text-muted mb-0" style="font-size: 0.8rem;">Open Nafath app and enter this number</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success State -->
+      <div class="col-sm-6 col-lg-3">
+        <p class="fw-semibold text-muted small mb-2">Success</p>
+        <div class="card border shadow-none">
+          <div class="card-body">
+            <div class="d-flex flex-column align-items-center gap-1 mb-3">
+              <div class="d-flex align-items-center justify-content-center rounded-circle bg-success-subtle text-success" style="width: 64px; height: 64px;">
+                <i class="bi bi-shield-fill-check fs-3"></i>
+              </div>
+              <h6 class="mt-2 mb-1">Identity Verified</h6>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">National ID</label>
+              <input type="text" class="form-control is-valid" value="1029384756" readonly />
+              <div class="valid-feedback d-block">Identity verified via Nafath.</div>
+            </div>
+            <div class="alert alert-success d-flex align-items-center gap-2 py-2 mb-0">
+              <i class="bi bi-check-circle-fill"></i>
+              <span class="small">Successfully verified.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Failed State -->
+      <div class="col-sm-6 col-lg-3">
+        <p class="fw-semibold text-muted small mb-2">Failed / Timeout</p>
+        <div class="card border shadow-none">
+          <div class="card-body">
+            <div class="d-flex flex-column align-items-center gap-1 mb-3">
+              <div class="d-flex align-items-center justify-content-center rounded-circle bg-danger-subtle text-danger" style="width: 64px; height: 64px;">
+                <i class="bi bi-shield-fill-x fs-3"></i>
+              </div>
+              <h6 class="mt-2 mb-1">Verification Failed</h6>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">National ID</label>
+              <input type="text" class="form-control is-invalid" value="1029384756" readonly />
+            </div>
+            <div class="alert alert-danger d-flex align-items-center gap-2 py-2 mb-3">
+              <i class="bi bi-shield-fill-x"></i>
+              <span class="small">Verification failed or timed out.</span>
+            </div>
+            <div class="d-grid">
+              <button type="button" class="btn btn-outline-dark btn-sm">
+                <i class="bi bi-arrow-clockwise me-2"></i> Retry
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-4">
+      <app-code-example [htmlCode]="nafathIdleCode"></app-code-example>
+    </div>
+  </section>
+
+  <!-- Compact / Inline -->
+  <section class="demo-section">
+    <h2>Compact (Inline in a form)</h2>
+    <div class="card" style="max-width: 560px;">
+      <div class="card-header fw-semibold">Registration Form</div>
+      <div class="card-body">
+        <div class="mb-3">
+          <label class="form-label">Full Name <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" value="Ahmed Al-Rashidi" readonly />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email <span class="text-danger">*</span></label>
+          <input type="email" class="form-control" value="ahmed@example.sa" readonly />
+        </div>
+        <div class="mb-3 p-3 border rounded bg-light">
+          <p class="fw-semibold mb-2 small text-dark">
+            <i class="bi bi-shield-lock text-primary me-1"></i>
+            Identity Verification (Nafath)
+          </p>
+          <div class="d-flex gap-2">
+            <input type="text" class="form-control form-control-sm" placeholder="National ID" />
+            <button class="btn btn-dark btn-sm text-nowrap">Verify via Nafath</button>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary w-100" disabled>Submit (Verify first)</button>
+      </div>
+    </div>
+    <app-code-example [htmlCode]="nafathSuccessCode"></app-code-example>
+  </section>
+</div>

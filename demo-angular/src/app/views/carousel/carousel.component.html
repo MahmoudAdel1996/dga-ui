@@ -1,0 +1,117 @@
+<div class="container py-5">
+  <h1 class="display-4 mb-4">{{ 'carousel.title' | translate }}</h1>
+  <p class="lead mb-5">{{ 'carousel.subtitle' | translate }}</p>
+
+  <!-- Basic Carousel -->
+  <section class="demo-section">
+    <h2>Basic Carousel</h2>
+    <div id="carouselBasic" class="carousel slide mb-3" data-bs-ride="carousel">
+      <div class="carousel-inner rounded">
+        <div class="carousel-item active">
+          <div class="d-flex align-items-center justify-content-center bg-primary text-white rounded" style="height: 280px;">
+            <h3>Slide 1</h3>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex align-items-center justify-content-center bg-secondary text-white rounded" style="height: 280px;">
+            <h3>Slide 2</h3>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex align-items-center justify-content-center bg-success text-white rounded" style="height: 280px;">
+            <h3>Slide 3</h3>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselBasic" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselBasic" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <app-code-example [htmlCode]="basicCarouselCode"></app-code-example>
+  </section>
+
+  <!-- Carousel with Indicators & Captions -->
+  <section class="demo-section">
+    <h2>With Indicators &amp; Captions</h2>
+    <div id="carouselIndicators" class="carousel slide mb-3" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner rounded">
+        <div class="carousel-item active">
+          <div class="d-flex align-items-center justify-content-center bg-primary rounded" style="height: 280px;">
+            <div class="carousel-caption d-block text-white">
+              <h5>First slide</h5>
+              <p class="mb-0">Digital Government Services Platform</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex align-items-center justify-content-center bg-secondary rounded" style="height: 280px;">
+            <div class="carousel-caption d-block text-white">
+              <h5>Second slide</h5>
+              <p class="mb-0">Streamlined Licensing &amp; Inspections</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex align-items-center justify-content-center bg-success rounded" style="height: 280px;">
+            <div class="carousel-caption d-block text-white">
+              <h5>Third slide</h5>
+              <p class="mb-0">Secure Identity Verification</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <app-code-example [htmlCode]="indicatorsCarouselCode"></app-code-example>
+  </section>
+
+  <!-- Fade Carousel -->
+  <section class="demo-section">
+    <h2>Crossfade Transition</h2>
+    <div id="carouselFade" class="carousel slide carousel-fade mb-3" data-bs-ride="carousel">
+      <div class="carousel-inner rounded">
+        <div class="carousel-item active">
+          <div class="d-flex align-items-center justify-content-center bg-primary text-white rounded" style="height: 220px;">
+            <h3>Fade Slide 1</h3>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex align-items-center justify-content-center bg-danger text-white rounded" style="height: 220px;">
+            <h3>Fade Slide 2</h3>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex align-items-center justify-content-center bg-warning text-dark rounded" style="height: 220px;">
+            <h3>Fade Slide 3</h3>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <app-code-example [htmlCode]="fadeCarouselCode"></app-code-example>
+  </section>
+</div>

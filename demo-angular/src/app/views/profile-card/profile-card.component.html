@@ -1,0 +1,254 @@
+<div class="container py-5">
+  <h1 class="display-4 mb-4">{{ 'profile_card.title' | translate }}</h1>
+  <p class="lead mb-5">{{ 'profile_card.subtitle' | translate }}</p>
+
+  <!-- Compact Profile Card (Dashboard widget) -->
+  <section class="demo-section">
+    <h2>Compact Profile Card (Dashboard Widget)</h2>
+    <div class="card" style="max-width: 420px;">
+      <div class="card-body">
+        <div class="d-flex align-items-center justify-content-between gap-3">
+          <div class="d-flex gap-3 justify-content-start align-items-center">
+            <span class="d-flex align-items-center justify-content-center rounded-circle bg-primary text-white fw-bold flex-shrink-0"
+                  style="width: 48px; height: 48px; font-size: 1.25rem;">A</span>
+            <h5 class="mb-0">Ahmed Al-Rashidi</h5>
+          </div>
+          <a href="#" class="btn btn-outline-primary btn-sm btn-icon" title="Edit Profile">
+            <i class="bi bi-pencil"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <app-code-example [htmlCode]="basicProfileCode"></app-code-example>
+  </section>
+
+  <!-- Detailed Profile Card -->
+  <section class="demo-section">
+    <h2>Detailed Profile Card</h2>
+    <div class="card" style="max-width: 560px;">
+      <div class="card-body">
+        <div class="d-flex align-items-start gap-3">
+          <div class="d-flex align-items-center justify-content-center rounded-circle bg-primary text-white fw-bold flex-shrink-0"
+               style="width: 64px; height: 64px; font-size: 1.5rem;">A</div>
+          <div class="flex-grow-1">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <h5 class="mb-1">Ahmed Al-Rashidi</h5>
+                <p class="text-muted small mb-1"><i class="bi bi-envelope me-1"></i>ahmed&#64;example.sa</p>
+                <p class="text-muted small mb-0"><i class="bi bi-telephone me-1"></i>+966 50 123 4567</p>
+              </div>
+              <a href="#" class="btn btn-outline-primary btn-sm">Edit</a>
+            </div>
+            <hr />
+            <div class="row g-2">
+              <div class="col-6">
+                <small class="text-muted">National ID</small>
+                <div class="small fw-semibold">1029384756</div>
+              </div>
+              <div class="col-6">
+                <small class="text-muted">Role</small>
+                <div class="small fw-semibold">License Manager</div>
+              </div>
+              <div class="col-6">
+                <small class="text-muted">Organization</small>
+                <div class="small fw-semibold">Al-Rashidi Trading Co.</div>
+              </div>
+              <div class="col-6">
+                <small class="text-muted">Status</small>
+                <div><span class="badge text-bg-success">Active</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer d-flex gap-2">
+        <button class="btn btn-primary btn-sm"><i class="bi bi-pencil me-1"></i>Edit Profile</button>
+        <button class="btn btn-secondary btn-sm"><i class="bi bi-key me-1"></i>Change Password</button>
+      </div>
+    </div>
+    <app-code-example [htmlCode]="detailedProfileCode"></app-code-example>
+  </section>
+
+  <!-- Profile Card with Avatar Variations -->
+  <section class="demo-section">
+    <h2>Avatar Variations</h2>
+    <div class="d-flex flex-wrap gap-3">
+      <!-- Initials avatar -->
+      <div class="card" style="width: 200px;">
+        <div class="card-body text-center">
+          <div class="d-flex align-items-center justify-content-center rounded-circle bg-primary text-white fw-bold mx-auto mb-2"
+               style="width: 56px; height: 56px; font-size: 1.25rem;">A</div>
+          <div class="fw-semibold">Ahmed</div>
+          <div class="small text-muted">Admin</div>
+        </div>
+      </div>
+      <!-- Secondary color -->
+      <div class="card" style="width: 200px;">
+        <div class="card-body text-center">
+          <div class="d-flex align-items-center justify-content-center rounded-circle bg-success text-white fw-bold mx-auto mb-2"
+               style="width: 56px; height: 56px; font-size: 1.25rem;">S</div>
+          <div class="fw-semibold">Sara</div>
+          <div class="small text-muted">Manager</div>
+        </div>
+      </div>
+      <!-- Icon avatar -->
+      <div class="card" style="width: 200px;">
+        <div class="card-body text-center">
+          <div class="d-flex align-items-center justify-content-center rounded-circle bg-secondary-subtle text-secondary mx-auto mb-2"
+               style="width: 56px; height: 56px; font-size: 1.5rem;">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="fw-semibold">Anonymous</div>
+          <div class="small text-muted">Guest</div>
+        </div>
+      </div>
+    </div>
+    <app-code-example [htmlCode]="avatarVariationsCode"></app-code-example>
+  </section>
+
+  <!-- Profile Card with Stats -->
+  <section class="demo-section">
+    <h2>Profile Card with Stats</h2>
+    <div class="card" style="max-width: 480px;">
+      <div class="card-body">
+        <div class="d-flex align-items-center gap-3 mb-4">
+          <div class="d-flex align-items-center justify-content-center rounded-circle bg-primary text-white fw-bold flex-shrink-0"
+               style="width: 56px; height: 56px; font-size: 1.25rem;">A</div>
+          <div>
+            <h5 class="mb-0">Ahmed Al-Rashidi</h5>
+            <p class="text-muted small mb-0">License Manager · Al-Rashidi Trading Co.</p>
+          </div>
+        </div>
+        <div class="row g-2 text-center">
+          <div class="col-4">
+            <div class="bg-primary-50 rounded p-2">
+              <div class="fs-5 fw-bold text-primary">12</div>
+              <div class="small text-muted">Applications</div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="bg-success-50 rounded p-2">
+              <div class="fs-5 fw-bold text-success">5</div>
+              <div class="small text-muted">Active Licenses</div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="bg-warning-50 rounded p-2">
+              <div class="fs-5 fw-bold text-warning">2</div>
+              <div class="small text-muted">Pending</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer d-flex gap-2">
+        <button class="btn btn-primary btn-sm"><i class="bi bi-plus me-1"></i>New Application</button>
+        <button class="btn btn-outline-secondary btn-sm"><i class="bi bi-eye me-1"></i>View All</button>
+      </div>
+    </div>
+    <app-code-example [htmlCode]="profileWithStatsCode"></app-code-example>
+  </section>
+
+  <!-- Profile Card with Verification Status -->
+  <section class="demo-section">
+    <h2>Profile Card with Verification Status</h2>
+    <div class="d-flex flex-wrap gap-3">
+      <!-- Verified -->
+      <div class="card" style="max-width: 320px;">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="d-flex align-items-center justify-content-center rounded-circle bg-primary text-white fw-bold flex-shrink-0"
+                 style="width: 52px; height: 52px; font-size: 1.1rem;">A</div>
+            <div>
+              <div class="d-flex align-items-center gap-2">
+                <h6 class="mb-0">Ahmed Al-Rashidi</h6>
+                <i class="bi bi-patch-check-fill text-success" title="Verified"></i>
+              </div>
+              <p class="text-muted small mb-0">National ID: 1029384756</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-2 p-2 rounded bg-success-50">
+            <i class="bi bi-shield-check text-success"></i>
+            <span class="small text-success fw-medium">Identity Verified via Nafath</span>
+          </div>
+        </div>
+      </div>
+      <!-- Unverified -->
+      <div class="card" style="max-width: 320px;">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="d-flex align-items-center justify-content-center rounded-circle bg-secondary-subtle text-secondary fw-bold flex-shrink-0"
+                 style="width: 52px; height: 52px; font-size: 1.1rem;">
+              <i class="bi bi-person-fill"></i>
+            </div>
+            <div>
+              <div class="d-flex align-items-center gap-2">
+                <h6 class="mb-0">Guest User</h6>
+                <i class="bi bi-exclamation-circle-fill text-warning" title="Unverified"></i>
+              </div>
+              <p class="text-muted small mb-0">Identity not verified</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-2 p-2 rounded bg-warning-50">
+            <i class="bi bi-shield-exclamation text-warning"></i>
+            <span class="small text-warning fw-medium">Verification required to proceed</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary btn-sm w-100">Verify with Nafath</button>
+        </div>
+      </div>
+    </div>
+    <app-code-example [htmlCode]="profileVerificationCode"></app-code-example>
+  </section>
+
+  <!-- Compact Profile List -->
+  <section class="demo-section">
+    <h2>Compact Profile List</h2>
+    <div class="card" style="max-width: 480px;">
+      <div class="card-header">
+        <h6 class="mb-0">Team Members</h6>
+      </div>
+      <div class="card-body p-0">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item d-flex align-items-center gap-3 py-3">
+            <div class="d-flex align-items-center justify-content-center rounded-circle bg-primary text-white fw-bold flex-shrink-0"
+                 style="width: 40px; height: 40px;">A</div>
+            <div class="flex-grow-1">
+              <div class="fw-semibold small">Ahmed Al-Rashidi</div>
+              <div class="text-muted x-small" style="font-size: 0.75rem;">License Manager</div>
+            </div>
+            <span class="badge text-bg-success">Active</span>
+          </li>
+          <li class="list-group-item d-flex align-items-center gap-3 py-3">
+            <div class="d-flex align-items-center justify-content-center rounded-circle bg-success text-white fw-bold flex-shrink-0"
+                 style="width: 40px; height: 40px;">S</div>
+            <div class="flex-grow-1">
+              <div class="fw-semibold small">Sara Al-Mutairi</div>
+              <div class="text-muted" style="font-size: 0.75rem;">Account Manager</div>
+            </div>
+            <span class="badge text-bg-success">Active</span>
+          </li>
+          <li class="list-group-item d-flex align-items-center gap-3 py-3">
+            <div class="d-flex align-items-center justify-content-center rounded-circle bg-warning-100 text-warning-700 fw-bold flex-shrink-0"
+                 style="width: 40px; height: 40px;">M</div>
+            <div class="flex-grow-1">
+              <div class="fw-semibold small">Mohammed Al-Zahrani</div>
+              <div class="text-muted" style="font-size: 0.75rem;">Inspector</div>
+            </div>
+            <span class="badge text-bg-warning">Pending</span>
+          </li>
+          <li class="list-group-item d-flex align-items-center gap-3 py-3">
+            <div class="d-flex align-items-center justify-content-center rounded-circle bg-secondary-subtle text-secondary fw-bold flex-shrink-0"
+                 style="width: 40px; height: 40px;"><i class="bi bi-person-fill"></i></div>
+            <div class="flex-grow-1">
+              <div class="fw-semibold small">Fatima Al-Qahtani</div>
+              <div class="text-muted" style="font-size: 0.75rem;">Auditor</div>
+            </div>
+            <span class="badge text-bg-danger">Inactive</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <app-code-example [htmlCode]="compactProfileListCode"></app-code-example>
+  </section>
+</div>

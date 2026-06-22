@@ -1,0 +1,209 @@
+<div class="container py-5">
+  <h1 class="display-4 mb-4">{{ 'modal.title' | translate }}</h1>
+  <p class="lead mb-5">{{ 'modal.subtitle' | translate }}</p>
+
+  <!-- Basic Modal -->
+  <section class="demo-section">
+    <h2>Basic Modal</h2>
+    <div class="component-showcase">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basicModal">
+        Launch modal
+      </button>
+    </div>
+    <app-code-example [htmlCode]="basicModalCode"></app-code-example>
+  </section>
+
+  <!-- Confirmation Modal -->
+  <section class="demo-section">
+    <h2>Confirmation Dialog</h2>
+    <div class="component-showcase">
+      <button type="button" class="btn btn-destructive-primary" data-bs-toggle="modal" data-bs-target="#confirmModal">
+        Delete item
+      </button>
+    </div>
+    <app-code-example [htmlCode]="confirmModalCode"></app-code-example>
+  </section>
+
+  <!-- Form Modal -->
+  <section class="demo-section">
+    <h2>Form Modal</h2>
+    <div class="component-showcase">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
+        Add new record
+      </button>
+    </div>
+    <app-code-example [htmlCode]="formModalCode"></app-code-example>
+  </section>
+
+  <!-- Modal Sizes -->
+  <section class="demo-section">
+    <h2>Modal Sizes</h2>
+    <div class="component-showcase gap-2 flex-wrap">
+      <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#smallModal">Small</button>
+      <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#largeModal">Large</button>
+      <button type="button" class="btn btn-secondary btn-lg" data-bs-toggle="modal" data-bs-target="#xlModal">Extra Large</button>
+    </div>
+    <app-code-example [htmlCode]="sizesModalCode"></app-code-example>
+  </section>
+
+  <!-- Scrollable Modal -->
+  <section class="demo-section">
+    <h2>Scrollable Modal</h2>
+    <div class="component-showcase">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#scrollModal">
+        Scrollable modal
+      </button>
+    </div>
+    <app-code-example [htmlCode]="scrollableModalCode"></app-code-example>
+  </section>
+</div>
+
+<!-- Basic Modal -->
+<div class="modal fade" id="basicModal" tabindex="-1" aria-labelledby="basicModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="basicModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body content goes here. You can include any HTML content.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Confirmation Modal -->
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0 pb-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center pt-0">
+        <div class="mb-3">
+          <i class="bi bi-exclamation-triangle-fill text-danger" style="font-size: 3rem;"></i>
+        </div>
+        <h5 class="mb-2">Are you sure?</h5>
+        <p class="text-muted mb-0">This action cannot be undone. The item will be permanently deleted.</p>
+      </div>
+      <div class="modal-footer justify-content-center border-0 gap-2">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-destructive-primary">Yes, delete it</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Form Modal -->
+<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="formModalLabel">Add new record</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="fullName" class="form-label">Full Name <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" id="fullName" placeholder="Enter full name" />
+        </div>
+        <div class="mb-3">
+          <label for="emailAddr" class="form-label">Email address <span class="text-danger">*</span></label>
+          <input type="email" class="form-control" id="emailAddr" placeholder="name@example.com" />
+        </div>
+        <div class="mb-3">
+          <label for="roleSelect" class="form-label">Role</label>
+          <select class="form-select" id="roleSelect">
+            <option value="">Select role...</option>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+            <option value="viewer">Viewer</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Save record</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Small Modal -->
+<div class="modal fade" id="smallModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Small modal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">Small dialog content.</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Large Modal -->
+<div class="modal fade" id="largeModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Large modal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">Large dialog content with more space for complex layouts.</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- XL Modal -->
+<div class="modal fade" id="xlModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Extra large modal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">Extra large dialog — ideal for data tables, previews, or rich content.</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scrollable Modal -->
+<div class="modal fade" id="scrollModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Scrollable modal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>This modal has a scrollable body when content exceeds the viewport height.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.</p>
+        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
