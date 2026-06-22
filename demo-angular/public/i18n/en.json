@@ -8,21 +8,39 @@
     "getting_started": "Getting Started",
     "components": "Components",
     "layout": "Layout",
+    "custom_components": "Custom App Components",
     "home": "Home",
+    "accordion": "Accordion",
     "alerts": "Alerts",
+    "attachment": "Attachment",
     "badges": "Badges",
-    "spinners": "Spinners",
     "breadcrumb": "Breadcrumbs",
     "buttons": "Buttons",
     "cards": "Cards",
+    "carousel": "Carousel",
+    "collapse": "Collapse",
+    "dialog": "Dialog",
+    "dropdown": "Dropdown",
     "forms": "Forms",
+    "invoices": "Invoices",
+    "links": "Links",
+    "list_group": "List Group",
+    "membership": "Membership",
+    "modal": "Modal",
+    "nafath": "Nafath Verify",
+    "navbar": "Navbar",
+    "notifications": "Notifications",
+    "pagination": "Pagination",
+    "profile_card": "Profile Card",
+    "progress_bar": "Progress Bar",
     "progress_indicator": "Progress Indicator",
-    "tabs": "Tabs",
+    "service_card": "Service & Favorites",
+    "spinners": "Spinners",
     "tables": "Tables",
+    "tabs": "Tabs",
     "toasts": "Toasts",
     "tooltips": "Tooltips",
-    "links": "Links",
-    "pagination": "Pagination",
+    "topbar": "Top Bar",
     "header": "Header",
     "footer": "Footer",
     "contexts": "Contexts",
@@ -325,6 +343,10 @@
     "previous": "Previous",
     "next": "Next"
   },
+  "topbar": {
+    "title": "Top Bar",
+    "subtitle": "Government verification strip that sits above the main header — shows the Saudi government trust badge with an expandable 'How to verify' panel and DGA registration badge."
+  },
   "header": {
     "title": "Header",
     "subtitle": "Responsive header component with navigation and branding",
@@ -367,6 +389,70 @@
     "link_text": "This is a link",
     "link_primary": "Primary Link",
     "link_neutral": "Neutral Link"
+  },
+  "modal": {
+    "title": "Modal",
+    "subtitle": "Bootstrap modal dialogs — use to prompt users with decisions, forms, or important messages."
+  },
+  "navbar": {
+    "title": "Navbar",
+    "subtitle": "Bootstrap responsive navigation bar with support for branding, links, dropdowns, and search."
+  },
+  "dropdown": {
+    "title": "Dropdown",
+    "subtitle": "Bootstrap dropdown menus with support for links, icons, dividers, headers, and directional variants."
+  },
+  "accordion": {
+    "title": "Accordion",
+    "subtitle": "Bootstrap accordion — vertically collapsing panels for showing and hiding content."
+  },
+  "carousel": {
+    "title": "Carousel",
+    "subtitle": "Bootstrap carousel — a slideshow component for cycling through images or content."
+  },
+  "progress_bar": {
+    "title": "Progress Bar",
+    "subtitle": "Bootstrap progress bars — show the progress of a task with labels, colors, and striped variants."
+  },
+  "list_group": {
+    "title": "List Group",
+    "subtitle": "Bootstrap list groups — flexible and powerful component for displaying a series of content."
+  },
+  "collapse": {
+    "title": "Collapse",
+    "subtitle": "Bootstrap collapse — toggle visibility of content with transitions."
+  },
+  "dialog": {
+    "title": "Dialog",
+    "subtitle": "Custom app dialog component — modal dialogs with severity icons and configurable actions."
+  },
+  "attachment": {
+    "title": "Attachment",
+    "subtitle": "File upload and download component with drag-and-drop, validation, and view/update modes."
+  },
+  "nafath": {
+    "title": "Nafath Verify",
+    "subtitle": "Saudi national identity verification via the Nafath mobile application — all UI states shown."
+  },
+  "profile_card": {
+    "title": "Profile Card",
+    "subtitle": "User profile card component — compact and detailed variants with avatar and action buttons."
+  },
+  "membership": {
+    "title": "Membership",
+    "subtitle": "Membership card, plan selection, and subscription info card components."
+  },
+  "notifications_page": {
+    "title": "Notifications",
+    "subtitle": "Notification panel widget and full-page list with read/unread states and empty state."
+  },
+  "service_card": {
+    "title": "Service Cards & Favorites",
+    "subtitle": "Service card grid, favorite services panel, and account manager card components."
+  },
+  "invoices": {
+    "title": "Invoices",
+    "subtitle": "Invoice container with header, body, and footer — including vehicle, training, and WASIF standards line tables with static sample data."
   },
   "code": {
     "show": "Show Code",
