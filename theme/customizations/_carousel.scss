@@ -10,9 +10,18 @@ $carousel-btn-icon-size-sm: 1rem;
 $carousel-btn-icon-size-md: 1.25rem;
 $carousel-btn-icon-size-lg: 1.5rem;
 
-// ─── Disabled-state icons (gray chevrons) ───
+// ─── Custom icon sets ────────────────────────
+// Gray chevrons for disabled state
 $carousel-disabled-prev-icon: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$gray-400}'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>"));
 $carousel-disabled-next-icon: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$gray-400}'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>"));
+
+// Dark chevrons for light-background variants (neutral/dark text icon)
+$carousel-dark-prev-icon: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$neutral-950}'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>"));
+$carousel-dark-next-icon: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$neutral-950}'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>"));
+
+// Primary-colored chevrons for secondary/subtle/transparent variants
+$carousel-primary-prev-icon: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$primary-700}'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>"));
+$carousel-primary-next-icon: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$primary-700}'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>"));
 
 // ─── Base control button ─────────────────────
 .carousel-control-prev,
@@ -50,13 +59,14 @@ $carousel-disabled-next-icon: escape-svg(url("data:image/svg+xml,<svg xmlns='htt
     opacity: 1;
     pointer-events: none;
 
-    .carousel-control-prev-icon {
-      background-image: $carousel-disabled-prev-icon;
-    }
+    .carousel-control-prev-icon { background-image: $carousel-disabled-prev-icon; }
+    .carousel-control-next-icon { background-image: $carousel-disabled-next-icon; }
+  }
 
-    .carousel-control-next-icon {
-      background-image: $carousel-disabled-next-icon;
-    }
+  // ── Demo / standalone use: remove the absolute-positioning side-effects ──
+  &.position-static {
+    transform: none;
+    display: inline-flex;
   }
 }
 
@@ -115,4 +125,74 @@ $carousel-dot-size-lg: 16px;
 .carousel-indicators-lg [data-bs-target] {
   width: $carousel-dot-size-lg;
   height: $carousel-dot-size-lg;
+}
+
+// ─── Color variants ──────────────────────────────────────────
+// neutral: matches btn-neutral
+.carousel-control-neutral {
+  background-color: $neutral-950;
+
+  &:hover  { background-color: $neutral-800; opacity: 1; }
+  &:active { background-color: $neutral-600; opacity: 1; }
+  &:disabled, &.disabled { background-color: $gray-200; }
+}
+
+// secondary: matches btn-secondary — light gray bg, primary-colored icon
+.carousel-control-secondary {
+  background-color: $secondary-100;
+
+  .carousel-control-prev-icon { background-image: $carousel-primary-prev-icon; }
+  .carousel-control-next-icon { background-image: $carousel-primary-next-icon; }
+
+  &:hover  { background-color: $secondary-200; opacity: 1; }
+  &:active { background-color: $secondary-300; opacity: 1; }
+  &:disabled, &.disabled { background-color: $secondary-50; }
+}
+
+// subtle: matches btn-subtle — transparent bg, dark neutral icon; gray fill on pressed
+.carousel-control-subtle {
+  background-color: transparent;
+
+  .carousel-control-prev-icon { background-image: $carousel-dark-prev-icon; }
+  .carousel-control-next-icon { background-image: $carousel-dark-next-icon; }
+
+  &:hover  { background-color: transparent; }
+  &:active { background-color: $secondary-200; opacity: 1; }
+  &:disabled, &.disabled { 
+    background-color: transparent; opacity: 1;
+    color: $secondary-400;
+   }
+}
+
+// transparent: matches btn-transparent — fully transparent, primary icon
+.carousel-control-transparent {
+  background-color: transparent;
+
+  .carousel-control-prev-icon { background-image: $carousel-primary-prev-icon; }
+  .carousel-control-next-icon { background-image: $carousel-primary-next-icon; }
+
+  &:hover  { background-color: transparent; opacity: 0.8; }
+  &:active { background-color: transparent; opacity: 0.6; }
+  &:disabled, &.disabled { background-color: transparent; }
+}
+
+// light: white circle with dark chevron — for use on dark/image slides
+.carousel-control-light {
+  background-color: rgba($white, 0.85);
+
+  .carousel-control-prev-icon { background-image: $carousel-dark-prev-icon; }
+  .carousel-control-next-icon { background-image: $carousel-dark-next-icon; }
+
+  &:hover  { background-color: rgba($white, 0.95); opacity: 1; }
+  &:active { background-color: $white;             opacity: 1; }
+  &:disabled, &.disabled { background-color: $gray-200; }
+}
+
+// danger: matches btn-danger-primary
+.carousel-control-danger {
+  background-color: $danger-600;
+
+  &:hover  { background-color: $danger-700; opacity: 1; }
+  &:active { background-color: $danger-800; opacity: 1; }
+  &:disabled, &.disabled { background-color: $gray-200; }
 }

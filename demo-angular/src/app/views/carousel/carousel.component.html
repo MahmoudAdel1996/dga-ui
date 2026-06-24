@@ -6,7 +6,7 @@
   <section class="demo-section">
     <h2>Control Button States</h2>
     <p class="text-muted mb-3">Carousel nav buttons use the primary colour scale. Focus ring is applied automatically via the global focus style.</p>
-    <div class="component-showcase align-items-center gap-3 mb-3">
+    <div class="d-flex flex-wrap align-items-center gap-4 mb-3">
       <!-- Default -->
       <div class="text-center">
         <button type="button" class="carousel-control-prev position-static mb-2">
@@ -39,7 +39,7 @@
   <section class="demo-section">
     <h2>Control Button Sizes</h2>
     <p class="text-muted mb-3">Add <code>.carousel-control-sm</code> (32px) or <code>.carousel-control-lg</code> (48px) to the control button. Default is 40px.</p>
-    <div class="component-showcase align-items-end gap-4 mb-3">
+    <div class="d-flex flex-wrap align-items-end gap-4 mb-3">
       <div class="text-center">
         <button type="button" class="carousel-control-prev position-static carousel-control-sm mb-2">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -60,6 +60,167 @@
       </div>
     </div>
     <app-code-example [htmlCode]="controlSizesCode"></app-code-example>
+  </section>
+
+  <!-- ── Control Button Variants ─────────────────────────────── -->
+  <section class="demo-section">
+    <h2>Control Button Variants</h2>
+    <p class="text-muted mb-3">
+      Add a colour modifier class alongside <code>.carousel-control-prev</code> / <code>.carousel-control-next</code> to change the button colour scheme.
+    </p>
+
+    <!-- header -->
+    <div class="d-flex align-items-center gap-3 mb-2">
+      <span class="text-muted small fw-semibold" style="min-width: 240px;">Modifier class</span>
+      <span class="text-muted small fw-semibold text-center" style="width: 52px;">Default</span>
+      <span class="text-muted small fw-semibold text-center" style="width: 52px;">Pressed</span>
+      <span class="text-muted small fw-semibold text-center" style="width: 52px;">Disabled</span>
+    </div>
+
+    <!-- (default) primary -->
+    <div class="d-flex align-items-center gap-3 mb-2">
+      <code class="border rounded px-2 py-1 bg-light small" style="min-width: 240px; font-size: 0.72rem;">(default) / .carousel-control-primary</code>
+      <div style="width: 52px;" class="d-flex justify-content-center">
+        <button type="button" class="carousel-control-prev position-static">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Prev</span>
+        </button>
+      </div>
+      <div style="width: 52px;" class="d-flex justify-content-center">
+        <button type="button" class="carousel-control-prev position-static active">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Prev</span>
+        </button>
+      </div>
+      <div style="width: 52px;" class="d-flex justify-content-center">
+        <button type="button" class="carousel-control-prev position-static disabled" aria-disabled="true">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Prev</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- neutral -->
+    <div class="d-flex align-items-center gap-3 mb-2">
+      <code class="border rounded px-2 py-1 bg-light small" style="min-width: 240px; font-size: 0.72rem;">.carousel-control-neutral</code>
+      <div style="width: 52px;" class="d-flex justify-content-center">
+        <button type="button" class="carousel-control-prev carousel-control-neutral position-static">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Prev</span>
+        </button>
+      </div>
+      <div style="width: 52px;" class="d-flex justify-content-center">
+        <button type="button" class="carousel-control-prev carousel-control-neutral position-static active">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Prev</span>
+        </button>
+      </div>
+      <div style="width: 52px;" class="d-flex justify-content-center">
+        <button type="button" class="carousel-control-prev carousel-control-neutral position-static disabled" aria-disabled="true">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Prev</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- secondary -->
+    <div class="d-flex align-items-center gap-3 mb-2">
+      <code class="border rounded px-2 py-1 bg-light small" style="min-width: 240px; font-size: 0.72rem;">.carousel-control-secondary</code>
+      <div style="width: 52px;" class="d-flex justify-content-center">
+        <button type="button" class="carousel-control-prev carousel-control-secondary position-static">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Prev</span>
+        </button>
+      </div>
+      <div style="width: 52px;" class="d-flex justify-content-center">
+        <button type="button" class="carousel-control-prev carousel-control-secondary position-static active">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Prev</span>
+        </button>
+      </div>
+      <div style="width: 52px;" class="d-flex justify-content-center">
+        <button type="button" class="carousel-control-prev carousel-control-secondary position-static disabled" aria-disabled="true">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Prev</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- subtle -->
+    <div class="d-flex align-items-center gap-3 mb-2">
+      <code class="border rounded px-2 py-1 bg-light small" style="min-width: 240px; font-size: 0.72rem;">.carousel-control-subtle</code>
+      <div style="width: 52px;" class="d-flex justify-content-center">
+        <button type="button" class="carousel-control-prev carousel-control-subtle position-static">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Prev</span>
+        </button>
+      </div>
+      <div style="width: 52px;" class="d-flex justify-content-center">
+        <button type="button" class="carousel-control-prev carousel-control-subtle position-static active">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Prev</span>
+        </button>
+      </div>
+      <div style="width: 52px;" class="d-flex justify-content-center">
+        <button type="button" class="carousel-control-prev carousel-control-subtle position-static disabled" aria-disabled="true">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Prev</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- transparent -->
+    <div class="d-flex align-items-center gap-3 mb-2">
+      <code class="border rounded px-2 py-1 bg-light small" style="min-width: 240px; font-size: 0.72rem;">.carousel-control-transparent</code>
+      <div style="width: 52px;" class="d-flex justify-content-center">
+        <button type="button" class="carousel-control-prev carousel-control-transparent position-static">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Prev</span>
+        </button>
+      </div>
+      <div style="width: 52px;" class="d-flex justify-content-center">
+        <button type="button" class="carousel-control-prev carousel-control-transparent position-static active">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Prev</span>
+        </button>
+      </div>
+      <div style="width: 52px;" class="d-flex justify-content-center">
+        <button type="button" class="carousel-control-prev carousel-control-transparent position-static disabled" aria-disabled="true">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Prev</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- light — dark bg swatch -->
+    <div class="d-flex align-items-center gap-3 mb-2">
+      <code class="border rounded px-2 py-1 bg-light small" style="min-width: 240px; font-size: 0.72rem;">.carousel-control-light</code>
+      <div class="d-flex align-items-center gap-3 rounded px-3 py-2" style="background-color: #1a1a2e;">
+        <div style="width: 52px;" class="d-flex justify-content-center">
+          <button type="button" class="carousel-control-prev carousel-control-light position-static">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Prev</span>
+          </button>
+        </div>
+        <div style="width: 52px;" class="d-flex justify-content-center">
+          <button type="button" class="carousel-control-prev carousel-control-light position-static active">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Prev</span>
+          </button>
+        </div>
+        <div style="width: 52px;" class="d-flex justify-content-center">
+          <button type="button" class="carousel-control-prev carousel-control-light position-static disabled" aria-disabled="true">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Prev</span>
+          </button>
+        </div>
+        <span class="text-white small opacity-50 ms-1">on dark bg</span>
+      </div>
+    </div>
+
+    <!-- danger -->
+    <div class="d-flex align-items-center gap-3 mb-3">
+      <code class="border rounded px-2 py-1 bg-light small" style="min-width: 240px; font-size: 0.72rem;">.carousel-control-danger</code>
+      <div style="width: 52px;" class="d-flex justify-content-center">
+        <button type="button" class="carousel-control-prev carousel-control-danger position-static">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Prev</span>
+        </button>
+      </div>
+      <div style="width: 52px;" class="d-flex justify-content-center">
+        <button type="button" class="carousel-control-prev carousel-control-danger position-static active">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Prev</span>
+        </button>
+      </div>
+      <div style="width: 52px;" class="d-flex justify-content-center">
+        <button type="button" class="carousel-control-prev carousel-control-danger position-static disabled" aria-disabled="true">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Prev</span>
+        </button>
+      </div>
+    </div>
+
+    <app-code-example [htmlCode]="controlVariantsCode"></app-code-example>
   </section>
 
   <!-- ── Basic Carousel ────────────────────────────────────── -->

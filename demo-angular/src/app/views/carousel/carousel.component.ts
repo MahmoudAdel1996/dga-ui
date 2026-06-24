@@ -90,6 +90,28 @@ export class CarouselComponent {
   <button type="button" data-bs-target="#id" data-bs-slide-to="2"></button>
 </div>`;
 
+  controlVariantsCode = `<!-- Primary (default) -->
+<button type="button" class="carousel-control-prev position-static">...</button>
+<button type="button" class="carousel-control-next position-static">...</button>
+
+<!-- Neutral -->
+<button type="button" class="carousel-control-prev carousel-control-neutral position-static">...</button>
+
+<!-- Secondary -->
+<button type="button" class="carousel-control-prev carousel-control-secondary position-static">...</button>
+
+<!-- Subtle -->
+<button type="button" class="carousel-control-prev carousel-control-subtle position-static">...</button>
+
+<!-- Transparent -->
+<button type="button" class="carousel-control-prev carousel-control-transparent position-static">...</button>
+
+<!-- Light (for dark slide backgrounds) -->
+<button type="button" class="carousel-control-prev carousel-control-light position-static">...</button>
+
+<!-- Danger -->
+<button type="button" class="carousel-control-prev carousel-control-danger position-static">...</button>`;
+
   basicCarouselCode = `<div id="carouselBasic" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
