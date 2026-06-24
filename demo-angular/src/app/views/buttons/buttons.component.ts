@@ -75,6 +75,33 @@ export class ButtonsComponent {
   <button type="button" class="btn btn-outline-secondary">Next</button>
 </div>`;
 
+  readonly buttonStateRows = [
+    { cls: 'btn-subtle' },
+    { cls: 'btn-transparent' },
+    { cls: 'btn-primary' },
+    { cls: 'btn-neutral' },
+    { cls: 'btn-secondary' },
+    { cls: 'btn-outline-primary' },
+    { cls: 'btn-outline-secondary' },
+    { cls: 'btn-success' },
+    { cls: 'btn-danger' },
+    { cls: 'btn-warning' },
+    { cls: 'btn-info' },
+    { cls: 'btn-light' },
+    { cls: 'btn-dark' },
+    { cls: 'btn-destructive-primary' },
+    { cls: 'btn-destructive-secondary' },
+    { cls: 'btn-destructive-outline-secondary' },
+    { cls: 'btn-destructive-subtle' },
+    { cls: 'btn-destructive-transparent' },
+    { cls: 'btn-danger-primary' },
+    { cls: 'btn-danger-secondary' },
+    { cls: 'btn-danger-subtle' },
+    { cls: 'btn-danger-transparent' },
+    { cls: 'btn-outline-danger' },
+    { cls: 'btn-outline-danger-secondary' },
+  ];
+
   dangerVariantsCode = `<button type="button" class="btn btn-danger-primary">Danger Primary</button>
 <button type="button" class="btn btn-danger-secondary">Danger Secondary</button>
 <button type="button" class="btn btn-danger-subtle">Danger Subtle</button>
@@ -132,8 +159,13 @@ export class ButtonsComponent {
 <button type="button" class="btn btn-primary btn-sm">Small</button>
 <button type="button" class="btn btn-primary btn-xs">Extra Small</button>`;
 
-  buttonStatesCode = `<button type="button" class="btn btn-primary">Normal</button>
-<button type="button" class="btn btn-primary active">Active</button>
+  buttonStatesCode = `<!-- Pattern applies to every variant -->
+<button type="button" class="btn btn-subtle">Normal</button>
+<button type="button" class="btn btn-subtle active">Pressed</button>
+<button type="button" class="btn btn-subtle" disabled>Disabled</button>
+
+<button type="button" class="btn btn-primary">Normal</button>
+<button type="button" class="btn btn-primary active">Pressed</button>
 <button type="button" class="btn btn-primary" disabled>Disabled</button>`;
 
   buttonIconLeftCode = `<button type="button" class="btn btn-primary btn-icon">

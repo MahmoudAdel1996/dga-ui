@@ -2,7 +2,67 @@
   <h1 class="display-4 mb-4">{{ 'carousel.title' | translate }}</h1>
   <p class="lead mb-5">{{ 'carousel.subtitle' | translate }}</p>
 
-  <!-- Basic Carousel -->
+  <!-- ── Control Button States ─────────────────────────────── -->
+  <section class="demo-section">
+    <h2>Control Button States</h2>
+    <p class="text-muted mb-3">Carousel nav buttons use the primary colour scale. Focus ring is applied automatically via the global focus style.</p>
+    <div class="component-showcase align-items-center gap-3 mb-3">
+      <!-- Default -->
+      <div class="text-center">
+        <button type="button" class="carousel-control-prev position-static mb-2">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <div class="small text-muted">Default</div>
+      </div>
+      <!-- Pressed (active) -->
+      <div class="text-center">
+        <button type="button" class="carousel-control-prev position-static active mb-2">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <div class="small text-muted">Pressed</div>
+      </div>
+      <!-- Disabled -->
+      <div class="text-center">
+        <button type="button" class="carousel-control-prev position-static disabled mb-2" aria-disabled="true">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <div class="small text-muted">Disabled</div>
+      </div>
+    </div>
+    <app-code-example [htmlCode]="controlStatesCode"></app-code-example>
+  </section>
+
+  <!-- ── Button Sizes ──────────────────────────────────────── -->
+  <section class="demo-section">
+    <h2>Control Button Sizes</h2>
+    <p class="text-muted mb-3">Add <code>.carousel-control-sm</code> (32px) or <code>.carousel-control-lg</code> (48px) to the control button. Default is 40px.</p>
+    <div class="component-showcase align-items-end gap-4 mb-3">
+      <div class="text-center">
+        <button type="button" class="carousel-control-prev position-static carousel-control-sm mb-2">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <div class="small text-muted">Small · 32px</div>
+      </div>
+      <div class="text-center">
+        <button type="button" class="carousel-control-prev position-static mb-2">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <div class="small text-muted">Medium · 40px</div>
+      </div>
+      <div class="text-center">
+        <button type="button" class="carousel-control-prev position-static carousel-control-lg mb-2">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <div class="small text-muted">Large · 48px</div>
+      </div>
+    </div>
+    <app-code-example [htmlCode]="controlSizesCode"></app-code-example>
+  </section>
+
+  <!-- ── Basic Carousel ────────────────────────────────────── -->
   <section class="demo-section">
     <h2>Basic Carousel</h2>
     <div id="carouselBasic" class="carousel slide mb-3" data-bs-ride="carousel">
@@ -35,7 +95,109 @@
     <app-code-example [htmlCode]="basicCarouselCode"></app-code-example>
   </section>
 
-  <!-- Carousel with Indicators & Captions -->
+  <!-- ── Large Controls ────────────────────────────────────── -->
+  <section class="demo-section">
+    <h2>Large Controls (48px)</h2>
+    <div id="carouselLg" class="carousel slide mb-3" data-bs-ride="carousel">
+      <div class="carousel-inner rounded">
+        <div class="carousel-item active">
+          <div class="d-flex align-items-center justify-content-center bg-primary text-white rounded" style="height: 240px;">
+            <h3>Slide 1</h3>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex align-items-center justify-content-center bg-secondary text-white rounded" style="height: 240px;">
+            <h3>Slide 2</h3>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex align-items-center justify-content-center bg-success text-white rounded" style="height: 240px;">
+            <h3>Slide 3</h3>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev carousel-control-lg" type="button" data-bs-target="#carouselLg" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next carousel-control-lg" type="button" data-bs-target="#carouselLg" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <h2 class="mt-4">Small Controls (32px)</h2>
+    <div id="carouselSm" class="carousel slide mb-3" data-bs-ride="carousel">
+      <div class="carousel-inner rounded">
+        <div class="carousel-item active">
+          <div class="d-flex align-items-center justify-content-center bg-primary text-white rounded" style="height: 200px;">
+            <h3>Slide 1</h3>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex align-items-center justify-content-center bg-secondary text-white rounded" style="height: 200px;">
+            <h3>Slide 2</h3>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="d-flex align-items-center justify-content-center bg-success text-white rounded" style="height: 200px;">
+            <h3>Slide 3</h3>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev carousel-control-sm" type="button" data-bs-target="#carouselSm" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next carousel-control-sm" type="button" data-bs-target="#carouselSm" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <app-code-example [htmlCode]="sizesCarouselCode"></app-code-example>
+  </section>
+
+  <!-- ── Indicator Dot States ─────────────────────────────── -->
+  <section class="demo-section">
+    <h2>Indicator Dot States</h2>
+    <p class="text-muted mb-3">Selected dot uses <code>$primary-600</code>. Not-selected uses <code>$gray-200</code>. Focus ring is applied automatically.</p>
+
+    <div class="d-flex align-items-end gap-5 mb-3 flex-wrap">
+      <!-- Large -->
+      <div class="text-center">
+        <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+          <div class="carousel-indicators position-static m-0 justify-content-start carousel-indicators-lg gap-2">
+            <button type="button" class="position-static active" aria-label="Selected"></button>
+            <button type="button" class="position-static" aria-label="Not selected"></button>
+          </div>
+        </div>
+        <div class="small text-muted">Large · 16px</div>
+      </div>
+      <!-- Medium -->
+      <div class="text-center">
+        <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+          <div class="carousel-indicators position-static m-0 justify-content-start gap-2">
+            <button type="button" class="position-static active" aria-label="Selected"></button>
+            <button type="button" class="position-static" aria-label="Not selected"></button>
+          </div>
+        </div>
+        <div class="small text-muted">Medium · 12px</div>
+      </div>
+      <!-- Small -->
+      <div class="text-center">
+        <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+          <div class="carousel-indicators position-static m-0 justify-content-start carousel-indicators-sm gap-2">
+            <button type="button" class="position-static active" aria-label="Selected"></button>
+            <button type="button" class="position-static" aria-label="Not selected"></button>
+          </div>
+        </div>
+        <div class="small text-muted">Small · 8px</div>
+      </div>
+    </div>
+    <app-code-example [htmlCode]="indicatorDotsCode"></app-code-example>
+  </section>
+
+  <!-- ── With Indicators & Captions ───────────────────────── -->
   <section class="demo-section">
     <h2>With Indicators &amp; Captions</h2>
     <div id="carouselIndicators" class="carousel slide mb-3" data-bs-ride="carousel">
@@ -82,7 +244,7 @@
     <app-code-example [htmlCode]="indicatorsCarouselCode"></app-code-example>
   </section>
 
-  <!-- Fade Carousel -->
+  <!-- ── Crossfade ─────────────────────────────────────────── -->
   <section class="demo-section">
     <h2>Crossfade Transition</h2>
     <div id="carouselFade" class="carousel slide carousel-fade mb-3" data-bs-ride="carousel">
@@ -98,7 +260,7 @@
           </div>
         </div>
         <div class="carousel-item">
-          <div class="d-flex align-items-center justify-content-center bg-warning text-dark rounded" style="height: 220px;">
+          <div class="d-flex align-items-center justify-content-center bg-warning text-white rounded" style="height: 220px;">
             <h3>Fade Slide 3</h3>
           </div>
         </div>

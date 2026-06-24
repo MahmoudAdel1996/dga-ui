@@ -10,6 +10,86 @@ import { CodeExampleComponent } from '../../shared/code-example/code-example.com
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CarouselComponent {
+  controlStatesCode = `<!-- Default -->
+<button type="button" class="carousel-control-prev position-static">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Previous</span>
+</button>
+
+<!-- Pressed -->
+<button type="button" class="carousel-control-prev position-static active">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Previous</span>
+</button>
+
+<!-- Disabled -->
+<button type="button" class="carousel-control-prev position-static disabled" aria-disabled="true">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Previous</span>
+</button>`;
+
+  controlSizesCode = `<!-- Small: 32px -->
+<button type="button" class="carousel-control-prev carousel-control-sm">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+</button>
+
+<!-- Medium (default): 40px -->
+<button type="button" class="carousel-control-prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+</button>
+
+<!-- Large: 48px -->
+<button type="button" class="carousel-control-prev carousel-control-lg">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+</button>`;
+
+  sizesCarouselCode = `<!-- Large controls (48px) -->
+<div class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">...</div>
+  <button class="carousel-control-prev carousel-control-lg" type="button" data-bs-target="#id" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next carousel-control-lg" type="button" data-bs-target="#id" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- Small controls (32px) -->
+<div class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">...</div>
+  <button class="carousel-control-prev carousel-control-sm" type="button" data-bs-target="#id" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next carousel-control-sm" type="button" data-bs-target="#id" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>`;
+
+  indicatorDotsCode = `<!-- Medium dots (default: 12px) -->
+<div class="carousel-indicators">
+  <button type="button" data-bs-target="#id" data-bs-slide-to="0" class="active" aria-current="true"></button>
+  <button type="button" data-bs-target="#id" data-bs-slide-to="1"></button>
+  <button type="button" data-bs-target="#id" data-bs-slide-to="2"></button>
+</div>
+
+<!-- Large dots (16px) -->
+<div class="carousel-indicators carousel-indicators-lg">
+  <button type="button" data-bs-target="#id" data-bs-slide-to="0" class="active" aria-current="true"></button>
+  <button type="button" data-bs-target="#id" data-bs-slide-to="1"></button>
+  <button type="button" data-bs-target="#id" data-bs-slide-to="2"></button>
+</div>
+
+<!-- Small dots (8px) -->
+<div class="carousel-indicators carousel-indicators-sm">
+  <button type="button" data-bs-target="#id" data-bs-slide-to="0" class="active" aria-current="true"></button>
+  <button type="button" data-bs-target="#id" data-bs-slide-to="1"></button>
+  <button type="button" data-bs-target="#id" data-bs-slide-to="2"></button>
+</div>`;
+
   basicCarouselCode = `<div id="carouselBasic" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">

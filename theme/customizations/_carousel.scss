@@ -1,0 +1,118 @@
+// Carousel Customizations
+// Circular primary-colour nav buttons + indicator dots with size variants
+
+// ─── Sizes ──────────────────────────────────
+$carousel-btn-size-sm: 32px;
+$carousel-btn-size-md: 40px;
+$carousel-btn-size-lg: 48px;
+
+$carousel-btn-icon-size-sm: 1rem;
+$carousel-btn-icon-size-md: 1.25rem;
+$carousel-btn-icon-size-lg: 1.5rem;
+
+// ─── Disabled-state icons (gray chevrons) ───
+$carousel-disabled-prev-icon: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$gray-400}'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>"));
+$carousel-disabled-next-icon: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$gray-400}'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/></svg>"));
+
+// ─── Base control button ─────────────────────
+.carousel-control-prev,
+.carousel-control-next {
+  // Reset Bootstrap full-height strip to a compact circle
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+  width: $carousel-btn-size-md;
+  height: $carousel-btn-size-md;
+  border-radius: 50%;
+  background-color: $primary-600;
+  opacity: 1;
+  transition: background-color 0.15s ease;
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: $carousel-btn-icon-size-md;
+    height: $carousel-btn-icon-size-md;
+  }
+
+  &:hover {
+    background-color: $primary-700;
+    opacity: 1;
+  }
+
+  &:active {
+    background-color: $primary-800;
+    opacity: 1;
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: $gray-200;
+    opacity: 1;
+    pointer-events: none;
+
+    .carousel-control-prev-icon {
+      background-image: $carousel-disabled-prev-icon;
+    }
+
+    .carousel-control-next-icon {
+      background-image: $carousel-disabled-next-icon;
+    }
+  }
+}
+
+// ─── Size variants (control buttons) ────────
+.carousel-control-sm {
+  width: $carousel-btn-size-sm;
+  height: $carousel-btn-size-sm;
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: $carousel-btn-icon-size-sm;
+    height: $carousel-btn-icon-size-sm;
+  }
+}
+
+.carousel-control-lg {
+  width: $carousel-btn-size-lg;
+  height: $carousel-btn-size-lg;
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: $carousel-btn-icon-size-lg;
+    height: $carousel-btn-icon-size-lg;
+  }
+}
+
+// ─── Indicator dots ──────────────────────────
+$carousel-dot-size-sm:  8px;
+$carousel-dot-size-md: 12px;
+$carousel-dot-size-lg: 16px;
+
+.carousel-indicators [data-bs-target] {
+  // Disable Bootstrap's opacity-based differentiation — use colour instead
+  --#{$prefix}carousel-indicator-opacity: 1;
+  --#{$prefix}carousel-indicator-active-opacity: 1;
+
+  width: $carousel-dot-size-md;
+  height: $carousel-dot-size-md;
+  border-radius: 50%;
+  background-color: $gray-200;   // not-selected
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  transition: background-color 0.2s ease;
+
+  &.active {
+    background-color: $primary-600;  // selected
+  }
+}
+
+// ─── Size variants (indicator dots) ─────────
+.carousel-indicators-sm [data-bs-target] {
+  width: $carousel-dot-size-sm;
+  height: $carousel-dot-size-sm;
+}
+
+.carousel-indicators-lg [data-bs-target] {
+  width: $carousel-dot-size-lg;
+  height: $carousel-dot-size-lg;
+}
