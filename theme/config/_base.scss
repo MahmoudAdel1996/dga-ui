@@ -10,6 +10,14 @@
 $prefix: dga-;
 
 // ============================================
+// CONTRAST
+// ============================================
+
+// Lower threshold so Bootstrap picks white text on warning ($warning-600 = #DC6803,
+// which has a ~3.5:1 contrast ratio against white, below the default 4.5 cutoff).
+$min-contrast-ratio: 3;
+
+// ============================================
 // BODY
 // ============================================
 
