@@ -1,5 +1,10 @@
 # **DGA UI – Government-Style Bootstrap Theme**
 
+[![npm version](https://img.shields.io/npm/v/sdga-ui.svg)](https://www.npmjs.com/package/sdga-ui)
+[![npm total downloads](https://img.shields.io/npm/dt/sdga-ui.svg)](https://www.npmjs.com/package/sdga-ui)
+[![GitHub stars](https://img.shields.io/github/stars/MahmoudAdel1996/dga-ui.svg)](https://github.com/MahmoudAdel1996/dga-ui/stargazers)
+[![License](https://img.shields.io/npm/l/sdga-ui.svg)](https://github.com/MahmoudAdel1996/dga-ui/blob/main/LICENSE)
+
 **DGA UI** is a customizable UI theme inspired by modern government and authority design systems.
 Built on top of **Bootstrap**, it provides consistent colors, typography, spacing, and reusable UI patterns suitable for official portals, administrative dashboards, and public-sector applications.
 
@@ -41,6 +46,24 @@ Or with yarn:
 
 ```bash
 yarn add sdga-ui
+```
+
+### **Or via CDN**
+
+No installation needed — link directly to the compiled CSS:
+
+```html
+<!-- jsDelivr -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sdga-ui@latest/css/dga-ui.css">
+
+<!-- unpkg -->
+<link rel="stylesheet" href="https://unpkg.com/sdga-ui@latest/css/dga-ui.css">
+```
+
+Pin to a specific version (recommended for production) instead of `@latest`:
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sdga-ui@1.0.31/css/dga-ui.css">
 ```
 
 ---
