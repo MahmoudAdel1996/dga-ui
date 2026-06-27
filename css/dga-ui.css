@@ -28107,21 +28107,19 @@ html {
 
 .form-select {
   min-height: 2rem;
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='%23343a40' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'><path d='M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9' /></svg>");
-  background-size: 24px 24px;
-}
-[dir=rtl] .form-select {
-  background-position: left 0.5rem center;
-  padding-left: 1.75rem;
-  padding-right: 0.75rem;
-}
-.form-select:focus {
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='%23343a40' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round' transform='rotate(180)'><path d='M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9' /></svg>");
-}
-.form-select {
   position: relative;
   border-color: #9DA4AE;
   margin-bottom: 0;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='%23343a40' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'><path d='M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9' /></svg>"), linear-gradient(to right, #0D121C 0%, #0D121C 100%);
+  background-size: 24px 24px, 0% 2px;
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 0.75rem center, center bottom;
+  transition: background-size 0.3s ease-in-out, border-color 0.15s ease-in-out;
+}
+[dir=rtl] .form-select {
+  background-position: left 0.5rem center, center bottom;
+  padding-left: 1.75rem;
+  padding-right: 0.75rem;
 }
 .form-select option {
   background-color: #FFFFFF;
@@ -28137,29 +28135,6 @@ html {
 .form-select:has(option:disabled:checked) option:disabled:checked {
   color: #6C737F;
 }
-.form-select::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(to right, #0D121C 0%, #0D121C 100%);
-  transform: translateX(-50%) scaleX(0);
-  transform-origin: center;
-  transition: transform 0.3s ease-in-out;
-}
-.form-select.filled {
-  background-color: var(--dga-body-bg);
-}
-.form-select.filled-darker {
-  border-color: transparent;
-  background-color: #F3F4F6;
-}
-.form-select.filled-lighter {
-  border-color: transparent;
-  background-color: #FCFCFD;
-}
 .form-select:hover {
   border-color: #6C737F;
   color: #161616;
@@ -28167,58 +28142,68 @@ html {
 .form-select:active {
   border-color: #0D121C;
   background-color: #F3F4F6;
+  background-size: 24px 24px, 100% 2px;
   color: #161616;
 }
-.form-select:active::after {
-  transform: translateX(-50%) scaleX(1);
+.form-select:focus-visible, .form-select:focus {
+  border-color: #384250;
+  background-size: 24px 24px, 100% 2px;
+  outline: none !important;
+  box-shadow: 0px 4px 8px -2px rgba(17, 25, 39, 0.1), 0px 2px 4px -2px rgba(17, 25, 39, 0.06);
 }
 .form-select[readonly] {
   border-color: #D2D6DB;
   color: #161616;
   pointer-events: none;
 }
-.form-select:focus-visible, .form-select:focus {
-  border-color: #384250;
-  outline: none !important;
-}
-.form-select:focus-visible::after, .form-select:focus::after {
-  transform: translateX(-50%) scaleX(1);
-}
-.form-select:focus-visible, .form-select:focus {
-  box-shadow: 0px 4px 8px -2px rgba(17, 25, 39, 0.1), 0px 2px 4px -2px rgba(17, 25, 39, 0.06);
-}
 .form-select:disabled, .form-select[disabled] {
   border-color: #D2D6DB;
   background-color: var(--dga-body-bg);
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='%23adb5bd' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'><path d='M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9' /></svg>"), linear-gradient(to right, transparent 0%, transparent 100%);
   color: #9DA4AE;
   pointer-events: none;
 }
-.form-select:user-invalid {
+.form-select.is-invalid, .form-select:user-invalid {
+  border-color: #B42318;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='%23343a40' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'><path d='M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9' /></svg>"), linear-gradient(to right, #B42318 0%, #B42318 100%);
+  background-size: 24px 24px, 100% 2px;
+}
+.form-select.is-invalid:hover, .form-select:user-invalid:hover {
   border-color: #B42318;
 }
-.form-select:user-invalid::after {
-  background: linear-gradient(to right, #B42318 0%, #B42318 100%);
-}
-.form-select:user-invalid:hover {
+.form-select.is-invalid:focus-visible, .form-select.is-invalid:focus, .form-select:user-invalid:focus-visible, .form-select:user-invalid:focus {
   border-color: #B42318;
+  background-size: 24px 24px, 100% 2px;
 }
-.form-select:user-invalid:active {
-  border-color: #9DA4AE;
-}
-.form-select:user-invalid:active::after {
-  transform: translateX(-50%) scaleX(1);
-}
-.form-select:user-invalid[readonly] {
+.form-select.is-invalid:disabled, .form-select.is-invalid[disabled], .form-select:user-invalid:disabled, .form-select:user-invalid[disabled] {
   border-color: #D2D6DB;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='%23adb5bd' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'><path d='M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9' /></svg>"), linear-gradient(to right, transparent 0%, transparent 100%);
+  background-size: 24px 24px, 0% 2px;
 }
-.form-select:user-invalid:focus-visible, .form-select:user-invalid:focus {
-  border-color: #B42318;
+.form-select.is-valid {
+  border-color: #079455;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='%23343a40' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'><path d='M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9' /></svg>"), linear-gradient(to right, #079455 0%, #079455 100%);
+  background-size: 24px 24px, 100% 2px;
 }
-.form-select:user-invalid:focus-visible::after, .form-select:user-invalid:focus::after {
-  transform: translateX(-50%) scaleX(1);
+.form-select.is-valid:hover {
+  border-color: #079455;
 }
-.form-select:user-invalid:disabled, .form-select:user-invalid[disabled] {
+.form-select.is-valid:focus-visible, .form-select.is-valid:focus {
+  border-color: #079455;
+  background-size: 24px 24px, 100% 2px;
+}
+.form-select.is-valid:disabled, .form-select.is-valid[disabled] {
   border-color: #D2D6DB;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='%23adb5bd' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'><path d='M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9' /></svg>"), linear-gradient(to right, transparent 0%, transparent 100%);
+  background-size: 24px 24px, 0% 2px;
+}
+
+.form-select-lg {
+  min-height: 2.5rem;
+}
+
+.form-select-sm {
+  min-height: 1.5rem;
 }
 
 .select-wrapper {
@@ -28249,7 +28234,39 @@ html {
   left: 0.75rem;
 }
 .select-wrapper .form-select {
-  background-image: none !important;
+  --dga-form-select-bg-img: none;
+  --dga-form-select-bg-icon: none;
+  background-image: linear-gradient(to right, #0D121C 0%, #0D121C 100%) !important;
+  background-size: 0% 2px !important;
+  background-repeat: no-repeat !important;
+  background-position: center bottom !important;
+  transition: background-size 0.3s ease-in-out, border-color 0.15s ease-in-out !important;
+}
+.select-wrapper:focus-within .form-select {
+  background-size: 100% 2px !important;
+}
+.select-wrapper:has(.form-select.is-invalid) .form-select, .select-wrapper:has(.form-select:user-invalid) .form-select {
+  background-image: linear-gradient(to right, #B42318 0%, #B42318 100%) !important;
+  background-size: 100% 2px !important;
+}
+.select-wrapper:has(.form-select.is-valid) .form-select {
+  background-image: linear-gradient(to right, #079455 0%, #079455 100%) !important;
+  background-size: 100% 2px !important;
+}
+.select-wrapper:has(.form-select:disabled), .select-wrapper:has(.form-select[disabled]) {
+  pointer-events: none;
+}
+.select-wrapper:has(.form-select:disabled)::after, .select-wrapper:has(.form-select[disabled])::after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='%23adb5bd' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'><path d='M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9' /></svg>");
+}
+.select-wrapper:has(.form-select:disabled) .form-select, .select-wrapper:has(.form-select[disabled]) .form-select {
+  background-image: linear-gradient(to right, transparent 0%, transparent 100%) !important;
+  background-size: 0% 2px !important;
+}
+
+.input-group .select-wrapper {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .form-select-toggle {
