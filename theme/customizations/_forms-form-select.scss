@@ -4,76 +4,45 @@
 // ============================================
 
 $form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='%23343a40' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'><path d='M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9' /></svg>");
-$form-select-indicator-focus: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='%23343a40' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round' transform='rotate(180)'><path d='M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9' /></svg>");
+$form-select-indicator-disabled: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='%23adb5bd' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'><path d='M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9' /></svg>");
 
+// ─── Base ────────────────────────────────────
 .form-select {
   min-height: 2rem;
-  background-image: $form-select-indicator;
-  background-size: 24px 24px; // Increased from 16px 12px to match new SVG size
-  
-  // RTL Support for background position
-  [dir="rtl"] & {
-    background-position: left 0.5rem center; // Brought closer to edge
-    padding-left: 1.75rem; // Reduced padding for tighter spacing
-    padding-right: 0.75rem; // Reset right padding
-  }
-
-  // Focus state - flip arrow to "up"
-  // NOTE: This is a discrete image swap, not a smooth rotation, due to CSS limitations on background-images.
-  // It also relies on :focus, which may persist after selection closing until blur.
-  &:focus {
-    background-image: $form-select-indicator-focus;
-  }
-
   position: relative;
   border-color: $neutral-400;
   margin-bottom: 0;
 
-  // Style the dropdown options - Native select limitations apply
+  // Layer 1: chevron arrow  |  Layer 2: animated underline (starts at 0 width)
+  background-image:
+    $form-select-indicator,
+    linear-gradient(to right, $neutral-950 0%, $neutral-950 100%);
+  background-size: 24px 24px, 0% 2px;
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 0.75rem center, center bottom;
+  transition:
+    background-size 0.3s ease-in-out,
+    border-color 0.15s ease-in-out;
+
+  [dir="rtl"] & {
+    background-position: left 0.5rem center, center bottom;
+    padding-left: 1.75rem;
+    padding-right: 0.75rem;
+  }
+
   option {
     background-color: $white;
     color: $black;
-    padding: .5rem;
+    padding: 0.5rem;
   }
 
   &:has(option:disabled:checked) {
     color: $neutral-500;
-    &:hover {
-      color: $neutral-500;
-    }
-    option:disabled:checked {
-      color: $neutral-500;
-    }
+    &:hover { color: $neutral-500; }
+    option:disabled:checked { color: $neutral-500; }
   }
 
-  // Create an animated underline effect using pseudo-element
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, $neutral-950 0%, $neutral-950 100%);
-    transform: translateX(-50%) scaleX(0);
-    transform-origin: center;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  &.filled {
-    background-color: var(--#{$prefix}body-bg);
-  }
-
-  &.filled-darker {
-    border-color: transparent;
-    background-color: $neutral-100;
-  }
-
-  &.filled-lighter {
-    border-color: transparent;
-    background-color: $neutral-25;
-  }
-
+  // ── Interactive states ─────────────────────
   &:hover {
     border-color: $neutral-500;
     color: $black;
@@ -82,10 +51,16 @@ $form-select-indicator-focus: url("data:image/svg+xml,<svg xmlns='http://www.w3.
   &:active {
     border-color: $neutral-950;
     background-color: $neutral-100;
+    background-size: 24px 24px, 100% 2px;
     color: $black;
-    &::after {
-      transform: translateX(-50%) scaleX(1);
-    }
+  }
+
+  &:focus-visible,
+  &:focus {
+    border-color: $neutral-700;
+    background-size: 24px 24px, 100% 2px;
+    outline: none !important;
+    box-shadow: $box-shadow;
   }
 
   &[readonly] {
@@ -94,122 +69,181 @@ $form-select-indicator-focus: url("data:image/svg+xml,<svg xmlns='http://www.w3.
     pointer-events: none;
   }
 
-  &:focus-visible,
-  &:focus {
-    border-color: $neutral-700;
-    outline: none !important;
-    &::after {
-      transform: translateX(-50%) scaleX(1);
-    }
-    box-shadow: $box-shadow;
-  }
-
   &:disabled,
   &[disabled] {
     border-color: $neutral-300;
-    background-color: var(--#{ $prefix}body-bg);
+    background-color: var(--#{$prefix}body-bg);
+    background-image:
+      $form-select-indicator-disabled,
+      linear-gradient(to right, transparent 0%, transparent 100%);
     color: $neutral-400;
     pointer-events: none;
   }
 
+  // ── Validation: invalid ────────────────────
+  &.is-invalid,
   &:user-invalid {
     border-color: $error-700;
-    &::after {
-      background: linear-gradient(to right, $error-700 0%, $error-700 100%);
-    }
+    background-image:
+      $form-select-indicator,
+      linear-gradient(to right, $error-700 0%, $error-700 100%);
+    background-size: 24px 24px, 100% 2px;
 
-    &:hover {
-      border-color: $error-700;
-    }
-
-    &:active {
-      border-color: $neutral-400;
-      &::after {
-        transform: translateX(-50%) scaleX(1);
-      }
-    }
-
-    &[readonly] {
-      border-color: $neutral-300;
-    }
+    &:hover { border-color: $error-700; }
 
     &:focus-visible,
     &:focus {
       border-color: $error-700;
-      &::after {
-        transform: translateX(-50%) scaleX(1);
-      }
+      background-size: 24px 24px, 100% 2px;
     }
 
     &:disabled,
     &[disabled] {
       border-color: $neutral-300;
+      background-image:
+        $form-select-indicator-disabled,
+        linear-gradient(to right, transparent 0%, transparent 100%);
+      background-size: 24px 24px, 0% 2px;
+    }
+  }
+
+  // ── Validation: valid ──────────────────────
+  &.is-valid {
+    border-color: $success-600;
+    background-image:
+      $form-select-indicator,
+      linear-gradient(to right, $success-600 0%, $success-600 100%);
+    background-size: 24px 24px, 100% 2px;
+
+    &:hover { border-color: $success-600; }
+
+    &:focus-visible,
+    &:focus {
+      border-color: $success-600;
+      background-size: 24px 24px, 100% 2px;
+    }
+
+    &:disabled,
+    &[disabled] {
+      border-color: $neutral-300;
+      background-image:
+        $form-select-indicator-disabled,
+        linear-gradient(to right, transparent 0%, transparent 100%);
+      background-size: 24px 24px, 0% 2px;
     }
   }
 }
 
-// Wrapper to enable rotation animation for native select arrow
+// ─── Size overrides ───────────────────────────
+.form-select-lg { min-height: 2.5rem; }
+.form-select-sm { min-height: 1.5rem; }
+
+// ─── Wrapper: animated rotating arrow + underline ──────────
+// Wrap any .form-select in .select-wrapper to get:
+//   • smooth 180° chevron rotation on focus/open
+//   • centre-expanding underline that follows the element's own border-radius
+//   • full validation-state colouring
 .select-wrapper {
   position: relative;
   width: 100%;
-  display: block; // Ensure it behaves like a block element
+  display: block;
 
-  // The arrow element
+  // ── Rotating arrow ──────────────────────────
   &::after {
     content: "";
     position: absolute;
     top: 50%;
-    right: 0.75rem; // Default bootstrap select padding-right
+    right: 0.75rem;
     transform: translateY(-50%) rotate(0deg);
-    width: 24px; // Match standard
-    height: 24px; // Match standard
+    width: 24px;
+    height: 24px;
     background-image: $form-select-indicator;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 24px 24px;
     transition: transform 0.2s ease-in-out;
-    pointer-events: none; // Click through to select
+    pointer-events: none;
   }
 
-  // Rotate on focus (approximate "open" state)
-  &:focus-within::after {
-    transform: translateY(-50%) rotate(180deg);
-  }
+  &:focus-within::after { transform: translateY(-50%) rotate(180deg); }
 
-  // RTL Support
-  [dir="rtl"] &::after {
-    right: auto;
-    left: 0.75rem;
-  }
+  [dir="rtl"] &::after { right: auto; left: 0.75rem; }
 
-  // Hide the default arrow of the child select
+  // ── The select provides the underline via its own background-image ──
+  // (same technique as .form-control — gradient lives inside the element
+  //  so it naturally clips to the element's border-radius)
   .form-select {
-    background-image: none !important;
+    --#{$prefix}form-select-bg-img: none;        // suppress Bootstrap's arrow CSS-var
+    --#{$prefix}form-select-bg-icon: none;
+    background-image:
+      linear-gradient(to right, $neutral-950 0%, $neutral-950 100%) !important;
+    background-size: 0% 2px !important;
+    background-repeat: no-repeat !important;
+    background-position: center bottom !important;
+    transition:
+      background-size 0.3s ease-in-out,
+      border-color 0.15s ease-in-out !important;
+  }
+
+  // Focus: expand underline
+  &:focus-within .form-select {
+    background-size: 100% 2px !important;
+  }
+
+  // ── Validation states ──────────────────────
+  &:has(.form-select.is-invalid) .form-select,
+  &:has(.form-select:user-invalid) .form-select {
+    background-image:
+      linear-gradient(to right, $error-700 0%, $error-700 100%) !important;
+    background-size: 100% 2px !important;
+  }
+
+  &:has(.form-select.is-valid) .form-select {
+    background-image:
+      linear-gradient(to right, $success-600 0%, $success-600 100%) !important;
+    background-size: 100% 2px !important;
+  }
+
+  // ── Disabled ──────────────────────────────
+  &:has(.form-select:disabled),
+  &:has(.form-select[disabled]) {
+    pointer-events: none;
+
+    &::after { background-image: $form-select-indicator-disabled; }
+
+    .form-select {
+      background-image:
+        linear-gradient(to right, transparent 0%, transparent 100%) !important;
+      background-size: 0% 2px !important;
+    }
   }
 }
 
-// Special class for Dropdown Toggle that looks like a Form Select / Input
+// .select-wrapper used inside Bootstrap .input-group
+.input-group .select-wrapper {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+// ─── Special class: Dropdown Toggle styled as Form Select ───
 .form-select-toggle {
   display: inline-flex;
   align-items: center;
-  justify-content: space-between; 
-  gap: .5rem; 
-  width: 100%; 
-  
-  // Input-like sizing and base styles matching .form-control
-  // Overriding btn-outline-secondary styles
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+
   min-height: 2rem;
-  padding: .375rem 2.25rem .375rem .75rem; // Right padding for arrow space
+  padding: 0.375rem 2.25rem 0.375rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: $black !important; 
-  background-color: var(--#{$prefix}body-bg) !important; 
-  border: 1px solid $neutral-400 !important; 
+  color: $black !important;
+  background-color: var(--#{$prefix}body-bg) !important;
+  border: 1px solid $neutral-400 !important;
   border-radius: $radius-sm;
 
-  // Animated Underline (from form-control)
-  background-image: linear-gradient(to right, $neutral-950 0%, $neutral-950 100%) !important; // Override btn gradients if any
+  background-image: linear-gradient(to right, $neutral-950 0%, $neutral-950 100%) !important;
   background-size: 0% 2px !important;
   background-repeat: no-repeat !important;
   background-position: center bottom !important;
@@ -221,21 +255,20 @@ $form-select-indicator-focus: url("data:image/svg+xml,<svg xmlns='http://www.w3.
     background-color: var(--#{$prefix}body-bg) !important;
   }
 
-  // Active / Open State
   &:active,
   &:focus,
-  &.show { 
+  &.show {
     border-color: $neutral-400 !important;
-    background-color: $neutral-100 !important; 
+    background-color: $neutral-100 !important;
     color: $black !important;
-    background-size: 100% 2px !important; // Expand underline
-    box-shadow: none !important; 
+    background-size: 100% 2px !important;
+    box-shadow: none !important;
     outline: none !important;
   }
-  
+
   &:focus-visible {
-      border-color: $neutral-700 !important;
-      outline: none !important;
-      box-shadow: $box-shadow !important; 
+    border-color: $neutral-700 !important;
+    outline: none !important;
+    box-shadow: $box-shadow !important;
   }
 }

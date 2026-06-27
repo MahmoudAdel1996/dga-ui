@@ -228,6 +228,76 @@ export class FormsComponent {
   </div>
 </div>`;
 
+  selectStatesCode = `<!-- Normal -->
+<div class="select-wrapper">
+  <select class="form-select">
+    <option value="" disabled selected>Select an option</option>
+    <option value="1">One</option>
+  </select>
+</div>
+
+<!-- Readonly -->
+<div class="select-wrapper">
+  <select class="form-select" readonly>
+    <option value="1" selected>One (readonly)</option>
+  </select>
+</div>
+
+<!-- Disabled -->
+<div class="select-wrapper">
+  <select class="form-select" disabled>
+    <option value="1" selected>One (disabled)</option>
+  </select>
+</div>
+
+<!-- Invalid -->
+<div class="select-wrapper">
+  <select class="form-select is-invalid">
+    <option value="" disabled selected>Select an option</option>
+    <option value="1">One</option>
+  </select>
+</div>
+<div class="invalid-feedback d-block">Please select a valid option.</div>
+
+<!-- Valid -->
+<div class="select-wrapper">
+  <select class="form-select is-valid">
+    <option value="1" selected>One</option>
+  </select>
+</div>
+<div class="valid-feedback d-block">Looks good!</div>`;
+
+  // Select size examples
+  selectSizesCode = `<!-- Large -->
+<div class="select-wrapper">
+  <select class="form-select form-select-lg" aria-label="Large select">
+    <option value="" disabled selected>Select an option</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+</div>
+
+<!-- Default -->
+<div class="select-wrapper">
+  <select class="form-select" aria-label="Default select">
+    <option value="" disabled selected>Select an option</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+</div>
+
+<!-- Small -->
+<div class="select-wrapper">
+  <select class="form-select form-select-sm" aria-label="Small select">
+    <option value="" disabled selected>Select an option</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+</div>`;
+
   // Select dropdown example
   selectCode = `<div class="mb-3">
   <label for="exampleSelect" class="form-label">Example select</label>

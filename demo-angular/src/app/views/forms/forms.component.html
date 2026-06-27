@@ -298,36 +298,134 @@
   <!-- SELECT -->
   <section class="mb-5" aria-labelledby="selectHeading">
     <h2 id="selectHeading" class="h4 mb-3">{{ 'forms.select' | translate }}</h2>
-    <div class="mb-3">
-      <label for="exampleSelect" class="form-label">Example select</label>
-      <select id="exampleSelect" class="form-select" aria-label="Default select example">
-        <option value="" disabled>Select an option</option>
-        <option value="1" selected>One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
+
+    <!-- Select Sizes -->
+    <h3 class="h6 mb-2">Select Sizes</h3>
+    <div class="row g-3 mb-4">
+      <div class="col-md-4">
+        <label for="selectLg" class="form-label">Large</label>
+        <div class="select-wrapper">
+          <select id="selectLg" class="form-select form-select-lg" aria-label="Large select">
+            <option value="" disabled selected>Select an option</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="selectDefault" class="form-label">Default</label>
+        <div class="select-wrapper">
+          <select id="selectDefault" class="form-select" aria-label="Default select">
+            <option value="" disabled selected>Select an option</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="selectSm" class="form-label">Small</label>
+        <div class="select-wrapper">
+          <select id="selectSm" class="form-select form-select-sm" aria-label="Small select">
+            <option value="" disabled selected>Select an option</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="mb-4">
+      <app-code-example [htmlCode]="selectSizesCode"></app-code-example>
     </div>
 
-    <div class="dropdown">
-      <button class="btn btn-outline-secondary dropdown-toggle form-select-toggle" data-bs-toggle="dropdown">
-        Select option
-      </button>
-      <ul class="dropdown-menu">
-        <li>
-          <a class="dropdown-item active" href="#">
-            Option 1
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item" href="#">Option 2</a>
-        </li>
-      </ul>
+    <!-- Select States -->
+    <h3 class="h6 mb-2">Select States</h3>
+    <div class="row g-3 mb-4">
+      <div class="col-md-4">
+        <label for="selectNormal" class="form-label">Normal</label>
+        <div class="select-wrapper">
+          <select id="selectNormal" class="form-select">
+            <option value="" disabled selected>Select an option</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="selectReadonly" class="form-label">Readonly</label>
+        <div class="select-wrapper">
+          <select id="selectReadonly" class="form-select" readonly>
+            <option value="1" selected>One (readonly)</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="selectDisabled" class="form-label disabled">Disabled</label>
+        <div class="select-wrapper">
+          <select id="selectDisabled" class="form-select" disabled>
+            <option value="1" selected>One (disabled)</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <label for="selectInvalid" class="form-label">Invalid</label>
+        <div class="select-wrapper">
+          <select id="selectInvalid" class="form-select is-invalid" aria-describedby="selectInvalidFeedback">
+            <option value="" disabled selected>Select an option</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+          </select>
+        </div>
+        <div id="selectInvalidFeedback" class="invalid-feedback d-block">Please select a valid option.</div>
+      </div>
+      <div class="col-md-4">
+        <label for="selectValid" class="form-label">Valid</label>
+        <div class="select-wrapper">
+          <select id="selectValid" class="form-select is-valid" aria-describedby="selectValidFeedback">
+            <option value="1" selected>One</option>
+            <option value="2">Two</option>
+          </select>
+        </div>
+        <div id="selectValidFeedback" class="valid-feedback d-block">Looks good!</div>
+      </div>
+    </div>
+    <div class="mb-4">
+      <app-code-example [htmlCode]="selectStatesCode"></app-code-example>
     </div>
 
-    <!-- Code Example for Select -->
-    <div class="mt-4">
-      <h3 class="h6 mb-3">Select Dropdown</h3>
+    <!-- Standalone -->
+    <h3 class="h6 mb-2">Standalone</h3>
+    <div class="row g-3 mb-4">
+      <div class="col-md-6">
+        <label for="exampleSelect" class="form-label">Example select</label>
+        <div class="select-wrapper">
+          <select id="exampleSelect" class="form-select" aria-label="Default select example">
+            <option value="" disabled>Select an option</option>
+            <option value="1" selected>One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="mb-4">
       <app-code-example [htmlCode]="selectCode"></app-code-example>
+    </div>
+
+    <!-- Dropdown toggle styled as select -->
+    <h3 class="h6 mb-2">Dropdown Toggle</h3>
+    <div class="mb-3">
+      <div class="dropdown">
+        <button class="btn btn-outline-secondary dropdown-toggle form-select-toggle" data-bs-toggle="dropdown">
+          Select option
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item active" href="#">Option 1</a></li>
+          <li><a class="dropdown-item" href="#">Option 2</a></li>
+        </ul>
+      </div>
     </div>
   </section>
 
