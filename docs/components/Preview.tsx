@@ -116,7 +116,7 @@ export function Preview({ children }: PreviewProps) {
   return (
     <div className="not-prose my-6 w-full max-w-full overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
       {/* Toolbar — wraps on narrow screens instead of overflowing */}
-      <div className="flex flex-wrap items-center gap-2 border-b border-gray-200 bg-gradient-to-b from-white to-gray-50 p-2">
+      <div className="flex flex-wrap items-center gap-2 border-b border-gray-200 bg-linear-to-b from-white to-gray-50 p-2">
         <div className="flex gap-1 rounded-lg bg-gray-100 p-1">
           {VIEWPORTS.map(({ id, label, icon: Icon }) => (
             <button
