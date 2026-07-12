@@ -174,8 +174,12 @@ The theme is organized into three main sections:
 
 ## **🤝 Contributing**
 
-Contributions are welcome!
-Feel free to open issues, submit pull requests, or suggest improvements.
+Contributions are welcome! Please read the [Contributing Guide](CONTRIBUTING.md) first — all styles must match the official SDGA design references:
+
+* [SDGA Figma Components Library](https://www.figma.com/design/I2E5M7OWeToi3moSfwoRfH/Components-Library---Platforms-Code--Community-?node-id=1-1183&p=f&m=dev)
+* [design.dga.gov.sa](https://design.dga.gov.sa/)
+
+Styles that don't exist in the Figma file will not be accepted — open an issue to discuss design gaps instead.
 
 ---
 

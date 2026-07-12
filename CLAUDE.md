@@ -82,6 +82,15 @@ Both `docs/` and `demo-angular/` have their own `package.json` and `node_modules
 
 `npm run version:patch` does everything: builds CSS → bumps version in `package.json` → syncs that version into `docs/package.json` and `demo-angular/package.json` (`sdga-ui` dependency) → commits → tags → pushes. Two GitHub Actions workflows trigger on the resulting `v*` tag: `publish.yml` (npm publish via OIDC trusted publishing) and `deploy.yml` (builds the Angular demo from the freshly published npm package and deploys to GitHub Pages).
 
+### Design source of truth
+
+All component styles MUST come from the official SDGA design references — never invent styles:
+
+- Figma: https://www.figma.com/design/I2E5M7OWeToi3moSfwoRfH/Components-Library---Platforms-Code--Community-?node-id=1-1183&p=f&m=dev
+- Design docs: https://design.dga.gov.sa/
+
+If a component or variant does not exist in the Figma file, do not create custom styling for it — leave it as default Bootstrap. Always use tokens from `theme/config/` instead of raw values. See CONTRIBUTING.md for the full rules.
+
 ### Adding or modifying a component style
 
 1. Add/edit Bootstrap variable overrides in `theme/components/_<component>.scss` (imported via `_variables.scss` *before* Bootstrap).
