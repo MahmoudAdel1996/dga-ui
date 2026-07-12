@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Suspense, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import React, { Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { ArrowRightLeft, Monitor, Smartphone, Tablet } from 'lucide-react';
 
 interface PreviewProps {
@@ -18,6 +18,34 @@ const VIEWPORT_WIDTH: Record<Viewport, string> = {
   tablet: '768px',
   desktop: '1366px',
 };
+
+// One shared shell page for every Preview iframe: the head assets (icons,
+// sdga-ui CSS) are fetched once and served from HTTP cache for all other
+// instances, and content updates mutate the live document via postMessage
+// instead of reloading it (which per-instance srcDoc forced on every
+// content or direction change).
+// Must match basePath in next.config.mjs ('/dga-ui' in prod, '' in dev).
+const FRAME_SRC = (process.env.NODE_ENV === 'production' ? '/dga-ui' : '') + '/preview-frame.html';
+
+// Bootstrap's JS is only needed by previews whose markup uses data-bs-*
+// behaviors. Fetch its source once, shared module-wide by every Preview
+// instance (and across client-side page navigations), and hand the code to
+// each frame for inline execution — N previews cost one network request
+// total instead of one per iframe.
+const BOOTSTRAP_JS_URL =
+  'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js';
+let bootstrapJs: Promise<string> | null = null;
+function fetchBootstrapJs() {
+  bootstrapJs ??= fetch(BOOTSTRAP_JS_URL).then(
+    res => res.text(),
+    () => {
+      // Failed fetch (offline, CDN hiccup): clear so a later preview retries.
+      bootstrapJs = null;
+      return '';
+    }
+  );
+  return bootstrapJs;
+}
 
 const VIEWPORTS: { id: Viewport; label: string; icon: typeof Smartphone }[] = [
   { id: 'mobile', label: 'Mobile (375px)', icon: Smartphone },
@@ -40,6 +68,10 @@ export function Preview({ children }: PreviewProps) {
   // current one are ignored. Kept in a ref so the message handler never
   // closes over a stale value without needing to resubscribe on every change.
   const viewportRef = useRef(viewport);
+  // The frame can't receive content until its document (and message
+  // listener) has loaded; before that, updates are held and the onLoad
+  // handler sends the latest state.
+  const frameReadyRef = useRef(false);
 
   // Avoid hydration mismatch — render markup only after mount.
   useEffect(() => {
@@ -91,9 +123,31 @@ export function Preview({ children }: PreviewProps) {
     return () => observer.disconnect();
   }, [isMounted, isStringContent, children]);
 
-  // Bake the direction into the markup so there's no flash of the wrong
-  // direction and no reliance on cross-frame postMessage timing.
-  const srcDoc = useMemo(() => generateFullHTML(htmlContent, direction), [htmlContent, direction]);
+  // Push content and direction into the already-loaded frame. The frame is
+  // blank until the first setContent arrives, so there's no flash of the
+  // wrong direction, and later updates never reload the document.
+  const postContent = () => {
+    const frame = iframeRef.current?.contentWindow;
+    if (!frame) return;
+    frame.postMessage(
+      { type: 'setContent', html: htmlContent, dir: direction },
+      window.location.origin
+    );
+    if (htmlContent.includes('data-bs-')) {
+      fetchBootstrapJs().then(code => {
+        if (!code) return;
+        iframeRef.current?.contentWindow?.postMessage(
+          { type: 'execScript', code },
+          window.location.origin
+        );
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (frameReadyRef.current) postContent();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [htmlContent, direction]);
 
   // When the simulated device frame is wider than the visible window, open
   // the scroll position on whichever side the content actually starts on —
@@ -156,11 +210,14 @@ export function Preview({ children }: PreviewProps) {
       <div ref={scrollWrapperRef} className="flex justify-start overflow-x-auto bg-gray-100 p-4">
         <iframe
           ref={iframeRef}
-          srcDoc={srcDoc}
+          src={FRAME_SRC}
+          onLoad={() => {
+            frameReadyRef.current = true;
+            postContent();
+          }}
           style={{ width: VIEWPORT_WIDTH[viewport] }}
           className="block flex-none border-0 bg-white"
           title="Preview"
-          sandbox="allow-scripts allow-same-origin"
         />
       </div>
 
@@ -171,85 +228,4 @@ export function Preview({ children }: PreviewProps) {
       )}
     </div>
   );
-}
-
-function generateFullHTML(content: string, dir: Direction) {
-  return `<!DOCTYPE html>
-<html dir="${dir}" lang="${dir === 'rtl' ? 'ar' : 'en'}">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SDGA UI Preview</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sdga-ui@latest/css/dga-ui.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script>
-      // Matches the React side's default viewport state, so the very first
-      // automatic measurement (before any requestResize round-trip) is
-      // already tagged correctly.
-      var resizeToken = 'desktop';
-
-      function notifyHeightChange() {
-        // document.documentElement.scrollHeight is the wrong metric here:
-        // the root <html> element's "auto" height stretches to fill the
-        // iframe's *current* viewport when content is shorter than it, so
-        // it just echoes back whatever height the iframe already has
-        // instead of reporting the smaller true content height — which is
-        // exactly why shrinking (e.g. tablet/mobile back to desktop) never
-        // took effect. document.body has no such quirk.
-        var height = document.body.scrollHeight;
-        window.parent.postMessage({ type: 'resize', height: height, token: resizeToken }, '*');
-      }
-
-      window.addEventListener('message', function(event) {
-        if (event.data && event.data.type === 'requestResize') {
-          resizeToken = event.data.token;
-          notifyHeightChange();
-        }
-      });
-
-      // Placeholder links ("#") shouldn't navigate or jump-scroll the preview.
-      function preventPlaceholderLinks(e) {
-        var target = e.target;
-        while (target && target !== document) {
-          if (target.tagName === 'A' && (target.getAttribute('href') === '#' || target.getAttribute('href') === 'javascript:void(0)')) {
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-          }
-          target = target.parentElement;
-        }
-      }
-
-      window.addEventListener('load', function() {
-        notifyHeightChange();
-        document.addEventListener('click', preventPlaceholderLinks, true);
-        // ResizeObserver catches both content mutations AND the reflow that
-        // happens when the parent changes the iframe's own width (switching
-        // mobile/tablet/desktop) — a MutationObserver alone misses that case.
-        new ResizeObserver(notifyHeightChange).observe(document.body);
-      });
-    </script>
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-      html, body {
-        margin: 0;
-        padding: 0;
-        overflow-x: auto;
-        overflow-y: hidden;
-      }
-      body {
-        padding: 1rem;
-        background: #F3F4F6;
-        font-family: 'IBM Plex Sans Arabic', sans-serif;
-        min-height: fit-content;
-      }
-    </style>
-  </head>
-  <body>
-    ${content}
-  </body>
-</html>`;
 }
