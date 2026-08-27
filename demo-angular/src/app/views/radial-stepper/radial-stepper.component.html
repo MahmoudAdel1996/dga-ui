@@ -1,0 +1,419 @@
+<div class="container py-5">
+  <h1 class="display-4 mb-4">{{ 'radial_stepper.title' | translate }}</h1>
+  <p class="lead mb-5">{{ 'radial_stepper.subtitle' | translate }}</p>
+
+  <!-- PLAYGROUND -->
+  <section class="mb-5" aria-labelledby="playgroundHeading">
+    <h2 id="playgroundHeading" class="h4 mb-3">{{ 'radial_stepper.playground' | translate }}</h2>
+    <p class="text-body-secondary mb-3">{{ 'radial_stepper.playground_desc' | translate }}</p>
+
+    <div class="component-showcase">
+      <div class="row g-4">
+        <!-- Live stepper -->
+        <div class="col-lg-7">
+          <div
+            class="p-4 rounded d-flex align-items-center justify-content-center"
+            [class.bg-primary]="variant() === 'radial-stepper-on-color'"
+            [class.bg-body-tertiary]="variant() !== 'radial-stepper-on-color'"
+            [attr.dir]="rtl() ? 'rtl' : 'ltr'"
+            style="min-height: 12rem"
+          >
+            <div
+              [class]="playgroundClasses()"
+              [style.--radial-stepper-progress]="progress()"
+              role="progressbar"
+              [attr.aria-label]="'radial_stepper.title' | translate"
+              [attr.aria-valuenow]="activeStep()"
+              aria-valuemin="1"
+              [attr.aria-valuemax]="steps.length"
+            >
+              <div class="radial-stepper-ring">
+                @if (showText()) {
+                  <div class="radial-stepper-label">
+                    {{ activeStep() }}
+                    {{ (rtl() ? 'radial_stepper.of_rtl' : 'radial_stepper.of') | translate }}
+                    {{ steps.length }}
+                  </div>
+                }
+                <svg viewBox="0 0 100 100" aria-hidden="true">
+                  <circle
+                    class="radial-stepper-track"
+                    cx="50"
+                    cy="50"
+                    r="45"
+                    stroke-width="10"
+                  ></circle>
+                  <circle
+                    class="radial-stepper-tail"
+                    cx="50"
+                    cy="50"
+                    r="45"
+                    stroke-width="10"
+                  ></circle>
+                </svg>
+              </div>
+
+              @if (showStepName() || showStepDescription() || showAdjacentSteps()) {
+                <div class="radial-stepper-text">
+                  @if (showAdjacentSteps() && previousStep()) {
+                    <span class="radial-stepper-pre">
+                      {{ 'radial_stepper.previous' | translate }}:
+                      {{ previousStep()!.nameKey | translate }}
+                    </span>
+                  }
+                  @if (showStepName()) {
+                    <h3 class="radial-stepper-name">{{ currentStep().nameKey | translate }}</h3>
+                  }
+                  @if (showStepDescription()) {
+                    <p class="radial-stepper-desc">{{ currentStep().descKey | translate }}</p>
+                  }
+                  @if (showAdjacentSteps() && nextStep()) {
+                    <span class="radial-stepper-next">
+                      {{ 'radial_stepper.next' | translate }}: {{ nextStep()!.nameKey | translate }}
+                    </span>
+                  }
+                </div>
+              }
+            </div>
+          </div>
+
+          <div class="d-flex gap-2 mt-3">
+            <button
+              type="button"
+              class="btn btn-outline-primary"
+              (click)="prev()"
+              [disabled]="activeStep() === 1"
+            >
+              {{ 'radial_stepper.prev_btn' | translate }}
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="next()"
+              [disabled]="activeStep() === steps.length"
+            >
+              {{ 'radial_stepper.next_btn' | translate }}
+            </button>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="col-lg-5">
+          <div class="mb-3">
+            <label class="form-label" for="stepperSize">{{
+              'radial_stepper.ctrl_size' | translate
+            }}</label>
+            <select
+              id="stepperSize"
+              class="form-select"
+              [ngModel]="size()"
+              (ngModelChange)="size.set($event)"
+            >
+              <option value="radial-stepper-xl">120px (xl)</option>
+              <option value="radial-stepper-lg">80px (lg)</option>
+              <option value="">64px (default)</option>
+              <option value="radial-stepper-sm">48px (sm)</option>
+              <option value="radial-stepper-xs">40px (xs)</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="stepperVariant">{{
+              'radial_stepper.ctrl_variant' | translate
+            }}</label>
+            <select
+              id="stepperVariant"
+              class="form-select"
+              [ngModel]="variant()"
+              (ngModelChange)="variant.set($event)"
+            >
+              <option value="radial-stepper-primary">primary</option>
+              <option value="radial-stepper-neutral">neutral</option>
+              <option value="radial-stepper-on-color">on-color</option>
+            </select>
+          </div>
+
+          <div class="form-check form-switch mb-2">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="stepperShowText"
+              [ngModel]="showText()"
+              (ngModelChange)="showText.set($event)"
+            />
+            <label class="form-check-label" for="stepperShowText">
+              {{ 'radial_stepper.ctrl_show_text' | translate }}
+            </label>
+          </div>
+
+          <div class="form-check form-switch mb-2">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="stepperShowName"
+              [ngModel]="showStepName()"
+              (ngModelChange)="showStepName.set($event)"
+            />
+            <label class="form-check-label" for="stepperShowName">
+              {{ 'radial_stepper.ctrl_show_name' | translate }}
+            </label>
+          </div>
+
+          <div class="form-check form-switch mb-2">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="stepperShowDesc"
+              [ngModel]="showStepDescription()"
+              (ngModelChange)="showStepDescription.set($event)"
+            />
+            <label class="form-check-label" for="stepperShowDesc">
+              {{ 'radial_stepper.ctrl_show_desc' | translate }}
+            </label>
+          </div>
+
+          <div class="form-check form-switch mb-2">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="stepperShowAdjacent"
+              [ngModel]="showAdjacentSteps()"
+              (ngModelChange)="showAdjacentSteps.set($event)"
+            />
+            <label class="form-check-label" for="stepperShowAdjacent">
+              {{ 'radial_stepper.ctrl_show_adjacent' | translate }}
+            </label>
+          </div>
+
+          <div class="form-check form-switch">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="stepperRtl"
+              [ngModel]="rtl()"
+              (ngModelChange)="rtl.set($event)"
+            />
+            <label class="form-check-label" for="stepperRtl">{{
+              'radial_stepper.ctrl_rtl' | translate
+            }}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-3">
+      <app-code-example [htmlCode]="basicCode"></app-code-example>
+    </div>
+  </section>
+
+  <!-- SIZES -->
+  <section class="mb-5" aria-labelledby="sizesHeading">
+    <h2 id="sizesHeading" class="h4 mb-3">{{ 'radial_stepper.sizes' | translate }}</h2>
+    <p class="text-body-secondary mb-3">{{ 'radial_stepper.sizes_desc' | translate }}</p>
+    <div class="component-showcase d-flex flex-column gap-4">
+      @for (example of sizeExamples; track example.cssClass) {
+        <div>
+          <h3 class="h6 text-body-secondary mb-2">{{ example.label }}</h3>
+          <div [class]="'radial-stepper ' + example.cssClass" style="--radial-stepper-progress: 50">
+            <div class="radial-stepper-ring">
+              <div class="radial-stepper-label">2 {{ 'radial_stepper.of' | translate }} 4</div>
+              <svg viewBox="0 0 100 100" aria-hidden="true">
+                <circle
+                  class="radial-stepper-track"
+                  cx="50"
+                  cy="50"
+                  r="45"
+                  stroke-width="10"
+                ></circle>
+                <circle
+                  class="radial-stepper-tail"
+                  cx="50"
+                  cy="50"
+                  r="45"
+                  stroke-width="10"
+                ></circle>
+              </svg>
+            </div>
+            <div class="radial-stepper-text">
+              <h4 class="radial-stepper-name">{{ 'radial_stepper.step2_name' | translate }}</h4>
+              <p class="radial-stepper-desc">{{ 'radial_stepper.step2_desc' | translate }}</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+    <div class="mt-3">
+      <app-code-example [htmlCode]="sizesCode"></app-code-example>
+    </div>
+  </section>
+
+  <!-- VARIANTS -->
+  <section class="mb-5" aria-labelledby="variantsHeading">
+    <h2 id="variantsHeading" class="h4 mb-3">{{ 'radial_stepper.variants' | translate }}</h2>
+    <p class="text-body-secondary mb-3">{{ 'radial_stepper.variants_desc' | translate }}</p>
+    <div class="component-showcase d-flex flex-column gap-4">
+      <div>
+        <h3 class="h6 text-body-secondary mb-2">primary</h3>
+        <div class="radial-stepper radial-stepper-primary" style="--radial-stepper-progress: 50">
+          <div class="radial-stepper-ring">
+            <div class="radial-stepper-label">2 {{ 'radial_stepper.of' | translate }} 4</div>
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle
+                class="radial-stepper-track"
+                cx="50"
+                cy="50"
+                r="45"
+                stroke-width="10"
+              ></circle>
+              <circle class="radial-stepper-tail" cx="50" cy="50" r="45" stroke-width="10"></circle>
+            </svg>
+          </div>
+          <div class="radial-stepper-text">
+            <h4 class="radial-stepper-name">{{ 'radial_stepper.step2_name' | translate }}</h4>
+            <p class="radial-stepper-desc">{{ 'radial_stepper.step2_desc' | translate }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="h6 text-body-secondary mb-2">neutral</h3>
+        <div class="radial-stepper radial-stepper-neutral" style="--radial-stepper-progress: 50">
+          <div class="radial-stepper-ring">
+            <div class="radial-stepper-label">2 {{ 'radial_stepper.of' | translate }} 4</div>
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle
+                class="radial-stepper-track"
+                cx="50"
+                cy="50"
+                r="45"
+                stroke-width="10"
+              ></circle>
+              <circle class="radial-stepper-tail" cx="50" cy="50" r="45" stroke-width="10"></circle>
+            </svg>
+          </div>
+          <div class="radial-stepper-text">
+            <h4 class="radial-stepper-name">{{ 'radial_stepper.step2_name' | translate }}</h4>
+            <p class="radial-stepper-desc">{{ 'radial_stepper.step2_desc' | translate }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="h6 text-body-secondary mb-2">on-color</h3>
+        <div class="bg-primary p-4 rounded">
+          <div class="radial-stepper radial-stepper-on-color" style="--radial-stepper-progress: 50">
+            <div class="radial-stepper-ring">
+              <div class="radial-stepper-label">2 {{ 'radial_stepper.of' | translate }} 4</div>
+              <svg viewBox="0 0 100 100" aria-hidden="true">
+                <circle
+                  class="radial-stepper-track"
+                  cx="50"
+                  cy="50"
+                  r="45"
+                  stroke-width="10"
+                ></circle>
+                <circle
+                  class="radial-stepper-tail"
+                  cx="50"
+                  cy="50"
+                  r="45"
+                  stroke-width="10"
+                ></circle>
+              </svg>
+            </div>
+            <div class="radial-stepper-text">
+              <h4 class="radial-stepper-name">{{ 'radial_stepper.step2_name' | translate }}</h4>
+              <p class="radial-stepper-desc">{{ 'radial_stepper.step2_desc' | translate }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3">
+      <app-code-example [htmlCode]="variantsCode"></app-code-example>
+    </div>
+  </section>
+
+  <!-- TEXT OPTIONS -->
+  <section class="mb-5" aria-labelledby="textOptionsHeading">
+    <h2 id="textOptionsHeading" class="h4 mb-3">{{ 'radial_stepper.text_options' | translate }}</h2>
+    <p class="text-body-secondary mb-3">{{ 'radial_stepper.text_options_desc' | translate }}</p>
+    <div class="component-showcase d-flex flex-wrap align-items-center gap-5">
+      <div>
+        <h3 class="h6 text-body-secondary mb-2">{{ 'radial_stepper.ring_only' | translate }}</h3>
+        <div class="radial-stepper" style="--radial-stepper-progress: 50">
+          <div class="radial-stepper-ring">
+            <div class="radial-stepper-label">2 {{ 'radial_stepper.of' | translate }} 4</div>
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle
+                class="radial-stepper-track"
+                cx="50"
+                cy="50"
+                r="45"
+                stroke-width="10"
+              ></circle>
+              <circle class="radial-stepper-tail" cx="50" cy="50" r="45" stroke-width="10"></circle>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="h6 text-body-secondary mb-2">{{ 'radial_stepper.name_only' | translate }}</h3>
+        <div class="radial-stepper" style="--radial-stepper-progress: 50">
+          <div class="radial-stepper-ring">
+            <div class="radial-stepper-label">2 {{ 'radial_stepper.of' | translate }} 4</div>
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle
+                class="radial-stepper-track"
+                cx="50"
+                cy="50"
+                r="45"
+                stroke-width="10"
+              ></circle>
+              <circle class="radial-stepper-tail" cx="50" cy="50" r="45" stroke-width="10"></circle>
+            </svg>
+          </div>
+          <div class="radial-stepper-text">
+            <h4 class="radial-stepper-name">{{ 'radial_stepper.step2_name' | translate }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3">
+      <app-code-example [htmlCode]="textOptionsCode"></app-code-example>
+    </div>
+  </section>
+
+  <!-- RTL -->
+  <section class="mb-5" aria-labelledby="rtlHeading">
+    <h2 id="rtlHeading" class="h4 mb-3">{{ 'radial_stepper.rtl' | translate }}</h2>
+    <p class="text-body-secondary mb-3">{{ 'radial_stepper.rtl_desc' | translate }}</p>
+    <div class="component-showcase">
+      <div dir="rtl">
+        <div class="radial-stepper" style="--radial-stepper-progress: 50">
+          <div class="radial-stepper-ring">
+            <div class="radial-stepper-label">٢ من ٤</div>
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle
+                class="radial-stepper-track"
+                cx="50"
+                cy="50"
+                r="45"
+                stroke-width="10"
+              ></circle>
+              <circle class="radial-stepper-tail" cx="50" cy="50" r="45" stroke-width="10"></circle>
+            </svg>
+          </div>
+          <div class="radial-stepper-text">
+            <h4 class="radial-stepper-name">الخطوة الثانية</h4>
+            <p class="radial-stepper-desc">في هذه الخطوة نضيف بعض التفاصيل الإضافية.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3">
+      <app-code-example [htmlCode]="rtlCode"></app-code-example>
+    </div>
+  </section>
+</div>

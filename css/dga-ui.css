@@ -30779,6 +30779,164 @@ html {
   position: relative;
 }
 
+.radial-stepper {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+.radial-stepper .radial-stepper-ring {
+  position: relative;
+  flex-shrink: 0;
+  width: 4rem;
+  height: 4rem;
+}
+.radial-stepper .radial-stepper-ring > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.radial-stepper .radial-stepper-track {
+  fill: none;
+  stroke: #E5E7EB;
+}
+.radial-stepper .radial-stepper-tail {
+  fill: none;
+  stroke: #1B8354;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  stroke-dasharray: 282.743;
+  stroke-dashoffset: calc(282.743 * (1 - var(--radial-stepper-progress, 0) / 100));
+  transition: stroke-dashoffset 0.5s ease;
+}
+.radial-stepper .radial-stepper-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
+  margin: 0;
+  text-align: center;
+  color: #384250;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.radial-stepper .radial-stepper-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-align: start;
+}
+.radial-stepper .radial-stepper-name {
+  margin: 0;
+  color: #384250;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.radial-stepper .radial-stepper-desc,
+.radial-stepper .radial-stepper-pre,
+.radial-stepper .radial-stepper-next {
+  margin: 0;
+  color: #6C737F;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+}
+.radial-stepper.radial-stepper-xl .radial-stepper-ring {
+  width: 7.5rem;
+  height: 7.5rem;
+}
+.radial-stepper.radial-stepper-xl .radial-stepper-label {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.radial-stepper.radial-stepper-xl .radial-stepper-name {
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+}
+.radial-stepper.radial-stepper-xl .radial-stepper-desc,
+.radial-stepper.radial-stepper-xl .radial-stepper-pre,
+.radial-stepper.radial-stepper-xl .radial-stepper-next {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.radial-stepper.radial-stepper-lg .radial-stepper-ring {
+  width: 5rem;
+  height: 5rem;
+}
+.radial-stepper.radial-stepper-lg .radial-stepper-label {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.radial-stepper.radial-stepper-lg .radial-stepper-name {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.radial-stepper.radial-stepper-lg .radial-stepper-desc,
+.radial-stepper.radial-stepper-lg .radial-stepper-pre,
+.radial-stepper.radial-stepper-lg .radial-stepper-next {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.radial-stepper.radial-stepper-sm .radial-stepper-ring {
+  width: 3rem;
+  height: 3rem;
+}
+.radial-stepper.radial-stepper-sm .radial-stepper-label {
+  font-size: 0.65625rem;
+  line-height: 0.9375rem;
+}
+.radial-stepper.radial-stepper-xs .radial-stepper-ring {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.radial-stepper.radial-stepper-xs .radial-stepper-label {
+  font-size: 0.546875rem;
+  line-height: 0.78125rem;
+}
+.radial-stepper.radial-stepper-xs .radial-stepper-name {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+}
+.radial-stepper.radial-stepper-xs .radial-stepper-desc,
+.radial-stepper.radial-stepper-xs .radial-stepper-pre,
+.radial-stepper.radial-stepper-xs .radial-stepper-next {
+  font-size: 0.625rem;
+  line-height: 0.875rem;
+}
+.radial-stepper.radial-stepper-neutral .radial-stepper-tail {
+  stroke: #161616;
+}
+.radial-stepper.radial-stepper-on-color .radial-stepper-track {
+  stroke: rgba(255, 255, 255, 0.3);
+}
+.radial-stepper.radial-stepper-on-color .radial-stepper-tail {
+  stroke: #FFFFFF;
+}
+.radial-stepper.radial-stepper-on-color .radial-stepper-label,
+.radial-stepper.radial-stepper-on-color .radial-stepper-name {
+  color: #FFFFFF;
+}
+.radial-stepper.radial-stepper-on-color .radial-stepper-desc {
+  color: rgba(255, 255, 255, 0.8);
+}
+.radial-stepper.radial-stepper-on-color .radial-stepper-pre,
+.radial-stepper.radial-stepper-on-color .radial-stepper-next {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+[dir=rtl] .radial-stepper .radial-stepper-tail {
+  stroke-dashoffset: calc(282.743 * (var(--radial-stepper-progress, 0) / 100 - 1));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .radial-stepper .radial-stepper-tail {
+    transition: none;
+  }
+}
 .dga-breadcrumb .dga-breadcrumb-item {
   list-style: none;
 }

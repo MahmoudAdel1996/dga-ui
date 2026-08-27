@@ -1,0 +1,250 @@
+// ============================================
+// RADIAL STEPPER
+// Circular progress ring with a centred "N of M" label and an adjacent
+// text column (previous step / step name / description / next step).
+//
+// Mirrors the SDGA NDS `dga-radial-stepper` web component:
+// https://dga-nds-story-book-695z8.ondigitalocean.app/?path=/docs/components-radialstepper--docs
+// Design docs: https://design.dga.gov.sa/
+//
+// `sdga-ui` ships no JavaScript. The ring is driven entirely by the
+// `--radial-stepper-progress` custom property (0–100) set on the block:
+//
+//   <div class="radial-stepper" style="--radial-stepper-progress: 50"> … </div>
+//
+// The SVG markup is identical at every size — `viewBox="0 0 100 100"`,
+// `r="45"`, `stroke-width="10"` matches the design's stroke = size / 10 and
+// r = (size - stroke) / 2 ratios exactly — so only the size modifier changes.
+// ============================================
+
+// 2π · 45 — the circumference of the universal viewBox radius.
+$radial-stepper-circumference: 282.743;
+
+$radial-stepper-size-xl: 7.5rem; // Figma: 120px
+$radial-stepper-size-lg: 5rem; // Figma: 80px
+$radial-stepper-size-base: 4rem; // Figma: 64px (default)
+$radial-stepper-size-sm: 3rem; // Figma: 48px
+$radial-stepper-size-xs: 2.5rem; // Figma: 40px
+
+.radial-stepper {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem; // Figma: 8px
+
+  // ── Ring ────────────────────────────────────────────────────────────────
+  .radial-stepper-ring {
+    position: relative;
+    flex-shrink: 0;
+    width: $radial-stepper-size-base;
+    height: $radial-stepper-size-base;
+
+    > svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .radial-stepper-track {
+    fill: none;
+    stroke: $gray-200; // Figma: --background-neutral-200 (#E5E7EB)
+  }
+
+  .radial-stepper-tail {
+    fill: none;
+    stroke: $primary; // Figma: --background-primary (#1B8354)
+    stroke-linecap: round;
+    // Start the sweep at 12 o'clock. `transform-origin` keeps this
+    // independent of the viewBox coordinate space.
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    stroke-dasharray: $radial-stepper-circumference;
+    stroke-dashoffset: calc(
+      #{$radial-stepper-circumference} * (1 - var(--radial-stepper-progress, 0) / 100)
+    );
+    transition: stroke-dashoffset 0.5s ease;
+  }
+
+  // ── Centred label ───────────────────────────────────────────────────────
+  // Physical `left` on purpose, not `inset-inline-start`: this is a two-axis
+  // centring, so the offset must stay on the same edge the `translate(-50%)`
+  // compensates for. Under RTL `inset-inline-start` resolves to `right` and
+  // the pair would push the label off-centre instead of centring it.
+  .radial-stepper-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: max-content;
+    margin: 0;
+    text-align: center;
+    color: $gray-700; // Figma: --text-primary-paragraph (#384250)
+    font-weight: $font-weight-bold;
+    font-size: 0.875rem; // Figma: 14px / 20px
+    line-height: 1.25rem;
+  }
+
+  // ── Text column ─────────────────────────────────────────────────────────
+  .radial-stepper-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem; // Figma: 4px
+    text-align: start;
+  }
+
+  .radial-stepper-name {
+    margin: 0;
+    color: $gray-700; // Figma: --stepper-text-primary
+    font-weight: $font-weight-semibold;
+    font-size: 0.875rem; // Figma: 14px / 20px
+    line-height: 1.25rem;
+  }
+
+  .radial-stepper-desc,
+  .radial-stepper-pre,
+  .radial-stepper-next {
+    margin: 0;
+    color: $gray-500; // Figma: --stepper-text-tertiary (#6C737F)
+    font-weight: $font-weight-base;
+    font-size: 0.75rem; // Figma: 12px / 18px
+    line-height: 1.125rem;
+  }
+
+  // ── Sizes ───────────────────────────────────────────────────────────────
+  // The unmodified block is the 64px default; each modifier restates the
+  // ring dimensions and the three type scales from the design spec.
+  &.radial-stepper-xl {
+    .radial-stepper-ring {
+      width: $radial-stepper-size-xl;
+      height: $radial-stepper-size-xl;
+    }
+
+    .radial-stepper-label {
+      font-size: 1.5rem; // Figma: 24px / 32px
+      line-height: 2rem;
+    }
+
+    .radial-stepper-name {
+      font-size: 1.25rem; // Figma: 20px / 30px
+      line-height: 1.875rem;
+    }
+
+    .radial-stepper-desc,
+    .radial-stepper-pre,
+    .radial-stepper-next {
+      font-size: 0.875rem; // Figma: 14px / 20px
+      line-height: 1.25rem;
+    }
+  }
+
+  &.radial-stepper-lg {
+    .radial-stepper-ring {
+      width: $radial-stepper-size-lg;
+      height: $radial-stepper-size-lg;
+    }
+
+    .radial-stepper-label {
+      font-size: 1.125rem; // Figma: 18px / 28px
+      line-height: 1.75rem;
+    }
+
+    .radial-stepper-name {
+      font-size: 1rem; // Figma: 16px / 24px
+      line-height: 1.5rem;
+    }
+
+    .radial-stepper-desc,
+    .radial-stepper-pre,
+    .radial-stepper-next {
+      font-size: 0.875rem; // Figma: 14px / 20px
+      line-height: 1.25rem;
+    }
+  }
+
+  &.radial-stepper-sm {
+    .radial-stepper-ring {
+      width: $radial-stepper-size-sm;
+      height: $radial-stepper-size-sm;
+    }
+
+    .radial-stepper-label {
+      font-size: 0.65625rem; // Figma: 10.5px / 15px
+      line-height: 0.9375rem;
+    }
+
+    // .radial-stepper-name and the tertiary text keep the 64px scale.
+  }
+
+  &.radial-stepper-xs {
+    .radial-stepper-ring {
+      width: $radial-stepper-size-xs;
+      height: $radial-stepper-size-xs;
+    }
+
+    .radial-stepper-label {
+      font-size: 0.546875rem; // Figma: 8.75px / 12.5px
+      line-height: 0.78125rem;
+    }
+
+    .radial-stepper-name {
+      font-size: 0.75rem; // Figma: 12px / 18px
+      line-height: 1.125rem;
+    }
+
+    .radial-stepper-desc,
+    .radial-stepper-pre,
+    .radial-stepper-next {
+      font-size: 0.625rem; // Figma: 10px / 14px
+      line-height: 0.875rem;
+    }
+  }
+
+  // ── Variants ────────────────────────────────────────────────────────────
+  // `.radial-stepper-primary` is the default and needs no rules; it exists as
+  // an explicit opt-in so markup can name the variant it means.
+  &.radial-stepper-neutral {
+    .radial-stepper-tail {
+      stroke: $black; // Figma: --button-background-black-selected
+    }
+  }
+
+  // For use on a filled surface (e.g. `.bg-primary`).
+  &.radial-stepper-on-color {
+    .radial-stepper-track {
+      stroke: rgba($white, 0.3); // Figma: --alpha-white-30
+    }
+
+    .radial-stepper-tail {
+      stroke: $white; // Figma: --surface-oncolor
+    }
+
+    .radial-stepper-label,
+    .radial-stepper-name {
+      color: $white; // Figma: --text-oncolor-primary
+    }
+
+    .radial-stepper-desc {
+      color: rgba($white, 0.8); // Figma: --text-oncolor-secondary
+    }
+
+    .radial-stepper-pre,
+    .radial-stepper-next {
+      color: rgba($white, 0.7); // Figma: --text-oncolor-tertiary
+    }
+  }
+}
+
+// RTL sweeps counter-clockwise from 12 o'clock — the sign of the dash offset
+// flips. Everything else is direction-agnostic (flex + logical properties).
+[dir='rtl'] .radial-stepper .radial-stepper-tail {
+  stroke-dashoffset: calc(
+    #{$radial-stepper-circumference} * (var(--radial-stepper-progress, 0) / 100 - 1)
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .radial-stepper .radial-stepper-tail {
+    transition: none;
+  }
+}

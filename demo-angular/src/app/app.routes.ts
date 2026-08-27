@@ -93,6 +93,10 @@ export const routes: Routes = [
     loadComponent: () => import('./views/progress-indicator/progress-indicator').then(m => m.ProgressIndicator),
   },
   {
+    path: 'radial-stepper',
+    loadComponent: () => import('./views/radial-stepper/radial-stepper.component').then((m) => m.RadialStepperComponent),
+  },
+  {
     path: 'spinners',
     loadComponent: () => import('./views/spinners/spinners.component').then((m) => m.SpinnersComponent),
   },

@@ -75,6 +75,7 @@ export class App {
         { id: 'pagination', labelKey: 'nav.pagination', icon: '📍', route: '/pagination' },
         { id: 'progress-bar', labelKey: 'nav.progress_bar', icon: '📊', route: '/progress-bar' },
         { id: 'progress-indicator', labelKey: 'nav.progress_indicator', icon: '⏳', route: '/progress-indicator' },
+        { id: 'radial-stepper', labelKey: 'nav.radial_stepper', icon: '🎯', route: '/radial-stepper' },
         { id: 'spinners', labelKey: 'nav.spinners', icon: '🌀', route: '/spinners' },
         { id: 'tables', labelKey: 'nav.tables', icon: '📊', route: '/tables' },
         { id: 'tabs', labelKey: 'nav.tabs', icon: '📑', route: '/tabs' },
