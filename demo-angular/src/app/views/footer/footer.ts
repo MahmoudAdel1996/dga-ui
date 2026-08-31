@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CodeExampleComponent } from '../../shared/code-example/code-example.component';
 
 @Component({
   selector: 'app-footer',
-  imports: [TranslateModule, CodeExampleComponent],
+  imports: [CodeExampleComponent],
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: './footer.html',
 })
 export class Footer {

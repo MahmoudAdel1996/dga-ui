@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { CodeExampleComponent } from '../../shared/code-example/code-example.component';
 
 interface BreadcrumbItem {
@@ -11,7 +11,7 @@ interface BreadcrumbItem {
 
 @Component({
   selector: 'app-breadcrumb',
-  imports: [TranslateModule, RouterModule, CodeExampleComponent],
+  imports: [TranslatePipe, RouterModule, CodeExampleComponent],
   templateUrl: './breadcrumb.html',
   styleUrl: './breadcrumb.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

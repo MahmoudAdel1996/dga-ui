@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { CodeExampleComponent } from '../../shared/code-example/code-example.component';
 
 @Component({
   selector: 'app-progress-indicator',
-  imports: [TranslateModule, CodeExampleComponent],
+  imports: [TranslatePipe, CodeExampleComponent],
   templateUrl: './progress-indicator.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './progress-indicator.scss',
 })
 export class ProgressIndicator {

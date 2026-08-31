@@ -1,10 +1,10 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { CodeExampleComponent } from '../../shared/code-example/code-example.component';
 
 @Component({
   selector: 'app-nafath',
-  imports: [TranslateModule, CodeExampleComponent],
+  imports: [TranslatePipe, CodeExampleComponent],
   templateUrl: './nafath.component.html',
   styleUrl: './nafath.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

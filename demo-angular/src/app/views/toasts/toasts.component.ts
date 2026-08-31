@@ -1,11 +1,11 @@
 import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { CodeExampleComponent } from '../../shared/code-example/code-example.component';
 
 @Component({
   selector: 'app-toasts',
-  imports: [CommonModule, TranslateModule, CodeExampleComponent],
+  imports: [CommonModule, TranslatePipe, CodeExampleComponent],
   templateUrl: './toasts.component.html',
   styleUrl: './toasts.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

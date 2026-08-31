@@ -1,12 +1,13 @@
-import { Component, Input, signal } from '@angular/core';
+import { Component, Input, signal, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import hljs from 'highlight.js';
 
 @Component({
   selector: 'app-code-example',
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './code-example.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./code-example.component.scss'],
 })
 export class CodeExampleComponent {

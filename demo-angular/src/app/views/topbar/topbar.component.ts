@@ -1,10 +1,10 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
 import { CodeExampleComponent } from '../../shared/code-example/code-example.component';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-topbar',
-  imports: [TranslateModule, CodeExampleComponent],
+  imports: [TranslatePipe, CodeExampleComponent],
   templateUrl: './topbar.component.html',
   styleUrl: './topbar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -1,17 +1,15 @@
-import { Component, ChangeDetectionStrategy, AfterViewInit, inject, PLATFORM_ID } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { CodeExampleComponent } from '../../shared/code-example/code-example.component';
 
 @Component({
   selector: 'app-forms',
-  imports: [TranslateModule, CodeExampleComponent],
+  imports: [TranslatePipe, CodeExampleComponent],
   templateUrl: './forms.component.html',
   styleUrl: './forms.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FormsComponent {
-  private readonly platformId = inject(PLATFORM_ID);
-
   // Checkbox sizes
   checkboxSizesCode = `<div class="d-flex gap-2">
   <input type="checkbox" class="form-check-input ripple" aria-label="Demo checkbox medium" checked>

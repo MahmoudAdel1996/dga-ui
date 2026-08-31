@@ -1,12 +1,19 @@
-import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import {
+  Component,
+  AfterViewInit,
+  ElementRef,
+  ViewChild,
+  ChangeDetectionStrategy,
+} from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { CodeExampleComponent } from '../../shared/code-example/code-example.component';
 declare var bootstrap: any;
 
 @Component({
   selector: 'app-tooltips',
-  imports: [TranslateModule, CodeExampleComponent],
+  imports: [TranslatePipe, CodeExampleComponent],
   templateUrl: './tooltips.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './tooltips.component.scss',
 })
 export class TooltipsComponent implements AfterViewInit {

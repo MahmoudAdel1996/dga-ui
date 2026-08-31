@@ -1,14 +1,15 @@
-import { Component, signal, inject, effect } from '@angular/core';
+import { Component, signal, inject, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet, Router } from '@angular/router';
-import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { TranslateService, TranslatePipe } from '@ngx-translate/core';
 
 // Import package.json to get version
 import packageJson from '../../package.json';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TranslateModule],
+  imports: [RouterOutlet, TranslatePipe],
   templateUrl: './app.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.scss',
 })
 export class App {
@@ -74,8 +75,18 @@ export class App {
         { id: 'modal', labelKey: 'nav.modal', icon: '🪟', route: '/modal' },
         { id: 'pagination', labelKey: 'nav.pagination', icon: '📍', route: '/pagination' },
         { id: 'progress-bar', labelKey: 'nav.progress_bar', icon: '📊', route: '/progress-bar' },
-        { id: 'progress-indicator', labelKey: 'nav.progress_indicator', icon: '⏳', route: '/progress-indicator' },
-        { id: 'radial-stepper', labelKey: 'nav.radial_stepper', icon: '🎯', route: '/radial-stepper' },
+        {
+          id: 'progress-indicator',
+          labelKey: 'nav.progress_indicator',
+          icon: '⏳',
+          route: '/progress-indicator',
+        },
+        {
+          id: 'radial-stepper',
+          labelKey: 'nav.radial_stepper',
+          icon: '🎯',
+          route: '/radial-stepper',
+        },
         { id: 'spinners', labelKey: 'nav.spinners', icon: '🌀', route: '/spinners' },
         { id: 'tables', labelKey: 'nav.tables', icon: '📊', route: '/tables' },
         { id: 'tabs', labelKey: 'nav.tabs', icon: '📑', route: '/tabs' },

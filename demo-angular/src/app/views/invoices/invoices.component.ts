@@ -1,11 +1,11 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { CodeExampleComponent } from '../../shared/code-example/code-example.component';
 
 @Component({
   selector: 'app-invoices',
-  imports: [TranslateModule, CodeExampleComponent, DecimalPipe],
+  imports: [TranslatePipe, CodeExampleComponent, DecimalPipe],
   templateUrl: './invoices.component.html',
   styleUrl: './invoices.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

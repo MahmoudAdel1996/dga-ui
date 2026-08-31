@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { CodeExampleComponent } from '../../shared/code-example/code-example.component';
 
 interface Step {
@@ -24,7 +24,7 @@ type StepperVariant =
 
 @Component({
   selector: 'app-radial-stepper',
-  imports: [CommonModule, FormsModule, TranslateModule, CodeExampleComponent],
+  imports: [CommonModule, FormsModule, TranslatePipe, CodeExampleComponent],
   templateUrl: './radial-stepper.component.html',
   styleUrl: './radial-stepper.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
