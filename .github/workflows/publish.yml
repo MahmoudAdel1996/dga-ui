@@ -9,8 +9,9 @@ jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     permissions:
-      id-token: write  # Required for OIDC
-      contents: read
+      id-token: write    # Required for npm OIDC Trusted Publishing
+      contents: read     # Required to checkout code
+      packages: write    # Required to publish to GitHub Packages
 
     steps:
       - name: Checkout code
@@ -28,6 +29,14 @@ jobs:
       - name: Build CSS
         run: npm run build-css
 
-      # Trusted Publishing doesn't need NODE_AUTH_TOKEN
+      # Step A: Publish to public npmjs.org (with provenance flag for OIDC)
       - name: Publish package to npm
-        run: npm publish --access public
+        run: npm publish --access public --provenance
+
+      # Step B: Publish to GitHub Packages (populates your repo's Packages sidebar)
+      - name: Publish to GitHub Packages
+        run: |
+          npm config set //npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
+          npm publish --registry=https://npm.pkg.github.com
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
