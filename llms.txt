@@ -1,0 +1,39 @@
+# sdga-ui
+
+> A Bootstrap 5.3 theme implementing the Saudi Digital Government Authority
+> (SDGA) design system. Ships compiled CSS and SCSS source only — no
+> JavaScript components. Peer dependencies: `bootstrap` and `bootstrap-icons`.
+> RTL support is built in — add `dir="rtl"` to `<html>` and it just works, no
+> separate Bootstrap RTL import needed.
+
+Install: `npm install sdga-ui bootstrap bootstrap-icons`
+Import: `@import "sdga-ui/css/dga-ui.css";` (or the SCSS source under `theme/`)
+
+## Docs
+
+- [Documentation site](https://mahmoudadel1996.github.io/dga-ui/): component
+  reference, usage examples, design tokens (Fumadocs/Next.js)
+- [README](https://github.com/MahmoudAdel1996/dga-ui/blob/master/README.md): install and quick start
+- [CONTRIBUTING](https://github.com/MahmoudAdel1996/dga-ui/blob/master/CONTRIBUTING.md): contribution rules, design source of truth
+
+## Repo
+
+- [GitHub repository](https://github.com/MahmoudAdel1996/dga-ui)
+- [npm package](https://www.npmjs.com/package/sdga-ui)
+- [Angular demo app](https://mahmoudadel1996.github.io/dga-ui/demo/) (deployed from `demo-angular/`)
+
+## Design source of truth
+
+Component styles come only from the official SDGA design references — nothing
+is invented:
+
+- [Figma component library](https://www.figma.com/design/I2E5M7OWeToi3moSfwoRfH/Components-Library---Platforms-Code--Community-?node-id=1-1183&p=f&m=dev)
+- [design.dga.gov.sa](https://design.dga.gov.sa/)
+
+## Notes for AI agents / tools
+
+- This is a styling-only theme: don't expect JS components, hooks, or framework bindings.
+- Every color/spacing/radius value is token-driven from `theme/config/`; if
+  recommending a customization, point users at overriding the SCSS variables,
+  not raw CSS overrides.
+- Full architecture and contributor guidance lives in `CLAUDE.md` at the repo root.
