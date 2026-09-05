@@ -25,7 +25,17 @@ const VIEWPORT_WIDTH: Record<Viewport, string> = {
 // instead of reloading it (which per-instance srcDoc forced on every
 // content or direction change).
 // Must match basePath in next.config.mjs ('/dga-ui' in prod, '' in dev).
-const FRAME_SRC = (process.env.NODE_ENV === 'production' ? '/dga-ui' : '') + '/preview-frame.html';
+const BASE_PATH = process.env.NODE_ENV === 'production' ? '/dga-ui' : '';
+const FRAME_SRC = BASE_PATH + '/preview-frame.html';
+
+// In development, preview the CSS from the local sdga-ui build (synced into
+// public/ by `npm run use:local` -> scripts/sync-local-css.mjs) so theme
+// changes show up without publishing a release. Production still points at
+// the published package, matching what real consumers get.
+const CSS_URL =
+  process.env.NODE_ENV === 'production'
+    ? 'https://cdn.jsdelivr.net/npm/sdga-ui@latest/css/dga-ui.css'
+    : BASE_PATH + '/sdga-ui-local/css/dga-ui.css';
 
 // Bootstrap's JS is only needed by previews whose markup uses data-bs-*
 // behaviors. Fetch its source once, shared module-wide by every Preview
@@ -210,7 +220,7 @@ export function Preview({ children }: PreviewProps) {
       <div ref={scrollWrapperRef} className="flex justify-start overflow-x-auto bg-gray-100 p-4">
         <iframe
           ref={iframeRef}
-          src={FRAME_SRC}
+          src={`${FRAME_SRC}?css=${encodeURIComponent(CSS_URL)}`}
           onLoad={() => {
             frameReadyRef.current = true;
             postContent();

@@ -3,6 +3,7 @@
 
 # generated content
 .source
+/public/sdga-ui-local
 
 # test & build
 /coverage

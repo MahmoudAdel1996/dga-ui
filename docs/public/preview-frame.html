@@ -8,8 +8,22 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.min.css"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sdga-ui@latest/css/dga-ui.css" />
     <script>
+      // The sdga-ui stylesheet URL is chosen by the parent (Preview.tsx) via
+      // a query param — the published CDN build in production, or the
+      // locally-built CSS (synced into public/ by `npm run use:local`) in
+      // development, so theme changes are visible without publishing a
+      // release. Injected as early as possible to avoid a flash of
+      // unstyled content.
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var cssUrl = params.get('css') || 'https://cdn.jsdelivr.net/npm/sdga-ui@latest/css/dga-ui.css';
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = cssUrl;
+        document.head.appendChild(link);
+      })();
+
       // Matches the React side's default viewport state, so the very first
       // automatic measurement (before any requestResize round-trip) is
       // already tagged correctly.
@@ -88,10 +102,12 @@
       }
       html,
       body {
+        width: 100%;
+        height: 100%;
         margin: 0;
         padding: 0;
         overflow-x: auto;
-        overflow-y: hidden;
+        overflow-y: visible;
       }
       body {
         padding: 1rem;

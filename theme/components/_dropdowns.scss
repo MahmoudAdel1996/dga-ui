@@ -1,7 +1,7 @@
 // Bootstrap 5.3 - Dropdown Component Variables
 
 $dropdown-min-width: 10rem;
-$dropdown-padding-x: 0;
+$dropdown-padding-x: 0.5rem;
 $dropdown-padding-y: 0.5rem;
 $dropdown-spacer: 0.125rem;
 $dropdown-font-size: $font-size-base;
@@ -11,21 +11,21 @@ $dropdown-border-color: $gray-200;
 $dropdown-border-radius: $radius-sm;
 $dropdown-border-width: 1px;
 $dropdown-inner-border-radius: calc(#{$dropdown-border-radius} - #{$dropdown-border-width});
-$dropdown-divider-bg: $gray-200;
+$dropdown-divider-bg: $gray-300;
 $dropdown-divider-margin-y: 0.5rem;
 $dropdown-box-shadow: 0 0.5rem 1rem rgba($black, 0.175);
 
 $dropdown-link-color: $gray-900;
-$dropdown-link-hover-color: darken($gray-900, 5%);
+$dropdown-link-hover-color: $gray-900;
 $dropdown-link-hover-bg: $gray-100;
 
 $dropdown-link-active-color: $black;
 $dropdown-link-active-bg: $neutral-200;
 
-$dropdown-link-disabled-color: $gray-500;
+$dropdown-link-disabled-color: $gray-400;
 
-$dropdown-item-padding-y: 0.25rem;
-$dropdown-item-padding-x: 1rem;
+$dropdown-item-padding-y: 0.5rem;
+$dropdown-item-padding-x: 0.5rem;
 
 $dropdown-header-color: $gray-600;
 $dropdown-header-padding-x: $dropdown-item-padding-x;
