@@ -1,0 +1,92 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "SDGA UI",
+  "theme": "mint",
+  "colors": {
+    "primary": "#0d47a1",
+    "light": "#1976d2",
+    "dark": "#0a3880"
+  },
+  "favicon": "https://mahmoudadel1996.github.io/dga-ui/favicon.ico",
+  "navigation": {
+    "groups": [
+      {
+        "group": "Getting Started",
+        "pages": ["README", "docs/content/docs/index"]
+      },
+      {
+        "group": "Layout",
+        "pages": ["docs/content/docs/layout/header", "docs/content/docs/layout/footer"]
+      },
+      {
+        "group": "Actions",
+        "pages": [
+          "docs/content/docs/components/actions/buttons",
+          "docs/content/docs/components/actions/button-group",
+          "docs/content/docs/components/actions/dropdowns",
+          "docs/content/docs/components/actions/links"
+        ]
+      },
+      {
+        "group": "Forms",
+        "pages": [
+          "docs/content/docs/components/forms/checkboxes",
+          "docs/content/docs/components/forms/radios",
+          "docs/content/docs/components/forms/select"
+        ]
+      },
+      {
+        "group": "Content",
+        "pages": [
+          "docs/content/docs/components/content/accordion",
+          "docs/content/docs/components/content/badges",
+          "docs/content/docs/components/content/cards",
+          "docs/content/docs/components/content/carousel",
+          "docs/content/docs/components/content/list-group",
+          "docs/content/docs/components/content/tables"
+        ]
+      },
+      {
+        "group": "Feedback",
+        "pages": [
+          "docs/content/docs/components/feedback/alerts",
+          "docs/content/docs/components/feedback/progress",
+          "docs/content/docs/components/feedback/radial-stepper",
+          "docs/content/docs/components/feedback/spinners",
+          "docs/content/docs/components/feedback/toasts",
+          "docs/content/docs/components/feedback/placeholders"
+        ]
+      },
+      {
+        "group": "Navigation",
+        "pages": [
+          "docs/content/docs/components/navigation/breadcrumb",
+          "docs/content/docs/components/navigation/navbar",
+          "docs/content/docs/components/navigation/navs-tabs",
+          "docs/content/docs/components/navigation/pagination"
+        ]
+      },
+      {
+        "group": "Overlays",
+        "pages": [
+          "docs/content/docs/components/overlays/modal",
+          "docs/content/docs/components/overlays/offcanvas",
+          "docs/content/docs/components/overlays/popovers",
+          "docs/content/docs/components/overlays/tooltips"
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "GitHub",
+      "href": "https://github.com/MahmoudAdel1996/dga-ui"
+    }
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/MahmoudAdel1996/dga-ui"
+    }
+  }
+}

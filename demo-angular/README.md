@@ -91,3 +91,13 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+---
+
+## 👤 Author
+
+Created and maintained by **[Mahmoud Adel](https://github.com/MahmoudAdel1996)** ([@MahmoudAdel1996](https://github.com/MahmoudAdel1996)).
+
+## 📄 License
+
+MIT License — see [LICENSE](../LICENSE) for details.

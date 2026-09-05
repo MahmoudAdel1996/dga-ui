@@ -191,4 +191,4 @@ MIT License — free for personal and commercial use.
 
 ## **👤 Author**
 
-Created and maintained by **Mahmoud**.
+Created and maintained by **[Mahmoud Adel](https://github.com/MahmoudAdel1996)** ([@MahmoudAdel1996](https://github.com/MahmoudAdel1996)).

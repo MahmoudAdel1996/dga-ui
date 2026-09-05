@@ -22,5 +22,6 @@ export function baseOptions(): BaseLayoutProps {
         </div>
       ) as any,
     },
+    githubUrl: 'https://github.com/MahmoudAdel1996/dga-ui',
   };
 }

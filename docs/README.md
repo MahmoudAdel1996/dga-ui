@@ -1,7 +1,6 @@
-# docs
+# SDGA UI Documentation
 
-This is a Next.js application generated with
-[Create Fumadocs](https://github.com/fuma-nama/fumadocs).
+Interactive documentation and component showcase for **[SDGA UI](https://github.com/MahmoudAdel1996/dga-ui)** — Government-Style Bootstrap Theme. Built with Next.js and [Fumadocs](https://fumadocs.dev).
 
 Run development server:
 
@@ -43,3 +42,13 @@ resources:
   features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 - [Fumadocs](https://fumadocs.dev) - learn about Fumadocs
+
+---
+
+## 👤 Author
+
+Created and maintained by **[Mahmoud Adel](https://github.com/MahmoudAdel1996)** ([@MahmoudAdel1996](https://github.com/MahmoudAdel1996)).
+
+## 📄 License
+
+MIT License — see [LICENSE](../LICENSE) for details.

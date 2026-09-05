@@ -23,7 +23,15 @@
     "url": "git+https://github.com/MahmoudAdel1996/dga-ui.git"
   },
   "license": "MIT",
-  "author": "Mahmoud Adel",
+  "author": {
+    "name": "Mahmoud Adel",
+    "email": "mahmoooud.adel@gmail.com",
+    "url": "https://github.com/MahmoudAdel1996"
+  },
+  "sideEffects": [
+    "**/*.css",
+    "**/*.scss"
+  ],
   "type": "module",
   "main": "index.js",
   "style": "./css/dga-ui.css",

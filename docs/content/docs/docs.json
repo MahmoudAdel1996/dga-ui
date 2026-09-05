@@ -1,0 +1,92 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "SDGA UI",
+  "theme": "mint",
+  "colors": {
+    "primary": "#0d47a1",
+    "light": "#1976d2",
+    "dark": "#0a3880"
+  },
+  "favicon": "https://mahmoudadel1996.github.io/dga-ui/favicon.ico",
+  "navigation": {
+    "groups": [
+      {
+        "group": "Getting Started",
+        "pages": ["index"]
+      },
+      {
+        "group": "Layout",
+        "pages": ["layout/header", "layout/footer"]
+      },
+      {
+        "group": "Actions",
+        "pages": [
+          "components/actions/buttons",
+          "components/actions/button-group",
+          "components/actions/dropdowns",
+          "components/actions/links"
+        ]
+      },
+      {
+        "group": "Forms",
+        "pages": [
+          "components/forms/checkboxes",
+          "components/forms/radios",
+          "components/forms/select"
+        ]
+      },
+      {
+        "group": "Content",
+        "pages": [
+          "components/content/accordion",
+          "components/content/badges",
+          "components/content/cards",
+          "components/content/carousel",
+          "components/content/list-group",
+          "components/content/tables"
+        ]
+      },
+      {
+        "group": "Feedback",
+        "pages": [
+          "components/feedback/alerts",
+          "components/feedback/progress",
+          "components/feedback/radial-stepper",
+          "components/feedback/spinners",
+          "components/feedback/toasts",
+          "components/feedback/placeholders"
+        ]
+      },
+      {
+        "group": "Navigation",
+        "pages": [
+          "components/navigation/breadcrumb",
+          "components/navigation/navbar",
+          "components/navigation/navs-tabs",
+          "components/navigation/pagination"
+        ]
+      },
+      {
+        "group": "Overlays",
+        "pages": [
+          "components/overlays/modal",
+          "components/overlays/offcanvas",
+          "components/overlays/popovers",
+          "components/overlays/tooltips"
+        ]
+      }
+    ]
+  },
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "GitHub",
+      "href": "https://github.com/MahmoudAdel1996/dga-ui"
+    }
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/MahmoudAdel1996/dga-ui"
+    }
+  }
+}

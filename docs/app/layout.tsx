@@ -17,6 +17,43 @@ export const metadata: Metadata = {
   },
   description:
     'Professional Bootstrap theme for Saudi Digital Government Authority applications with built-in RTL support',
+  keywords: [
+    'sdga',
+    'sdga-ui',
+    'dga',
+    'dga-ui',
+    'saudi government design',
+    'bootstrap theme',
+    'rtl',
+    'arabic',
+    'design system',
+  ],
+  authors: [
+    {
+      name: 'Mahmoud Adel',
+      url: 'https://github.com/MahmoudAdel1996',
+    },
+  ],
+  creator: 'Mahmoud Adel',
+  publisher: 'Mahmoud Adel',
+  applicationName: 'SDGA UI',
+  openGraph: {
+    title: 'SDGA UI Documentation',
+    description:
+      'Professional Bootstrap theme for Saudi Digital Government Authority applications with built-in RTL support',
+    url: 'https://mahmoudadel1996.github.io/dga-ui',
+    siteName: 'SDGA UI',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SDGA UI Documentation',
+    description:
+      'Professional Bootstrap theme for Saudi Digital Government Authority applications with built-in RTL support',
+    creator: '@MahmoudAdel1996',
+  },
+  category: 'technology',
 };
 
 export default function Layout({ children }: LayoutProps<'/'>) {

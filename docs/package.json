@@ -1,7 +1,33 @@
 {
   "name": "docs",
   "version": "1.0.37",
+  "description": "Interactive documentation and component showcase for SDGA UI",
   "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Mahmoud Adel",
+    "email": "mahmoooud.adel@gmail.com",
+    "url": "https://github.com/MahmoudAdel1996"
+  },
+  "homepage": "https://mahmoudadel1996.github.io/dga-ui/",
+  "bugs": {
+    "url": "https://github.com/MahmoudAdel1996/dga-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MahmoudAdel1996/dga-ui.git",
+    "directory": "docs"
+  },
+  "keywords": [
+    "sdga",
+    "sdga-ui",
+    "dga",
+    "dga-ui",
+    "bootstrap",
+    "documentation",
+    "design-system",
+    "fumadocs"
+  ],
   "scripts": {
     "build": "next build",
     "start": "npm run use:local && node server.mjs",

@@ -1,6 +1,30 @@
 {
   "name": "demo-angular",
   "version": "1.0.34",
+  "description": "Angular demo showcase application for SDGA UI components",
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Mahmoud Adel",
+    "email": "mahmoooud.adel@gmail.com",
+    "url": "https://github.com/MahmoudAdel1996"
+  },
+  "homepage": "https://mahmoudadel1996.github.io/dga-ui/",
+  "bugs": {
+    "url": "https://github.com/MahmoudAdel1996/dga-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MahmoudAdel1996/dga-ui.git",
+    "directory": "demo-angular"
+  },
+  "keywords": [
+    "sdga",
+    "sdga-ui",
+    "angular",
+    "demo",
+    "bootstrap-theme"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "npm run use:local && ng serve -o",
@@ -24,7 +48,6 @@
       }
     ]
   },
-  "private": true,
   "packageManager": "npm@11.6.3",
   "dependencies": {
     "@angular/common": "^22.1.4",
