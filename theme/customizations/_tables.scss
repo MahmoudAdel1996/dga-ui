@@ -46,7 +46,8 @@
 
   tbody {
     tr {
-      th, td {
+      th,
+      td {
         height: 4rem;
         vertical-align: middle;
         border-inline: none;
@@ -54,12 +55,14 @@
         border-block-end: none;
       }
 
-      th:first-child, td:first-child {
+      th:first-child,
+      td:first-child {
         border-inline-end: $table-th-border-width solid $table-th-border-color;
       }
 
       &:not(:last-child) {
-        th, td {
+        th,
+        td {
           border-block-end: $table-border-width solid $table-border-color;
         }
       }

@@ -5,6 +5,7 @@ This is the demo application showcasing the DGA UI theme components and features
 ## Development vs Production Library Usage
 
 ### Local Development
+
 During development, the demo uses the **local version** of `sdga-ui` from the parent directory:
 
 ```bash
@@ -14,6 +15,7 @@ npm start
 This automatically runs `npm run use:local` which installs the library from `file:..`, allowing you to test changes immediately.
 
 ### Production Build / Deployment
+
 For production builds and GitHub Pages deployment, the demo uses the **published npm package**:
 
 ```bash
@@ -30,7 +32,7 @@ You can manually switch between local and npm versions:
 # Use local development version
 npm run use:local
 
-# Use published npm version  
+# Use published npm version
 npm run use:npm
 ```
 

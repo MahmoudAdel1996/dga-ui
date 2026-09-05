@@ -143,11 +143,13 @@
 .main-content {
   flex: 1;
   margin-left: 280px;
-  transition: margin-left 0.3s ease, margin-right 0.3s ease;
+  transition:
+    margin-left 0.3s ease,
+    margin-right 0.3s ease;
 }
 
 // RTL: Adjust margin for right-positioned sidebar
-[dir="rtl"] .main-content {
+[dir='rtl'] .main-content {
   margin-left: 0;
   margin-right: 280px;
 }
@@ -157,7 +159,7 @@
 }
 
 // RTL: Reset right margin when collapsed
-[dir="rtl"] .sidebar-collapsed .main-content {
+[dir='rtl'] .sidebar-collapsed .main-content {
   margin-right: 0;
 }
 

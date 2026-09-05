@@ -85,9 +85,9 @@ $tab-v-height-sm: map-get($spacers, 5); // 24px
     display: flex;
     align-items: center;
     gap: map-get($spacers, 1); // 4px gap between icon and text (from sample)
-    
+
     // Reset vertical specific
-    width: auto; 
+    width: auto;
     justify-content: center;
     margin-bottom: 0;
 
@@ -129,7 +129,7 @@ $tab-v-height-sm: map-get($spacers, 5); // 24px
       top: auto; // Reset vertical
       width: auto; // Reset vertical
       height: 3px;
-      background-color: transparent; 
+      background-color: transparent;
       border-radius: $radius-full; // Rounded ends
       z-index: 1; // Ensure it sits on top of the border
       transition: background-color 0.2s ease; // Smooth transition
@@ -137,25 +137,25 @@ $tab-v-height-sm: map-get($spacers, 5); // 24px
     }
 
     // Flush variant (no left/right gap for indicator)
-    // Using @at-root to break out of .nav-link nesting but keep context if needed, 
+    // Using @at-root to break out of .nav-link nesting but keep context if needed,
     // actually inside mixin standard nesting works best.
-    // However, flush needs to target the generic parent .flush class. 
+    // However, flush needs to target the generic parent .flush class.
     // Since we are inside .nav-tabs context when including, & refers to .nav-tabs
-    // We need to check if parent has flush. 
+    // We need to check if parent has flush.
     // Simpler: Just rely on the fact that standard BS navs work.
     // The original code used @at-root .nav-tabs.flush .nav-link...
   }
-  
+
   // Flush handling needs to be careful about not breaking when inside responsive classes
   &.flush .nav-link::before {
-      inset-inline-start: 0;
-      inset-inline-end: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
   }
 
   // Links styling (Continued)
   .nav-link {
     &.active::before {
-        background-color: $nav-link-selection-indicator; // #1B8354 green
+      background-color: $nav-link-selection-indicator; // #1B8354 green
     }
 
     // Hover & Pressed state for non-active
@@ -163,12 +163,12 @@ $tab-v-height-sm: map-get($spacers, 5); // 24px
     &.pseudo-hover:not(.active):not(.disabled)::before,
     &:active:not(.active):not(.disabled)::before,
     &.pseudo-active:not(.active):not(.disabled)::before {
-        background-color: $nav-link-selection-indicator-default;
+      background-color: $nav-link-selection-indicator-default;
     }
 
     // If disabled AND active, show gray indicator
     &.disabled.active::before {
-        background-color: $nav-link-disabled-color; 
+      background-color: $nav-link-disabled-color;
     }
   }
 
@@ -190,7 +190,7 @@ $tab-v-height-sm: map-get($spacers, 5); // 24px
   border-bottom: 0;
   border-right: 0;
   gap: 0;
-  
+
   &::before {
     display: none; // Hide the rounded horizontal border
   }
@@ -198,16 +198,16 @@ $tab-v-height-sm: map-get($spacers, 5); // 24px
   .nav-link {
     width: 100%;
     justify-content: flex-start;
-    border: none; 
+    border: none;
     border-bottom: none;
     border-radius: $radius-sm;
     margin-bottom: map-get($spacers, 1); // 4px
-    font-weight: $font-weight-base; 
-    color: $nav-link-color; 
-    position: relative; 
+    font-weight: $font-weight-base;
+    color: $nav-link-color;
+    position: relative;
     display: flex;
-    align-items: center; 
-    gap: map-get($spacers, 2); 
+    align-items: center;
+    gap: map-get($spacers, 2);
 
     // Enable indicator rendering but keep transparent by default
     &::before {
@@ -219,20 +219,23 @@ $tab-v-height-sm: map-get($spacers, 5); // 24px
       bottom: map-get($spacers, 1); // 4px from bottom
       width: 3px;
       height: auto; // Reset horizontal
-      background-color: transparent; 
-      border-radius: $radius-full; 
+      background-color: transparent;
+      border-radius: $radius-full;
       transition: background-color 0.2s ease;
       margin-bottom: 0; // Reset horizontal
     }
 
     // Icons
-    i, img, svg {
+    i,
+    img,
+    svg {
       display: inline-flex;
       align-items: center;
       justify-content: center;
     }
 
-    &:focus, &:focus-visible {
+    &:focus,
+    &:focus-visible {
       outline: none;
       border: none;
     }
@@ -240,8 +243,8 @@ $tab-v-height-sm: map-get($spacers, 5); // 24px
     // Hover State
     &:hover:not(.disabled):not(.active),
     &.pseudo-hover:not(.active) {
-      background-color: $nav-link-hover-bg; 
-      color: $nav-link-color; 
+      background-color: $nav-link-hover-bg;
+      color: $nav-link-color;
 
       &::before {
         background-color: $nav-link-selection-indicator-default;
@@ -251,7 +254,7 @@ $tab-v-height-sm: map-get($spacers, 5); // 24px
     // Pressed State
     &:active:not(.disabled):not(.active),
     &.pseudo-active:not(.active) {
-      background-color: $nav-link-pressed-bg; 
+      background-color: $nav-link-pressed-bg;
       color: $black;
 
       &::before {
@@ -262,36 +265,37 @@ $tab-v-height-sm: map-get($spacers, 5); // 24px
     // Selected/Active State
     &.active {
       background-color: transparent;
-      color: $nav-link-active-color; 
+      color: $nav-link-active-color;
       font-weight: $font-weight-semibold; // 600
       position: relative;
 
       &::before {
-        background-color: $nav-link-selection-indicator; 
+        background-color: $nav-link-selection-indicator;
       }
 
       // When selected tab is hovered
       &:hover:not(.disabled),
       &.pseudo-hover {
-        background-color: transparent; 
+        background-color: transparent;
       }
 
       // When selected tab is pressed
       &:active:not(.disabled),
       &.pseudo-active {
-        background-color: transparent; 
+        background-color: transparent;
       }
     }
 
     // Disabled State
-    &.disabled, &:disabled {
-      color: $nav-link-disabled-color; 
-      background-color: transparent !important; 
+    &.disabled,
+    &:disabled {
+      color: $nav-link-disabled-color;
+      background-color: transparent !important;
       pointer-events: none;
       cursor: not-allowed;
 
       &.active::before {
-        background-color: $nav-link-disabled-color; 
+        background-color: $nav-link-disabled-color;
       }
 
       &:not(.active)::before {
@@ -303,39 +307,39 @@ $tab-v-height-sm: map-get($spacers, 5); // 24px
   // Size Variants - matches samples for large/medium/small
   &.nav-lg {
     .nav-link {
-        height: auto !important; // Reset nav-size mixin if previously applied
-        min-height: $tab-v-height-lg; // 40px
-        padding: map-get($spacers, 2) map-get($spacers, 2) !important; 
-        font-size: $font-size-base; 
+      height: auto !important; // Reset nav-size mixin if previously applied
+      min-height: $tab-v-height-lg; // 40px
+      padding: map-get($spacers, 2) map-get($spacers, 2) !important;
+      font-size: $font-size-base;
 
       &.active {
-        font-weight: $font-weight-semibold; 
+        font-weight: $font-weight-semibold;
       }
     }
   }
 
   &.nav-md {
     .nav-link {
-        height: auto !important;
-        min-height: $tab-v-height-md; // 32px
-        padding: map-get($spacing-tokens, 'spacing-sm') map-get($spacers, 2) !important;
-        font-size: $font-size-sm; 
+      height: auto !important;
+      min-height: $tab-v-height-md; // 32px
+      padding: map-get($spacing-tokens, 'spacing-sm') map-get($spacers, 2) !important;
+      font-size: $font-size-sm;
 
       &.active {
-        font-weight: $font-weight-semibold; 
+        font-weight: $font-weight-semibold;
       }
     }
   }
 
   &.nav-sm {
     .nav-link {
-        height: auto !important;
-        min-height: $tab-v-height-sm; // 24px
-        padding: map-get($spacing-tokens, 'spacing-xxs') map-get($spacing-tokens, 'spacing-sm') !important;
-        font-size: $font-size-sm; 
+      height: auto !important;
+      min-height: $tab-v-height-sm; // 24px
+      padding: map-get($spacing-tokens, 'spacing-xxs') map-get($spacing-tokens, 'spacing-sm') !important;
+      font-size: $font-size-sm;
 
       &.active {
-        font-weight: $font-weight-medium; 
+        font-weight: $font-weight-medium;
       }
     }
   }
@@ -356,17 +360,17 @@ $tab-v-height-sm: map-get($spacers, 5); // 24px
 // Responsive Loops
 // Iterate over breakpoints to generate classes like .flex-md-row, .flex-lg-column
 @each $breakpoint in map-keys($grid-breakpoints) {
-    @include media-breakpoint-up($breakpoint) {
-        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
-        // If class is flex-*-row, use horizontal tabs
-        .nav-tabs.flex#{$infix}-row {
-            @include tabs-horizontal;
-        }
-
-        // If class is flex-*-column, use vertical tabs
-        .nav-tabs.flex#{$infix}-column {
-            @include tabs-vertical;
-        }
+    // If class is flex-*-row, use horizontal tabs
+    .nav-tabs.flex#{$infix}-row {
+      @include tabs-horizontal;
     }
+
+    // If class is flex-*-column, use vertical tabs
+    .nav-tabs.flex#{$infix}-column {
+      @include tabs-vertical;
+    }
+  }
 }

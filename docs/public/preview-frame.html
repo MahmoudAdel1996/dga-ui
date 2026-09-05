@@ -1,121 +1,123 @@
 <!doctype html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SDGA UI Preview</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.min.css"
-    />
-    <script>
-      // The sdga-ui stylesheet URL is chosen by the parent (Preview.tsx) via
-      // a query param — the published CDN build in production, or the
-      // locally-built CSS (synced into public/ by `npm run use:local`) in
-      // development, so theme changes are visible without publishing a
-      // release. Injected as early as possible to avoid a flash of
-      // unstyled content.
-      (function () {
-        var params = new URLSearchParams(window.location.search);
-        var cssUrl = params.get('css') || 'https://cdn.jsdelivr.net/npm/sdga-ui@latest/css/dga-ui.css';
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = cssUrl;
-        document.head.appendChild(link);
-      })();
 
-      // Matches the React side's default viewport state, so the very first
-      // automatic measurement (before any requestResize round-trip) is
-      // already tagged correctly.
-      var resizeToken = 'desktop';
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SDGA UI Preview</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.min.css" />
+  <script>
+    // The sdga-ui stylesheet URL is chosen by the parent (Preview.tsx) via
+    // a query param — the published CDN build in production, or the
+    // locally-built CSS (synced into public/ by `npm run use:local`) in
+    // development, so theme changes are visible without publishing a
+    // release. Injected as early as possible to avoid a flash of
+    // unstyled content.
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var cssUrl = params.get('css') || 'https://cdn.jsdelivr.net/npm/sdga-ui@latest/css/dga-ui.css';
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = cssUrl;
+      document.head.appendChild(link);
+    })();
 
-      function notifyHeightChange() {
-        // document.documentElement.scrollHeight is the wrong metric here:
-        // the root <html> element's "auto" height stretches to fill the
-        // iframe's *current* viewport when content is shorter than it, so
-        // it just echoes back whatever height the iframe already has
-        // instead of reporting the smaller true content height — which is
-        // exactly why shrinking (e.g. tablet/mobile back to desktop) never
-        // took effect. document.body has no such quirk.
-        var height = document.body.scrollHeight;
-        window.parent.postMessage({ type: 'resize', height: height, token: resizeToken }, '*');
-      }
+    // Matches the React side's default viewport state, so the very first
+    // automatic measurement (before any requestResize round-trip) is
+    // already tagged correctly.
+    var resizeToken = 'desktop';
 
-      // The parent fetches Bootstrap's JS once for the whole page and posts
-      // its source here (only when a preview's markup uses data-bs-*
-      // behaviors), so no iframe ever requests it from the network itself.
-      // Bootstrap 5 wires data-bs-* via listeners delegated on document, so
-      // executing it after the content is injected still works.
-      var bootstrapExecuted = false;
+    function notifyHeightChange() {
+      // document.documentElement.scrollHeight is the wrong metric here:
+      // the root <html> element's "auto" height stretches to fill the
+      // iframe's *current* viewport when content is shorter than it, so
+      // it just echoes back whatever height the iframe already has
+      // instead of reporting the smaller true content height — which is
+      // exactly why shrinking (e.g. tablet/mobile back to desktop) never
+      // took effect. document.body has no such quirk.
+      var height = document.body.scrollHeight;
+      window.parent.postMessage({ type: 'resize', height: height, token: resizeToken }, '*');
+    }
 
-      window.addEventListener('message', function (event) {
-        // Only the same-origin parent document may drive this frame —
-        // especially execScript, which runs the code it's handed.
-        if (event.origin !== window.location.origin || !event.data) return;
-        if (event.data.type === 'requestResize') {
-          resizeToken = event.data.token;
-          notifyHeightChange();
-        }
-        if (event.data.type === 'setContent') {
-          document.documentElement.dir = event.data.dir;
-          document.documentElement.lang = event.data.dir === 'rtl' ? 'ar' : 'en';
-          document.body.innerHTML = event.data.html;
-          notifyHeightChange();
-        }
-        if (event.data.type === 'execScript' && !bootstrapExecuted) {
-          bootstrapExecuted = true;
-          var script = document.createElement('script');
-          script.textContent = event.data.code;
-          document.head.appendChild(script);
-        }
-      });
+    // The parent fetches Bootstrap's JS once for the whole page and posts
+    // its source here (only when a preview's markup uses data-bs-*
+    // behaviors), so no iframe ever requests it from the network itself.
+    // Bootstrap 5 wires data-bs-* via listeners delegated on document, so
+    // executing it after the content is injected still works.
+    var bootstrapExecuted = false;
 
-      // Placeholder links ("#") shouldn't navigate or jump-scroll the preview.
-      function preventPlaceholderLinks(e) {
-        var target = e.target;
-        while (target && target !== document) {
-          if (
-            target.tagName === 'A' &&
-            (target.getAttribute('href') === '#' ||
-              target.getAttribute('href') === 'javascript:void(0)')
-          ) {
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-          }
-          target = target.parentElement;
-        }
-      }
-
-      window.addEventListener('load', function () {
+    window.addEventListener('message', function (event) {
+      // Only the same-origin parent document may drive this frame —
+      // especially execScript, which runs the code it's handed.
+      if (event.origin !== window.location.origin || !event.data) return;
+      if (event.data.type === 'requestResize') {
+        resizeToken = event.data.token;
         notifyHeightChange();
-        document.addEventListener('click', preventPlaceholderLinks, true);
-        // ResizeObserver catches both content mutations AND the reflow that
-        // happens when the parent changes the iframe's own width (switching
-        // mobile/tablet/desktop) — a MutationObserver alone misses that case.
-        new ResizeObserver(notifyHeightChange).observe(document.body);
-      });
-    </script>
-    <style>
-      * {
-        box-sizing: border-box;
       }
-      html,
-      body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        overflow-x: auto;
-        overflow-y: visible;
+      if (event.data.type === 'setContent') {
+        document.documentElement.dir = event.data.dir;
+        document.documentElement.lang = event.data.dir === 'rtl' ? 'ar' : 'en';
+        document.body.innerHTML = event.data.html;
+        notifyHeightChange();
       }
-      body {
-        padding: 1rem;
-        background: #f3f4f6;
-        font-family: 'IBM Plex Sans Arabic', sans-serif;
-        min-height: fit-content;
+      if (event.data.type === 'execScript' && !bootstrapExecuted) {
+        bootstrapExecuted = true;
+        var script = document.createElement('script');
+        script.textContent = event.data.code;
+        document.head.appendChild(script);
       }
-    </style>
-  </head>
-  <body></body>
+    });
+
+    // Placeholder links ("#") shouldn't navigate or jump-scroll the preview.
+    function preventPlaceholderLinks(e) {
+      var target = e.target;
+      while (target && target !== document) {
+        if (
+          target.tagName === 'A' &&
+          (target.getAttribute('href') === '#' ||
+            target.getAttribute('href') === 'javascript:void(0)')
+        ) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }
+        target = target.parentElement;
+      }
+    }
+
+    window.addEventListener('load', function () {
+      notifyHeightChange();
+      document.addEventListener('click', preventPlaceholderLinks, true);
+      // ResizeObserver catches both content mutations AND the reflow that
+      // happens when the parent changes the iframe's own width (switching
+      // mobile/tablet/desktop) — a MutationObserver alone misses that case.
+      new ResizeObserver(notifyHeightChange).observe(document.body);
+    });
+  </script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: auto;
+      overflow-y: visible;
+    }
+
+    body {
+      padding: 1rem;
+      background: #f3f4f6;
+      font-family: 'IBM Plex Sans Arabic', sans-serif;
+      min-height: fit-content;
+    }
+  </style>
+</head>
+
+<body></body>
+
 </html>

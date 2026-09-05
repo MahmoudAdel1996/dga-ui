@@ -9,7 +9,7 @@
 
 // Define button variants with their CSS custom properties
 $button-variants: (
-  "neutral": (
+  'neutral': (
     color: $white,
     bg: $neutral-950,
     border-color: $neutral-950,
@@ -21,9 +21,9 @@ $button-variants: (
     active-border-color: $neutral-600,
     disabled-color: $gray-400,
     disabled-bg: $gray-200,
-    disabled-border-color: $gray-200
+    disabled-border-color: $gray-200,
   ),
-  "primary": (
+  'primary': (
     color: $white,
     bg: $primary-600,
     border-color: $primary-600,
@@ -35,9 +35,9 @@ $button-variants: (
     active-border-color: $primary-800,
     disabled-color: $gray-400,
     disabled-bg: $gray-200,
-    disabled-border-color: $gray-200
+    disabled-border-color: $gray-200,
   ),
-  "secondary": (
+  'secondary': (
     color: $black,
     bg: $secondary-100,
     border-color: $secondary-300,
@@ -49,9 +49,9 @@ $button-variants: (
     active-border-color: $secondary-400,
     disabled-color: $gray-400,
     disabled-bg: $gray-200,
-    disabled-border-color: $gray-200
+    disabled-border-color: $gray-200,
   ),
-  "success": (
+  'success': (
     color: $white,
     bg: $success-600,
     border-color: $success-600,
@@ -63,9 +63,9 @@ $button-variants: (
     active-border-color: $success-800,
     disabled-color: $neutral-500,
     disabled-bg: $success-100,
-    disabled-border-color: $success-100
+    disabled-border-color: $success-100,
   ),
-  "danger": (
+  'danger': (
     color: $white,
     bg: $danger-600,
     border-color: $danger-600,
@@ -77,9 +77,9 @@ $button-variants: (
     active-border-color: $danger-800,
     disabled-color: $neutral-500,
     disabled-bg: $danger-100,
-    disabled-border-color: $danger-100
+    disabled-border-color: $danger-100,
   ),
-  "outline-danger": (
+  'outline-danger': (
     color: $danger-700,
     bg: transparent,
     border-color: $danger-300,
@@ -91,9 +91,9 @@ $button-variants: (
     active-border-color: $danger-400,
     disabled-color: $gray-400,
     disabled-bg: $gray-200,
-    disabled-border-color: $gray-200
+    disabled-border-color: $gray-200,
   ),
-  "outline-danger-secondary": (
+  'outline-danger-secondary': (
     color: $danger-700,
     bg: transparent,
     border-color: $danger-200,
@@ -105,9 +105,9 @@ $button-variants: (
     active-border-color: $danger-300,
     disabled-color: $gray-400,
     disabled-bg: $gray-200,
-    disabled-border-color: $gray-200
+    disabled-border-color: $gray-200,
   ),
-  "danger-transparent": (
+  'danger-transparent': (
     color: $danger-600,
     bg: transparent,
     border-color: transparent,
@@ -119,9 +119,9 @@ $button-variants: (
     active-border-color: transparent,
     disabled-color: $gray-400,
     disabled-bg: transparent,
-    disabled-border-color: transparent
+    disabled-border-color: transparent,
   ),
-  "danger-subtle": (
+  'danger-subtle': (
     color: $danger-700,
     bg: transparent,
     border-color: transparent,
@@ -133,9 +133,9 @@ $button-variants: (
     active-border-color: transparent,
     disabled-color: $gray-400,
     disabled-bg: transparent,
-    disabled-border-color: transparent
+    disabled-border-color: transparent,
   ),
-  "danger-secondary": (
+  'danger-secondary': (
     color: $danger-700,
     bg: $danger-50,
     border-color: transparent,
@@ -147,9 +147,9 @@ $button-variants: (
     active-border-color: transparent,
     disabled-color: $gray-400,
     disabled-bg: $gray-200,
-    disabled-border-color: $gray-200
+    disabled-border-color: $gray-200,
   ),
-  "danger-primary": (
+  'danger-primary': (
     color: $white,
     bg: $danger-600,
     border-color: $danger-600,
@@ -161,23 +161,23 @@ $button-variants: (
     active-border-color: $danger-800,
     disabled-color: $neutral-500,
     disabled-bg: $danger-100,
-    disabled-border-color: $danger-100
+    disabled-border-color: $danger-100,
   ),
-  "warning": (
-    color: $white,
+  'warning': (
+    color: $neutral-950,
     bg: $warning-400,
     border-color: $warning-400,
-    hover-color: $white,
+    hover-color: $neutral-950,
     hover-bg: $warning-500,
     hover-border-color: $warning-500,
-    active-color: $white,
+    active-color: $neutral-950,
     active-bg: $warning-600,
     active-border-color: $warning-600,
-    disabled-color: $neutral-500,
+    disabled-color: $neutral-400,
     disabled-bg: $warning-100,
-    disabled-border-color: $warning-100
+    disabled-border-color: $warning-100,
   ),
-  "info": (
+  'info': (
     color: $white,
     bg: $info-600,
     border-color: $info-600,
@@ -189,9 +189,9 @@ $button-variants: (
     active-border-color: $info-800,
     disabled-color: $neutral-500,
     disabled-bg: $info-100,
-    disabled-border-color: $info-100
+    disabled-border-color: $info-100,
   ),
-  "light": (
+  'light': (
     color: $neutral-950,
     bg: $secondary-100,
     border-color: $secondary-200,
@@ -203,9 +203,9 @@ $button-variants: (
     active-border-color: $secondary-400,
     disabled-color: $neutral-500,
     disabled-bg: $secondary-50,
-    disabled-border-color: $secondary-200
+    disabled-border-color: $secondary-200,
   ),
-  "dark": (
+  'dark': (
     color: $white,
     bg: $neutral-800,
     border-color: $neutral-800,
@@ -217,9 +217,9 @@ $button-variants: (
     active-border-color: $neutral-950,
     disabled-color: $neutral-500,
     disabled-bg: $neutral-300,
-    disabled-border-color: $neutral-300
+    disabled-border-color: $neutral-300,
   ),
-  "outline-secondary": (
+  'outline-secondary': (
     color: $black,
     border-color: $secondary-300,
     hover-color: $black,
@@ -230,9 +230,9 @@ $button-variants: (
     active-border-color: $secondary-300,
     disabled-color: $secondary-400,
     disabled-bg: transparent,
-    disabled-border-color: $secondary-400
+    disabled-border-color: $secondary-400,
   ),
-  "subtle": (
+  'subtle': (
     color: $black,
     bg: transparent,
     border-color: transparent,
@@ -244,9 +244,9 @@ $button-variants: (
     active-border-color: $secondary-300,
     disabled-color: $neutral-400,
     disabled-bg: transparent,
-    disabled-border-color: transparent
+    disabled-border-color: transparent,
   ),
-  "transparent": (
+  'transparent': (
     color: $black,
     bg: transparent,
     border-color: transparent,
@@ -258,9 +258,9 @@ $button-variants: (
     active-border-color: transparent,
     disabled-color: $neutral-400,
     disabled-bg: transparent,
-    disabled-border-color: transparent
+    disabled-border-color: transparent,
   ),
-  "destructive-primary": (
+  'destructive-primary': (
     color: $white,
     bg: $error-600,
     border-color: $error-600,
@@ -272,9 +272,9 @@ $button-variants: (
     active-border-color: $error-900,
     disabled-color: $neutral-500,
     disabled-bg: $error-100,
-    disabled-border-color: $error-100
+    disabled-border-color: $error-100,
   ),
-  "destructive-secondary": (
+  'destructive-secondary': (
     color: $error-700,
     bg: $error-50,
     border-color: $error-100,
@@ -286,9 +286,9 @@ $button-variants: (
     active-border-color: $error-300,
     disabled-color: $neutral-500,
     disabled-bg: $error-25,
-    disabled-border-color: $error-100
+    disabled-border-color: $error-100,
   ),
-  "destructive-outline-secondary": (
+  'destructive-outline-secondary': (
     color: $error-700,
     bg: transparent,
     border-color: $error-200,
@@ -300,9 +300,9 @@ $button-variants: (
     active-border-color: transparent,
     disabled-color: $neutral-400,
     disabled-bg: transparent,
-    disabled-border-color: transparent
+    disabled-border-color: transparent,
   ),
-  "destructive-subtle": (
+  'destructive-subtle': (
     color: $error-700,
     bg: transparent,
     border-color: transparent,
@@ -314,9 +314,9 @@ $button-variants: (
     active-border-color: transparent,
     disabled-color: $neutral-400,
     disabled-bg: transparent,
-    disabled-border-color: transparent
+    disabled-border-color: transparent,
   ),
-  "destructive-transparent": (
+  'destructive-transparent': (
     color: $error-600,
     bg: transparent,
     border-color: transparent,
@@ -328,12 +328,12 @@ $button-variants: (
     active-border-color: transparent,
     disabled-color: $neutral-400,
     disabled-bg: transparent,
-    disabled-border-color: transparent
-  )
+    disabled-border-color: transparent,
+  ),
 );
 
 $on-primary-button-variants: (
-  "neutral": (
+  'neutral': (
     color: $black,
     bg: $white,
     border-color: transparent,
@@ -345,9 +345,9 @@ $on-primary-button-variants: (
     active-border-color: transparent,
     disabled-color: rgba($white, 0.4),
     disabled-bg: rgba($white, 0.2),
-    disabled-border-color: transparent
+    disabled-border-color: transparent,
   ),
-  "primary": (
+  'primary': (
     color: $black,
     bg: $white,
     border-color: transparent,
@@ -359,9 +359,9 @@ $on-primary-button-variants: (
     active-border-color: transparent,
     disabled-color: rgba($white, 0.4),
     disabled-bg: rgba($white, 0.2),
-    disabled-border-color: transparent
+    disabled-border-color: transparent,
   ),
-  "secondary": (
+  'secondary': (
     color: $white,
     bg: rgba($white, 0.2),
     border-color: transparent,
@@ -373,9 +373,9 @@ $on-primary-button-variants: (
     active-border-color: transparent,
     disabled-color: rgba($white, 0.4),
     disabled-bg: rgba($white, 0.2),
-    disabled-border-color: transparent
+    disabled-border-color: transparent,
   ),
-  "outline-secondary": (
+  'outline-secondary': (
     color: $white,
     bg: transparent,
     border-color: rgba($white, 0.4),
@@ -387,9 +387,9 @@ $on-primary-button-variants: (
     active-border-color: rgba($white, 0.4),
     disabled-color: rgba($white, 0.4),
     disabled-bg: transparent,
-    disabled-border-color: rgba($white, 0.4)
+    disabled-border-color: rgba($white, 0.4),
   ),
-  "subtle": (
+  'subtle': (
     color: $white,
     bg: transparent,
     border-color: transparent,
@@ -401,9 +401,9 @@ $on-primary-button-variants: (
     active-border-color: transparent,
     disabled-color: rgba($white, 0.4),
     disabled-bg: transparent,
-    disabled-border-color: transparent
+    disabled-border-color: transparent,
   ),
-  "transparent": (
+  'transparent': (
     color: $white,
     bg: transparent,
     border-color: transparent,
@@ -415,9 +415,9 @@ $on-primary-button-variants: (
     active-border-color: transparent,
     disabled-color: rgba($white, 0.4),
     disabled-bg: transparent,
-    disabled-border-color: transparent
+    disabled-border-color: transparent,
   ),
-  "destructive-primary": (
+  'destructive-primary': (
     color: $white,
     bg: $error-600,
     border-color: transparent,
@@ -429,9 +429,9 @@ $on-primary-button-variants: (
     active-border-color: transparent,
     disabled-color: rgba($white, 0.4),
     disabled-bg: rgba($error-600, 0.2),
-    disabled-border-color: transparent
+    disabled-border-color: transparent,
   ),
-  "destructive-secondary": (
+  'destructive-secondary': (
     color: $error-700,
     bg: $error-50,
     border-color: transparent,
@@ -443,9 +443,9 @@ $on-primary-button-variants: (
     active-border-color: transparent,
     disabled-color: rgba($error-700, 0.4),
     disabled-bg: rgba($error-50, 0.2),
-    disabled-border-color: transparent
+    disabled-border-color: transparent,
   ),
-  "destructive-outline-secondary": (
+  'destructive-outline-secondary': (
     color: $error-200,
     bg: transparent,
     border-color: $error-200,
@@ -457,9 +457,9 @@ $on-primary-button-variants: (
     active-border-color: $error-200,
     disabled-color: rgba($error-700, 0.4),
     disabled-bg: transparent,
-    disabled-border-color: rgba($error-200, 0.4)
+    disabled-border-color: rgba($error-200, 0.4),
   ),
-  "destructive-subtle": (
+  'destructive-subtle': (
     color: $error-200,
     bg: transparent,
     border-color: transparent,
@@ -471,9 +471,9 @@ $on-primary-button-variants: (
     active-border-color: transparent,
     disabled-color: rgba($error-200, 0.4),
     disabled-bg: transparent,
-    disabled-border-color: transparent
+    disabled-border-color: transparent,
   ),
-  "destructive-transparent": (
+  'destructive-transparent': (
     color: $error-200,
     bg: transparent,
     border-color: transparent,
@@ -485,8 +485,8 @@ $on-primary-button-variants: (
     active-border-color: transparent,
     disabled-color: rgba($error-200, 0.4),
     disabled-bg: transparent,
-    disabled-border-color: transparent
-  )
+    disabled-border-color: transparent,
+  ),
 );
 
 // Generate button variant classes
@@ -505,11 +505,11 @@ $on-primary-button-variants: (
     --#{$prefix}btn-disabled-color: #{map-get($props, disabled-color)};
     --#{$prefix}btn-disabled-bg: #{map-get($props, disabled-bg)};
     --#{$prefix}btn-disabled-border-color: #{map-get($props, disabled-border-color)};
-  };
+  }
 }
 
 .on-primary {
-  @each $name, $props in $on-primary-button-variants  {
+  @each $name, $props in $on-primary-button-variants {
     .btn-#{$name} {
       --#{$prefix}btn-color: #{map-get($props, color)};
       --#{$prefix}btn-bg: #{map-get($props, bg)};
@@ -525,7 +525,7 @@ $on-primary-button-variants: (
       --#{$prefix}btn-disabled-bg: #{map-get($props, disabled-bg)};
       --#{$prefix}btn-disabled-border-color: #{map-get($props, disabled-border-color)};
     }
-  };
+  }
 }
 
 // ============================================
@@ -546,7 +546,7 @@ $on-primary-button-variants: (
 .btn-icon {
   display: inline-flex;
   align-items: center;
-  gap: .25rem;
+  gap: 0.25rem;
 
   &.btn-lg {
     padding: 0.75rem;
@@ -563,7 +563,7 @@ $on-primary-button-variants: (
 
 // RTL support for horizontal button groups:
 // keep natural RTL ordering and align edge radii/separators correctly.
-[dir="rtl"] .btn-group {
+[dir='rtl'] .btn-group {
   direction: rtl;
 
   > :not(.btn-check) + .btn,
@@ -595,7 +595,7 @@ $on-primary-button-variants: (
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  gap: .5rem;
+  gap: 0.5rem;
 
   // Reverted input-like color/border styles to fix variants (Primary, etc.)
   // min-height: 2rem;
@@ -604,7 +604,7 @@ $on-primary-button-variants: (
   // Keep arrow sizing/positioning
   &::after {
     border: none;
-    content: "";
+    content: '';
     width: 1.5em;
     height: 1.5em;
     margin-left: auto;
@@ -615,6 +615,11 @@ $on-primary-button-variants: (
     background-size: contain;
     transition: transform 0.2s ease-in-out;
     transform: rotate(0deg);
+
+    [dir='rtl'] & {
+      margin-left: 0;
+      margin-right: auto;
+    }
   }
 
   &:has(+ .dropdown-menu.show)::after,
@@ -628,7 +633,7 @@ $on-primary-button-variants: (
 .dropend > .dropdown-toggle::after {
   transform: rotate(-90deg);
 
-  [dir="rtl"] & {
+  [dir='rtl'] & {
     transform: rotate(90deg);
   }
 }
@@ -642,10 +647,10 @@ $on-primary-button-variants: (
   }
 
   &::before {
-    content: "";
+    content: '';
     width: 1.5em;
     height: 1.5em;
-    margin-right: .5rem;
+    margin-right: 0.5rem;
     background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='%23000' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'><path d='M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9' /></svg>");
     background-repeat: no-repeat;
     background-position: center;
@@ -653,16 +658,16 @@ $on-primary-button-variants: (
     transition: transform 0.2s ease-in-out;
     transform: rotate(90deg);
 
-    [dir="rtl"] & {
+    [dir='rtl'] & {
       transform: rotate(-90deg);
     }
   }
 }
 
-.dropdown-menu{
+.dropdown-menu {
   text-align: $body-text-align;
 
-  [dir="rtl"] & {
+  [dir='rtl'] & {
     inset-inline-start: 0 !important;
     inset-inline-end: auto !important;
     text-align: right;
@@ -696,7 +701,7 @@ $on-primary-button-variants: (
       font-weight: 600;
 
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         top: 50%;
         right: 1rem;
@@ -731,7 +736,7 @@ $on-primary-button-variants: (
     }
 
     // RTL Support for Checkmark
-    [dir="rtl"] & {
+    [dir='rtl'] & {
       padding-right: 1rem; // Reset LTR padding
       padding-left: 2.5rem; // Space for checkmark (RTL)
       text-align: right;
@@ -742,5 +747,4 @@ $on-primary-button-variants: (
       }
     }
   }
-
 }

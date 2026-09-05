@@ -24,7 +24,7 @@
   border-radius: 0 0.5rem 0.5rem 0.5rem;
   flex: 1;
 
-  [dir="rtl"] & {
+  [dir='rtl'] & {
     border-radius: 0.5rem 0 0.5rem 0.5rem;
   }
 }

@@ -1,11 +1,11 @@
-$tooltip-font-size:                 $font-size-sm;
-$tooltip-max-width:                 240px;
-$tooltip-color:                     var(--#{$prefix}body-color);
-$tooltip-bg:                        var(--#{$prefix}body-bg);
-$tooltip-border-radius:             $radius-sm;
-$tooltip-opacity:                   1;
-$tooltip-padding-y:                 $spacer * .25;
-$tooltip-padding-x:                 $spacer * .5;
+$tooltip-font-size: $font-size-sm;
+$tooltip-max-width: 240px;
+$tooltip-color: var(--#{$prefix}body-color);
+$tooltip-bg: var(--#{$prefix}body-bg);
+$tooltip-border-radius: $radius-sm;
+$tooltip-opacity: 1;
+$tooltip-padding-y: $spacer * 0.25;
+$tooltip-padding-x: $spacer * 0.5;
 
-$tooltip-arrow-width:               .8rem;
-$tooltip-arrow-height:              .4rem;
+$tooltip-arrow-width: 0.8rem;
+$tooltip-arrow-height: 0.4rem;

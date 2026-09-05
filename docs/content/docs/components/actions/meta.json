@@ -1,9 +1,4 @@
 {
   "title": "Actions",
-  "pages": [
-    "buttons",
-    "button-group",
-    "dropdowns",
-    "links"
-  ]
+  "pages": ["buttons", "button-group", "dropdowns", "links"]
 }

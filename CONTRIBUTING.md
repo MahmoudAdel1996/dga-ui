@@ -24,7 +24,7 @@ If a component exists in Bootstrap but **not** in the SDGA Figma file, leave it 
 `theme/dga-ui.scss` is the single entry point. It layers in this order:
 
 1. `theme/config/` — foundational tokens (colors, typography, spacing, radius, effects)
-2. `theme/components/` — per-component **Bootstrap variable overrides** (run *before* Bootstrap)
+2. `theme/components/` — per-component **Bootstrap variable overrides** (run _before_ Bootstrap)
 3. `bootstrap/scss/bootstrap` — Bootstrap compiled with those variables
 4. `theme/customizations/` — **post-Bootstrap CSS** for anything variables can't achieve (SDGA-specific classes, RTL fixes, utilities)
 
@@ -32,7 +32,7 @@ If a component exists in Bootstrap but **not** in the SDGA Figma file, leave it 
 
 1. **Check Figma first.** Locate the component in the Figma file and note its tokens (colors, spacing, radius, typography) in Dev Mode.
 2. **Prefer variables over CSS.** Put Bootstrap variable overrides in `theme/components/_<component>.scss` (create it and import it from `theme/_variables.scss` if new).
-3. **Use `theme/customizations/_<component>.scss`** only for what variables can't express. Import it in `theme/dga-ui.scss` *after* Bootstrap.
+3. **Use `theme/customizations/_<component>.scss`** only for what variables can't express. Import it in `theme/dga-ui.scss` _after_ Bootstrap.
 4. **Use existing tokens.** Reference the SDGA palette (`$sa-*`, `$gold-*`, `$lavender-*`, `$neutral-*`, semantic colors) and spacing/radius variables from `theme/config/` — never raw hex values or magic numbers that duplicate a token.
 5. **Test RTL.** Every style must work in both `dir="ltr"` and `dir="rtl"`. Use logical properties (`margin-inline-start`, `padding-inline-end`, …) instead of left/right where possible.
 6. **Build:** `npm run build-css` must compile without errors.

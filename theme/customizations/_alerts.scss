@@ -7,62 +7,78 @@
 
 // Define alert color variants
 $alert-variants: (
-  "primary": (border-color: rgba($primary-600, 0.7),
+  'primary': (
+    border-color: rgba($primary-600, 0.7),
     bg: $primary-25,
     border: $primary-200,
     icon-bg: $primary-50,
     icon-color: $primary-700,
     title-color: $primary-700,
-    mobile-border-top: $primary-600 ),
-  "lavender": (border-color: rgba($lavender-600, 0.7),
+    mobile-border-top: $primary-600,
+  ),
+  'lavender': (
+    border-color: rgba($lavender-600, 0.7),
     bg: $lavender-25,
     border: $lavender-200,
     icon-bg: $lavender-50,
     icon-color: $lavender-700,
     title-color: $lavender-700,
-    mobile-border-top: rgba($lavender-600, 0.7)),
-  "neutral": (border-color: rgba($neutral-300, 0.7),
+    mobile-border-top: rgba($lavender-600, 0.7),
+  ),
+  'neutral': (
+    border-color: rgba($neutral-300, 0.7),
     bg: $neutral-25,
     border: $neutral-300,
     icon-bg: $neutral-50,
     icon-color: $black,
     title-color: $black,
-    mobile-border-top: rgba($neutral-300, 0.7)),
-  "success": (border-color: rgba($success-600, 0.7),
+    mobile-border-top: rgba($neutral-300, 0.7),
+  ),
+  'success': (
+    border-color: rgba($success-600, 0.7),
     bg: $success-25,
     border: $success-200,
     icon-bg: $success-50,
     icon-color: $success-700,
     title-color: $success-700,
-    mobile-border-top: rgba($success-600, 0.7)),
-  "danger": (border-color: rgba($danger-600, 0.7),
+    mobile-border-top: rgba($success-600, 0.7),
+  ),
+  'danger': (
+    border-color: rgba($danger-600, 0.7),
     bg: $danger-25,
     border: $danger-200,
     icon-bg: $danger-50,
     icon-color: $danger-700,
     title-color: $danger-700,
-    mobile-border-top: rgba($danger-600, 0.7)),
-  "warning": (border-color: rgba($warning-600, 0.7),
+    mobile-border-top: rgba($danger-600, 0.7),
+  ),
+  'warning': (
+    border-color: rgba($warning-600, 0.7),
     bg: $warning-25,
     border: $warning-200,
     icon-bg: $warning-50,
     icon-color: $warning-700,
     title-color: $warning-700,
-    mobile-border-top: rgba($warning-600, 0.7)),
-  "info": (border-color: rgba($info-600, 0.7),
+    mobile-border-top: rgba($warning-600, 0.7),
+  ),
+  'info': (
+    border-color: rgba($info-600, 0.7),
     bg: $info-25,
     border: $info-200,
     icon-bg: $info-50,
     icon-color: $info-700,
     title-color: $info-700,
-    mobile-border-top: rgba($info-600, 0.7)),
-  "secondary": (border-color: rgba($secondary-200, 0.7),
+    mobile-border-top: rgba($info-600, 0.7),
+  ),
+  'secondary': (
+    border-color: rgba($secondary-200, 0.7),
     bg: $secondary-25,
     border: $secondary-200,
     icon-bg: $secondary-50,
     icon-color: $black,
     title-color: $black,
-    mobile-border-top: rgba($secondary-200, 0.7))
+    mobile-border-top: rgba($secondary-200, 0.7),
+  ),
 );
 
 // ============================================
@@ -73,10 +89,10 @@ $alert-variants: (
   background-color: $alert-bg;
   border: $alert-border-width solid;
   border-color: $alert-border-color;
-  border-inline-start-width: .5rem;
+  border-inline-start-width: 0.5rem;
   display: flex;
   align-items: flex-start;
-  gap: .75rem;
+  gap: 0.75rem;
   color: $gray-700;
 
   .alert-icon {
@@ -107,7 +123,7 @@ $alert-variants: (
   .alert-title {
     display: block;
     color: $alert-title-color;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
     font-weight: $font-weight-semibold;
   }
 
@@ -115,7 +131,7 @@ $alert-variants: (
     padding-right: unset;
     padding-inline-end: $alert-dismissible-padding-r;
     padding-inline-start: $alert-padding-x;
-    
+
     .btn-close {
       right: unset;
       inset-inline-end: 0;
@@ -147,7 +163,6 @@ $alert-variants: (
     margin-inline-start: -0.75rem;
   }
 
-
   // ============================================
   // MOBILE RESPONSIVE
   // ============================================
@@ -176,7 +191,6 @@ $alert-variants: (
     .alert-footer {
       flex-direction: column;
       margin-inline-start: 0;
-
 
       button {
         width: 100%;

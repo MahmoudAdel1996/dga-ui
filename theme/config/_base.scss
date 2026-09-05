@@ -13,9 +13,8 @@ $prefix: dga-;
 // CONTRAST
 // ============================================
 
-// Lower threshold so Bootstrap picks white text on warning ($warning-600 = #DC6803,
-// which has a ~3.5:1 contrast ratio against white, below the default 4.5 cutoff).
-$min-contrast-ratio: 3;
+// Standard WCAG 2.1/2.2 Level AA contrast ratio threshold (4.5:1 for normal text).
+$min-contrast-ratio: 4.5;
 
 // ============================================
 // BODY
@@ -34,14 +33,12 @@ $link-decoration: none;
 $link-hover-color: color.scale($link-color, $lightness: -30%);
 $link-hover-decoration: underline;
 
-
 // ============================================
 // COMPONENTS BASE
 // ============================================
 
 $component-active-color: $white;
 $component-active-bg: $primary;
-
 
 // Shadow base color (using SDGA neutral-900 shade)
 $shadow-color: $gray-900;
@@ -65,7 +62,6 @@ $enable-rfs: true;
 $enable-important-utilities: true;
 $enable-ripple-effect: true !default;
 
-
 // ============================================
 // Z-INDEX
 // ============================================
@@ -80,7 +76,6 @@ $zindex-modal: 1055;
 $zindex-popover: 1070;
 $zindex-tooltip: 1080;
 $zindex-toast: 1090;
-
 
 // ============================================
 // Responsive Variables

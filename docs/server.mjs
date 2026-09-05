@@ -1,5 +1,4 @@
 import { createServer as createHttpsServer } from 'https';
-import { createServer as createHttpServer } from 'http';
 import next from 'next';
 import { readFileSync } from 'fs';
 import { join, dirname } from 'path';

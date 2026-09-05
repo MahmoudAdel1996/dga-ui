@@ -26,9 +26,11 @@
   "author": "Mahmoud Adel",
   "type": "module",
   "main": "index.js",
+  "style": "./css/dga-ui.css",
   "exports": {
     ".": "./index.js",
     "./css/dga-ui.css": "./css/dga-ui.css",
+    "./css/dga-ui.min.css": "./css/dga-ui.min.css",
     "./css/*": "./css/*",
     "./fonts/*": "./fonts/*",
     "./theme/*": "./theme/*"
@@ -37,6 +39,7 @@
     "css",
     "fonts",
     "theme",
+    "index.js",
     "README.md",
     "LICENSE"
   ],
@@ -44,8 +47,8 @@
     "test": "echo \"No tests yet\" && exit 0",
     "format": "prettier --write \"**/*.{js,json,md,css,scss}\"",
     "format:check": "prettier --check \"**/*.{js,json,md,css,scss}\"",
-    "build-css": "sass --load-path=node_modules theme/dga-ui.scss css/dga-ui.css",
-    "watch-css": "sass --load-path=node_modules --watch theme/dga-ui.scss css/dga-ui.css",
+    "build-css": "sass --silence-deprecation=import,global-builtin,color-functions --load-path=node_modules theme/dga-ui.scss css/dga-ui.css && sass --silence-deprecation=import,global-builtin,color-functions --load-path=node_modules --style=compressed theme/dga-ui.scss css/dga-ui.min.css",
+    "watch-css": "sass --silence-deprecation=import,global-builtin,color-functions --load-path=node_modules --watch theme/dga-ui.scss css/dga-ui.css",
     "update-docs-version": "node -e \"const fs=require('fs');const pkg=JSON.parse(fs.readFileSync('package.json'));const docsPkg=JSON.parse(fs.readFileSync('docs/package.json'));docsPkg.version=pkg.version;fs.writeFileSync('docs/package.json',JSON.stringify(docsPkg,null,2)+'\\n');console.log('Synced docs version to',pkg.version);\"",
     "update-demo-version": "node -e \"const fs=require('fs');const pkg=JSON.parse(fs.readFileSync('package.json'));const demoPkg=JSON.parse(fs.readFileSync('demo-angular/package.json'));demoPkg.dependencies['sdga-ui']='^'+pkg.version;fs.writeFileSync('demo-angular/package.json',JSON.stringify(demoPkg,null,2)+'\\n');console.log('Synced demo-angular sdga-ui dependency to',pkg.version);\"",
     "prepublishOnly": "npm run build-css",

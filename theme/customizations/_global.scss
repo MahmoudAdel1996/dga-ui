@@ -3,10 +3,15 @@
 // GLOBAL FOCUS STYLING
 // ============================================
 
-// Global button focus styling - applies to all button variants
-*:focus-visible {
-  outline-offset: 2px !important;
-  outline: 2px solid $black !important;
+// Accessible focus styling for interactive elements
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 ::selection {
@@ -38,8 +43,6 @@
   padding-left: unset;
   padding-inline-start: 0;
 }
-
-
 
 // ============================================
 // SAFARI COMPATIBILITY

@@ -12,19 +12,19 @@ architecture, commands, and release workflow.
 
 ## Where the value is, by task
 
-| I need to... | Go to |
-|---|---|
-| Change a color / spacing / radius token | `theme/config/_colors.scss`, `_spacing.scss`, `_radius.scss`, `_typography.scss`, `_effects.scss`, `_base.scss` |
-| Change a component's Bootstrap variables (pre-compile) | `theme/components/_<component>.scss` |
-| Add CSS Bootstrap variables can't express (post-compile) | `theme/customizations/_<component>.scss` |
-| See the compile order / entry point | `theme/dga-ui.scss` → `theme/_variables.scss` |
-| Check the compiled output | `css/dga-ui.css` (generated — don't hand-edit) |
-| Find the official design spec for a component | Figma + design.dga.gov.sa links in `/CLAUDE.md` under "Design source of truth" |
-| See a component rendered in docs | `docs/content/docs/components/*.mdx`, run `cd docs && npm run use:local && npm run dev` |
-| See a component in a real Angular app | `demo-angular/`, run `cd demo-angular && npm start` |
-| Bump version / publish | `npm run version:patch` (builds CSS, syncs versions, tags, pushes — see `/CLAUDE.md` release workflow) |
-| Fonts | `fonts/` (IBM Plex Sans Arabic), declared in `theme/_fonts.scss` |
-| Contribution rules (naming, token usage, no-invented-styles) | `/CONTRIBUTING.md` |
+| I need to...                                                 | Go to                                                                                                           |
+| ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| Change a color / spacing / radius token                      | `theme/config/_colors.scss`, `_spacing.scss`, `_radius.scss`, `_typography.scss`, `_effects.scss`, `_base.scss` |
+| Change a component's Bootstrap variables (pre-compile)       | `theme/components/_<component>.scss`                                                                            |
+| Add CSS Bootstrap variables can't express (post-compile)     | `theme/customizations/_<component>.scss`                                                                        |
+| See the compile order / entry point                          | `theme/dga-ui.scss` → `theme/_variables.scss`                                                                   |
+| Check the compiled output                                    | `css/dga-ui.css` (generated — don't hand-edit)                                                                  |
+| Find the official design spec for a component                | Figma + design.dga.gov.sa links in `/CLAUDE.md` under "Design source of truth"                                  |
+| See a component rendered in docs                             | `docs/content/docs/components/*.mdx`, run `cd docs && npm run use:local && npm run dev`                         |
+| See a component in a real Angular app                        | `demo-angular/`, run `cd demo-angular && npm start`                                                             |
+| Bump version / publish                                       | `npm run version:patch` (builds CSS, syncs versions, tags, pushes — see `/CLAUDE.md` release workflow)          |
+| Fonts                                                        | `fonts/` (IBM Plex Sans Arabic), declared in `theme/_fonts.scss`                                                |
+| Contribution rules (naming, token usage, no-invented-styles) | `/CONTRIBUTING.md`                                                                                              |
 
 ## Rules that matter most
 

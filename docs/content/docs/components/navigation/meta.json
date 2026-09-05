@@ -1,9 +1,4 @@
 {
   "title": "Navigation",
-  "pages": [
-    "navbar",
-    "navs-tabs",
-    "breadcrumb",
-    "pagination"
-  ]
+  "pages": ["navbar", "navs-tabs", "breadcrumb", "pagination"]
 }

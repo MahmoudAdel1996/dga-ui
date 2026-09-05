@@ -27,10 +27,7 @@ export default function Layout({ children }: LayoutProps<'/'>) {
           search={{
             options: {
               type: 'static',
-              api:
-                process.env.NODE_ENV === 'production'
-                  ? '/dga-ui/api/search'
-                  : '/api/search',
+              api: process.env.NODE_ENV === 'production' ? '/dga-ui/api/search' : '/api/search',
             },
           }}
         >

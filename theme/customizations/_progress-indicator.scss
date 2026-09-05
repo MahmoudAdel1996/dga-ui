@@ -27,7 +27,6 @@
         &::after {
           background-color: $primary-700;
         }
-
       }
 
       &.upcoming:hover {
@@ -136,7 +135,9 @@
       .step-circle {
         // Create a ring effect: white gap then dark ring
         // This overrides any state-specific shadows due to cascade order
-        box-shadow: 0 0 0 2px $white, 0 0 0 5px $dark;
+        box-shadow:
+          0 0 0 2px $white,
+          0 0 0 5px $dark;
       }
 
       .step-content {
@@ -180,9 +181,8 @@
     }
 
     .step-circle {
-      margin: 0 0 .75rem 0;
+      margin: 0 0 0.75rem 0;
     }
-
 
     .step:not(:last-child)::after {
       content: '';
@@ -190,7 +190,7 @@
       top: 1.125rem;
       inset-inline-start: 2.25rem;
       inset-inline-end: 0;
-      height: .125rem;
+      height: 0.125rem;
       // background-color: $gray-300; // Moved to base .step::after
       // z-index: 1; // Moved to base .step::after
     }
@@ -227,7 +227,7 @@
       top: 1.125rem;
       inset-inline-start: calc(1.125rem - 1px);
       bottom: 0px;
-      width: .125rem;
+      width: 0.125rem;
       // background-color: $gray-300; // Moved to base .step::after
       z-index: 0; // Vertical needs different z-index? No, usually fine, but verify.
       // Vertical line z-index was 0 in original code

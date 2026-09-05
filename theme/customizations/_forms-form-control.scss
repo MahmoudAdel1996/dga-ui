@@ -17,8 +17,9 @@
   background-size: 0% 2px;
   background-repeat: no-repeat;
   background-position: center bottom;
-  transition: background-size 0.3s ease-in-out,
-  border-color 0.3s ease-in-out;
+  transition:
+    background-size 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
 
   &.filled {
     background-color: var(--#{$prefix}body-bg);
@@ -68,14 +69,13 @@
   &:disabled,
   &[disabled] {
     border-color: $neutral-300;
-    background-color: var(--#{ $prefix}body-bg);
+    background-color: var(--#{$prefix}body-bg);
     color: $neutral-400;
     pointer-events: none;
 
     &::placeholder {
       color: $neutral-400;
     }
-
   }
 
   &:user-invalid,
@@ -123,11 +123,11 @@
   font-size: $font-size-sm;
 
   &.required {
-      &::after {
-        content: "*";
-        color: $error-700;
-        margin-inline-start: 0.25rem;
-      }
+    &::after {
+      content: '*';
+      color: $error-700;
+      margin-inline-start: 0.25rem;
+    }
   }
 
   &.disabled {
@@ -147,7 +147,9 @@
 .input-group {
   border: $input-border-width solid $input-border-color;
   border-radius: $radius-sm;
-  transition: background-size 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  transition:
+    background-size 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
 
   overflow: hidden; // Ensures children don't bleed out of rounded corners in RTL/LTR mixed contexts
 
@@ -167,7 +169,6 @@
     transition: transform 0.3s ease-in-out;
   }
 
-
   .input-group-text {
     border: none;
     background: $neutral-100;
@@ -175,9 +176,8 @@
     border-radius: 0; // Fix for RTL/LTR border radius issues
 
     &.subtle {
-      background-color: var(--#{ $prefix}body-bg);
+      background-color: var(--#{$prefix}body-bg);
     }
-
   }
 
   .btn {
@@ -185,7 +185,6 @@
     box-shadow: none;
     border-radius: 0; // Fix for RTL/LTR border radius issues
   }
-
 
   .form-control,
   .form-select {
@@ -230,11 +229,10 @@
     pointer-events: none;
   }
 
-
   &:has(.form-control:disabled),
   &:has(.form-control[disabled]) {
     border-color: $neutral-300;
-    background-color: var(--#{ $prefix}body-bg);
+    background-color: var(--#{$prefix}body-bg);
     color: $neutral-400;
     pointer-events: none;
 
@@ -244,7 +242,7 @@
 
     .form-control {
       border-color: $neutral-300;
-      background-color: var(--#{ $prefix}body-bg);
+      background-color: var(--#{$prefix}body-bg);
       color: $neutral-400;
       pointer-events: none;
     }
@@ -255,7 +253,7 @@
       pointer-events: none;
 
       &.subtle {
-        background-color: var(--#{ $prefix}body-bg);
+        background-color: var(--#{$prefix}body-bg);
       }
     }
   }

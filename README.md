@@ -22,15 +22,15 @@ Check out the live demo and explore all components:
 
 ## **✨ Features**
 
-* Government-inspired design system
-* Full compatibility with Bootstrap
-* **Built-in RTL support** (no need to import Bootstrap RTL separately)
-* Custom color palette and typography
-* Standardized spacing & component overrides
-* Utility classes for layout and theming
-* Light / dark mode friendly (optional)
-* IBM Plex Sans Arabic font included
-* Easy to integrate into any frontend project
+- Government-inspired design system
+- Full compatibility with Bootstrap
+- **Built-in RTL support** (no need to import Bootstrap RTL separately)
+- Custom color palette and typography
+- Standardized spacing & component overrides
+- Utility classes for layout and theming
+- Light / dark mode friendly (optional)
+- IBM Plex Sans Arabic font included
+- Easy to integrate into any frontend project
 
 ---
 
@@ -54,16 +54,16 @@ No installation needed — link directly to the compiled CSS:
 
 ```html
 <!-- jsDelivr -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sdga-ui@latest/css/dga-ui.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sdga-ui@latest/css/dga-ui.css" />
 
 <!-- unpkg -->
-<link rel="stylesheet" href="https://unpkg.com/sdga-ui@latest/css/dga-ui.css">
+<link rel="stylesheet" href="https://unpkg.com/sdga-ui@latest/css/dga-ui.css" />
 ```
 
 Pin to a specific version (recommended for production) instead of `@latest`:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sdga-ui@1.0.31/css/dga-ui.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sdga-ui@1.0.31/css/dga-ui.css" />
 ```
 
 ---
@@ -75,13 +75,13 @@ Pin to a specific version (recommended for production) instead of `@latest`:
 Include the compiled CSS file in your HTML:
 
 ```html
-<link rel="stylesheet" href="node_modules/sdga-ui/css/dga-ui.css">
+<link rel="stylesheet" href="node_modules/sdga-ui/css/dga-ui.css" />
 ```
 
 Or import it in your JavaScript/CSS:
 
 ```css
-@import "sdga-ui/css/dga-ui.css";
+@import 'sdga-ui/css/dga-ui.css';
 ```
 
 ### **Using SCSS Source Files**
@@ -89,7 +89,7 @@ Or import it in your JavaScript/CSS:
 Import the theme in your SCSS file:
 
 ```scss
-@import "sdga-ui/theme/dga-ui";
+@import 'sdga-ui/theme/dga-ui';
 ```
 
 All Bootstrap components automatically adopt the DGA UI theme.
@@ -99,7 +99,7 @@ All Bootstrap components automatically adopt the DGA UI theme.
 DGA UI has built-in RTL (Right-to-Left) support for Arabic and other RTL languages. Simply add the `dir="rtl"` attribute to your HTML tag:
 
 ```html
-<html dir="rtl" lang="ar">
+<html dir="rtl" lang="ar"></html>
 ```
 
 No need to import Bootstrap's RTL CSS separately – it's already integrated!
@@ -157,7 +157,7 @@ $primary: #0d47a1;
 $secondary: #ffc107;
 
 // Import the DGA UI theme
-@import "dga-ui/theme/dga-ui";
+@import 'dga-ui/theme/dga-ui';
 ```
 
 ---
@@ -166,9 +166,9 @@ $secondary: #ffc107;
 
 The theme is organized into three main sections:
 
-* **config/** - Base configuration (colors, typography, spacing, etc.)
-* **components/** - Bootstrap component overrides
-* **customizations/** - Additional styling and utilities
+- **config/** - Base configuration (colors, typography, spacing, etc.)
+- **components/** - Bootstrap component overrides
+- **customizations/** - Additional styling and utilities
 
 ---
 
@@ -176,8 +176,8 @@ The theme is organized into three main sections:
 
 Contributions are welcome! Please read the [Contributing Guide](CONTRIBUTING.md) first — all styles must match the official SDGA design references:
 
-* [SDGA Figma Components Library](https://www.figma.com/design/I2E5M7OWeToi3moSfwoRfH/Components-Library---Platforms-Code--Community-?node-id=1-1183&p=f&m=dev)
-* [design.dga.gov.sa](https://design.dga.gov.sa/)
+- [SDGA Figma Components Library](https://www.figma.com/design/I2E5M7OWeToi3moSfwoRfH/Components-Library---Platforms-Code--Community-?node-id=1-1183&p=f&m=dev)
+- [design.dga.gov.sa](https://design.dga.gov.sa/)
 
 Styles that don't exist in the Figma file will not be accepted — open an issue to discuss design gaps instead.
 

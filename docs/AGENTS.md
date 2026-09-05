@@ -11,4 +11,5 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 ## Documentation & Fumadocs Guidelines
 
 When working on or editing the docs project:
+
 - Always use the **Context7 MCP** (`@mcp:context7:fumadocs`, library ID `/fuma-nama/fumadocs` or `/websites/fumadocs_dev`) via `resolve-library-id` and `query-docs` to query official Fumadocs documentation, conventions, and APIs.

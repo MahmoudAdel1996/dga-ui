@@ -11,39 +11,65 @@ $spacer: 1rem;
 // Bootstrap spacers map (0-10)
 $spacers: (
   0: 0,
-  1: $spacer * 0.25,    // 4px
-  2: $spacer * 0.5,     // 8px
-  3: $spacer * 0.75,    // 12px
-  4: $spacer,           // 16px
-  5: $spacer * 1.5,     // 24px
-  6: $spacer * 2,       // 32px
-  7: $spacer * 2.5,     // 40px
-  8: $spacer * 3,       // 48px
-  9: $spacer * 4,       // 64px
-  10: $spacer * 5       // 80px
+  1: $spacer * 0.25,
+  // 4px
+  2: $spacer * 0.5,
+  // 8px
+  3: $spacer * 0.75,
+  // 12px
+  4: $spacer,
+  // 16px
+  5: $spacer * 1.5,
+  // 24px
+  6: $spacer * 2,
+  // 32px
+  7: $spacer * 2.5,
+  // 40px
+  8: $spacer * 3,
+  // 48px
+  9: $spacer * 4,
+  // 64px
+  10: $spacer * 5, // 80px
 );
 
 // Extended spacing scale for custom utilities
 $spacing-scale: (
   0: 0rem,
-  0-5: 0.125rem,        // 2px
-  1: 0.25rem,           // 4px
-  2: 0.5rem,            // 8px
-  3: 0.75rem,           // 12px
-  4: 1rem,              // 16px
-  5: 1.25rem,           // 20px
-  6: 1.5rem,            // 24px
-  8: 2rem,              // 32px
-  10: 2.5rem,           // 40px
-  12: 3rem,             // 48px
-  16: 4rem,             // 64px
-  20: 5rem,             // 80px
-  24: 6rem,             // 96px
-  32: 8rem,             // 128px
-  40: 10rem,            // 160px
-  48: 12rem,            // 192px
-  56: 14rem,            // 224px
-  64: 16rem             // 256px
+  '0-5': 0.125rem,
+  // 2px
+  1: 0.25rem,
+  // 4px
+  2: 0.5rem,
+  // 8px
+  3: 0.75rem,
+  // 12px
+  4: 1rem,
+  // 16px
+  5: 1.25rem,
+  // 20px
+  6: 1.5rem,
+  // 24px
+  8: 2rem,
+  // 32px
+  10: 2.5rem,
+  // 40px
+  12: 3rem,
+  // 48px
+  16: 4rem,
+  // 64px
+  20: 5rem,
+  // 80px
+  24: 6rem,
+  // 96px
+  32: 8rem,
+  // 128px
+  40: 10rem,
+  // 160px
+  48: 12rem,
+  // 192px
+  56: 14rem,
+  // 224px
+  64: 16rem, // 256px
 );
 
 // ============================================
@@ -67,7 +93,7 @@ $spacing-tokens: (
   spacing-8xl: 5rem,
   spacing-9xl: 6rem,
   spacing-10xl: 8rem,
-  spacing-11xl: 10rem
+  spacing-11xl: 10rem,
 );
 
 // ============================================
@@ -85,7 +111,7 @@ $width-scale: (
   width-3xl: 80rem,
   width-4xl: 90rem,
   width-5xl: 100rem,
-  width-6xl: 120rem
+  width-6xl: 120rem,
 );
 
 // ============================================
@@ -106,47 +132,100 @@ $paragraph-max-width: 45rem;
 // UTILITY CLASSES GENERATION
 // ============================================
 
-// Generate extended spacing utilities
+// Generate extended spacing utilities (including Bootstrap 5 logical directional utilities)
 @each $key, $value in $spacing-scale {
   // Margin utilities
-  .m-#{$key} { margin: $value !important; }
-  .mt-#{$key} { margin-top: $value !important; }
-  .mb-#{$key} { margin-bottom: $value !important; }
-  .ml-#{$key} { margin-left: $value !important; }
-  .mr-#{$key} { margin-right: $value !important; }
-  .mx-#{$key} { margin-inline: $value !important; }
-  .my-#{$key} { margin-block: $value !important; }
-  
+  .m-#{$key} {
+    margin: $value !important;
+  }
+  .mt-#{$key} {
+    margin-top: $value !important;
+  }
+  .mb-#{$key} {
+    margin-bottom: $value !important;
+  }
+  .ms-#{$key} {
+    margin-inline-start: $value !important;
+  }
+  .me-#{$key} {
+    margin-inline-end: $value !important;
+  }
+  .mx-#{$key} {
+    margin-inline: $value !important;
+  }
+  .my-#{$key} {
+    margin-block: $value !important;
+  }
+
+  // Legacy directional aliases
+  .ml-#{$key} {
+    margin-inline-start: $value !important;
+  }
+  .mr-#{$key} {
+    margin-inline-end: $value !important;
+  }
+
   // Padding utilities
-  .p-#{$key} { padding: $value !important; }
-  .pt-#{$key} { padding-top: $value !important; }
-  .pb-#{$key} { padding-bottom: $value !important; }
-  .pl-#{$key} { padding-left: $value !important; }
-  .pr-#{$key} { padding-right: $value !important; }
-  .px-#{$key} { padding-inline: $value !important; }
-  .py-#{$key} { padding-block: $value !important; }
+  .p-#{$key} {
+    padding: $value !important;
+  }
+  .pt-#{$key} {
+    padding-top: $value !important;
+  }
+  .pb-#{$key} {
+    padding-bottom: $value !important;
+  }
+  .ps-#{$key} {
+    padding-inline-start: $value !important;
+  }
+  .pe-#{$key} {
+    padding-inline-end: $value !important;
+  }
+  .px-#{$key} {
+    padding-inline: $value !important;
+  }
+  .py-#{$key} {
+    padding-block: $value !important;
+  }
+
+  // Legacy directional aliases
+  .pl-#{$key} {
+    padding-inline-start: $value !important;
+  }
+  .pr-#{$key} {
+    padding-inline-end: $value !important;
+  }
+}
+
+// Generate semantic spacing token CSS variables on :root
+:root {
+  @each $name, $space in $spacing-tokens {
+    --#{$name}: #{$space};
+  }
 }
 
 // Generate semantic spacing token utilities
 @each $name, $space in $spacing-tokens {
-  .#{$name} { margin: $space !important; }
+  .#{$name} {
+    margin: $space !important;
+  }
 }
 
 // Generate width utilities
 @each $name, $value in $width-scale {
-  .#{$name} { max-width: $value !important; }
+  .#{$name} {
+    max-width: $value !important;
+  }
 }
 
-// Container utility class
+// Container utility class (using logical properties)
 .container-platform {
-  padding-left: $container-padding-mobile;
-  padding-right: $container-padding-mobile;
+  padding-inline: $container-padding-mobile;
 
   @media (min-width: 992px) {
-    padding-left: $container-padding-desktop;    
-    padding-right: $container-padding-desktop;
+    padding-inline: $container-padding-desktop;
     max-width: $container-max-width-desktop;
-    margin: 0 auto;
+    margin-inline: auto;
   }
 }
 

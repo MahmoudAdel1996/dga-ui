@@ -31,17 +31,11 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-            ],
+            "styles": ["src/styles.scss"],
+            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"],
             "preserveSymlinks": true,
             "stylePreprocessorOptions": {
-              "includePaths": [
-                "../../node_modules"
-              ]
+              "includePaths": ["../../node_modules"]
             }
           },
           "configurations": {

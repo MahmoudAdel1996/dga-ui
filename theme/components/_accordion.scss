@@ -18,7 +18,12 @@ $accordion-button-padding-y: $accordion-padding-y;
 $accordion-button-padding-x: $accordion-padding-x;
 $accordion-button-color: var(--#{$prefix}body-color);
 $accordion-button-bg: $accordion-bg;
-$accordion-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
+$accordion-transition:
+  color 0.15s ease-in-out,
+  background-color 0.15s ease-in-out,
+  border-color 0.15s ease-in-out,
+  box-shadow 0.15s ease-in-out,
+  border-radius 0.15s ease;
 $accordion-button-active-bg: color.scale($primary, $lightness: 65%);
 $accordion-button-active-color: color.scale($primary, $lightness: -32%);
 

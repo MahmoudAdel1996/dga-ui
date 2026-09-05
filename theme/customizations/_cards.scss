@@ -5,8 +5,6 @@
 // CARD ICON VARIANTS - Using Sass map and @each loop
 // ============================================
 
-
-
 // ============================================
 // EXPANDABLE CARD
 // ============================================
@@ -14,7 +12,10 @@
 .card-expandable {
   cursor: pointer;
   border: 1px solid $gray-200 !important;
-  transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
 
   &:hover:not(.disabled),
   &.card-expandable-hover {
@@ -34,7 +35,8 @@
     .dga-featured-icon {
       background-color: $gray-200;
 
-      svg, i {
+      svg,
+      i {
         fill: $gray-400;
         color: $gray-400;
         stroke: $gray-400;
@@ -64,7 +66,10 @@
 .card-select {
   cursor: pointer;
   border: 1px solid $gray-200 !important;
-  transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
 
   .form-check-input:focus {
     box-shadow: none;
@@ -84,7 +89,8 @@
     .dga-featured-icon {
       background-color: $gray-200;
 
-      svg, i {
+      svg,
+      i {
         fill: $gray-400;
         color: $gray-400;
         stroke: $gray-400;
@@ -110,7 +116,10 @@
 .card-selectable {
   cursor: pointer;
   border: 1px solid $gray-200 !important;
-  transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
 
   .card-selectable-icon {
     width: 2.5rem;
@@ -214,7 +223,6 @@
     justify-content: space-between;
   }
 
-  
   &.disabled {
     background-color: $gray-200;
     cursor: not-allowed;

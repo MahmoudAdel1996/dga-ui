@@ -58,7 +58,7 @@ npm run build:prod  # installs from npm registry then builds for production
 
 1. **`theme/_fonts.scss`** — self-hosted IBM Plex Sans Arabic `@font-face` declarations
 2. **`theme/_functions.scss`** — SCSS utility functions used by variables
-3. **`theme/_variables.scss`** — imports two groups of variable files that run *before* Bootstrap:
+3. **`theme/_variables.scss`** — imports two groups of variable files that run _before_ Bootstrap:
    - **`theme/config/`** — foundational overrides: `_colors.scss`, `_typography.scss`, `_spacing.scss`, `_base.scss`, `_effects.scss`, `_radius.scss`
    - **`theme/components/`** — per-component Bootstrap variable overrides (buttons, forms, navbar, modals, etc.)
 4. **`bootstrap/scss/bootstrap`** — Bootstrap source compiled with the overridden variables
@@ -74,13 +74,13 @@ RTL is built in — importing `dga-ui.css` handles both LTR and RTL. Consumers a
 
 ### Sub-workspaces
 
-| Directory | Purpose |
-|---|---|
-| `theme/` | SCSS source — the publishable artifact |
-| `css/` | Compiled output — committed and published |
-| `fonts/` | IBM Plex Sans Arabic TTF files — published |
-| `docs/` | Next.js documentation site (Fumadocs), deployed to GitHub Pages |
-| `demo-angular/` | Angular 21 demo app, also deployed to GitHub Pages |
+| Directory       | Purpose                                                         |
+| --------------- | --------------------------------------------------------------- |
+| `theme/`        | SCSS source — the publishable artifact                          |
+| `css/`          | Compiled output — committed and published                       |
+| `fonts/`        | IBM Plex Sans Arabic TTF files — published                      |
+| `docs/`         | Next.js documentation site (Fumadocs), deployed to GitHub Pages |
+| `demo-angular/` | Angular 21 demo app, also deployed to GitHub Pages              |
 
 Both `docs/` and `demo-angular/` have their own `package.json` and `node_modules`. They reference the local package via `npm run use:local` (which runs `npm install --no-save file:..`) during development and switch to the npm registry for production builds.
 
@@ -99,7 +99,7 @@ If a component or variant does not exist in the Figma file, do not create custom
 
 ### Adding or modifying a component style
 
-1. Add/edit Bootstrap variable overrides in `theme/components/_<component>.scss` (imported via `_variables.scss` *before* Bootstrap).
-2. Add/edit post-Bootstrap customizations in `theme/customizations/_<component>.scss` (imported in `dga-ui.scss` *after* Bootstrap) for anything that can't be done with variables alone.
+1. Add/edit Bootstrap variable overrides in `theme/components/_<component>.scss` (imported via `_variables.scss` _before_ Bootstrap).
+2. Add/edit post-Bootstrap customizations in `theme/customizations/_<component>.scss` (imported in `dga-ui.scss` _after_ Bootstrap) for anything that can't be done with variables alone.
 3. Run `npm run build-css` to verify compilation.
 4. Update the corresponding MDX page in `docs/content/docs/components/` and test in the docs site or Angular demo with `npm run use:local`.

@@ -129,7 +129,11 @@ $pagination-disabled-color: $gray-600;
 $pagination-disabled-bg: $white;
 $pagination-disabled-border-color: $gray-300;
 
-$pagination-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+$pagination-transition:
+  color 0.15s ease-in-out,
+  background-color 0.15s ease-in-out,
+  border-color 0.15s ease-in-out,
+  box-shadow 0.15s ease-in-out;
 
 $pagination-border-radius-sm: $radius-sm;
 $pagination-border-radius-lg: $radius-lg;
@@ -146,6 +150,6 @@ $breadcrumb-margin-bottom: 1rem;
 $breadcrumb-bg: $gray-100;
 $breadcrumb-divider-color: $gray-500;
 $breadcrumb-active-color: $gray-700;
-$breadcrumb-divider: "/";
+$breadcrumb-divider: '/';
 $breadcrumb-divider-flipped: $breadcrumb-divider;
 $breadcrumb-border-radius: $radius-sm;

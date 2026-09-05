@@ -23,7 +23,10 @@
     min-width: 32px;
     padding-inline: 0.5rem;
     position: relative;
-    transition: background-color 0.2s ease, color 0.2s ease, outline-color 0.2s ease;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      outline-color 0.2s ease;
 
     &:hover {
       background-color: $neutral-100;
