@@ -512,30 +512,29 @@ export function Preview({ children }: PreviewProps) {
         </div>
       </div>
 
-      {/* Content Area: Direct iframe (no double container!) */}
+      {/* Content Area: Exact device width viewport canvas */}
       {mode === 'preview' ? (
         <div
           ref={scrollWrapperRef}
-          className={`relative flex w-full overflow-x-auto bg-white ${
-            viewport !== 'desktop'
-              ? 'bg-[radial-gradient(var(--color-fd-border)_1px,transparent_1px)] bg-[size:16px_16px] bg-fd-muted/30 p-4 sm:p-6'
-              : ''
-          }`}
+          className="relative flex w-full overflow-x-auto bg-[radial-gradient(var(--color-fd-border)_1px,transparent_1px)] bg-[size:16px_16px] bg-fd-muted/30 p-4 sm:p-6"
         >
           {isIntersecting ? (
             <div
-              className={`shrink-0 transition-[width] duration-300 ease-out ${
-                viewport !== 'desktop'
-                  ? 'mx-auto overflow-hidden rounded-xl border border-fd-border bg-white shadow-md'
-                  : 'w-full'
-              }`}
-              style={{ width: viewport === 'desktop' ? '100%' : VIEWPORT_WIDTH[viewport] }}
+              className="mx-auto shrink-0 overflow-hidden rounded-xl border border-fd-border/80 bg-white shadow-md transition-[width] duration-300 ease-out"
+              style={{
+                width: VIEWPORT_WIDTH[viewport],
+                minWidth: VIEWPORT_WIDTH[viewport],
+              }}
             >
               <iframe
                 ref={iframeRef}
                 src={`${FRAME_SRC}?css=${encodeURIComponent(CSS_URL)}`}
                 onLoad={handleFrameLoad}
-                className="block w-full border-0 bg-white"
+                style={{
+                  width: VIEWPORT_WIDTH[viewport],
+                  minWidth: VIEWPORT_WIDTH[viewport],
+                }}
+                className="block border-0 bg-white"
                 title="Component Preview"
               />
             </div>
