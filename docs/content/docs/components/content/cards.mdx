@@ -165,24 +165,6 @@ Cards can display an icon in the title area for visual identification.
   <CardWithIcon />
 </Preview>
 
-```html
-<div class="card" tabindex="0">
-  <div class="card-body">
-    <h5 class="card-title">
-      <div class="dga-featured-icon dga-featured-icon-circle">
-        <i class="bi bi-check-circle"></i>
-      </div>
-    </h5>
-    <h6 class="card-subtitle mb-2">Card Title</h6>
-    <p class="card-text">This is a description of the card content.</p>
-    <div class="card-footer">
-      <a href="#" class="btn btn-outline-secondary">Secondary</a>
-      <a href="#" class="btn btn-primary">Primary</a>
-    </div>
-  </div>
-</div>
-```
-
 ## Card with Checkbox
 
 Include a checkbox for selection in card lists and grids.
@@ -190,27 +172,6 @@ Include a checkbox for selection in card lists and grids.
 <Preview>
   <CardWithCheckbox />
 </Preview>
-
-```html
-<div class="card" tabindex="0">
-  <div class="card-body">
-    <h5 class="card-title">
-      <input
-        class="card-title-checked form-check-input ripple"
-        type="checkbox"
-        value=""
-        id="check1"
-      />
-    </h5>
-    <h6 class="card-subtitle mb-2">Selectable Card</h6>
-    <p class="card-text">Cards can include checkboxes for selection.</p>
-    <div class="card-footer">
-      <a href="#" class="btn btn-outline-secondary">Secondary</a>
-      <a href="#" class="btn btn-primary">Primary</a>
-    </div>
-  </div>
-</div>
-```
 
 ## Disabled Card
 
@@ -220,24 +181,6 @@ Cards can be disabled to prevent interaction.
   <DisabledCard />
 </Preview>
 
-```html
-<div class="card disabled" tabindex="0">
-  <div class="card-body">
-    <h5 class="card-title">
-      <div class="dga-featured-icon dga-featured-icon-circle disabled">
-        <i class="bi bi-check-circle"></i>
-      </div>
-    </h5>
-    <h6 class="card-subtitle mb-2">Disabled Card</h6>
-    <p class="card-text">This card is in a disabled state.</p>
-    <div class="card-footer">
-      <a href="#" class="btn btn-outline-secondary disabled">Secondary</a>
-      <a href="#" class="btn btn-primary disabled">Primary</a>
-    </div>
-  </div>
-</div>
-```
-
 ## Card Grid
 
 Combine cards in responsive grids using Bootstrap's grid system.
@@ -245,28 +188,6 @@ Combine cards in responsive grids using Bootstrap's grid system.
 <Preview>
   <CardGrid />
 </Preview>
-
-```html
-<div class="row row-cols-1 row-cols-md-3 g-3">
-  <div class="col">
-    <div class="card h-100" tabindex="0">
-      <div class="card-body">
-        <h5 class="card-title">
-          <div class="dga-featured-icon dga-featured-icon-circle">
-            <i class="bi bi-check-circle"></i>
-          </div>
-        </h5>
-        <h6 class="card-subtitle mb-2">Service 1</h6>
-        <p class="card-text">First service description.</p>
-        <div class="card-footer">
-          <a href="#" class="btn btn-primary">Action</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Repeat for additional cards -->
-</div>
-```
 
 <Callout type="tip">
   Use Bootstrap icons (`bi-*` classes) in card titles and combine with `h-100` class on cards for

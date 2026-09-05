@@ -18,7 +18,15 @@ import { Preview } from '@/components/Preview';
 A ring, a centred `N of M` counter, and an optional text column describing the current step.
 
 <Preview>
-  <div className="radial-stepper" style={{ '--radial-stepper-progress': 50 }} role="progressbar" aria-label="Application progress" aria-valuenow={2} aria-valuemin={1} aria-valuemax={4}>
+  <div
+    className="radial-stepper"
+    style={{ '--radial-stepper-progress': 50 }}
+    role="progressbar"
+    aria-label="Application progress"
+    aria-valuenow={2}
+    aria-valuemin={1}
+    aria-valuemax={4}
+  >
     <div className="radial-stepper-ring">
       <div className="radial-stepper-label">2 of 4</div>
       <svg viewBox="0 0 100 100" aria-hidden="true">
@@ -34,32 +42,6 @@ A ring, a centred `N of M` counter, and an optional text column describing the c
     </div>
   </div>
 </Preview>
-
-```html
-<div
-  class="radial-stepper"
-  style="--radial-stepper-progress: 50"
-  role="progressbar"
-  aria-label="Application progress"
-  aria-valuenow="2"
-  aria-valuemin="1"
-  aria-valuemax="4"
->
-  <div class="radial-stepper-ring">
-    <div class="radial-stepper-label">2 of 4</div>
-    <svg viewBox="0 0 100 100" aria-hidden="true">
-      <circle class="radial-stepper-track" cx="50" cy="50" r="45" stroke-width="10"></circle>
-      <circle class="radial-stepper-tail" cx="50" cy="50" r="45" stroke-width="10"></circle>
-    </svg>
-  </div>
-  <div class="radial-stepper-text">
-    <span class="radial-stepper-pre">Previous: Introduction</span>
-    <h3 class="radial-stepper-name">Details</h3>
-    <p class="radial-stepper-desc">Here are some additional details.</p>
-    <span class="radial-stepper-next">Next: Confirmation</span>
-  </div>
-</div>
-```
 
 <Callout type="info">
   The `<svg>` is decorative — the visible counter already conveys the value — so mark it
@@ -79,15 +61,27 @@ Five sizes match the design spec. The 64px default needs no modifier.
       { cls: '', label: '64px — default' },
       { cls: 'radial-stepper-sm', label: '48px — .radial-stepper-sm' },
       { cls: 'radial-stepper-xs', label: '40px — .radial-stepper-xs' },
-    ].map((size) => (
+    ].map(size => (
       <div key={size.label}>
         <div className="text-body-secondary small mb-2">{size.label}</div>
         <div className={`radial-stepper ${size.cls}`} style={{ '--radial-stepper-progress': 50 }}>
           <div className="radial-stepper-ring">
             <div className="radial-stepper-label">2 of 4</div>
             <svg viewBox="0 0 100 100" aria-hidden="true">
-              <circle className="radial-stepper-track" cx="50" cy="50" r="45" strokeWidth="10"></circle>
-              <circle className="radial-stepper-tail" cx="50" cy="50" r="45" strokeWidth="10"></circle>
+              <circle
+                className="radial-stepper-track"
+                cx="50"
+                cy="50"
+                r="45"
+                strokeWidth="10"
+              ></circle>
+              <circle
+                className="radial-stepper-tail"
+                cx="50"
+                cy="50"
+                r="45"
+                strokeWidth="10"
+              ></circle>
             </svg>
           </div>
           <div className="radial-stepper-text">
@@ -100,14 +94,6 @@ Five sizes match the design spec. The 64px default needs no modifier.
   </div>
 </Preview>
 
-```html
-<div class="radial-stepper radial-stepper-xl" style="--radial-stepper-progress: 50">…</div>
-<div class="radial-stepper radial-stepper-lg" style="--radial-stepper-progress: 50">…</div>
-<div class="radial-stepper" style="--radial-stepper-progress: 50">…</div>
-<div class="radial-stepper radial-stepper-sm" style="--radial-stepper-progress: 50">…</div>
-<div class="radial-stepper radial-stepper-xs" style="--radial-stepper-progress: 50">…</div>
-```
-
 ## Variants
 
 `primary` is the default. `neutral` swaps the ring to black, and `on-color` is for use on a filled
@@ -115,7 +101,10 @@ surface such as [`.bg-primary`](/docs/components/actions/buttons).
 
 <Preview>
   <div className="d-flex flex-column gap-4">
-    <div className="radial-stepper radial-stepper-primary" style={{ '--radial-stepper-progress': 50 }}>
+    <div
+      className="radial-stepper radial-stepper-primary"
+      style={{ '--radial-stepper-progress': 50 }}
+    >
       <div className="radial-stepper-ring">
         <div className="radial-stepper-label">2 of 4</div>
         <svg viewBox="0 0 100 100" aria-hidden="true">
@@ -128,7 +117,10 @@ surface such as [`.bg-primary`](/docs/components/actions/buttons).
         <p className="radial-stepper-desc">Primary</p>
       </div>
     </div>
-    <div className="radial-stepper radial-stepper-neutral" style={{ '--radial-stepper-progress': 50 }}>
+    <div
+      className="radial-stepper radial-stepper-neutral"
+      style={{ '--radial-stepper-progress': 50 }}
+    >
       <div className="radial-stepper-ring">
         <div className="radial-stepper-label">2 of 4</div>
         <svg viewBox="0 0 100 100" aria-hidden="true">
@@ -142,12 +134,27 @@ surface such as [`.bg-primary`](/docs/components/actions/buttons).
       </div>
     </div>
     <div className="bg-primary p-4 rounded">
-      <div className="radial-stepper radial-stepper-on-color" style={{ '--radial-stepper-progress': 50 }}>
+      <div
+        className="radial-stepper radial-stepper-on-color"
+        style={{ '--radial-stepper-progress': 50 }}
+      >
         <div className="radial-stepper-ring">
           <div className="radial-stepper-label">2 of 4</div>
           <svg viewBox="0 0 100 100" aria-hidden="true">
-            <circle className="radial-stepper-track" cx="50" cy="50" r="45" strokeWidth="10"></circle>
-            <circle className="radial-stepper-tail" cx="50" cy="50" r="45" strokeWidth="10"></circle>
+            <circle
+              className="radial-stepper-track"
+              cx="50"
+              cy="50"
+              r="45"
+              strokeWidth="10"
+            ></circle>
+            <circle
+              className="radial-stepper-tail"
+              cx="50"
+              cy="50"
+              r="45"
+              strokeWidth="10"
+            ></circle>
           </svg>
         </div>
         <div className="radial-stepper-text">
@@ -158,19 +165,6 @@ surface such as [`.bg-primary`](/docs/components/actions/buttons).
     </div>
   </div>
 </Preview>
-
-```html
-<!-- Primary (default) -->
-<div class="radial-stepper radial-stepper-primary" style="--radial-stepper-progress: 50">…</div>
-
-<!-- Neutral -->
-<div class="radial-stepper radial-stepper-neutral" style="--radial-stepper-progress: 50">…</div>
-
-<!-- On color -->
-<div class="bg-primary p-4 rounded">
-  <div class="radial-stepper radial-stepper-on-color" style="--radial-stepper-progress: 50">…</div>
-</div>
-```
 
 ## Text options
 
@@ -203,21 +197,6 @@ Every element in the text column is optional — drop the ones you do not need, 
   </div>
 </Preview>
 
-```html
-<!-- Ring only -->
-<div class="radial-stepper" style="--radial-stepper-progress: 50">
-  <div class="radial-stepper-ring">…</div>
-</div>
-
-<!-- Name only -->
-<div class="radial-stepper" style="--radial-stepper-progress: 50">
-  <div class="radial-stepper-ring">…</div>
-  <div class="radial-stepper-text">
-    <h3 class="radial-stepper-name">Details</h3>
-  </div>
-</div>
-```
-
 ## RTL
 
 Under `dir="rtl"` the ring sweeps counter-clockwise and the text column moves to the left of the
@@ -240,24 +219,6 @@ ring. No extra classes are needed — flip the preview above with the RTL toggle
     </div>
   </div>
 </Preview>
-
-```html
-<div dir="rtl">
-  <div class="radial-stepper" style="--radial-stepper-progress: 50">
-    <div class="radial-stepper-ring">
-      <div class="radial-stepper-label">٢ من ٤</div>
-      <svg viewBox="0 0 100 100" aria-hidden="true">
-        <circle class="radial-stepper-track" cx="50" cy="50" r="45" stroke-width="10"></circle>
-        <circle class="radial-stepper-tail" cx="50" cy="50" r="45" stroke-width="10"></circle>
-      </svg>
-    </div>
-    <div class="radial-stepper-text">
-      <h3 class="radial-stepper-name">الخطوة الثانية</h3>
-      <p class="radial-stepper-desc">في هذه الخطوة نضيف بعض التفاصيل الإضافية.</p>
-    </div>
-  </div>
-</div>
-```
 
 ## Animating between steps
 

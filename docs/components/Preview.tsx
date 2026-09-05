@@ -1,7 +1,32 @@
 'use client';
 
-import React, { Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { ArrowRightLeft, Monitor, Smartphone, Tablet } from 'lucide-react';
+import React, {
+  Suspense,
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
+import {
+  ArrowRightLeft,
+  Check,
+  ChevronLeft,
+  ChevronRight,
+  Code2,
+  Copy,
+  Eye,
+  Lock,
+  Monitor,
+  Plus,
+  RotateCcw,
+  RotateCw,
+  Share2,
+  Shield,
+  Smartphone,
+  Tablet,
+} from 'lucide-react';
 
 interface PreviewProps {
   children: React.ReactNode;
@@ -9,39 +34,34 @@ interface PreviewProps {
 
 type Viewport = 'mobile' | 'tablet' | 'desktop';
 type Direction = 'rtl' | 'ltr';
+type ViewMode = 'preview' | 'code';
 
-// Fixed reference widths for every mode, including desktop — the Preview
-// is often embedded in a docs column narrower than a real desktop viewport,
-// so "100%" there would never actually reach Bootstrap's lg/xl breakpoints.
 const VIEWPORT_WIDTH: Record<Viewport, string> = {
   mobile: '375px',
   tablet: '768px',
   desktop: '1366px',
 };
 
-// One shared shell page for every Preview iframe: the head assets (icons,
-// sdga-ui CSS) are fetched once and served from HTTP cache for all other
-// instances, and content updates mutate the live document via postMessage
-// instead of reloading it (which per-instance srcDoc forced on every
-// content or direction change).
-// Must match basePath in next.config.mjs ('/dga-ui' in prod, '' in dev).
+const VIEWPORTS = [
+  { id: 'mobile' as const, label: 'Mobile (375px)', short: '375px', icon: Smartphone },
+  { id: 'tablet' as const, label: 'Tablet (768px)', short: '768px', icon: Tablet },
+  { id: 'desktop' as const, label: 'Desktop (1366px)', short: 'Desktop', icon: Monitor },
+];
+
+const DEVICE_LABEL: Record<Viewport, string> = {
+  mobile: 'Mobile',
+  tablet: 'iPad',
+  desktop: 'Desktop',
+};
+
 const BASE_PATH = process.env.NODE_ENV === 'production' ? '/dga-ui' : '';
 const FRAME_SRC = BASE_PATH + '/preview-frame.html';
 
-// In development, preview the CSS from the local sdga-ui build (synced into
-// public/ by `npm run use:local` -> scripts/sync-local-css.mjs) so theme
-// changes show up without publishing a release. Production still points at
-// the published package, matching what real consumers get.
 const CSS_URL =
   process.env.NODE_ENV === 'production'
     ? 'https://cdn.jsdelivr.net/npm/sdga-ui@latest/css/dga-ui.css'
     : BASE_PATH + '/sdga-ui-local/css/dga-ui.css';
 
-// Bootstrap's JS is only needed by previews whose markup uses data-bs-*
-// behaviors. Fetch its source once, shared module-wide by every Preview
-// instance (and across client-side page navigations), and hand the code to
-// each frame for inline execution — N previews cost one network request
-// total instead of one per iframe.
 const BOOTSTRAP_JS_URL =
   'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js';
 let bootstrapJs: Promise<string> | null = null;
@@ -49,7 +69,6 @@ function fetchBootstrapJs() {
   bootstrapJs ??= fetch(BOOTSTRAP_JS_URL).then(
     res => res.text(),
     () => {
-      // Failed fetch (offline, CDN hiccup): clear so a later preview retries.
       bootstrapJs = null;
       return '';
     }
@@ -57,42 +76,165 @@ function fetchBootstrapJs() {
   return bootstrapJs;
 }
 
-const VIEWPORTS: { id: Viewport; label: string; icon: typeof Smartphone }[] = [
-  { id: 'mobile', label: 'Mobile (375px)', icon: Smartphone },
-  { id: 'tablet', label: 'Tablet (768px)', icon: Tablet },
-  { id: 'desktop', label: 'Desktop (1380px)', icon: Monitor },
-];
+// Clean HTML Indenter & Formatter
+function formatHtml(raw: string): string {
+  if (!raw) return '';
+  const lines = raw.trim().split('\n');
+  if (lines.length > 2 && lines.some(l => l.startsWith('  ') || l.startsWith('\t'))) {
+    return raw.trim();
+  }
+
+  let formatted = '';
+  let indent = 0;
+  const tab = '  ';
+  const clean = raw.replace(/>\s+</g, '><').trim();
+
+  const voidTags = new Set([
+    'area',
+    'base',
+    'br',
+    'col',
+    'embed',
+    'hr',
+    'img',
+    'input',
+    'link',
+    'meta',
+    'param',
+    'source',
+    'track',
+    'wbr',
+  ]);
+
+  const tokens = clean.split(/(<[^>]+>)/g).filter(Boolean);
+
+  for (const token of tokens) {
+    if (token.startsWith('</')) {
+      indent = Math.max(0, indent - 1);
+      formatted += tab.repeat(indent) + token + '\n';
+    } else if (token.startsWith('<!--')) {
+      formatted += tab.repeat(indent) + token + '\n';
+    } else if (token.startsWith('<') && !token.startsWith('<!')) {
+      const match = token.match(/^<([a-zA-Z0-9-]+)/);
+      const tagName = match ? match[1].toLowerCase() : '';
+      const isSelfClosing = token.endsWith('/>') || voidTags.has(tagName);
+      formatted += tab.repeat(indent) + token + '\n';
+      if (!isSelfClosing) {
+        indent++;
+      }
+    } else {
+      const text = token.trim();
+      if (text) {
+        formatted += tab.repeat(indent) + text + '\n';
+      }
+    }
+  }
+
+  return formatted.trim() || raw.trim();
+}
+
+// Lightweight syntax colorizer for HTML lines
+function highlightHtmlLine(line: string): React.ReactNode[] {
+  if (line.trim().startsWith('<!--')) {
+    return [
+      <span key="comment" className="italic text-fd-muted-foreground/70">
+        {line}
+      </span>,
+    ];
+  }
+
+  const parts: React.ReactNode[] = [];
+  const regex = /(<\/?[a-zA-Z0-9-]+)|(\/?>)|([a-zA-Z0-9-]+)(?==)|(".*?"|'.*?')/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = regex.exec(line)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(line.slice(lastIndex, match.index));
+    }
+
+    const [full, tag, closeTag, attrName, attrVal] = match;
+    if (tag) {
+      parts.push(
+        <span key={match.index} className="font-semibold text-blue-600 dark:text-blue-400">
+          {tag}
+        </span>
+      );
+    } else if (closeTag) {
+      parts.push(
+        <span key={match.index} className="font-semibold text-blue-600 dark:text-blue-400">
+          {closeTag}
+        </span>
+      );
+    } else if (attrName) {
+      parts.push(
+        <span key={match.index} className="text-amber-600 dark:text-amber-400">
+          {attrName}
+        </span>
+      );
+    } else if (attrVal) {
+      parts.push(
+        <span key={match.index} className="text-emerald-600 dark:text-emerald-400">
+          {attrVal}
+        </span>
+      );
+    } else {
+      parts.push(full);
+    }
+
+    lastIndex = regex.lastIndex;
+  }
+
+  if (lastIndex < line.length) {
+    parts.push(line.slice(lastIndex));
+  }
+
+  return parts.length > 0 ? parts : [line];
+}
 
 export function Preview({ children }: PreviewProps) {
+  const [mode, setMode] = useState<ViewMode>('preview');
   const [direction, setDirection] = useState<Direction>('ltr');
   const [viewport, setViewport] = useState<Viewport>('desktop');
   const [isMounted, setIsMounted] = useState(false);
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const [isReloading, setIsReloading] = useState(false);
   const [renderedHtml, setRenderedHtml] = useState('');
+
+  const containerRef = useRef<HTMLDivElement>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const hiddenRef = useRef<HTMLDivElement>(null);
   const scrollWrapperRef = useRef<HTMLDivElement>(null);
-  // Switching viewport is itself async (resize → measure → postMessage), so
-  // a late reply from the *previous* viewport can otherwise arrive after the
-  // new one and overwrite it with the wrong height. Every request below is
-  // tagged with the viewport it's for, and replies that don't match the
-  // current one are ignored. Kept in a ref so the message handler never
-  // closes over a stale value without needing to resubscribe on every change.
   const viewportRef = useRef(viewport);
-  // The frame can't receive content until its document (and message
-  // listener) has loaded; before that, updates are held and the onLoad
-  // handler sends the latest state.
   const frameReadyRef = useRef(false);
 
-  // Avoid hydration mismatch — render markup only after mount.
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-  // The iframe has no intrinsic height, so the embedded page reports its
-  // own scrollHeight back via postMessage and we resize the iframe to fit.
-  // Multiple <Preview> instances can be mounted on one page, and "message"
-  // is a window-wide event, so we must check the message actually came from
-  // *this* iframe — otherwise one preview's resize can clobber another's.
+  useEffect(() => {
+    if (!isMounted || isIntersecting) return;
+    const el = containerRef.current;
+    if (!el) return;
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsIntersecting(true);
+            observer.disconnect();
+          }
+        },
+        { rootMargin: '300px' }
+      );
+      observer.observe(el);
+      return () => observer.disconnect();
+    } else {
+      setIsIntersecting(true);
+    }
+  }, [isMounted, isIntersecting]);
+
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
       if (
@@ -113,30 +255,26 @@ export function Preview({ children }: PreviewProps) {
     iframeRef.current?.contentWindow?.postMessage({ type: 'requestResize', token: viewport }, '*');
   }, [viewport]);
 
-  // children can arrive as an unresolved React Server Component reference
-  // (React's "lazy" wrapper around a server-rendered subtree) rather than a
-  // plain element, since this client component is used from a server-
-  // rendered MDX page. renderToStaticMarkup can't resolve that outside the
-  // normal render tree — it just silently returns an empty string. Letting
-  // React render it for real, off-screen, resolves any shape correctly; we
-  // just read back the settled DOM as HTML.
   const isStringContent = typeof children === 'string';
   const htmlContent = isStringContent ? (children as string) : renderedHtml;
+
+  // Formatted HTML string memoized for performance
+  const formattedCode = useMemo(() => formatHtml(htmlContent), [htmlContent]);
 
   useEffect(() => {
     if (!isMounted || isStringContent || !hiddenRef.current) return;
     const el = hiddenRef.current;
-    const capture = () => setRenderedHtml(el.innerHTML);
+    const capture = () => {
+      const current = el.innerHTML;
+      setRenderedHtml(prev => (prev === current ? prev : current));
+    };
     capture();
     const observer = new MutationObserver(capture);
     observer.observe(el, { childList: true, subtree: true, attributes: true, characterData: true });
     return () => observer.disconnect();
   }, [isMounted, isStringContent, children]);
 
-  // Push content and direction into the already-loaded frame. The frame is
-  // blank until the first setContent arrives, so there's no flash of the
-  // wrong direction, and later updates never reload the document.
-  const postContent = () => {
+  const postContent = useCallback(() => {
     const frame = iframeRef.current?.contentWindow;
     if (!frame) return;
     frame.postMessage(
@@ -152,84 +290,278 @@ export function Preview({ children }: PreviewProps) {
         );
       });
     }
-  };
-
-  useEffect(() => {
-    if (frameReadyRef.current) postContent();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [htmlContent, direction]);
 
-  // When the simulated device frame is wider than the visible window, open
-  // the scroll position on whichever side the content actually starts on —
-  // the right edge for RTL, the left edge for LTR — instead of always
-  // defaulting to the left edge regardless of direction.
+  useEffect(() => {
+    if (frameReadyRef.current) {
+      postContent();
+    }
+  }, [postContent]);
+
   useLayoutEffect(() => {
     const el = scrollWrapperRef.current;
-    if (!el) return;
+    if (!el || mode !== 'preview') return;
     el.scrollLeft = direction === 'rtl' ? el.scrollWidth - el.clientWidth : 0;
-  }, [direction, viewport]);
+  }, [direction, viewport, mode]);
+
+  const handleCopy = useCallback(async () => {
+    if (!formattedCode) return;
+    try {
+      await navigator.clipboard.writeText(formattedCode.trim());
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Fallback
+    }
+  }, [formattedCode]);
+
+  const handleReload = useCallback(() => {
+    setIsReloading(true);
+    postContent();
+    setTimeout(() => setIsReloading(false), 500);
+  }, [postContent]);
+
+  const handleFrameLoad = useCallback(() => {
+    frameReadyRef.current = true;
+    postContent();
+  }, [postContent]);
 
   if (!isMounted) {
     return (
-      <div className="not-prose my-6 w-full max-w-full rounded-xl border border-gray-200 bg-white p-8 text-center text-gray-500">
+      <div className="not-prose my-6 w-full max-w-full rounded-2xl border border-fd-border bg-fd-card p-8 text-center text-sm text-fd-muted-foreground shadow-xs">
+        <div className="mr-2 inline-block h-4 w-4 animate-spin rounded-full border-2 border-primary border-t-transparent align-middle" />
         Loading preview...
       </div>
     );
   }
 
   return (
-    <div className="not-prose my-6 w-full max-w-full overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
-      {/* Toolbar — wraps on narrow screens instead of overflowing */}
-      <div className="flex flex-wrap items-center gap-2 border-b border-gray-200 bg-linear-to-b from-white to-gray-50 p-2">
-        <div className="flex gap-1 rounded-lg bg-gray-100 p-1">
-          {VIEWPORTS.map(({ id, label, icon: Icon }) => (
+    <div
+      ref={containerRef}
+      className="not-prose my-6 w-full max-w-full overflow-hidden rounded-2xl border border-fd-border/80 bg-fd-card text-fd-card-foreground shadow-lg ring-1 ring-black/[0.05] transition-all hover:shadow-xl dark:ring-white/[0.08]"
+    >
+      {/* Unified macOS Safari Window Toolbar */}
+      <div className="flex select-none flex-wrap items-center justify-between gap-2.5 border-b border-fd-border/70 bg-fd-muted/60 px-3.5 sm:px-4 py-2.5 text-xs backdrop-blur-md dark:bg-fd-secondary/40">
+        {/* Left: Window Traffic Lights + Navigation Chevrons + Mode Switcher Tabs */}
+        <div className="flex items-center gap-3">
+          {/* Traffic Lights */}
+          <div className="flex items-center gap-1.5">
+            <span className="h-3 w-3 rounded-full bg-[#ff5f57] border border-[#e0443e]/50 shadow-2xs transition-transform hover:scale-110" />
+            <span className="h-3 w-3 rounded-full bg-[#febc2e] border border-[#dea123]/50 shadow-2xs transition-transform hover:scale-110" />
+            <span className="h-3 w-3 rounded-full bg-[#28c840] border border-[#1aab29]/50 shadow-2xs transition-transform hover:scale-110" />
+          </div>
+
+          <div className="hidden items-center gap-0.5 sm:flex text-fd-muted-foreground/40">
+            <span className="inline-flex p-0.5">
+              <ChevronLeft size={14} strokeWidth={2.5} />
+            </span>
+            <span className="inline-flex p-0.5 text-fd-muted-foreground/20">
+              <ChevronRight size={14} strokeWidth={2.5} />
+            </span>
+          </div>
+
+          <span className="hidden h-3.5 w-px bg-fd-border/80 sm:inline-block" />
+
+          {/* Mode Switcher Tabs [Preview | Code] */}
+          <div
+            role="tablist"
+            aria-label="View mode"
+            className="inline-flex items-center rounded-lg border border-fd-border bg-fd-background/90 p-0.5 shadow-2xs"
+          >
             <button
-              key={id}
               type="button"
-              onClick={() => setViewport(id)}
-              title={label}
-              aria-label={label}
-              aria-pressed={viewport === id}
-              className={`flex items-center justify-center rounded-md p-1.5 transition-colors ${
-                viewport === id
-                  ? 'bg-white text-blue-600 shadow-sm'
-                  : 'text-gray-500 hover:text-gray-700'
+              role="tab"
+              aria-selected={mode === 'preview'}
+              onClick={() => setMode('preview')}
+              className={`inline-flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs font-medium transition-all ${
+                mode === 'preview'
+                  ? 'bg-fd-card text-fd-foreground shadow-xs'
+                  : 'text-fd-muted-foreground hover:bg-fd-accent/40 hover:text-fd-foreground'
               }`}
             >
-              <Icon size={16} strokeWidth={2} />
+              <Eye size={13} />
+              <span>Preview</span>
             </button>
-          ))}
+            <button
+              type="button"
+              role="tab"
+              aria-selected={mode === 'code'}
+              onClick={() => setMode('code')}
+              className={`inline-flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs font-medium transition-all ${
+                mode === 'code'
+                  ? 'bg-fd-card text-fd-foreground shadow-xs'
+                  : 'text-fd-muted-foreground hover:bg-fd-accent/40 hover:text-fd-foreground'
+              }`}
+            >
+              <Code2 size={13} />
+              <span>Code</span>
+            </button>
+          </div>
         </div>
 
-        <button
-          type="button"
-          onClick={() => setDirection(prev => (prev === 'rtl' ? 'ltr' : 'rtl'))}
-          title={direction === 'rtl' ? 'Switch to LTR' : 'Switch to RTL'}
-          className="ms-auto flex items-center gap-1.5 rounded-md border border-gray-200 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-600 transition-colors hover:bg-gray-50 hover:border-gray-300"
-        >
-          <ArrowRightLeft size={14} />
-          <span className="font-mono">{direction.toUpperCase()}</span>
-        </button>
+        {/* Center: Safari Address Bar Capsule */}
+        <div className="order-last sm:order-none mx-auto flex w-full sm:w-auto max-w-xs sm:max-w-sm flex-1 items-center justify-between gap-2 rounded-xl border border-fd-border/80 bg-fd-background/95 px-3 py-1 text-xs shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-all hover:border-fd-border dark:bg-fd-background/80">
+          <div className="flex items-center gap-1.5 min-w-0">
+            <Shield size={12} className="text-fd-muted-foreground/60 shrink-0" />
+            <span className="text-fd-muted-foreground/30">|</span>
+            <Lock size={11} className="text-emerald-500 shrink-0" />
+            <span className="truncate font-sans font-medium text-[11px] text-fd-foreground/90 tracking-tight">
+              localhost:3000
+            </span>
+            <span className="hidden font-mono text-[10px] text-fd-muted-foreground/50 md:inline">
+              /preview
+            </span>
+          </div>
+
+          <button
+            type="button"
+            onClick={handleReload}
+            title="Reload preview"
+            aria-label="Reload preview"
+            className="inline-flex items-center justify-center rounded p-0.5 text-fd-muted-foreground/60 transition-colors hover:text-fd-foreground"
+          >
+            <RotateCw
+              size={11}
+              className={`transition-transform duration-500 ${isReloading ? 'animate-spin text-primary' : ''}`}
+            />
+          </button>
+        </div>
+
+        {/* Right: Controls & Actions */}
+        <div className="flex items-center gap-1.5">
+          {mode === 'preview' ? (
+            <>
+              {/* Viewport Switcher */}
+              <div
+                role="group"
+                aria-label="Viewport Switcher"
+                className="inline-flex items-center rounded-lg border border-fd-border bg-fd-background/90 p-0.5 shadow-2xs"
+              >
+                {VIEWPORTS.map(({ id, label, icon: Icon }) => {
+                  const isActive = viewport === id;
+                  return (
+                    <button
+                      key={id}
+                      type="button"
+                      onClick={() => setViewport(id)}
+                      title={label}
+                      aria-label={label}
+                      aria-pressed={isActive}
+                      className={`relative flex items-center justify-center rounded-md px-2 py-1 text-xs font-medium transition-all ${
+                        isActive
+                          ? 'bg-fd-card text-fd-foreground shadow-xs'
+                          : 'text-fd-muted-foreground hover:bg-fd-accent/40 hover:text-fd-foreground'
+                      }`}
+                    >
+                      <Icon size={13} strokeWidth={2} />
+                    </button>
+                  );
+                })}
+              </div>
+
+              <span className="hidden items-center rounded-md border border-fd-border/70 bg-fd-background/80 px-2 py-0.5 font-mono text-[10px] font-medium text-fd-muted-foreground md:inline-flex">
+                {VIEWPORT_WIDTH[viewport]}
+              </span>
+
+              {/* RTL / LTR Toggle */}
+              <button
+                type="button"
+                onClick={() => setDirection(prev => (prev === 'rtl' ? 'ltr' : 'rtl'))}
+                title={direction === 'rtl' ? 'Switch to LTR' : 'Switch to RTL'}
+                aria-label="Toggle direction"
+                className="inline-flex items-center gap-1.5 rounded-lg border border-fd-border bg-fd-background/90 px-2.5 py-1 text-xs font-medium text-fd-foreground shadow-2xs transition-colors hover:bg-fd-accent hover:text-fd-accent-foreground"
+              >
+                <ArrowRightLeft size={13} className="text-fd-muted-foreground" />
+                <span className="font-mono text-[11px] font-semibold tracking-wider">
+                  {direction.toUpperCase()}
+                </span>
+                <span
+                  className={`h-1.5 w-1.5 rounded-full ${
+                    direction === 'rtl' ? 'bg-emerald-500' : 'bg-primary'
+                  }`}
+                />
+              </button>
+            </>
+          ) : (
+            <>
+              <span className="inline-flex items-center rounded-md border border-fd-border bg-fd-background/80 px-2 py-0.5 font-mono text-[11px] font-medium text-fd-muted-foreground">
+                {formattedCode.split('\n').length} lines
+              </span>
+
+              <button
+                type="button"
+                onClick={handleCopy}
+                title="Copy HTML"
+                aria-label="Copy HTML"
+                className="inline-flex items-center gap-1.5 rounded-lg border border-fd-border bg-fd-background/90 px-2.5 py-1 text-xs font-medium text-fd-foreground shadow-2xs transition-all hover:bg-fd-accent hover:text-fd-accent-foreground"
+              >
+                {copied ? (
+                  <>
+                    <Check size={13} className="text-emerald-500" />
+                    <span className="font-semibold text-emerald-500">Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy size={13} className="text-fd-muted-foreground" />
+                    <span>Copy Code</span>
+                  </>
+                )}
+              </button>
+            </>
+          )}
+        </div>
       </div>
 
-      {/* Preview surface — its own scroll container, so a simulated device
-          width never forces the surrounding page to overflow horizontally.
-          justify-start (not center): centering an overflowing flex item
-          clips its start side without any way to scroll back to it. Initial
-          scroll position is set in the effect above, based on direction. */}
-      <div ref={scrollWrapperRef} className="flex justify-start overflow-x-auto bg-gray-100 p-4">
-        <iframe
-          ref={iframeRef}
-          src={`${FRAME_SRC}?css=${encodeURIComponent(CSS_URL)}`}
-          onLoad={() => {
-            frameReadyRef.current = true;
-            postContent();
-          }}
-          style={{ width: VIEWPORT_WIDTH[viewport] }}
-          className="block flex-none border-0 bg-white"
-          title="Preview"
-        />
-      </div>
+      {/* Content Area: Direct iframe (no double container!) */}
+      {mode === 'preview' ? (
+        <div
+          ref={scrollWrapperRef}
+          className={`relative flex w-full overflow-x-auto bg-white ${
+            viewport !== 'desktop'
+              ? 'bg-[radial-gradient(var(--color-fd-border)_1px,transparent_1px)] bg-[size:16px_16px] bg-fd-muted/30 p-4 sm:p-6'
+              : ''
+          }`}
+        >
+          {isIntersecting ? (
+            <div
+              className={`shrink-0 transition-[width] duration-300 ease-out ${
+                viewport !== 'desktop'
+                  ? 'mx-auto overflow-hidden rounded-xl border border-fd-border bg-white shadow-md'
+                  : 'w-full'
+              }`}
+              style={{ width: viewport === 'desktop' ? '100%' : VIEWPORT_WIDTH[viewport] }}
+            >
+              <iframe
+                ref={iframeRef}
+                src={`${FRAME_SRC}?css=${encodeURIComponent(CSS_URL)}`}
+                onLoad={handleFrameLoad}
+                className="block w-full border-0 bg-white"
+                title="Component Preview"
+              />
+            </div>
+          ) : (
+            <div className="mx-auto flex h-36 w-full shrink-0 animate-pulse items-center justify-center text-xs text-fd-muted-foreground">
+              Loading preview canvas...
+            </div>
+          )}
+        </div>
+      ) : (
+        /* Direct HTML Code Viewer */
+        <div className="max-h-[520px] w-full overflow-auto bg-fd-card p-4 sm:p-5 select-text font-mono text-xs sm:text-[13px] leading-relaxed">
+          <div className="table w-full">
+            {formattedCode.split('\n').map((line, idx) => (
+              <div key={idx} className="table-row hover:bg-fd-muted/30">
+                <span className="table-cell select-none pr-4 text-right font-mono text-[11px] text-fd-muted-foreground/45 w-10 py-0.5">
+                  {idx + 1}
+                </span>
+                <span className="table-cell whitespace-pre font-mono py-0.5">
+                  {highlightHtmlLine(line)}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {!isStringContent && (
         <div ref={hiddenRef} style={{ display: 'none' }} aria-hidden="true">

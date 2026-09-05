@@ -9,13 +9,30 @@ import { Preview } from '@/components/Preview';
 export function BasicDropdown() {
   return (
     <div className="dropdown">
-      <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <button
+        className="btn btn-secondary dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
         Dropdown button
       </button>
       <ul className="dropdown-menu">
-        <li><a className="dropdown-item" href="#">Action</a></li>
-        <li><a className="dropdown-item" href="#">Another action</a></li>
-        <li><a className="dropdown-item" href="#">Something else here</a></li>
+        <li>
+          <a className="dropdown-item" href="#">
+            Action
+          </a>
+        </li>
+        <li>
+          <a className="dropdown-item" href="#">
+            Another action
+          </a>
+        </li>
+        <li>
+          <a className="dropdown-item" href="#">
+            Something else here
+          </a>
+        </li>
       </ul>
     </div>
   );
@@ -24,13 +41,30 @@ export function BasicDropdown() {
 export function SelectedDropdown() {
   return (
     <div className="dropdown">
-      <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <button
+        className="btn btn-secondary dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
         Sort by
       </button>
       <ul className="dropdown-menu">
-        <li><a className="dropdown-item active" href="#">Newest first</a></li>
-        <li><a className="dropdown-item" href="#">Oldest first</a></li>
-        <li><a className="dropdown-item" href="#">Most popular</a></li>
+        <li>
+          <a className="dropdown-item active" href="#">
+            Newest first
+          </a>
+        </li>
+        <li>
+          <a className="dropdown-item" href="#">
+            Oldest first
+          </a>
+        </li>
+        <li>
+          <a className="dropdown-item" href="#">
+            Most popular
+          </a>
+        </li>
       </ul>
     </div>
   );
@@ -39,14 +73,35 @@ export function SelectedDropdown() {
 export function DisabledItemDropdown() {
   return (
     <div className="dropdown">
-      <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <button
+        className="btn btn-secondary dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
         Options
       </button>
       <ul className="dropdown-menu">
-        <li><a className="dropdown-item" href="#">Edit</a></li>
-        <li><a className="dropdown-item" href="#">Duplicate</a></li>
-        <li><a className="dropdown-item disabled" aria-disabled="true">Archive</a></li>
-        <li><a className="dropdown-item disabled" aria-disabled="true">Delete</a></li>
+        <li>
+          <a className="dropdown-item" href="#">
+            Edit
+          </a>
+        </li>
+        <li>
+          <a className="dropdown-item" href="#">
+            Duplicate
+          </a>
+        </li>
+        <li>
+          <a className="dropdown-item disabled" aria-disabled="true">
+            Archive
+          </a>
+        </li>
+        <li>
+          <a className="dropdown-item disabled" aria-disabled="true">
+            Delete
+          </a>
+        </li>
       </ul>
     </div>
   );
@@ -55,24 +110,51 @@ export function DisabledItemDropdown() {
 export function GroupedDropdown() {
   return (
     <div className="dropdown">
-      <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <button
+        className="btn btn-secondary dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
         Group label
       </button>
       <ul className="dropdown-menu">
         <li className="dropdown-item-group">
           <h6 className="dropdown-header">Group label</h6>
           <ul>
-            <li><a className="dropdown-item active" href="#">Option</a></li>
-            <li><a className="dropdown-item" href="#">Option</a></li>
-            <li><a className="dropdown-item" href="#">Option</a></li>
+            <li>
+              <a className="dropdown-item active" href="#">
+                Option
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item" href="#">
+                Option
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item" href="#">
+                Option
+              </a>
+            </li>
           </ul>
         </li>
-        <li><hr className="dropdown-divider" /></li>
+        <li>
+          <hr className="dropdown-divider" />
+        </li>
         <li className="dropdown-item-group">
           <h6 className="dropdown-header">Group label</h6>
           <ul>
-            <li><a className="dropdown-item" href="#">Option</a></li>
-            <li><a className="dropdown-item disabled" aria-disabled="true">Option</a></li>
+            <li>
+              <a className="dropdown-item" href="#">
+                Option
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item disabled" aria-disabled="true">
+                Option
+              </a>
+            </li>
           </ul>
         </li>
       </ul>
@@ -83,15 +165,36 @@ export function GroupedDropdown() {
 export function SplitDropdown() {
   return (
     <div className="btn-group">
-      <button type="button" className="btn btn-primary">Action</button>
-      <button type="button" className="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+      <button type="button" className="btn btn-primary">
+        Action
+      </button>
+      <button
+        type="button"
+        className="btn btn-primary dropdown-toggle dropdown-toggle-split"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
         <span className="visually-hidden">Toggle Dropdown</span>
       </button>
       <ul className="dropdown-menu">
-        <li><a className="dropdown-item" href="#">Duplicate</a></li>
-        <li><a className="dropdown-item" href="#">Rename</a></li>
-        <li><hr className="dropdown-divider" /></li>
-        <li><a className="dropdown-item" href="#">Delete</a></li>
+        <li>
+          <a className="dropdown-item" href="#">
+            Duplicate
+          </a>
+        </li>
+        <li>
+          <a className="dropdown-item" href="#">
+            Rename
+          </a>
+        </li>
+        <li>
+          <hr className="dropdown-divider" />
+        </li>
+        <li>
+          <a className="dropdown-item" href="#">
+            Delete
+          </a>
+        </li>
       </ul>
     </div>
   );
@@ -101,30 +204,69 @@ export function DirectionDropdowns() {
   return (
     <div className="d-flex flex-wrap gap-2">
       <div className="dropdown">
-        <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button
+          className="btn btn-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
           Dropdown
         </button>
         <ul className="dropdown-menu">
-          <li><a className="dropdown-item" href="#">Action</a></li>
-          <li><a className="dropdown-item" href="#">Another action</a></li>
+          <li>
+            <a className="dropdown-item" href="#">
+              Action
+            </a>
+          </li>
+          <li>
+            <a className="dropdown-item" href="#">
+              Another action
+            </a>
+          </li>
         </ul>
       </div>
       <div className="dropup">
-        <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button
+          className="btn btn-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
           Dropup
         </button>
         <ul className="dropdown-menu">
-          <li><a className="dropdown-item" href="#">Action</a></li>
-          <li><a className="dropdown-item" href="#">Another action</a></li>
+          <li>
+            <a className="dropdown-item" href="#">
+              Action
+            </a>
+          </li>
+          <li>
+            <a className="dropdown-item" href="#">
+              Another action
+            </a>
+          </li>
         </ul>
       </div>
       <div className="dropend">
-        <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button
+          className="btn btn-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
           Dropend
         </button>
         <ul className="dropdown-menu">
-          <li><a className="dropdown-item" href="#">Action</a></li>
-          <li><a className="dropdown-item" href="#">Another action</a></li>
+          <li>
+            <a className="dropdown-item" href="#">
+              Action
+            </a>
+          </li>
+          <li>
+            <a className="dropdown-item" href="#">
+              Another action
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -138,9 +280,8 @@ hover, pressed, focused, selected, and disabled items straight from the [Dropdow
 spec](https://design.dga.gov.sa/guidelines/components/actions/dropdown).
 
 <Callout type="info">
-  Dropdowns need Bootstrap's JS bundle (`bootstrap.bundle.min.js`) for the toggle behavior — SDGA
-  UI ships styles only. Try hovering, clicking, and tabbing through the items below to see every
-  state.
+  Dropdowns need Bootstrap's JS bundle (`bootstrap.bundle.min.js`) for the toggle behavior — SDGA UI
+  ships styles only. Try hovering, clicking, and tabbing through the items below to see every state.
 </Callout>
 
 ## Basic Dropdown
@@ -148,19 +289,6 @@ spec](https://design.dga.gov.sa/guidelines/components/actions/dropdown).
 <Preview>
   <BasicDropdown />
 </Preview>
-
-```html
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Dropdown button
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-  </ul>
-</div>
-```
 
 ## Selected Item
 
@@ -170,14 +298,6 @@ Add `.active` to the currently selected option — it gets a checkmark instead o
   <SelectedDropdown />
 </Preview>
 
-```html
-<ul class="dropdown-menu">
-  <li><a class="dropdown-item active" href="#">Newest first</a></li>
-  <li><a class="dropdown-item" href="#">Oldest first</a></li>
-  <li><a class="dropdown-item" href="#">Most popular</a></li>
-</ul>
-```
-
 ## Disabled Items
 
 Add `.disabled` and `aria-disabled="true"` to remove an item from interaction.
@@ -185,10 +305,6 @@ Add `.disabled` and `aria-disabled="true"` to remove an item from interaction.
 <Preview>
   <DisabledItemDropdown />
 </Preview>
-
-```html
-<li><a class="dropdown-item disabled" aria-disabled="true">Archive</a></li>
-```
 
 ## Grouped Items with Headers
 
@@ -199,25 +315,6 @@ Use `.dropdown-item-group` with a `.dropdown-header` to label a set of related o
   <GroupedDropdown />
 </Preview>
 
-```html
-<ul class="dropdown-menu">
-  <li class="dropdown-item-group">
-    <h6 class="dropdown-header">Group label</h6>
-    <ul>
-      <li><a class="dropdown-item active" href="#">Option</a></li>
-      <li><a class="dropdown-item" href="#">Option</a></li>
-    </ul>
-  </li>
-  <li><hr class="dropdown-divider" /></li>
-  <li class="dropdown-item-group">
-    <h6 class="dropdown-header">Group label</h6>
-    <ul>
-      <li><a class="dropdown-item" href="#">Option</a></li>
-    </ul>
-  </li>
-</ul>
-```
-
 ## Split Button Dropdown
 
 Pair a default action button with a dedicated toggle using `.dropdown-toggle-split`.
@@ -225,21 +322,6 @@ Pair a default action button with a dedicated toggle using `.dropdown-toggle-spl
 <Preview>
   <SplitDropdown />
 </Preview>
-
-```html
-<div class="btn-group">
-  <button type="button" class="btn btn-primary">Action</button>
-  <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-    <span class="visually-hidden">Toggle Dropdown</span>
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Duplicate</a></li>
-    <li><a class="dropdown-item" href="#">Rename</a></li>
-    <li><hr class="dropdown-divider" /></li>
-    <li><a class="dropdown-item" href="#">Delete</a></li>
-  </ul>
-</div>
-```
 
 ## Directions
 
@@ -249,9 +331,3 @@ different direction.
 <Preview>
   <DirectionDropdowns />
 </Preview>
-
-```html
-<div class="dropup">...</div>
-<div class="dropend">...</div>
-<div class="dropstart">...</div>
-```

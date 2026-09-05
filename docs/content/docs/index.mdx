@@ -7,16 +7,33 @@ import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
 import { Callout } from 'fumadocs-ui/components/callout';
 
 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>
-  <a href="https://www.npmjs.com/package/sdga-ui"><img src="https://img.shields.io/npm/v/sdga-ui.svg" alt="npm version" style={{ margin: 0 }} /></a>
-  <a href="https://www.npmjs.com/package/sdga-ui"><img src="https://img.shields.io/npm/dt/sdga-ui.svg" alt="npm total downloads" style={{ margin: 0 }} /></a>
-  <a href="https://github.com/MahmoudAdel1996/dga-ui/stargazers"><img src="https://img.shields.io/github/stars/MahmoudAdel1996/dga-ui.svg" alt="GitHub stars" style={{ margin: 0 }} /></a>
-  <a href="https://github.com/MahmoudAdel1996/dga-ui/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/sdga-ui.svg" alt="License" style={{ margin: 0 }} /></a>
+  <a href="https://www.npmjs.com/package/sdga-ui">
+    <img src="https://img.shields.io/npm/v/sdga-ui.svg" alt="npm version" style={{ margin: 0 }} />
+  </a>
+  <a href="https://www.npmjs.com/package/sdga-ui">
+    <img
+      src="https://img.shields.io/npm/dt/sdga-ui.svg"
+      alt="npm total downloads"
+      style={{ margin: 0 }}
+    />
+  </a>
+  <a href="https://github.com/MahmoudAdel1996/dga-ui/stargazers">
+    <img
+      src="https://img.shields.io/github/stars/MahmoudAdel1996/dga-ui.svg"
+      alt="GitHub stars"
+      style={{ margin: 0 }}
+    />
+  </a>
+  <a href="https://github.com/MahmoudAdel1996/dga-ui/blob/main/LICENSE">
+    <img src="https://img.shields.io/npm/l/sdga-ui.svg" alt="License" style={{ margin: 0 }} />
+  </a>
 </div>
 
 **SDGA UI** is a Bootstrap 5.3 theme that applies the Saudi Digital Government Authority (SDGA) design system on top of standard Bootstrap. You keep everything you know about Bootstrap — classes, components, utilities — and get government-grade styling, full RTL support, and Arabic typography out of the box.
 
 <Callout type="info">
-  **Live Demo:** Explore all components in action at [mahmoudadel1996.github.io/dga-ui](https://mahmoudadel1996.github.io/dga-ui/)
+  **Live Demo:** Explore all components in action at
+  [mahmoudadel1996.github.io/dga-ui](https://mahmoudadel1996.github.io/dga-ui/)
 </Callout>
 
 ## Why SDGA UI?
@@ -33,25 +50,15 @@ import { Callout } from 'fumadocs-ui/components/callout';
 ### Package manager
 
 <Tabs items={['npm', 'yarn', 'pnpm']}>
-  <Tab value="npm">
-```bash
-npm install sdga-ui bootstrap bootstrap-icons
-```
-  </Tab>
-  <Tab value="yarn">
-```bash
-yarn add sdga-ui bootstrap bootstrap-icons
-```
-  </Tab>
-  <Tab value="pnpm">
-```bash
-pnpm add sdga-ui bootstrap bootstrap-icons
-```
-  </Tab>
+  <Tab value="npm">```bash npm install sdga-ui bootstrap bootstrap-icons ```</Tab>
+  <Tab value="yarn">```bash yarn add sdga-ui bootstrap bootstrap-icons ```</Tab>
+  <Tab value="pnpm">```bash pnpm add sdga-ui bootstrap bootstrap-icons ```</Tab>
 </Tabs>
 
 <Callout type="warn">
-  `bootstrap` and `bootstrap-icons` are peer dependencies. The compiled CSS already contains all Bootstrap **styles** — you only need Bootstrap's JavaScript for interactive components (dropdowns, modals, toasts, …) and Bootstrap Icons for the icon font.
+  `bootstrap` and `bootstrap-icons` are peer dependencies. The compiled CSS already contains all
+  Bootstrap **styles** — you only need Bootstrap's JavaScript for interactive components (dropdowns,
+  modals, toasts, …) and Bootstrap Icons for the icon font.
 </Callout>
 
 ### CDN
@@ -60,10 +67,10 @@ No build step needed — link the compiled CSS directly:
 
 ```html
 <!-- jsDelivr -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sdga-ui@latest/css/dga-ui.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sdga-ui@latest/css/dga-ui.css" />
 
 <!-- unpkg -->
-<link rel="stylesheet" href="https://unpkg.com/sdga-ui@latest/css/dga-ui.css">
+<link rel="stylesheet" href="https://unpkg.com/sdga-ui@latest/css/dga-ui.css" />
 ```
 
 <Callout type="info">
@@ -88,20 +95,20 @@ Or in plain HTML:
 ```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My SDGA Application</title>
-  <link rel="stylesheet" href="node_modules/sdga-ui/css/dga-ui.css">
-  <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
-</head>
-<body>
-  <div class="container mt-5">
-    <h1>مرحباً بك</h1>
-    <button class="btn btn-primary">ابدأ الآن</button>
-  </div>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My SDGA Application</title>
+    <link rel="stylesheet" href="node_modules/sdga-ui/css/dga-ui.css" />
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>مرحباً بك</h1>
+      <button class="btn btn-primary">ابدأ الآن</button>
+    </div>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
 ```
 
@@ -117,7 +124,7 @@ $primary: #0d47a1;
 $border-radius: 8px;
 
 // Import the full theme (fonts + variables + Bootstrap + customizations)
-@import "sdga-ui/theme/dga-ui";
+@import 'sdga-ui/theme/dga-ui';
 
 // Your custom styles here
 ```
@@ -129,13 +136,14 @@ RTL is built in — the same CSS file serves both directions. Just set the `dir`
 ```html
 <!-- Arabic / RTL -->
 <html dir="rtl" lang="ar">
-
-<!-- English / LTR -->
-<html dir="ltr" lang="en">
+  <!-- English / LTR -->
+  <html dir="ltr" lang="en"></html>
+</html>
 ```
 
 <Callout type="success">
-  Unlike stock Bootstrap, there is **no separate RTL stylesheet** to manage. Switching `dir` is all it takes.
+  Unlike stock Bootstrap, there is **no separate RTL stylesheet** to manage. Switching `dir` is all
+  it takes.
 </Callout>
 
 ## Your First Component
@@ -178,15 +186,15 @@ $primary: #1a73e8;
 $font-family-base: 'Your Font', 'IBM Plex Sans Arabic', sans-serif;
 $border-radius: 8px;
 
-@import "sdga-ui/theme/dga-ui";
+@import 'sdga-ui/theme/dga-ui';
 ```
 
 The theme source is organized in three layers:
 
-| Layer | Purpose |
-| --- | --- |
-| `theme/config/` | Foundations — colors, typography, spacing, radius, effects |
-| `theme/components/` | Bootstrap variable overrides per component |
+| Layer                   | Purpose                                                    |
+| ----------------------- | ---------------------------------------------------------- |
+| `theme/config/`         | Foundations — colors, typography, spacing, radius, effects |
+| `theme/components/`     | Bootstrap variable overrides per component                 |
 | `theme/customizations/` | Post-Bootstrap utilities, SDGA-specific classes, RTL fixes |
 
 ## What's in the Package
