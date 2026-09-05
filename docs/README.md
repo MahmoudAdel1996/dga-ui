@@ -2,6 +2,9 @@
 
 Interactive documentation and component showcase for **[SDGA UI](https://github.com/MahmoudAdel1996/dga-ui)** — Government-Style Bootstrap Theme. Built with Next.js and [Fumadocs](https://fumadocs.dev).
 
+- 🚀 **Live Site (Vercel):** **[https://dga-ui-six.vercel.app/](https://dga-ui-six.vercel.app/)**
+- 🏛️ **GitHub Pages Showcase:** **[https://mahmoudadel1996.github.io/dga-ui/](https://mahmoudadel1996.github.io/dga-ui/)**
+
 Run development server:
 
 ```bash

@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://mahmoudadel1996.github.io/dga-ui'),
+  metadataBase: new URL('https://dga-ui-six.vercel.app'),
   title: {
     default: 'SDGA UI Documentation',
     template: '%s | SDGA UI',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: 'SDGA UI Documentation',
     description:
       'Professional Bootstrap theme for Saudi Digital Government Authority applications with built-in RTL support',
-    url: 'https://mahmoudadel1996.github.io/dga-ui',
+    url: 'https://dga-ui-six.vercel.app',
     siteName: 'SDGA UI',
     locale: 'en_US',
     type: 'website',

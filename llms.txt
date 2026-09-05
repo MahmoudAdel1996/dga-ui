@@ -11,7 +11,7 @@ Import: `@import "sdga-ui/css/dga-ui.css";` (or the SCSS source under `theme/`)
 
 ## Docs
 
-- [Documentation site](https://mahmoudadel1996.github.io/dga-ui/): component
+- [Documentation site](https://dga-ui-six.vercel.app/): component
   reference, usage examples, design tokens (Fumadocs/Next.js)
 - [README](https://github.com/MahmoudAdel1996/dga-ui/blob/master/README.md): install and quick start
 - [CONTRIBUTING](https://github.com/MahmoudAdel1996/dga-ui/blob/master/CONTRIBUTING.md): contribution rules, design source of truth

@@ -7,7 +7,7 @@
     "light": "#1976d2",
     "dark": "#0a3880"
   },
-  "favicon": "https://mahmoudadel1996.github.io/dga-ui/favicon.ico",
+  "favicon": "https://dga-ui-six.vercel.app/icon.svg",
   "navigation": {
     "groups": [
       {
