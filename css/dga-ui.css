@@ -28136,28 +28136,26 @@ html {
   color: #6C737F;
 }
 .form-select:hover {
-  border-color: #6C737F;
+  border-color: #384250;
   color: #161616;
 }
 .form-select:active {
-  border-color: #0D121C;
   background-color: #F3F4F6;
   background-size: 24px 24px, 100% 2px;
   color: #161616;
 }
 .form-select:focus-visible, .form-select:focus {
-  border-color: #384250;
   background-size: 24px 24px, 100% 2px;
   outline: none !important;
   box-shadow: 0px 4px 8px -2px rgba(17, 25, 39, 0.1), 0px 2px 4px -2px rgba(17, 25, 39, 0.06);
 }
 .form-select[readonly] {
-  border-color: #D2D6DB;
+  border-color: #9DA4AE;
   color: #161616;
   pointer-events: none;
 }
 .form-select:disabled, .form-select[disabled] {
-  border-color: #D2D6DB;
+  border-color: #9DA4AE;
   background-color: var(--dga-body-bg);
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='%23adb5bd' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'><path d='M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9' /></svg>"), linear-gradient(to right, transparent 0%, transparent 100%);
   color: #9DA4AE;
@@ -28176,7 +28174,7 @@ html {
   background-size: 24px 24px, 100% 2px;
 }
 .form-select.is-invalid:disabled, .form-select.is-invalid[disabled], .form-select:user-invalid:disabled, .form-select:user-invalid[disabled] {
-  border-color: #D2D6DB;
+  border-color: #9DA4AE;
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='%23adb5bd' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'><path d='M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9' /></svg>"), linear-gradient(to right, transparent 0%, transparent 100%);
   background-size: 24px 24px, 0% 2px;
 }
@@ -28193,17 +28191,35 @@ html {
   background-size: 24px 24px, 100% 2px;
 }
 .form-select.is-valid:disabled, .form-select.is-valid[disabled] {
-  border-color: #D2D6DB;
+  border-color: #9DA4AE;
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24' fill='none' stroke='%23adb5bd' stroke-width='0.5' stroke-linecap='round' stroke-linejoin='round'><path d='M18 9.00005C18 9.00005 13.5811 15 12 15C10.4188 15 6 9 6 9' /></svg>"), linear-gradient(to right, transparent 0%, transparent 100%);
   background-size: 24px 24px, 0% 2px;
 }
 
 .form-select-lg {
   min-height: 2.5rem;
+  background-size: 28px 28px, 0% 2px;
+  background-position: right 0.75rem center, center bottom;
+}
+[dir=rtl] .form-select-lg {
+  background-position: left 0.75rem center, center bottom;
+  padding-left: 2.25rem;
+}
+.form-select-lg:active, .form-select-lg:focus-visible, .form-select-lg:focus, .form-select-lg.is-invalid, .form-select-lg:user-invalid, .form-select-lg.is-valid {
+  background-size: 28px 28px, 100% 2px;
 }
 
 .form-select-sm {
   min-height: 1.5rem;
+  background-size: 16px 16px, 0% 2px;
+  background-position: right 0.5rem center, center bottom;
+}
+[dir=rtl] .form-select-sm {
+  background-position: left 0.5rem center, center bottom;
+  padding-left: 1.5rem;
+}
+.form-select-sm:active, .form-select-sm:focus-visible, .form-select-sm:focus, .form-select-sm.is-invalid, .form-select-sm:user-invalid, .form-select-sm.is-valid {
+  background-size: 16px 16px, 100% 2px;
 }
 
 .select-wrapper {
@@ -28232,6 +28248,16 @@ html {
 [dir=rtl] .select-wrapper::after {
   right: auto;
   left: 0.75rem;
+}
+.select-wrapper:has(.form-select-lg)::after {
+  width: 28px;
+  height: 28px;
+  background-size: 28px 28px;
+}
+.select-wrapper:has(.form-select-sm)::after {
+  width: 16px;
+  height: 16px;
+  background-size: 16px 16px;
 }
 .select-wrapper .form-select {
   --dga-form-select-bg-img: none;

@@ -1,0 +1,11 @@
+{
+  "title": "Content",
+  "pages": [
+    "cards",
+    "accordion",
+    "list-group",
+    "tables",
+    "badges",
+    "carousel"
+  ]
+}

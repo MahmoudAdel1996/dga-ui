@@ -1,0 +1,174 @@
+---
+title: Select
+description: Select sizes and states matching the Figma Dropdown Input component
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Preview } from '@/components/Preview';
+
+export function SelectSizes() {
+  return (
+    <div className="row g-3">
+      <div className="col-md-6">
+        <label htmlFor="selectLg" className="form-label">Large</label>
+        <div className="select-wrapper">
+          <select id="selectLg" className="form-select form-select-lg" aria-label="Large select">
+            <option value="" disabled defaultValue="">Select an option</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </div>
+      <div className="col-md-6">
+        <label htmlFor="selectMd" className="form-label">Medium</label>
+        <div className="select-wrapper">
+          <select id="selectMd" className="form-select" aria-label="Medium select">
+            <option value="" disabled defaultValue="">Select an option</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function SelectStates() {
+  return (
+    <div className="row g-3">
+      <div className="col-md-6">
+        <label htmlFor="selectDefault" className="form-label">Default</label>
+        <div className="select-wrapper">
+          <select id="selectDefault" className="form-select">
+            <option value="" disabled defaultValue="">Select an option</option>
+            <option value="1">One</option>
+          </select>
+        </div>
+      </div>
+      <div className="col-md-6">
+        <label htmlFor="selectReadonly" className="form-label">Read-only</label>
+        <div className="select-wrapper">
+          <select id="selectReadonly" className="form-select" readOnly defaultValue="1">
+            <option value="1">One (read-only)</option>
+          </select>
+        </div>
+      </div>
+      <div className="col-md-6">
+        <label htmlFor="selectDisabled" className="form-label disabled">Disabled</label>
+        <div className="select-wrapper">
+          <select id="selectDisabled" className="form-select" disabled defaultValue="1">
+            <option value="1">One (disabled)</option>
+          </select>
+        </div>
+      </div>
+      <div className="col-md-6">
+        <label htmlFor="selectInvalid" className="form-label">Error</label>
+        <div className="select-wrapper">
+          <select id="selectInvalid" className="form-select is-invalid" aria-describedby="selectInvalidFeedback">
+            <option value="" disabled defaultValue="">Select an option</option>
+            <option value="1">One</option>
+          </select>
+        </div>
+        <div id="selectInvalidFeedback" className="invalid-feedback d-block">Please select a valid option.</div>
+      </div>
+      <div className="col-md-6">
+        <label htmlFor="selectInvalidReadonly" className="form-label">Error + Read-only</label>
+        <div className="select-wrapper">
+          <select id="selectInvalidReadonly" className="form-select is-invalid" readOnly defaultValue="1" aria-describedby="selectInvalidReadonlyFeedback">
+            <option value="1">One (read-only)</option>
+          </select>
+        </div>
+        <div id="selectInvalidReadonlyFeedback" className="invalid-feedback d-block">Please select a valid option.</div>
+      </div>
+      <div className="col-md-6">
+        <label htmlFor="selectInvalidDisabled" className="form-label disabled">Error + Disabled</label>
+        <div className="select-wrapper">
+          <select id="selectInvalidDisabled" className="form-select is-invalid" disabled defaultValue="1" aria-describedby="selectInvalidDisabledFeedback">
+            <option value="1">One (disabled)</option>
+          </select>
+        </div>
+        <div id="selectInvalidDisabledFeedback" className="invalid-feedback d-block">Please select a valid option.</div>
+      </div>
+    </div>
+  );
+}
+
+# Select
+
+Wrap a `.form-select` in `.select-wrapper` to get the animated chevron and underline. The
+sizes and states below match the Dropdown Input component defined in Figma.
+
+### Select Sizes
+
+<Preview>
+  <SelectSizes />
+</Preview>
+
+```html
+<div className="select-wrapper">
+  <select className="form-select form-select-lg" aria-label="Large select">
+    <option value="" disabled selected>Select an option</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+</div>
+<div className="select-wrapper">
+  <select className="form-select" aria-label="Medium select">
+    <option value="" disabled selected>Select an option</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+</div>
+```
+
+### Select States
+
+<Preview>
+  <SelectStates />
+</Preview>
+
+```html
+<div className="select-wrapper">
+  <select className="form-select">
+    <option value="" disabled selected>Select an option</option>
+    <option value="1">One</option>
+  </select>
+</div>
+<div className="select-wrapper">
+  <select className="form-select" readonly>
+    <option value="1" selected>One (read-only)</option>
+  </select>
+</div>
+<div className="select-wrapper">
+  <select className="form-select" disabled>
+    <option value="1" selected>One (disabled)</option>
+  </select>
+</div>
+<div className="select-wrapper">
+  <select className="form-select is-invalid">
+    <option value="" disabled selected>Select an option</option>
+    <option value="1">One</option>
+  </select>
+</div>
+<div className="invalid-feedback d-block">Please select a valid option.</div>
+<div className="select-wrapper">
+  <select className="form-select is-invalid" readonly>
+    <option value="1" selected>One (read-only)</option>
+  </select>
+</div>
+<div className="invalid-feedback d-block">Please select a valid option.</div>
+<div className="select-wrapper">
+  <select className="form-select is-invalid" disabled>
+    <option value="1" selected>One (disabled)</option>
+  </select>
+</div>
+<div className="invalid-feedback d-block">Please select a valid option.</div>
+```
+
+<Callout type="info">
+  Hover, pressed and focused are live CSS states — hover, click or tab into the select to see them.
+</Callout>

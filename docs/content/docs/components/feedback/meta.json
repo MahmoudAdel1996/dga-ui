@@ -1,0 +1,11 @@
+{
+  "title": "Feedback",
+  "pages": [
+    "alerts",
+    "toasts",
+    "progress",
+    "radial-stepper",
+    "spinners",
+    "placeholders"
+  ]
+}

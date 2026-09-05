@@ -43,13 +43,14 @@ $form-select-indicator-disabled: url("data:image/svg+xml,<svg xmlns='http://www.
   }
 
   // ── Interactive states ─────────────────────
+  // Figma "Dropdown Input": border only changes on hover/error — pressed,
+  // focused, read-only and disabled all keep the default field border.
   &:hover {
-    border-color: $neutral-500;
+    border-color: $neutral-700;
     color: $black;
   }
 
   &:active {
-    border-color: $neutral-950;
     background-color: $neutral-100;
     background-size: 24px 24px, 100% 2px;
     color: $black;
@@ -57,21 +58,20 @@ $form-select-indicator-disabled: url("data:image/svg+xml,<svg xmlns='http://www.
 
   &:focus-visible,
   &:focus {
-    border-color: $neutral-700;
     background-size: 24px 24px, 100% 2px;
     outline: none !important;
     box-shadow: $box-shadow;
   }
 
   &[readonly] {
-    border-color: $neutral-300;
+    border-color: $neutral-400;
     color: $black;
     pointer-events: none;
   }
 
   &:disabled,
   &[disabled] {
-    border-color: $neutral-300;
+    border-color: $neutral-400;
     background-color: var(--#{$prefix}body-bg);
     background-image:
       $form-select-indicator-disabled,
@@ -99,7 +99,7 @@ $form-select-indicator-disabled: url("data:image/svg+xml,<svg xmlns='http://www.
 
     &:disabled,
     &[disabled] {
-      border-color: $neutral-300;
+      border-color: $neutral-400;
       background-image:
         $form-select-indicator-disabled,
         linear-gradient(to right, transparent 0%, transparent 100%);
@@ -125,7 +125,7 @@ $form-select-indicator-disabled: url("data:image/svg+xml,<svg xmlns='http://www.
 
     &:disabled,
     &[disabled] {
-      border-color: $neutral-300;
+      border-color: $neutral-400;
       background-image:
         $form-select-indicator-disabled,
         linear-gradient(to right, transparent 0%, transparent 100%);
@@ -135,8 +135,49 @@ $form-select-indicator-disabled: url("data:image/svg+xml,<svg xmlns='http://www.
 }
 
 // ─── Size overrides ───────────────────────────
-.form-select-lg { min-height: 2.5rem; }
-.form-select-sm { min-height: 1.5rem; }
+// The chevron is fixed at 24px in the base rule above, which is too large
+// relative to .form-select-sm's height and too small/off-centre on -lg.
+// Rescale the icon + its offset per size, keeping every interactive/
+// validation state's underline width in sync.
+.form-select-lg {
+  min-height: 2.5rem;
+  background-size: 28px 28px, 0% 2px;
+  background-position: right 0.75rem center, center bottom;
+
+  [dir="rtl"] & {
+    background-position: left 0.75rem center, center bottom;
+    padding-left: 2.25rem;
+  }
+
+  &:active,
+  &:focus-visible,
+  &:focus,
+  &.is-invalid,
+  &:user-invalid,
+  &.is-valid {
+    background-size: 28px 28px, 100% 2px;
+  }
+}
+
+.form-select-sm {
+  min-height: 1.5rem;
+  background-size: 16px 16px, 0% 2px;
+  background-position: right 0.5rem center, center bottom;
+
+  [dir="rtl"] & {
+    background-position: left 0.5rem center, center bottom;
+    padding-left: 1.5rem;
+  }
+
+  &:active,
+  &:focus-visible,
+  &:focus,
+  &.is-invalid,
+  &:user-invalid,
+  &.is-valid {
+    background-size: 16px 16px, 100% 2px;
+  }
+}
 
 // ─── Wrapper: animated rotating arrow + underline ──────────
 // Wrap any .form-select in .select-wrapper to get:
@@ -168,6 +209,10 @@ $form-select-indicator-disabled: url("data:image/svg+xml,<svg xmlns='http://www.
   &:focus-within::after { transform: translateY(-50%) rotate(180deg); }
 
   [dir="rtl"] &::after { right: auto; left: 0.75rem; }
+
+  // Match the arrow to the wrapped select's size
+  &:has(.form-select-lg)::after { width: 28px; height: 28px; background-size: 28px 28px; }
+  &:has(.form-select-sm)::after { width: 16px; height: 16px; background-size: 16px 16px; }
 
   // ── The select provides the underline via its own background-image ──
   // (same technique as .form-control — gradient lives inside the element

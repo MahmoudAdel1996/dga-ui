@@ -1,0 +1,8 @@
+{
+  "title": "Forms",
+  "pages": [
+    "checkboxes",
+    "radios",
+    "select"
+  ]
+}

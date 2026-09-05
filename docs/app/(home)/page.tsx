@@ -182,25 +182,25 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              'Alerts',
-              'Buttons',
-              'Cards',
-              'Forms',
-              'Tables',
-              'Navigation',
-              'Modals',
-              'Toasts',
-              'Badges',
-              'Breadcrumbs',
-              'Dropdowns',
-              'Pagination',
+              { label: 'Alerts', slug: 'feedback/alerts' },
+              { label: 'Buttons', slug: 'actions/buttons' },
+              { label: 'Cards', slug: 'content/cards' },
+              { label: 'Forms', slug: 'forms' },
+              { label: 'Tables', slug: 'content/tables' },
+              { label: 'Navigation', slug: 'navigation' },
+              { label: 'Modals', slug: 'overlays/modal' },
+              { label: 'Toasts', slug: 'feedback/toasts' },
+              { label: 'Badges', slug: 'content/badges' },
+              { label: 'Breadcrumbs', slug: 'navigation/breadcrumb' },
+              { label: 'Dropdowns', slug: 'actions/dropdowns' },
+              { label: 'Pagination', slug: 'navigation/pagination' },
             ].map((component) => (
               <Link
-                key={component}
-                href={`/docs/components/${component.toLowerCase()}`}
+                key={component.label}
+                href={`/docs/components/${component.slug}`}
                 className="p-4 rounded-lg border border-fd-border bg-fd-background hover:bg-fd-secondary/50 transition-colors text-center"
               >
-                <span className="font-medium text-fd-foreground">{component}</span>
+                <span className="font-medium text-fd-foreground">{component.label}</span>
               </Link>
             ))}
           </div>

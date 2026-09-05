@@ -226,7 +226,7 @@ export class FormsComponent {
   </div>
 </div>`;
 
-  selectStatesCode = `<!-- Normal -->
+  selectStatesCode = `<!-- Default -->
 <div class="select-wrapper">
   <select class="form-select">
     <option value="" disabled selected>Select an option</option>
@@ -234,10 +234,10 @@ export class FormsComponent {
   </select>
 </div>
 
-<!-- Readonly -->
+<!-- Read-only -->
 <div class="select-wrapper">
   <select class="form-select" readonly>
-    <option value="1" selected>One (readonly)</option>
+    <option value="1" selected>One (read-only)</option>
   </select>
 </div>
 
@@ -248,7 +248,7 @@ export class FormsComponent {
   </select>
 </div>
 
-<!-- Invalid -->
+<!-- Error -->
 <div class="select-wrapper">
   <select class="form-select is-invalid">
     <option value="" disabled selected>Select an option</option>
@@ -257,7 +257,23 @@ export class FormsComponent {
 </div>
 <div class="invalid-feedback d-block">Please select a valid option.</div>
 
-<!-- Valid -->
+<!-- Error + Read-only -->
+<div class="select-wrapper">
+  <select class="form-select is-invalid" readonly>
+    <option value="1" selected>One (read-only)</option>
+  </select>
+</div>
+<div class="invalid-feedback d-block">Please select a valid option.</div>
+
+<!-- Error + Disabled -->
+<div class="select-wrapper">
+  <select class="form-select is-invalid" disabled>
+    <option value="1" selected>One (disabled)</option>
+  </select>
+</div>
+<div class="invalid-feedback d-block">Please select a valid option.</div>
+
+<!-- Valid (not in Figma) -->
 <div class="select-wrapper">
   <select class="form-select is-valid">
     <option value="1" selected>One</option>
@@ -276,9 +292,9 @@ export class FormsComponent {
   </select>
 </div>
 
-<!-- Default -->
+<!-- Medium (default) -->
 <div class="select-wrapper">
-  <select class="form-select" aria-label="Default select">
+  <select class="form-select" aria-label="Medium select">
     <option value="" disabled selected>Select an option</option>
     <option value="1">One</option>
     <option value="2">Two</option>
@@ -286,7 +302,7 @@ export class FormsComponent {
   </select>
 </div>
 
-<!-- Small -->
+<!-- Small (not in Figma) -->
 <div class="select-wrapper">
   <select class="form-select form-select-sm" aria-label="Small select">
     <option value="" disabled selected>Select an option</option>

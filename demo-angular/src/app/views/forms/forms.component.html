@@ -301,6 +301,7 @@
 
     <!-- Select Sizes -->
     <h3 class="h6 mb-2">Select Sizes</h3>
+    <p class="text-body-secondary small mb-3">Figma defines Large and Medium. Small is an extra Bootstrap convenience size not present in the design file.</p>
     <div class="row g-3 mb-4">
       <div class="col-md-4">
         <label for="selectLg" class="form-label">Large</label>
@@ -314,9 +315,9 @@
         </div>
       </div>
       <div class="col-md-4">
-        <label for="selectDefault" class="form-label">Default</label>
+        <label for="selectDefault" class="form-label">Medium (default)</label>
         <div class="select-wrapper">
-          <select id="selectDefault" class="form-select" aria-label="Default select">
+          <select id="selectDefault" class="form-select" aria-label="Medium select">
             <option value="" disabled selected>Select an option</option>
             <option value="1">One</option>
             <option value="2">Two</option>
@@ -325,7 +326,7 @@
         </div>
       </div>
       <div class="col-md-4">
-        <label for="selectSm" class="form-label">Small</label>
+        <label for="selectSm" class="form-label">Small <span class="badge text-bg-secondary">Not in Figma</span></label>
         <div class="select-wrapper">
           <select id="selectSm" class="form-select form-select-sm" aria-label="Small select">
             <option value="" disabled selected>Select an option</option>
@@ -342,9 +343,15 @@
 
     <!-- Select States -->
     <h3 class="h6 mb-2">Select States</h3>
+    <p class="text-body-secondary small mb-3">
+      Hover, pressed and focused are live CSS states — hover, click or tab into the
+      <strong>Default</strong> select below to see them. The tiles here cover every state that Figma
+      renders as a static variant: Default, Read-only, Disabled, Error (Invalid) and Valid, each also
+      shown combined with Error where the design defines it.
+    </p>
     <div class="row g-3 mb-4">
       <div class="col-md-4">
-        <label for="selectNormal" class="form-label">Normal</label>
+        <label for="selectNormal" class="form-label">Default</label>
         <div class="select-wrapper">
           <select id="selectNormal" class="form-select">
             <option value="" disabled selected>Select an option</option>
@@ -354,10 +361,10 @@
         </div>
       </div>
       <div class="col-md-4">
-        <label for="selectReadonly" class="form-label">Readonly</label>
+        <label for="selectReadonly" class="form-label">Read-only</label>
         <div class="select-wrapper">
           <select id="selectReadonly" class="form-select" readonly>
-            <option value="1" selected>One (readonly)</option>
+            <option value="1" selected>One (read-only)</option>
           </select>
         </div>
       </div>
@@ -370,7 +377,7 @@
         </div>
       </div>
       <div class="col-md-4">
-        <label for="selectInvalid" class="form-label">Invalid</label>
+        <label for="selectInvalid" class="form-label">Error</label>
         <div class="select-wrapper">
           <select id="selectInvalid" class="form-select is-invalid" aria-describedby="selectInvalidFeedback">
             <option value="" disabled selected>Select an option</option>
@@ -381,7 +388,25 @@
         <div id="selectInvalidFeedback" class="invalid-feedback d-block">Please select a valid option.</div>
       </div>
       <div class="col-md-4">
-        <label for="selectValid" class="form-label">Valid</label>
+        <label for="selectInvalidReadonly" class="form-label">Error + Read-only</label>
+        <div class="select-wrapper">
+          <select id="selectInvalidReadonly" class="form-select is-invalid" readonly aria-describedby="selectInvalidReadonlyFeedback">
+            <option value="1" selected>One (read-only)</option>
+          </select>
+        </div>
+        <div id="selectInvalidReadonlyFeedback" class="invalid-feedback d-block">Please select a valid option.</div>
+      </div>
+      <div class="col-md-4">
+        <label for="selectInvalidDisabled" class="form-label disabled">Error + Disabled</label>
+        <div class="select-wrapper">
+          <select id="selectInvalidDisabled" class="form-select is-invalid" disabled aria-describedby="selectInvalidDisabledFeedback">
+            <option value="1" selected>One (disabled)</option>
+          </select>
+        </div>
+        <div id="selectInvalidDisabledFeedback" class="invalid-feedback d-block">Please select a valid option.</div>
+      </div>
+      <div class="col-md-4">
+        <label for="selectValid" class="form-label">Valid <span class="badge text-bg-secondary">Not in Figma</span></label>
         <div class="select-wrapper">
           <select id="selectValid" class="form-select is-valid" aria-describedby="selectValidFeedback">
             <option value="1" selected>One</option>

@@ -1,0 +1,9 @@
+{
+  "title": "Overlays",
+  "pages": [
+    "modal",
+    "offcanvas",
+    "popovers",
+    "tooltips"
+  ]
+}
