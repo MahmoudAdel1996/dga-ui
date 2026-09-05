@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 `sdga-ui` (published as `sdga-ui` on npm) is a Bootstrap 5.3 theme that applies a Saudi government design system (SDGA palette) on top of standard Bootstrap. It ships only compiled CSS and SCSS source files — no JavaScript components. Peer dependencies are `bootstrap` and `bootstrap-icons`.
 
+When working on the library itself (`theme/`, `css/`), always use Context7 MCP (`@mcp:context7:bootstrap`, library `/websites/getbootstrap_5_3`) to look up Bootstrap 5.3 SCSS variables, default component structures, mixins, and utilities.
+
 ## Commands
 
 All commands run from the repo root unless noted.
@@ -29,6 +31,8 @@ npm run version:patch
 
 ### Docs site (Next.js + Fumadocs, in `docs/`)
 
+When editing the docs project, always use Context7 MCP (`@mcp:context7:fumadocs`, library `/fuma-nama/fumadocs`) to retrieve up-to-date Fumadocs patterns, APIs, and configuration.
+
 ```bash
 cd docs
 npm run use:local   # installs local sdga-ui before dev
@@ -37,6 +41,8 @@ npm run build       # production build
 ```
 
 ### Angular demo app (in `demo-angular/`)
+
+When working on the Angular demo app, use the `angular-cli` MCP server and consult its best practices resource (`instructions://best-practices`).
 
 ```bash
 cd demo-angular

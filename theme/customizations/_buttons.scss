@@ -638,6 +638,7 @@ $on-primary-button-variants: (
 .dropstart > .dropdown-toggle {
   &::after {
     display: none;
+    border: none;
   }
 
   &::before {

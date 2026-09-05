@@ -27163,6 +27163,7 @@ html {
 
 .dropstart > .dropdown-toggle::after {
   display: none;
+  border: none;
 }
 .dropstart > .dropdown-toggle::before {
   content: "";
@@ -27243,23 +27244,6 @@ html {
 [dir=rtl] .dropdown-menu .dropdown-item.active::after {
   right: auto;
   left: 1rem;
-}
-.dropdown-menu .dropdown-item.dropdown-item-checkbox {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding-right: 1rem;
-  font-weight: normal;
-}
-.dropdown-menu .dropdown-item.dropdown-item-checkbox::after {
-  content: none;
-}
-.dropdown-menu .dropdown-item.dropdown-item-checkbox .form-check {
-  margin: 0;
-  gap: 0;
-}
-[dir=rtl] .dropdown-menu .dropdown-item.dropdown-item-checkbox {
-  padding-left: 1rem;
 }
 
 .card-expandable {
