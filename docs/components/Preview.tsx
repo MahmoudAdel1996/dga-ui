@@ -54,7 +54,7 @@ const DEVICE_LABEL: Record<Viewport, string> = {
   desktop: 'Desktop',
 };
 
-const BASE_PATH = process.env.NODE_ENV === 'production' ? '/dga-ui' : '';
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
 const FRAME_SRC = BASE_PATH + '/preview-frame.html';
 
 const CSS_URL =

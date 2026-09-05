@@ -56,6 +56,8 @@ export const metadata: Metadata = {
   category: 'technology',
 };
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export default function Layout({ children }: LayoutProps<'/'>) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
@@ -64,7 +66,7 @@ export default function Layout({ children }: LayoutProps<'/'>) {
           search={{
             options: {
               type: 'static',
-              api: process.env.NODE_ENV === 'production' ? '/dga-ui/api/search' : '/api/search',
+              api: `${basePath}/api/search`,
             },
           }}
         >
