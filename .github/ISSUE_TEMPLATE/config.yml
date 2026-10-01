@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Documentation
+    url: https://dga-ui-six.vercel.app/
+    about: Check the docs site before filing an issue — it may already answer your question.
